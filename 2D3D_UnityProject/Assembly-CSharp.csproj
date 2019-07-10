@@ -54,6 +54,10 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\CameraController.cs" />
+     <Compile Include="Assets\Scripts\GameManager.cs" />
+     <Compile Include="Assets\Scripts\PerspectiveCameraControl.cs" />
+     <Compile Include="Assets\Scripts\Placeholders\MoveBackAndForth.cs" />
+     <Compile Include="Assets\Scripts\Placeholders\PlatformUpDown.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>D:/Documents/College/T99_SeniorProject/2D3D_UnityProject/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
