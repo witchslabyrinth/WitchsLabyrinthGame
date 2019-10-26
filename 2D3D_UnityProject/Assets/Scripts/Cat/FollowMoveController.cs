@@ -4,42 +4,42 @@ using UnityEngine;
 
 public class FollowMoveController : MoveController
 {
+    [Header("Follow Settings")]
     /// <summary>
     /// Target to follow
     /// </summary>
     [SerializeField]
-    protected Transform followTarget;
-
-    protected Vector3 lastPosition;
+    protected GameObject followTarget;
 
     /// <summary>
-    /// Distance to lag behind target path
+    /// Radius of satisfaction around target - stop moving when we get this far away
     /// </summary>
     [SerializeField]
-    [Range(0, 5)]
-    protected float lagDistance;
+    protected float stoppingDistance;
 
     public override void MoveTowards(Vector3 position)
     {
         throw new System.NotImplementedException();
     }
 
-    public override void MoveTowards(Transform transform)
+    public override void MoveTowards(Transform targetTransform)
     {
-        if(followTargetCoroutine == null) {
-            followTargetCoroutine = StartCoroutine(FollowTarget(lastPosition));
+        // Get vector towards target
+        Vector3 toTarget = targetTransform.position - transform.position;
+        float distance = toTarget.magnitude;
+
+        // Move towards target if outside stopping radius
+        if (distance >= stoppingDistance) {
+            float step = moveSpeed * Time.fixedDeltaTime;
+            Vector3 movement = toTarget.normalized * step;
+
+            transform.position += movement;
         }
     }
 
-    Coroutine followTargetCoroutine;
-    IEnumerator FollowTarget(Vector3 position)
+    // TODO: consider moving this call to an abstract behavior component (although that's most likely overkill)
+    void Update()
     {
-        // check how far follow target has moved from last tracked position
-        // move same distance towards that follow position
-        // if distance between target and last tracked pos >= lagDistance
-        // update lastPosition and repeat
-
-
-        yield return null;
+        MoveTowards(followTarget.transform);
     }
 }
