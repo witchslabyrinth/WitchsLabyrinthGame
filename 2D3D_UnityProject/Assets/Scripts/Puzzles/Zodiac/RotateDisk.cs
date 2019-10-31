@@ -16,18 +16,26 @@ public class RotateDisk : MonoBehaviour
     /// </summary>
     public List<Sprite> symbols;
 
-    public SpriteRenderer spritePrefab;
+    /// <summary>
+    /// Correct symbol for this ring
+    /// </summary>
+    [SerializeField]
+    private Sprite correctSymbol;
+
+    [SerializeField]
+    private SpriteRenderer spritePrefab;
 
     // TODO: do this programmatically
     /// <summary>
     /// Hand-placed game object at top of disk, helps us indicate sprite placement (imagine it rotated around the disk)
     /// </summary>
-    public GameObject spritePivot;
+    [SerializeField]
+    private GameObject spritePivot;
 
     /// <summary>
     /// Index of current symbol
     /// </summary>
-    private int currentSymbol;
+    private int selectedSymbolIndex;
 
     /// <summary>
     /// Holds angle (in degrees) between each symbol on the disk
@@ -39,14 +47,20 @@ public class RotateDisk : MonoBehaviour
     /// </summary>
     private ZodiacPuzzle puzzle;
 
+
+    public delegate void SelectedSymbol();
+
+    /// <summary>
+    /// Event fired when player rotates the disk to a selected symbol
+    /// </summary>
+    public SelectedSymbol selectedSymbol;
+
     private void Start()
     {
-
-    }
-
-    private void Update()
-    {
-        //spritePivot.transform.RotateAround(transform.position, Vector3.forward, angleBetweenSymbols * Time.deltaTime);
+        // Print error if no correct symbol assigned for this disk
+        if(correctSymbol == null) {
+            Debug.LogErrorFormat("Zodiac Puzzle - {0}: please set the correct symbol for this disk", name);
+        }
     }
 
     public void Init(ZodiacPuzzle puzzle)
@@ -62,12 +76,12 @@ public class RotateDisk : MonoBehaviour
         // Calculate angle between symbols
         angleBetweenSymbols = 360f / symbols.Count;
 
+        // Generate each symbol around the ring
         PopulateSymbols();
     }
 
     private void PopulateSymbols()
     {
-        //Debug.LogFormat("{0}: Populating {1} symbols", name, symbols.Count);
         // Instantiate each symbol around the ring
         for(int i = 0; i < symbols.Count; i++) {
             Sprite symbol = symbols[i];
@@ -83,6 +97,8 @@ public class RotateDisk : MonoBehaviour
             // Rotate pivot around ring to position of next symbol
             spritePivot.transform.RotateAround(transform.position, Vector3.forward, angleBetweenSymbols);
         }
+
+        selectedSymbolIndex = 0;
     }
 
     /// <summary>
@@ -101,7 +117,6 @@ public class RotateDisk : MonoBehaviour
     private IEnumerator RotateCoroutine(ZodiacPuzzle.Direction direction)
     {
         // Calculate degrees of rotation (in given distance)
-        float currentRotation = transform.rotation.x;
         float change = (angleBetweenSymbols * (int)direction);
         Debug.LogFormat("Rotating {0} degrees to the {1}", change, direction);
 
@@ -128,7 +143,52 @@ public class RotateDisk : MonoBehaviour
         // Ensure we land exactly on target rotation
         transform.rotation = targetRotation;
 
+        // Check which symbol we landed on
+        UpdateSelectedSymbol(direction);
+
         rotateCoroutineInstance = null;
         yield return null;
+    }
+
+    /// <summary>
+    /// Tracks symbol selected after a disk rotation.
+    /// Sends a message to ZodiacPuzzle if correct symbol selected
+    /// </summary>
+    /// <param name="direction">Rotation direction</param>
+    private void UpdateSelectedSymbol(ZodiacPuzzle.Direction direction)
+    {
+        // Update selected symbol index
+        if (direction.Equals(ZodiacPuzzle.Direction.LEFT)) {
+            // Wrap around to first symbol
+            if (selectedSymbolIndex >= symbols.Count - 1) {
+                selectedSymbolIndex = 0;
+            }
+            // or increment normally
+            else {
+                selectedSymbolIndex++;
+            }
+        }
+        else if (direction.Equals(ZodiacPuzzle.Direction.RIGHT)) {
+            // Wrap around to last symbol
+            if (selectedSymbolIndex == 0) {
+                selectedSymbolIndex = symbols.Count-1;
+            }
+            // or decrement normally
+            else {
+                selectedSymbolIndex--;
+            }
+        }
+
+        // Fire symbol selected event
+        selectedSymbol?.Invoke();
+    }
+
+    /// <summary>
+    /// Returns true if disk rotated to correct symbol, false otherwise
+    /// </summary>
+    /// <returns></returns>
+    public bool Correct()
+    {
+        return symbols[selectedSymbolIndex].Equals(correctSymbol);
     }
 }

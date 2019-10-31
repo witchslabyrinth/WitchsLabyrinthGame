@@ -27,6 +27,9 @@ public class ZodiacPuzzle : MonoBehaviour
         // Initialize each disk
         foreach(RotateDisk disk in disks) {
             disk.Init(this);
+
+            // Check solution each time a symbol is selected
+            disk.selectedSymbol += CheckSolution;
         }
 
         currentDisk = disks[0];
@@ -41,7 +44,6 @@ public class ZodiacPuzzle : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.S)) {
             SwitchDisk(true);
         }
-
 
         RotateDisk();
     }
@@ -64,10 +66,6 @@ public class ZodiacPuzzle : MonoBehaviour
         catch(System.ArgumentOutOfRangeException ex) {
             return;
         }
-
-        // Prevent 
-        
-        
     }
 
     public void RotateDisk()
@@ -79,5 +77,17 @@ public class ZodiacPuzzle : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.D)) {
             currentDisk.Rotate(Direction.RIGHT);
         }
+    }
+
+    private void CheckSolution()
+    {
+        // Make sure each disk has the correct symbol selected
+        foreach(RotateDisk disk in disks) {
+            if(!disk.Correct()) {
+                return;
+            }
+        }
+
+        Debug.LogWarningFormat("{0}: selected correct symbol!", name);
     }
 }
