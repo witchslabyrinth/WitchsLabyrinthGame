@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class RotateDisk : MonoBehaviour
 {
-
     /// <summary>
     /// How fast the disk should rotate
     /// </summary>
@@ -13,9 +12,15 @@ public class RotateDisk : MonoBehaviour
     private float rotationSpeed = 1.5f;
 
     /// <summary>
-    /// Default rotation value
+    /// List (ordered containing references to symbols on the disk
     /// </summary>
-    private Quaternion initialRotation;
+    public List<Texture2D> symbols;
+
+    // TODO: do this programmatically
+    /// <summary>
+    /// Hand-placed game object at top of disk, helps us indicate sprite placement (imagine it rotated around the disk)
+    /// </summary>
+    public GameObject spritePivot;
 
     /// <summary>
     /// Index of current symbol
@@ -23,29 +28,48 @@ public class RotateDisk : MonoBehaviour
     private int currentSymbol;
 
     /// <summary>
-    /// List (ordered containing references to symbols on the disk
-    /// </summary>
-    public List<Texture2D> symbols;
-
-    /// <summary>
     /// Holds angle (in degrees) between each symbol on the disk
     /// </summary>
     private float angleBetweenSymbols;
+
+    /// <summary>
+    /// Reference to zodiac puzzle
+    /// </summary>
+    private ZodiacPuzzle puzzle;
 
     private void Start()
     {
 
     }
 
-    public void Init()
+    public void Init(ZodiacPuzzle puzzle)
     {
-        // Calculate angle between symbols
-        int numSymbols = symbols.Count;
-        angleBetweenSymbols = 360f / numSymbols;
-        //Debug.LogFormat("Angle between {0} symbols: {1}", numSymbols, angleBetweenSymbols);
+        // Break if no symbols found
+        if (symbols.Count == 0) {
+            Debug.LogErrorFormat("{0}: no symbols found");
+            return;
+        }
 
+        this.puzzle = puzzle;
+
+        // Calculate angle between symbols
+        angleBetweenSymbols = 360f / symbols.Count;
+
+        PopulateSymbols();
+    }
+
+    private void PopulateSymbols()
+    {
+        Debug.LogFormat("{0}: Populating {1} symbols", name, symbols.Count);
         // TODO: Populate disk with symbols radially separated by that angle
-        // Get radius from center to ring
+        // Get radius from center to sprite pivot
+        Vector3 pivotVector = spritePivot.transform.position - puzzle.center.transform.position;
+        Debug.LogFormat("Sprite distance: {0}", pivotVector.magnitude);
+        Debug.LogFormat("Pivot Vector: {0}", pivotVector);
+
+        foreach(Texture2D texture in symbols) {
+
+        }
     }
 
     /// <summary>
@@ -73,10 +97,6 @@ public class RotateDisk : MonoBehaviour
 
         // Rotate towards that quaternion
         Quaternion targetRotation = transform.rotation * rotationChange;
-
-        //Debug.LogFormat("Quaternion change: {0}", rotationChange.eulerAngles);
-        //Debug.LogFormat("Current rotation: {0}", transform.rotation.eulerAngles);
-        //Debug.LogWarningFormat("Current * Change: {0}", targetRotation.eulerAngles);
 
         // Track starting rotation to maintain lerp lower-bound
         Quaternion startRotation = transform.rotation; 

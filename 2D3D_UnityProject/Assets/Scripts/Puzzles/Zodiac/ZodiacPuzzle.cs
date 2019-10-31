@@ -16,11 +16,17 @@ public class ZodiacPuzzle : MonoBehaviour
 
     private RotateDisk currentDisk;
 
+    /// <summary>
+    /// Center piece that the disks rotate around: used for distance calculation when generating sprites on disks
+    /// </summary>
+    [SerializeField]
+    public GameObject center;
+
     void Start()
     {
         // Initialize each disk
         foreach(RotateDisk disk in disks) {
-            disk.Init();
+            disk.Init(this);
         }
 
         currentDisk = disks[0];
