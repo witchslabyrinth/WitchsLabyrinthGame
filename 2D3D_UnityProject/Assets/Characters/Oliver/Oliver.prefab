@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 932633505583369456}
   - component: {fileID: 6913471364385499340}
   - component: {fileID: 2339406353841110621}
-  - component: {fileID: 8283222510239588966}
+  - component: {fileID: 7042834076604515550}
+  - component: {fileID: 2891775738440981964}
   m_Layer: 0
   m_Name: Oliver
   m_TagString: Untagged
@@ -102,7 +103,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8283222510239588966
+--- !u!114 &7042834076604515550
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -111,6 +112,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 2032480695334426566}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36f4cc57273940141adbed7553b36706, type: 3}
+  m_Script: {fileID: 11500000, guid: a058c49ff778e4c4caf4ae21c99cd4ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ghostCamera: {fileID: 0}
+  speed: 0.5
+  jumpSpeed: 100
+  gravity: 0.98
+--- !u!143 &2891775738440981964
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2032480695334426566}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 9
+  m_Radius: 2
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}

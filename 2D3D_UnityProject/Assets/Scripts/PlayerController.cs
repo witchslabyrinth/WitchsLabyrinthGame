@@ -31,25 +31,25 @@ public class PlayerController : MonoBehaviour {
         if (constrainedX) {
             if (Input.GetKey ("d")) {
                 z = 1f;
-                movingType = 0.2;
+                movingType = 0.2f;
             } else if (Input.GetKey ("a")) {
                 z = -1f;
-                movingType = 0.2;
+                movingType = 0.2f;
             }
         } else {
             if (Input.GetKey ("d")) {
                 x = 1f;
-                movingType = 0.2;
+                movingType = 0.2f;
             } else if (Input.GetKey ("a")) {
                 x = -1f;
-                movingType = 0.2;
+                movingType = 0.2f;
             }
             if (Input.GetKey ("w") && !constrainedZ) {
                 z = 1f;
-                movingType = 0.2;
+                movingType = 0.2f;
             } else if (Input.GetKey ("s") && !constrainedZ) {
                 z = -1f;
-                movingType = 0.2;
+                movingType = 0.2f;
             }
         }
 
