@@ -15,29 +15,41 @@ public class PlayerController : MonoBehaviour {
     private bool constrainedY = false;
     private bool constrainedZ = false;
 
+    private Animator anim;
+    private float movingType;
+
     void Start () {
         player = this.gameObject;
         controller = this.GetComponent<CharacterController> ();
+        anim = GetComponent<Animator>();
     }
 
     void Update () {
         float x = 0, z = 0, y = 0;
+        movingType = 0;
+
         if (constrainedX) {
             if (Input.GetKey ("d")) {
                 z = 1f;
+                movingType = 0.2;
             } else if (Input.GetKey ("a")) {
                 z = -1f;
+                movingType = 0.2;
             }
         } else {
             if (Input.GetKey ("d")) {
                 x = 1f;
+                movingType = 0.2;
             } else if (Input.GetKey ("a")) {
                 x = -1f;
+                movingType = 0.2;
             }
             if (Input.GetKey ("w") && !constrainedZ) {
                 z = 1f;
+                movingType = 0.2;
             } else if (Input.GetKey ("s") && !constrainedZ) {
                 z = -1f;
+                movingType = 0.2;
             }
         }
 
@@ -56,6 +68,8 @@ public class PlayerController : MonoBehaviour {
         } else {
             controller.Move (transform.TransformDirection (movement * Time.deltaTime));
         }
+
+        updateAnims(movement.x, movement.z, movingType);
     }
 
     public void constrainX (bool set) {
@@ -68,5 +82,18 @@ public class PlayerController : MonoBehaviour {
 
     public void constrainZ (bool set) {
         constrainedZ = set;
+    }
+
+    /// <summary>
+    /// Update animation parameters
+    /// </summary>
+    /// <param name="xdir">looking left or right, from -1 to 1</param>
+    /// <param name="ydir">looking down or up, from -1 to 1</param>
+    /// <param name="moveType">0 - Standing, 0.2 - Walking, 1 - Running</param>
+    private void updateAnims(float xdir, float ydir, float moveType)
+    {
+        anim.SetFloat("MoveX", xdir);
+        anim.SetFloat("MoveY", ydir);
+        anim.SetFloat("Speed", moveType);
     }
 }
