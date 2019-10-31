@@ -6,7 +6,7 @@ public class ZodiacPuzzle : MonoBehaviour
 {
     public enum Direction {
         LEFT = 1,
-        RIGHT = -1
+        RIGHT = -1,
     }
 
     /// <summary>
@@ -35,7 +35,45 @@ public class ZodiacPuzzle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.A)) {
+        if (Input.GetKeyDown(KeyCode.W)) {
+            SwitchDisk(false);
+        }
+        else if (Input.GetKeyDown(KeyCode.S)) {
+            SwitchDisk(true);
+        }
+
+
+        RotateDisk();
+    }
+
+    public void SwitchDisk(bool next)
+    {
+        // Get disk index
+        int diskIndex = disks.IndexOf(currentDisk);
+
+        try {
+            if (next) {
+                RotateDisk disk = disks[diskIndex + 1];
+                currentDisk = disk;
+            }
+            else {
+                RotateDisk disk = disks[diskIndex - 1];
+                currentDisk = disk;
+            }
+        }
+        catch(System.ArgumentOutOfRangeException ex) {
+            return;
+        }
+
+        // Prevent 
+        
+        
+    }
+
+    public void RotateDisk()
+    {
+        // Turn disk left/right
+        if (Input.GetKeyDown(KeyCode.A)) {
             currentDisk.Rotate(Direction.LEFT);
         }
         else if (Input.GetKeyDown(KeyCode.D)) {
