@@ -23,7 +23,7 @@ public class CatController : MonoBehaviour
     /// </summary>
     /// <param name="xdir">looking left or right, from -1 to 1</param>
     /// <param name="ydir">looking down or up, from -1 to 1</param>
-    /// <param name="moveType">0 - Standing, 0.1 - Walking, 1 - Running</param>
+    /// <param name="moveType">0 - Standing, 0.2 - Walking, 1 - Running</param>
     private void updateAnims(float xdir, float ydir, float moveType)
     {
         anim.SetFloat("MoveX", xdir);
