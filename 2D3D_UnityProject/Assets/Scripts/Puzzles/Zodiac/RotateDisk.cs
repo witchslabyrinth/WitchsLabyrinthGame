@@ -9,7 +9,8 @@ public class RotateDisk : MonoBehaviour
     /// How fast the disk should rotate
     /// </summary>
     [SerializeField]
-    private float rotationSpeed;
+    [Range(1,2)]
+    private float rotationSpeed = 1.5f;
 
     /// <summary>
     /// Default rotation value
@@ -68,11 +69,31 @@ public class RotateDisk : MonoBehaviour
         Debug.LogFormat("Rotating {0} degrees to the {1}", change, direction);
 
         // Create quaternion containing change in rotation (relative to current reference frame)
-        Quaternion rotationChange = Quaternion.Euler(new Vector3(change, 0));
-        Debug.Log(rotationChange.eulerAngles);
+        Quaternion rotationChange = Quaternion.Euler(new Vector3(0, change));
 
         // Rotate towards that quaternion
+        Quaternion targetRotation = transform.rotation * rotationChange;
 
+        //Debug.LogFormat("Quaternion change: {0}", rotationChange.eulerAngles);
+        //Debug.LogFormat("Current rotation: {0}", transform.rotation.eulerAngles);
+        //Debug.LogWarningFormat("Current * Change: {0}", targetRotation.eulerAngles);
+
+        // Track starting rotation to maintain lerp lower-bound
+        Quaternion startRotation = transform.rotation; 
+        float t = 0;
+        while(t < 1) {
+            // Update rotation
+            Quaternion rotation = Quaternion.Lerp(startRotation, targetRotation, t);
+            transform.rotation = rotation;
+
+
+            // Increment t
+            t += rotationSpeed * Time.fixedDeltaTime;
+            yield return null;
+        }
+
+        // Ensure we land exactly on target rotation
+        transform.rotation = targetRotation;
 
         rotateCoroutineInstance = null;
         yield return null;

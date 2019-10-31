@@ -5,8 +5,8 @@ using UnityEngine;
 public class ZodiacPuzzle : MonoBehaviour
 {
     public enum Direction {
-        LEFT = -1,
-        RIGHT = 1
+        LEFT = 1,
+        RIGHT = -1
     }
 
     /// <summary>
