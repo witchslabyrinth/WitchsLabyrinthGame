@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class ZodiacPuzzle : MonoBehaviour
 {
+    /// <summary>
+    /// Direction used for disk rotation
+    /// </summary>
     public enum Direction {
-        LEFT = 1,
-        RIGHT = -1,
+        CLOCKWISE = 1,
+        COUNTER_CLOCKWISE = -1,
     }
 
     /// <summary>
@@ -14,6 +17,9 @@ public class ZodiacPuzzle : MonoBehaviour
     /// </summary>
     public List<RotateDisk> disks;
 
+    /// <summary>
+    /// Disk currently being controlled by the player
+    /// </summary>
     private RotateDisk currentDisk;
 
     /// <summary>
@@ -32,10 +38,10 @@ public class ZodiacPuzzle : MonoBehaviour
             disk.selectedSymbol += CheckSolution;
         }
 
+        // Set control to first (outermost) disk in puzzle
         currentDisk = disks[0];
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.W)) {
@@ -48,16 +54,22 @@ public class ZodiacPuzzle : MonoBehaviour
         RotateDisk();
     }
 
+    /// <summary>
+    /// Switch control between disks. The "next" disk is the one closer to the center
+    /// </summary>
+    /// <param name="next"></param>
     public void SwitchDisk(bool next)
     {
         // Get disk index
         int diskIndex = disks.IndexOf(currentDisk);
 
         try {
+            // Select next disk (moving towards center)
             if (next) {
                 RotateDisk disk = disks[diskIndex + 1];
                 currentDisk = disk;
             }
+            // Select previous disk (moving away from center)
             else {
                 RotateDisk disk = disks[diskIndex - 1];
                 currentDisk = disk;
@@ -68,14 +80,16 @@ public class ZodiacPuzzle : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Rotates disk clockwise/coutnerclockwise based on player input
+    /// </summary>
     public void RotateDisk()
     {
-        // Turn disk left/right
-        if (Input.GetKeyDown(KeyCode.A)) {
-            currentDisk.Rotate(Direction.LEFT);
+        if (Input.GetKeyDown(KeyCode.D)) {
+            currentDisk.Rotate(Direction.CLOCKWISE);
         }
-        else if (Input.GetKeyDown(KeyCode.D)) {
-            currentDisk.Rotate(Direction.RIGHT);
+        else if (Input.GetKeyDown(KeyCode.A)) {
+            currentDisk.Rotate(Direction.COUNTER_CLOCKWISE);
         }
     }
 
@@ -88,6 +102,7 @@ public class ZodiacPuzzle : MonoBehaviour
             }
         }
 
+        // TODO: figure out what happens next lol
         Debug.LogWarningFormat("{0}: selected correct symbol!", name);
     }
 }

@@ -25,7 +25,7 @@ public class RotateDisk : MonoBehaviour
     [SerializeField]
     private SpriteRenderer spritePrefab;
 
-    // TODO: do this programmatically
+    // TODO: do this programmatically?
     /// <summary>
     /// Hand-placed game object at top of disk, helps us indicate sprite placement (imagine it rotated around the disk)
     /// </summary>
@@ -47,13 +47,11 @@ public class RotateDisk : MonoBehaviour
     /// </summary>
     private ZodiacPuzzle puzzle;
 
-
-    public delegate void SelectedSymbol();
-
     /// <summary>
     /// Event fired when player rotates the disk to a selected symbol
     /// </summary>
     public SelectedSymbol selectedSymbol;
+    public delegate void SelectedSymbol();
 
     private void Start()
     {
@@ -118,7 +116,6 @@ public class RotateDisk : MonoBehaviour
     {
         // Calculate degrees of rotation (in given distance)
         float change = (angleBetweenSymbols * (int)direction);
-        Debug.LogFormat("Rotating {0} degrees to the {1}", change, direction);
 
         // Create quaternion containing change in rotation (relative to current reference frame)
         Quaternion rotationChange = Quaternion.Euler(new Vector3(0, change));
@@ -128,15 +125,13 @@ public class RotateDisk : MonoBehaviour
 
         // Track starting rotation to maintain lerp lower-bound
         Quaternion startRotation = transform.rotation; 
-        float t = 0;
-        while(t < 1) {
+
+        // Increment time each frame (scaled by rotationSpeed)
+        for(float t=0; t<1; t += rotationSpeed * Time.fixedDeltaTime) {
             // Update rotation
             Quaternion rotation = Quaternion.Lerp(startRotation, targetRotation, t);
             transform.rotation = rotation;
 
-
-            // Increment t
-            t += rotationSpeed * Time.fixedDeltaTime;
             yield return null;
         }
 
@@ -158,7 +153,7 @@ public class RotateDisk : MonoBehaviour
     private void UpdateSelectedSymbol(ZodiacPuzzle.Direction direction)
     {
         // Update selected symbol index
-        if (direction.Equals(ZodiacPuzzle.Direction.LEFT)) {
+        if (direction.Equals(ZodiacPuzzle.Direction.CLOCKWISE)) {
             // Wrap around to first symbol
             if (selectedSymbolIndex >= symbols.Count - 1) {
                 selectedSymbolIndex = 0;
@@ -168,7 +163,7 @@ public class RotateDisk : MonoBehaviour
                 selectedSymbolIndex++;
             }
         }
-        else if (direction.Equals(ZodiacPuzzle.Direction.RIGHT)) {
+        else if (direction.Equals(ZodiacPuzzle.Direction.COUNTER_CLOCKWISE)) {
             // Wrap around to last symbol
             if (selectedSymbolIndex == 0) {
                 selectedSymbolIndex = symbols.Count-1;
