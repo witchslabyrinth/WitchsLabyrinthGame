@@ -122,8 +122,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 240ebc02d7088994fb1d8c6522981953, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 1.5
   inOutDistance: 0.1
+  rotationSpeed: 1.5
   symbols:
   - {fileID: 21300000, guid: 7d10be59460c43d409efa2aabc4aa343, type: 3}
   - {fileID: 21300000, guid: 3e1d87e8920e28c4bb816618709fcac8, type: 3}
@@ -186,7 +186,7 @@ MonoBehaviour:
   - {fileID: 6653242622367596558}
   - {fileID: 6653242621933676753}
   - {fileID: 6653242621849099267}
-  center: {fileID: 7306311706598712166}
+  center: {fileID: 5704705930274558786}
 --- !u!1 &5499952571189958104
 GameObject:
   m_ObjectHideFlags: 0
@@ -309,8 +309,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 240ebc02d7088994fb1d8c6522981953, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 1.5
   inOutDistance: 0.1
+  rotationSpeed: 1.5
   symbols:
   - {fileID: 21300000, guid: 7d10be59460c43d409efa2aabc4aa343, type: 3}
   - {fileID: 21300000, guid: 3e1d87e8920e28c4bb816618709fcac8, type: 3}
@@ -444,8 +444,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 240ebc02d7088994fb1d8c6522981953, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 1.5
   inOutDistance: 0.1
+  rotationSpeed: 1.5
   symbols:
   - {fileID: 21300000, guid: 7d10be59460c43d409efa2aabc4aa343, type: 3}
   - {fileID: 21300000, guid: 3e1d87e8920e28c4bb816618709fcac8, type: 3}
@@ -468,6 +468,7 @@ GameObject:
   - component: {fileID: 1343650326185101957}
   - component: {fileID: 8030387708386937483}
   - component: {fileID: 1222096958101016938}
+  - component: {fileID: 5704705930274558786}
   m_Layer: 0
   m_Name: pCylinder1
   m_TagString: Untagged
@@ -535,3 +536,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &5704705930274558786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7306311706598712166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddda324f2c2e51844ba6120dc6bcae8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inOutDistance: 0.1
