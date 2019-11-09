@@ -40,6 +40,7 @@ public class ZodiacPuzzle : MonoBehaviour
 
         // Set control to first (outermost) disk in puzzle
         currentDisk = disks[0];
+        currentDisk.DiskOut();
     }
 
     void Update()
@@ -63,6 +64,8 @@ public class ZodiacPuzzle : MonoBehaviour
         // Get disk index
         int diskIndex = disks.IndexOf(currentDisk);
 
+        currentDisk.DiskIn();
+
         try {
             // Select next disk (moving towards center)
             if (next) {
@@ -74,6 +77,7 @@ public class ZodiacPuzzle : MonoBehaviour
                 RotateDisk disk = disks[diskIndex - 1];
                 currentDisk = disk;
             }
+            currentDisk.DiskOut();
         }
         catch(System.ArgumentOutOfRangeException ex) {
             return;

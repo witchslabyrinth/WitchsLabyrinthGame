@@ -11,6 +11,11 @@ public class RotateDisk : MonoBehaviour
     [Range(1,2)]
     private float rotationSpeed = 1.5f;
 
+    [SerializeField]
+    private float inOutDistance;
+
+    private float inOutTime = 1.0f;
+
     /// <summary>
     /// List (ordered containing references to symbols on the disk
     /// </summary>
@@ -143,6 +148,54 @@ public class RotateDisk : MonoBehaviour
 
         rotateCoroutineInstance = null;
         yield return null;
+    }
+
+    public void DiskOut()
+    {
+        diskOutRoutineInstance = DiskOutCoroutine();
+        StartCoroutine(diskOutRoutineInstance);
+    }
+
+    private IEnumerator diskOutRoutineInstance;
+    private IEnumerator DiskOutCoroutine()
+    {
+        Vector3 finalPosition = transform.localPosition;
+        finalPosition.y += inOutDistance;
+        AnimationCurve animationCurve = AnimationCurve.EaseInOut(0, transform.localPosition.y, inOutTime, transform.localPosition.y + inOutDistance);
+
+        for (float timer = 0f; timer < inOutTime; timer += Time.deltaTime)
+        {
+            float animValue = animationCurve.Evaluate(timer);
+            Vector3 newPosition = transform.localPosition;
+            newPosition.y = animValue;
+            transform.localPosition = newPosition;
+            yield return null;
+        }
+        transform.localPosition = finalPosition;
+    }
+
+    public void DiskIn()
+    {
+        diskInRoutineInstance = DiskInCoroutine();
+        StartCoroutine(diskInRoutineInstance);
+    }
+
+    private IEnumerator diskInRoutineInstance;
+    private IEnumerator DiskInCoroutine()
+    {
+        Vector3 finalPosition = transform.localPosition;
+        finalPosition.y -= inOutDistance;
+        AnimationCurve animationCurve = AnimationCurve.EaseInOut(0, transform.localPosition.y, inOutTime, transform.localPosition.y - inOutDistance);
+
+        for (float timer = 0f; timer < inOutTime; timer += Time.deltaTime)
+        {
+            float animValue = animationCurve.Evaluate(timer);
+            Vector3 newPosition = transform.localPosition;
+            newPosition.y = animValue;
+            transform.localPosition = newPosition;
+            yield return null;
+        }
+        transform.localPosition = finalPosition;
     }
 
     /// <summary>
