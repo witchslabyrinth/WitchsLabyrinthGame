@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RotateDisk : MonoBehaviour
+public class ZodiacDisk : ZodiacPuzzlePiece
 {
     /// <summary>
     /// How fast the disk should rotate
