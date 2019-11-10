@@ -34,16 +34,23 @@ public class ZodiacPuzzlePiece : MonoBehaviour
     }
 
     /// <summary>
-    /// Animates a piece into the in or out position based on parameter - true for inPosition and false for outPosition
+    /// Animates a piece into the target puzzle piece position
     /// </summary>
-    public void PieceInOut(bool pieceIn)
+    public void PieceInOut(ZodiacPuzzlePiecePosition targetPosition)
     {
+        // Stop any running coroutine
         if (pieceInOutRoutineInstance != null)
             StopCoroutine(pieceInOutRoutineInstance);
-        if (pieceIn)
+
+        // Set coroutine instance based on parameter
+        if (targetPosition == ZodiacPuzzlePiecePosition.In)
             pieceInOutRoutineInstance = PieceInOutCoroutine(inPosition);
-        else
+        else if (targetPosition == ZodiacPuzzlePiecePosition.Out)
             pieceInOutRoutineInstance = PieceInOutCoroutine(outPosition);
+        else
+            throw new System.Exception("Reached branch that shouldn't be possible.");
+
+        // Run coroutine
         StartCoroutine(pieceInOutRoutineInstance);
     }
 
@@ -65,5 +72,11 @@ public class ZodiacPuzzlePiece : MonoBehaviour
 
         // Jump to targetPosition
         transform.localPosition = targetPosition;
+    }
+
+    public enum ZodiacPuzzlePiecePosition
+    {
+        In = 0,
+        Out = 1
     }
 }

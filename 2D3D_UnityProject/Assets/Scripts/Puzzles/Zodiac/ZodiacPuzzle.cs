@@ -40,7 +40,7 @@ public class ZodiacPuzzle : MonoBehaviour
 
         // Set control to first (outermost) disk in puzzle
         currentDisk = disks[0];
-        currentDisk.PieceInOut(false);
+        currentDisk.PieceInOut(ZodiacPuzzlePiece.ZodiacPuzzlePiecePosition.Out);
     }
 
     void Update()
@@ -75,13 +75,13 @@ public class ZodiacPuzzle : MonoBehaviour
                 ZodiacDisk disk = disks[diskIndex - 1];
                 currentDisk = disk;
             }
-            currentDisk.PieceInOut(false);
+            currentDisk.PieceInOut(ZodiacPuzzlePiece.ZodiacPuzzlePiecePosition.Out);
         }
         catch(System.ArgumentOutOfRangeException ex) {
             return;
         }
 
-        disks[diskIndex].PieceInOut(true);
+        disks[diskIndex].PieceInOut(ZodiacPuzzlePiece.ZodiacPuzzlePiecePosition.In);
     }
 
     /// <summary>
@@ -108,7 +108,7 @@ public class ZodiacPuzzle : MonoBehaviour
 
         // TODO: figure out what happens next lol
         Debug.LogWarningFormat("{0}: selected correct symbol!", name);
-        currentDisk.PieceInOut(true);
-        center.PieceInOut(false);
+        currentDisk.PieceInOut(ZodiacPuzzlePiece.ZodiacPuzzlePiecePosition.In);
+        center.PieceInOut(ZodiacPuzzlePiece.ZodiacPuzzlePiecePosition.Out);
     }
 }
