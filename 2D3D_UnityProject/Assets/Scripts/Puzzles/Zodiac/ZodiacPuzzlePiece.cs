@@ -13,6 +13,7 @@ public class ZodiacPuzzlePiece : MonoBehaviour
     /// <summary>
     /// Time it takes to complete the coroutines PieceOut() and PieceIn()
     /// </summary>
+    [SerializeField]
     private float inOutTime = 1.0f;
 
     /// <summary>
