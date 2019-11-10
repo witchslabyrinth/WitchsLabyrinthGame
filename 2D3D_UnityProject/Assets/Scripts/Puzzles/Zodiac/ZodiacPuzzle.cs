@@ -64,8 +64,6 @@ public class ZodiacPuzzle : MonoBehaviour
         // Get disk index
         int diskIndex = disks.IndexOf(currentDisk);
 
-        currentDisk.PieceIn();
-
         try {
             // Select next disk (moving towards center)
             if (next) {
@@ -82,6 +80,8 @@ public class ZodiacPuzzle : MonoBehaviour
         catch(System.ArgumentOutOfRangeException ex) {
             return;
         }
+
+        disks[diskIndex].PieceIn();
     }
 
     /// <summary>
