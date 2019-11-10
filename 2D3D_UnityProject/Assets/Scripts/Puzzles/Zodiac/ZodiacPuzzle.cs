@@ -40,7 +40,7 @@ public class ZodiacPuzzle : MonoBehaviour
 
         // Set control to first (outermost) disk in puzzle
         currentDisk = disks[0];
-        currentDisk.PieceOut();
+        currentDisk.PieceInOut(false);
     }
 
     void Update()
@@ -75,13 +75,13 @@ public class ZodiacPuzzle : MonoBehaviour
                 ZodiacDisk disk = disks[diskIndex - 1];
                 currentDisk = disk;
             }
-            currentDisk.PieceOut();
+            currentDisk.PieceInOut(false);
         }
         catch(System.ArgumentOutOfRangeException ex) {
             return;
         }
 
-        disks[diskIndex].PieceIn();
+        disks[diskIndex].PieceInOut(true);
     }
 
     /// <summary>
@@ -108,7 +108,7 @@ public class ZodiacPuzzle : MonoBehaviour
 
         // TODO: figure out what happens next lol
         Debug.LogWarningFormat("{0}: selected correct symbol!", name);
-        currentDisk.PieceIn();
-        center.PieceOut();
+        currentDisk.PieceInOut(true);
+        center.PieceInOut(false);
     }
 }

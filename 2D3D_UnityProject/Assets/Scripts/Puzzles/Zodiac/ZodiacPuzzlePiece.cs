@@ -34,21 +34,24 @@ public class ZodiacPuzzlePiece : MonoBehaviour
     }
 
     /// <summary>
-    /// Animates a piece into the outPosition. Stops and PieceIn() that might be running.
+    /// Animates a piece into the in or out position based on parameter - true for inPosition and false for outPosition
     /// </summary>
-    public void PieceOut()
+    public void PieceInOut(bool pieceIn)
     {
-        if (pieceInRoutineInstance != null)
-            StopCoroutine(pieceInRoutineInstance);
-        pieceOutRoutineInstance = PieceOutRoutine();
-        StartCoroutine(pieceOutRoutineInstance);
+        if (pieceInOutRoutineInstance != null)
+            StopCoroutine(pieceInOutRoutineInstance);
+        if (pieceIn)
+            pieceInOutRoutineInstance = PieceInOutCoroutine(inPosition);
+        else
+            pieceInOutRoutineInstance = PieceInOutCoroutine(outPosition);
+        StartCoroutine(pieceInOutRoutineInstance);
     }
 
-    private IEnumerator pieceOutRoutineInstance;
-    private IEnumerator PieceOutRoutine()
+    private IEnumerator pieceInOutRoutineInstance;
+    private IEnumerator PieceInOutCoroutine(Vector3 targetPosition)
     {
         // Make an animation curve starting from current position and ending at the outPosition y values
-        AnimationCurve animationCurve = AnimationCurve.EaseInOut(0, transform.localPosition.y, inOutTime, outPosition.y);
+        AnimationCurve animationCurve = AnimationCurve.EaseInOut(0, transform.localPosition.y, inOutTime, targetPosition.y);
 
         for (float timer = 0f; timer < inOutTime; timer += Time.deltaTime)
         {
@@ -60,38 +63,7 @@ public class ZodiacPuzzlePiece : MonoBehaviour
             yield return null;
         }
 
-        // Jump to outPosition
-        transform.localPosition = outPosition;
-    }
-
-    /// <summary>
-    /// Animates a piece into the inPosition. Stops and PieceOut() that might be running.
-    /// </summary>
-    public void PieceIn()
-    {
-        if (pieceOutRoutineInstance != null)
-            StopCoroutine(pieceOutRoutineInstance);
-        pieceInRoutineInstance = PieceInCoroutine();
-        StartCoroutine(pieceInRoutineInstance);
-    }
-
-    private IEnumerator pieceInRoutineInstance;
-    private IEnumerator PieceInCoroutine()
-    {
-        // Make an animation curve starting from current position and ending at the outPosition y values
-        AnimationCurve animationCurve = AnimationCurve.EaseInOut(0, transform.localPosition.y, inOutTime, inPosition.y);
-
-        for (float timer = 0f; timer < inOutTime; timer += Time.deltaTime)
-        {
-            // Evaluate the animation curve at the current timer value and set the current local position y to that value
-            float animValue = animationCurve.Evaluate(timer);
-            Vector3 newPosition = transform.localPosition;
-            newPosition.y = animValue;
-            transform.localPosition = newPosition;
-            yield return null;
-        }
-
-        // Jump to inPosition
-        transform.localPosition = inPosition;
+        // Jump to targetPosition
+        transform.localPosition = targetPosition;
     }
 }
