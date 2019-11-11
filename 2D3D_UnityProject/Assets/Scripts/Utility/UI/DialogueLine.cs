@@ -41,7 +41,6 @@ public class DialogueLine : MonoBehaviour
     [Range(0, .25f)]
     private float soundBlipInterval = .1f;
     
-
     // Start is called before the first frame update
     void Start()
     {
@@ -76,6 +75,20 @@ public class DialogueLine : MonoBehaviour
 
         // Set coroutine to null
         printDialogue = null;
+    }
+
+    void PlaySoundBlips()
+    {
+
+    }
+
+    Coroutine playSoundBlips;
+
+    IEnumerator PlaySoundBlipsCoroutine()
+    {
+        
+
+        yield return null;
     }
 
     /// <summary>
