@@ -115,12 +115,25 @@ public class SoundController : Singleton<SoundController>
 
         // Play sound effect if exists
         SoundTrack track = GetSoundEffect(type);
+        PlaySoundEffect(track);
+    }
+
+    /// <summary>
+    /// Plays AudioClip in SoundTrack
+    /// </summary>
+    /// <param name="track">SoundTrack containing sound effect and settings</param>
+    public void PlaySoundEffect(SoundTrack track)
+    {
         if (track != null)
         {
             audioSource.PlayOneShot(track.clip, track.volume);
         }
     }
 
+    /// <summary>
+    /// Directly plays given AudioClip (try to avoid calling this)
+    /// </summary>
+    /// <param name="clip"></param>
     public void PlaySoundEffect(AudioClip clip)
     {
         audioSource.PlayOneShot(clip);
@@ -129,8 +142,16 @@ public class SoundController : Singleton<SoundController>
     public void PlaySoundEffectLooping(SoundType type)
     {
         // //Debug.Log("Playing looping sound effect: " + type);
-        AudioSource audioSource;
         SoundTrack track = GetSoundEffect(type);
+        AudioSource audioSource = GetAudioSource(track);
+
+        // Play sound effect
+        audioSource.Play();
+    }
+
+    private AudioSource GetAudioSource(SoundTrack track)
+    {
+        AudioSource audioSource;
 
         // Instantiate AudioSource if not found for this track
         if (!soundEffectToAudioSourceMap.TryGetValue(track, out audioSource))
@@ -142,8 +163,7 @@ public class SoundController : Singleton<SoundController>
             soundEffectToAudioSourceMap.Add(track, audioSource);
         }
 
-        // Play sound effect
-        audioSource.Play();
+        return audioSource;
     }
 
     private AudioSource InitializeAudioSource(SoundTrack track)

@@ -18,4 +18,7 @@ public enum SoundType
 {
     NONE = 0,
 
+    // UI SOUNDS
+    DIALOGUE_BLIP_1 = 001,
+
 }
