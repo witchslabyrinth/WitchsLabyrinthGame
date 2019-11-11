@@ -223,6 +223,7 @@ GameObject:
   m_Component:
   - component: {fileID: 292354407}
   - component: {fileID: 292354408}
+  - component: {fileID: 292354409}
   m_Layer: 0
   m_Name: Trigger Zone
   m_TagString: Untagged
@@ -257,6 +258,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &292354409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 292354406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2db04ee5513d86441be99cefb8a9ff3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statement: The one with the snout has what you seek.
+  hasOrb: 0
 --- !u!1 &487698943
 GameObject:
   m_ObjectHideFlags: 0
@@ -267,6 +282,7 @@ GameObject:
   m_Component:
   - component: {fileID: 487698944}
   - component: {fileID: 487698945}
+  - component: {fileID: 487698946}
   m_Layer: 0
   m_Name: Trigger Zone
   m_TagString: Untagged
@@ -301,6 +317,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &487698946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 487698943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2db04ee5513d86441be99cefb8a9ff3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statement: There is one truth teller in this room.
+  hasOrb: 1
 --- !u!1 &582104455
 GameObject:
   m_ObjectHideFlags: 0
@@ -311,6 +341,7 @@ GameObject:
   m_Component:
   - component: {fileID: 582104456}
   - component: {fileID: 582104457}
+  - component: {fileID: 582104458}
   m_Layer: 0
   m_Name: Trigger Zone
   m_TagString: Untagged
@@ -345,6 +376,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &582104458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582104455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2db04ee5513d86441be99cefb8a9ff3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statement: The smallest one has what you seek.
+  hasOrb: 0
 --- !u!1 &593938708
 GameObject:
   m_ObjectHideFlags: 0
@@ -438,6 +483,7 @@ GameObject:
   m_Component:
   - component: {fileID: 728227036}
   - component: {fileID: 728227037}
+  - component: {fileID: 728227038}
   m_Layer: 0
   m_Name: Trigger Zone
   m_TagString: Untagged
@@ -472,6 +518,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &728227038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728227035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2db04ee5513d86441be99cefb8a9ff3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statement: The chicken is honest.
+  hasOrb: 0
 --- !u!1 &907613715
 GameObject:
   m_ObjectHideFlags: 0
@@ -1030,6 +1090,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1458231745}
   - component: {fileID: 1458231746}
+  - component: {fileID: 1458231747}
   m_Layer: 0
   m_Name: Trigger Zone
   m_TagString: Untagged
@@ -1064,6 +1125,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1458231747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458231744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2db04ee5513d86441be99cefb8a9ff3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statement: I cannot see the one holding what you seek.
+  hasOrb: 0
 --- !u!1 &1483029656
 GameObject:
   m_ObjectHideFlags: 0
@@ -1492,6 +1567,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1960204747}
   - component: {fileID: 1960204748}
+  - component: {fileID: 1960204749}
   m_Layer: 0
   m_Name: Trigger Zone
   m_TagString: Untagged
@@ -1526,6 +1602,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1960204749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1960204746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2db04ee5513d86441be99cefb8a9ff3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statement: The snake does not have what you seek.
+  hasOrb: 0
 --- !u!1 &1974694787
 GameObject:
   m_ObjectHideFlags: 0
