@@ -22,30 +22,29 @@ public class DialogueLine : MonoBehaviour
 
     [Header("Text Printing Options")]
     /// <summary>
-    /// Time interval between each character printed to the dialogue box
+    /// Rate at which text is printed
     /// </summary>
     [SerializeField]
     // [Range(.01f, .1f)]
-    private float printSpeed;
+    private float printSpeed = 100;
+
+    /// <summary>
+    /// Number of character to print to screen per UI refresh
+    /// </summary>
+    private int printChunkSize = 2;
 
     /// <summary>
     /// Sound effect to play while printing dialogue text
     /// </summary>
     [SerializeField]
-    private AudioClip soundBlip;
+    private SoundTrack soundBlip;
 
     /// <summary>
-    /// Time interval between each blip sound played
+    /// Time interval between each blip sound played (scales relative to printSpeed)
     /// </summary>
     [SerializeField]
-    [Range(0, .25f)]
-    private float soundBlipInterval = .1f;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [Range(0, 1)]
+    private float soundBlipSpeed = .5f;
 
     // Update is called once per frame
     void Update()
@@ -74,7 +73,8 @@ public class DialogueLine : MonoBehaviour
             PlaySoundBlips();
 
             // Wait and repeat
-            yield return new WaitForSeconds((1/printSpeed) * Time.deltaTime);
+            float printInterval = (1/printSpeed) * Time.deltaTime;
+            yield return new WaitForSeconds(printInterval);
         }
 
         while(!Input.GetKeyDown(KeyCode.Return)) {
@@ -85,6 +85,7 @@ public class DialogueLine : MonoBehaviour
         printDialogue = null;
     }
 
+    #region Sound_Blips
     void PlaySoundBlips()
     {
         if(!FinishedPrinting() && playSoundBlips == null) {
@@ -98,11 +99,14 @@ public class DialogueLine : MonoBehaviour
     {
         // Play sound effect and wait interval
         SoundController.Instance.PlaySoundEffect(soundBlip);
+
+        float soundBlipInterval = ((1/printSpeed) * Time.deltaTime) * (1 / soundBlipSpeed);
         yield return new WaitForSeconds(soundBlipInterval);
 
         // TODO: Stop sound effect if still playing
         playSoundBlips = null;
     }
+    #endregion
 
     /// <summary>
     /// Prints series of characters of length numChars, starting from currentIndex 
