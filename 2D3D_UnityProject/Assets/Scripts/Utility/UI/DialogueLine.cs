@@ -66,29 +66,42 @@ public class DialogueLine : MonoBehaviour
         // Continue until full text is printed
         while(!FinishedPrinting()) 
         {
+            // Print next chunk of characters
             int numChars = 2;
             PrintChars(charIndex, numChars);
             charIndex += numChars;
 
+            PlaySoundBlips();
+
+            // Wait and repeat
             yield return new WaitForSeconds((1/printSpeed) * Time.deltaTime);
         }
 
-        // Set coroutine to null
+        while(!Input.GetKeyDown(KeyCode.Return)) {
+            yield return null;
+        }
+
+        // Set coroutine to null so we know it finished
         printDialogue = null;
     }
 
     void PlaySoundBlips()
     {
-
+        if(!FinishedPrinting() && playSoundBlips == null) {
+            playSoundBlips = StartCoroutine(PlaySoundBlipsCoroutine());
+        }
     }
 
     Coroutine playSoundBlips;
 
     IEnumerator PlaySoundBlipsCoroutine()
     {
-        
+        // Play sound effect and wait interval
+        SoundController.Instance.PlaySoundEffect(soundBlip);
+        yield return new WaitForSeconds(soundBlipInterval);
 
-        yield return null;
+        // TODO: Stop sound effect if still playing
+        playSoundBlips = null;
     }
 
     /// <summary>
@@ -115,10 +128,5 @@ public class DialogueLine : MonoBehaviour
     bool FinishedPrinting()
     {
         return dialogueText.text == line;
-    }
-
-    void PrintAdditionalLetter()
-    {
-
     }
 }

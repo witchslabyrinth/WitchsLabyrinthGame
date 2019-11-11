@@ -18,10 +18,7 @@ public class SoundDatabase : ScriptableObject
     protected List<SoundTrack> _playerSoundEffects;
 
     [SerializeField]
-    protected List<SoundTrack> _enemySoundEffects;
-
-    [SerializeField]
-    protected List<SoundTrack> _grailSoundEffects;
+    protected List<SoundTrack> _UISoundEffects;
 
     /// <summary>
     /// Returns list of game's sound effects
@@ -32,8 +29,7 @@ public class SoundDatabase : ScriptableObject
         // Compile sound effect collections into one list
         List<SoundTrack> soundEffects = new List<SoundTrack>();
         soundEffects.AddRange(_playerSoundEffects);
-        soundEffects.AddRange(_grailSoundEffects);
-        soundEffects.AddRange(_enemySoundEffects);
+        soundEffects.AddRange(_UISoundEffects);
 
         return soundEffects;
     }
