@@ -34,6 +34,12 @@ public class SoundController : Singleton<SoundController>
 
     private AudioSource audioSource;
 
+    [Header("Settings")]
+    /// <summary>
+    /// File path to SoundDatabase asset
+    /// </summary>
+    protected string databasePath = "SoundDatabase";
+
 
     [Header("Debug Menu")]
     /// <summary>
@@ -50,9 +56,9 @@ public class SoundController : Singleton<SoundController>
         audioSource = GetComponent<AudioSource>();
 
         // Get sound effects/music from SoundDatabase
-        SoundDatabase soundDatabase = Resources.Load<SoundDatabase>("SoundDatabase");
+        SoundDatabase soundDatabase = Resources.Load<SoundDatabase>(databasePath);
         if (soundDatabase == null) {
-            Debug.LogError("Cound not find sound databsae at ScriptableObjects/SoundDatabase");
+            Debug.LogError("Cound not find sound databsae at " + databasePath);
         }
         else {
             // Combine each collection of sound effects
