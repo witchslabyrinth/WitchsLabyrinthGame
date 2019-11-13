@@ -28,7 +28,6 @@ public class LiarGameManager : MonoBehaviour
         dialogueCode.SetSubtitle(liar.GetSubtitle());
 
         canvasObject.SetActive(true);
-        Debug.Log("Hi");
     }
 
     public static LiarGameManager Instance()

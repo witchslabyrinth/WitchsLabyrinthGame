@@ -75,13 +75,14 @@ public class DialogueLine : MonoBehaviour
         {
             if (FinishedPrinting())
             {
+                printDialogue = null;
+                dialogueText.text = "";
                 canvasObj.SetActive(false);
             }
             else
             {
                 StopCoroutine(printDialogue);
                 dialogueText.text = line;
-                printDialogue = null;
             }
         }
     }
@@ -115,6 +116,7 @@ public class DialogueLine : MonoBehaviour
         }
 
         // Set coroutine to null so we know it finished
+        StopCoroutine(printDialogue);
         printDialogue = null;
     }
 
