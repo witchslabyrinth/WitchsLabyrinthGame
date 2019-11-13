@@ -15,6 +15,18 @@ public class DialogueLine : MonoBehaviour
     private Text dialogueText;
 
     /// <summary>
+    /// reference to name box UI element
+    /// </summary>
+    [SerializeField]
+    private Text nameText;
+
+    /// <summary>
+    /// reference to subtitle box UI element
+    /// </summary>
+    [SerializeField]
+    private Text subtitleText;
+
+    /// <summary>
     /// Dialogue line
     /// </summary>
     [SerializeField]
@@ -46,25 +58,30 @@ public class DialogueLine : MonoBehaviour
     [Range(0, 1)]
     private float soundBlipSpeed = .5f;
 
+    /// <summary>
+    /// reference to parent canvas object
+    /// </summary>
     public GameObject canvasObj;
 
     // Update is called once per frame
     void Update()
     {
-        if(printDialogue == null) {
+        if (printDialogue == null)
+        {
             printDialogue = StartCoroutine(PrintDialogueCoroutine());
         }
 
-        if(Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            if(FinishedPrinting())
+            if (FinishedPrinting())
             {
                 canvasObj.SetActive(false);
             }
             else
             {
-                StopCoroutine(PrintDialogueCoroutine());
+                StopCoroutine(printDialogue);
                 dialogueText.text = line;
+                printDialogue = null;
             }
         }
     }
@@ -78,7 +95,7 @@ public class DialogueLine : MonoBehaviour
 
         int charIndex = 0;
         // Continue until full text is printed
-        while(!FinishedPrinting()) 
+        while (!FinishedPrinting())
         {
             // Print next chunk of characters
             int numChars = 2;
@@ -88,11 +105,12 @@ public class DialogueLine : MonoBehaviour
             PlaySoundBlips();
 
             // Wait and repeat
-            float printInterval = (1/printSpeed) * Time.deltaTime;
+            float printInterval = (1 / printSpeed) * Time.deltaTime;
             yield return new WaitForSeconds(printInterval);
         }
 
-        while(!Input.GetKeyDown(KeyCode.Return)) {
+        while (!Input.GetKeyDown(KeyCode.Return))
+        {
             yield return null;
         }
 
@@ -103,7 +121,8 @@ public class DialogueLine : MonoBehaviour
     #region Sound_Blips
     void PlaySoundBlips()
     {
-        if(!FinishedPrinting() && playSoundBlips == null) {
+        if (!FinishedPrinting() && playSoundBlips == null)
+        {
             playSoundBlips = StartCoroutine(PlaySoundBlipsCoroutine());
         }
     }
@@ -115,7 +134,7 @@ public class DialogueLine : MonoBehaviour
         // Play sound effect and wait interval
         SoundController.Instance.PlaySoundEffect(soundBlip);
 
-        float soundBlipInterval = ((1/printSpeed) * Time.deltaTime) * (1 / soundBlipSpeed);
+        float soundBlipInterval = ((1 / printSpeed) * Time.deltaTime) * (1 / soundBlipSpeed);
         yield return new WaitForSeconds(soundBlipInterval);
 
         // TODO: Stop sound effect if still playing
@@ -130,22 +149,52 @@ public class DialogueLine : MonoBehaviour
     /// <param name="numChars">Number of characters to print</param>
     void PrintChars(int currentIndex, int numChars)
     {
-        try {
+        try
+        {
             // Print next character in string
             char[] array = line.ToCharArray();
-            for(int i = 0; i < numChars; i++) {
+            for (int i = 0; i < numChars; i++)
+            {
                 dialogueText.text += array[currentIndex];
                 currentIndex++;
             }
         }
         // Catch and ignore out-of-bounds exception if we exceed end of string
-        catch(IndexOutOfRangeException ex) {
+        catch (IndexOutOfRangeException ex)
+        {
             return;
-        } 
+        }
     }
 
     bool FinishedPrinting()
     {
         return dialogueText.text == line;
+    }
+
+    /// <summary>
+    /// change the line being said
+    /// </summary>
+    /// <param name="newLine">new line to use</param>
+    public void SetLine(string newLine)
+    {
+        line = newLine;
+    }
+
+    /// <summary>
+    /// change the name of npc that's talking
+    /// </summary>
+    /// <param name="newName">name of npc</param>
+    public void SetName(string newName)
+    {
+        nameText.text = newName;
+    }
+
+    /// <summary>
+    /// change the subtitle of npc that's talking
+    /// </summary>
+    /// <param name="newName">name of npc</param>
+    public void SetSubtitle(string newSubtitle)
+    {
+        subtitleText.text = newSubtitle;
     }
 }

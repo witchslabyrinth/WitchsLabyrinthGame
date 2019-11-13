@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator), typeof(CharacterController))]
-public class PlayerController : MonoBehaviour {
+public class PlayerController : MonoBehaviour
+{
     protected GameObject player;
     protected CharacterController controller;
     public GameObject ghostCamera;
@@ -20,36 +21,54 @@ public class PlayerController : MonoBehaviour {
     private float movingType;
     private Vector2 dir;
 
-    void Start () {
+    private bool inDialogueZone;
+
+    private int dialoguePartner;
+
+    void Start()
+    {
         player = this.gameObject;
-        controller = this.GetComponent<CharacterController> ();
+        controller = this.GetComponent<CharacterController>();
         anim = GetComponent<Animator>();
     }
 
-    void Update () {
+    void Update()
+    {
         float x = 0, z = 0, y = 0;
         movingType = 0;
 
-        if (constrainedX) {
-            if (Input.GetKey ("d")) {
+        if (constrainedX)
+        {
+            if (Input.GetKey("d"))
+            {
                 z = 1f;
                 movingType = 1f;
-            } else if (Input.GetKey ("a")) {
+            }
+            else if (Input.GetKey("a"))
+            {
                 z = -1f;
                 movingType = 1f;
             }
-        } else {
-            if (Input.GetKey ("d")) {
+        }
+        else
+        {
+            if (Input.GetKey("d"))
+            {
                 x = 1f;
                 movingType = 1f;
-            } else if (Input.GetKey ("a")) {
+            }
+            else if (Input.GetKey("a"))
+            {
                 x = -1f;
                 movingType = 1f;
             }
-            if (Input.GetKey ("w") && !constrainedZ) {
+            if (Input.GetKey("w") && !constrainedZ)
+            {
                 z = 1f;
                 movingType = 1f;
-            } else if (Input.GetKey ("s") && !constrainedZ) {
+            }
+            else if (Input.GetKey("s") && !constrainedZ)
+            {
                 z = -1f;
                 movingType = 1f;
             }
@@ -59,34 +78,53 @@ public class PlayerController : MonoBehaviour {
             dir.Set(x, z);
         }
 
-        if (controller.isGrounded && !constrainedY) {
-            if (Input.GetKeyDown ("space")) {
+        if (controller.isGrounded && !constrainedY)
+        {
+            if (Input.GetKeyDown("space"))
+            {
                 y = jumpSpeed;
             }
         }
 
         y -= gravity * Time.deltaTime;
 
-        Vector3 movement = new Vector3 (x * speed, y, z * speed);
+        Vector3 movement = new Vector3(x * speed, y, z * speed);
 
-        if (constrainedY || constrainedX || constrainedZ) {
-            controller.Move (movement * Time.deltaTime);
-        } else {
-            controller.Move (transform.TransformDirection (movement * Time.deltaTime));
+        if (constrainedY || constrainedX || constrainedZ)
+        {
+            controller.Move(movement * Time.deltaTime);
+        }
+        else
+        {
+            controller.Move(transform.TransformDirection(movement * Time.deltaTime));
         }
 
         UpdateAnims(dir.x, dir.y, movingType);
+
+
+        if (Input.GetKeyDown("space"))
+        {
+            if (inDialogueZone)
+                LiarGameManager.Instance().StartConversation(dialoguePartner);
+        }
+        if (Input.GetKeyDown("enter"))
+        {
+            //try to take orb from statue
+        }
     }
 
-    public void constrainX (bool set) {
+    public void constrainX(bool set)
+    {
         constrainedX = set;
     }
 
-    public void constrainY (bool set) {
+    public void constrainY(bool set)
+    {
         constrainedY = set;
     }
 
-    public void constrainZ (bool set) {
+    public void constrainZ(bool set)
+    {
         constrainedZ = set;
     }
 
@@ -101,5 +139,11 @@ public class PlayerController : MonoBehaviour {
         anim.SetFloat("MoveX", xdir);
         anim.SetFloat("MoveY", ydir);
         anim.SetFloat("Speed", moveType);
+    }
+
+    public void SetInDialogueZone(bool withinZone, int partner)
+    {
+        inDialogueZone = withinZone;
+        dialoguePartner = partner;
     }
 }

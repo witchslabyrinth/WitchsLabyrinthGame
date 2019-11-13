@@ -8,36 +8,50 @@ public class LiarStatue : MonoBehaviour
     private string statement;
 
     [SerializeField]
+    private string statueName;
+
+    [SerializeField]
+    private string subtitle;
+
+    [SerializeField]
     private bool hasOrb;
 
-    private bool inZone;
+    [SerializeField]
+    private int id;
 
-    // Start is called before the first frame update
-    void Start()
+    void OnTriggerEnter(Collider other)
     {
-        inZone = false;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown("space"))
-        {
-            //talk to this statue
-        }
-        if (Input.GetKeyDown("enter"))
-        {
-            //try to take orb from statue
-        }
-    }
-
-    void OnTriggerEnter()
-    {
-        inZone = true;
+        PlayerController controller = other.GetComponent<PlayerController>();
+        if (controller != null)
+            controller.SetInDialogueZone(true, id);
+        Debug.Log("Talking to " + statueName);
     }
 
     void OnTriggerExit(Collider other)
     {
-        inZone = false;
+        PlayerController controller = other.GetComponent<PlayerController>();
+        if (controller != null)
+            controller.SetInDialogueZone(false, id);
+        Debug.Log("Leaving conversation with " + statueName);
+    }
+
+    public string GetStatement()
+    {
+        return statement;
+    }
+
+    public string GetName()
+    {
+        return statueName;
+    }
+
+    public string GetSubtitle()
+    {
+        return subtitle;
+    }
+
+    public bool GetOrbState()
+    {
+        return hasOrb;
     }
 }

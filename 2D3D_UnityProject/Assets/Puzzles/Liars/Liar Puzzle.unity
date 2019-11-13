@@ -120,6 +120,57 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &6001691
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6001693}
+  - component: {fileID: 6001692}
+  m_Layer: 0
+  m_Name: Liars Game Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &6001692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6001691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e7bf71821f4a9e44b3a6fa3328034e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasObject: {fileID: 1896609913}
+  npcs:
+  - {fileID: 1262464079}
+  - {fileID: 201325023}
+  - {fileID: 907613715}
+  - {fileID: 1483029656}
+  - {fileID: 1422021275}
+  - {fileID: 994078976}
+--- !u!4 &6001693
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6001691}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 82.87666, y: 70.84605, z: -8.129356}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &201325023
 GameObject:
   m_ObjectHideFlags: 0
@@ -206,8 +257,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 201325023}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 93.1, y: 80, z: 47.3}
-  m_LocalScale: {x: 10.161492, y: 10.161492, z: 10.161492}
+  m_LocalPosition: {x: 86.2, y: 61.3, z: 32.7}
+  m_LocalScale: {x: 12, y: 12, z: 12}
   m_Children:
   - {fileID: 728227036}
   m_Father: {fileID: 0}
@@ -239,7 +290,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 292354406}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.6729825, y: 0, z: 4.831967}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 994078980}
@@ -271,7 +322,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statement: The one with the snout has what you seek.
+  statueName: Chicken
+  subtitle: One of the Liars
   hasOrb: 0
+  id: 5
 --- !u!1 &487698943
 GameObject:
   m_ObjectHideFlags: 0
@@ -330,7 +384,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statement: There is one truth teller in this room.
+  statueName: Snake
+  subtitle: One of the Liars
   hasOrb: 1
+  id: 0
 --- !u!1 &582104455
 GameObject:
   m_ObjectHideFlags: 0
@@ -357,7 +414,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 582104455}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.646515, y: 0, z: 9.417908}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 1483029660}
@@ -389,7 +446,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statement: The smallest one has what you seek.
+  statueName: Cat
+  subtitle: One of the Liars
   hasOrb: 0
+  id: 3
 --- !u!1 &593938708
 GameObject:
   m_ObjectHideFlags: 0
@@ -466,13 +526,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 593938708}
-  m_LocalRotation: {x: 0.35398334, y: -0, z: -0, w: 0.9352517}
-  m_LocalPosition: {x: 76, y: 123.5, z: -66.7}
+  m_LocalRotation: {x: 0.2420927, y: -0, z: -0, w: 0.97025317}
+  m_LocalPosition: {x: 63.06, y: 82.75, z: -45.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 41.462, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 28.02, y: 0, z: 0}
 --- !u!1 &728227035
 GameObject:
   m_ObjectHideFlags: 0
@@ -499,7 +559,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 728227035}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.085573, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 201325027}
@@ -531,7 +591,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statement: The chicken is honest.
+  statueName: Rat
+  subtitle: One of the Liars
   hasOrb: 0
+  id: 1
 --- !u!1 &907613715
 GameObject:
   m_ObjectHideFlags: 0
@@ -618,8 +681,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 907613715}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 121.3, y: 80, z: 1.8}
-  m_LocalScale: {x: 10.161492, y: 10.161492, z: 10.161492}
+  m_LocalPosition: {x: 95.97, y: 61.3, z: 0.38837}
+  m_LocalScale: {x: 12, y: 12, z: 12}
   m_Children:
   - {fileID: 1458231745}
   m_Father: {fileID: 0}
@@ -645,7 +708,7 @@ PrefabInstance:
     - target: {fileID: 932633505583369456, guid: bbdd8feba155b90439ae87218fe6a1ba,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 76.7
+      value: 70.88
       objectReference: {fileID: 0}
     - target: {fileID: 932633505583369456, guid: bbdd8feba155b90439ae87218fe6a1ba,
         type: 3}
@@ -695,17 +758,42 @@ PrefabInstance:
     - target: {fileID: 932633505583369456, guid: bbdd8feba155b90439ae87218fe6a1ba,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 3.3682
+      value: 11.659362
       objectReference: {fileID: 0}
     - target: {fileID: 932633505583369456, guid: bbdd8feba155b90439ae87218fe6a1ba,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 3.3682
+      value: 11.659362
       objectReference: {fileID: 0}
     - target: {fileID: 932633505583369456, guid: bbdd8feba155b90439ae87218fe6a1ba,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 3.3682
+      value: 11.659362
+      objectReference: {fileID: 0}
+    - target: {fileID: 7042834076604515550, guid: bbdd8feba155b90439ae87218fe6a1ba,
+        type: 3}
+      propertyPath: speed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2891775738440981964, guid: bbdd8feba155b90439ae87218fe6a1ba,
+        type: 3}
+      propertyPath: m_Radius
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2891775738440981964, guid: bbdd8feba155b90439ae87218fe6a1ba,
+        type: 3}
+      propertyPath: m_Height
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2675725675661482212, guid: bbdd8feba155b90439ae87218fe6a1ba,
+        type: 3}
+      propertyPath: m_Height
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2675725675661482212, guid: bbdd8feba155b90439ae87218fe6a1ba,
+        type: 3}
+      propertyPath: m_Radius
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bbdd8feba155b90439ae87218fe6a1ba, type: 3}
@@ -795,8 +883,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 967612282}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 67.13966, y: 58.302032, z: -1.0624695}
-  m_LocalScale: {x: 143.83762, y: 2.1768384, z: 143.83762}
+  m_LocalPosition: {x: 64.1, y: 58.302032, z: -1.0624695}
+  m_LocalScale: {x: 71.57935, y: 1.0832819, z: 71.57935}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -887,8 +975,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 994078976}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.1, y: 80, z: -1.8}
-  m_LocalScale: {x: 10.161492, y: 10.161492, z: 10.161492}
+  m_LocalPosition: {x: 29.5, y: 61.3, z: -1.0491}
+  m_LocalScale: {x: 12, y: 12, z: 12}
   m_Children:
   - {fileID: 292354407}
   m_Father: {fileID: 0}
@@ -980,8 +1068,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1262464079}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 21.1, y: 80, z: 47.3}
-  m_LocalScale: {x: 10.161492, y: 10.161492, z: 10.161492}
+  m_LocalPosition: {x: 46.089, y: 61.3, z: 33.4}
+  m_LocalScale: {x: 12, y: 12, z: 12}
   m_Children:
   - {fileID: 487698944}
   m_Father: {fileID: 0}
@@ -1073,8 +1161,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1422021275}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 21.6, y: 80, z: -48.4}
-  m_LocalScale: {x: 10.161492, y: 10.161492, z: 10.161492}
+  m_LocalPosition: {x: 46.288, y: 61.3, z: -28.3}
+  m_LocalScale: {x: 12, y: 12, z: 12}
   m_Children:
   - {fileID: 1960204747}
   m_Father: {fileID: 0}
@@ -1106,7 +1194,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1458231744}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.860757, y: 0, z: 4.477689}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 907613719}
@@ -1138,7 +1226,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statement: I cannot see the one holding what you seek.
+  statueName: Bunny
+  subtitle: One of the Liars
   hasOrb: 0
+  id: 2
 --- !u!1 &1483029656
 GameObject:
   m_ObjectHideFlags: 0
@@ -1225,13 +1316,31 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1483029656}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 98.8, y: 80, z: -48.4}
-  m_LocalScale: {x: 10.161492, y: 10.161492, z: 10.161492}
+  m_LocalPosition: {x: 85.4, y: 61.3, z: -27.57}
+  m_LocalScale: {x: 12, y: 12, z: 12}
   m_Children:
   - {fileID: 582104456}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1834172787 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2381813289332544705, guid: 870bab93ece3aa5468d746e4260cd34f,
+    type: 3}
+  m_PrefabInstance: {fileID: 2488109711490855459}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1896609913 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2488109711486722605, guid: 870bab93ece3aa5468d746e4260cd34f,
+    type: 3}
+  m_PrefabInstance: {fileID: 2488109711490855459}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1960204746
 GameObject:
   m_ObjectHideFlags: 0
@@ -1258,7 +1367,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1960204746}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.049205557, y: 0, z: 9.417908}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 1422021279}
@@ -1290,7 +1399,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statement: The snake does not have what you seek.
+  statueName: Pig
+  subtitle: One of the Liars
   hasOrb: 0
+  id: 4
+--- !u!114 &1962558466 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2381813289303956271, guid: 870bab93ece3aa5468d746e4260cd34f,
+    type: 3}
+  m_PrefabInstance: {fileID: 2488109711490855459}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1995240876
 GameObject:
   m_ObjectHideFlags: 0
@@ -1460,6 +1584,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2488109711486722605, guid: 870bab93ece3aa5468d746e4260cd34f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2488109711486722609, guid: 870bab93ece3aa5468d746e4260cd34f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1568,102 +1697,117 @@ PrefabInstance:
     - target: {fileID: 2381813289583967381, guid: 870bab93ece3aa5468d746e4260cd34f,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2381813289583967381, guid: 870bab93ece3aa5468d746e4260cd34f,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2381813289583967381, guid: 870bab93ece3aa5468d746e4260cd34f,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 935
       objectReference: {fileID: 0}
     - target: {fileID: 2381813289583967381, guid: 870bab93ece3aa5468d746e4260cd34f,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -139.84189
       objectReference: {fileID: 0}
     - target: {fileID: 2381813289583967381, guid: 870bab93ece3aa5468d746e4260cd34f,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 1820
       objectReference: {fileID: 0}
+    - target: {fileID: 2381813289583967369, guid: 870bab93ece3aa5468d746e4260cd34f,
+        type: 3}
+      propertyPath: nameText
+      value: 
+      objectReference: {fileID: 1834172787}
+    - target: {fileID: 2381813289583967369, guid: 870bab93ece3aa5468d746e4260cd34f,
+        type: 3}
+      propertyPath: subtitleText
+      value: 
+      objectReference: {fileID: 1962558466}
     - target: {fileID: 2381813289332544707, guid: 870bab93ece3aa5468d746e4260cd34f,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2381813289332544707, guid: 870bab93ece3aa5468d746e4260cd34f,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2381813289332544707, guid: 870bab93ece3aa5468d746e4260cd34f,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 325
       objectReference: {fileID: 0}
     - target: {fileID: 2381813289332544707, guid: 870bab93ece3aa5468d746e4260cd34f,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 2381813289332544707, guid: 870bab93ece3aa5468d746e4260cd34f,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 2381813289303956270, guid: 870bab93ece3aa5468d746e4260cd34f,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2381813289303956270, guid: 870bab93ece3aa5468d746e4260cd34f,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2381813289303956270, guid: 870bab93ece3aa5468d746e4260cd34f,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 325
       objectReference: {fileID: 0}
     - target: {fileID: 2381813289303956270, guid: 870bab93ece3aa5468d746e4260cd34f,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -112.5
       objectReference: {fileID: 0}
     - target: {fileID: 2381813289303956270, guid: 870bab93ece3aa5468d746e4260cd34f,
         type: 3}
       propertyPath: m_SizeDelta.x
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 2381813288413228558, guid: 870bab93ece3aa5468d746e4260cd34f,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2381813288413228559, guid: 870bab93ece3aa5468d746e4260cd34f,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2381813288413228559, guid: 870bab93ece3aa5468d746e4260cd34f,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2381813288413228559, guid: 870bab93ece3aa5468d746e4260cd34f,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 1245
       objectReference: {fileID: 0}
     - target: {fileID: 2381813288413228559, guid: 870bab93ece3aa5468d746e4260cd34f,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -289.8419
       objectReference: {fileID: 0}
     - target: {fileID: 2381813288413228559, guid: 870bab93ece3aa5468d746e4260cd34f,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 600
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 870bab93ece3aa5468d746e4260cd34f, type: 3}
