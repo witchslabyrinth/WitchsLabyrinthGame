@@ -46,11 +46,26 @@ public class DialogueLine : MonoBehaviour
     [Range(0, 1)]
     private float soundBlipSpeed = .5f;
 
+    public GameObject canvasObj;
+
     // Update is called once per frame
     void Update()
     {
         if(printDialogue == null) {
             printDialogue = StartCoroutine(PrintDialogueCoroutine());
+        }
+
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            if(FinishedPrinting())
+            {
+                canvasObj.SetActive(false);
+            }
+            else
+            {
+                StopCoroutine(PrintDialogueCoroutine());
+                dialogueText.text = line;
+            }
         }
     }
 
