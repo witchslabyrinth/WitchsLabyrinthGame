@@ -4,18 +4,39 @@ using UnityEngine;
 
 public class LiarStatue : MonoBehaviour
 {
+    /// <summary>
+    /// general statement this statue will say
+    /// </summary>
     [SerializeField]
     private string statement;
 
+    /// <summary>
+    /// what the statue will say when player looks for orb
+    /// </summary>
+    [SerializeField]
+    private string winLoseStatement;
+
+    /// <summary>
+    /// name of the statue
+    /// </summary>
     [SerializeField]
     private string statueName;
 
+    /// <summary>
+    /// subtitle of the statue
+    /// </summary>
     [SerializeField]
     private string subtitle;
 
+    /// <summary>
+    /// whether or not this statue has the orb
+    /// </summary>
     [SerializeField]
     private bool hasOrb;
 
+    /// <summary>
+    /// ID of this statue, used as index in manager list
+    /// </summary>
     [SerializeField]
     private int id;
 
@@ -38,6 +59,11 @@ public class LiarStatue : MonoBehaviour
     public string GetStatement()
     {
         return statement;
+    }
+
+    public string GetWinLoseStatement()
+    {
+        return winLoseStatement;
     }
 
     public string GetName()

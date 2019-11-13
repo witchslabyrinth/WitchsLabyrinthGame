@@ -71,14 +71,18 @@ public class DialogueLine : MonoBehaviour
             printDialogue = StartCoroutine(PrintDialogueCoroutine());
         }
 
+        // if the player presses space while talking
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            //if the dialogue has finished printing, exit the conversation
             if (FinishedPrinting())
             {
                 printDialogue = null;
                 dialogueText.text = "";
                 canvasObj.SetActive(false);
+                LiarGameManager.Instance().player.GetComponent<PlayerController>().enabled = true;
             }
+            //else, stop the coroutine and print the entire line at once
             else
             {
                 StopCoroutine(printDialogue);

@@ -21,9 +21,20 @@ public class PlayerController : MonoBehaviour
     private float movingType;
     private Vector2 dir;
 
+    /// <summary>
+    /// is the player within talking distance of an npc
+    /// </summary>
     private bool inDialogueZone;
 
+    /// <summary>
+    /// the id of the npc in range of the player
+    /// </summary>
     private int dialoguePartner;
+
+    /// <summary>
+    /// reference to the orb the player is trying to find
+    /// </summary>
+    public GameObject orb;
 
     void Start()
     {
@@ -102,14 +113,19 @@ public class PlayerController : MonoBehaviour
         UpdateAnims(dir.x, dir.y, movingType);
 
 
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             if (inDialogueZone)
                 LiarGameManager.Instance().StartConversation(dialoguePartner);
         }
-        if (Input.GetKeyDown("enter"))
+        if (Input.GetKeyDown(KeyCode.F))
         {
-            //try to take orb from statue
+            if (inDialogueZone)
+            {
+                if (dialoguePartner == 0)
+                    orb.SetActive(true);
+                LiarGameManager.Instance().CheckOrb(dialoguePartner);
+            }
         }
     }
 
@@ -141,6 +157,11 @@ public class PlayerController : MonoBehaviour
         anim.SetFloat("Speed", moveType);
     }
 
+    /// <summary>
+    /// called by OnTriggerEnter and OnTriggerExit of npc zones. Determines whether the player can talk or not
+    /// </summary>
+    /// <param name="withinZone">true on enter, false on exit</param>
+    /// <param name="partner">ID of npc</param>
     public void SetInDialogueZone(bool withinZone, int partner)
     {
         inDialogueZone = withinZone;
