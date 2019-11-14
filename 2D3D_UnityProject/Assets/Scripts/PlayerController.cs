@@ -118,7 +118,7 @@ public class PlayerController : MonoBehaviour
             if (inDialogueZone)
                 LiarGameManager.Instance().StartConversation(dialoguePartner);
         }
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             if (inDialogueZone)
             {
