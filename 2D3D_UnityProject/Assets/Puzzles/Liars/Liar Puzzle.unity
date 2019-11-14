@@ -459,12 +459,12 @@ PrefabInstance:
     - target: {fileID: 493072969285755914, guid: 560a0f74049f01942bbab86424924e44,
         type: 3}
       propertyPath: m_Name
-      value: Main Camera (2)
+      value: Main Camera (Stationary Camera)
       objectReference: {fileID: 0}
     - target: {fileID: 493072969285755914, guid: 560a0f74049f01942bbab86424924e44,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 493072969285755925, guid: 560a0f74049f01942bbab86424924e44,
         type: 3}
@@ -474,12 +474,12 @@ PrefabInstance:
     - target: {fileID: 493072969285755925, guid: 560a0f74049f01942bbab86424924e44,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 118.3
+      value: 134.9
       objectReference: {fileID: 0}
     - target: {fileID: 493072969285755925, guid: 560a0f74049f01942bbab86424924e44,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -79.9
+      value: -106
       objectReference: {fileID: 0}
     - target: {fileID: 493072969285755925, guid: 560a0f74049f01942bbab86424924e44,
         type: 3}
@@ -607,7 +607,12 @@ PrefabInstance:
     - target: {fileID: 493072969285755914, guid: 560a0f74049f01942bbab86424924e44,
         type: 3}
       propertyPath: m_Name
-      value: Main Camera (1)
+      value: Main Camera (Perspective Controls)
+      objectReference: {fileID: 0}
+    - target: {fileID: 493072969285755914, guid: 560a0f74049f01942bbab86424924e44,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 493072969285755925, guid: 560a0f74049f01942bbab86424924e44,
         type: 3}
