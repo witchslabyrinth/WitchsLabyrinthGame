@@ -15,23 +15,23 @@ public class ZodiacPuzzle : MonoBehaviour
     /// <summary>
     /// Ordered list of rotating disks, from outermost to innermost
     /// </summary>
-    public List<RotateDisk> disks;
+    public List<ZodiacDisk> disks;
 
     /// <summary>
     /// Disk currently being controlled by the player
     /// </summary>
-    private RotateDisk currentDisk;
+    private ZodiacDisk currentDisk;
 
     /// <summary>
     /// Center piece that the disks rotate around: used for distance calculation when generating sprites on disks
     /// </summary>
     [SerializeField]
-    public GameObject center;
+    public ZodiacCenter center;
 
     void Start()
     {
         // Initialize each disk
-        foreach(RotateDisk disk in disks) {
+        foreach(ZodiacDisk disk in disks) {
             disk.Init(this);
 
             // Check solution each time a symbol is selected
@@ -40,6 +40,7 @@ public class ZodiacPuzzle : MonoBehaviour
 
         // Set control to first (outermost) disk in puzzle
         currentDisk = disks[0];
+        currentDisk.PieceInOut(ZodiacPuzzlePiece.ZodiacPuzzlePiecePosition.Out);
     }
 
     void Update()
@@ -66,18 +67,21 @@ public class ZodiacPuzzle : MonoBehaviour
         try {
             // Select next disk (moving towards center)
             if (next) {
-                RotateDisk disk = disks[diskIndex + 1];
+                ZodiacDisk disk = disks[diskIndex + 1];
                 currentDisk = disk;
             }
             // Select previous disk (moving away from center)
             else {
-                RotateDisk disk = disks[diskIndex - 1];
+                ZodiacDisk disk = disks[diskIndex - 1];
                 currentDisk = disk;
             }
+            currentDisk.PieceInOut(ZodiacPuzzlePiece.ZodiacPuzzlePiecePosition.Out);
         }
         catch(System.ArgumentOutOfRangeException ex) {
             return;
         }
+
+        disks[diskIndex].PieceInOut(ZodiacPuzzlePiece.ZodiacPuzzlePiecePosition.In);
     }
 
     /// <summary>
@@ -96,7 +100,7 @@ public class ZodiacPuzzle : MonoBehaviour
     private void CheckSolution()
     {
         // Make sure each disk has the correct symbol selected
-        foreach(RotateDisk disk in disks) {
+        foreach(ZodiacDisk disk in disks) {
             if(!disk.Correct()) {
                 return;
             }
@@ -104,5 +108,7 @@ public class ZodiacPuzzle : MonoBehaviour
 
         // TODO: figure out what happens next lol
         Debug.LogWarningFormat("{0}: selected correct symbol!", name);
+        currentDisk.PieceInOut(ZodiacPuzzlePiece.ZodiacPuzzlePiecePosition.In);
+        center.PieceInOut(ZodiacPuzzlePiece.ZodiacPuzzlePiecePosition.Out);
     }
 }
