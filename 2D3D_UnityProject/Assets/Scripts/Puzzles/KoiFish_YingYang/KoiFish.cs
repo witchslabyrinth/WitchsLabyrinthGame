@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Author: Drew Graham
 public class KoiFish : MonoBehaviour
 {
     /// <summary>
@@ -99,5 +100,11 @@ public class KoiFish : MonoBehaviour
     {
         ParticleSystem.EmissionModule emission = psystem.emission;
         emission.enabled = active;
+    }
+
+    public void ToggleTrailActive()
+    {
+        ParticleSystem.EmissionModule emission = psystem.emission;
+        SetTrailActive(!emission.enabled);
     }
 }
