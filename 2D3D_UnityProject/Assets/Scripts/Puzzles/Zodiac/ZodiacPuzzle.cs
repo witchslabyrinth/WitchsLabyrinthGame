@@ -52,6 +52,12 @@ public class ZodiacPuzzle : MonoBehaviour
             SwitchDisk(true);
         }
 
+        //TODO: Remove this when it's no longer necessary
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("ZodiacPuzzle");
+        }
+
         RotateDisk();
     }
 
