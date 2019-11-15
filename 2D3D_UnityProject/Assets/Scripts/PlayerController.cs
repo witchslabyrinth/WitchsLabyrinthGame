@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Animator), typeof(CharacterController))]
 public class PlayerController : MonoBehaviour {
     protected GameObject player;
     protected CharacterController controller;
