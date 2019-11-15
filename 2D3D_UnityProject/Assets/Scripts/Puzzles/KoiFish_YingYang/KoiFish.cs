@@ -42,18 +42,20 @@ public class KoiFish : MonoBehaviour
         animator.SetInteger("FishNumber", fishNumber);
 
         psystem = GetComponentInChildren<ParticleSystem>();
-        // TODO: use try/catch here
-        if(psystem == null) {
-            Debug.LogError(name + " | missing ParticleSystem component in children - please add a ParticleSystem to this fish");
+        try 
+        {
+            // Initialize particle system with color settings
+            ParticleSystem.TrailModule trailModule = psystem.trails;
+            trailModule.colorOverLifetime = trailColorOverLifetime;
+
+            ParticleSystem.ColorOverLifetimeModule colorOverLifetimeModule = psystem.colorOverLifetime;
+            colorOverLifetimeModule.color = particleColorOverLifetime;
+
+        } catch (System.NullReferenceException ex) 
+        {
+            Debug.LogWarning(name + " | missing ParticleSystem component in children - please add a ParticleSystem to this fish");
+            Debug.LogError(ex.ToString());
         }
-
-        // Initialize particle system with color settings
-        ParticleSystem.TrailModule trailModule = psystem.trails;
-        trailModule.colorOverLifetime = trailColorOverLifetime;
-
-        ParticleSystem.ColorOverLifetimeModule colorOverLifetimeModule = psystem.colorOverLifetime;
-        colorOverLifetimeModule.color = particleColorOverLifetime;
-        
     }
 
     void Update()
