@@ -10,19 +10,25 @@ public class KoiFish : MonoBehaviour
     [Range(1, 3)]
     public int fishNumber;
 
+    [Header("Particle System Settings")]
+    /// <summary>
+    /// Color over lifetime used for the particle trail module
+    /// </summary>
+    [SerializeField]
+    private Gradient trailColorOverLifetime;
+
+    /// <summary>
+    /// Color over lifetime used for the particles
+    /// </summary>
+    [SerializeField]
+    private Gradient particleColorOverLifetime;
+
     private Animator animator;
+    private ParticleSystem psystem;
 
-    private Dictionary<int, string> koiFishAnimationMap = new Dictionary<int, string>() {
-        { 1, "Koi1_Correct" },
-        { 2, "Koi2_Correct" },
-        { 3, "Koi3_Correct" },
-
-
-        { -1, "Koi1_Wrong" },
-        { -2, "Koi2_Wrong" },
-        { -3, "Koi3_Wrong" },
-    };
-
+    /// <summary>
+    /// Mapping of fish number to button used to trigger animation
+    /// </summary>
     private Dictionary<int, KeyCode> koiFishButtonMap = new Dictionary<int, KeyCode>() {
         { 1, KeyCode.Alpha1 },
         { 2, KeyCode.Alpha2 },
@@ -34,29 +40,62 @@ public class KoiFish : MonoBehaviour
         // Pass fish number to animator (used for selecting proper animations)
         animator = GetComponentInChildren<Animator>();
         animator.SetInteger("FishNumber", fishNumber);
+
+        psystem = GetComponentInChildren<ParticleSystem>();
+        // TODO: use try/catch here
+        if(psystem == null) {
+            Debug.LogError(name + " | missing ParticleSystem component in children - please add a ParticleSystem to this fish");
+        }
+
+        // Initialize particle system with color settings
+        ParticleSystem.TrailModule trailModule = psystem.trails;
+        trailModule.colorOverLifetime = trailColorOverLifetime;
+
+        ParticleSystem.ColorOverLifetimeModule colorOverLifetimeModule = psystem.colorOverLifetime;
+        colorOverLifetimeModule.color = particleColorOverLifetime;
+        
     }
 
     void Update()
     {
+        // Play fish animation if proper key is pressed
         if(Input.GetKeyDown(koiFishButtonMap[fishNumber])) {
-            PlayAnimation(fishNumber);
+            StartCoroutine(PlayAnimation(fishNumber));
         }
     }
 
 
-    void PlayAnimation(int animNumber)
+    // TODO: change this to a regular method (not coroutine) after SetTrailActive() hack is resolved
+    /// <summary>
+    /// Plays the path animation for this fish (coroutine is a hack to disable the trail before the fish warps to starting position)
+    /// </summary>
+    /// <param name="animNumber"></param>
+    /// <returns></returns>
+    IEnumerator PlayAnimation(int animNumber)
     {
         // Play wrong animation if we're holding shift
         if (Input.GetKey(KeyCode.LeftShift)) {
             animNumber *= -1;
         }
 
-
-        string animationName = koiFishAnimationMap[animNumber];
-        Debug.Log(name + " | Triggering " + animationName);
-
         // Fire path trigger
         animator.SetInteger("ActivationOrder", animNumber);
         animator.SetTrigger("PathTrigger");
+
+        // TODO: remove this hack when fish path animations are made seamless so fish don't warp
+        // Disable trail until fish warps to path starting position
+        SetTrailActive(false);
+        yield return new WaitForSeconds(.5f);
+        SetTrailActive(true);
+    }
+
+    /// <summary>
+    /// Enables/disables trail emission behind fish
+    /// </summary>
+    /// <param name="active"></param>
+    void SetTrailActive(bool active)
+    {
+        ParticleSystem.EmissionModule emission = psystem.emission;
+        emission.enabled = active;
     }
 }
