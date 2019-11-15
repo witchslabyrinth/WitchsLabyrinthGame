@@ -4,78 +4,50 @@ using UnityEngine;
 
 public class DoorObserver : MonoBehaviour
 {
-    private List<TeleDoorScript> toObserve = new List<TeleDoorScript>();
-    
+    //NOTE: This script should be attached to the "DoorList" in the "FullRoom" object of the teledoor puzzle
+    private List<TeleDoorScript> toObserve = new List<TeleDoorScript>();    //Observer pattern (close to it) used to aid in rotating room
+                                                                            //This object simply observes all of the doors on its own.
 
-    public void Start()
+    public void Start() //Upon loading this object, do the following:
     {
-        foreach(Transform child in transform)
+        foreach(Transform child in transform)                               //For every child object of this one (all of them are doors) do the following:
         {
-            if (child.GetComponent<TeleDoorScript>())
+            if (child.GetComponent<TeleDoorScript>())                           //If it has a TeleDoorScript (it almost definitely does) do the following:
             {
-                toObserve.Add(child.GetComponent<TeleDoorScript>());
+                toObserve.Add(child.GetComponent<TeleDoorScript>());                //Add this as one the objects to observe
             }
         }
-        for(int i = 0; i < toObserve.Count; i++)
+        for(int i = 0; i < toObserve.Count; i++)                            //for every object to observe, do the following:
         {
-            toObserve[i].addDoorObserver(this);
+            toObserve[i].addDoorObserver(this);                                 //add this as one of its observers
         }
     }
 
-    public void doorObserve(TeleDoorScript.DoorOrientation signalFrom)
+    public void doorObserve(TeleDoorScript.DoorOrientation signalFrom)  //This is called when one of the observed doors exits.
     {
-        /*Vector3 signalFromRotation = signalFrom.localRotation.eulerAngles;
-        Vector3 newRotation = new Vector3(0,0,0);
-        if(signalFromRotation.x == 90)
+        Vector3 newRotation = new Vector3(0, 0, 0);                         //Set up a new Vector3 for the rotation.
+        if (signalFrom == TeleDoorScript.DoorOrientation.CEILING)           //If the door lets out onto the ceiling, do the following:
         {
-            if(signalFromRotation.y == 90)
-            {
-                newRotation = new Vector3(0, 0, 90);
-            }
-        }*/
-        Vector3 newRotation = new Vector3(0, 0, 0);
-        /*if(signalFrom.localPosition.y == 22.5)
-        {
-            newRotation = new Vector3(0, 0, 180);
+            newRotation = new Vector3(0, 0, 180);                               //Set the rotation
         }
-        else if (signalFrom.localPosition.x == 22.5)
+        else if (signalFrom == TeleDoorScript.DoorOrientation.WALL_POS_X)   //If the door lets out onto the wall in the positive x direction, do the following:
         {
-            newRotation = new Vector3(0, 0, -90);
+            newRotation = new Vector3(0, 0, -90);                               //Set the rotation
         }
-        else if (signalFrom.localPosition.x == -22.5)
+        else if (signalFrom == TeleDoorScript.DoorOrientation.WALL_NEG_X)   //If the door lets out onto the wall in the negative x direction, do the following:
         {
-            newRotation = new Vector3(0, 0, 90);
+            newRotation = new Vector3(0, 0, 90);                               //Set the rotation
         }
-        else if(signalFrom.localPosition.z == 22.5)
+        else if (signalFrom == TeleDoorScript.DoorOrientation.WALL_POS_Z)   //If the door lets out onto the wall in the positive z direction, do the following:
         {
-            newRotation = new Vector3(90, 0, 0);
+            newRotation = new Vector3(90, 0, 0);                               //Set the rotation
         }
-        else if (signalFrom.localPosition.z == -22.5)
+        else if (signalFrom == TeleDoorScript.DoorOrientation.WALL_NEG_Z)   //If the door lets out onto the wall in the negative z direction, do the following:
         {
-            newRotation = new Vector3(-90, 0, 0);
-        }*/
-        if (signalFrom == TeleDoorScript.DoorOrientation.CEILING)
-        {
-            newRotation = new Vector3(0, 0, 180);
+            newRotation = new Vector3(-90, 0, 0);                               //Set the rotation
         }
-        else if (signalFrom == TeleDoorScript.DoorOrientation.WALL_POS_X)
-        {
-            newRotation = new Vector3(0, 0, -90);
-        }
-        else if (signalFrom == TeleDoorScript.DoorOrientation.WALL_NEG_X)
-        {
-            newRotation = new Vector3(0, 0, 90);
-        }
-        else if (signalFrom == TeleDoorScript.DoorOrientation.WALL_POS_Z)
-        {
-            newRotation = new Vector3(90, 0, 0);
-        }
-        else if (signalFrom == TeleDoorScript.DoorOrientation.WALL_NEG_Z)
-        {
-            newRotation = new Vector3(-90, 0, 0);
-        }
-        //else DoorOrientation is FLOOR, so newRotation = new Vector3(0, 0, 0);
+        //else door lets out onto the floor, so newRotation = new Vector3(0, 0, 0);
 
-        transform.parent.transform.rotation = Quaternion.Euler(newRotation);
+        transform.parent.transform.rotation = Quaternion.Euler(newRotation);//Set the room's rotation to that determined above.
     }
 }
