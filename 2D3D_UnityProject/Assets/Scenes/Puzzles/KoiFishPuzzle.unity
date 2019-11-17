@@ -658,6 +658,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 223781440}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &442928550 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3145652739638300820, guid: c70da449cea496f43a91f05df312e485,
+    type: 3}
+  m_PrefabInstance: {fileID: 1761822908}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e59f4640a1247504aa3229990875e32d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &539460263 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: c7c5962d47f3e73418259c7a3471cea4,
@@ -915,6 +927,54 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1540227445}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &914585654
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 914585656}
+  - component: {fileID: 914585655}
+  m_Layer: 0
+  m_Name: KoiFishPuzzle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &914585655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 914585654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c37d1113bf854d94afb36960be9a80f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  koiFish: []
+  koiFishFeedingOrder:
+  - {fileID: 1722284992}
+  - {fileID: 442928550}
+  - {fileID: 1012539276}
+--- !u!4 &914585656
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 914585654}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.38335383, y: 1.0036049, z: 0.031402588}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &984359116
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1044,6 +1104,18 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 298947edc810d7b4382b2f27db8611d1, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d139617c51d0e6040876ffad859a46b6, type: 3}
+--- !u!114 &1012539276 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3145652739638300820, guid: c70da449cea496f43a91f05df312e485,
+    type: 3}
+  m_PrefabInstance: {fileID: 1603931794}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e59f4640a1247504aa3229990875e32d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1130705061 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 0e5053e454f205b4b87b707cd2e74adf,
@@ -1422,6 +1494,16 @@ PrefabInstance:
       propertyPath: trailColorOverLifetime.key1.b
       value: 0.85490197
       objectReference: {fileID: 0}
+    - target: {fileID: 3145652739638300820, guid: c70da449cea496f43a91f05df312e485,
+        type: 3}
+      propertyPath: fishAnimationNumber
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3145652739638300820, guid: c70da449cea496f43a91f05df312e485,
+        type: 3}
+      propertyPath: feedDuration
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7988592229647433416, guid: c70da449cea496f43a91f05df312e485,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -1518,6 +1600,18 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 3123c74d5769f924481b1280c3665aed, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e5053e454f205b4b87b707cd2e74adf, type: 3}
+--- !u!114 &1722284992 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3145652739638300820, guid: c70da449cea496f43a91f05df312e485,
+    type: 3}
+  m_PrefabInstance: {fileID: 3145652739783160107}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e59f4640a1247504aa3229990875e32d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1761822908
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1649,6 +1743,16 @@ PrefabInstance:
         type: 3}
       propertyPath: particleColorOverLifetime.key1.b
       value: 0.85490197
+      objectReference: {fileID: 0}
+    - target: {fileID: 3145652739638300820, guid: c70da449cea496f43a91f05df312e485,
+        type: 3}
+      propertyPath: fishAnimationNumber
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3145652739638300820, guid: c70da449cea496f43a91f05df312e485,
+        type: 3}
+      propertyPath: feedDuration
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7988592229647433416, guid: c70da449cea496f43a91f05df312e485,
         type: 3}
