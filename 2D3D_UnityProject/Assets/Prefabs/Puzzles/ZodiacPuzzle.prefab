@@ -56,9 +56,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 962795546591897122}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 8.82913, y: 1, z: 8.82913}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 8.82913, y: 1, z: 8.829138}
   m_Children:
   - {fileID: 7585232836146009846}
   m_Father: {fileID: 1814849652871317041}
@@ -123,6 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inOutDistance: 0.1
+  inOutTime: 1
   rotationSpeed: 1.5
   symbols:
   - {fileID: 21300000, guid: 7d10be59460c43d409efa2aabc4aa343, type: 3}
@@ -131,7 +132,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: cb0e642abaeccbf47a4df36270e624c2, type: 3}
   - {fileID: 21300000, guid: d519d7a4733ec8040a8bd165ce91ea27, type: 3}
   - {fileID: 21300000, guid: f4615c52e2cb3e441aef0ec75c63e477, type: 3}
-  correctSymbol: {fileID: 21300000, guid: f4615c52e2cb3e441aef0ec75c63e477, type: 3}
+  correctSymbols:
+  - {fileID: 21300000, guid: d519d7a4733ec8040a8bd165ce91ea27, type: 3}
+  - {fileID: 21300000, guid: f4615c52e2cb3e441aef0ec75c63e477, type: 3}
+  - {fileID: 21300000, guid: 3e1d87e8920e28c4bb816618709fcac8, type: 3}
   spritePrefab: {fileID: 7491430051395796194, guid: c07138c273c31a84fa41a879ed5fa251,
     type: 3}
   spritePivot: {fileID: 678414151496047155}
@@ -164,9 +168,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1343650326185101957}
-  - {fileID: 4255592276305887349}
-  - {fileID: 8893952453751894703}
   - {fileID: 5884407434870227282}
+  - {fileID: 8893952453751894703}
+  - {fileID: 4255592276305887349}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
@@ -249,7 +253,7 @@ Transform:
   m_Children:
   - {fileID: 7638567814556973775}
   m_Father: {fileID: 1814849652871317041}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1453286362790112337
 MeshFilter:
@@ -310,6 +314,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inOutDistance: 0.1
+  inOutTime: 1
   rotationSpeed: 1.5
   symbols:
   - {fileID: 21300000, guid: 7d10be59460c43d409efa2aabc4aa343, type: 3}
@@ -318,7 +323,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: cb0e642abaeccbf47a4df36270e624c2, type: 3}
   - {fileID: 21300000, guid: d519d7a4733ec8040a8bd165ce91ea27, type: 3}
   - {fileID: 21300000, guid: f4615c52e2cb3e441aef0ec75c63e477, type: 3}
-  correctSymbol: {fileID: 21300000, guid: 3e1d87e8920e28c4bb816618709fcac8, type: 3}
+  correctSymbols:
+  - {fileID: 21300000, guid: cb0e642abaeccbf47a4df36270e624c2, type: 3}
+  - {fileID: 21300000, guid: 7d10be59460c43d409efa2aabc4aa343, type: 3}
+  - {fileID: 21300000, guid: cb0e642abaeccbf47a4df36270e624c2, type: 3}
   spritePrefab: {fileID: 7491430051395796194, guid: c07138c273c31a84fa41a879ed5fa251,
     type: 3}
   spritePivot: {fileID: 5499952571189958104}
@@ -379,12 +387,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6862351135335045182}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 7.5917726, y: 1, z: 7.5917726}
   m_Children:
   - {fileID: 4010611211512452736}
   m_Father: {fileID: 1814849652871317041}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &915061775749435291
 MeshFilter:
@@ -445,6 +453,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inOutDistance: 0.1
+  inOutTime: 1
   rotationSpeed: 1.5
   symbols:
   - {fileID: 21300000, guid: 7d10be59460c43d409efa2aabc4aa343, type: 3}
@@ -453,7 +462,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: cb0e642abaeccbf47a4df36270e624c2, type: 3}
   - {fileID: 21300000, guid: d519d7a4733ec8040a8bd165ce91ea27, type: 3}
   - {fileID: 21300000, guid: f4615c52e2cb3e441aef0ec75c63e477, type: 3}
-  correctSymbol: {fileID: 21300000, guid: 4e94baf3760adfa429eae983e97d9964, type: 3}
+  correctSymbols:
+  - {fileID: 21300000, guid: 3e1d87e8920e28c4bb816618709fcac8, type: 3}
+  - {fileID: 21300000, guid: 4e94baf3760adfa429eae983e97d9964, type: 3}
+  - {fileID: 21300000, guid: 7d10be59460c43d409efa2aabc4aa343, type: 3}
   spritePrefab: {fileID: 7491430051395796194, guid: c07138c273c31a84fa41a879ed5fa251,
     type: 3}
   spritePivot: {fileID: 6421836651461095418}
@@ -549,3 +561,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inOutDistance: 0.1
+  inOutTime: 1

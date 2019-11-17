@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ZodiacPuzzle : MonoBehaviour
 {
+    public const int numberOfRounds = 3;
+
     /// <summary>
     /// Direction used for disk rotation
     /// </summary>
@@ -21,6 +23,8 @@ public class ZodiacPuzzle : MonoBehaviour
     /// Disk currently being controlled by the player
     /// </summary>
     private ZodiacDisk currentDisk;
+    
+    public int currentRound { get; private set; }
 
     /// <summary>
     /// Center piece that the disks rotate around: used for distance calculation when generating sprites on disks
@@ -41,6 +45,8 @@ public class ZodiacPuzzle : MonoBehaviour
         // Set control to first (outermost) disk in puzzle
         currentDisk = disks[0];
         currentDisk.PieceInOut(ZodiacPuzzlePiece.ZodiacPuzzlePiecePosition.Out);
+
+        currentRound = 1;
     }
 
     void Update()
@@ -114,7 +120,19 @@ public class ZodiacPuzzle : MonoBehaviour
 
         // TODO: figure out what happens next lol
         Debug.LogWarningFormat("{0}: selected correct symbol!", name);
-        currentDisk.PieceInOut(ZodiacPuzzlePiece.ZodiacPuzzlePiecePosition.In);
-        center.PieceInOut(ZodiacPuzzlePiece.ZodiacPuzzlePiecePosition.Out);
+        if (currentRound < numberOfRounds)
+        {
+            //Switch back to top disk
+            while (disks.IndexOf(currentDisk) > 0)
+            {
+                SwitchDisk(false);
+            }
+            currentRound++;
+        }
+        else
+        {
+            currentDisk.PieceInOut(ZodiacPuzzlePiece.ZodiacPuzzlePiecePosition.In);
+            center.PieceInOut(ZodiacPuzzlePiece.ZodiacPuzzlePiecePosition.Out);
+        }
     }
 }
