@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class ZodiacPuzzle : MonoBehaviour
 {
+    /// <summary>
+    /// The number of rounds that must be solved in order to complete the puzzle
+    /// </summary>
     public const int numberOfRounds = 3;
 
     /// <summary>
@@ -24,6 +27,9 @@ public class ZodiacPuzzle : MonoBehaviour
     /// </summary>
     private ZodiacDisk currentDisk;
     
+    /// <summary>
+    /// The current round the puzzle is in. Dictates what the solution currently is.
+    /// </summary>
     public int currentRound { get; private set; }
 
     /// <summary>
@@ -31,6 +37,12 @@ public class ZodiacPuzzle : MonoBehaviour
     /// </summary>
     [SerializeField]
     public ZodiacCenter center;
+
+    /// <summary>
+    /// List of lights associated with this puzzle to be enabled when the puzzle is solved
+    /// </summary>
+    [SerializeField]
+    private List<ZodiacLight> zodiacLights;
 
     void Start()
     {
@@ -120,9 +132,12 @@ public class ZodiacPuzzle : MonoBehaviour
 
         // TODO: figure out what happens next lol
         Debug.LogWarningFormat("{0}: selected correct symbol!", name);
+
+        // Turn on light according to what round was completed
+        zodiacLights[currentRound - 1].TurnOn();
         if (currentRound < numberOfRounds)
         {
-            //Switch back to top disk
+            // Switch back to top disk
             while (disks.IndexOf(currentDisk) > 0)
             {
                 SwitchDisk(false);
@@ -131,6 +146,7 @@ public class ZodiacPuzzle : MonoBehaviour
         }
         else
         {
+            // TODO: Maybe disable to center coming out now that we have lights
             currentDisk.PieceInOut(ZodiacPuzzlePiece.ZodiacPuzzlePiecePosition.In);
             center.PieceInOut(ZodiacPuzzlePiece.ZodiacPuzzlePiecePosition.Out);
         }
