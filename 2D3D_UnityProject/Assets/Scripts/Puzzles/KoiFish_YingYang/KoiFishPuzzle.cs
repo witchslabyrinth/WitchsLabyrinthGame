@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class KoiFishPuzzle : Singleton<KoiFishPuzzle>
 {
@@ -17,7 +18,13 @@ public class KoiFishPuzzle : Singleton<KoiFishPuzzle>
     /// <summary>
     /// Amount of time remaining to feed the fish - if this reaches 0 the puzzle is reset
     /// </summary>
-    private float puzzleTimer;
+    private float timeRemaining;
+
+    /// <summary>
+    /// UI text (for debugging purposes only)
+    /// </summary>
+    [SerializeField]
+    private Text UITimer;
 
     void Start()
     {
@@ -37,7 +44,7 @@ public class KoiFishPuzzle : Singleton<KoiFishPuzzle>
     private void ResetPuzzle()
     {
         nextFishToFeed = koiFishFeedingOrder[0];
-        puzzleTimer = 0f;
+        timeRemaining = 0f;
     }
 
     private void Update()
@@ -45,15 +52,20 @@ public class KoiFishPuzzle : Singleton<KoiFishPuzzle>
         // Decrement timer if puzzle is active
         if (PuzzleActive())
         {
-            puzzleTimer -= Time.deltaTime;
+            timeRemaining -= Time.deltaTime;
 
             // Reset puzzle if time runs out
-            if (puzzleTimer < 0)
+            if (timeRemaining < 0)
             {
                 Debug.Log("Time ran out, resetting puzzle");
                 ResetPuzzle();
             }
         }
+
+        // TODO: remove this after debug testing finished
+        // Update UI timer
+        string time = String.Format("{0:0.00}", timeRemaining);
+        UITimer.text = "Time: " + time;
     }
 
     /// <summary>
@@ -86,7 +98,7 @@ public class KoiFishPuzzle : Singleton<KoiFishPuzzle>
             Debug.Log("Next fish: " + nextFishToFeed.name);
 
             // Set timer for this fish
-            puzzleTimer = nextFishToFeed.feedDuration;
+            timeRemaining = nextFishToFeed.feedDuration;
         }
     }
 
@@ -95,6 +107,6 @@ public class KoiFishPuzzle : Singleton<KoiFishPuzzle>
     /// </summary>
     public bool PuzzleActive()
     {
-        return puzzleTimer > 0 && nextFishToFeed != koiFishFeedingOrder[0];
+        return timeRemaining > 0 && nextFishToFeed != koiFishFeedingOrder[0];
     }
 }
