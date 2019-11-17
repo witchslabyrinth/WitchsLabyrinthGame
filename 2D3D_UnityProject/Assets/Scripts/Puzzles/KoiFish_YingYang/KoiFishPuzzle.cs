@@ -5,7 +5,7 @@ using UnityEngine;
 public class KoiFishPuzzle : Singleton<KoiFishPuzzle>
 {
     /// <summary>
-    /// Proper order to feed the fish in (may not include all fish in the pond)
+    /// Proper order to feed the fish in (may not include all fish in the pond).
     /// </summary>
     [SerializeField] private List<KoiFish> koiFishFeedingOrder;
 
@@ -27,12 +27,12 @@ public class KoiFishPuzzle : Singleton<KoiFishPuzzle>
             Debug.LogErrorFormat("{0} | Error: correct fish-feeding order not specified. Please specify this order in {0}.koiFishFeedingOrder", name);
         }
 
-        // Initialize puzzle
+        // Set puzzle to initial state
         ResetPuzzle();
     }
 
     /// <summary>
-    /// Initialize puzzle state to starting conditions. Sets timer to 0 and clears all puzzle progress
+    /// Sets timer to 0 and clears all puzzle progress
     /// </summary>
     private void ResetPuzzle()
     {
@@ -56,6 +56,10 @@ public class KoiFishPuzzle : Singleton<KoiFishPuzzle>
         }
     }
 
+    /// <summary>
+    /// Updates puzzle state based on time/order in which this fish was fed
+    /// </summary>
+    /// <param name="fish">Fish fed by player</param>
     public void FeedFish(KoiFish fish)
     {
         Debug.LogFormat("Feeding fish {0}", fish.name);
@@ -82,14 +86,13 @@ public class KoiFishPuzzle : Singleton<KoiFishPuzzle>
             Debug.Log("Next fish: " + nextFishToFeed.name);
 
             // Set timer for this fish
-            puzzleTimer += nextFishToFeed.feedDuration;
+            puzzleTimer = nextFishToFeed.feedDuration;
         }
     }
 
     /// <summary>
     /// Returns true if player is in the middle of solving this puzzle (i.e. timer counting down to feed next fish), false otherwise
     /// </summary>
-    /// <returns></returns>
     public bool PuzzleActive()
     {
         return puzzleTimer > 0 && nextFishToFeed != koiFishFeedingOrder[0];
