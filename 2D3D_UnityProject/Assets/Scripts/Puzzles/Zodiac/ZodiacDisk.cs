@@ -17,10 +17,10 @@ public class ZodiacDisk : ZodiacPuzzlePiece
     public List<Sprite> symbols;
 
     /// <summary>
-    /// Correct symbol for this ring
+    /// Correct symbols for this ring
     /// </summary>
     [SerializeField]
-    private Sprite correctSymbol;
+    private List<Sprite> correctSymbols;
 
     [SerializeField]
     private SpriteRenderer spritePrefab;
@@ -56,7 +56,7 @@ public class ZodiacDisk : ZodiacPuzzlePiece
     private void Start()
     {
         // Print error if no correct symbol assigned for this disk
-        if(correctSymbol == null) {
+        if(correctSymbols == null) {
             Debug.LogErrorFormat("Zodiac Puzzle - {0}: please set the correct symbol for this disk", name);
         }
     }
@@ -65,7 +65,14 @@ public class ZodiacDisk : ZodiacPuzzlePiece
     {
         // Break if no symbols found
         if (symbols.Count == 0) {
-            Debug.LogErrorFormat("{0}: no symbols found");
+            Debug.LogErrorFormat("{0}: no symbols found", name);
+            return;
+        }
+
+        // Break if incorrect number of correct symbols
+        if (correctSymbols.Count != ZodiacPuzzle.numberOfRounds)
+        {
+            Debug.LogErrorFormat("{0}: incorrect number of elements in correct symbols list", name);
             return;
         }
 
@@ -184,6 +191,6 @@ public class ZodiacDisk : ZodiacPuzzlePiece
     /// <returns></returns>
     public bool Correct()
     {
-        return symbols[selectedSymbolIndex].Equals(correctSymbol);
+        return symbols[selectedSymbolIndex].Equals(correctSymbols[puzzle.currentRound - 1]);
     }
 }
