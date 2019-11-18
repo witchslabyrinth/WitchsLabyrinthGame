@@ -65,7 +65,14 @@ public class ZodiacDisk : ZodiacPuzzlePiece
     {
         // Break if no symbols found
         if (symbols.Count == 0) {
-            Debug.LogErrorFormat("{0}: no symbols found");
+            Debug.LogErrorFormat("{0}: no symbols found", name);
+            return;
+        }
+
+        // Break if incorrect number of correct symbols
+        if (correctSymbols.Count != ZodiacPuzzle.numberOfRounds)
+        {
+            Debug.LogErrorFormat("{0}: incorrect number of elements in correct symbols list", name);
             return;
         }
 
