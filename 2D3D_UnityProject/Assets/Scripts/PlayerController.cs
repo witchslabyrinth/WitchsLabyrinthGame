@@ -113,20 +113,20 @@ public class PlayerController : MonoBehaviour
         UpdateAnims(dir.x, dir.y, movingType);
 
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             if (inDialogueZone)
                 LiarGameManager.Instance().StartConversation(dialoguePartner);
         }
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            if (inDialogueZone)
-            {
-                if (dialoguePartner == 0)
-                    orb.SetActive(true);
-                LiarGameManager.Instance().CheckOrb(dialoguePartner);
-            }
-        }
+        // if (Input.GetKeyDown(KeyCode.E))
+        // {
+        //     if (inDialogueZone)
+        //     {
+        //         if (dialoguePartner == 0)
+        //             orb.SetActive(true);
+        //         LiarGameManager.Instance().CheckOrb(dialoguePartner);
+        //     }
+        // }
     }
 
     public void constrainX(bool set)
