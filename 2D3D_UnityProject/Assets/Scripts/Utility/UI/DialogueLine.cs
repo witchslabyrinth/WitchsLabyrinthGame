@@ -58,6 +58,8 @@ public class DialogueLine : MonoBehaviour
     [Range(0, 1)]
     private float soundBlipSpeed = .5f;
 
+    ///    CAN PROBABLY DISCARD NEXT SECTION IN REFACTOR    ///
+
     /// <summary>
     /// reference to parent canvas object
     /// </summary>
@@ -69,6 +71,10 @@ public class DialogueLine : MonoBehaviour
 
     public GameObject yesNoButtons;
 
+    public PlayerController playCont;
+
+    ///    CAN PROBABLY DISCARD NEXT SECTION IN REFACTOR - END    ///
+
     // Update is called once per frame
     void Update()
     {
@@ -77,10 +83,12 @@ public class DialogueLine : MonoBehaviour
             printDialogue = StartCoroutine(PrintDialogueCoroutine());
         }
 
-        // if the player presses space while talking
+        ///    CAN PROBABLY DISCARD NEXT SECTION IN REFACTOR    ///
+
+        // if the player presses E while talking
         if (Input.GetKeyDown(KeyCode.E))
         {
-            //if the dialogue has finished printing, exit the conversation
+            //if the dialogue has finished printing
             if (FinishedPrinting())
             {
                 if (!finalLine)
@@ -101,10 +109,14 @@ public class DialogueLine : MonoBehaviour
                 StopPrinting();
             }
         }
+
+        ///    CAN PROBABLY DISCARD NEXT SECTION IN REFACTOR - END    ///
     }
 
+    /// CHANGE BACK TO PRIVATE IN REFACTOR
     public Coroutine printDialogue;
 
+    /// CHANGE BACK TO PRIVATE IN REFACTOR
     public IEnumerator PrintDialogueCoroutine()
     {
         // Clear previous text before printing
@@ -184,6 +196,8 @@ public class DialogueLine : MonoBehaviour
         }
     }
 
+    ///    CAN PROBABLY DISCARD NEXT SECTION IN REFACTOR    ///
+
     bool FinishedPrinting()
     {
         if (dialogueText.text == line)
@@ -240,5 +254,8 @@ public class DialogueLine : MonoBehaviour
         yesNoButtons.SetActive(false);
         LiarGameManager.Instance().player.GetComponent<PlayerController>().enabled = true;
         canvasObj.SetActive(false);
+        playCont.enabled = true;
     }
+
+    ///    CAN PROBABLY DISCARD NEXT SECTION IN REFACTOR - END    ///
 }
