@@ -63,6 +63,12 @@ public class DialogueLine : MonoBehaviour
     /// </summary>
     public GameObject canvasObj;
 
+    private bool finalLine = false;
+
+    private bool yesNoPrompt = false;
+
+    public GameObject yesNoButtons;
+
     // Update is called once per frame
     void Update()
     {
@@ -72,28 +78,34 @@ public class DialogueLine : MonoBehaviour
         }
 
         // if the player presses space while talking
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             //if the dialogue has finished printing, exit the conversation
             if (FinishedPrinting())
             {
-                printDialogue = null;
-                dialogueText.text = "";
-                canvasObj.SetActive(false);
-                LiarGameManager.Instance().player.GetComponent<PlayerController>().enabled = true;
+                if (!finalLine)
+                {
+                    line = "Am I the one with the marble?";
+                    printDialogue = StartCoroutine(PrintDialogueCoroutine());
+                    finalLine = true;
+                    yesNoPrompt = true;
+                }
+                else
+                {
+                    Exit();
+                }
             }
             //else, stop the coroutine and print the entire line at once
             else
             {
-                StopCoroutine(printDialogue);
-                dialogueText.text = line;
+                StopPrinting();
             }
         }
     }
 
-    Coroutine printDialogue;
+    public Coroutine printDialogue;
 
-    IEnumerator PrintDialogueCoroutine()
+    public IEnumerator PrintDialogueCoroutine()
     {
         // Clear previous text before printing
         dialogueText.text = "";
@@ -174,7 +186,17 @@ public class DialogueLine : MonoBehaviour
 
     bool FinishedPrinting()
     {
-        return dialogueText.text == line;
+        if (dialogueText.text == line)
+        {
+            if (yesNoPrompt)
+            {
+                yesNoButtons.SetActive(true);
+                yesNoPrompt = false;
+            }
+            return dialogueText.text == line;
+        }
+        else
+            return false;
     }
 
     /// <summary>
@@ -202,5 +224,21 @@ public class DialogueLine : MonoBehaviour
     public void SetSubtitle(string newSubtitle)
     {
         subtitleText.text = newSubtitle;
+    }
+
+    public void StopPrinting()
+    {
+        StopCoroutine(printDialogue);
+        printDialogue = null;
+        dialogueText.text = line;
+    }
+
+    public void Exit()
+    {
+        dialogueText.text = "";
+        finalLine = false;
+        yesNoButtons.SetActive(false);
+        LiarGameManager.Instance().player.GetComponent<PlayerController>().enabled = true;
+        canvasObj.SetActive(false);
     }
 }
