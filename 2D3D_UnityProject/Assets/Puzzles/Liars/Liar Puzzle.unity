@@ -1568,6 +1568,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 922020695}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1176397909 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7042834076604515550, guid: bbdd8feba155b90439ae87218fe6a1ba,
+    type: 3}
+  m_PrefabInstance: {fileID: 922020695}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1176397906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a058c49ff778e4c4caf4ae21c99cd4ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1176397912 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 932633505583369456, guid: bbdd8feba155b90439ae87218fe6a1ba,
@@ -2446,6 +2458,26 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2381813289583967369, guid: 870bab93ece3aa5468d746e4260cd34f,
+        type: 3}
+      propertyPath: nameText
+      value: 
+      objectReference: {fileID: 1834172787}
+    - target: {fileID: 2381813289583967369, guid: 870bab93ece3aa5468d746e4260cd34f,
+        type: 3}
+      propertyPath: subtitleText
+      value: 
+      objectReference: {fileID: 1962558466}
+    - target: {fileID: 2381813289583967369, guid: 870bab93ece3aa5468d746e4260cd34f,
+        type: 3}
+      propertyPath: yesNoButtons
+      value: 
+      objectReference: {fileID: 1684793445}
+    - target: {fileID: 2381813289583967369, guid: 870bab93ece3aa5468d746e4260cd34f,
+        type: 3}
+      propertyPath: playCont
+      value: 
+      objectReference: {fileID: 1176397909}
     - target: {fileID: 2488109711486722609, guid: 870bab93ece3aa5468d746e4260cd34f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2576,21 +2608,6 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 1820
       objectReference: {fileID: 0}
-    - target: {fileID: 2381813289583967369, guid: 870bab93ece3aa5468d746e4260cd34f,
-        type: 3}
-      propertyPath: nameText
-      value: 
-      objectReference: {fileID: 1834172787}
-    - target: {fileID: 2381813289583967369, guid: 870bab93ece3aa5468d746e4260cd34f,
-        type: 3}
-      propertyPath: subtitleText
-      value: 
-      objectReference: {fileID: 1962558466}
-    - target: {fileID: 2381813289583967369, guid: 870bab93ece3aa5468d746e4260cd34f,
-        type: 3}
-      propertyPath: yesNoButtons
-      value: 
-      objectReference: {fileID: 1684793445}
     - target: {fileID: 2381813289332544707, guid: 870bab93ece3aa5468d746e4260cd34f,
         type: 3}
       propertyPath: m_AnchorMin.y
