@@ -6,10 +6,15 @@ using UnityEngine;
 public class KoiFish : MonoBehaviour
 {
     /// <summary>
-    /// Order in which this fish should be activated to solve the puzzle
+    /// Index of path animation to play (see animation controller for mapping)
     /// </summary>
     [Range(1, 3)]
-    public int fishNumber;
+    public int fishAnimationNumber;
+
+    /// <summary>
+    /// Amount of time player is given to feed this fish before puzzle resets
+    /// </summary>
+    public float feedDuration;
 
     [Header("Particle System Settings")]
     /// <summary>
@@ -30,6 +35,7 @@ public class KoiFish : MonoBehaviour
     /// <summary>
     /// Mapping of fish number to button used to trigger animation
     /// </summary>
+    // TODO: remove this after implementing puzzle with actual player controller (Oliver/Cat)
     private Dictionary<int, KeyCode> koiFishButtonMap = new Dictionary<int, KeyCode>() {
         { 1, KeyCode.Alpha1 },
         { 2, KeyCode.Alpha2 },
@@ -40,7 +46,7 @@ public class KoiFish : MonoBehaviour
     {
         // Pass fish number to animator (used for selecting proper animations)
         animator = GetComponentInChildren<Animator>();
-        animator.SetInteger("FishNumber", fishNumber);
+        animator.SetInteger("FishNumber", fishAnimationNumber);
 
         psystem = GetComponentInChildren<ParticleSystem>();
         try 
@@ -62,8 +68,12 @@ public class KoiFish : MonoBehaviour
     void Update()
     {
         // Play fish animation if proper key is pressed
-        if(Input.GetKeyDown(koiFishButtonMap[fishNumber])) {
-            StartCoroutine(PlayAnimation(fishNumber));
+        // TODO: reimplement fish-feeding with actual player controller rather than this debug control scheme
+        if(Input.GetKeyDown(koiFishButtonMap[fishAnimationNumber])) {
+            StartCoroutine(PlayAnimation(fishAnimationNumber));
+
+            // Update puzzle accordingly
+            KoiFishPuzzle.Instance.FeedFish(this);
         }
     }
 
