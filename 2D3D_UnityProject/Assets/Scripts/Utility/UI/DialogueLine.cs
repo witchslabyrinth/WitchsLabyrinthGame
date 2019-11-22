@@ -97,6 +97,7 @@ public class DialogueLine : MonoBehaviour
                     printDialogue = StartCoroutine(PrintDialogueCoroutine());
                     finalLine = true;
                     yesNoPrompt = true;
+                    Cursor.lockState = CursorLockMode.None;
                 }
                 else
                 {
@@ -116,7 +117,7 @@ public class DialogueLine : MonoBehaviour
     /// CHANGE BACK TO PRIVATE IN REFACTOR
     public Coroutine printDialogue;
 
-    /// CHANGE BACK TO PRIVATE IN REFACTOR
+    /// CHANGE BACK TO PRIVATE IN REFACTOR - END
     public IEnumerator PrintDialogueCoroutine()
     {
         // Clear previous text before printing
@@ -255,6 +256,8 @@ public class DialogueLine : MonoBehaviour
         LiarGameManager.Instance().player.GetComponent<PlayerController>().enabled = true;
         canvasObj.SetActive(false);
         playCont.enabled = true;
+
+        playCont.ghostCamera.GetComponent<PerspectiveCameraControl>().enabled = true;
     }
 
     ///    CAN PROBABLY DISCARD NEXT SECTION IN REFACTOR - END    ///

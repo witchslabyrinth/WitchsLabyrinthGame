@@ -59,6 +59,7 @@ public class ZodiacDisk : ZodiacPuzzlePiece
         if(correctSymbols == null) {
             Debug.LogErrorFormat("Zodiac Puzzle - {0}: please set the correct symbol for this disk", name);
         }
+        Init(GetComponentInParent<ZodiacPuzzle>());
     }
 
     public void Init(ZodiacPuzzle puzzle)
@@ -92,15 +93,17 @@ public class ZodiacDisk : ZodiacPuzzlePiece
             Sprite symbol = symbols[i];
 
             // Calculate sprite rotation
-            Quaternion rotation = Quaternion.Euler(0, 0, i * angleBetweenSymbols);
+            Quaternion rotation = Quaternion.Euler(90, 0, i * angleBetweenSymbols);
 
             // Instantiate symbol at pivot point
-            SpriteRenderer instance = Instantiate(spritePrefab, spritePivot.transform.position, rotation, transform);
+            SpriteRenderer instance = Instantiate(spritePrefab, transform, false);
             instance.sprite = symbol;
             instance.name = symbol.name;
+            instance.transform.localRotation = rotation;
+            instance.transform.localPosition = spritePivot.transform.localPosition;
 
             // Rotate pivot around ring to position of next symbol
-            spritePivot.transform.RotateAround(transform.position, Vector3.forward, angleBetweenSymbols);
+            spritePivot.transform.RotateAround(transform.position, transform.up, angleBetweenSymbols);
         }
 
         selectedSymbolIndex = 0;

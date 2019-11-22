@@ -67,6 +67,8 @@ public class LiarGameManager : MonoBehaviour
 
         canvasObject.SetActive(true);
         player.GetComponent<PlayerController>().enabled = false;
+
+        player.GetComponentInChildren<PerspectiveCameraControl>().lockCursor = true;
     }
 
     public void CheckOrb()
@@ -82,6 +84,8 @@ public class LiarGameManager : MonoBehaviour
         dialogueCode.printDialogue = dialogueCode.StartCoroutine(dialogueCode.PrintDialogueCoroutine());
         if (currNpc == 0)
             player.GetComponent<PlayerController>().orb.SetActive(true);
+
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     /// <summary>
