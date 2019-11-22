@@ -105,10 +105,10 @@ public class PlayerController : MonoBehaviour
 
         if (controller.isGrounded && !constrainedY)
         {
-            if (Input.GetKeyDown("space"))
-            {
-                y = jumpSpeed;
-            }
+            //if (Input.GetKeyDown("space"))
+            //{
+            //    y = jumpSpeed;
+            //}
         }
 
         y -= gravity * Time.deltaTime;
