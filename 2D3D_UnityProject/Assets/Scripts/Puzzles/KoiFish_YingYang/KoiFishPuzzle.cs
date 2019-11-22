@@ -26,6 +26,9 @@ public class KoiFishPuzzle : Singleton<KoiFishPuzzle>
     [SerializeField]
     private Text UITimer;
 
+    [SerializeField]
+    private bool showTimer = false;
+
     void Start()
     {
         // Make sure there's a proper feeding order specified
@@ -64,8 +67,10 @@ public class KoiFishPuzzle : Singleton<KoiFishPuzzle>
 
         // TODO: remove this after debug testing finished
         // Update UI timer
-        string time = String.Format("{0:0.00}", timeRemaining);
-        UITimer.text = "Time: " + time;
+        if(showTimer) {
+            string time = String.Format("{0:0.00}", timeRemaining);
+            UITimer.text = "Time: " + time;
+        }
     }
 
     /// <summary>
