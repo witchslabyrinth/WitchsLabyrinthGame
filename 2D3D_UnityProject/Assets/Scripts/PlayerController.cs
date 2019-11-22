@@ -38,7 +38,17 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     public GameObject orb;
 
-     ///    CAN PROBABLY DISCARD NEXT SECTION IN REFACTOR - END    ///
+    private bool inZodiacZone;
+
+    ///    CAN PROBABLY DISCARD NEXT SECTION IN REFACTOR - END    ///
+
+    // this is probably all bad, but should work for tomorrow's demo
+    private ZodiacPuzzle zodiacPuzzle;
+
+    private GameObject zodiacCam;
+
+    public GameObject mainCam;
+    // end of bad stuff
 
     void Start()
     {
@@ -125,6 +135,13 @@ public class PlayerController : MonoBehaviour
                 LiarGameManager.Instance().StartConversation(dialoguePartner);
                 this.enabled = false;
             }
+            else if (inZodiacZone)
+            {
+                zodiacPuzzle.enabled = true;
+                zodiacCam.SetActive(true);
+                mainCam.SetActive(false);
+                this.enabled = false;
+            }
         }
         // if (Input.GetKeyDown(KeyCode.E))
         // {
@@ -181,4 +198,11 @@ public class PlayerController : MonoBehaviour
     }
 
      ///    CAN PROBABLY DISCARD NEXT SECTION IN REFACTOR - END    ///
+
+     public void SetInZodiacZone(bool withinZone, ZodiacPuzzle zodPuz, GameObject zodCam)
+     {
+         inZodiacZone = withinZone;
+         zodiacPuzzle = zodPuz;
+         zodiacCam = zodCam;
+     }
 }
