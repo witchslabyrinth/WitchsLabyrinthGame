@@ -55,6 +55,8 @@ public class ZodiacPuzzle : MonoBehaviour
 
     public GameObject mainCam;
 
+    public GameObject zodiacCanvas;
+
     void Start()
     {
         // Initialize each disk
@@ -168,5 +170,15 @@ public class ZodiacPuzzle : MonoBehaviour
             currentDisk.PieceInOut(ZodiacPuzzlePiece.ZodiacPuzzlePiecePosition.In);
             center.PieceInOut(ZodiacPuzzlePiece.ZodiacPuzzlePiecePosition.Out);
         }
+    }
+
+    void OnEnable()
+    {
+        zodiacCanvas.SetActive(true);
+    }
+
+    void OnDisable()
+    {
+        zodiacCanvas.SetActive(false);
     }
 }
