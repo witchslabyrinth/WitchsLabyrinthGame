@@ -21,6 +21,8 @@ public class PlayerController : MonoBehaviour
     private float movingType;
     private Vector2 dir;
 
+    ///    CAN PROBABLY DISCARD NEXT SECTION IN REFACTOR    ///
+
     /// <summary>
     /// is the player within talking distance of an npc
     /// </summary>
@@ -35,6 +37,8 @@ public class PlayerController : MonoBehaviour
     /// reference to the orb the player is trying to find
     /// </summary>
     public GameObject orb;
+
+     ///    CAN PROBABLY DISCARD NEXT SECTION IN REFACTOR - END    ///
 
     void Start()
     {
@@ -112,21 +116,27 @@ public class PlayerController : MonoBehaviour
 
         UpdateAnims(dir.x, dir.y, movingType);
 
+        ///    CAN PROBABLY DISCARD NEXT SECTION IN REFACTOR    ///
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (inDialogueZone)
-                LiarGameManager.Instance().StartConversation(dialoguePartner);
-        }
         if (Input.GetKeyDown(KeyCode.E))
         {
             if (inDialogueZone)
             {
-                if (dialoguePartner == 0)
-                    orb.SetActive(true);
-                LiarGameManager.Instance().CheckOrb(dialoguePartner);
+                LiarGameManager.Instance().StartConversation(dialoguePartner);
+                this.enabled = false;
             }
         }
+        // if (Input.GetKeyDown(KeyCode.E))
+        // {
+        //     if (inDialogueZone)
+        //     {
+        //         if (dialoguePartner == 0)
+        //             orb.SetActive(true);
+        //         LiarGameManager.Instance().CheckOrb(dialoguePartner);
+        //     }
+        // }
+
+        ///    CAN PROBABLY DISCARD NEXT SECTION IN REFACTOR - END    ///
     }
 
     public void constrainX(bool set)
@@ -157,6 +167,8 @@ public class PlayerController : MonoBehaviour
         anim.SetFloat("Speed", moveType);
     }
 
+    ///    CAN PROBABLY DISCARD NEXT SECTION IN REFACTOR    ///
+
     /// <summary>
     /// called by OnTriggerEnter and OnTriggerExit of npc zones. Determines whether the player can talk or not
     /// </summary>
@@ -167,4 +179,6 @@ public class PlayerController : MonoBehaviour
         inDialogueZone = withinZone;
         dialoguePartner = partner;
     }
+
+     ///    CAN PROBABLY DISCARD NEXT SECTION IN REFACTOR - END    ///
 }

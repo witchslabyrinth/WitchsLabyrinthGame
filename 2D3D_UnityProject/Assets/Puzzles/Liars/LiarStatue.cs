@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+///    ENTIRE SCRIPT MARKED FOR DELETION IN REFACTOR    ///
+
 public class LiarStatue : MonoBehaviour
 {
     /// <summary>

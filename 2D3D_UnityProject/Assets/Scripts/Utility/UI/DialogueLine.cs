@@ -58,10 +58,22 @@ public class DialogueLine : MonoBehaviour
     [Range(0, 1)]
     private float soundBlipSpeed = .5f;
 
+    ///    CAN PROBABLY DISCARD NEXT SECTION IN REFACTOR    ///
+
     /// <summary>
     /// reference to parent canvas object
     /// </summary>
     public GameObject canvasObj;
+
+    private bool finalLine = false;
+
+    private bool yesNoPrompt = false;
+
+    public GameObject yesNoButtons;
+
+    public PlayerController playCont;
+
+    ///    CAN PROBABLY DISCARD NEXT SECTION IN REFACTOR - END    ///
 
     // Update is called once per frame
     void Update()
@@ -71,29 +83,41 @@ public class DialogueLine : MonoBehaviour
             printDialogue = StartCoroutine(PrintDialogueCoroutine());
         }
 
-        // if the player presses space while talking
-        if (Input.GetKeyDown(KeyCode.Space))
+        ///    CAN PROBABLY DISCARD NEXT SECTION IN REFACTOR    ///
+
+        // if the player presses E while talking
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            //if the dialogue has finished printing, exit the conversation
+            //if the dialogue has finished printing
             if (FinishedPrinting())
             {
-                printDialogue = null;
-                dialogueText.text = "";
-                canvasObj.SetActive(false);
-                LiarGameManager.Instance().player.GetComponent<PlayerController>().enabled = true;
+                if (!finalLine)
+                {
+                    line = "Am I the one with the marble?";
+                    printDialogue = StartCoroutine(PrintDialogueCoroutine());
+                    finalLine = true;
+                    yesNoPrompt = true;
+                }
+                else
+                {
+                    Exit();
+                }
             }
             //else, stop the coroutine and print the entire line at once
             else
             {
-                StopCoroutine(printDialogue);
-                dialogueText.text = line;
+                StopPrinting();
             }
         }
+
+        ///    CAN PROBABLY DISCARD NEXT SECTION IN REFACTOR - END    ///
     }
 
-    Coroutine printDialogue;
+    /// CHANGE BACK TO PRIVATE IN REFACTOR
+    public Coroutine printDialogue;
 
-    IEnumerator PrintDialogueCoroutine()
+    /// CHANGE BACK TO PRIVATE IN REFACTOR
+    public IEnumerator PrintDialogueCoroutine()
     {
         // Clear previous text before printing
         dialogueText.text = "";
@@ -172,9 +196,21 @@ public class DialogueLine : MonoBehaviour
         }
     }
 
+    ///    CAN PROBABLY DISCARD NEXT SECTION IN REFACTOR    ///
+
     bool FinishedPrinting()
     {
-        return dialogueText.text == line;
+        if (dialogueText.text == line)
+        {
+            if (yesNoPrompt)
+            {
+                yesNoButtons.SetActive(true);
+                yesNoPrompt = false;
+            }
+            return dialogueText.text == line;
+        }
+        else
+            return false;
     }
 
     /// <summary>
@@ -203,4 +239,23 @@ public class DialogueLine : MonoBehaviour
     {
         subtitleText.text = newSubtitle;
     }
+
+    public void StopPrinting()
+    {
+        StopCoroutine(printDialogue);
+        printDialogue = null;
+        dialogueText.text = line;
+    }
+
+    public void Exit()
+    {
+        dialogueText.text = "";
+        finalLine = false;
+        yesNoButtons.SetActive(false);
+        LiarGameManager.Instance().player.GetComponent<PlayerController>().enabled = true;
+        canvasObj.SetActive(false);
+        playCont.enabled = true;
+    }
+
+    ///    CAN PROBABLY DISCARD NEXT SECTION IN REFACTOR - END    ///
 }
