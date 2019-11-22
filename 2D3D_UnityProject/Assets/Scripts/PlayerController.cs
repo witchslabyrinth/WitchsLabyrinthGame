@@ -133,6 +133,7 @@ public class PlayerController : MonoBehaviour
             if (inDialogueZone)
             {
                 LiarGameManager.Instance().StartConversation(dialoguePartner);
+                ghostCamera.GetComponent<PerspectiveCameraControl>().enabled = false;
                 this.enabled = false;
             }
             else if (inZodiacZone)

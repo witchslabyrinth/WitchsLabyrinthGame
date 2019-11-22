@@ -97,7 +97,7 @@ public class DialogueLine : MonoBehaviour
                     printDialogue = StartCoroutine(PrintDialogueCoroutine());
                     finalLine = true;
                     yesNoPrompt = true;
-                    playCont.GetComponentInChildren<PerspectiveCameraControl>().lockCursor = false;
+                    Cursor.lockState = CursorLockMode.None;
                 }
                 else
                 {
@@ -257,7 +257,7 @@ public class DialogueLine : MonoBehaviour
         canvasObj.SetActive(false);
         playCont.enabled = true;
 
-        playCont.GetComponentInChildren<PerspectiveCameraControl>().lockCursor = true;
+        playCont.ghostCamera.GetComponent<PerspectiveCameraControl>().enabled = true;
     }
 
     ///    CAN PROBABLY DISCARD NEXT SECTION IN REFACTOR - END    ///
