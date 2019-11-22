@@ -1,4 +1,7 @@
-﻿using System.Collections;
+﻿// currently active on scene start even when player is not using it
+// to fix, going to enable/disable this script based on whether the player is directly interacting with it
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -44,11 +47,20 @@ public class ZodiacPuzzle : MonoBehaviour
     [SerializeField]
     private List<ZodiacLight> zodiacLights;
 
+    [SerializeField]
+    private GameObject zodCamera;
+
+    //more probably bad stuff
+    public PlayerController player;
+
+    public GameObject mainCam;
+
     void Start()
     {
         // Initialize each disk
         foreach(ZodiacDisk disk in disks) {
-            disk.Init(this);
+            // moving this to ZodiacDisk's Start function
+            // disk.Init(this);
 
             // Check solution each time a symbol is selected
             disk.selectedSymbol += CheckSolution;
@@ -73,7 +85,13 @@ public class ZodiacPuzzle : MonoBehaviour
         //TODO: Remove this when it's no longer necessary
         if (Input.GetKeyDown(KeyCode.R))
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene("ZodiacPuzzle");
+            // UnityEngine.SceneManagement.SceneManager.LoadScene("ZodiacPuzzle");
+
+            // for ukiyoe scene
+            mainCam.SetActive(true);
+            player.enabled = true;
+            zodCamera.SetActive(false);
+            this.enabled = false;
         }
 
         RotateDisk();

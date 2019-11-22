@@ -59,6 +59,7 @@ public class ZodiacDisk : ZodiacPuzzlePiece
         if(correctSymbols == null) {
             Debug.LogErrorFormat("Zodiac Puzzle - {0}: please set the correct symbol for this disk", name);
         }
+        Init(GetComponentInParent<ZodiacPuzzle>());
     }
 
     public void Init(ZodiacPuzzle puzzle)
