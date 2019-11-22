@@ -33,6 +33,8 @@ public class LiarGameManager : MonoBehaviour
 
     private int currNpc;
 
+    public PlayerController playCont;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -67,6 +69,8 @@ public class LiarGameManager : MonoBehaviour
 
         canvasObject.SetActive(true);
         player.GetComponent<PlayerController>().enabled = false;
+
+        playCont.GetComponentInChildren<PerspectiveCameraControl>().lockCursor = true;
     }
 
     public void CheckOrb()
@@ -82,6 +86,8 @@ public class LiarGameManager : MonoBehaviour
         dialogueCode.printDialogue = dialogueCode.StartCoroutine(dialogueCode.PrintDialogueCoroutine());
         if (currNpc == 0)
             player.GetComponent<PlayerController>().orb.SetActive(true);
+
+        playCont.GetComponentInChildren<PerspectiveCameraControl>().lockCursor = true;
     }
 
     /// <summary>

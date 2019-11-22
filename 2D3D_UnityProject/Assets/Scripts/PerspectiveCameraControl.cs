@@ -29,6 +29,10 @@ public class PerspectiveCameraControl : MonoBehaviour {
         if (lockCursor) {
             Cursor.lockState = CursorLockMode.Locked;
         }
+        else
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }
 
         // Allow the script to clamp based on a desired target value.
         var targetOrientation = Quaternion.Euler (targetDirection);
