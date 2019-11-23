@@ -57,6 +57,10 @@ public class ZodiacPuzzle : MonoBehaviour
 
     public GameObject zodiacCanvas;
 
+    // for the love of god i'm sorry i'm doing this but i wanted to test something out -julie
+
+    public GameObject destroyMePlease;
+
     void Start()
     {
         // Initialize each disk
@@ -169,6 +173,8 @@ public class ZodiacPuzzle : MonoBehaviour
             // TODO: Maybe disable to center coming out now that we have lights
             currentDisk.PieceInOut(ZodiacPuzzlePiece.ZodiacPuzzlePiecePosition.In);
             center.PieceInOut(ZodiacPuzzlePiece.ZodiacPuzzlePiecePosition.Out);
+            Debug.LogWarningFormat("fuck", name); // test to see what happens when all 3 parts of the puzzle are solved
+            Destroy(destroyMePlease); //IT WORKS! Please remove this when we add the funcitonality of "a weight is on center button which opens door"
         }
     }
 
