@@ -54,6 +54,10 @@ public class GameManager : MonoBehaviour {
             playerControl.constrainY (false);
             perspControl.enabled = false;
         }
+        else if (Input.GetKey("escape"))
+        {
+            Application.Quit();
+        }
     }
 
 }
