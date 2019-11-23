@@ -59,7 +59,7 @@ public class ZodiacPuzzle : MonoBehaviour
 
     // for the love of god i'm sorry i'm doing this but i wanted to test something out -julie
 
-    public GameObject destroyMePlease;
+    public GameObject destroyMePlease; // this is a destroyable object that is destroyed on zodiac puzzle solve
 
     void Start()
     {
@@ -173,8 +173,8 @@ public class ZodiacPuzzle : MonoBehaviour
             // TODO: Maybe disable to center coming out now that we have lights
             currentDisk.PieceInOut(ZodiacPuzzlePiece.ZodiacPuzzlePiecePosition.In);
             center.PieceInOut(ZodiacPuzzlePiece.ZodiacPuzzlePiecePosition.Out);
-            Debug.LogWarningFormat("fuck", name); // test to see what happens when all 3 parts of the puzzle are solved
-            Destroy(destroyMePlease); //IT WORKS! Please remove this when we add the funcitonality of "a weight is on center button which opens door"
+            Debug.LogWarningFormat("fuck", name); // log this text when all 3 parts of the puzzle are solved
+            Destroy(destroyMePlease); //destrot this object on zodiac puzzle solve. IT WORKS! Please remove this when we add the funcitonality of "a weight is on center button which opens door"
         }
     }
 
