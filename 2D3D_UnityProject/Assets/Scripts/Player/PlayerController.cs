@@ -60,8 +60,11 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         float x = 0, z = 0, y = 0;
+
+        // Used for animation
         movingType = 0;
 
+        // Get movement based on camera perspective
         if (constrainedX)
         {
             if (Input.GetKey("d"))
@@ -103,6 +106,7 @@ public class PlayerController : MonoBehaviour
             dir.Set(x, z);
         }
 
+        // Apply gravity if airborne, or allow jump if grounded
         if (controller.isGrounded && !constrainedY)
         {
             if (Input.GetKeyDown("space"))
@@ -110,24 +114,48 @@ public class PlayerController : MonoBehaviour
                 y = jumpSpeed;
             }
         }
-
         y -= gravity * Time.deltaTime;
 
+        // Apply resulting movement based on camera perpective
         Vector3 movement = new Vector3(x * speed, y, z * speed);
 
+        // 2D movement
         if (constrainedY || constrainedX || constrainedZ)
         {
             controller.Move(movement * Time.deltaTime);
         }
+        // 3D movement (relative to camera facing direction)
         else
         {
             controller.Move(transform.TransformDirection(movement * Time.deltaTime));
         }
 
+        // Set animations based on movement
         UpdateAnims(dir.x, dir.y, movingType);
-
+        
         ///    CAN PROBABLY DISCARD NEXT SECTION IN REFACTOR    ///
 
+        // Checks if player is near interactable
+        CheckInteraction();
+        
+        // if (Input.GetKeyDown(KeyCode.E))
+        // {
+        //     if (inDialogueZone)
+        //     {
+        //         if (dialoguePartner == 0)
+        //             orb.SetActive(true);
+        //         LiarGameManager.Instance().CheckOrb(dialoguePartner);
+        //     }
+        // }
+
+        ///    CAN PROBABLY DISCARD NEXT SECTION IN REFACTOR - END    ///
+    }
+
+    /// <summary>
+    /// Checks if player is near interactable and pressing interact button
+    /// </summary>
+    private void CheckInteraction()
+    {
         if (Input.GetKeyDown(KeyCode.E))
         {
             if (inDialogueZone)
@@ -144,17 +172,6 @@ public class PlayerController : MonoBehaviour
                 this.enabled = false;
             }
         }
-        // if (Input.GetKeyDown(KeyCode.E))
-        // {
-        //     if (inDialogueZone)
-        //     {
-        //         if (dialoguePartner == 0)
-        //             orb.SetActive(true);
-        //         LiarGameManager.Instance().CheckOrb(dialoguePartner);
-        //     }
-        // }
-
-        ///    CAN PROBABLY DISCARD NEXT SECTION IN REFACTOR - END    ///
     }
 
     public void constrainX(bool set)
