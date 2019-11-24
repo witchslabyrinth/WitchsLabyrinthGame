@@ -5,6 +5,11 @@ using UnityEngine;
 [RequireComponent(typeof(Animator), typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
 {
+    /// <summary>
+    /// Used for handling interactions with other entities (dialogue, puzzles, etc)
+    /// </summary>
+    private PlayerInteractionController interactionController;
+
     protected GameObject player;
     protected CharacterController controller;
     public GameObject ghostCamera;
@@ -21,39 +26,11 @@ public class PlayerController : MonoBehaviour
     private float movingType;
     private Vector2 dir;
 
-    ///    CAN PROBABLY DISCARD NEXT SECTION IN REFACTOR    ///
-
-    /// <summary>
-    /// is the player within talking distance of an npc
-    /// </summary>
-    private bool inDialogueZone;
-
-    /// <summary>
-    /// the id of the npc in range of the player
-    /// </summary>
-    private int dialoguePartner;
-
-    /// <summary>
-    /// reference to the orb the player is trying to find
-    /// </summary>
-    public GameObject orb;
-
-    private bool inZodiacZone;
-
-    ///    CAN PROBABLY DISCARD NEXT SECTION IN REFACTOR - END    ///
-
-    // this is probably all bad, but should work for tomorrow's demo
-    private ZodiacPuzzle zodiacPuzzle;
-
-    private GameObject zodiacCam;
-
-    public GameObject mainCam;
-    // end of bad stuff
-
     void Start()
     {
         player = this.gameObject;
         controller = this.GetComponent<CharacterController>();
+        interactionController = GetComponent<PlayerInteractionController>();
         anim = GetComponent<Animator>();
     }
 
@@ -132,46 +109,9 @@ public class PlayerController : MonoBehaviour
 
         // Set animations based on movement
         UpdateAnims(dir.x, dir.y, movingType);
-        
-        ///    CAN PROBABLY DISCARD NEXT SECTION IN REFACTOR    ///
 
-        // Checks if player is near interactable
-        CheckInteraction();
-        
-        // if (Input.GetKeyDown(KeyCode.E))
-        // {
-        //     if (inDialogueZone)
-        //     {
-        //         if (dialoguePartner == 0)
-        //             orb.SetActive(true);
-        //         LiarGameManager.Instance().CheckOrb(dialoguePartner);
-        //     }
-        // }
-
-        ///    CAN PROBABLY DISCARD NEXT SECTION IN REFACTOR - END    ///
-    }
-
-    /// <summary>
-    /// Checks if player is near interactable and pressing interact button
-    /// </summary>
-    private void CheckInteraction()
-    {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            if (inDialogueZone)
-            {
-                LiarGameManager.Instance().StartConversation(dialoguePartner);
-                ghostCamera.GetComponent<PerspectiveCameraControl>().enabled = false;
-                this.enabled = false;
-            }
-            else if (inZodiacZone)
-            {
-                zodiacPuzzle.enabled = true;
-                zodiacCam.SetActive(true);
-                mainCam.SetActive(false);
-                this.enabled = false;
-            }
-        }
+        // Handles interactions with other game entities
+        interactionController.CheckInteraction();
     }
 
     public void constrainX(bool set)
@@ -201,26 +141,4 @@ public class PlayerController : MonoBehaviour
         anim.SetFloat("MoveY", ydir);
         anim.SetFloat("Speed", moveType);
     }
-
-    ///    CAN PROBABLY DISCARD NEXT SECTION IN REFACTOR    ///
-
-    /// <summary>
-    /// called by OnTriggerEnter and OnTriggerExit of npc zones. Determines whether the player can talk or not
-    /// </summary>
-    /// <param name="withinZone">true on enter, false on exit</param>
-    /// <param name="partner">ID of npc</param>
-    public void SetInDialogueZone(bool withinZone, int partner)
-    {
-        inDialogueZone = withinZone;
-        dialoguePartner = partner;
-    }
-
-     ///    CAN PROBABLY DISCARD NEXT SECTION IN REFACTOR - END    ///
-
-     public void SetInZodiacZone(bool withinZone, ZodiacPuzzle zodPuz, GameObject zodCam)
-     {
-         inZodiacZone = withinZone;
-         zodiacPuzzle = zodPuz;
-         zodiacCam = zodCam;
-     }
 }

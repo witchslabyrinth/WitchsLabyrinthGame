@@ -83,7 +83,7 @@ public class LiarGameManager : MonoBehaviour
         dialogueCode.yesNoButtons.SetActive(false);
         dialogueCode.printDialogue = dialogueCode.StartCoroutine(dialogueCode.PrintDialogueCoroutine());
         if (currNpc == 0)
-            player.GetComponent<PlayerController>().orb.SetActive(true);
+            player.GetComponent<PlayerInteractionController>().orb.SetActive(true);
 
         Cursor.lockState = CursorLockMode.Locked;
     }
