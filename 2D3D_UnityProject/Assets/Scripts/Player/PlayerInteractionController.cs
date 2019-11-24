@@ -32,6 +32,9 @@ public class PlayerInteractionController : MonoBehaviour
     /// </summary>
     public GameObject orb;
 
+    /// <summary>
+    /// True if player is near the Zodiac puzzle
+    /// </summary>
     private bool inZodiacZone;
 
     ///    CAN PROBABLY DISCARD NEXT SECTION IN REFACTOR - END    ///
@@ -44,17 +47,22 @@ public class PlayerInteractionController : MonoBehaviour
     public GameObject mainCam;
     // end of bad stuff
 
+    /// <summary>
+    /// Called via PlayerController to handle interactions
+    /// </summary>
     public void CheckInteraction()
     {
         // Checks if player is near interactable and pressing interact button
         if (Input.GetKeyDown(KeyCode.E))
         {
+            // @Victor - Delete this code if no longer needed
             // if (inDialogueZone)
             // {
             //     if (dialoguePartner == 0)
             //         orb.SetActive(true);
             //     LiarGameManager.Instance().CheckOrb(dialoguePartner);
             // }
+            
             if (inDialogueZone)
             {
                 // Show dialogue conversation if interacting with NPC
