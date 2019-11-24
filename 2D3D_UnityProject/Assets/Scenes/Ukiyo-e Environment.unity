@@ -1572,6 +1572,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZodiacPuzzle
       objectReference: {fileID: 0}
+    - target: {fileID: 6653242622918014565, guid: 74f6714c6cff2e043b6280591f2c7019,
+        type: 3}
+      propertyPath: mainCam
+      value: 
+      objectReference: {fileID: 1524805995}
+    - target: {fileID: 6653242622918014565, guid: 74f6714c6cff2e043b6280591f2c7019,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1616911465}
+    - target: {fileID: 6653242622918014565, guid: 74f6714c6cff2e043b6280591f2c7019,
+        type: 3}
+      propertyPath: zodCamera
+      value: 
+      objectReference: {fileID: 1256001074}
+    - target: {fileID: 6653242622918014565, guid: 74f6714c6cff2e043b6280591f2c7019,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6653242622918014565, guid: 74f6714c6cff2e043b6280591f2c7019,
+        type: 3}
+      propertyPath: zodiacCanvas
+      value: 
+      objectReference: {fileID: 1586272675}
     - target: {fileID: 1814849652871317041, guid: 74f6714c6cff2e043b6280591f2c7019,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1642,31 +1667,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.2
       objectReference: {fileID: 0}
-    - target: {fileID: 6653242622918014565, guid: 74f6714c6cff2e043b6280591f2c7019,
-        type: 3}
-      propertyPath: mainCam
-      value: 
-      objectReference: {fileID: 1524805995}
-    - target: {fileID: 6653242622918014565, guid: 74f6714c6cff2e043b6280591f2c7019,
-        type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1616911465}
-    - target: {fileID: 6653242622918014565, guid: 74f6714c6cff2e043b6280591f2c7019,
-        type: 3}
-      propertyPath: zodCamera
-      value: 
-      objectReference: {fileID: 1256001074}
-    - target: {fileID: 6653242622918014565, guid: 74f6714c6cff2e043b6280591f2c7019,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6653242622918014565, guid: 74f6714c6cff2e043b6280591f2c7019,
-        type: 3}
-      propertyPath: zodiacCanvas
-      value: 
-      objectReference: {fileID: 1586272675}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74f6714c6cff2e043b6280591f2c7019, type: 3}
 --- !u!1001 &701291984
@@ -2436,6 +2436,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: Liars Game Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 9021314407975147259, guid: dc6121c068ab68443b4e9de9c3796fa9,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1616911462}
+    - target: {fileID: 9021314407975147259, guid: dc6121c068ab68443b4e9de9c3796fa9,
+        type: 3}
+      propertyPath: npcs.Array.data[0]
+      value: 
+      objectReference: {fileID: 1354433853}
+    - target: {fileID: 9021314407975147259, guid: dc6121c068ab68443b4e9de9c3796fa9,
+        type: 3}
+      propertyPath: npcs.Array.data[1]
+      value: 
+      objectReference: {fileID: 1354433852}
+    - target: {fileID: 9021314407975147259, guid: dc6121c068ab68443b4e9de9c3796fa9,
+        type: 3}
+      propertyPath: npcs.Array.data[2]
+      value: 
+      objectReference: {fileID: 1354433851}
+    - target: {fileID: 9021314407975147259, guid: dc6121c068ab68443b4e9de9c3796fa9,
+        type: 3}
+      propertyPath: npcs.Array.data[3]
+      value: 
+      objectReference: {fileID: 1354433850}
+    - target: {fileID: 9021314407975147259, guid: dc6121c068ab68443b4e9de9c3796fa9,
+        type: 3}
+      propertyPath: npcs.Array.data[4]
+      value: 
+      objectReference: {fileID: 1354433849}
+    - target: {fileID: 9021314407975147259, guid: dc6121c068ab68443b4e9de9c3796fa9,
+        type: 3}
+      propertyPath: npcs.Array.data[5]
+      value: 
+      objectReference: {fileID: 1354433848}
+    - target: {fileID: 9021314407975147259, guid: dc6121c068ab68443b4e9de9c3796fa9,
+        type: 3}
+      propertyPath: canvasObject
+      value: 
+      objectReference: {fileID: 243869795}
     - target: {fileID: 9021314407975147258, guid: dc6121c068ab68443b4e9de9c3796fa9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2491,46 +2531,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9021314407975147259, guid: dc6121c068ab68443b4e9de9c3796fa9,
-        type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1616911462}
-    - target: {fileID: 9021314407975147259, guid: dc6121c068ab68443b4e9de9c3796fa9,
-        type: 3}
-      propertyPath: npcs.Array.data[0]
-      value: 
-      objectReference: {fileID: 1354433853}
-    - target: {fileID: 9021314407975147259, guid: dc6121c068ab68443b4e9de9c3796fa9,
-        type: 3}
-      propertyPath: npcs.Array.data[1]
-      value: 
-      objectReference: {fileID: 1354433852}
-    - target: {fileID: 9021314407975147259, guid: dc6121c068ab68443b4e9de9c3796fa9,
-        type: 3}
-      propertyPath: npcs.Array.data[2]
-      value: 
-      objectReference: {fileID: 1354433851}
-    - target: {fileID: 9021314407975147259, guid: dc6121c068ab68443b4e9de9c3796fa9,
-        type: 3}
-      propertyPath: npcs.Array.data[3]
-      value: 
-      objectReference: {fileID: 1354433850}
-    - target: {fileID: 9021314407975147259, guid: dc6121c068ab68443b4e9de9c3796fa9,
-        type: 3}
-      propertyPath: npcs.Array.data[4]
-      value: 
-      objectReference: {fileID: 1354433849}
-    - target: {fileID: 9021314407975147259, guid: dc6121c068ab68443b4e9de9c3796fa9,
-        type: 3}
-      propertyPath: npcs.Array.data[5]
-      value: 
-      objectReference: {fileID: 1354433848}
-    - target: {fileID: 9021314407975147259, guid: dc6121c068ab68443b4e9de9c3796fa9,
-        type: 3}
-      propertyPath: canvasObject
-      value: 
-      objectReference: {fileID: 243869795}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc6121c068ab68443b4e9de9c3796fa9, type: 3}
 --- !u!1 &1083154131
@@ -6168,16 +6168,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2339406353841110621, guid: bbdd8feba155b90439ae87218fe6a1ba,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7042834076604515550, guid: bbdd8feba155b90439ae87218fe6a1ba,
-        type: 3}
-      propertyPath: speed
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 7042834076604515550, guid: bbdd8feba155b90439ae87218fe6a1ba,
         type: 3}
       propertyPath: orb
@@ -6188,51 +6178,6 @@ PrefabInstance:
       propertyPath: mainCam
       value: 
       objectReference: {fileID: 1524805995}
-    - target: {fileID: 2891775738440981964, guid: bbdd8feba155b90439ae87218fe6a1ba,
-        type: 3}
-      propertyPath: m_Height
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2891775738440981964, guid: bbdd8feba155b90439ae87218fe6a1ba,
-        type: 3}
-      propertyPath: m_Radius
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2675725675661482212, guid: bbdd8feba155b90439ae87218fe6a1ba,
-        type: 3}
-      propertyPath: m_Height
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2675725675661482212, guid: bbdd8feba155b90439ae87218fe6a1ba,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2675725675661482212, guid: bbdd8feba155b90439ae87218fe6a1ba,
-        type: 3}
-      propertyPath: m_Radius
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1572253898046683820, guid: bbdd8feba155b90439ae87218fe6a1ba,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.98
-      objectReference: {fileID: 0}
-    - target: {fileID: 1572253898046683820, guid: bbdd8feba155b90439ae87218fe6a1ba,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -4.34
-      objectReference: {fileID: 0}
-    - target: {fileID: 1572253898046683821, guid: bbdd8feba155b90439ae87218fe6a1ba,
-        type: 3}
-      propertyPath: characterBody
-      value: 
-      objectReference: {fileID: 1616911462}
-    - target: {fileID: 1572253898046683821, guid: bbdd8feba155b90439ae87218fe6a1ba,
-        type: 3}
-      propertyPath: lockCursor
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bbdd8feba155b90439ae87218fe6a1ba, type: 3}
 --- !u!1 &1616911462 stripped
