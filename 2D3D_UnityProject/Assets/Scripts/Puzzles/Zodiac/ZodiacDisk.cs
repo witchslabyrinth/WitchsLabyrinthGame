@@ -5,6 +5,11 @@ using UnityEngine;
 public class ZodiacDisk : ZodiacPuzzlePiece
 {
     /// <summary>
+    /// Need to offset the x rotation of all children of the zodiac puzzle by this to account for it's default rotation being different than Unity default rotation
+    /// </summary>
+    private const float zodiacOffsetX = 90f;
+
+    /// <summary>
     /// How fast the disk should rotate
     /// </summary>
     [SerializeField]
@@ -93,17 +98,17 @@ public class ZodiacDisk : ZodiacPuzzlePiece
             Sprite symbol = symbols[i];
 
             // Calculate sprite rotation
-            Quaternion rotation = Quaternion.Euler(90, 0, i * angleBetweenSymbols);
+            Quaternion rotation = transform.rotation * Quaternion.Euler(zodiacOffsetX, 0, i * angleBetweenSymbols);
+
 
             // Instantiate symbol at pivot point
-            SpriteRenderer instance = Instantiate(spritePrefab, transform, false);
+            SpriteRenderer instance = Instantiate(spritePrefab, spritePivot.transform.position, rotation, transform);
             instance.sprite = symbol;
             instance.name = symbol.name;
-            instance.transform.localRotation = rotation;
-            instance.transform.localPosition = spritePivot.transform.localPosition;
 
             // Rotate pivot around ring to position of next symbol
-            spritePivot.transform.RotateAround(transform.position, transform.up, angleBetweenSymbols);
+            Vector3 localForward = transform.worldToLocalMatrix.MultiplyVector(transform.forward);
+            spritePivot.transform.RotateAround(transform.position, transform.up, -angleBetweenSymbols);
         }
 
         selectedSymbolIndex = 0;
