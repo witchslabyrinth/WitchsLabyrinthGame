@@ -10,7 +10,5 @@ public abstract class MoveController : MonoBehaviour
     [SerializeField]
     protected float moveSpeed;
 
-    public abstract void MoveTowards(Vector3 position);
-
     public abstract void MoveTowards(Transform transform);
 }

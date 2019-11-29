@@ -23,42 +23,42 @@ public class FollowMoveController : MoveController
     private Vector2 dir;
     private float movingType;
 
+    private Movement movement;
+
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
         dir = new Vector2();
-    }
-
-    public override void MoveTowards(Vector3 position)
-    {
-        throw new System.NotImplementedException();
+        
+        movement = new FollowMovement(followTarget.transform, stoppingDistance, startingDistance);
     }
 
     public override void MoveTowards(Transform targetTransform)
     {   
         // Get vector towards target
-        Vector3 toTarget = targetTransform.position - transform.position;
-        float distance = toTarget.magnitude;
+        // Vector3 toTarget = targetTransform.position - transform.position;
+        // float distance = toTarget.magnitude;
 
-        // Move towards target if outside stopping radius
-        if ((movingType == 1 && distance >= stoppingDistance) || (movingType == 0 && distance >= startingDistance)) {
-            float step = moveSpeed * Time.fixedDeltaTime;
-            Vector3 movement = toTarget.normalized * step;
+        // // Move towards target if outside stopping radius
+        // if ((movingType == 1 && distance >= stoppingDistance) || (movingType == 0 && distance >= startingDistance)) {
+        //     float step = moveSpeed * Time.fixedDeltaTime;
+        //     Vector3 movement = toTarget.normalized * step;
 
-            transform.position += movement;
+        //     transform.position += movement;
 
-            movingType = 1;
-            dir.Set(movement.x, movement.y);
-        }
-        else
-        {
-            movingType = 0;
-        }
-        updateAnims(dir.x, dir.y, movingType);
+        //     movingType = 1;
+        //     dir.Set(movement.x, movement.y);
+        // }
+        // else
+        // {
+        //     movingType = 0;
+        // }
+        // updateAnims(dir.x, dir.y, movingType);
+        float step = moveSpeed * Time.fixedDeltaTime;
+        transform.position += movement.Get(transform) * step;
     }
 
-    // TODO: consider moving this call to an abstract behavior component (although that's most likely overkill)
     void Update()
     {
         MoveTowards(followTarget.transform);
