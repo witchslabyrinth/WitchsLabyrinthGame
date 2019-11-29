@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class TopDownMovement : Movement
 {
+    /// <summary>
+    /// Returns horizontal/vertical movement along X and Z axes (respectively)
+    /// </summary>
+    /// <param name="player"></param>
+    /// <returns></returns>
     public override Vector3 Get(Transform player)
     {
         Vector3 movement = Vector3.zero;

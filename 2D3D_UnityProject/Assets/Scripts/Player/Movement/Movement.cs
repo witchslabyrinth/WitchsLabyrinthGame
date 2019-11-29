@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public abstract class Movement
 {
-    // TODO: consider making a Player class and passing it here instead of PlayerController
+    // TODO: consider making a Player class and passing it here instead of Transform
     /// <summary>
     /// Returns movement as a unit vector (magnitude 1)
     /// </summary>

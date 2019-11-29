@@ -7,10 +7,14 @@ public class FollowMovement : Movement
     private Transform target;
 
     /// <summary>
-    /// Radius of satisfaction around target - stop moving when we get this far away
+    /// Smaller radius of satisfaction around target - stop moving when we are this close
     /// </summary>
     [SerializeField]
     protected float stoppingDistance;
+    
+    /// <summary>
+    /// Larger radius around target - start following the target when we're this far away
+    /// </summary>
     [SerializeField]
     protected float startingDistance;
 
@@ -18,6 +22,8 @@ public class FollowMovement : Movement
     {
         this.target = target;
         this.stoppingDistance = stoppingDistance;
+
+        // TODO: make the Get() method use starting distance again
         this.startingDistance = startingDistance;
     }
     public override Vector3 Get(Transform player)

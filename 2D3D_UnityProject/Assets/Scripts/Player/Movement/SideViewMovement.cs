@@ -4,19 +4,17 @@ using UnityEngine;
 
 public class SideViewMovement : Movement
 {
+    /// <summary>
+    /// Returns horizontal movement along Z-axis
+    /// </summary>
+    /// <param name="player"></param>
+    /// <returns></returns>
     public override Vector3 Get(Transform player)
     {
         Vector3 movement = Vector3.zero;
 
         // Ignore Up/Down - not used in this movement scheme
-        // if(Input.GetKey(KeyCode.W)) {
-        //     movement += Vector3.forward;
-        // }
-        // if(Input.GetKey(KeyCode.S)) {
-        //     movement += Vector3.back;
-        // }
-
-        // Left/Right = change in X
+        // Left/Right = change in Z
         if(Input.GetKey(KeyCode.A)) {
             movement += Vector3.back;
         }

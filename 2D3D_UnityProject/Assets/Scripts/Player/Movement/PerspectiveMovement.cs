@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PerspectiveMovement : Movement
 {
+    /// <summary>
+    /// Reference to camera following player
+    /// </summary>
     private Camera perspCamera;
     public PerspectiveMovement(Camera perspCamera)
     {
@@ -30,9 +33,9 @@ public class PerspectiveMovement : Movement
             movement += Vector3.right;
         }
 
+        // TODO: consider making it use the camera transform rather than player?
+        // Make movement relative to player-facing direction
         movement = player.TransformDirection(movement);
-        // controller.Move(transform.TransformDirection(movement * Time.deltaTime));
-
         return movement.normalized;
     }
 }

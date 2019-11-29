@@ -10,124 +10,53 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private PlayerInteractionController interactionController;
 
-    // TODO: do we really need the CharacterController?
+    // TODO: consider removing CharacterController - only used for movement
+    /// <summary>
+    /// Used for applying player movement
+    /// </summary>
     protected CharacterController controller;
 
     // TODO: move to a camera-related class
+    /// <summary>
+    /// 3D perspective camera 
+    /// </summary>
     public GameObject ghostCamera;
 
+    /// <summary>
+    /// Base movement speed
+    /// </summary>
+    [SerializeField]
+    protected float movementSpeed = 0.5f;
 
-    public float speed = 0.5f;
-
-    // TODO: WOW BIG JUMP
-    public float jumpSpeed = 100f;
-
-    // TODO: consider use gravity stored in project physics settings, not hard-coded gravity... (not sure about this)
-    public float gravity = .98f;
-
-    // TDOO: design these bools away!
-    // private bool constrainedX = false;
-    // private bool constrainedY = false;
-    // private bool constrainedZ = false;
-
-    // This should be in an animation-specific class
+    // TODO: move this to an animation-specific class
     private Animator anim;
 
-    // TODO: make this a static movement class?
-    // private float movingType;
-    private Movement movement = new TopDownMovement();
-
-    // TODO: just use Vector3.Forward?
-    private Vector2 dir;
+    /// <summary>
+    /// Used to generate movement from player input - varies depending on current camera perspective, or assigned NPC behaviors
+    /// </summary>
+    private Movement movement;
 
     void Start()
     {
         controller = this.GetComponent<CharacterController>();
         interactionController = GetComponent<PlayerInteractionController>();
         anim = GetComponent<Animator>();
+
+        // TODO: set default movement scheme and camera perspective in the same place
+        // Set default movement scheme to 3D perspective
+        movement = new PerspectiveMovement(ghostCamera.GetComponent<Camera>());
     }
 
     void Update()
     {
-        // float x = 0, z = 0, y = 0;
-
-        // // Used for animation
-        // movingType = 0;
-
-        // // Get movement based on camera perspective
-        // if (constrainedX)
-        // {
-        //     if (Input.GetKey("d"))
-        //     {
-        //         z = 1f;
-        //         movingType = 1f;
-        //     }
-        //     else if (Input.GetKey("a"))
-        //     {
-        //         z = -1f;
-        //         movingType = 1f;
-        //     }
-        // }
-        // else
-        // {
-        //     if (Input.GetKey("d"))
-        //     {
-        //         x = 1f;
-        //         movingType = 1f;
-        //     }
-        //     else if (Input.GetKey("a"))
-        //     {
-        //         x = -1f;
-        //         movingType = 1f;
-        //     }
-        //     if (Input.GetKey("w") && !constrainedZ)
-        //     {
-        //         z = 1f;
-        //         movingType = 1f;
-        //     }
-        //     else if (Input.GetKey("s") && !constrainedZ)
-        //     {
-        //         z = -1f;
-        //         movingType = 1f;
-        //     }
-        // }
-        // if (Mathf.Abs(x) > 0 || Mathf.Abs(z) > 0)
-        // {
-        //     dir.Set(x, z);
-        // }
-
-        // // Apply gravity if airborne, or allow jump if grounded
-        // if (controller.isGrounded && !constrainedY)
-        // {
-        //     if (Input.GetKeyDown("space"))
-        //     {
-        //         y = jumpSpeed;
-        //     }
-        // }
-        // y -= gravity * Time.deltaTime;
-
-        // Apply resulting movement based on camera perpective
-        // Vector3 movement = new Vector3(x * speed, y, z * speed);
+        // Get move direction (as unit vector) from movement class
+        Vector3 direction = movement.Get(transform);
 
         // Apply movement (scaled by movement speed)
-        Vector3 moveDelta = movement.Get(transform) * speed;
-        controller.Move(moveDelta * Time.deltaTime);
+        float magnitude = movementSpeed * Time.fixedDeltaTime;
+        controller.Move(direction * magnitude);
 
-        // 2D movement
-        // if (constrainedY || constrainedX || constrainedZ)
-        // {
-        //     controller.Move(movement * Time.deltaTime);
-        // }
-        // // 3D movement (relative to camera facing direction)
-        // else
-        // {
-            // controller.Move(transform.TransformDirection(movement * Time.deltaTime));
-        // }
-
-        // Set animations based on movement
-        // UpdateAnims(dir.x, dir.y, movingType);
-
-        // Handles interactions with other game entities
+        // Handle interactions with other game entities
         interactionController.CheckInteraction();
     }
 
@@ -146,6 +75,6 @@ public class PlayerController : MonoBehaviour
     {
         anim.SetFloat("MoveX", xdir);
         anim.SetFloat("MoveY", ydir);
-        // anim.SetFloat("Speed", moveType);
+        anim.SetFloat("Speed", moveType);
     }
 }

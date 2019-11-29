@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class BackViewMovement : Movement
 {
+    /// <summary>
+    /// Returns horizontal movement along X-axis
+    /// </summary>
+    /// <param name="player"></param>
+    /// <returns></returns>
     public override Vector3 Get(Transform player)
     {
         Vector3 movement = Vector3.zero;
