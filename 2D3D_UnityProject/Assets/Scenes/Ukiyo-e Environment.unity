@@ -1572,6 +1572,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZodiacPuzzle
       objectReference: {fileID: 0}
+    - target: {fileID: 6653242622918014565, guid: 74f6714c6cff2e043b6280591f2c7019,
+        type: 3}
+      propertyPath: mainCam
+      value: 
+      objectReference: {fileID: 1524805995}
+    - target: {fileID: 6653242622918014565, guid: 74f6714c6cff2e043b6280591f2c7019,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1616911465}
+    - target: {fileID: 6653242622918014565, guid: 74f6714c6cff2e043b6280591f2c7019,
+        type: 3}
+      propertyPath: zodCamera
+      value: 
+      objectReference: {fileID: 1256001074}
+    - target: {fileID: 6653242622918014565, guid: 74f6714c6cff2e043b6280591f2c7019,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6653242622918014565, guid: 74f6714c6cff2e043b6280591f2c7019,
+        type: 3}
+      propertyPath: zodiacCanvas
+      value: 
+      objectReference: {fileID: 1586272675}
     - target: {fileID: 1814849652871317041, guid: 74f6714c6cff2e043b6280591f2c7019,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1642,31 +1667,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.2
       objectReference: {fileID: 0}
-    - target: {fileID: 6653242622918014565, guid: 74f6714c6cff2e043b6280591f2c7019,
-        type: 3}
-      propertyPath: mainCam
-      value: 
-      objectReference: {fileID: 1524805995}
-    - target: {fileID: 6653242622918014565, guid: 74f6714c6cff2e043b6280591f2c7019,
-        type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1616911465}
-    - target: {fileID: 6653242622918014565, guid: 74f6714c6cff2e043b6280591f2c7019,
-        type: 3}
-      propertyPath: zodCamera
-      value: 
-      objectReference: {fileID: 1256001074}
-    - target: {fileID: 6653242622918014565, guid: 74f6714c6cff2e043b6280591f2c7019,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6653242622918014565, guid: 74f6714c6cff2e043b6280591f2c7019,
-        type: 3}
-      propertyPath: zodiacCanvas
-      value: 
-      objectReference: {fileID: 1586272675}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74f6714c6cff2e043b6280591f2c7019, type: 3}
 --- !u!1001 &701291984
@@ -2436,6 +2436,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: Liars Game Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 9021314407975147259, guid: dc6121c068ab68443b4e9de9c3796fa9,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1616911462}
+    - target: {fileID: 9021314407975147259, guid: dc6121c068ab68443b4e9de9c3796fa9,
+        type: 3}
+      propertyPath: npcs.Array.data[0]
+      value: 
+      objectReference: {fileID: 1354433853}
+    - target: {fileID: 9021314407975147259, guid: dc6121c068ab68443b4e9de9c3796fa9,
+        type: 3}
+      propertyPath: npcs.Array.data[1]
+      value: 
+      objectReference: {fileID: 1354433852}
+    - target: {fileID: 9021314407975147259, guid: dc6121c068ab68443b4e9de9c3796fa9,
+        type: 3}
+      propertyPath: npcs.Array.data[2]
+      value: 
+      objectReference: {fileID: 1354433851}
+    - target: {fileID: 9021314407975147259, guid: dc6121c068ab68443b4e9de9c3796fa9,
+        type: 3}
+      propertyPath: npcs.Array.data[3]
+      value: 
+      objectReference: {fileID: 1354433850}
+    - target: {fileID: 9021314407975147259, guid: dc6121c068ab68443b4e9de9c3796fa9,
+        type: 3}
+      propertyPath: npcs.Array.data[4]
+      value: 
+      objectReference: {fileID: 1354433849}
+    - target: {fileID: 9021314407975147259, guid: dc6121c068ab68443b4e9de9c3796fa9,
+        type: 3}
+      propertyPath: npcs.Array.data[5]
+      value: 
+      objectReference: {fileID: 1354433848}
+    - target: {fileID: 9021314407975147259, guid: dc6121c068ab68443b4e9de9c3796fa9,
+        type: 3}
+      propertyPath: canvasObject
+      value: 
+      objectReference: {fileID: 243869795}
     - target: {fileID: 9021314407975147258, guid: dc6121c068ab68443b4e9de9c3796fa9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2491,46 +2531,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9021314407975147259, guid: dc6121c068ab68443b4e9de9c3796fa9,
-        type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1616911462}
-    - target: {fileID: 9021314407975147259, guid: dc6121c068ab68443b4e9de9c3796fa9,
-        type: 3}
-      propertyPath: npcs.Array.data[0]
-      value: 
-      objectReference: {fileID: 1354433853}
-    - target: {fileID: 9021314407975147259, guid: dc6121c068ab68443b4e9de9c3796fa9,
-        type: 3}
-      propertyPath: npcs.Array.data[1]
-      value: 
-      objectReference: {fileID: 1354433852}
-    - target: {fileID: 9021314407975147259, guid: dc6121c068ab68443b4e9de9c3796fa9,
-        type: 3}
-      propertyPath: npcs.Array.data[2]
-      value: 
-      objectReference: {fileID: 1354433851}
-    - target: {fileID: 9021314407975147259, guid: dc6121c068ab68443b4e9de9c3796fa9,
-        type: 3}
-      propertyPath: npcs.Array.data[3]
-      value: 
-      objectReference: {fileID: 1354433850}
-    - target: {fileID: 9021314407975147259, guid: dc6121c068ab68443b4e9de9c3796fa9,
-        type: 3}
-      propertyPath: npcs.Array.data[4]
-      value: 
-      objectReference: {fileID: 1354433849}
-    - target: {fileID: 9021314407975147259, guid: dc6121c068ab68443b4e9de9c3796fa9,
-        type: 3}
-      propertyPath: npcs.Array.data[5]
-      value: 
-      objectReference: {fileID: 1354433848}
-    - target: {fileID: 9021314407975147259, guid: dc6121c068ab68443b4e9de9c3796fa9,
-        type: 3}
-      propertyPath: canvasObject
-      value: 
-      objectReference: {fileID: 243869795}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc6121c068ab68443b4e9de9c3796fa9, type: 3}
 --- !u!1 &1083154131
@@ -2585,7 +2585,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1083154131}
-  m_LocalRotation: {x: 0.5, y: 0.5, z: -0.5, w: 0.5}
+  m_LocalRotation: {x: -0.5, y: -0.5, z: -0.5, w: 0.5}
   m_LocalPosition: {x: 31.33, y: 2.54, z: 53.438183}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
@@ -2593,7 +2593,7 @@ Transform:
   - {fileID: 1256001077}
   m_Father: {fileID: 0}
   m_RootOrder: 13
-  m_LocalEulerAnglesHint: {x: 90, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 270, y: 0, z: 270}
 --- !u!4 &1108412616 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: d7ad634caa1c049d49b730cc6d29c683,
@@ -5067,13 +5067,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1256001074}
-  m_LocalRotation: {x: -0.000000029802326, y: -0.70710677, z: 0.70710677, w: -0.000000029802326}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0.6, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children: []
   m_Father: {fileID: 1083154134}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 90, y: -90.00001, z: 90.00001}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!4 &1264661060 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 71f735711a68f5a48882bfed4d869881,
