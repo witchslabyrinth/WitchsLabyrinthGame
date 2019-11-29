@@ -44,7 +44,7 @@ public class LiarStatue : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        PlayerController controller = other.GetComponent<PlayerController>();
+        PlayerInteractionController controller = other.GetComponent<PlayerInteractionController>();
         if (controller != null)
             controller.SetInDialogueZone(true, id);
         Debug.Log("Talking to " + statueName);
@@ -52,7 +52,7 @@ public class LiarStatue : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        PlayerController controller = other.GetComponent<PlayerController>();
+        PlayerInteractionController controller = other.GetComponent<PlayerInteractionController>();
         if (controller != null)
             controller.SetInDialogueZone(false, id);
         Debug.Log("Leaving conversation with " + statueName);

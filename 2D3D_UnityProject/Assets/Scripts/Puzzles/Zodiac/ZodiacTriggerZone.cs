@@ -12,7 +12,7 @@ public class ZodiacTriggerZone : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        PlayerController controller = other.GetComponent<PlayerController>();
+        PlayerInteractionController controller = other.GetComponent<PlayerInteractionController>();
         if (controller != null)
             controller.SetInZodiacZone(true, puzzleScript, camZodiac);
         Debug.Log("In range of Zodiac Puzzle");
@@ -20,7 +20,7 @@ public class ZodiacTriggerZone : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        PlayerController controller = other.GetComponent<PlayerController>();
+        PlayerInteractionController controller = other.GetComponent<PlayerInteractionController>();
         if (controller != null)
             controller.SetInZodiacZone(false, puzzleScript, camZodiac);
         Debug.Log("Out of range of Zodiac Puzzle");
