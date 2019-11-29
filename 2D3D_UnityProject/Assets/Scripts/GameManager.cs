@@ -31,27 +31,40 @@ public class GameManager : MonoBehaviour {
     void Update () {
         if (Input.GetKeyDown ("up")) {
             camControl.SetToTopOrtho ();
-            playerControl.constrainZ (false);
-            playerControl.constrainX (false);
-            playerControl.constrainY (true);
+            // playerControl.constrainZ (false);
+            // playerControl.constrainX (false);
+            // playerControl.constrainY (true);
+            
+            // Update movement type
+            playerControl.SetMovementType(new TopDownMovement());
+
             perspControl.enabled = false;
         } else if (Input.GetKeyDown ("right")) {
             camControl.SetToRightOrtho ();
-            playerControl.constrainX (true);
-            playerControl.constrainZ (false);
-            playerControl.constrainY (false);
+            // playerControl.constrainX (true);
+            // playerControl.constrainZ (false);
+            // playerControl.constrainY (false);
+
+            // Update movement type
+            playerControl.SetMovementType(new SideViewMovement());
+
             perspControl.enabled = false;
         } else if (Input.GetKeyDown ("left")) {
             camControl.SetToPerspective ();
             perspControl.enabled = true;
-            playerControl.constrainZ (false);
-            playerControl.constrainX (false);
-            playerControl.constrainY (false);
+
+            // TODO: get camera component earlier/somewhere else
+            playerControl.SetMovementType(new PerspectiveMovement(ghostCamera.GetComponent<Camera>()));
+            // playerControl.constrainZ (false);
+            // playerControl.constrainX (false);
+            // playerControl.constrainY (false);
         } else if (Input.GetKeyDown ("down")) {
             camControl.SetToBackOrtho ();
-            playerControl.constrainZ (true);
-            playerControl.constrainX (false);
-            playerControl.constrainY (false);
+
+            playerControl.SetMovementType(new BackViewMovement());
+            // playerControl.constrainZ (true);
+            // playerControl.constrainX (false);
+            // playerControl.constrainY (false);
             perspControl.enabled = false;
         }
     }
