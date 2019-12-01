@@ -3,16 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour {
-    public static GameManager instance = null;
 
+    // TODO: reference these as Cameras or CameraControllers rather than just GameObjects
     public GameObject mainCamera;
     public GameObject ghostCamera;
+
+
+    // TODO: change this from a GameObject to a more specific type (like PlayerController)
     public GameObject player;
 
     protected CameraController camControl;
     protected PlayerController playerControl;
     protected PerspectiveCameraControl perspControl;
 
+    public static GameManager instance = null;
     void Awake () {
         if (instance == null) {
             instance = this;

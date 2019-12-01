@@ -66,6 +66,9 @@ public class PlayerController : MonoBehaviour
 
         // @ Victor:
         // TODO: use movement data and send it to the AnimationController to show the proper animations
+        // Try and keep your code limited to this class and AnimationController.cs 
+        // Don't worry about making the Cat's animations work for now, just focus on getting Oliver working.
+        // I'm gonna rework the Cat a bit to make him and the player very similar (I'm thinking both could be instances of an Actor object)
     }
 
     public void SetMovementType(Movement movement)
