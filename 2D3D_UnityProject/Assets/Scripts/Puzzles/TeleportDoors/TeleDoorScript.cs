@@ -25,9 +25,9 @@ public class TeleDoorScript : MonoBehaviour
     {
         thatWasSentThrough.transform.position = new Vector3(TeleportOnExitToCoordinate.x,               //Set the object's position to the value of "TeleportOnExitToCoordinate"
             TeleportOnExitToCoordinate.y,TeleportOnExitToCoordinate.z);
-        if (thatWasSentThrough.GetComponent<PlayerController>() != null)                                //If the object sent through was the player
+        if (thatWasSentThrough.GetComponent<PlayerController>() != null)                                //If the object sent through was the player, do the following:
         {
-            thatWasSentThrough.GetComponent<PlayerController>().ghostCamera
+            thatWasSentThrough.GetComponent<PlayerController>().ghostCamera                             //Set the player's ghost camera's targetCharacterDirection to the value returned by faceAwayFromDoor()
                 .GetComponent<PerspectiveCameraControl>()
                 .targetCharacterDirection = faceAwayFromDoor();
         }
@@ -50,10 +50,10 @@ public class TeleDoorScript : MonoBehaviour
         observers.Add(toAdd);                                                                           //Add this observer to the list
     }
 
-    private Vector3 faceAwayFromDoor()
+    private Vector3 faceAwayFromDoor()// used to make the camera face away from the door the player enters
     {
-        Vector3 defaultVec = new Vector3(0, 0, 0);
-        if(transform.localPosition.z == -25)
+        Vector3 defaultVec = new Vector3(0, 0, 0);                                                      //Set up our default rotation
+        if(transform.localPosition.z == -25)                                                            //Change the y-value of the rotation based on where the door is.
         {
             defaultVec.y = 180;
         }
@@ -65,6 +65,6 @@ public class TeleDoorScript : MonoBehaviour
         {
             defaultVec.y = 90;
         }
-        return defaultVec;
+        return defaultVec;                                                                              //Return the resultant rotation.
     }
 }
