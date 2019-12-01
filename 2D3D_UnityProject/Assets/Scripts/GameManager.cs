@@ -10,11 +10,14 @@ public class GameManager : MonoBehaviour {
 
 
     // TODO: change this from a GameObject to a more specific type (like PlayerController)
-    public GameObject player;
 
     protected CameraController camControl;
-    protected PlayerController playerControl;
     protected PerspectiveCameraControl perspControl;
+
+    /// <summary>
+    /// Used for controlling player actor
+    /// </summary>
+    private PlayerController playerControl;
 
     public static GameManager instance = null;
     void Awake () {
@@ -28,14 +31,16 @@ public class GameManager : MonoBehaviour {
 
     void Start () {
         camControl = mainCamera.GetComponent<CameraController> ();
-        playerControl = player.GetComponent<PlayerController> ();
         perspControl = ghostCamera.GetComponent<PerspectiveCameraControl> ();
+
+        playerControl = PlayerController.Instance;
     }
 
     void Update () {
+        Actor playerActor = playerControl.GetActor();
         if (Input.GetKeyDown (KeyCode.UpArrow)) {
             // Update movement type
-            playerControl.SetMovementType(new TopDownMovement());
+            playerActor.SetMovementType(new TopDownMovement());
             
             // Update camera
             camControl.SetToTopOrtho ();
@@ -43,7 +48,7 @@ public class GameManager : MonoBehaviour {
         } 
         else if (Input.GetKeyDown (KeyCode.RightArrow)) {
             // Update movement type
-            playerControl.SetMovementType(new SideViewMovement());
+            playerActor.SetMovementType(new SideViewMovement());
             
             // Update camera
             camControl.SetToRightOrtho ();
@@ -52,7 +57,7 @@ public class GameManager : MonoBehaviour {
         else if (Input.GetKeyDown (KeyCode.LeftArrow)) {
             // TODO: get camera component earlier/somewhere else
             // Update movement type
-            playerControl.SetMovementType(new PerspectiveMovement(ghostCamera.GetComponent<Camera>()));
+            playerActor.SetMovementType(new PerspectiveMovement(ghostCamera.GetComponent<Camera>()));
 
             // Update camera
             camControl.SetToPerspective ();
@@ -60,7 +65,7 @@ public class GameManager : MonoBehaviour {
         } 
         else if (Input.GetKeyDown (KeyCode.DownArrow)) {
             // Update movement type
-            playerControl.SetMovementType(new BackViewMovement());
+            playerActor.SetMovementType(new BackViewMovement());
             
             // Update camera
             camControl.SetToBackOrtho ();

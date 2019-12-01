@@ -7,13 +7,13 @@ using UnityEngine;
 /// <summary>
 /// Used for handling player interactions with game entities (NPCs, Puzzles, etc)
 /// </summary>
+[RequireComponent((typeof(Actor)))]
 public class PlayerInteractionController : MonoBehaviour
 {
     /// <summary>
-    /// Reference to player (note: could switch between Oliver and Cat)
+    /// Reference to associated actor (either Oliver or Cat)
     /// </summary>
-    [SerializeField]
-    private PlayerController player;
+    private Actor actor;
 
     ///    CAN PROBABLY DISCARD NEXT SECTION IN REFACTOR    ///
 
@@ -47,6 +47,14 @@ public class PlayerInteractionController : MonoBehaviour
     public GameObject mainCam;
     // end of bad stuff
 
+    void Start()
+    {
+        if(!TryGetComponent(out actor)) 
+        {
+            Debug.LogWarning(name + " | PlayerInteractionController failed to get Actor component from this game object");
+        }
+    }
+
     /// <summary>
     /// Called via PlayerController to handle interactions
     /// </summary>
@@ -67,7 +75,7 @@ public class PlayerInteractionController : MonoBehaviour
             {
                 // Show dialogue conversation if interacting with NPC
                 LiarGameManager.Instance().StartConversation(dialoguePartner);
-                player.ghostCamera.GetComponent<PerspectiveCameraControl>().enabled = false;
+                actor.ghostCamera.GetComponent<PerspectiveCameraControl>().enabled = false;
                 this.enabled = false;
             }
             else if (inZodiacZone)

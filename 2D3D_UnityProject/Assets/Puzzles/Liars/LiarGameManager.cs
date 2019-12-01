@@ -53,6 +53,8 @@ public class LiarGameManager : MonoBehaviour
         dialogueCode.SetSubtitle(liar.GetSubtitle());
 
         canvasObject.SetActive(true);
+
+        // TODO: make this work with new PlayerController (consider giving the player a NulLMovement that ignores all movement input)
         player.GetComponent<PlayerController>().enabled = false;
 
         currNpc = npc;
@@ -66,6 +68,8 @@ public class LiarGameManager : MonoBehaviour
         dialogueCode.SetSubtitle(liar.GetSubtitle());
 
         canvasObject.SetActive(true);
+
+        // TODO: make this work with new PlayerController (consider giving the player a NulLMovement that ignores all movement input
         player.GetComponent<PlayerController>().enabled = false;
 
         player.GetComponentInChildren<PerspectiveCameraControl>().lockCursor = true;
@@ -79,6 +83,8 @@ public class LiarGameManager : MonoBehaviour
         dialogueCode.SetSubtitle(liar.GetSubtitle());
 
         canvasObject.SetActive(true);
+
+        // TODO: make this work with new PlayerController (consider giving the player a NulLMovement that ignores all movement input
         player.GetComponent<PlayerController>().enabled = false;
         dialogueCode.yesNoButtons.SetActive(false);
         dialogueCode.printDialogue = dialogueCode.StartCoroutine(dialogueCode.PrintDialogueCoroutine());
