@@ -25,6 +25,12 @@ public class TeleDoorScript : MonoBehaviour
     {
         thatWasSentThrough.transform.position = new Vector3(TeleportOnExitToCoordinate.x,               //Set the object's position to the value of "TeleportOnExitToCoordinate"
             TeleportOnExitToCoordinate.y,TeleportOnExitToCoordinate.z);
+        if (thatWasSentThrough.GetComponent<PlayerController>() != null)                                //If the object sent through was the player
+        {
+            thatWasSentThrough.GetComponent<PlayerController>().ghostCamera
+                .GetComponent<PerspectiveCameraControl>()
+                .targetCharacterDirection = faceAwayFromDoor();
+        }
         if(observers.Count > 0)                                                                         //If there are observers, do the following:
         {
             for(int i = 0; i < observers.Count; i++)                                                        //For each observer, do the following:
@@ -42,5 +48,23 @@ public class TeleDoorScript : MonoBehaviour
     public void addDoorObserver(DoorObserver toAdd) //Used for the observer pattern
     {
         observers.Add(toAdd);                                                                           //Add this observer to the list
+    }
+
+    private Vector3 faceAwayFromDoor()
+    {
+        Vector3 defaultVec = new Vector3(0, 0, 0);
+        if(transform.localPosition.z == -25)
+        {
+            defaultVec.y = 180;
+        }
+        else if (transform.localPosition.x == -25)
+        {
+            defaultVec.y = -90;
+        }
+        else if (transform.localPosition.x == 25)
+        {
+            defaultVec.y = 90;
+        }
+        return defaultVec;
     }
 }
