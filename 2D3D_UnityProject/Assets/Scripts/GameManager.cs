@@ -29,44 +29,38 @@ public class GameManager : MonoBehaviour {
     }
 
     void Update () {
-        if (Input.GetKeyDown ("up")) {
-            camControl.SetToTopOrtho ();
-            // playerControl.constrainZ (false);
-            // playerControl.constrainX (false);
-            // playerControl.constrainY (true);
-            
+        if (Input.GetKeyDown (KeyCode.UpArrow)) {
             // Update movement type
             playerControl.SetMovementType(new TopDownMovement());
-
+            
+            // Update camera
+            camControl.SetToTopOrtho ();
             perspControl.enabled = false;
-        } else if (Input.GetKeyDown ("right")) {
-            camControl.SetToRightOrtho ();
-            // playerControl.constrainX (true);
-            // playerControl.constrainZ (false);
-            // playerControl.constrainY (false);
-
+        } 
+        else if (Input.GetKeyDown (KeyCode.RightArrow)) {
             // Update movement type
             playerControl.SetMovementType(new SideViewMovement());
-
+            
+            // Update camera
+            camControl.SetToRightOrtho ();
             perspControl.enabled = false;
-        } else if (Input.GetKeyDown ("left")) {
+        } 
+        else if (Input.GetKeyDown (KeyCode.LeftArrow)) {
+            // TODO: get camera component earlier/somewhere else
+            // Update movement type
+            playerControl.SetMovementType(new PerspectiveMovement(ghostCamera.GetComponent<Camera>()));
+
+            // Update camera
             camControl.SetToPerspective ();
             perspControl.enabled = true;
-
-            // TODO: get camera component earlier/somewhere else
-            playerControl.SetMovementType(new PerspectiveMovement(ghostCamera.GetComponent<Camera>()));
-            // playerControl.constrainZ (false);
-            // playerControl.constrainX (false);
-            // playerControl.constrainY (false);
-        } else if (Input.GetKeyDown ("down")) {
-            camControl.SetToBackOrtho ();
-
+        } 
+        else if (Input.GetKeyDown (KeyCode.DownArrow)) {
+            // Update movement type
             playerControl.SetMovementType(new BackViewMovement());
-            // playerControl.constrainZ (true);
-            // playerControl.constrainX (false);
-            // playerControl.constrainY (false);
+            
+            // Update camera
+            camControl.SetToBackOrtho ();
             perspControl.enabled = false;
         }
     }
-
 }
