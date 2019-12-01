@@ -50,7 +50,16 @@ public class Actor : MonoBehaviour
         // TODO: set default movement scheme and camera perspective in the same place
         // Make sure there's a movement type specified
         if(movement == null) {
-            Debug.LogWarning(name + " | no Movement specified for this Actor");
+            // Throw error if no movement specified for player actor
+            if(PlayerController.Instance.GetActor() == this) {
+                Debug.LogError("No movement type specified for player-controlled Actor");
+            }
+            // Otherwise default to following player
+            // TODO: maybe not a good idea, find a way around this
+            else {
+                Debug.Log(name + " | no Movement specified for this Actor, defaulting to FollowMovement");
+                movement = new FollowMovement(PlayerController.Instance.GetActor().transform);
+            }
         }
     }
 
@@ -60,9 +69,9 @@ public class Actor : MonoBehaviour
     }
 
     /// <summary>
-    /// Applies movement 
+    /// Applies movement, returns vector representing movement
     /// </summary>
-    /// <returns></returns>
+    /// <returns>Vector of movement</returns>
     public Vector3 Move()
     {
         // Get move direction (as unit vector) from movement class
