@@ -63,8 +63,9 @@ public class Actor : MonoBehaviour
         }
     }
 
-    protected virtual void Update()
+    void Update()
     {
+        // Move actor
         Move();
     }
 
@@ -72,7 +73,7 @@ public class Actor : MonoBehaviour
     /// Applies movement, returns vector representing movement
     /// </summary>
     /// <returns>Vector of movement</returns>
-    public Vector3 Move()
+    private Vector3 Move()
     {
         // Get move direction (as unit vector) from movement class
         Vector3 direction = movement.Get(transform);

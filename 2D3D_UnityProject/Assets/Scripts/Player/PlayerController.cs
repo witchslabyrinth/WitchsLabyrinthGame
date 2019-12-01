@@ -21,9 +21,6 @@ public class PlayerController : Singleton<PlayerController>
 
     void Update()
     {
-        // Move actor
-        actor.Move();
-
         // Handle interactions with other game entities
         actor.CheckInteraction();
 
