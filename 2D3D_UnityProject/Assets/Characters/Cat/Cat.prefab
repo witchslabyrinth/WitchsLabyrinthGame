@@ -9,7 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 760704650693178956}
-  - component: {fileID: 4554955168610460731}
+  - component: {fileID: 2438472799711606662}
+  - component: {fileID: 5969970294282569019}
   m_Layer: 0
   m_Name: Cat
   m_TagString: Untagged
@@ -32,7 +33,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4554955168610460731
+--- !u!143 &2438472799711606662
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943238834350032811}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5969970294282569019
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,13 +60,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1943238834350032811}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 920a552906df94fe2bdbbdd93e1d50f3, type: 3}
+  m_Script: {fileID: 11500000, guid: 2443f96ba3b3c47b5b9607648a3fee16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 15
-  followTarget: {fileID: 0}
-  stoppingDistance: 1
-  startingDistance: 3
+  animationController: {fileID: 7226554937751361443}
+  ghostCamera: {fileID: 0}
+  movementSpeed: 15
+  movement: {fileID: 11400000, guid: b385c6043b9f64d87931f87229d6103d, type: 2}
 --- !u!1 &5166871927216861789
 GameObject:
   m_ObjectHideFlags: 0

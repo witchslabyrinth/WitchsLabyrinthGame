@@ -59,9 +59,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 932633505583369456}
-  - component: {fileID: 7042834076604515550}
   - component: {fileID: 5586352356814453199}
   - component: {fileID: 1616911469}
+  - component: {fileID: 927036935176466216}
   m_Layer: 0
   m_Name: Oliver
   m_TagString: Untagged
@@ -86,21 +86,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7042834076604515550
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2032480695334426566}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a058c49ff778e4c4caf4ae21c99cd4ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ghostCamera: {fileID: 1572253898046683819}
-  movementSpeed: 15
-  animationController: {fileID: 710809160864348023}
 --- !u!114 &5586352356814453199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,7 +98,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ac78ab4d88744706b7b55f0606136a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 7042834076604515550}
   orb: {fileID: 6556679171278252735}
   mainCam: {fileID: 0}
 --- !u!143 &1616911469
@@ -134,6 +118,22 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &927036935176466216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2032480695334426566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2443f96ba3b3c47b5b9607648a3fee16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationController: {fileID: 710809160864348023}
+  ghostCamera: {fileID: 0}
+  movementSpeed: 15
+  movement: {fileID: 11400000, guid: 9f92dfbfb814c49998d29f12230cbef7, type: 2}
 --- !u!1 &2327871898697840208
 GameObject:
   m_ObjectHideFlags: 0
