@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public abstract class Movement
+public abstract class Movement : ScriptableObject
 {
     // TODO: consider making a Player class and passing it here instead of Transform
     /// <summary>

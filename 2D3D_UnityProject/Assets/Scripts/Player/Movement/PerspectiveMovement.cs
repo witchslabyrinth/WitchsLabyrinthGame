@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(menuName="Movement/Perspective Movement")]
 public class PerspectiveMovement : Movement
 {
     /// <summary>

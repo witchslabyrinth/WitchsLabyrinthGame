@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(menuName="Movement/Top Down Movement")]
 public class TopDownMovement : Movement
 {
     /// <summary>

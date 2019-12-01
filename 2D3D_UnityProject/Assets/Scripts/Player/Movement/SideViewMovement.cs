@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(menuName="Movement/Side View Movement")]
 public class SideViewMovement : Movement
 {
     /// <summary>

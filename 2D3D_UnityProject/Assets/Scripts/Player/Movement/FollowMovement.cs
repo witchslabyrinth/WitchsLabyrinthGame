@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(menuName="Movement/Follow Movement")]
 public class FollowMovement : Movement
 {
     private Transform target;

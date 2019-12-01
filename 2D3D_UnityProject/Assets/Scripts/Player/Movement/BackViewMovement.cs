@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(menuName="Movement/Back View Movement")]
 public class BackViewMovement : Movement
 {
     /// <summary>
