@@ -19,7 +19,6 @@ public class FollowMoveController : MoveController
     [SerializeField]
     protected float startingDistance;
 
-    private Animator anim;
     private Vector2 dir;
     private float movingType;
 
@@ -28,12 +27,13 @@ public class FollowMoveController : MoveController
     // Start is called before the first frame update
     void Start()
     {
-        anim = GetComponent<Animator>();
         dir = new Vector2();
         
+        // TODO: move this to a generalized Actor class
         movement = new FollowMovement(followTarget.transform, stoppingDistance, startingDistance);
     }
 
+    // TODO: move this to a generalized Actor class
     public override void MoveTowards(Transform targetTransform)
     {   
         // Get vector towards target
@@ -62,18 +62,5 @@ public class FollowMoveController : MoveController
     void Update()
     {
         MoveTowards(followTarget.transform);
-    }
-
-    /// <summary>
-    /// Update animation parameters
-    /// </summary>
-    /// <param name="xdir">looking left or right, from -1 to 1</param>
-    /// <param name="ydir">looking down or up, from -1 to 1</param>
-    /// <param name="moveType">0 - Standing, 0.2 - Walking, 1 - Running</param>
-    private void updateAnims(float xdir, float ydir, float moveType)
-    {
-        anim.SetFloat("MoveX", xdir);
-        anim.SetFloat("MoveY", ydir);
-        anim.SetFloat("Speed", moveType);
     }
 }

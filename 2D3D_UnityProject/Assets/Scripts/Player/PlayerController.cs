@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Animator), typeof(CharacterController))]
+[RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
 {
     /// <summary>
@@ -26,25 +26,30 @@ public class PlayerController : MonoBehaviour
     /// Base movement speed
     /// </summary>
     [SerializeField]
-    protected float movementSpeed = 0.5f;
-
-    // TODO: move this to an animation-specific class
-    private Animator anim;
+    protected float movementSpeed = 15f;
 
     /// <summary>
     /// Used to generate movement from player input - varies depending on current camera perspective, or assigned NPC behaviors
     /// </summary>
-    private Movement movement;
+    [SerializeField]
+    protected Movement movement;
+
+    /// <summary>
+    /// Handles animation for this actor
+    /// </summary>
+    [SerializeField]
+    protected AnimationController animationController;
 
     void Start()
     {
         controller = this.GetComponent<CharacterController>();
         interactionController = GetComponent<PlayerInteractionController>();
-        anim = GetComponent<Animator>();
 
         // TODO: set default movement scheme and camera perspective in the same place
-        // Set default movement scheme to 3D perspective
-        movement = new PerspectiveMovement(ghostCamera.GetComponent<Camera>());
+        // Set default movement scheme to 3D perspective if none selected
+        if(movement == null) {
+            movement = new PerspectiveMovement(ghostCamera.GetComponent<Camera>());
+        }
     }
 
     void Update()
@@ -58,23 +63,13 @@ public class PlayerController : MonoBehaviour
 
         // Handle interactions with other game entities
         interactionController.CheckInteraction();
+
+        // @ Victor:
+        // TODO: use movement data and send it to the AnimationController to show the proper animations
     }
 
     public void SetMovementType(Movement movement)
     {
         this.movement = movement;
-    }
-
-    /// <summary>
-    /// Update animation parameters
-    /// </summary>
-    /// <param name="xdir">looking left or right, from -1 to 1</param>
-    /// <param name="ydir">looking down or up, from -1 to 1</param>
-    /// <param name="moveType">0 - Standing, 1 - Walking, 3 - Running</param>
-    private void UpdateAnims(float xdir, float ydir, float moveType)
-    {
-        anim.SetFloat("MoveX", xdir);
-        anim.SetFloat("MoveY", ydir);
-        anim.SetFloat("Speed", moveType);
     }
 }

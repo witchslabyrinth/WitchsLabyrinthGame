@@ -1201,11 +1201,6 @@ PrefabInstance:
       propertyPath: followTarget
       value: 
       objectReference: {fileID: 1616911462}
-    - target: {fileID: 4554955168610460731, guid: ad23a6d0b7a18e24398df7583b0cd3b5,
-        type: 3}
-      propertyPath: moveSpeed
-      value: 15
-      objectReference: {fileID: 0}
     - target: {fileID: 760704650693178956, guid: ad23a6d0b7a18e24398df7583b0cd3b5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1542,6 +1537,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1543367948}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &685123878 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 710809160864348023, guid: bbdd8feba155b90439ae87218fe6a1ba,
+    type: 3}
+  m_PrefabInstance: {fileID: 1616911461}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62e4c2271e4f74980af77771f8d2e8d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &689171891 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: ff5ac5a7657da8d49b85402b56dbc09e,
@@ -6081,6 +6088,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7042834076604515550, guid: bbdd8feba155b90439ae87218fe6a1ba,
+        type: 3}
+      propertyPath: animationController
+      value: 
+      objectReference: {fileID: 685123878}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bbdd8feba155b90439ae87218fe6a1ba, type: 3}
 --- !u!1 &1616911462 stripped
