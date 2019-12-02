@@ -37,9 +37,9 @@ public class Actor : MonoBehaviour
     protected float movementSpeed = 15f;
 
     /// <summary>
-    /// Used to generate movement from player input - varies depending on current camera perspective, or assigned NPC behaviors
+    /// Used to generate Actor movement - varies depending on current camera perspective, or assigned NPC behavior
     /// </summary>
-    [SerializeField]
+    /// [SerializeField]
     protected Movement movement;
 
     void Start()
@@ -67,6 +67,12 @@ public class Actor : MonoBehaviour
     {
         // Move actor
         Move();
+
+        // @ Victor:
+        // TODO: use movement data (value returned from Movement.Get(), or Actor.Move() if you want direction + magnitude) 
+        // and send it to the AnimationController to show the proper animations
+        //
+        // Try and keep your code limited to this class and AnimationController.cs - you shouldn't have to touch PlayerController for any of this
     }
 
     /// <summary>
@@ -92,6 +98,9 @@ public class Actor : MonoBehaviour
         this.movement = movement;
     }
 
+    /// <summary>
+    /// Used for handling interactions with puzzles/NPCs/etc
+    /// </summary>
     public void CheckInteraction()
     {
         interactionController.CheckInteraction();
