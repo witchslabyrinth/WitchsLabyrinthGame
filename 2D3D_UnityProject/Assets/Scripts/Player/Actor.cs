@@ -39,7 +39,7 @@ public class Actor : MonoBehaviour
     /// <summary>
     /// Used to generate Actor movement - varies depending on current camera perspective, or assigned NPC behavior
     /// </summary>
-    /// [SerializeField]
+    [SerializeField]
     protected Movement movement;
 
     void Start()
