@@ -5,33 +5,46 @@ using UnityEngine;
 public class ActivateTeledoorPuzzleScript : MonoBehaviour
 {
 
-    public GameObject[] deactivateOnEnter;//all of these elements will be deactivated when the player collides with this object
+    //all of these elements will be deactivated when the player collides with this object
+    public GameObject[] deactivateOnEnter;
 
-    public GameObject[] activateOnEnter;//all of these elements will be activated when the player collides with this object
+    //all of these elements will be activated when the player collides with this object
+    public GameObject[] activateOnEnter;
 
-    private void OnTriggerEnter(Collider other)//Whenever an object collides with this one, run this function.
+    //Whenever an object collides with this one, run this function.
+    private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<PlayerController>() == null)             //If the object is not the player, do the following:
+        //If the object is not the player, do the following:
+        if (other.GetComponent<PlayerController>() == null)
         {
-            return;                                                         //Nothing. We only want to do something if it is the player.
+            //Nothing. We only want to do something if it is the player.
+            return;
         }
-        activate();                                                     //If the above does not happen, run activate()
-        deactivate();                                                   //Now run deactivate
+        //If the above does not happen, run activate()
+        activate();
+        //Now run deactivate()
+        deactivate();
     }
 
-    private void activate()//used to activate certain elements when the player collides with this object
+    //used to activate certain elements when the player collides with this object
+    private void activate()
     {
-        foreach(GameObject i in activateOnEnter)                        //For all gameobjects in this array, do the following:
+        //For all gameobjects in this array, do the following:
+        foreach (GameObject i in activateOnEnter)
         {
-            i.SetActive(true);                                          //activate them
+            //activate them
+            i.SetActive(true);
         }
     }
 
-    private void deactivate()//used to deactivate certain elements when the player collides with this object
+    //used to deactivate certain elements when the player collides with this object
+    private void deactivate()
     {
-        foreach (GameObject i in deactivateOnEnter)                      //For all gameobjects in this array, do the following:
+        //For all gameobjects in this array, do the following:
+        foreach (GameObject i in deactivateOnEnter)
         {
-            i.SetActive(false);                                          //deactivate them
+            //deactivate them
+            i.SetActive(false);
         }
     }
 }

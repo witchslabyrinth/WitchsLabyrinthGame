@@ -4,56 +4,78 @@ using UnityEngine;
 
 public class TeleDoorScript : MonoBehaviour
 {
-    public enum DoorOrientation { FLOOR, CEILING, WALL_NEG_X, WALL_POS_X, WALL_NEG_Z, WALL_POS_Z };     //Used to rotate Room
+    //Used to rotate Room
+    public enum DoorOrientation { FLOOR, CEILING, WALL_NEG_X, WALL_POS_X, WALL_NEG_Z, WALL_POS_Z };
 
+    //Used to determine which door this connects to
     [SerializeField]
-    private TeleDoorScript PairedDoor;                                                                  //Used to determine which door this connects to
+    private TeleDoorScript PairedDoor;
+
+    //Used to determine where this door lets out
     [SerializeField]
-    private Vector3 TeleportOnExitToCoordinate;                                                         //Used to determine where this door lets out
+    private Vector3 TeleportOnExitToCoordinate;
 
+    //By default, all doors assume they're on the floor
     [SerializeField]
-    private DoorOrientation myOrientation = DoorOrientation.FLOOR;                                      //By default, all doors assume they're on the floor
+    private DoorOrientation myOrientation = DoorOrientation.FLOOR;
 
-    private List<DoorObserver> observers = new List<DoorObserver>();                                    //Observer pattern used to aid in rotating room
+    //Observer pattern used to aid in rotating room
+    private List<DoorObserver> observers = new List<DoorObserver>();
 
-    public void Enter(GameObject toSendThrough) //Called upon colliding with the door
+    //Called upon colliding with the door
+    public void Enter(GameObject toSendThrough)
     {
-        PairedDoor.Exit(toSendThrough);                                                                 //This door doesn't need to know the exact location to send the player. This can be handled by the exit door (PairedDoor)
+        //This door doesn't need to know the exact location to send the player. This can be handled by the exit door (PairedDoor)
+        PairedDoor.Exit(toSendThrough);
     }
 
-    public void Exit(GameObject thatWasSentThrough) //Called by a different, "Enter"-ed door
+    //Called by a different, "Enter"-ed door to teleport the player to this one
+    public void Exit(GameObject thatWasSentThrough)
     {
-        thatWasSentThrough.transform.position = new Vector3(TeleportOnExitToCoordinate.x,               //Set the object's position to the value of "TeleportOnExitToCoordinate"
-            TeleportOnExitToCoordinate.y,TeleportOnExitToCoordinate.z);
-        if (thatWasSentThrough.GetComponent<PlayerController>() != null)                                //If the object sent through was the player, do the following:
+        //Set the object's position to the value of "TeleportOnExitToCoordinate"
+        thatWasSentThrough.transform.position = new Vector3(TeleportOnExitToCoordinate.x,TeleportOnExitToCoordinate.y,TeleportOnExitToCoordinate.z);
+
+        //If the object sent through was the player, do the following:
+        if (thatWasSentThrough.GetComponent<PlayerController>() != null)
         {
-            thatWasSentThrough.GetComponent<PlayerController>().ghostCamera                             //Set the player's ghost camera's targetCharacterDirection to the value returned by faceAwayFromDoor()
-                .GetComponent<PerspectiveCameraControl>()
-                .targetCharacterDirection = faceAwayFromDoor();
+            //Set the player's ghost camera's targetCharacterDirection to the value returned by faceAwayFromDoor()
+            thatWasSentThrough.GetComponent<PlayerController>().ghostCamera.GetComponent<PerspectiveCameraControl>().targetCharacterDirection = faceAwayFromDoor();
         }
-        if(observers.Count > 0)                                                                         //If there are observers, do the following:
+
+        //If there are observers, do the following:
+        if (observers.Count > 0)
         {
-            for(int i = 0; i < observers.Count; i++)                                                        //For each observer, do the following:
+            //For each observer, do the following:
+            for (int i = 0; i < observers.Count; i++)
             {
-                observers[i].doorObserve(myOrientation);                                                        //Call its "doorObserve" function, passing in myOrientation.
+                //Call its "doorObserve" function, passing in myOrientation.
+                observers[i].doorObserve(myOrientation);
             }
         }
     }
 
-    private void OnTriggerEnter(Collider other) //Called upon colliding with the door
+    //This function is called when any object collides with the door
+    private void OnTriggerEnter(Collider other)
     {
-        Enter(other.gameObject);                                                                        //Call the "Enter" function upon colliding with the door.
+        //Call the "Enter" function upon colliding with the door.
+        Enter(other.gameObject);
     }
 
-    public void addDoorObserver(DoorObserver toAdd) //Used for the observer pattern
+    //Used for the observer pattern
+    public void addDoorObserver(DoorObserver toAdd)
     {
-        observers.Add(toAdd);                                                                           //Add this observer to the list
+        //Add this observer to the list
+        observers.Add(toAdd);
     }
 
-    private Vector3 faceAwayFromDoor()// used to make the camera face away from the door the player enters
+    // used to make the camera face away from the door the player enters
+    private Vector3 faceAwayFromDoor()
     {
-        Vector3 defaultVec = new Vector3(0, 0, 0);                                                      //Set up our default rotation
-        if(transform.localPosition.z == -25)                                                            //Change the y-value of the rotation based on where the door is.
+        //Set up our default rotation
+        Vector3 defaultVec = new Vector3(0, 0, 0);
+
+        //Change the y-value of the rotation based on where the door is.
+        if (transform.localPosition.z == -25)
         {
             defaultVec.y = 180;
         }
@@ -65,6 +87,8 @@ public class TeleDoorScript : MonoBehaviour
         {
             defaultVec.y = 90;
         }
-        return defaultVec;                                                                              //Return the resultant rotation.
+
+        //Return the resultant rotation.
+        return defaultVec;
     }
 }
