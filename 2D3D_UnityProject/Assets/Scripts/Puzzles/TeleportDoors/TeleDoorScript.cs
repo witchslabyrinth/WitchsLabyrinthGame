@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class TeleDoorScript : MonoBehaviour
 {
+    //These are used to handle Camera rotation upon exiting a door.
+    private int yBehind = 180;
+    private int yLeft = -90;
+    private int yRight = 90;
+
     //Used to rotate Room
     public enum DoorOrientation { FLOOR, CEILING, WALL_NEG_X, WALL_POS_X, WALL_NEG_Z, WALL_POS_Z };
 
@@ -36,10 +41,23 @@ public class TeleDoorScript : MonoBehaviour
         thatWasSentThrough.transform.position = new Vector3(TeleportOnExitToCoordinate.x,TeleportOnExitToCoordinate.y,TeleportOnExitToCoordinate.z);
 
         //If the object sent through was the player, do the following:
-        if (thatWasSentThrough.GetComponent<PlayerController>() != null)
+        PlayerController playerController = thatWasSentThrough.GetComponent<PlayerController>();
+        if (playerController != null)
         {
             //Set the player's ghost camera's targetCharacterDirection to the value returned by faceAwayFromDoor()
-            thatWasSentThrough.GetComponent<PlayerController>().ghostCamera.GetComponent<PerspectiveCameraControl>().targetCharacterDirection = faceAwayFromDoor();
+            PerspectiveCameraControl cameraControl = playerController.ghostCamera.GetComponent<PerspectiveCameraControl>();
+            if(cameraControl != null)
+            {
+                cameraControl.targetCharacterDirection = faceAwayFromDoor();
+            }
+            else
+            {
+                Debug.Log("ERROR! Player's ghostCamera has no PerspectiveCameraControl!");
+            }
+        }
+        else
+        {
+            Debug.Log("Non-player Collision detected");
         }
 
         //If there are observers, do the following:
@@ -72,20 +90,20 @@ public class TeleDoorScript : MonoBehaviour
     private Vector3 faceAwayFromDoor()
     {
         //Set up our default rotation
-        Vector3 defaultVec = new Vector3(0, 0, 0);
+        Vector3 defaultVec = Vector3.zero;
 
         //Change the y-value of the rotation based on where the door is.
         if (transform.localPosition.z == -25)
         {
-            defaultVec.y = 180;
+            defaultVec.y = yBehind;
         }
         else if (transform.localPosition.x == -25)
         {
-            defaultVec.y = -90;
+            defaultVec.y = yLeft;
         }
         else if (transform.localPosition.x == 25)
         {
-            defaultVec.y = 90;
+            defaultVec.y = yRight;
         }
 
         //Return the resultant rotation.

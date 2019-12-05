@@ -11,39 +11,33 @@ public class ActivateTeledoorPuzzleScript : MonoBehaviour
     //all of these elements will be activated when the player collides with this object
     public GameObject[] activateOnEnter;
 
-    //Whenever an object collides with this one, run this function.
+    //This function runs whenever an object collides with this one
     private void OnTriggerEnter(Collider other)
     {
-        //If the object is not the player, do the following:
+        //Exit if collided with non-player object
         if (other.GetComponent<PlayerController>() == null)
         {
-            //Nothing. We only want to do something if it is the player.
             return;
         }
-        //If the above does not happen, run activate()
+        //otherwise continue
         activate();
-        //Now run deactivate()
         deactivate();
     }
 
-    //used to activate certain elements when the player collides with this object
+    //Activates all objects in activateOnEnter
     private void activate()
     {
-        //For all gameobjects in this array, do the following:
         foreach (GameObject i in activateOnEnter)
         {
-            //activate them
             i.SetActive(true);
         }
     }
 
-    //used to deactivate certain elements when the player collides with this object
+    //Deactivates all objects in deactivateOnEnter
     private void deactivate()
     {
-        //For all gameobjects in this array, do the following:
         foreach (GameObject i in deactivateOnEnter)
         {
-            //deactivate them
             i.SetActive(false);
         }
     }
