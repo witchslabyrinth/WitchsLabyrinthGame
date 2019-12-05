@@ -15,6 +15,18 @@ public class DialogueLine : MonoBehaviour
     private Text dialogueText;
 
     /// <summary>
+    /// reference to name box UI element
+    /// </summary>
+    [SerializeField]
+    private Text nameText;
+
+    /// <summary>
+    /// reference to subtitle box UI element
+    /// </summary>
+    [SerializeField]
+    private Text subtitleText;
+
+    /// <summary>
     /// Dialogue line
     /// </summary>
     [SerializeField]
@@ -46,24 +58,74 @@ public class DialogueLine : MonoBehaviour
     [Range(0, 1)]
     private float soundBlipSpeed = .5f;
 
+    ///    CAN PROBABLY DISCARD NEXT SECTION IN REFACTOR    ///
+
+    /// <summary>
+    /// reference to parent canvas object
+    /// </summary>
+    public GameObject canvasObj;
+
+    private bool finalLine = false;
+
+    private bool yesNoPrompt = false;
+
+    public GameObject yesNoButtons;
+
+    public PlayerController playCont;
+
+    ///    CAN PROBABLY DISCARD NEXT SECTION IN REFACTOR - END    ///
+
     // Update is called once per frame
     void Update()
     {
-        if(printDialogue == null) {
+        if (printDialogue == null)
+        {
             printDialogue = StartCoroutine(PrintDialogueCoroutine());
         }
+
+        ///    CAN PROBABLY DISCARD NEXT SECTION IN REFACTOR    ///
+
+        // if the player presses E while talking
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            //if the dialogue has finished printing
+            if (FinishedPrinting())
+            {
+                if (!finalLine)
+                {
+                    line = "Am I the one with the marble?";
+                    printDialogue = StartCoroutine(PrintDialogueCoroutine());
+                    finalLine = true;
+                    yesNoPrompt = true;
+                    Cursor.lockState = CursorLockMode.None;
+                }
+                else
+                {
+                    Exit();
+                }
+            }
+            //else, stop the coroutine and print the entire line at once
+            else
+            {
+                StopPrinting();
+            }
+        }
+
+        ///    CAN PROBABLY DISCARD NEXT SECTION IN REFACTOR - END    ///
     }
 
-    Coroutine printDialogue;
+    /// CHANGE BACK TO PRIVATE IN REFACTOR
+    public Coroutine printDialogue;
 
-    IEnumerator PrintDialogueCoroutine()
+    /// CHANGE BACK TO PRIVATE IN REFACTOR - END
+    public IEnumerator PrintDialogueCoroutine()
     {
         // Clear previous text before printing
         dialogueText.text = "";
 
         int charIndex = 0;
         // Continue until full text is printed
-        while(!FinishedPrinting()) 
+        while (!FinishedPrinting())
         {
             // Print next chunk of characters
             int numChars = 2;
@@ -73,22 +135,25 @@ public class DialogueLine : MonoBehaviour
             PlaySoundBlips();
 
             // Wait and repeat
-            float printInterval = (1/printSpeed) * Time.deltaTime;
+            float printInterval = (1 / printSpeed) * Time.deltaTime;
             yield return new WaitForSeconds(printInterval);
         }
 
-        while(!Input.GetKeyDown(KeyCode.Return)) {
+        while (!Input.GetKeyDown(KeyCode.Return))
+        {
             yield return null;
         }
 
         // Set coroutine to null so we know it finished
+        StopCoroutine(printDialogue);
         printDialogue = null;
     }
 
     #region Sound_Blips
     void PlaySoundBlips()
     {
-        if(!FinishedPrinting() && playSoundBlips == null) {
+        if (!FinishedPrinting() && playSoundBlips == null)
+        {
             playSoundBlips = StartCoroutine(PlaySoundBlipsCoroutine());
         }
     }
@@ -100,7 +165,7 @@ public class DialogueLine : MonoBehaviour
         // Play sound effect and wait interval
         SoundController.Instance.PlaySoundEffect(soundBlip);
 
-        float soundBlipInterval = ((1/printSpeed) * Time.deltaTime) * (1 / soundBlipSpeed);
+        float soundBlipInterval = ((1 / printSpeed) * Time.deltaTime) * (1 / soundBlipSpeed);
         yield return new WaitForSeconds(soundBlipInterval);
 
         // TODO: Stop sound effect if still playing
@@ -115,22 +180,85 @@ public class DialogueLine : MonoBehaviour
     /// <param name="numChars">Number of characters to print</param>
     void PrintChars(int currentIndex, int numChars)
     {
-        try {
+        try
+        {
             // Print next character in string
             char[] array = line.ToCharArray();
-            for(int i = 0; i < numChars; i++) {
+            for (int i = 0; i < numChars; i++)
+            {
                 dialogueText.text += array[currentIndex];
                 currentIndex++;
             }
         }
         // Catch and ignore out-of-bounds exception if we exceed end of string
-        catch(IndexOutOfRangeException ex) {
+        catch (IndexOutOfRangeException ex)
+        {
             return;
-        } 
+        }
     }
+
+    ///    CAN PROBABLY DISCARD NEXT SECTION IN REFACTOR    ///
 
     bool FinishedPrinting()
     {
-        return dialogueText.text == line;
+        if (dialogueText.text == line)
+        {
+            if (yesNoPrompt)
+            {
+                yesNoButtons.SetActive(true);
+                yesNoPrompt = false;
+            }
+            return dialogueText.text == line;
+        }
+        else
+            return false;
     }
+
+    /// <summary>
+    /// change the line being said
+    /// </summary>
+    /// <param name="newLine">new line to use</param>
+    public void SetLine(string newLine)
+    {
+        line = newLine;
+    }
+
+    /// <summary>
+    /// change the name of npc that's talking
+    /// </summary>
+    /// <param name="newName">name of npc</param>
+    public void SetName(string newName)
+    {
+        nameText.text = newName;
+    }
+
+    /// <summary>
+    /// change the subtitle of npc that's talking
+    /// </summary>
+    /// <param name="newName">name of npc</param>
+    public void SetSubtitle(string newSubtitle)
+    {
+        subtitleText.text = newSubtitle;
+    }
+
+    public void StopPrinting()
+    {
+        StopCoroutine(printDialogue);
+        printDialogue = null;
+        dialogueText.text = line;
+    }
+
+    public void Exit()
+    {
+        dialogueText.text = "";
+        finalLine = false;
+        yesNoButtons.SetActive(false);
+        LiarGameManager.Instance().player.GetComponent<PlayerController>().enabled = true;
+        canvasObj.SetActive(false);
+        playCont.enabled = true;
+
+        playCont.ghostCamera.GetComponent<PerspectiveCameraControl>().enabled = true;
+    }
+
+    ///    CAN PROBABLY DISCARD NEXT SECTION IN REFACTOR - END    ///
 }

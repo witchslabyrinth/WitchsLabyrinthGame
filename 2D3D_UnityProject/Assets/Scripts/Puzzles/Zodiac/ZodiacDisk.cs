@@ -5,6 +5,11 @@ using UnityEngine;
 public class ZodiacDisk : ZodiacPuzzlePiece
 {
     /// <summary>
+    /// Need to offset the x rotation of all children of the zodiac puzzle by this to account for it's default rotation being different than Unity default rotation
+    /// </summary>
+    private const float zodiacOffsetX = 90f;
+
+    /// <summary>
     /// How fast the disk should rotate
     /// </summary>
     [SerializeField]
@@ -17,10 +22,10 @@ public class ZodiacDisk : ZodiacPuzzlePiece
     public List<Sprite> symbols;
 
     /// <summary>
-    /// Correct symbol for this ring
+    /// Correct symbols for this ring
     /// </summary>
     [SerializeField]
-    private Sprite correctSymbol;
+    private List<Sprite> correctSymbols;
 
     [SerializeField]
     private SpriteRenderer spritePrefab;
@@ -56,16 +61,24 @@ public class ZodiacDisk : ZodiacPuzzlePiece
     private void Start()
     {
         // Print error if no correct symbol assigned for this disk
-        if(correctSymbol == null) {
+        if(correctSymbols == null) {
             Debug.LogErrorFormat("Zodiac Puzzle - {0}: please set the correct symbol for this disk", name);
         }
+        Init(GetComponentInParent<ZodiacPuzzle>());
     }
 
     public void Init(ZodiacPuzzle puzzle)
     {
         // Break if no symbols found
         if (symbols.Count == 0) {
-            Debug.LogErrorFormat("{0}: no symbols found");
+            Debug.LogErrorFormat("{0}: no symbols found", name);
+            return;
+        }
+
+        // Break if incorrect number of correct symbols
+        if (correctSymbols.Count != ZodiacPuzzle.numberOfRounds)
+        {
+            Debug.LogErrorFormat("{0}: incorrect number of elements in correct symbols list", name);
             return;
         }
 
@@ -85,7 +98,8 @@ public class ZodiacDisk : ZodiacPuzzlePiece
             Sprite symbol = symbols[i];
 
             // Calculate sprite rotation
-            Quaternion rotation = Quaternion.Euler(0, 0, i * angleBetweenSymbols);
+            Quaternion rotation = transform.rotation * Quaternion.Euler(zodiacOffsetX, 0, i * angleBetweenSymbols);
+
 
             // Instantiate symbol at pivot point
             SpriteRenderer instance = Instantiate(spritePrefab, spritePivot.transform.position, rotation, transform);
@@ -93,7 +107,8 @@ public class ZodiacDisk : ZodiacPuzzlePiece
             instance.name = symbol.name;
 
             // Rotate pivot around ring to position of next symbol
-            spritePivot.transform.RotateAround(transform.position, Vector3.forward, angleBetweenSymbols);
+            Vector3 localForward = transform.worldToLocalMatrix.MultiplyVector(transform.forward);
+            spritePivot.transform.RotateAround(transform.position, transform.up, -angleBetweenSymbols);
         }
 
         selectedSymbolIndex = 0;
@@ -184,6 +199,6 @@ public class ZodiacDisk : ZodiacPuzzlePiece
     /// <returns></returns>
     public bool Correct()
     {
-        return symbols[selectedSymbolIndex].Equals(correctSymbol);
+        return symbols[selectedSymbolIndex].Equals(correctSymbols[puzzle.currentRound - 1]);
     }
 }
