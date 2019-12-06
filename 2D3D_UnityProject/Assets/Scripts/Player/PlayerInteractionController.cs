@@ -68,7 +68,7 @@ public class PlayerInteractionController : MonoBehaviour
                 // Show dialogue conversation if interacting with NPC
                 LiarGameManager.Instance().StartConversation(dialoguePartner);
                 player.ghostCamera.GetComponent<PerspectiveCameraControl>().enabled = false;
-                this.enabled = false;
+                player.enabled = false;
             }
             else if (inZodiacZone)
             {
@@ -76,7 +76,7 @@ public class PlayerInteractionController : MonoBehaviour
                 zodiacPuzzle.enabled = true;
                 zodiacCam.SetActive(true);
                 mainCam.SetActive(false);
-                this.enabled = false;
+                player.enabled = false;
             }
         }
     }
