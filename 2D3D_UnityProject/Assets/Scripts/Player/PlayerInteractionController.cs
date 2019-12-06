@@ -47,6 +47,8 @@ public class PlayerInteractionController : MonoBehaviour
     public GameObject mainCam;
     // end of bad stuff
 
+    public GameObject interactCanvas;
+
     /// <summary>
     /// Called via PlayerController to handle interactions
     /// </summary>
@@ -62,13 +64,15 @@ public class PlayerInteractionController : MonoBehaviour
             //         orb.SetActive(true);
             //     LiarGameManager.Instance().CheckOrb(dialoguePartner);
             // }
-            
+
             if (inDialogueZone)
             {
                 // Show dialogue conversation if interacting with NPC
                 LiarGameManager.Instance().StartConversation(dialoguePartner);
                 player.ghostCamera.GetComponent<PerspectiveCameraControl>().enabled = false;
                 player.enabled = false;
+                interactCanvas.SetActive(false);
+                this.enabled = false;
             }
             else if (inZodiacZone)
             {
@@ -77,6 +81,8 @@ public class PlayerInteractionController : MonoBehaviour
                 zodiacCam.SetActive(true);
                 mainCam.SetActive(false);
                 player.enabled = false;
+                interactCanvas.SetActive(false);
+                this.enabled = false;
             }
         }
     }
@@ -92,10 +98,22 @@ public class PlayerInteractionController : MonoBehaviour
         dialoguePartner = partner;
     }
 
-     public void SetInZodiacZone(bool withinZone, ZodiacPuzzle zodPuz, GameObject zodCam)
-     {
-         inZodiacZone = withinZone;
-         zodiacPuzzle = zodPuz;
-         zodiacCam = zodCam;
-     }
+    public void SetInZodiacZone(bool withinZone, ZodiacPuzzle zodPuz, GameObject zodCam)
+    {
+        inZodiacZone = withinZone;
+        zodiacPuzzle = zodPuz;
+        zodiacCam = zodCam;
+    }
+
+    void Update()
+    {
+        if (inZodiacZone || inDialogueZone)
+        {
+            interactCanvas.SetActive(true);
+        }
+        else
+        {
+            interactCanvas.SetActive(false);
+        }
+    }
 }
