@@ -256,6 +256,7 @@ public class DialogueLine : MonoBehaviour
         LiarGameManager.Instance().player.GetComponent<PlayerController>().enabled = true;
         canvasObj.SetActive(false);
         playCont.enabled = true;
+        playCont.GetComponent<PlayerInteractionController>().enabled = true;
 
         playCont.ghostCamera.GetComponent<PerspectiveCameraControl>().enabled = true;
     }

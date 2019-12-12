@@ -92,6 +92,7 @@ public class ZodiacPuzzle : MonoBehaviour
             // for ukiyoe scene
             mainCam.SetActive(true);
             player.enabled = true;
+            player.GetComponent<PlayerInteractionController>().enabled = true;
             zodCamera.SetActive(false);
             this.enabled = false;
         }
