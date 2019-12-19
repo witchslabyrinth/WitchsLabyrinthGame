@@ -98,9 +98,11 @@ public class Actor : MonoBehaviour
 
     private void Animation()
     {
+        // Get movement as a unit vector
         Vector3 moveVector = movement.Get(transform);
-        
-        // Generate proper animations bsed on movement
+
+        // TOD: Interpret movement relative to camera perspective??
+        // Generate proper animations bsed on movement (on x-z plane)
         animationController.UpdateAnims(new Vector2(moveVector.x, moveVector.z));
     }
 
