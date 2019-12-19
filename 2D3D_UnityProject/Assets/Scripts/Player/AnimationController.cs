@@ -30,27 +30,20 @@ public class AnimationController : MonoBehaviour
     /// Update animation parameters
     /// </summary>
     /// <param name="movement">Unit-vector representing movement in form (x, z)</param>
-    // /// <param name="moveType">0 - Standing, 1 - Walking, 3 - Running</param>
     public void UpdateAnims(Vector2 movement)
     {
         // If player is not moving, use values from last non-zero movement input (so we maintian direction after stopping)
         if(movement == Vector2.zero) {
             movement = lastFacing;
-
-            // Set speed to idle
-            anim.SetFloat("Speed", 0);
         }
         // Otherwise save movement values to maintain direction when stopped
         else {
             lastFacing = movement;
-
-            // Set speed to walking
-            anim.SetFloat("Speed", 1);
         }
         // Set animation values
         anim.SetFloat("MoveX", movement.x);
         anim.SetFloat("MoveY", movement.y);
-        // anim.SetFloat("Speed", moveType);
+        anim.SetFloat("Speed", 0);
     }
 
     void LateUpdate()

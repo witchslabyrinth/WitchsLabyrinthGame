@@ -5,6 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class Actor : MonoBehaviour
 {
+    #region components
+    
     // TODO: consider removing CharacterController - only used for movement
     /// <summary>
     /// Used for applying player movement
@@ -27,6 +29,7 @@ public class Actor : MonoBehaviour
     /// 3D perspective camera 
     /// </summary>
     public PerspectiveCameraControl ghostCamera;
+    #endregion
 
     [Header("Movement Settings")]
 
@@ -68,14 +71,8 @@ public class Actor : MonoBehaviour
         // Move actor
         Move();
 
-        // Update animations based on movement
+        // Update animations
         Animation();
-
-        // @ Victor:
-        // TODO: use movement data (value returned from Movement.Get(), or Actor.Move() if you want direction + magnitude) 
-        // and send it to the AnimationController to show the proper animations
-        //
-        // Try and keep your code limited to this class and AnimationController.cs - you shouldn't have to touch PlayerController for any of this
     }
 
     /// <summary>
@@ -101,7 +98,6 @@ public class Actor : MonoBehaviour
         // Get movement direction as a unit vector (corresponds to player inputs, ignoring invalid movement directions)
         Vector2 direction = movement.GetAnimation(this);
 
-        // TOD: Interpret movement relative to camera perspective??
         // Generate proper animations bsed on movement (on x-z plane)
         animationController.UpdateAnims(direction);
     }
