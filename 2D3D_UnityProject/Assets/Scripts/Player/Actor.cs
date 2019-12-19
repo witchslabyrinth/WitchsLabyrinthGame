@@ -26,7 +26,7 @@ public class Actor : MonoBehaviour
     /// <summary>
     /// 3D perspective camera 
     /// </summary>
-    public GameObject ghostCamera;
+    public PerspectiveCameraControl ghostCamera;
 
     [Header("Movement Settings")]
 

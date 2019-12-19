@@ -100,6 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   orb: {fileID: 6556679171278252735}
   mainCam: {fileID: 0}
+  interactCanvas: {fileID: 0}
 --- !u!143 &1616911469
 CharacterController:
   m_ObjectHideFlags: 0
@@ -131,7 +132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animationController: {fileID: 710809160864348023}
-  ghostCamera: {fileID: 0}
+  ghostCamera: {fileID: 1572253898046683821}
   movementSpeed: 15
   movement: {fileID: 11400000, guid: 9f92dfbfb814c49998d29f12230cbef7, type: 2}
 --- !u!1 &2327871898697840208

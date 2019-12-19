@@ -258,7 +258,7 @@ public class DialogueLine : MonoBehaviour
         playCont.enabled = true;
         playCont.GetComponent<PlayerInteractionController>().enabled = true;
 
-        playCont.GetActor().ghostCamera.GetComponent<PerspectiveCameraControl>().enabled = true;
+        playCont.GetActor().ghostCamera.enabled = true;
     }
 
     ///    CAN PROBABLY DISCARD NEXT SECTION IN REFACTOR - END    ///
