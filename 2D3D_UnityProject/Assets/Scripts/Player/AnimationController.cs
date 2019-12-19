@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(Animator), typeof(SpriteRenderer))]
 public class AnimationController : MonoBehaviour
 {
     private Animator anim;
+
+    private SpriteRenderer spriteRenderer;
 
     /// <summary>
     /// Direction we were facing after last movement input
@@ -17,6 +19,9 @@ public class AnimationController : MonoBehaviour
         // fuckin sweet way to get components check this shit out
         if (!TryGetComponent(out anim)) {
             Debug.LogWarning(name + " | Animator component not found in AnimationController - please attach an Animator to this GameObject");
+        }
+        if (!TryGetComponent(out spriteRenderer)) {
+            Debug.LogWarning(name + " | SpriteRenderer component not found in AnimationController - please attach an Animator to this GameObject");
         }
     }
 
@@ -46,6 +51,20 @@ public class AnimationController : MonoBehaviour
         anim.SetFloat("MoveX", movement.x);
         anim.SetFloat("MoveY", movement.y);
         // anim.SetFloat("Speed", moveType);
+    }
+
+    void LateUpdate()
+    {
+        // Point sprite towards camera before rendering (ensures no previous rotations affect sprite appearance)
+        FaceCamera();
+    }
+
+    /// <summary>
+    /// Make SpriteRenderer face towards camera
+    /// </summary>
+    private void FaceCamera()
+    {
+        transform.forward = Camera.main.transform.forward;
     }
 
 }
