@@ -68,6 +68,9 @@ public class Actor : MonoBehaviour
         // Move actor
         Move();
 
+        // Update animations based on movement
+        Animation();
+
         // @ Victor:
         // TODO: use movement data (value returned from Movement.Get(), or Actor.Move() if you want direction + magnitude) 
         // and send it to the AnimationController to show the proper animations
@@ -91,6 +94,14 @@ public class Actor : MonoBehaviour
 
         // Return movement
         return moveVector;
+    }
+
+    private void Animation()
+    {
+        Vector3 moveVector = movement.Get(transform);
+        
+        // Generate proper animations bsed on movement
+        animationController.UpdateAnims(new Vector2(moveVector.x, moveVector.z));
     }
 
     public void SetMovementType(Movement movement)

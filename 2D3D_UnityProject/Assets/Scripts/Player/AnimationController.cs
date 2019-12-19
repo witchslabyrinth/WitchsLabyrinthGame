@@ -7,6 +7,11 @@ public class AnimationController : MonoBehaviour
 {
     private Animator anim;
 
+    /// <summary>
+    /// Direction we were facing after last movement input
+    /// </summary>
+    private Vector2 lastFacing;
+
     void Start()
     {
         // fuckin sweet way to get components check this shit out
@@ -19,14 +24,24 @@ public class AnimationController : MonoBehaviour
     /// <summary>
     /// Update animation parameters
     /// </summary>
-    /// <param name="xdir">looking left or right, from -1 to 1</param>
-    /// <param name="ydir">looking down or up, from -1 to 1</param>
+    /// <param name="movement">Unit-vector representing movement in form (x, z)</param>
     /// <param name="moveType">0 - Standing, 1 - Walking, 3 - Running</param>
-    public void UpdateAnims(float xdir, float ydir, float moveType)
+    public void UpdateAnims(Vector2 movement)
     {
-        anim.SetFloat("MoveX", xdir);
-        anim.SetFloat("MoveY", ydir);
-        anim.SetFloat("Speed", moveType);
+        // If player is not moving, use values from last non-zero movement input (so we maintian direction after stopping)
+        if(movement == Vector2.zero) {
+            movement = lastFacing;
+            anim.SetFloat("Speed", 0);
+        }
+        // Otherwise save movement values to maintain direction when stopped
+        else {
+            lastFacing = movement;
+            anim.SetFloat("Speed", 1);
+        }
+        // Set animation values
+        anim.SetFloat("MoveX", movement.x);
+        anim.SetFloat("MoveY", movement.y);
+        // anim.SetFloat("Speed", moveType);
     }
 
 }
