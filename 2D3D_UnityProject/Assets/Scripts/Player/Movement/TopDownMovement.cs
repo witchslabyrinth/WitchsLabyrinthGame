@@ -10,7 +10,7 @@ public class TopDownMovement : Movement
     /// </summary>
     /// <param name="player"></param>
     /// <returns></returns>
-    public override Vector3 Get(Transform player)
+    public override Vector3 GetMovement(Transform player)
     {
         Vector3 movement = Vector3.zero;
 
@@ -31,5 +31,10 @@ public class TopDownMovement : Movement
         }
 
         return movement.normalized;
+    }
+
+    public override Vector2 GetAnimation(Actor player)
+    {
+        throw new System.NotImplementedException();
     }
 }

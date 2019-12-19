@@ -42,7 +42,7 @@ public class FollowMovement : Movement
         this.target = target;
     }
 
-    public override Vector3 Get(Transform player)
+    public override Vector3 GetMovement(Transform player)
     {
         if(target == null) {
             // Set target to player if specified
@@ -65,5 +65,10 @@ public class FollowMovement : Movement
             return toTarget.normalized;
         else 
             return Vector3.zero;
+    }
+
+    public override Vector2 GetAnimation(Actor player)
+    {
+        throw new System.NotImplementedException();
     }
 }

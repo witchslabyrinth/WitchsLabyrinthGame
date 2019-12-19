@@ -56,7 +56,7 @@ public class FollowMoveController : MoveController
         // }
         // updateAnims(dir.x, dir.y, movingType);
         float step = moveSpeed * Time.fixedDeltaTime;
-        transform.position += movement.Get(transform) * step;
+        transform.position += movement.GetMovement(transform) * step;
     }
 
     void Update()

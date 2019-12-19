@@ -85,7 +85,7 @@ public class Actor : MonoBehaviour
     private Vector3 Move()
     {
         // Get move direction (as unit vector) from movement class
-        Vector3 direction = movement.Get(transform);
+        Vector3 direction = movement.GetMovement(transform);
 
         // Apply movement (scaled by movement speed)
         float magnitude = movementSpeed * Time.fixedDeltaTime;
@@ -98,12 +98,12 @@ public class Actor : MonoBehaviour
 
     private void Animation()
     {
-        // Get movement as a unit vector
-        Vector3 moveVector = movement.Get(transform);
+        // Get movement direction as a unit vector (corresponds to player inputs, ignoring invalid movement directions)
+        Vector2 direction = movement.GetAnimation(this);
 
         // TOD: Interpret movement relative to camera perspective??
         // Generate proper animations bsed on movement (on x-z plane)
-        animationController.UpdateAnims(new Vector2(moveVector.x, moveVector.z));
+        animationController.UpdateAnims(direction);
     }
 
     public void SetMovementType(Movement movement)
