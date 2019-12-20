@@ -14,7 +14,7 @@ public class PerspectiveMovement : Movement
         this.perspCamera = perspCamera;
     }
 
-    public override Vector3 GetMovement(Transform player)
+    public override Vector3 GetMovement(Actor player)
     {
         Vector3 movement = Vector3.zero;
 
@@ -36,7 +36,7 @@ public class PerspectiveMovement : Movement
 
         // TODO: consider making it use the camera transform rather than player?
         // Make movement relative to player-facing direction
-        movement = player.TransformDirection(movement);
+        movement = player.transform.TransformDirection(movement);
         return movement.normalized;
     }
 

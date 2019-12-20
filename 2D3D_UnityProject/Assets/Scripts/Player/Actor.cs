@@ -82,7 +82,7 @@ public class Actor : MonoBehaviour
     private Vector3 Move()
     {
         // Get move direction (as unit vector) from movement class
-        Vector3 direction = movement.GetMovement(transform);
+        Vector3 direction = movement.GetMovement(this);
 
         // Apply movement (scaled by movement speed)
         float magnitude = movementSpeed * Time.fixedDeltaTime;

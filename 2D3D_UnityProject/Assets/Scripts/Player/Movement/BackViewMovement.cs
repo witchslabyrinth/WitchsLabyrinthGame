@@ -10,7 +10,7 @@ public class BackViewMovement : Movement
     /// </summary>
     /// <param name="player"></param>
     /// <returns></returns>
-    public override Vector3 GetMovement(Transform player)
+    public override Vector3 GetMovement(Actor player)
     {
         Vector3 movement = Vector3.zero;
 
