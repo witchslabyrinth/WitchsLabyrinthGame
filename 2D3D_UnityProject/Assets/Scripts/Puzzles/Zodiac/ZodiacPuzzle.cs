@@ -50,9 +50,6 @@ public class ZodiacPuzzle : MonoBehaviour
     [SerializeField]
     private GameObject zodCamera;
 
-    //more probably bad stuff
-    //public PlayerController player;
-
     public GameObject mainCam;
 
     public GameObject zodiacCanvas;
@@ -60,10 +57,8 @@ public class ZodiacPuzzle : MonoBehaviour
     void Start()
     {
         // Initialize each disk
-        foreach(ZodiacDisk disk in disks) {
-            // moving this to ZodiacDisk's Start function
-            // disk.Init(this);
-
+        foreach(ZodiacDisk disk in disks) 
+        {
             // Check solution each time a symbol is selected
             disk.selectedSymbol += CheckSolution;
         }

@@ -22,7 +22,7 @@ public class Actor : MonoBehaviour
     /// <summary>
     /// Used for handling interactions with other entities (dialogue, puzzles, etc)
     /// </summary>
-    private PlayerInteractionController interactionController;
+    public PlayerInteractionController interactionController {get; private set;}
 
     // TODO: move to a camera-related class
     /// <summary>

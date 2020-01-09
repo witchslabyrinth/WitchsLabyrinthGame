@@ -33,6 +33,11 @@ public class PlayerInteractionController : MonoBehaviour
     public GameObject orb;
 
     /// <summary>
+    /// Reference to an interactable within range (if present)
+    /// </summary>
+    private Interactable interactable;
+
+    /// <summary>
     /// True if player is near the Zodiac puzzle
     /// </summary>
     private bool inZodiacZone;
@@ -43,8 +48,6 @@ public class PlayerInteractionController : MonoBehaviour
     private ZodiacPuzzle zodiacPuzzle;
 
     private GameObject zodiacCam;
-
-    public GameObject mainCam;
     // end of bad stuff
 
     public GameObject interactCanvas;
@@ -93,6 +96,10 @@ public class PlayerInteractionController : MonoBehaviour
             interactCanvas.SetActive(false);
             this.enabled = false;
         }
+        else if(Input.GetKeyDown(KeyCode.R)) 
+        {
+
+        }
     }
 
     /// <summary>
@@ -113,8 +120,26 @@ public class PlayerInteractionController : MonoBehaviour
         zodiacCam = zodCam;
     }
 
+    /// <summary>
+    /// Called when this actor enters/exits the trigger zone of an Interactable
+    /// </summary>
+    /// <param name="nearInteractable">True if actor entered trigger zone, false if actor exited trigger zone</param>
+    /// <param name="interactable">Nearby interactable</param>
+    public void SetNearbyInteractable(bool nearInteractable, Interactable interactable) 
+    {
+        if(nearInteractable) 
+            this.interactable = interactable;
+        else 
+            this.interactable = null;
+    }
+
     void Update()
     {
+        // Don't try to interact if there's no nearby interactable
+        if(interactable == null) {
+            return;
+        }
+
         if (inZodiacZone || inDialogueZone)
         {
             interactCanvas.SetActive(true);
