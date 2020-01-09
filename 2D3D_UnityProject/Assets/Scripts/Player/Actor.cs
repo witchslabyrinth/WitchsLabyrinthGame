@@ -69,7 +69,7 @@ public class Actor : MonoBehaviour
         }
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         // Move actor
         Move();
