@@ -28,6 +28,11 @@ public class BackViewMovement : Movement
         return movement.normalized;
     }
 
+    // TODO: make this work with non-player actors too (i.e. doesn't return player directional input)
+    /// <summary>
+    /// Returns direction of actor animation
+    /// </summary>
+    /// <param name="player">Reference to actor</param>
     public override Vector2 GetAnimation(Actor player)
     {
         if (Input.GetKey(KeyCode.A))
