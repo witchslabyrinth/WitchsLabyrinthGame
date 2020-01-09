@@ -14,7 +14,7 @@ public class AnimationController : MonoBehaviour
     /// </summary>
     private Vector2 lastFacing;
 
-    void Start()
+    private void Start()
     {
         // fuckin sweet way to get components check this shit out
         if (!TryGetComponent(out anim)) {
@@ -46,7 +46,7 @@ public class AnimationController : MonoBehaviour
         anim.SetFloat("Speed", 0);
     }
 
-    void LateUpdate()
+    private void LateUpdate()
     {
         // Point sprite towards camera before rendering (ensures no previous rotations affect sprite appearance)
         FaceCamera();
