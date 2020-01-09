@@ -43643,11 +43643,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BackgroundTree (4)
       objectReference: {fileID: 0}
-    - target: {fileID: -6860895033569716450, guid: e1ebd556848debf4092bf41b05eab723,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: e1ebd556848debf4092bf41b05eab723,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -43713,6 +43708,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 0ae3a249f4bf14865aef7cb37dab8747, type: 2}
+    - target: {fileID: -6860895033569716450, guid: e1ebd556848debf4092bf41b05eab723,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1ebd556848debf4092bf41b05eab723, type: 3}
 --- !u!1001 &1757486086
@@ -47436,6 +47436,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 313724300, guid: 4646f965fb9f8d64191bb801344f90f4, type: 3}
+      propertyPath: actor
+      value: 
+      objectReference: {fileID: 1616911467}
     - target: {fileID: 4208683251683716152, guid: 4646f965fb9f8d64191bb801344f90f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -47511,10 +47515,6 @@ PrefabInstance:
       propertyPath: perspControl
       value: 
       objectReference: {fileID: 1616911465}
-    - target: {fileID: 313724300, guid: 4646f965fb9f8d64191bb801344f90f4, type: 3}
-      propertyPath: actor
-      value: 
-      objectReference: {fileID: 1616911467}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4646f965fb9f8d64191bb801344f90f4, type: 3}
 --- !u!1001 &2104393540
