@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName="Movement/Top Down Movement")]
+[CreateAssetMenu(menuName = "Movement/Top Down Movement")]
 public class TopDownMovement : Movement
 {
     /// <summary>
@@ -15,18 +15,24 @@ public class TopDownMovement : Movement
         Vector3 movement = Vector3.zero;
 
         // Up/Down = change in Z
-        if(Input.GetKey(KeyCode.W)) {
+        if (Input.GetKey(KeyCode.W))
+        {
             movement += Vector3.forward;
         }
-        if(Input.GetKey(KeyCode.S)) {
+
+        if (Input.GetKey(KeyCode.S))
+        {
             movement += Vector3.back;
         }
 
         // Left/Right = change in X
-        if(Input.GetKey(KeyCode.A)) {
+        if (Input.GetKey(KeyCode.A))
+        {
             movement += Vector3.left;
         }
-        if(Input.GetKey(KeyCode.D)) {
+
+        if (Input.GetKey(KeyCode.D))
+        {
             movement += Vector3.right;
         }
 

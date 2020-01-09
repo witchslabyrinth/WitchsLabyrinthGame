@@ -10,13 +10,11 @@ public abstract class Movement : ScriptableObject
     /// Returns movement as a unit vector (magnitude 1)
     /// </summary>
     /// <param name="player">Player instance</param>
-    /// <returns></returns>
     public abstract Vector3 GetMovement(Actor player);
 
     /// <summary>
     /// Returns unit vector corresponding to animation direction (which way the player sprite should be facing)
     /// </summary>
     /// <param name="player"></param>
-    /// <returns></returns>
     public abstract Vector2 GetAnimation(Actor player);
 }

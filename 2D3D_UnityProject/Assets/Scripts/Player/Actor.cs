@@ -45,7 +45,7 @@ public class Actor : MonoBehaviour
     [SerializeField] 
     protected Movement movement;
 
-    void Start()
+    private void Start()
     {
         controller = GetComponent<CharacterController>();
         interactionController = GetComponent<PlayerInteractionController>();
@@ -69,7 +69,7 @@ public class Actor : MonoBehaviour
         }
     }
 
-    void Update()
+    private void Update()
     {
         // Move actor
         Move();

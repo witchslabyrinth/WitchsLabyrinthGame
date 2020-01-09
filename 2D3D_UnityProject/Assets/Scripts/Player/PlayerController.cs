@@ -11,7 +11,7 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField]
     private Actor actor;
 
-    void Start()
+    private void Start()
     {
         // Make sure we have an actor
         if(actor == null) {
@@ -19,7 +19,7 @@ public class PlayerController : Singleton<PlayerController>
         }
     }
 
-    void Update()
+    private void Update()
     {
         // Handle interactions with other game entities
         actor.CheckInteraction();

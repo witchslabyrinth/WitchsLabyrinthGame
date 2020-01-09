@@ -2,24 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName="Movement/Back View Movement")]
+[CreateAssetMenu(menuName = "Movement/Back View Movement")]
 public class BackViewMovement : Movement
 {
     /// <summary>
     /// Returns horizontal movement along X-axis
     /// </summary>
     /// <param name="player"></param>
-    /// <returns></returns>
     public override Vector3 GetMovement(Actor player)
     {
         Vector3 movement = Vector3.zero;
 
         // Ignore Up/Down - not used in this movement scheme
         // Left/Right = change in X
-        if(Input.GetKey(KeyCode.A)) {
+        if (Input.GetKey(KeyCode.A))
+        {
             movement += Vector3.left;
         }
-        if(Input.GetKey(KeyCode.D)) {
+
+        if (Input.GetKey(KeyCode.D))
+        {
             movement += Vector3.right;
         }
 
@@ -28,12 +30,16 @@ public class BackViewMovement : Movement
 
     public override Vector2 GetAnimation(Actor player)
     {
-        if(Input.GetKey(KeyCode.A)) {
+        if (Input.GetKey(KeyCode.A))
+        {
             return Vector2.left;
         }
-        if(Input.GetKey(KeyCode.D)) {
+
+        if (Input.GetKey(KeyCode.D))
+        {
             return Vector2.right;
         }
+
         return Vector2.zero;
     }
 }

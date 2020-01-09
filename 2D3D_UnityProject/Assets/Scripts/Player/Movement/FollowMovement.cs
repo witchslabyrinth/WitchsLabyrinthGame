@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName="Movement/Follow Movement")]
+[CreateAssetMenu(menuName = "Movement/Follow Movement")]
 public class FollowMovement : Movement
 {
     /// <summary>
@@ -13,20 +13,17 @@ public class FollowMovement : Movement
     /// <summary>
     /// Sets player actor as target if true
     /// </summary>
-    [SerializeField]
-    private bool followPlayer;
+    [SerializeField] private bool followPlayer;
 
     /// <summary>
     /// Smaller radius of satisfaction around target - stop moving when we are this close
     /// </summary>
-    [SerializeField]
-    protected float stoppingDistance = 1;
-    
+    [SerializeField] protected float stoppingDistance = 1;
+
     /// <summary>
     /// Larger radius around target - start following the target when we're this far away
     /// </summary>
-    [SerializeField]
-    protected float startingDistance = 3;
+    [SerializeField] protected float startingDistance = 3;
 
     public FollowMovement(Transform target, float stoppingDistance, float startingDistance)
     {
@@ -44,13 +41,16 @@ public class FollowMovement : Movement
 
     public override Vector3 GetMovement(Actor player)
     {
-        if(target == null) {
+        if (target == null)
+        {
             // Set target to player if specified
-            if(followPlayer) {
+            if (followPlayer)
+            {
                 target = PlayerController.Instance.GetActor().transform;
             }
             // Otherwise return 0
-            else {
+            else
+            {
                 Debug.LogWarning(player.name + " | FollowMovement.target is null, cannot generate movement");
                 return Vector3.zero;
             }
@@ -61,9 +61,9 @@ public class FollowMovement : Movement
         float distance = toTarget.magnitude;
 
         // Move towards target if outside stopping radius
-        if ((distance >= stoppingDistance)) 
+        if ((distance >= stoppingDistance))
             return toTarget.normalized;
-        else 
+        else
             return Vector3.zero;
     }
 
