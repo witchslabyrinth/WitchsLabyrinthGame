@@ -17,11 +17,18 @@ public class AnimationController : MonoBehaviour
     private void Start()
     {
         // fuckin sweet way to get components check this shit out
-        if (!TryGetComponent(out anim)) {
-            Debug.LogWarning(name + " | Animator component not found in AnimationController - please attach an Animator to this GameObject");
+        if (!TryGetComponent(out anim))
+        {
+            Debug.LogWarning(
+                name +
+                " | Animator component not found in AnimationController - please attach an Animator to this GameObject");
         }
-        if (!TryGetComponent(out spriteRenderer)) {
-            Debug.LogWarning(name + " | SpriteRenderer component not found in AnimationController - please attach an Animator to this GameObject");
+
+        if (!TryGetComponent(out spriteRenderer))
+        {
+            Debug.LogWarning(
+                name +
+                " | SpriteRenderer component not found in AnimationController - please attach an Animator to this GameObject");
         }
     }
 
@@ -33,13 +40,16 @@ public class AnimationController : MonoBehaviour
     public void UpdateAnims(Vector2 movement)
     {
         // If player is not moving, use values from last non-zero movement input (so we maintian direction after stopping)
-        if(movement == Vector2.zero) {
+        if (movement == Vector2.zero)
+        {
             movement = lastFacing;
         }
         // Otherwise save movement values to maintain direction when stopped
-        else {
+        else
+        {
             lastFacing = movement;
         }
+
         // Set animation values
         anim.SetFloat("MoveX", movement.x);
         anim.SetFloat("MoveY", movement.y);
@@ -59,5 +69,4 @@ public class AnimationController : MonoBehaviour
     {
         transform.forward = Camera.main.transform.forward;
     }
-
 }
