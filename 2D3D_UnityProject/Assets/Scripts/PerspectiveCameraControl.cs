@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PerspectiveCameraControl : MonoBehaviour {
+    public Camera Camera { get; private set; }
+
     Vector2 _mouseAbsolute;
     Vector2 _smoothMouse;
 
