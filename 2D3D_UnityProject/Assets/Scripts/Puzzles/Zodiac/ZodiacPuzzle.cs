@@ -51,7 +51,7 @@ public class ZodiacPuzzle : MonoBehaviour
     private GameObject zodCamera;
 
     //more probably bad stuff
-    public PlayerController player;
+    //public PlayerController player;
 
     public GameObject mainCam;
 
@@ -77,22 +77,28 @@ public class ZodiacPuzzle : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W)) {
+        if (Input.GetKeyDown(KeyCode.W)) 
+        {
             SwitchDisk(false);
         }
-        else if (Input.GetKeyDown(KeyCode.S)) {
+        else if (Input.GetKeyDown(KeyCode.S)) 
+        {
             SwitchDisk(true);
         }
 
         //TODO: Remove this when it's no longer necessary
         if (Input.GetKeyDown(KeyCode.R))
         {
-            // UnityEngine.SceneManagement.SceneManager.LoadScene("ZodiacPuzzle");
-
             // for ukiyoe scene
             mainCam.SetActive(true);
-            player.enabled = true;
+
+            // Restore control to player actor
+            Actor player = PlayerController.Instance.GetActor();
+            player.gameObject.SetActive(true);
+
+            // Re-enable PlayerInteractionController
             player.GetComponent<PlayerInteractionController>().enabled = true;
+
             zodCamera.SetActive(false);
             this.enabled = false;
         }

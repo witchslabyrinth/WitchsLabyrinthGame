@@ -77,30 +77,21 @@ public class PlayerInteractionController : MonoBehaviour
             {
                 // Show dialogue conversation if interacting with NPC
                 LiarGameManager.Instance().StartConversation(dialoguePartner);
-
-                // TODO: Freeze player/camera movement
-                // player.ghostCamera.GetComponent<PerspectiveCameraControl>().enabled = false;
-                // player.enabled = false;
-
-                interactCanvas.SetActive(false);
-                
-                this.enabled = false;
             }
             else if (inZodiacZone)
             {
                 // Enable and shift focus to Zodiac puzzle
                 zodiacPuzzle.enabled = true;
                 zodiacCam.SetActive(true);
-
-
-                mainCam.SetActive(false);
-
-                // TODO: Freeze player/camera movement
-                // player.enabled = false;
-
-                interactCanvas.SetActive(false);
-                this.enabled = false;
             }
+
+            // Disable player actor control
+            Actor player = PlayerController.Instance.GetActor();
+            player.gameObject.SetActive(false);
+
+            // Hide interact canvas
+            interactCanvas.SetActive(false);
+            this.enabled = false;
         }
     }
 
