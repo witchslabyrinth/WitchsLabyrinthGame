@@ -37,7 +37,13 @@ public class Actor : MonoBehaviour
     /// Base movement speed
     /// </summary>
     [SerializeField]
-    protected float movementSpeed = 15f;
+    protected float movementSpeed = 10f;
+
+    /// <summary>
+    /// Speed multiplier when sprinting
+    /// </summary>
+    [SerializeField]
+    protected float sprintMultiplier = 1.5f;
 
     /// <summary>
     /// Used to generate Actor movement - varies depending on current camera perspective, or assigned NPC behavior
@@ -89,6 +95,12 @@ public class Actor : MonoBehaviour
 
         // Apply movement (scaled by movement speed)
         float magnitude = movementSpeed * Time.fixedDeltaTime;
+
+        // Apply speed multiplier if sprinting
+        if(Input.GetKey(KeyCode.LeftShift)) {
+            magnitude *= sprintMultiplier;
+        }
+
         Vector3 moveVector = direction * magnitude;
         controller.Move(moveVector);
 
