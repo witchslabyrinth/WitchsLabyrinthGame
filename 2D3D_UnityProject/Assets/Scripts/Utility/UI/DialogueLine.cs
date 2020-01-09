@@ -253,12 +253,12 @@ public class DialogueLine : MonoBehaviour
         dialogueText.text = "";
         finalLine = false;
         yesNoButtons.SetActive(false);
-        LiarGameManager.Instance().player.GetComponent<PlayerController>().enabled = true;
-        canvasObj.SetActive(false);
-        playCont.enabled = true;
-        playCont.GetComponent<PlayerInteractionController>().enabled = true;
 
-        playCont.GetActor().ghostCamera.enabled = true;
+        canvasObj.SetActive(false);
+
+        // Restore player actor control
+        Actor player = PlayerController.Instance.GetActor();
+        player.Enable();
     }
 
     ///    CAN PROBABLY DISCARD NEXT SECTION IN REFACTOR - END    ///

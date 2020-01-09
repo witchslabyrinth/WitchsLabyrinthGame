@@ -47,6 +47,10 @@ public class LiarGameManager : MonoBehaviour
     /// <param name="npc">ID of the person currently talking</param>
     public void StartConversation(int npc)
     {
+        // Disable player control
+        Actor actor = PlayerController.Instance.GetActor();
+        actor.Disable();
+
         LiarStatue liar = npcs[npc].GetComponentInChildren<LiarStatue>();
         dialogueCode.SetLine(liar.GetStatement());
         dialogueCode.SetName(liar.GetName());
@@ -54,14 +58,16 @@ public class LiarGameManager : MonoBehaviour
 
         canvasObject.SetActive(true);
 
-        // TODO: make this work with new PlayerController (consider giving the player a NulLMovement that ignores all movement input)
-        player.GetComponent<PlayerController>().enabled = false;
 
         currNpc = npc;
     }
 
     public void CheckOrb(int npc)
     {
+        // Disable player control
+        Actor actor = PlayerController.Instance.GetActor();
+        actor.Disable();
+
         LiarStatue liar = npcs[npc].GetComponentInChildren<LiarStatue>();
         dialogueCode.SetLine(liar.GetWinLoseStatement());
         dialogueCode.SetName(liar.GetName());
@@ -69,14 +75,15 @@ public class LiarGameManager : MonoBehaviour
 
         canvasObject.SetActive(true);
 
-        // TODO: make this work with new PlayerController (consider giving the player a NulLMovement that ignores all movement input
-        player.GetComponent<PlayerController>().enabled = false;
-
         player.GetComponentInChildren<PerspectiveCameraControl>().lockCursor = true;
     }
 
     public void CheckOrb()
     {
+        // Disable player control
+        Actor actor = PlayerController.Instance.GetActor();
+        actor.Disable();
+
         LiarStatue liar = npcs[currNpc].GetComponentInChildren<LiarStatue>();
         dialogueCode.SetLine(liar.GetWinLoseStatement());
         dialogueCode.SetName(liar.GetName());
@@ -84,12 +91,10 @@ public class LiarGameManager : MonoBehaviour
 
         canvasObject.SetActive(true);
 
-        // TODO: make this work with new PlayerController (consider giving the player a NulLMovement that ignores all movement input
-        player.GetComponent<PlayerController>().enabled = false;
         dialogueCode.yesNoButtons.SetActive(false);
         dialogueCode.printDialogue = dialogueCode.StartCoroutine(dialogueCode.PrintDialogueCoroutine());
         if (currNpc == 0)
-            player.GetComponent<PlayerInteractionController>().orb.SetActive(true);
+            actor.GetComponent<PlayerInteractionController>().orb.SetActive(true);
 
         Cursor.lockState = CursorLockMode.Locked;
     }

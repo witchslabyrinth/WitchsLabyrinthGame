@@ -62,7 +62,6 @@ public class GameManager : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            // TODO: get camera component earlier/somewhere else
             // Update movement type
             playerActor.SetMovementType(new PerspectiveMovement(perspControl.Camera));
 

@@ -86,8 +86,8 @@ public class PlayerInteractionController : MonoBehaviour
             }
 
             // Disable player actor control
-            Actor player = PlayerController.Instance.GetActor();
-            player.gameObject.SetActive(false);
+            Actor actor = PlayerController.Instance.GetActor();
+            actor.Disable();
 
             // Hide interact canvas
             interactCanvas.SetActive(false);

@@ -117,4 +117,31 @@ public class Actor : MonoBehaviour
     {
         interactionController.CheckInteraction();
     }
+
+    /// <summary>
+    /// Shows actor and restores control/behavior
+    /// </summary>
+    public void Enable()
+    {
+        SetActive(true);
+    }
+
+    /// <summary>
+    /// Hides actor and revokes control/behavior
+    /// </summary>
+    public void Disable()
+    {
+        SetActive(false);
+    }
+
+    /// <summary>
+    /// Sets actor functionality (camera, movement, visibility, etc)
+    /// </summary>
+    /// <param name="active"></param>
+    private void SetActive(bool active)
+    {
+        gameObject.SetActive(active);
+        interactionController.enabled = active;
+        ghostCamera.enabled = active;
+    }
 }

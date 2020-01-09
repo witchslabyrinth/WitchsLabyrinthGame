@@ -93,11 +93,8 @@ public class ZodiacPuzzle : MonoBehaviour
             mainCam.SetActive(true);
 
             // Restore control to player actor
-            Actor player = PlayerController.Instance.GetActor();
-            player.gameObject.SetActive(true);
-
-            // Re-enable PlayerInteractionController
-            player.GetComponent<PlayerInteractionController>().enabled = true;
+            Actor actor = PlayerController.Instance.GetActor();
+            actor.Enable();
 
             zodCamera.SetActive(false);
             this.enabled = false;
