@@ -91,7 +91,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 1, z: 6}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3537598357331550147
 MonoBehaviour:
@@ -107,3 +107,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PairedDoor: {fileID: 0}
   TeleportOnExitToCoordinate: {x: 0, y: 0, z: 0}
+  myOrientation: 0
