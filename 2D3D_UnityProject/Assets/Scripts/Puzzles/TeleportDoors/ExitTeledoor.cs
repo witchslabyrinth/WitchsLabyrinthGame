@@ -20,7 +20,8 @@ public class ExitTeledoor : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //Exit if collided with non-player object
-        if (other.GetComponent<PlayerController>() == null)
+        Actor objectCollided = other.GetComponent<Actor>();
+        if (objectCollided == null || objectCollided != PlayerController.Instance.GetActor())
         {
             return;
         }
