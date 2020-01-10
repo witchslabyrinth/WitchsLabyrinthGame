@@ -84,6 +84,9 @@ public class PlayerInteractionController : MonoBehaviour
                 zodiacPuzzle.enabled = true;
                 zodiacCam.SetActive(true);
             }
+            // Ignore interact button press if no nearby interactable
+            else
+                return;
 
             // Disable player actor control
             Actor actor = PlayerController.Instance.GetActor();
