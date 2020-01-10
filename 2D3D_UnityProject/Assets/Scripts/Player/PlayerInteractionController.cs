@@ -7,13 +7,13 @@ using UnityEngine;
 /// <summary>
 /// Used for handling player interactions with game entities (NPCs, Puzzles, etc)
 /// </summary>
+[RequireComponent((typeof(Actor)))]
 public class PlayerInteractionController : MonoBehaviour
 {
     /// <summary>
-    /// Reference to player (note: could switch between Oliver and Cat)
+    /// Reference to associated actor (either Oliver or Cat)
     /// </summary>
-    [SerializeField]
-    private PlayerController player;
+    private Actor actor;
 
     ///    CAN PROBABLY DISCARD NEXT SECTION IN REFACTOR    ///
 
@@ -49,6 +49,14 @@ public class PlayerInteractionController : MonoBehaviour
 
     public GameObject interactCanvas;
 
+    void Start()
+    {
+        if(!TryGetComponent(out actor)) 
+        {
+            Debug.LogWarning(name + " | PlayerInteractionController failed to get Actor component from this game object");
+        }
+    }
+
     /// <summary>
     /// Called via PlayerController to handle interactions
     /// </summary>
@@ -69,21 +77,24 @@ public class PlayerInteractionController : MonoBehaviour
             {
                 // Show dialogue conversation if interacting with NPC
                 LiarGameManager.Instance().StartConversation(dialoguePartner);
-                player.ghostCamera.GetComponent<PerspectiveCameraControl>().enabled = false;
-                player.enabled = false;
-                interactCanvas.SetActive(false);
-                this.enabled = false;
             }
             else if (inZodiacZone)
             {
                 // Enable and shift focus to Zodiac puzzle
                 zodiacPuzzle.enabled = true;
                 zodiacCam.SetActive(true);
-                mainCam.SetActive(false);
-                player.enabled = false;
-                interactCanvas.SetActive(false);
-                this.enabled = false;
             }
+            // Ignore interact button press if no nearby interactable
+            else
+                return;
+
+            // Disable player actor control
+            Actor actor = PlayerController.Instance.GetActor();
+            actor.Disable();
+
+            // Hide interact canvas
+            interactCanvas.SetActive(false);
+            this.enabled = false;
         }
     }
 
@@ -96,6 +107,9 @@ public class PlayerInteractionController : MonoBehaviour
     {
         inDialogueZone = withinZone;
         dialoguePartner = partner;
+
+        // Show/hide interact canvas
+        interactCanvas.SetActive(withinZone);
     }
 
     public void SetInZodiacZone(bool withinZone, ZodiacPuzzle zodPuz, GameObject zodCam)
@@ -103,17 +117,8 @@ public class PlayerInteractionController : MonoBehaviour
         inZodiacZone = withinZone;
         zodiacPuzzle = zodPuz;
         zodiacCam = zodCam;
-    }
 
-    void Update()
-    {
-        if (inZodiacZone || inDialogueZone)
-        {
-            interactCanvas.SetActive(true);
-        }
-        else
-        {
-            interactCanvas.SetActive(false);
-        }
+        // Show/hide interact canvas
+        interactCanvas.SetActive(withinZone);
     }
 }

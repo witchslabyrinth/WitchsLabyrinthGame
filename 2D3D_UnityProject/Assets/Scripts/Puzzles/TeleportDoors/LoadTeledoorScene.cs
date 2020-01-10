@@ -20,7 +20,7 @@ public class LoadTeledoorScene : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //Exit if collided with non-player object
-        if (other.GetComponent<PlayerController>() == null)
+        if (other.TryGetComponent<Actor>(out Actor actor) != PlayerController.Instance.GetActor())
         {
             return;
         }

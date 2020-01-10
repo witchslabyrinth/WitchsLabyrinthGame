@@ -2,58 +2,81 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour {
+public class GameManager : MonoBehaviour
+{
+    [SerializeField]
+    private CameraController camControl;
+
+    [SerializeField]
+    private PerspectiveCameraControl perspControl;
+
+    /// <summary>
+    /// Used for controlling player actor
+    /// </summary>
+    private PlayerController playerControl;
+
     public static GameManager instance = null;
 
-    public GameObject mainCamera;
-    public GameObject ghostCamera;
-    public GameObject player;
-
-    protected CameraController camControl;
-    protected PlayerController playerControl;
-    protected PerspectiveCameraControl perspControl;
-
-    void Awake () {
-        if (instance == null) {
+    void Awake()
+    {
+        if (instance == null)
+        {
             instance = this;
-        } else if (instance != this) {
-            Destroy (gameObject);
         }
-        DontDestroyOnLoad (gameObject);
+        else if (instance != this)
+        {
+            Destroy(gameObject);
+        }
+
+        DontDestroyOnLoad(gameObject);
     }
 
-    void Start () {
-        camControl = mainCamera.GetComponent<CameraController> ();
-        playerControl = player.GetComponent<PlayerController> ();
-        perspControl = ghostCamera.GetComponent<PerspectiveCameraControl> ();
+    void Start()
+    {
+        playerControl = PlayerController.Instance;
     }
 
-    void Update () {
-        if (Input.GetKeyDown ("up")) {
-            camControl.SetToTopOrtho ();
-            playerControl.constrainZ (false);
-            playerControl.constrainX (false);
-            playerControl.constrainY (true);
+    void Update()
+    {
+        // Get reference to current actor (can change at runtime)
+        Actor playerActor = playerControl.GetActor();
+
+        // Change camera perspective (and associated movement scheme)
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            // Update movement type
+            playerActor.SetMovementType(new TopDownMovement());
+
+            // Update camera
+            camControl.SetToTopOrtho();
             perspControl.enabled = false;
-        } else if (Input.GetKeyDown ("right")) {
-            camControl.SetToRightOrtho ();
-            playerControl.constrainX (true);
-            playerControl.constrainZ (false);
-            playerControl.constrainY (false);
+        }
+        else if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            // Update movement type
+            playerActor.SetMovementType(new SideViewMovement());
+
+            // Update camera
+            camControl.SetToRightOrtho();
             perspControl.enabled = false;
-        } else if (Input.GetKeyDown ("left")) {
-            camControl.SetToPerspective ();
+        }
+        else if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            // Update movement type
+            playerActor.SetMovementType(new PerspectiveMovement(perspControl.Camera));
+
+            // Update camera
+            camControl.SetToPerspective();
             perspControl.enabled = true;
-            playerControl.constrainZ (false);
-            playerControl.constrainX (false);
-            playerControl.constrainY (false);
-        } else if (Input.GetKeyDown ("down")) {
-            camControl.SetToBackOrtho ();
-            playerControl.constrainZ (true);
-            playerControl.constrainX (false);
-            playerControl.constrainY (false);
+        }
+        else if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            // Update movement type
+            playerActor.SetMovementType(new BackViewMovement());
+
+            // Update camera
+            camControl.SetToBackOrtho();
             perspControl.enabled = false;
         }
     }
-
 }

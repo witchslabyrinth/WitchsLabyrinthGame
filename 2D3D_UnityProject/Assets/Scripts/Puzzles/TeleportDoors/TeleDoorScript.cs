@@ -40,19 +40,20 @@ public class TeleDoorScript : MonoBehaviour
         //Set the object's position to the value of "TeleportOnExitToCoordinate"
         thatWasSentThrough.transform.position = new Vector3(TeleportOnExitToCoordinate.x,TeleportOnExitToCoordinate.y,TeleportOnExitToCoordinate.z);
 
-        //If the object sent through was the player, do the following:
-        PlayerController playerController = thatWasSentThrough.GetComponent<PlayerController>();
-        if (playerController != null)
+        // Check if player was sent through
+        // TODO: verify this still works properly - i changed it to use the Actor componentn instead of PlayerController
+        Actor player = thatWasSentThrough.GetComponent<Actor>();
+        if (player != null)
         {
             //Set the player's ghost camera's targetCharacterDirection to the value returned by faceAwayFromDoor()
-            PerspectiveCameraControl cameraControl = playerController.ghostCamera.GetComponent<PerspectiveCameraControl>();
+            PerspectiveCameraControl cameraControl = player.ghostCamera;
             if(cameraControl != null)
             {
                 cameraControl.targetCharacterDirection = faceAwayFromDoor();
             }
             else
             {
-                Debug.Log("ERROR! Player's ghostCamera has no PerspectiveCameraControl!");
+                Debug.LogError("ERROR! Player's ghostCamera has no PerspectiveCameraControl!");
             }
         }
         else
