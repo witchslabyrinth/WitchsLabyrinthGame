@@ -107,6 +107,9 @@ public class PlayerInteractionController : MonoBehaviour
     {
         inDialogueZone = withinZone;
         dialoguePartner = partner;
+
+        // Show/hide interact canvas
+        interactCanvas.SetActive(withinZone);
     }
 
     public void SetInZodiacZone(bool withinZone, ZodiacPuzzle zodPuz, GameObject zodCam)
@@ -114,17 +117,8 @@ public class PlayerInteractionController : MonoBehaviour
         inZodiacZone = withinZone;
         zodiacPuzzle = zodPuz;
         zodiacCam = zodCam;
-    }
 
-    void Update()
-    {
-        if (inZodiacZone || inDialogueZone)
-        {
-            interactCanvas.SetActive(true);
-        }
-        else
-        {
-            interactCanvas.SetActive(false);
-        }
+        // Show/hide interact canvas
+        interactCanvas.SetActive(withinZone);
     }
 }
