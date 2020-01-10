@@ -2,16 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(CharacterController))]
 public class Actor : MonoBehaviour
 {
     #region components
 
-    // TODO: consider removing CharacterController - only used for movement
     /// <summary>
     /// Used for applying player movement
     /// </summary>
-    protected CharacterController controller;
+    protected Rigidbody rigidbody;
 
     /// <summary>
     /// Handles animation for this actor
@@ -53,7 +51,7 @@ public class Actor : MonoBehaviour
 
     private void Start()
     {
-        controller = GetComponent<CharacterController>();
+        rigidbody = GetComponent<Rigidbody>();
         interactionController = GetComponent<PlayerInteractionController>();
 
         // TODO: set default movement scheme and camera perspective in the same place
@@ -101,8 +99,9 @@ public class Actor : MonoBehaviour
             magnitude *= sprintMultiplier;
         }
 
+        // Apply movement
         Vector3 moveVector = direction * magnitude;
-        controller.Move(moveVector);
+        rigidbody.MovePosition(transform.position + moveVector);
 
         // Return movement
         return moveVector;

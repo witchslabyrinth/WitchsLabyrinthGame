@@ -60,8 +60,9 @@ GameObject:
   m_Component:
   - component: {fileID: 932633505583369456}
   - component: {fileID: 5586352356814453199}
-  - component: {fileID: 1616911469}
   - component: {fileID: 927036935176466216}
+  - component: {fileID: 1404111577490424630}
+  - component: {fileID: 3281049482965477513}
   m_Layer: 0
   m_Name: Oliver
   m_TagString: Untagged
@@ -101,24 +102,6 @@ MonoBehaviour:
   orb: {fileID: 6556679171278252735}
   mainCam: {fileID: 0}
   interactCanvas: {fileID: 0}
---- !u!143 &1616911469
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2032480695334426566}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Height: 2
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &927036935176466216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,7 +117,38 @@ MonoBehaviour:
   animationController: {fileID: 710809160864348023}
   ghostCamera: {fileID: 1572253898046683821}
   movementSpeed: 10
+  sprintMultiplier: 1.5
   movement: {fileID: 11400000, guid: 9f92dfbfb814c49998d29f12230cbef7, type: 2}
+--- !u!136 &1404111577490424630
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2032480695334426566}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &3281049482965477513
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2032480695334426566}
+  serializedVersion: 2
+  m_Mass: 5
+  m_Drag: 5
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 1
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2327871898697840208
 GameObject:
   m_ObjectHideFlags: 0
