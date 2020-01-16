@@ -65,7 +65,6 @@ public class ZodiacPuzzle : MonoBehaviour
 
     void Start()
     {
-        zodiacDoor.Close();
         // Initialize each disk
         foreach(ZodiacDisk disk in disks) {
             // moving this to ZodiacDisk's Start function
