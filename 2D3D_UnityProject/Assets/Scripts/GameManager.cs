@@ -4,17 +4,6 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField]
-    private CameraController camControl;
-
-    [SerializeField]
-    private PerspectiveCameraControl perspControl;
-
-    /// <summary>
-    /// Used for controlling player actor
-    /// </summary>
-    private PlayerController playerControl;
-
     public static GameManager instance = null;
 
     void Awake()
@@ -31,15 +20,10 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    void Start()
-    {
-        playerControl = PlayerController.Instance;
-    }
-
     void Update()
     {
         // Get reference to current actor (can change at runtime)
-        Actor playerActor = playerControl.GetActor();
+        Actor playerActor = PlayerController.Instance.GetActor();
 
         // Change camera perspective (and associated movement scheme)
         if (Input.GetKeyDown(KeyCode.UpArrow))
@@ -47,36 +31,37 @@ public class GameManager : MonoBehaviour
             // Update movement type
             playerActor.SetMovementType(new TopDownMovement());
 
-            // Update camera
-            camControl.SetToTopOrtho();
-            perspControl.enabled = false;
+            // Update camera perspective
+            CameraController.Instance.SetToTopOrtho();
+            playerActor.ghostCamera.enabled = false;
         }
         else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             // Update movement type
             playerActor.SetMovementType(new SideViewMovement());
 
-            // Update camera
-            camControl.SetToRightOrtho();
-            perspControl.enabled = false;
+            // Update camera perspective
+            CameraController.Instance.SetToRightOrtho();
+            playerActor.ghostCamera.enabled = false;
         }
         else if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             // Update movement type
-            playerActor.SetMovementType(new PerspectiveMovement(perspControl.Camera));
+            // TODO: remove GhostCamera paramenter from constructor - can just get reference to it through Actor.ghostCamera
+            playerActor.SetMovementType(new PerspectiveMovement(playerActor.ghostCamera.Camera));
 
-            // Update camera
-            camControl.SetToPerspective();
-            perspControl.enabled = true;
+            // Update camera perspective
+            CameraController.Instance.SetToPerspective();
+            playerActor.ghostCamera.enabled = true;
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             // Update movement type
             playerActor.SetMovementType(new BackViewMovement());
 
-            // Update camera
-            camControl.SetToBackOrtho();
-            perspControl.enabled = false;
+            // Update camera perspective
+            CameraController.Instance.SetToBackOrtho();
+            playerActor.ghostCamera.enabled = false;
         }
     }
 }
