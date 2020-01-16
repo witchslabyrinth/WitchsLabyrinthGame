@@ -452,8 +452,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e09f6068e7fdba74ab74c72933e92fb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ghostCamera: {fileID: 1616911463}
-  player: {fileID: 1616911462}
   orthoOffset: 5
   headway: 5
 --- !u!1001 &44272106
@@ -8601,35 +8599,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cat
       objectReference: {fileID: 0}
-    - target: {fileID: 1943238834350032811, guid: ad23a6d0b7a18e24398df7583b0cd3b5,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4554955168610460731, guid: ad23a6d0b7a18e24398df7583b0cd3b5,
-        type: 3}
-      propertyPath: followTarget
-      value: 
-      objectReference: {fileID: 1616911462}
-    - target: {fileID: 4554955168610460731, guid: ad23a6d0b7a18e24398df7583b0cd3b5,
-        type: 3}
-      propertyPath: moveSpeed
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 760704650693178956, guid: ad23a6d0b7a18e24398df7583b0cd3b5,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 20.96
+      value: 69.81
       objectReference: {fileID: 0}
     - target: {fileID: 760704650693178956, guid: ad23a6d0b7a18e24398df7583b0cd3b5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 760704650693178956, guid: ad23a6d0b7a18e24398df7583b0cd3b5,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 32.79
+      value: 47.21
       objectReference: {fileID: 0}
     - target: {fileID: 760704650693178956, guid: ad23a6d0b7a18e24398df7583b0cd3b5,
         type: 3}
@@ -8671,6 +8654,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6817140406685672407, guid: ad23a6d0b7a18e24398df7583b0cd3b5,
+        type: 3}
+      propertyPath: interactCanvas
+      value: 
+      objectReference: {fileID: 915329389}
+    - target: {fileID: 6817140406685672407, guid: ad23a6d0b7a18e24398df7583b0cd3b5,
+        type: 3}
+      propertyPath: mainCam
+      value: 
+      objectReference: {fileID: 30527406}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad23a6d0b7a18e24398df7583b0cd3b5, type: 3}
 --- !u!1 &450153170
