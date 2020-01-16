@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Camera))]
 public class CameraController : MonoBehaviour {
 
     public GameObject ghostCamera;
@@ -52,7 +53,6 @@ public class CameraController : MonoBehaviour {
         currentView = CameraViews.PERSPECTIVE;
         myCam.orthographic = false;
         this.transform.SetParent (ghostCamera.transform);
-        //PerspectiveUpdate ();
     }
 
     public void SetToRightOrtho () {
