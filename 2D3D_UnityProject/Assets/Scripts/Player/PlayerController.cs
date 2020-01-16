@@ -25,6 +25,10 @@ public class PlayerController : Singleton<PlayerController>
         actor.CheckInteraction();
     }
 
+    /// <summary>
+    /// Returns reference to currently-controlled Actor (the player)
+    /// </summary>
+    /// <returns></returns>
     public Actor GetActor()
     {
         return actor;

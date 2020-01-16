@@ -2,11 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Manipulates the position/rotation of the camera based on the currently-selected camera perspective
+/// </summary>
 [RequireComponent(typeof(Camera))]
 public class CameraController : MonoBehaviour {
-
-    public GameObject ghostCamera;
-    public GameObject player;
+    [SerializeField]
+    private Actor player { 
+        get { 
+            return PlayerController.Instance.GetActor();
+        }
+    }
     protected Camera myCam;
 
     protected Vector3 rightRotation = new Vector3 (0f, -90f, 0f);
@@ -24,27 +30,35 @@ public class CameraController : MonoBehaviour {
     }
     protected CameraViews currentView;
 
-    void Start () {
-        this.transform.SetParent (ghostCamera.transform);
-        myCam = this.GetComponent<Camera> ();
+    void Start () 
+    {
+        // Parent self to Actor > GhostCamera object
+        this.transform.SetParent (player.ghostCamera.transform);
+
+        if(!TryGetComponent(out myCam)) {
+            Debug.LogError("ERROR: Camera component not found on CameraController");
+        }
+
+        // Default to 3D perspective view
         currentView = CameraViews.PERSPECTIVE;
     }
 
     // Update is called once per frame
     void Update () {
-        switch (currentView) {
-        case CameraViews.PERSPECTIVE:
-            PerspectiveUpdate ();
-            break;
-        case CameraViews.RIGHT:
-            OrthographicUpdate(new Vector3(headway, 4f, headway));
-            break;
-        case CameraViews.TOP:
-            OrthographicUpdate(new Vector3(0, 20f, 2f));
-            break;
-        case CameraViews.BACK:
-            OrthographicUpdate(new Vector3(headway, 4f, -orthoOffset));
-            break;
+        switch (currentView) 
+        {
+            case CameraViews.PERSPECTIVE:
+                PerspectiveUpdate ();
+                break;
+            case CameraViews.RIGHT:
+                OrthographicUpdate(new Vector3(headway, 4f, headway));
+                break;
+            case CameraViews.TOP:
+                OrthographicUpdate(new Vector3(0, 20f, 2f));
+                break;
+            case CameraViews.BACK:
+                OrthographicUpdate(new Vector3(headway, 4f, -orthoOffset));
+                break;
         }
     }
 
@@ -52,7 +66,7 @@ public class CameraController : MonoBehaviour {
     public void SetToPerspective () {
         currentView = CameraViews.PERSPECTIVE;
         myCam.orthographic = false;
-        this.transform.SetParent (ghostCamera.transform);
+        // this.transform.SetParent (ghostCamera.transform);
     }
 
     public void SetToRightOrtho () {
@@ -75,8 +89,8 @@ public class CameraController : MonoBehaviour {
 
     /******  UPDATE VARIOUS CAMERA VIEWS ******/
     private void PerspectiveUpdate () {
-        this.transform.position = ghostCamera.transform.position;
-        this.transform.rotation = ghostCamera.transform.rotation;
+        this.transform.position = player.ghostCamera.transform.position;
+        this.transform.rotation = player.ghostCamera.transform.rotation;
     }
 
     private void OrthographicUpdate(Vector3 cameraOffset)

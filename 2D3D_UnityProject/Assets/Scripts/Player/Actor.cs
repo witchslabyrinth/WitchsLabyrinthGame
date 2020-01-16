@@ -26,7 +26,7 @@ public class Actor : MonoBehaviour
     /// <summary>
     /// 3D perspective camera 
     /// </summary>
-    public PerspectiveCameraControl ghostCamera;
+    public PerspectiveCameraControl ghostCamera { get; private set;}
 
     #endregion
 
@@ -49,11 +49,17 @@ public class Actor : MonoBehaviour
     [SerializeField] 
     protected Movement movement;
 
-    private void Start()
+
+    void Awake()
     {
+        // Get components in Awake() before other scripts request them in Start()
         rigidbody = GetComponent<Rigidbody>();
         interactionController = GetComponent<PlayerInteractionController>();
+        ghostCamera = GetComponentInChildren<PerspectiveCameraControl>();
+    }
 
+    private void Start()
+    {
         // TODO: set default movement scheme and camera perspective in the same place
         // Make sure there's a movement type specified
         if (movement == null)
@@ -67,8 +73,8 @@ public class Actor : MonoBehaviour
             // TODO: maybe not a good idea, find a way around this
             else
             {
-                Debug.LogWarning(name + " | no Movement specified for this Actor, defaulting to FollowMovement");
-                movement = new FollowMovement(PlayerController.Instance.GetActor().transform);
+                Debug.LogWarning(name + " | no Movement specified for this Actor, defaulting to NullMovement");
+                movement = new NullMovement();
             }
         }
     }
