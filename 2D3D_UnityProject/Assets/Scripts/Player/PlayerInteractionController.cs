@@ -30,6 +30,7 @@ public class PlayerInteractionController : MonoBehaviour
     /// <summary>
     /// reference to the orb the player is trying to find
     /// </summary>
+    // TODO: move this object reference to the LiarGameManager code . instantiate the orb in LiarGameManager and parent it to the Actor, rather than hard-coding it here
     public GameObject orb;
 
     /// <summary>
@@ -43,8 +44,6 @@ public class PlayerInteractionController : MonoBehaviour
     private ZodiacPuzzle zodiacPuzzle;
 
     private GameObject zodiacCam;
-
-    public GameObject mainCam;
     // end of bad stuff
 
     public GameObject interactCanvas;
@@ -65,14 +64,6 @@ public class PlayerInteractionController : MonoBehaviour
         // Checks if player is near interactable and pressing interact button
         if (Input.GetKeyDown(KeyCode.E))
         {
-            // @Victor - Delete this code if no longer needed
-            // if (inDialogueZone)
-            // {
-            //     if (dialoguePartner == 0)
-            //         orb.SetActive(true);
-            //     LiarGameManager.Instance().CheckOrb(dialoguePartner);
-            // }
-
             if (inDialogueZone)
             {
                 // Show dialogue conversation if interacting with NPC
