@@ -47,8 +47,7 @@ public class GameManager : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             // Update movement type
-            // TODO: remove GhostCamera paramenter from constructor - can just get reference to it through Actor.ghostCamera
-            playerActor.SetMovementType(new PerspectiveMovement(playerActor.ghostCamera.Camera));
+            playerActor.SetMovementType(new PerspectiveMovement());
 
             // Update camera perspective
             CameraController.Instance.SetToPerspective();

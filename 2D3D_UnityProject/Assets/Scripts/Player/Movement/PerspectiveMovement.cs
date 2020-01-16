@@ -5,16 +5,6 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Movement/Perspective Movement")]
 public class PerspectiveMovement : Movement
 {
-    /// <summary>
-    /// Reference to camera following player
-    /// </summary>
-    private Camera perspCamera;
-
-    public PerspectiveMovement(Camera perspCamera)
-    {
-        this.perspCamera = perspCamera;
-    }
-
     public override Vector3 GetMovement(Actor player)
     {
         Vector3 movement = Vector3.zero;
