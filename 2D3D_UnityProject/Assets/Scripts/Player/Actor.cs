@@ -69,8 +69,7 @@ public class Actor : MonoBehaviour
             {
                 Debug.LogError("No movement type specified for player-controlled Actor");
             }
-            // Otherwise default to following player
-            // TODO: maybe not a good idea, find a way around this
+            // Otherwise default to NullMovement (idle)
             else
             {
                 Debug.LogWarning(name + " | no Movement specified for this Actor, defaulting to NullMovement");
