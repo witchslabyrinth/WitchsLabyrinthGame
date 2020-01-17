@@ -49,7 +49,21 @@ public class Actor : MonoBehaviour
     [SerializeField] 
     protected Movement movement;
 
+    /// <summary>
+    /// Sets actor movement control scheme
+    /// </summary>
+    /// <param name="movement">Movement control scheme</param>
+    public void SetMovement(Movement movement)
+    {
+        this.movement = movement;
+    }
 
+    /// <summary>
+    /// Current perspective used for this actor (remains unchanged when not player-controlled)
+    /// </summary>
+    /// <value></value>
+    public Perspective perspective {get; private set;}
+    
     void Awake()
     {
         // Get components in Awake() before other scripts request them in Start()
@@ -60,21 +74,18 @@ public class Actor : MonoBehaviour
 
     private void Start()
     {
-        // TODO: set default movement scheme and camera perspective in the same place
-        // Make sure there's a movement type specified
-        if (movement == null)
-        {
-            // Throw error if no movement specified for player actor
-            if (PlayerController.Instance.GetActor() == this)
-            {
-                Debug.LogError("No movement type specified for player-controlled Actor");
-            }
-            // Otherwise default to NullMovement (idle)
-            else
-            {
-                Debug.LogWarning(name + " | no Movement specified for this Actor, defaulting to NullMovement");
-                movement = new NullMovement();
-            }
+        // Default to third-person perspective for both actors
+        if(perspective == null) {
+            perspective = PerspectiveController.Instance.GetPerspectiveByType(CameraController.CameraViews.THIRD_PERSON);
+        }
+
+        // Give player movement control
+        if (PlayerController.Instance.GetActor() == this) {
+            movement = perspective.movement;
+        }
+        // Give NPC idle movement
+        else {
+            movement = new NullMovement();
         }
     }
 
@@ -93,6 +104,11 @@ public class Actor : MonoBehaviour
     /// <returns>Vector of movement</returns>
     private Vector3 Move()
     {
+        // If player-controlled actor has NullMovement scheme, restore movement from last-used perspective
+        if(PlayerController.Instance.GetActor().Equals(this) && movement.GetType() == typeof(NullMovement)) {
+            movement = perspective.movement;
+        }
+        
         // Get move direction (as unit vector) from movement class
         Vector3 direction = movement.GetMovement(this);
 
@@ -119,11 +135,6 @@ public class Actor : MonoBehaviour
 
         // Generate proper animations bsed on movement (on x-z plane)
         animationController.UpdateAnims(direction);
-    }
-
-    public void SetMovementType(Movement movement)
-    {
-        this.movement = movement;
     }
 
     /// <summary>

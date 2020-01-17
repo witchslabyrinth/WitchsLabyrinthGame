@@ -88,6 +88,10 @@ public class PerspectiveController : Singleton<PerspectiveController>
         SetPerspective(player, perspective);
     }
 
+    /// <summary>
+    /// Detects perspective-change keypress (defined in buttonPerspectiveMapping) and updates perspective accordingly
+    /// </summary>
+    /// <param name="player">Player actor to update perspective for</param>
     public void UpdatePerspective(Actor player)
     {
         // Check each button in KeyCode -> camera perspective mapping
@@ -117,12 +121,19 @@ public class PerspectiveController : Singleton<PerspectiveController>
     public void SetPerspective(Actor player, Perspective perspective)
     {
         // Apply camera perspective
-        CameraController.Instance.SetPerspective(perspective);
-
-        // Update actor with associated movement scheme
-        player.SetMovementType(perspective.movement);
+        CameraController.Instance.SetPerspective(player, perspective);
 
         // Enable ghost camera for 3D, disable for orthographic
         player.ghostCamera.enabled = !perspective.orthographic;
+    }
+
+    /// <summary>
+    /// Returns Perspective associated with given CameraView type
+    /// </summary>
+    /// <param name="type">Type of perspective requested</param>
+    /// <returns></returns>
+    public Perspective GetPerspectiveByType(CameraController.CameraViews type)
+    {
+        return cameraPerspectives.Find(i => i.cameraView.Equals(type));
     }
 }

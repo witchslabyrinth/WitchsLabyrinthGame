@@ -52,8 +52,11 @@ public class CameraController : Singleton<CameraController> {
             PerspectiveUpdate(player);
     }
 
-    public void SetPerspective(Perspective perspective)
+    public void SetPerspective(Actor player, Perspective perspective)
     {
+        // Update actor with associated movement scheme
+        player.SetMovement(perspective.movement);
+        
         // Save current perspective
         this.perspective = perspective;
         
