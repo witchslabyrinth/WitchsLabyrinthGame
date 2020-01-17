@@ -23,6 +23,9 @@ public class PlayerController : Singleton<PlayerController>
     {
         // Handle interactions with other game entities
         actor.CheckInteraction();
+        
+        // Update camera perspective
+        PerspectiveController.Instance.UpdatePerspective(actor);
 
         // Update camera to follow player actor
         CameraController.Instance.CameraUpdate(actor);

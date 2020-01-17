@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 /// <summary>
 /// Manipulates the position/rotation of the camera based on the currently-selected camera perspective
 /// </summary>
@@ -16,13 +17,14 @@ public class CameraController : Singleton<CameraController> {
     public float orthoOffset = 2.0f;
     public float headway = 2.0f;
 
-    protected enum CameraViews {
+    public enum CameraViews {
         RIGHT,
         TOP,
         BACK,
-        PERSPECTIVE,
+        THIRD_PERSON,
     }
     protected CameraViews currentView;
+    protected Perspective perspective;
 
     void Start () 
     {
@@ -35,53 +37,32 @@ public class CameraController : Singleton<CameraController> {
         }
 
         // Default to 3D perspective view
-        currentView = CameraViews.PERSPECTIVE;
+        currentView = CameraViews.THIRD_PERSON;
     }
 
     /// <summary>
     /// Updates camera position/rotation relative to provided (player-controlled) Actor
     /// </summary>
     /// <param name="player">Actor currently controlled by player</param>
-    public void CameraUpdate (Actor player) {
-        switch (currentView) 
-        {
-            case CameraViews.PERSPECTIVE:
-                PerspectiveUpdate(player);
-                break;
-            case CameraViews.RIGHT:
-                OrthographicUpdate(player, new Vector3(headway, 4f, headway));
-                break;
-            case CameraViews.TOP:
-                OrthographicUpdate(player, new Vector3(0, 20f, 2f));
-                break;
-            case CameraViews.BACK:
-                OrthographicUpdate(player, new Vector3(headway, 4f, -orthoOffset));
-                break;
+    public void CameraUpdate (Actor player) 
+    {
+        if(perspective.orthographic)
+            OrthographicUpdate(player, perspective.orthographicCameraOffset);
+        else 
+            PerspectiveUpdate(player);
+    }
+
+    public void SetPerspective(Perspective perspective)
+    {
+        // Save current perspective
+        this.perspective = perspective;
+        
+        myCam.orthographic = perspective.orthographic;
+
+        // Set fixed camera rotation for orthographic
+        if(perspective.orthographic) {
+            transform.eulerAngles = perspective.orthographicCameraRotation;
         }
-    }
-
-    /******  SET VARIOUS CAMERA VIEWS ******/
-    public void SetToPerspective () {
-        currentView = CameraViews.PERSPECTIVE;
-        myCam.orthographic = false;
-    }
-
-    public void SetToRightOrtho () {
-        currentView = CameraViews.RIGHT;
-        myCam.orthographic = true;
-        this.transform.eulerAngles = rightRotation;
-    }
-
-    public void SetToTopOrtho () {
-        currentView = CameraViews.TOP;
-        myCam.orthographic = true;
-        this.transform.eulerAngles = topRotation;
-    }
-
-    public void SetToBackOrtho () {
-        currentView = CameraViews.BACK;
-        myCam.orthographic = true;
-        this.transform.eulerAngles = backRotation;
     }
 
     /******  UPDATE VARIOUS CAMERA VIEWS ******/

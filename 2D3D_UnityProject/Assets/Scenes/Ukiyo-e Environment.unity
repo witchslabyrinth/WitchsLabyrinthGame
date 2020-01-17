@@ -44210,6 +44210,46 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1776743979}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1782685002 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4208683251683716150, guid: 4646f965fb9f8d64191bb801344f90f4,
+    type: 3}
+  m_PrefabInstance: {fileID: 2104152348}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1782685005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1782685002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62ab680c650f24ceeb02c35283a71ab4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraPerspectives:
+  - cameraView: 0
+    movement: {fileID: 11400000, guid: cea7d23e3fe2045afac7e7614066236d, type: 2}
+    orthographic: 1
+    orthographicCameraRotation: {x: 0, y: -90, z: 0}
+    orthographicCameraOffset: {x: 2, y: 4, z: 2}
+  - cameraView: 1
+    movement: {fileID: 11400000, guid: cf8fffaca5b5f4fa09eb844ae0652b28, type: 2}
+    orthographic: 1
+    orthographicCameraRotation: {x: 90, y: 0, z: 0}
+    orthographicCameraOffset: {x: 0, y: 20, z: 2}
+  - cameraView: 2
+    movement: {fileID: 11400000, guid: 61ffe63a94824490bb2910930cba2845, type: 2}
+    orthographic: 1
+    orthographicCameraRotation: {x: 0, y: 0, z: 0}
+    orthographicCameraOffset: {x: 2, y: 4, z: -2}
+  - cameraView: 3
+    movement: {fileID: 11400000, guid: 9f92dfbfb814c49998d29f12230cbef7, type: 2}
+    orthographic: 0
+    orthographicCameraRotation: {x: 0, y: 0, z: 0}
+    orthographicCameraOffset: {x: 0, y: 0, z: 0}
+  defaultPerspective: 3
 --- !u!1 &1784504469
 GameObject:
   m_ObjectHideFlags: 0
@@ -47498,7 +47538,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4208683251683716153, guid: 4646f965fb9f8d64191bb801344f90f4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4646f965fb9f8d64191bb801344f90f4, type: 3}
 --- !u!1001 &2104393540
 PrefabInstance:
