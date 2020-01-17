@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Camera))]
 public class CameraController : MonoBehaviour {
 
     public GameObject ghostCamera;
@@ -36,10 +37,13 @@ public class CameraController : MonoBehaviour {
             PerspectiveUpdate ();
             break;
         case CameraViews.RIGHT:
-            RightOrthoUpdate ();
+            OrthographicUpdate(new Vector3(headway, 4f, headway));
             break;
         case CameraViews.TOP:
-            TopOrthoUpdate ();
+            OrthographicUpdate(new Vector3(0, 20f, 2f));
+            break;
+        case CameraViews.BACK:
+            OrthographicUpdate(new Vector3(headway, 4f, -orthoOffset));
             break;
         }
     }
@@ -49,28 +53,24 @@ public class CameraController : MonoBehaviour {
         currentView = CameraViews.PERSPECTIVE;
         myCam.orthographic = false;
         this.transform.SetParent (ghostCamera.transform);
-        PerspectiveUpdate ();
     }
 
     public void SetToRightOrtho () {
         currentView = CameraViews.RIGHT;
         myCam.orthographic = true;
         this.transform.eulerAngles = rightRotation;
-        RightOrthoUpdate ();
     }
 
     public void SetToTopOrtho () {
         currentView = CameraViews.TOP;
         myCam.orthographic = true;
         this.transform.eulerAngles = topRotation;
-        TopOrthoUpdate ();
     }
 
     public void SetToBackOrtho () {
         currentView = CameraViews.BACK;
         myCam.orthographic = true;
         this.transform.eulerAngles = backRotation;
-        BackOrthoUpdate ();
     }
 
     /******  UPDATE VARIOUS CAMERA VIEWS ******/
@@ -79,16 +79,8 @@ public class CameraController : MonoBehaviour {
         this.transform.rotation = ghostCamera.transform.rotation;
     }
 
-    private void RightOrthoUpdate () {
-        this.transform.position = new Vector3 (player.transform.position.x + headway, player.transform.position.y + 4f, player.transform.position.z + headway);
-    }
-
-    private void TopOrthoUpdate () {
-        this.transform.position = new Vector3 (player.transform.position.x, player.transform.position.y + 20f, player.transform.position.z + 2f);
-    }
-
-    private void BackOrthoUpdate () {
-        this.transform.position = new Vector3 (player.transform.position.x + headway, player.transform.position.y + 4f, player.transform.position.z - orthoOffset);
-
+    private void OrthographicUpdate(Vector3 cameraOffset)
+    {
+        transform.position = player.transform.position + cameraOffset;
     }
 }
