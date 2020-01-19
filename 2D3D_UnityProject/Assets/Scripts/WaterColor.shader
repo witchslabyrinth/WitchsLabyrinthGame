@@ -10,6 +10,7 @@
 		_DiffuseSegment("Diffuse Segment", Vector) = (0.1, 0.3, 0.6, 1.0)
 		_ColorTop("Top Color", Color) = (1,1,1,1)
 		_ColorBot("Bot Color", Color) = (1,1,1,1)
+		_ShadowColor("Shadow Color", Color) = (1,1,1,1)
 	}
 		SubShader{
 			Tags { "RenderType" = "Opaque" }
@@ -117,8 +118,8 @@
 						fixed3 aquarelleColor = tex2D(_AquarelleTex, i.uv * 1);
 						fixed3 ambient = UNITY_LIGHTMODEL_AMBIENT;
 
-						atten = smoothstep(0.7, 1.5, atten * 2 + noiseColor.r * 1);
-						atten = smoothstep(0.2, 0.8, atten);
+						atten = smoothstep(0.7, 2, atten * 2 + noiseColor.r * 1);
+						atten = smoothstep(0.2, 2, atten);
 						if (atten < _DiffuseSegment.x + w) {
 							atten = lerp(_DiffuseSegment.x*1.0, _DiffuseSegment.y*0.0, smoothstep((_DiffuseSegment.x - w)*0.01 - 0.1, (_DiffuseSegment.x + w)*0.01 + 0.5, atten));
 						}
@@ -143,5 +144,5 @@
 
 		}
 
-		FallBack "Diffuse"
+			FallBack "Diffuse"
 }
