@@ -4,72 +4,30 @@ using UnityEngine;
 
 public class ReflectableLightNode : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject toGenerateOnReflect;
-
-    //ReflectableLightHead lightHead;
-
-    GameObject immediateChild = null;
-
-    RaycastHit rcHit;
-    Vector3 HitPosit = Vector3.zero;
-    Vector3 PrevHitPosit = Vector3.zero;
-    bool setPrevHitPosit = false;
+    //A proper ReflectableLightNode also creates its own reflection, so it is both a light node and a light head.
+    //Implementing it this way is better than writing separate code for light heads and light nodes, since the two would be virtually identical, except for one extra function for light nodes.
+    ReflectableLightHead lightHead;
 
     // Start is called before the first frame update
     void Start()
     {
-        //lightHead = GetComponent<ReflectableLightHead>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    private void FixedUpdate()
-    {
-        if (Physics.Raycast(transform.position, transform.forward, out rcHit, 10))
-        {
-            //Debug.DrawRay(transform.position, transform.forward * 10, Color.yellow);
-
-            HitPosit = rcHit.point;
-            if (!setPrevHitPosit)
-            {
-                PrevHitPosit = HitPosit;
-                setPrevHitPosit = true;
-            }
-            else if (PrevHitPosit != HitPosit)
-            {
-                immediateChild.GetComponent<ReflectableLightNode>().RemoveThisReflection();
-                immediateChild = null;
-                PrevHitPosit = HitPosit;
-            }
-            if (immediateChild == null)
-            {
-                immediateChild = Instantiate(toGenerateOnReflect, HitPosit, Quaternion.LookRotation(Vector3.Reflect(transform.forward, rcHit.normal)));//Quaternion.Euler(Vector3.Reflect(transform.forward, rcHit.normal)));
-            }
-            //Debug.Log("OBJ Detected!");
-        }
-        else
-        {
-            if (immediateChild != null)
-            {
-                PrevHitPosit = Vector3.zero;
-                immediateChild.GetComponent<ReflectableLightNode>().RemoveThisReflection();
-                immediateChild = null;
-                setPrevHitPosit = false;
-            }
-        }
+        lightHead = GetComponent<ReflectableLightHead>();
     }
 
     public void RemoveThisReflection()
     {
-        if (immediateChild != null)
-        {
-            immediateChild.GetComponent<ReflectableLightNode>().RemoveThisReflection();
+        //All nodes should also be heads, but we'll check just to be safe. If it isn't, then we can simply destroy this object, since it doesn't have any reflections.
+        if (lightHead == null) {
+            Destroy(gameObject);
+            return;
         }
+        //Given that the block above will not be true under normal circumstances, we check whether this node has any reflections. We need to destroy all child reflections of this one so we don't leave a bunch of floating light beams in the room.
+        if (lightHead.immediateChild != null)
+        {
+            //Since each child is a node that keeps track of its immediate child, this will have the effect of removing all reflections that stem from this one.
+            lightHead.immediateChild.GetComponent<ReflectableLightNode>().RemoveThisReflection();
+        }
+        //Since we've destroyed all child reflections, we can safely destroy this reflection.
         Destroy(gameObject);
     }
 }
