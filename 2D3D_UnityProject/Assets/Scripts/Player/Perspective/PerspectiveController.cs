@@ -120,6 +120,9 @@ public class PerspectiveController : Singleton<PerspectiveController>
 
     public void SetPerspective(Actor player, Perspective perspective)
     {
+        // Store perspective in actor
+        player.perspective = perspective;
+
         // Apply camera perspective
         CameraController.Instance.SetPerspective(player, perspective);
 

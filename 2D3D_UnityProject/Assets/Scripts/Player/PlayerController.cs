@@ -47,9 +47,9 @@ public class PlayerController : Singleton<PlayerController>
 
             // Set cat to idle
             cat.SetMovement(new NullMovement());
-            
-            // TODO: Restore actor's previous perspective
-            // PerspectiveController.Instance.SetPerspective(actor, actor.perspective);
+
+            // Restore actor's previous perspective
+            PerspectiveController.Instance.SetPerspective(actor, actor.perspective);
         }
         else if(Input.GetKeyDown(KeyCode.Alpha2)) {
             actor = cat;
@@ -57,8 +57,8 @@ public class PlayerController : Singleton<PlayerController>
             // Set oliver to idle
             oliver.SetMovement(new NullMovement());
 
-            // TODO: Restore actor's previous perspective
-            // PerspectiveController.Instance.SetPerspective(actor, actor.perspective);
+            // Restore actor's previous perspective
+            PerspectiveController.Instance.SetPerspective(actor, actor.perspective);
         }
 
         // Handle interactions with other game entities

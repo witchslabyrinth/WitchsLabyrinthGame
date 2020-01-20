@@ -62,7 +62,7 @@ public class Actor : MonoBehaviour
     /// Current perspective used for this actor (remains unchanged when not player-controlled)
     /// </summary>
     /// <value></value>
-    public Perspective perspective {get; private set;}
+    public Perspective perspective;
     
     void Awake()
     {
@@ -75,9 +75,7 @@ public class Actor : MonoBehaviour
     private void Start()
     {
         // Default to third-person perspective for both actors
-        if(perspective == null) {
-            perspective = PerspectiveController.Instance.GetPerspectiveByType(CameraController.CameraViews.THIRD_PERSON);
-        }
+        perspective = PerspectiveController.Instance.GetPerspectiveByType(CameraController.CameraViews.THIRD_PERSON);
 
         // Give player movement control
         if (PlayerController.Instance.GetActor() == this) {
