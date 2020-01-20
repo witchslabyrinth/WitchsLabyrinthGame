@@ -74,6 +74,7 @@ public class Actor : MonoBehaviour
 
     private void Start()
     {
+        // TODO: make sure we only set initial perspective in one place
         // Default to third-person perspective for both actors
         perspective = PerspectiveController.Instance.GetPerspectiveByType(CameraController.CameraViews.THIRD_PERSON);
 

@@ -7,8 +7,12 @@ using UnityEngine;
 /// Manipulates the position/rotation of the camera based on the currently-selected camera perspective
 /// </summary>
 [RequireComponent(typeof(Camera))]
-public class CameraController : Singleton<CameraController> {
-    protected Camera myCam;
+public class CameraController : Singleton<CameraController>
+{
+    /// <summary>
+    /// Reference to main camera
+    /// </summary>
+    protected Camera mainCamera;
 
     protected Vector3 rightRotation = new Vector3 (0f, -90f, 0f);
     protected Vector3 topRotation = new Vector3 (90f, 0f, 0f);
@@ -28,13 +32,11 @@ public class CameraController : Singleton<CameraController> {
 
     void Start () 
     {
+        mainCamera = GetComponent<Camera>();
+
         // Parent self to Actor > GhostCamera object
         Actor player = PlayerController.Instance.GetActor();
         this.transform.SetParent (player.ghostCamera.transform);
-
-        if(!TryGetComponent(out myCam)) {
-            Debug.LogError("ERROR: Camera component not found on CameraController");
-        }
 
         // Default to 3D perspective view
         currentView = CameraViews.THIRD_PERSON;
@@ -52,28 +54,49 @@ public class CameraController : Singleton<CameraController> {
             PerspectiveUpdate(player);
     }
 
+    /// <summary>
+    /// Sets new camera perspective to follow player actor with.
+    /// Only updates
+    /// </summary>
+    /// <param name="player">Player actor</param>
+    /// <param name="perspective">New camera perspective</param>
     public void SetPerspective(Actor player, Perspective perspective)
     {
+        // Make sure we have ref to Camera component
+        if (!mainCamera)
+            mainCamera = GetComponent<Camera>();
+        
+        // TODO: move this out of the camera code (put it in PerspectiveController)
         // Update actor with associated movement scheme
         player.SetMovement(perspective.movement);
         
         // Save current perspective
         this.perspective = perspective;
         
-        myCam.orthographic = perspective.orthographic;
-
         // Set fixed camera rotation for orthographic
         if(perspective.orthographic) {
             transform.eulerAngles = perspective.orthographicCameraRotation;
         }
+        mainCamera.orthographic = perspective.orthographic;
     }
 
-    /******  UPDATE VARIOUS CAMERA VIEWS ******/
-    private void PerspectiveUpdate (Actor player) {
+    /// <summary>
+    /// Updates camera position/rotation to follow the player.
+    /// Called on Update() when using a 3D Perspective
+    /// </summary>
+    /// <param name="player">Player actor</param>
+    private void PerspectiveUpdate (Actor player) 
+    {
         this.transform.position = player.ghostCamera.transform.position;
         this.transform.rotation = player.ghostCamera.transform.rotation;
     }
 
+    /// <summary>
+    /// Updates camera position to follow the player.
+    /// Called on Update() when using an orthographic Perspective
+    /// </summary>
+    /// <param name="player">Player actor</param>
+    /// <param name="cameraOffset">Position offset between camera and player</param>
     private void OrthographicUpdate(Actor player, Vector3 cameraOffset)
     {
         transform.position = player.transform.position + cameraOffset;

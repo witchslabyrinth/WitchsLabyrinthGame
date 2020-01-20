@@ -77,13 +77,14 @@ public class PerspectiveController : Singleton<PerspectiveController>
     /// </summary>
     void Start()
     {
-        // Set default perspective
+        // Set default perspective (fallback to 3D if default not found)
         Perspective perspective = cameraPerspectives.Find(i => i.cameraView.Equals(defaultPerspective));
         if(perspective == null) {
-            Debug.LogWarning(name + " | No perspective specified, defaulting to 3D perspective");
+            Debug.LogWarningFormat("{0} | Specified perspective {1} not found, defaulting to 3D perspective", name, defaultPerspective);
             perspective = cameraPerspectives.Find(i => i.cameraView.Equals(CameraController.CameraViews.THIRD_PERSON));
         }
         
+        // TODO: make sure we only set initial perspective in one place
         Actor player = PlayerController.Instance.GetActor();
         SetPerspective(player, perspective);
     }
