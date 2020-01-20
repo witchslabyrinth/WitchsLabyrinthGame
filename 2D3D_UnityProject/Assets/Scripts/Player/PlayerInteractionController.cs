@@ -83,6 +83,9 @@ public class PlayerInteractionController : MonoBehaviour
             Actor actor = PlayerController.Instance.GetActor();
             actor.Disable();
 
+            // Disable actor swapping
+            PlayerController.Instance.canSwap = false;
+
             // Hide interact canvas
             interactCanvas.SetActive(false);
             this.enabled = false;
@@ -99,6 +102,7 @@ public class PlayerInteractionController : MonoBehaviour
         inDialogueZone = withinZone;
         dialoguePartner = partner;
 
+        // TODO: find a way to hide canvas when swapping to actor out of interact zone
         // Show/hide interact canvas
         interactCanvas.SetActive(withinZone);
     }
@@ -109,6 +113,7 @@ public class PlayerInteractionController : MonoBehaviour
         zodiacPuzzle = zodPuz;
         zodiacCam = zodCam;
 
+        // TODO: find a way to hide canvas when swapping to actor out of interact zone
         // Show/hide interact canvas
         interactCanvas.SetActive(withinZone);
     }

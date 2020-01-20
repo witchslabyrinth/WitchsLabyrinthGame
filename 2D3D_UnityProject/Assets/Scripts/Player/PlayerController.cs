@@ -4,7 +4,13 @@ using UnityEngine;
 
 
 public class PlayerController : Singleton<PlayerController>
-{   
+{
+    // TODO: see if there's a better way (maybe event-driven?) to handle this
+    /// <summary>
+    /// True when player can swap between actors, false when swapping is disabled
+    /// </summary>
+    public bool canSwap = true;
+
     /// <summary>
     /// Actor currently controlled by the player
     /// </summary>
@@ -41,6 +47,28 @@ public class PlayerController : Singleton<PlayerController>
 
     private void Update()
     {
+        // Handle player input for actor swapping
+        ActorSwapUpdate();
+
+        // Handle interactions with other game entities
+        actor.CheckInteraction();
+        
+        // Update camera perspective
+        PerspectiveController.Instance.UpdatePerspective(actor);
+
+        // Update camera to follow player actor
+        CameraController.Instance.CameraUpdate(actor);
+    }
+
+    /// <summary>
+    /// Swaps player control between actors based on input (no effect when canSwap is false)
+    /// </summary>
+    private void ActorSwapUpdate()
+    {
+        // Skip if swapping is disabled
+        if (!canSwap)
+            return;
+        
         if(Input.GetKeyDown(KeyCode.Alpha1)) {
             // Switch player control to oliver
             actor = oliver;
@@ -60,15 +88,6 @@ public class PlayerController : Singleton<PlayerController>
             // Restore actor's previous perspective
             PerspectiveController.Instance.SetPerspective(actor, actor.perspective);
         }
-
-        // Handle interactions with other game entities
-        actor.CheckInteraction();
-        
-        // Update camera perspective
-        PerspectiveController.Instance.UpdatePerspective(actor);
-
-        // Update camera to follow player actor
-        CameraController.Instance.CameraUpdate(actor);
     }
 
     /// <summary>
