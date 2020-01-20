@@ -55,21 +55,15 @@ public class CameraController : Singleton<CameraController>
     }
 
     /// <summary>
-    /// Sets new camera perspective to follow player actor with.
-    /// Only updates
+    /// Initializes camera to follow player Actor with specified Perspective.
     /// </summary>
-    /// <param name="player">Player actor</param>
     /// <param name="perspective">New camera perspective</param>
-    public void SetPerspective(Actor player, Perspective perspective)
+    public void SetPerspective(Perspective perspective)
     {
         // Make sure we have ref to Camera component
         if (!mainCamera)
             mainCamera = GetComponent<Camera>();
-        
-        // TODO: move this out of the camera code (put it in PerspectiveController)
-        // Update actor with associated movement scheme
-        player.SetMovement(perspective.movement);
-        
+
         // Save current perspective
         this.perspective = perspective;
         
