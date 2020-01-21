@@ -55,10 +55,11 @@ public class CameraController : Singleton<CameraController>
     }
 
     /// <summary>
-    /// Initializes camera to follow player Actor with specified Perspective.
+    /// Initializes camera to follow specified Actor with specified Perspective.
     /// </summary>
+    /// <param name="actor">Actor to follow</param>
     /// <param name="perspective">New camera perspective</param>
-    public void SetPerspective(Perspective perspective)
+    public void SetPerspective(Actor actor, Perspective perspective)
     {
         // Make sure we have ref to Camera component
         if (!mainCamera)
@@ -72,6 +73,9 @@ public class CameraController : Singleton<CameraController>
             transform.eulerAngles = perspective.orthographicCameraRotation;
         }
         mainCamera.orthographic = perspective.orthographic;
+
+        // Parent CameraController to actor's ghostCamera
+        transform.SetParent(actor.ghostCamera.transform);
     }
 
     /// <summary>
