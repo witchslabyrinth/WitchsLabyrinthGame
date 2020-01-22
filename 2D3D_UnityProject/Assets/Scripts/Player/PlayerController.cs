@@ -36,13 +36,18 @@ public class PlayerController : Singleton<PlayerController>
             actor = oliver;
         }
 
-        // Throw warnings if oliver/cat not found
-        if(!oliver) {
+        // Throw warnings and disable swapping if oliver/cat not found
+        if (!oliver)
+        {
             Debug.LogWarning("Warning: Oliver actor not found in PlayerController");
+            canSwap = false;
         }
-        if(!cat) {
+        if (!cat)
+        {
             Debug.LogWarning("Warning: Cat actor not found in PlayerController");
+            canSwap = false;
         }
+        
     }
 
     private void Update()
@@ -69,7 +74,8 @@ public class PlayerController : Singleton<PlayerController>
         if (!canSwap)
             return;
         
-        if(Input.GetKeyDown(KeyCode.Alpha1)) {
+        if(Input.GetKeyDown(KeyCode.Alpha1)) 
+        {
             // Switch player control to oliver
             actor = oliver;
 
@@ -79,7 +85,8 @@ public class PlayerController : Singleton<PlayerController>
             // Restore actor's previous perspective
             PerspectiveController.Instance.SetPerspective(actor, actor.perspective);
         }
-        else if(Input.GetKeyDown(KeyCode.Alpha2)) {
+        else if(Input.GetKeyDown(KeyCode.Alpha2)) 
+        {
             actor = cat;
 
             // Set oliver to idle
