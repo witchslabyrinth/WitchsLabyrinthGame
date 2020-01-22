@@ -47,6 +47,12 @@ public class ZodiacPuzzle : MonoBehaviour
     [SerializeField]
     private List<ZodiacLight> zodiacLights;
 
+    /// <summary>
+    /// Door to be opened when the zodiac puzzle is solved
+    /// </summary>
+    [SerializeField]
+    private DoubleSlidingDoors zodiacDoor;
+
     [SerializeField]
     private GameObject zodCamera;
 
@@ -173,10 +179,16 @@ public class ZodiacPuzzle : MonoBehaviour
         }
         else
         {
-            // TODO: Maybe disable to center coming out now that we have lights
-            currentDisk.PieceInOut(ZodiacPuzzlePiece.ZodiacPuzzlePiecePosition.In);
-            center.PieceInOut(ZodiacPuzzlePiece.ZodiacPuzzlePiecePosition.Out);
+            PuzzleSolved();
         }
+    }
+
+    private void PuzzleSolved()
+    {
+        // TODO: Maybe disable to center coming out now that we have lights
+        currentDisk.PieceInOut(ZodiacPuzzlePiece.ZodiacPuzzlePiecePosition.In);
+        center.PieceInOut(ZodiacPuzzlePiece.ZodiacPuzzlePiecePosition.Out);
+        zodiacDoor.Open();
     }
 
     void OnEnable()
