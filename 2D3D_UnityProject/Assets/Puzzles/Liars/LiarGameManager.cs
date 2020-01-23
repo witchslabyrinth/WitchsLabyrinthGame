@@ -93,6 +93,8 @@ public class LiarGameManager : MonoBehaviour
 
         dialogueCode.yesNoButtons.SetActive(false);
         dialogueCode.printDialogue = dialogueCode.StartCoroutine(dialogueCode.PrintDialogueCoroutine());
+
+        // TODO: instantiate the orb here and parent it to the player actor, rather than having the orb reference hard-coded in Actor.cs
         if (currNpc == 0)
             actor.GetComponent<PlayerInteractionController>().orb.SetActive(true);
 

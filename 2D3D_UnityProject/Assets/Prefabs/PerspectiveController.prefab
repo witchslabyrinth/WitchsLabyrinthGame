@@ -9,8 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4208683251683716152}
-  - component: {fileID: 4208683251683716153}
-  - component: {fileID: 313724300}
+  - component: {fileID: 1782685005}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -32,7 +31,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4208683251683716153
+--- !u!114 &1782685005
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,21 +40,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 4208683251683716150}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25377701cfb420a449429c7928f8f57b, type: 3}
+  m_Script: {fileID: 11500000, guid: 62ab680c650f24ceeb02c35283a71ab4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCamera: {fileID: 0}
-  ghostCamera: {fileID: 0}
---- !u!114 &313724300
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4208683251683716150}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a058c49ff778e4c4caf4ae21c99cd4ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  actor: {fileID: 0}
+  defaultPerspective: 3
+  cameraPerspectives:
+  - cameraView: 0
+    movement: {fileID: 11400000, guid: cea7d23e3fe2045afac7e7614066236d, type: 2}
+    orthographic: 1
+    orthographicCameraRotation: {x: 0, y: -90, z: 0}
+    orthographicCameraOffset: {x: 2, y: 4, z: 2}
+  - cameraView: 1
+    movement: {fileID: 11400000, guid: cf8fffaca5b5f4fa09eb844ae0652b28, type: 2}
+    orthographic: 1
+    orthographicCameraRotation: {x: 90, y: 0, z: 0}
+    orthographicCameraOffset: {x: 0, y: 20, z: 2}
+  - cameraView: 2
+    movement: {fileID: 11400000, guid: 61ffe63a94824490bb2910930cba2845, type: 2}
+    orthographic: 1
+    orthographicCameraRotation: {x: 0, y: 0, z: 0}
+    orthographicCameraOffset: {x: 2, y: 4, z: -2}
+  - cameraView: 3
+    movement: {fileID: 11400000, guid: 9f92dfbfb814c49998d29f12230cbef7, type: 2}
+    orthographic: 0
+    orthographicCameraRotation: {x: 0, y: 0, z: 0}
+    orthographicCameraOffset: {x: 0, y: 0, z: 0}

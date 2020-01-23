@@ -59,8 +59,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 932633505583369456}
-  - component: {fileID: 5586352356814453199}
   - component: {fileID: 927036935176466216}
+  - component: {fileID: 5586352356814453199}
   - component: {fileID: 1404111577490424630}
   - component: {fileID: 3281049482965477513}
   m_Layer: 0
@@ -87,6 +87,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &927036935176466216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2032480695334426566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2443f96ba3b3c47b5b9607648a3fee16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationController: {fileID: 710809160864348023}
+  movementSpeed: 10
+  sprintMultiplier: 1.5
+  movement: {fileID: 11400000, guid: 9f92dfbfb814c49998d29f12230cbef7, type: 2}
 --- !u!114 &5586352356814453199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102,23 +118,6 @@ MonoBehaviour:
   orb: {fileID: 6556679171278252735}
   mainCam: {fileID: 0}
   interactCanvas: {fileID: 0}
---- !u!114 &927036935176466216
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2032480695334426566}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2443f96ba3b3c47b5b9607648a3fee16, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animationController: {fileID: 710809160864348023}
-  ghostCamera: {fileID: 1572253898046683821}
-  movementSpeed: 10
-  sprintMultiplier: 1.5
-  movement: {fileID: 11400000, guid: 9f92dfbfb814c49998d29f12230cbef7, type: 2}
 --- !u!136 &1404111577490424630
 CapsuleCollider:
   m_ObjectHideFlags: 0
