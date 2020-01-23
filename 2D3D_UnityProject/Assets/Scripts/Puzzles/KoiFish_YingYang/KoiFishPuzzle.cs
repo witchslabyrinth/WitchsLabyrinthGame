@@ -58,7 +58,7 @@ public class KoiFishPuzzle : Singleton<KoiFishPuzzle>
             else
             {
                 string timeStr = $"{timeRemaining:0.00}";
-                Debug.Log("Time remaining: " + timeStr);
+                //Debug.Log("Time remaining: " + timeStr);
             }
         }
     }

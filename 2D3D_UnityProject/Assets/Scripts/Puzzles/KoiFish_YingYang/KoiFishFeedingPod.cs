@@ -32,7 +32,7 @@ public class KoiFishFeedingPod : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         if (other.TryGetComponent(out PlayerInteractionController playerInteractionController))
-            playerInteractionController.SetInKoiFishZone(true, koiFish);
+            playerInteractionController.SetInKoiFishZone(false);
 
         Debug.Log(other.name + " out of range of " + koiFish.name);
     }

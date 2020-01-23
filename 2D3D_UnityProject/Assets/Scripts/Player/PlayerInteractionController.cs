@@ -81,6 +81,15 @@ public class PlayerInteractionController : MonoBehaviour
                 zodiacPuzzle.enabled = true;
                 zodiacCam.SetActive(true);
             }
+            else if (nearbyFish)
+            {
+                // Feed nearby fish
+                nearbyFish.Feed();
+
+                // Hide interact canvas and return without disabling actor
+                interactCanvas.SetActive(false);
+                return;
+            }
             // Ignore interact button press if no nearby interactable
             else
                 return;
