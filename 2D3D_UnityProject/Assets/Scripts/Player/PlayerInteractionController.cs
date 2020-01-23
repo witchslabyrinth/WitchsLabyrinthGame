@@ -80,7 +80,7 @@ public class PlayerInteractionController : MonoBehaviour
                 return;
 
             // Disable player actor control
-            Actor actor = PlayerController.Instance.GetActor();
+            Actor actor = PlayerController.Instance.GetPlayer();
             actor.Disable();
 
             // Disable actor swapping

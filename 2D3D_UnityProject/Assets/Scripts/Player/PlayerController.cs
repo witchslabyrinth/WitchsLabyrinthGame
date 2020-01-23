@@ -79,8 +79,15 @@ public class PlayerController : Singleton<PlayerController>
         {
             if (player.Equals(cat))
                 Swap(cat, oliver);
-            else
+            else if(player.Equals(oliver))
                 Swap(oliver, cat);
+
+            // Default to Oliver if player actor is null (shouldn't ever happen)
+            else
+            {
+                Debug.LogErrorFormat("{0} | ERROR - attempting to swap actor when current actor is null. Defaulting to Oliver");
+                Swap(cat, oliver);
+            }
         }
     }
 
@@ -104,9 +111,22 @@ public class PlayerController : Singleton<PlayerController>
     /// <summary>
     /// Returns reference to currently-controlled Actor (the player)
     /// </summary>
-    /// <returns></returns>
-    public Actor GetActor()
+    public Actor GetPlayer()
     {
         return player;
+    }
+
+    /// <summary>
+    /// Returns actor not controlled by player
+    /// </summary>
+    public Actor GetFriend()
+    {
+        if (player.Equals(oliver))
+            return cat;
+        else if (player.Equals(cat))
+            return oliver;
+
+        // Return null if player actor undefined
+        else return null;
     }
 }

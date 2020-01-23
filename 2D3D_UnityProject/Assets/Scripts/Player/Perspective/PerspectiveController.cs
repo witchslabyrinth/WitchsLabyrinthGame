@@ -85,7 +85,7 @@ public class PerspectiveController : Singleton<PerspectiveController>
         }
         
         // TODO: make sure we only set initial perspective in one place
-        Actor player = PlayerController.Instance.GetActor();
+        Actor player = PlayerController.Instance.GetPlayer();
         SetPerspective(player, perspective);
     }
 
