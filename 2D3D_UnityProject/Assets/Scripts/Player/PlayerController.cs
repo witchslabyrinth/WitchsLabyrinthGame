@@ -74,13 +74,13 @@ public class PlayerController : Singleton<PlayerController>
         if (!canSwap)
             return;
         
-        if(Input.GetKeyDown(KeyCode.Alpha1)) 
+        // Toggle currently-controlled actor between oliver/cat
+        if(Input.GetKeyDown(KeyCode.Tab))
         {
-            Swap(cat, oliver);
-        }
-        else if(Input.GetKeyDown(KeyCode.Alpha2)) 
-        {
-            Swap(oliver, cat);
+            if (player.Equals(cat))
+                Swap(cat, oliver);
+            else
+                Swap(oliver, cat);
         }
     }
 
