@@ -20,12 +20,6 @@ public class KoiFishPuzzle : Singleton<KoiFishPuzzle>
     /// </summary>
     private float timeRemaining;
 
-    /// <summary>
-    /// UI text (for debugging purposes only)
-    /// </summary>
-    [SerializeField]
-    private Text UITimer;
-
     void Start()
     {
         // Make sure there's a proper feeding order specified
@@ -60,12 +54,13 @@ public class KoiFishPuzzle : Singleton<KoiFishPuzzle>
                 Debug.Log("Time ran out, resetting puzzle");
                 ResetPuzzle();
             }
+            // Log time remaining to console
+            else
+            {
+                string timeStr = $"{timeRemaining:0.00}";
+                Debug.Log("Time remaining: " + timeStr);
+            }
         }
-
-        // TODO: remove this after debug testing finished
-        // Update UI timer
-        string time = String.Format("{0:0.00}", timeRemaining);
-        UITimer.text = "Time: " + time;
     }
 
     /// <summary>
