@@ -76,7 +76,7 @@ public class ZodiacPuzzle : MonoBehaviour
 
         // Set control to first (outermost) disk in puzzle
         currentDisk = disks[0];
-        currentDisk.PieceInOut(ZodiacPuzzlePiece.ZodiacPuzzlePiecePosition.Out);
+        // currentDisk.PieceInOut(ZodiacPuzzlePiece.ZodiacPuzzlePiecePosition.Out);
 
         currentRound = 1;
     }
@@ -129,7 +129,7 @@ public class ZodiacPuzzle : MonoBehaviour
                 ZodiacDisk disk = disks[diskIndex - 1];
                 currentDisk = disk;
             }
-            currentDisk.PieceInOut(ZodiacPuzzlePiece.ZodiacPuzzlePiecePosition.Out);
+            // currentDisk.PieceInOut(ZodiacPuzzlePiece.ZodiacPuzzlePiecePosition.Out);
         }
         catch(System.ArgumentOutOfRangeException ex) {
             return;
@@ -183,8 +183,8 @@ public class ZodiacPuzzle : MonoBehaviour
     private void PuzzleSolved()
     {
         // TODO: Maybe disable to center coming out now that we have lights
-        currentDisk.PieceInOut(ZodiacPuzzlePiece.ZodiacPuzzlePiecePosition.In);
-        center.PieceInOut(ZodiacPuzzlePiece.ZodiacPuzzlePiecePosition.Out);
+        // currentDisk.PieceInOut(ZodiacPuzzlePiece.ZodiacPuzzlePiecePosition.In);
+        // center.PieceInOut(ZodiacPuzzlePiece.ZodiacPuzzlePiecePosition.Out);
         zodiacDoor.Open();
     }
 

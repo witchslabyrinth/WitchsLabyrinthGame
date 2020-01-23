@@ -88,7 +88,7 @@ public class ZodiacDisk : ZodiacPuzzlePiece
         angleBetweenSymbols = 360f / symbols.Count;
 
         // Generate each symbol around the ring
-        PopulateSymbols();
+        // PopulateSymbols();
     }
 
     private void PopulateSymbols()
@@ -98,7 +98,7 @@ public class ZodiacDisk : ZodiacPuzzlePiece
             Sprite symbol = symbols[i];
 
             // Calculate sprite rotation
-            Quaternion rotation = transform.rotation * Quaternion.Euler(zodiacOffsetX, 0, i * angleBetweenSymbols);
+            Quaternion rotation = transform.localRotation * Quaternion.Euler(zodiacOffsetX, 0, i * angleBetweenSymbols);
 
 
             // Instantiate symbol at pivot point
@@ -136,22 +136,22 @@ public class ZodiacDisk : ZodiacPuzzlePiece
         Quaternion rotationChange = Quaternion.Euler(new Vector3(0, change));
 
         // Rotate towards that quaternion
-        Quaternion targetRotation = transform.rotation * rotationChange;
+        Quaternion targetRotation = transform.localRotation * rotationChange;
 
         // Track starting rotation to maintain lerp lower-bound
-        Quaternion startRotation = transform.rotation; 
+        Quaternion startRotation = transform.localRotation; 
 
         // Increment time each frame (scaled by rotationSpeed)
         for(float t=0; t<1; t += rotationSpeed * Time.fixedDeltaTime) {
             // Update rotation
             Quaternion rotation = Quaternion.Lerp(startRotation, targetRotation, t);
-            transform.rotation = rotation;
+            transform.localRotation = rotation;
 
             yield return null;
         }
 
         // Ensure we land exactly on target rotation
-        transform.rotation = targetRotation;
+        transform.localRotation = targetRotation;
 
         // Check which symbol we landed on
         UpdateSelectedSymbol(direction);
