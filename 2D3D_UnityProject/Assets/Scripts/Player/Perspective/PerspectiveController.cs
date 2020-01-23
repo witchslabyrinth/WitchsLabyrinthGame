@@ -63,12 +63,12 @@ public class PerspectiveController : Singleton<PerspectiveController>
     private Dictionary<KeyCode, CameraController.CameraViews> buttonPerspectiveMapping = new Dictionary<KeyCode, CameraController.CameraViews>() 
     {
         // Orthographic perspectives
-        {KeyCode.UpArrow, CameraController.CameraViews.TOP},
-        {KeyCode.DownArrow, CameraController.CameraViews.BACK},
-        {KeyCode.RightArrow, CameraController.CameraViews.RIGHT},
+        {KeyCode.Alpha2, CameraController.CameraViews.TOP},
+        {KeyCode.Alpha3, CameraController.CameraViews.BACK},
+        {KeyCode.Alpha4, CameraController.CameraViews.RIGHT},
 
         // 3D perspective
-        {KeyCode.LeftArrow, CameraController.CameraViews.THIRD_PERSON},
+        {KeyCode.Alpha1, CameraController.CameraViews.THIRD_PERSON},
     };
 
     /// <summary>
