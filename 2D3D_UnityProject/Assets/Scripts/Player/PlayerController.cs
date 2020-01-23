@@ -15,7 +15,7 @@ public class PlayerController : Singleton<PlayerController>
     /// Actor currently controlled by the player
     /// </summary>
     [SerializeField]
-    private Actor actor;
+    private Actor player;
 
     /// <summary>
     /// Reference to Oliver
@@ -29,11 +29,11 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField]
     private Actor cat;
 
-    private void Start()
+    private void Awake()
     {
         // Make sure we have an actor (default to oliver if not specified)
-        if(actor == null) {
-            actor = oliver;
+        if(player == null) {
+            player = oliver;
         }
 
         // Throw warnings and disable swapping if oliver/cat not found
@@ -56,13 +56,13 @@ public class PlayerController : Singleton<PlayerController>
         ActorSwapUpdate();
 
         // Handle interactions with other game entities
-        actor.CheckInteraction();
+        player.CheckInteraction();
         
         // Update camera perspective
-        PerspectiveController.Instance.UpdatePerspective(actor);
+        PerspectiveController.Instance.UpdatePerspective(player);
 
         // Update camera to follow player actor
-        CameraController.Instance.CameraUpdate(actor);
+        CameraController.Instance.CameraUpdate(player);
     }
 
     /// <summary>
@@ -76,25 +76,29 @@ public class PlayerController : Singleton<PlayerController>
         
         if(Input.GetKeyDown(KeyCode.Alpha1)) 
         {
-            // Switch player control to oliver
-            actor = oliver;
-
-            // Set cat to idle
-            cat.SetMovement(new NullMovement());
-
-            // Restore actor's previous perspective
-            PerspectiveController.Instance.SetPerspective(actor, actor.perspective);
+            Swap(cat, oliver);
         }
         else if(Input.GetKeyDown(KeyCode.Alpha2)) 
         {
-            actor = cat;
-
-            // Set oliver to idle
-            oliver.SetMovement(new NullMovement());
-
-            // Restore actor's previous perspective
-            PerspectiveController.Instance.SetPerspective(actor, actor.perspective);
+            Swap(oliver, cat);
         }
+    }
+
+    /// <summary>
+    /// Swaps player control from currentActor to friendActor
+    /// </summary>
+    /// <param name="currentActor">Actor currently controlled by player</param>
+    /// <param name="friendActor">Friend actor (not currently controlled by player)</param>
+    private void Swap(Actor currentActor, Actor friendActor)
+    {
+        // Switch player control to friend
+        player = friendActor;
+
+        // Set previous actor to idle
+        currentActor.SetMovement(new NullMovement());
+
+        // Restore player actor's previous perspective
+        PerspectiveController.Instance.SetPerspective(player, player.perspective);
     }
 
     /// <summary>
@@ -103,6 +107,6 @@ public class PlayerController : Singleton<PlayerController>
     /// <returns></returns>
     public Actor GetActor()
     {
-        return actor;
+        return player;
     }
 }
