@@ -9,6 +9,8 @@ public class ReflectableLightHead : MonoBehaviour
     private GameObject toGenerateOnReflect;
     [SerializeField]
     private GameObject myBeam;
+    
+    private const float MaxLightRaycastDistance = 10.0f;
 
     //We need the immediate child to be public for light nodes to work properly, but we absolutely do NOT want anyone setting it before running the game. It's intended function is to keep track of reflections created, which would be completely screwed up by setting this in the editor.
     //For this reason, we make it nonserialized, thus making such a mistake impossible.
@@ -17,12 +19,12 @@ public class ReflectableLightHead : MonoBehaviour
 
     //These are needed in order to calculate reflections and rays
     RaycastHit rcHit;
-    Vector3 HitPosit = Vector3.zero;
-    Vector3 PrevHitPosit = Vector3.zero;
-    bool setPrevHitPosit = false;
+    Vector3 HitPos = Vector3.zero;
+    Vector3 PrevHitPos = Vector3.zero;
+    bool setPrevHitPos = false;
 
     //Reflections are only supposed to be made when light hits a mirror. All objects considered mirrors should be on layer 9.
-    const int LAYER_MASK_TO_TEST_ONLY_LAYER_9 = (1 << 9);
+    const int LayerMaskToTestOnlyLayer9 = (1 << 9);
 
     private void FixedUpdate()
     {
@@ -42,29 +44,29 @@ public class ReflectableLightHead : MonoBehaviour
             myBeam.transform.position = newPosition;
         }
         //perform a raycast in front of this object from its origin, only detect collisions with layer 9 (the mirror layer)
-        if (Physics.Raycast(transform.position, transform.forward, out rcHit, 10, LAYER_MASK_TO_TEST_ONLY_LAYER_9))
+        if (Physics.Raycast(transform.position, transform.forward, out rcHit, MaxLightRaycastDistance, LayerMaskToTestOnlyLayer9))
         {
             //Uncomment the line below to debug the raycast.
-            //Debug.DrawRay(transform.position, transform.forward*10, Color.yellow);
+            //Debug.DrawRay(transform.position, transform.forward*MaxLightRaycastDistance, Color.yellow);
 
             //Set the hit position to the position of the raycast collision.
-            HitPosit = rcHit.point;
+            HitPos = rcHit.point;
             //if we haven't already set the previous position, automatically set it. It's important for detecting when the mirror moves.
-            if(!setPrevHitPosit)
+            if(!setPrevHitPos)
             {
-                PrevHitPosit = HitPosit;
-                setPrevHitPosit = true;
+                PrevHitPos = HitPos;
+                setPrevHitPos = true;
             }
             //Otherwise, if the positions don't match on this frame, destroy all existing reflections and set the two positions equal
-            else if (PrevHitPosit != HitPosit)
+            else if (PrevHitPos != HitPos)
             {
                 immediateChild.GetComponent<ReflectableLightNode>().RemoveThisReflection();
                 immediateChild = null;
-                PrevHitPosit = HitPosit;
+                PrevHitPos = HitPos;
             }
             //Since we're colliding with a mirror, create a reflection if one does not already exist.
             if (immediateChild == null) {
-                immediateChild = Instantiate(toGenerateOnReflect, HitPosit, Quaternion.LookRotation(Vector3.Reflect(transform.forward,rcHit.normal)));//Quaternion.Euler(Vector3.Reflect(transform.forward, rcHit.normal)));
+                immediateChild = Instantiate(toGenerateOnReflect, HitPos, Quaternion.LookRotation(Vector3.Reflect(transform.forward,rcHit.normal)));//Quaternion.Euler(Vector3.Reflect(transform.forward, rcHit.normal)));
             }
         }
         //If no collision has been detected, then we're no longer hitting a mirror. So destroy the existing reflection.
@@ -72,11 +74,11 @@ public class ReflectableLightHead : MonoBehaviour
         {
             if (immediateChild != null)
             {
-                PrevHitPosit = Vector3.zero;
+                PrevHitPos = Vector3.zero;
                 immediateChild.GetComponent<ReflectableLightNode>().RemoveThisReflection();
                 immediateChild = null;
                 //make a note that we haven't set a previous hit position so we don't run into any issues if we hit another mirror.
-                setPrevHitPosit = false;
+                setPrevHitPos = false;
             }
         }
     }
