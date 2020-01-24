@@ -44,6 +44,14 @@ public class Actor : MonoBehaviour
     protected float sprintMultiplier = 1.5f;
 
     /// <summary>
+    /// Current status of actor's movement
+    /// 0 - stationary
+    /// 1 - walking
+    /// 2 - sprinting
+    /// </summary>
+    private int moveStatus;
+
+    /// <summary>
     /// Used to generate Actor movement - varies depending on current camera perspective, or assigned NPC behavior
     /// </summary>
     [SerializeField] 
@@ -71,6 +79,8 @@ public class Actor : MonoBehaviour
                 movement = new FollowMovement(PlayerController.Instance.GetActor().transform);
             }
         }
+
+        moveStatus = 0;
     }
 
     private void FixedUpdate()
@@ -90,13 +100,23 @@ public class Actor : MonoBehaviour
     {
         // Get move direction (as unit vector) from movement class
         Vector3 direction = movement.GetMovement(this);
+        if(direction != Vector3.zero)
+        {
+            moveStatus = 1;
+        }
+        else
+        {
+            moveStatus = 0;
+        }
 
         // Apply movement (scaled by movement speed)
         float magnitude = movementSpeed * Time.fixedDeltaTime;
 
         // Apply speed multiplier if sprinting
-        if(Input.GetKey(KeyCode.LeftShift)) {
+        if(Input.GetKey(KeyCode.LeftShift)) 
+        {
             magnitude *= sprintMultiplier;
+            moveStatus *= 2;
         }
 
         // Apply movement
@@ -113,7 +133,7 @@ public class Actor : MonoBehaviour
         Vector2 direction = movement.GetAnimation(this);
 
         // Generate proper animations bsed on movement (on x-z plane)
-        animationController.UpdateAnims(direction);
+        animationController.UpdateAnims(direction, moveStatus);
     }
 
     public void SetMovementType(Movement movement)
