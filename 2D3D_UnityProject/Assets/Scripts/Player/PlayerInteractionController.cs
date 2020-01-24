@@ -17,6 +17,12 @@ public class PlayerInteractionController : MonoBehaviour
 
     ///    CAN PROBABLY DISCARD NEXT SECTION IN REFACTOR    ///
 
+    
+    /// <summary>
+    /// Reference to nearby KoiFish that can be fed. Null if actor not in a fish-feeding trigger zone
+    /// </summary>
+    private KoiFish nearbyFish;
+
     /// <summary>
     /// is the player within talking distance of an npc
     /// </summary>
@@ -75,12 +81,21 @@ public class PlayerInteractionController : MonoBehaviour
                 zodiacPuzzle.enabled = true;
                 zodiacCam.SetActive(true);
             }
+            else if (nearbyFish)
+            {
+                // Feed nearby fish
+                nearbyFish.Feed();
+
+                // Hide interact canvas and return without disabling actor
+                interactCanvas.SetActive(false);
+                return;
+            }
             // Ignore interact button press if no nearby interactable
             else
                 return;
 
             // Disable player actor control
-            Actor actor = PlayerController.Instance.GetActor();
+            Actor actor = PlayerController.Instance.GetPlayer();
             actor.Disable();
 
             // Disable actor swapping
@@ -115,6 +130,20 @@ public class PlayerInteractionController : MonoBehaviour
 
         // TODO: find a way to hide canvas when swapping to actor out of interact zone
         // Show/hide interact canvas
+        interactCanvas.SetActive(withinZone);
+    }
+
+    public void SetInKoiFishZone(bool withinZone, KoiFish fish = null)
+    {
+        // If within fish-feeding zone, set reference to fish
+        if (withinZone)
+            nearbyFish = fish;
+        // Otherwise set fish reference to null
+        else
+            nearbyFish = null;
+
+        // Show/hide interact canvas
+        // TODO: find a way to hide canvas when swapping to actor out of interact zone
         interactCanvas.SetActive(withinZone);
     }
 }

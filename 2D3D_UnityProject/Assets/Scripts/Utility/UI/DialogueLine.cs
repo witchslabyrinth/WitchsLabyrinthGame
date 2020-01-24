@@ -257,7 +257,7 @@ public class DialogueLine : MonoBehaviour
         canvasObj.SetActive(false);
 
         // Restore player actor control
-        Actor player = PlayerController.Instance.GetActor();
+        Actor player = PlayerController.Instance.GetPlayer();
         player.Enable();
     }
 

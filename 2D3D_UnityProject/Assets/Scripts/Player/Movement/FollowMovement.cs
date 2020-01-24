@@ -46,7 +46,7 @@ public class FollowMovement : Movement
             // Set target to player if specified
             if (followPlayer)
             {
-                target = PlayerController.Instance.GetActor().transform;
+                target = PlayerController.Instance.GetPlayer().transform;
             }
             // Otherwise return 0
             else

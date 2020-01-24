@@ -79,7 +79,7 @@ public class Actor : MonoBehaviour
         perspective = PerspectiveController.Instance.GetPerspectiveByType(CameraController.CameraViews.THIRD_PERSON);
 
         // Give player movement control
-        if (PlayerController.Instance.GetActor() == this) {
+        if (PlayerController.Instance.GetPlayer() == this) {
             movement = perspective.movement;
         }
         // Give NPC idle movement
@@ -104,7 +104,7 @@ public class Actor : MonoBehaviour
     private Vector3 Move()
     {
         // If player-controlled actor has NullMovement scheme, restore movement from last-used perspective
-        if(PlayerController.Instance.GetActor().Equals(this) && movement.GetType() == typeof(NullMovement)) {
+        if(PlayerController.Instance.GetPlayer().Equals(this) && movement.GetType() == typeof(NullMovement)) {
             movement = perspective.movement;
         }
         
