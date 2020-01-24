@@ -84,8 +84,17 @@ public class PlayerController : Singleton<PlayerController>
 
     private void Update()
     {
-        // Handle player input for actor swapping
-        ActorSwapUpdate();
+        // Toggle currently-controlled actor between oliver/cat
+        if(canSwap && Input.GetKeyDown(KeyCode.Tab))
+        {
+            Swap();
+        }
+
+        // Input for telling Friend actor to follow/stay
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            FriendCommand();
+        }
 
         // Handle interactions with other game entities
         player.CheckInteraction();
@@ -95,22 +104,6 @@ public class PlayerController : Singleton<PlayerController>
 
         // Update camera to follow player actor
         CameraController.Instance.CameraUpdate(player);
-    }
-
-    /// <summary>
-    /// Swaps player control between actors based on input (no effect when canSwap is false)
-    /// </summary>
-    private void ActorSwapUpdate()
-    {
-        // Skip if swapping is disabled
-        if (!canSwap)
-            return;
-        
-        // Toggle currently-controlled actor between oliver/cat
-        if(Input.GetKeyDown(KeyCode.Tab))
-        {
-            Swap();
-        }
     }
 
     /// <summary>
@@ -128,6 +121,25 @@ public class PlayerController : Singleton<PlayerController>
 
         // Restore player actor's previous perspective
         PerspectiveController.Instance.SetPerspective(player, player.perspective);
+    }
+
+    /// <summary>
+    /// Toggles friend actor's movement between following player and staying idle
+    /// </summary>
+    private void FriendCommand()
+    {
+        // Switch to idle
+        if (friend.movement.GetType() == typeof(FollowMovement))
+        {
+            Debug.LogFormat("Switching {0} movement from Follow to Idle", friend.name);
+            friend.SetMovement(new NullMovement());
+        }
+        // Switch to follow
+        else
+        {
+            Debug.LogFormat("Switching {0} movement from Idle to Follow", friend.name);
+            friend.SetMovement(new FollowMovement(player.transform));
+        }
     }
 
     /// <summary>
