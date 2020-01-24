@@ -96,7 +96,7 @@ public class ZodiacPuzzle : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             // for ukiyoe scene
-            mainCam.SetActive(true);
+            // mainCam.SetActive(true);
 
             // Restore control to player actor
             Actor actor = PlayerController.Instance.GetPlayer();
