@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Movement control scheme
+/// </summary>
 [System.Serializable]
 public abstract class Movement : ScriptableObject
 {

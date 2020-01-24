@@ -99,8 +99,11 @@ public class ZodiacPuzzle : MonoBehaviour
             mainCam.SetActive(true);
 
             // Restore control to player actor
-            Actor actor = PlayerController.Instance.GetActor();
+            Actor actor = PlayerController.Instance.GetPlayer();
             actor.Enable();
+
+            // Restore actor swapping
+            PlayerController.Instance.canSwap = true;
 
             zodCamera.SetActive(false);
             this.enabled = false;
