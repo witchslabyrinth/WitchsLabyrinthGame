@@ -25,6 +25,20 @@ MonoBehaviour:
   zodCamera: {fileID: 5263059487329813100}
   mainCam: {fileID: 0}
   zodiacCanvas: {fileID: 5263059489050712964}
+--- !u!136 &3119822077143185061
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 44106540859326807}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.225
+  m_Height: 0.65
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.2, z: 0}
 --- !u!1 &5263059487278427642
 GameObject:
   m_ObjectHideFlags: 0
@@ -982,16 +996,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5263059489151442161}
     m_Modifications:
-    - target: {fileID: 33152816684777529, guid: 290a1c47d1aff114da5fd4cae336acce,
-        type: 3}
-      propertyPath: m_Name
-      value: ZodiacPuzzle(New)
-      objectReference: {fileID: 0}
-    - target: {fileID: 33152816684777529, guid: 290a1c47d1aff114da5fd4cae336acce,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3904218005950313002, guid: 290a1c47d1aff114da5fd4cae336acce,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1046,6 +1050,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 33152816684777529, guid: 290a1c47d1aff114da5fd4cae336acce,
+        type: 3}
+      propertyPath: m_Name
+      value: ZodiacPuzzle(New)
+      objectReference: {fileID: 0}
+    - target: {fileID: 33152816684777529, guid: 290a1c47d1aff114da5fd4cae336acce,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8310308279300603406, guid: 290a1c47d1aff114da5fd4cae336acce,
         type: 3}
