@@ -12,12 +12,6 @@ public class PlayerController : Singleton<PlayerController>
     public bool canSwap = true;
 
     /// <summary>
-    /// Actor currently controlled by the player
-    /// </summary>
-    [SerializeField]
-    private Actor player;
-
-    /// <summary>
     /// Reference to Oliver
     /// </summary>
     [SerializeField]
@@ -29,11 +23,40 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField]
     private Actor cat;
 
+    /// <summary>
+    /// Actor currently controlled by the player
+    /// </summary>
+    [SerializeField]
+    private Actor player;
+
+    /// <summary>
+    /// Actor not currently controlled by the player
+    /// </summary>
+    private Actor friend
+    {
+        get
+        {
+            if (player.Equals(oliver))
+                return cat;
+            else if (player.Equals(cat))
+                return oliver;
+
+            // Return null if player actor undefined
+            else
+            {
+                Debug.LogWarningFormat("{0} | Friend actor undefined", name);
+                return null;
+            }
+        }
+        set { }
+    }
+
     private void Awake()
     {
         // Make sure we have an actor (default to oliver if not specified)
         if(player == null) {
             player = oliver;
+            friend = cat;
         }
 
         // Throw warnings and disable swapping if oliver/cat not found
@@ -77,32 +100,22 @@ public class PlayerController : Singleton<PlayerController>
         // Toggle currently-controlled actor between oliver/cat
         if(Input.GetKeyDown(KeyCode.Tab))
         {
-            if (player.Equals(cat))
-                Swap(cat, oliver);
-            else if(player.Equals(oliver))
-                Swap(oliver, cat);
-
-            // Default to Oliver if player actor is null (shouldn't ever happen)
-            else
-            {
-                Debug.LogErrorFormat("{0} | ERROR - attempting to swap actor when current actor is null. Defaulting to Oliver");
-                Swap(cat, oliver);
-            }
+            Swap();
         }
     }
 
     /// <summary>
-    /// Swaps player control from currentActor to friendActor
+    /// Switches player control to Friend actor
     /// </summary>
-    /// <param name="currentActor">Actor currently controlled by player</param>
-    /// <param name="friendActor">Friend actor (not currently controlled by player)</param>
-    private void Swap(Actor currentActor, Actor friendActor)
+    private void Swap()
     {
-        // Switch player control to friend
-        player = friendActor;
+        // Swap player/friend actors
+        Actor temp = player;
+        player = friend;
+        friend = temp;
 
-        // Set previous actor to idle
-        currentActor.SetMovement(new NullMovement());
+        // Set friend actor to idle
+        friend.SetMovement(new NullMovement());
 
         // Restore player actor's previous perspective
         PerspectiveController.Instance.SetPerspective(player, player.perspective);
@@ -116,17 +129,8 @@ public class PlayerController : Singleton<PlayerController>
         return player;
     }
 
-    /// <summary>
-    /// Returns actor not controlled by player
-    /// </summary>
     public Actor GetFriend()
     {
-        if (player.Equals(oliver))
-            return cat;
-        else if (player.Equals(cat))
-            return oliver;
-
-        // Return null if player actor undefined
-        else return null;
+        return friend;
     }
 }
