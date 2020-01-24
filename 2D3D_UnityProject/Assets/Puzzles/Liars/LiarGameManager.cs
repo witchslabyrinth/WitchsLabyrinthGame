@@ -57,7 +57,8 @@ public class LiarGameManager : MonoBehaviour
         dialogueCode.SetSubtitle(liar.GetSubtitle());
 
         canvasObject.SetActive(true);
-
+        liar.GetCamera().SetActive(true);
+        dialogueCode.liarCam = liar.GetCamera();
 
         currNpc = npc;
     }
