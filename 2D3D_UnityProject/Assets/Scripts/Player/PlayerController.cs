@@ -70,7 +70,16 @@ public class PlayerController : Singleton<PlayerController>
             Debug.LogWarning("Warning: Cat actor not found in PlayerController");
             canSwap = false;
         }
-        
+
+        if (oliver && cat)
+        {
+            // Ignore collision between oliver and cat
+            Collider oliverCollider, catCollider;
+            if (oliver.TryGetComponent(out oliverCollider) && cat.TryGetComponent(out catCollider))
+            {
+                Physics.IgnoreCollision(oliverCollider, catCollider);
+            }
+        }
     }
 
     private void Update()
