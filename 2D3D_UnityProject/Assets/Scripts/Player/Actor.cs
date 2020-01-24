@@ -46,8 +46,7 @@ public class Actor : MonoBehaviour
     /// <summary>
     /// Used to generate Actor movement - varies depending on current camera perspective, or assigned NPC behavior
     /// </summary>
-    [SerializeField] 
-    protected Movement movement;
+    public Movement movement;
 
     /// <summary>
     /// Sets actor movement control scheme
@@ -84,7 +83,7 @@ public class Actor : MonoBehaviour
         }
         // Give NPC idle movement
         else {
-            movement = new NullMovement();
+            movement = new FollowMovement(PlayerController.Instance.GetPlayer().transform);
         }
     }
 

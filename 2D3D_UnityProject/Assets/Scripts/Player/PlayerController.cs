@@ -114,8 +114,8 @@ public class PlayerController : Singleton<PlayerController>
         player = friend;
         friend = temp;
 
-        // Set friend actor to idle
-        friend.SetMovement(new NullMovement());
+        // Copy the friend follow/idle movement over to the new actor
+        friend.SetMovement(player.movement);
 
         // Restore player actor's previous perspective
         PerspectiveController.Instance.SetPerspective(player, player.perspective);

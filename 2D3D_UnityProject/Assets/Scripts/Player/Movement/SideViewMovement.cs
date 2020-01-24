@@ -8,8 +8,8 @@ public class SideViewMovement : Movement
     /// <summary>
     /// Returns horizontal movement along Z-axis
     /// </summary>
-    /// <param name="player"></param>
-    public override Vector3 GetMovement(Actor player)
+    /// <param name="actor"></param>
+    public override Vector3 GetMovement(Actor actor)
     {
         Vector3 movement = Vector3.zero;
 
@@ -28,7 +28,7 @@ public class SideViewMovement : Movement
         return movement.normalized;
     }
 
-    public override Vector2 GetAnimation(Actor player)
+    public override Vector2 GetAnimation(Actor actor)
     {
         if (Input.GetKey(KeyCode.A))
         {
