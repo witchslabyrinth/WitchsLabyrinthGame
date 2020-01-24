@@ -47,17 +47,22 @@ public class LiarGameManager : MonoBehaviour
     /// <param name="npc">ID of the person currently talking</param>
     public void StartConversation(int npc)
     {
+        PlayerController.Instance.GetActor().GetComponentInChildren<PerspectiveCameraControl>().lockCursor = false;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         // Disable player control
         Actor actor = PlayerController.Instance.GetActor();
-        actor.Disable();
+        // actor.Disable();
 
         LiarStatue liar = npcs[npc].GetComponentInChildren<LiarStatue>();
         dialogueCode.SetLine(liar.GetStatement());
         dialogueCode.SetName(liar.GetName());
         dialogueCode.SetSubtitle(liar.GetSubtitle());
 
+        liar.GetCamera().SetActive(true);
         canvasObject.SetActive(true);
 
+        dialogueCode.liarCam =  liar.GetCamera();
 
         currNpc = npc;
     }
@@ -73,9 +78,10 @@ public class LiarGameManager : MonoBehaviour
         dialogueCode.SetName(liar.GetName());
         dialogueCode.SetSubtitle(liar.GetSubtitle());
 
+        liar.GetCamera().SetActive(true);
         canvasObject.SetActive(true);
 
-        player.GetComponentInChildren<PerspectiveCameraControl>().lockCursor = true;
+        player.GetComponentInChildren<PerspectiveCameraControl>().lockCursor = false;
     }
 
     public void CheckOrb()
@@ -89,6 +95,7 @@ public class LiarGameManager : MonoBehaviour
         dialogueCode.SetName(liar.GetName());
         dialogueCode.SetSubtitle(liar.GetSubtitle());
 
+        liar.GetCamera().SetActive(true);
         canvasObject.SetActive(true);
 
         dialogueCode.yesNoButtons.SetActive(false);
@@ -98,7 +105,7 @@ public class LiarGameManager : MonoBehaviour
         if (currNpc == 0)
             actor.GetComponent<PlayerInteractionController>().orb.SetActive(true);
 
-        player.GetComponentInChildren<PerspectiveCameraControl>().lockCursor = true;
+        player.GetComponentInChildren<PerspectiveCameraControl>().lockCursor = false;
     }
 
     /// <summary>

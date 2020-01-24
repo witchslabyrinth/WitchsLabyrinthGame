@@ -42,6 +42,9 @@ public class LiarStatue : MonoBehaviour
     [SerializeField]
     private int id;
 
+    [SerializeField]
+    private GameObject liarCam;
+
     void OnTriggerEnter(Collider other)
     {
         PlayerInteractionController controller = other.GetComponent<PlayerInteractionController>();
@@ -81,5 +84,10 @@ public class LiarStatue : MonoBehaviour
     public bool GetOrbState()
     {
         return hasOrb;
+    }
+
+    public GameObject GetCamera()
+    {
+        return liarCam;
     }
 }

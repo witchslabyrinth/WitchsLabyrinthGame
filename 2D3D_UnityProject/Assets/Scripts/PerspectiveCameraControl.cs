@@ -17,7 +17,8 @@ public class PerspectiveCameraControl : MonoBehaviour {
 
     public GameObject characterBody;
 
-    void Start () {
+    void Start () 
+    {
         // Set target direction to the camera's initial orientation.
         targetDirection = transform.localRotation.eulerAngles;
 
@@ -26,10 +27,17 @@ public class PerspectiveCameraControl : MonoBehaviour {
             targetCharacterDirection = characterBody.transform.localRotation.eulerAngles;
     }
 
-    void Update () {
+    void Update () 
+    {
         // Ensure the cursor is always locked when set
-        if (lockCursor) {
+        if (lockCursor) 
+        {
             Cursor.lockState = CursorLockMode.Locked;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
 
         // Allow the script to clamp based on a desired target value.

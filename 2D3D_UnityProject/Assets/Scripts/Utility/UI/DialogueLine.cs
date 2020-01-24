@@ -71,6 +71,8 @@ public class DialogueLine : MonoBehaviour
 
     public GameObject yesNoButtons;
 
+    public GameObject liarCam;
+
     ///    CAN PROBABLY DISCARD NEXT SECTION IN REFACTOR - END    ///
 
     // Update is called once per frame
@@ -81,6 +83,7 @@ public class DialogueLine : MonoBehaviour
             printDialogue = StartCoroutine(PrintDialogueCoroutine());
         }
 
+        Debug.Log(Cursor.lockState);
         ///    CAN PROBABLY DISCARD NEXT SECTION IN REFACTOR    ///
 
         // if the player presses E while talking
@@ -92,6 +95,8 @@ public class DialogueLine : MonoBehaviour
                 if (!finalLine)
                 {
                     PlayerController.Instance.GetActor().GetComponentInChildren<PerspectiveCameraControl>().lockCursor = false;
+                    Cursor.lockState = CursorLockMode.None;
+                    Cursor.visible = true;
                     line = "Am I the one with the marble?";
                     printDialogue = StartCoroutine(PrintDialogueCoroutine());
                     finalLine = true;
@@ -252,11 +257,13 @@ public class DialogueLine : MonoBehaviour
         finalLine = false;
         yesNoButtons.SetActive(false);
 
+        liarCam.SetActive(false);
         canvasObj.SetActive(false);
 
         // Restore player actor control
         Actor player = PlayerController.Instance.GetActor();
         player.Enable();
+        PlayerController.Instance.GetActor().GetComponentInChildren<PerspectiveCameraControl>().lockCursor = true;
     }
 
     ///    CAN PROBABLY DISCARD NEXT SECTION IN REFACTOR - END    ///
