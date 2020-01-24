@@ -71,8 +71,6 @@ public class DialogueLine : MonoBehaviour
 
     public GameObject yesNoButtons;
 
-    public PlayerController playCont;
-
     ///    CAN PROBABLY DISCARD NEXT SECTION IN REFACTOR - END    ///
 
     // Update is called once per frame
@@ -93,11 +91,11 @@ public class DialogueLine : MonoBehaviour
             {
                 if (!finalLine)
                 {
+                    PlayerController.Instance.GetActor().GetComponentInChildren<PerspectiveCameraControl>().lockCursor = false;
                     line = "Am I the one with the marble?";
                     printDialogue = StartCoroutine(PrintDialogueCoroutine());
                     finalLine = true;
                     yesNoPrompt = true;
-                    Cursor.lockState = CursorLockMode.None;
                 }
                 else
                 {

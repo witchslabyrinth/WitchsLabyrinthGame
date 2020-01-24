@@ -98,7 +98,7 @@ public class LiarGameManager : MonoBehaviour
         if (currNpc == 0)
             actor.GetComponent<PlayerInteractionController>().orb.SetActive(true);
 
-        Cursor.lockState = CursorLockMode.Locked;
+        player.GetComponentInChildren<PerspectiveCameraControl>().lockCursor = true;
     }
 
     /// <summary>
