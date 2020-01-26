@@ -17,6 +17,12 @@ public class PlayerInteractionController : MonoBehaviour
 
     ///    CAN PROBABLY DISCARD NEXT SECTION IN REFACTOR    ///
 
+    
+    /// <summary>
+    /// Reference to nearby KoiFish that can be fed. Null if actor not in a fish-feeding trigger zone
+    /// </summary>
+    private KoiFish nearbyFish;
+
     /// <summary>
     /// is the player within talking distance of an npc
     /// </summary>
@@ -30,6 +36,7 @@ public class PlayerInteractionController : MonoBehaviour
     /// <summary>
     /// reference to the orb the player is trying to find
     /// </summary>
+    // TODO: move this object reference to the LiarGameManager code . instantiate the orb in LiarGameManager and parent it to the Actor, rather than hard-coding it here
     public GameObject orb;
 
     /// <summary>
@@ -43,8 +50,6 @@ public class PlayerInteractionController : MonoBehaviour
     private ZodiacPuzzle zodiacPuzzle;
 
     private GameObject zodiacCam;
-
-    public GameObject mainCam;
     // end of bad stuff
 
     public GameObject interactCanvas;
@@ -65,14 +70,6 @@ public class PlayerInteractionController : MonoBehaviour
         // Checks if player is near interactable and pressing interact button
         if (Input.GetKeyDown(KeyCode.E))
         {
-            // @Victor - Delete this code if no longer needed
-            // if (inDialogueZone)
-            // {
-            //     if (dialoguePartner == 0)
-            //         orb.SetActive(true);
-            //     LiarGameManager.Instance().CheckOrb(dialoguePartner);
-            // }
-
             if (inDialogueZone)
             {
                 // Show dialogue conversation if interacting with NPC
@@ -84,13 +81,25 @@ public class PlayerInteractionController : MonoBehaviour
                 zodiacPuzzle.enabled = true;
                 zodiacCam.SetActive(true);
             }
+            else if (nearbyFish)
+            {
+                // Feed nearby fish
+                nearbyFish.Feed();
+
+                // Hide interact canvas and return without disabling actor
+                interactCanvas.SetActive(false);
+                return;
+            }
             // Ignore interact button press if no nearby interactable
             else
                 return;
 
             // Disable player actor control
-            Actor actor = PlayerController.Instance.GetActor();
+            Actor actor = PlayerController.Instance.GetPlayer();
             actor.Disable();
+
+            // Disable actor swapping
+            PlayerController.Instance.canSwap = false;
 
             // Hide interact canvas
             interactCanvas.SetActive(false);
@@ -108,6 +117,7 @@ public class PlayerInteractionController : MonoBehaviour
         inDialogueZone = withinZone;
         dialoguePartner = partner;
 
+        // TODO: find a way to hide canvas when swapping to actor out of interact zone
         // Show/hide interact canvas
         interactCanvas.SetActive(withinZone);
     }
@@ -118,7 +128,22 @@ public class PlayerInteractionController : MonoBehaviour
         zodiacPuzzle = zodPuz;
         zodiacCam = zodCam;
 
+        // TODO: find a way to hide canvas when swapping to actor out of interact zone
         // Show/hide interact canvas
+        interactCanvas.SetActive(withinZone);
+    }
+
+    public void SetInKoiFishZone(bool withinZone, KoiFish fish = null)
+    {
+        // If within fish-feeding zone, set reference to fish
+        if (withinZone)
+            nearbyFish = fish;
+        // Otherwise set fish reference to null
+        else
+            nearbyFish = null;
+
+        // Show/hide interact canvas
+        // TODO: find a way to hide canvas when swapping to actor out of interact zone
         interactCanvas.SetActive(withinZone);
     }
 }

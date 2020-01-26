@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Movement control scheme
+/// </summary>
 [System.Serializable]
 public abstract class Movement : ScriptableObject
 {
@@ -9,12 +12,12 @@ public abstract class Movement : ScriptableObject
     /// <summary>
     /// Returns movement as a unit vector (magnitude 1)
     /// </summary>
-    /// <param name="player">Player instance</param>
-    public abstract Vector3 GetMovement(Actor player);
+    /// <param name="actor">Player instance</param>
+    public abstract Vector3 GetMovement(Actor actor);
 
     /// <summary>
     /// Returns unit vector corresponding to animation direction (which way the player sprite should be facing)
     /// </summary>
-    /// <param name="player"></param>
-    public abstract Vector2 GetAnimation(Actor player);
+    /// <param name="actor"></param>
+    public abstract Vector2 GetAnimation(Actor actor);
 }

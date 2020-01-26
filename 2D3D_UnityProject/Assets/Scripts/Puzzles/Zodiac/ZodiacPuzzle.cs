@@ -47,6 +47,12 @@ public class ZodiacPuzzle : MonoBehaviour
     [SerializeField]
     private List<ZodiacLight> zodiacLights;
 
+    /// <summary>
+    /// Door to be opened when the zodiac puzzle is solved
+    /// </summary>
+    [SerializeField]
+    private DoubleSlidingDoors zodiacDoor;
+
     [SerializeField]
     private GameObject zodCamera;
 
@@ -70,7 +76,7 @@ public class ZodiacPuzzle : MonoBehaviour
 
         // Set control to first (outermost) disk in puzzle
         currentDisk = disks[0];
-        currentDisk.PieceInOut(ZodiacPuzzlePiece.ZodiacPuzzlePiecePosition.Out);
+        // currentDisk.PieceInOut(ZodiacPuzzlePiece.ZodiacPuzzlePiecePosition.Out);
 
         currentRound = 1;
     }
@@ -90,11 +96,14 @@ public class ZodiacPuzzle : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             // for ukiyoe scene
-            mainCam.SetActive(true);
+            // mainCam.SetActive(true);
 
             // Restore control to player actor
-            Actor actor = PlayerController.Instance.GetActor();
+            Actor actor = PlayerController.Instance.GetPlayer();
             actor.Enable();
+
+            // Restore actor swapping
+            PlayerController.Instance.canSwap = true;
 
             zodCamera.SetActive(false);
             this.enabled = false;
@@ -123,7 +132,7 @@ public class ZodiacPuzzle : MonoBehaviour
                 ZodiacDisk disk = disks[diskIndex - 1];
                 currentDisk = disk;
             }
-            currentDisk.PieceInOut(ZodiacPuzzlePiece.ZodiacPuzzlePiecePosition.Out);
+            // currentDisk.PieceInOut(ZodiacPuzzlePiece.ZodiacPuzzlePiecePosition.Out);
         }
         catch(System.ArgumentOutOfRangeException ex) {
             return;
@@ -170,10 +179,16 @@ public class ZodiacPuzzle : MonoBehaviour
         }
         else
         {
-            // TODO: Maybe disable to center coming out now that we have lights
-            currentDisk.PieceInOut(ZodiacPuzzlePiece.ZodiacPuzzlePiecePosition.In);
-            center.PieceInOut(ZodiacPuzzlePiece.ZodiacPuzzlePiecePosition.Out);
+            PuzzleSolved();
         }
+    }
+
+    private void PuzzleSolved()
+    {
+        // TODO: Maybe disable to center coming out now that we have lights
+        // currentDisk.PieceInOut(ZodiacPuzzlePiece.ZodiacPuzzlePiecePosition.In);
+        // center.PieceInOut(ZodiacPuzzlePiece.ZodiacPuzzlePiecePosition.Out);
+        zodiacDoor.Open();
     }
 
     void OnEnable()
