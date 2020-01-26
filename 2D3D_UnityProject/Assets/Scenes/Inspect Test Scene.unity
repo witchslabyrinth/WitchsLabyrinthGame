@@ -149,9 +149,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 435779702}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ec5886e94ca6e04da7fcfaf45805267, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f95529879d1547469ebccb2ffbd2814, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inspectMode: 0
+  objectIndex: -1
 --- !u!114 &435779704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,7 +163,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 435779702}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f08647d1cc26ae409cf7cd665c68697, type: 3}
+  m_Script: {fileID: 11500000, guid: 8a5d1bb63a79190438ad989cf33957a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!81 &435779705
@@ -198,7 +200,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 1
+  orthographic: 0
   orthographic size: 2
   m_Depth: -1
   m_CullingMask:
@@ -241,7 +243,6 @@ GameObject:
   - component: {fileID: 1105449977}
   - component: {fileID: 1105449976}
   - component: {fileID: 1105449975}
-  - component: {fileID: 1105449974}
   m_Layer: 0
   m_Name: Cube (2)
   m_TagString: Untagged
@@ -249,18 +250,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1105449974
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1105449973}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51af269d2db516049b46db856cc0633d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1105449975
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -328,7 +317,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1105449973}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.18, y: 2.3, z: 29.34}
+  m_LocalPosition: {x: 2.18, y: -0.67, z: 5.72}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -363,9 +352,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1545475291}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51af269d2db516049b46db856cc0633d, type: 3}
+  m_Script: {fileID: 11500000, guid: cb44bb05dfc0bb048b910a9cf6ef4287, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  linkedInspectCam: {fileID: 435779706}
+  index: 1
 --- !u!65 &1545475293
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -433,7 +424,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1545475291}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.56, y: 1.66, z: 20.15}
+  m_LocalPosition: {x: -2.56, y: 3, z: -3.4700022}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -559,9 +550,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1959027722}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51af269d2db516049b46db856cc0633d, type: 3}
+  m_Script: {fileID: 11500000, guid: cb44bb05dfc0bb048b910a9cf6ef4287, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  linkedInspectCam: {fileID: 435779706}
+  index: 0
 --- !u!65 &1959027724
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -629,7 +622,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1959027722}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.13, y: 1.51, z: 24.39}
+  m_LocalPosition: {x: -0.13, y: 1.51, z: 0.7699976}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
