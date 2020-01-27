@@ -8,9 +8,9 @@ public class TopDownMovement : Movement
     /// <summary>
     /// Returns horizontal/vertical movement along X and Z axes (respectively)
     /// </summary>
-    /// <param name="player"></param>
+    /// <param name="actor"></param>
     /// <returns></returns>
-    public override Vector3 GetMovement(Actor player)
+    public override Vector3 GetMovement(Actor actor)
     {
         Vector3 movement = Vector3.zero;
 
@@ -39,7 +39,7 @@ public class TopDownMovement : Movement
         return movement.normalized;
     }
 
-    public override Vector2 GetAnimation(Actor player)
+    public override Vector2 GetAnimation(Actor actor)
     {
         // TODO: return proper animation values
         return Vector2.zero;

@@ -32,16 +32,6 @@ public class KoiFish : MonoBehaviour
     private Animator animator;
     private ParticleSystem psystem;
 
-    /// <summary>
-    /// Mapping of fish number to button used to trigger animation
-    /// </summary>
-    // TODO: remove this after implementing puzzle with actual player controller (Oliver/Cat)
-    private Dictionary<int, KeyCode> koiFishButtonMap = new Dictionary<int, KeyCode>() {
-        { 1, KeyCode.Alpha1 },
-        { 2, KeyCode.Alpha2 },
-        { 3, KeyCode.Alpha3 }
-    };
-
     void Start()
     {
         // Pass fish number to animator (used for selecting proper animations)
@@ -65,16 +55,18 @@ public class KoiFish : MonoBehaviour
         }
     }
 
-    void Update()
+    // TODO: call from PlayerInteractionController when player feeds fish
+    /// <summary>
+    /// Triggers fish path animation and sends message to KoiFishPuzzle.FeedFish().
+    /// Called by PlayerInteractionController when player feeds fish.
+    /// </summary>
+    public void Feed()
     {
-        // Play fish animation if proper key is pressed
-        // TODO: reimplement fish-feeding with actual player controller rather than this debug control scheme
-        if(Input.GetKeyDown(koiFishButtonMap[fishAnimationNumber])) {
-            StartCoroutine(PlayAnimation(fishAnimationNumber));
+        // Start fish path animation
+        StartCoroutine(PlayAnimation(fishAnimationNumber));
 
-            // Update puzzle accordingly
-            KoiFishPuzzle.Instance.FeedFish(this);
-        }
+        // Update puzzle accordingly
+        KoiFishPuzzle.Instance.FeedFish(this);
     }
 
 
@@ -86,6 +78,7 @@ public class KoiFish : MonoBehaviour
     /// <returns></returns>
     IEnumerator PlayAnimation(int animNumber)
     {
+        // TODO: change this to play wrong animation when fish fed out of order
         // Play wrong animation if we're holding shift
         if (Input.GetKey(KeyCode.LeftShift)) {
             animNumber *= -1;
@@ -114,7 +107,7 @@ public class KoiFish : MonoBehaviour
 
     public void ToggleTrailActive()
     {
-        ParticleSystem.EmissionModule emission = psystem.emission;
-        SetTrailActive(!emission.enabled);
+        //ParticleSystem.EmissionModule emission = psystem.emission;
+        SetTrailActive(!psystem.emission.enabled);
     }
 }

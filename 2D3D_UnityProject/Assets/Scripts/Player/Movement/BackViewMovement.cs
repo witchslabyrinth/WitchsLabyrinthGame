@@ -8,8 +8,8 @@ public class BackViewMovement : Movement
     /// <summary>
     /// Returns horizontal movement along X-axis
     /// </summary>
-    /// <param name="player"></param>
-    public override Vector3 GetMovement(Actor player)
+    /// <param name="actor"></param>
+    public override Vector3 GetMovement(Actor actor)
     {
         Vector3 movement = Vector3.zero;
 
@@ -32,8 +32,8 @@ public class BackViewMovement : Movement
     /// <summary>
     /// Returns direction of actor animation
     /// </summary>
-    /// <param name="player">Reference to actor</param>
-    public override Vector2 GetAnimation(Actor player)
+    /// <param name="actor">Reference to actor</param>
+    public override Vector2 GetAnimation(Actor actor)
     {
         if (Input.GetKey(KeyCode.A))
         {
