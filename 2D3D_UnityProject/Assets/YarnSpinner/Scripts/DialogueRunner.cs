@@ -1,4 +1,4 @@
-﻿/*
+/*
 
 The MIT License (MIT)
 
@@ -27,11 +27,8 @@ SOFTWARE.
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using System.Text.RegularExpressions;
 using CsvHelper;
 using System;
-
-using System.Globalization;
 
 namespace Yarn.Unity
 {
@@ -44,6 +41,8 @@ namespace Yarn.Unity
     {
         /// The source files to load the conversation from
         public YarnProgram[] yarnScripts;
+
+        public string textLanguage;
 
         /// Our variable storage
         public Yarn.Unity.VariableStorageBehaviour variableStorage;
@@ -73,9 +72,6 @@ namespace Yarn.Unity
         private Dictionary<string, CommandHandler> commandHandlers = new Dictionary<string, CommandHandler>();
         private Dictionary<string, BlockingCommandHandler> blockingCommandHandlers = new Dictionary<string, BlockingCommandHandler>();
 
-        /// The list of TextAssets containing CSV string tables that we should load on start
-        public TextAsset[] stringTables;
-
         // Maps string IDs received from Yarn Spinner to user-facing text
         private Dictionary<string, string> strings = new Dictionary<string, string>();
 
@@ -89,6 +85,16 @@ namespace Yarn.Unity
         /// A Unity event that receives the name of the node that just
         /// finished running
         [SerializeField] StringUnityEvent onNodeComplete;
+
+        // A flag used to note when we call into a blocking command
+        // handler, but it calls its complete handler immediately -
+        // _before_ the Dialogue is told to pause. This out-of-order
+        // problem can lead to the Dialogue being stuck in a paused state.
+        // To solve this, this variable is set to false before any blocking
+        // command handler is called, and set to true when ContinueDialogue
+        // is called. If it's true after calling a blocking command
+        // handler, then the Dialogue is not told to pause.
+        private bool wasCompleteCalled = false;
         
         /// Our conversation engine
         /** Automatically created on first access
@@ -124,8 +130,8 @@ namespace Yarn.Unity
                     // special case.) Wait is defined here in Unity.
                     AddCommandHandler("wait", HandleWaitCommand);
 
-                    foreach (var stringTable in stringTables) {
-                        AddStringTable(stringTable);
+                    foreach (var yarnScript in yarnScripts) {
+                        AddStringTable(yarnScript);
                     }
 
                     _continue = this.ContinueDialogue;
@@ -146,7 +152,13 @@ namespace Yarn.Unity
             }
 
             string durationString = parameters[0];
-            if (float.TryParse(durationString, out var duration) == false) {
+
+            if (float.TryParse(
+                durationString,
+                System.Globalization.NumberStyles.AllowDecimalPoint,
+                System.Globalization.CultureInfo.InvariantCulture,
+                out var duration) == false) {
+                    
                 Debug.LogErrorFormat($"<<wait>> failed to parse duration {durationString}");
                 onComplete();
             }
@@ -188,14 +200,27 @@ namespace Yarn.Unity
                 
             } 
 
+            wasCompleteCalled = false;
+
             // It wasn't found by looking in objects. Try looking in the
             // command handlers.
+            
             (wasValidCommand, executionType) = DispatchCommandToRegisteredHandlers(command, _continue);   
 
             if (wasValidCommand) {
-                // Either continue execution, or pause (in which case
-                // _continue will be called)
-                return executionType;
+
+                // This was a valid command. It returned either continue,
+                // or pause; if it returned pause, there's a chance that
+                // the command handler immediately called _continue, in
+                // which case we should not pause.
+                if (wasCompleteCalled) {
+                    return Dialogue.HandlerExecutionType.ContinueExecution;
+                } else {
+                    // Either continue execution, or pause (in which case
+                    // _continue will be called)
+                    return executionType;
+                }
+                
             }
 
             // We didn't find a method in our C# code to invoke. Pass it to
@@ -324,7 +349,7 @@ namespace Yarn.Unity
         internal void Add(YarnProgram scriptToLoad)
         {
             AddProgram(scriptToLoad);
-            AddStringTable(scriptToLoad.baseLocalisationStringTable);
+            AddStringTable(scriptToLoad);
         }
 
         /// Adds a program, and all of its nodes
@@ -333,9 +358,18 @@ namespace Yarn.Unity
             this.dialogue.AddProgram(scriptToLoad.GetProgram());
         }
 
-        /// Adds a tagged string table
-        public void AddStringTable(TextAsset stringTableAsset) {
-            using (var reader = new System.IO.StringReader(stringTableAsset.text))
+        /// Adds a tagged string table from the yarn asset depending on the variable "textLanguage"
+        public void AddStringTable(YarnProgram yarnScript) {
+
+            var textToLoad = new TextAsset();
+            if (yarnScript.localizations != null || yarnScript.localizations.Length > 0) {
+                textToLoad = Array.Find(yarnScript.localizations, element => element.languageName == textLanguage)?.text;
+            }
+            if (textToLoad == null || string.IsNullOrEmpty(textToLoad.text)) {
+                textToLoad = yarnScript.baseLocalisationStringTable;
+            }
+
+            using (var reader = new System.IO.StringReader(textToLoad.text))
             using (var csv = new CsvReader(reader)) {
                 csv.Read();
                 csv.ReadHeader();
@@ -343,6 +377,12 @@ namespace Yarn.Unity
                 while (csv.Read()) {
                     strings.Add(csv.GetField("id"), csv.GetField("text"));
                 }
+            }
+        }
+
+        public void AddStringTable(IDictionary<string, Yarn.StringInfo> stringTable) {
+            foreach (var line in stringTable) {
+                strings.Add(line.Key, line.Value.text);
             }
         }
 
@@ -378,6 +418,7 @@ namespace Yarn.Unity
 
         private void ContinueDialogue()
         {
+            wasCompleteCalled = true;
             this.dialogue.Continue();           
         }
 
@@ -572,6 +613,10 @@ namespace Yarn.Unity
             }
 
             var wasValidCommand = numberOfMethodsFound > 0;
+
+            if (wasValidCommand == false) {
+                return (false, Dialogue.HandlerExecutionType.ContinueExecution);
+            }
 
             if (startedCoroutine) {
                 // Signal to the Dialogue that execution should wait. 
