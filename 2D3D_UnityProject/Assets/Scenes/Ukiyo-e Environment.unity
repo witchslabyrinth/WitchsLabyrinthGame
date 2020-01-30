@@ -2302,8 +2302,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb44bb05dfc0bb048b910a9cf6ef4287, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  linkedInspectCam: {fileID: 0}
+  linkedInspectCam: {fileID: 737669435}
   index: 0
+--- !u!65 &222073152
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222073148}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5983944, y: 1.2621661, z: 0.6016905}
+  m_Center: {x: -0.0033014135, y: 0.6310833, z: -0.0000018924475}
 --- !u!1001 &222715053
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16464,7 +16477,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 620674450}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -24600,8 +24613,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb44bb05dfc0bb048b910a9cf6ef4287, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  linkedInspectCam: {fileID: 0}
+  linkedInspectCam: {fileID: 737669435}
   index: 1
+--- !u!65 &959891645
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 959891641}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5983944, y: 1.262166, z: 0.6016905}
+  m_Center: {x: -0.0033033208, y: 0.6310829, z: -0.000003799796}
 --- !u!1 &963549000
 GameObject:
   m_ObjectHideFlags: 0
