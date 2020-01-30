@@ -17,7 +17,6 @@ public class PlayerInteractionController : MonoBehaviour
 
     ///    CAN PROBABLY DISCARD NEXT SECTION IN REFACTOR    ///
 
-
     /// <summary>
     /// Reference to nearby KoiFish that can be fed. Null if actor not in a fish-feeding trigger zone
     /// </summary>
