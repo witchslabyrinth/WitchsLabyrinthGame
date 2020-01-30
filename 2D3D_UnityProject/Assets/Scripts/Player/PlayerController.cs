@@ -12,12 +12,6 @@ public class PlayerController : Singleton<PlayerController>
     public bool canSwap = true;
 
     /// <summary>
-    /// Actor currently controlled by the player
-    /// </summary>
-    [SerializeField]
-    private Actor actor;
-
-    /// <summary>
     /// Reference to Oliver
     /// </summary>
     [SerializeField]
@@ -29,11 +23,40 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField]
     private Actor cat;
 
-    private void Start()
+    /// <summary>
+    /// Actor currently controlled by the player
+    /// </summary>
+    [SerializeField]
+    private Actor player;
+
+    /// <summary>
+    /// Actor not currently controlled by the player
+    /// </summary>
+    private Actor friend
+    {
+        get
+        {
+            if (player.Equals(oliver))
+                return cat;
+            else if (player.Equals(cat))
+                return oliver;
+
+            // Return null if player actor undefined
+            else
+            {
+                Debug.LogWarningFormat("{0} | Friend actor undefined", name);
+                return null;
+            }
+        }
+        set { }
+    }
+
+    private void Awake()
     {
         // Make sure we have an actor (default to oliver if not specified)
-        if(actor == null) {
-            actor = oliver;
+        if(player == null) {
+            player = oliver;
+            friend = cat;
         }
 
         // Throw warnings and disable swapping if oliver/cat not found
@@ -47,62 +70,88 @@ public class PlayerController : Singleton<PlayerController>
             Debug.LogWarning("Warning: Cat actor not found in PlayerController");
             canSwap = false;
         }
-        
+
+        if (oliver && cat)
+        {
+            // Ignore collision between oliver and cat
+            Collider oliverCollider, catCollider;
+            if (oliver.TryGetComponent(out oliverCollider) && cat.TryGetComponent(out catCollider))
+            {
+                Physics.IgnoreCollision(oliverCollider, catCollider);
+            }
+        }
     }
 
     private void Update()
     {
-        // Handle player input for actor swapping
-        ActorSwapUpdate();
+        // Toggle currently-controlled actor between oliver/cat
+        if(canSwap && Input.GetKeyDown(KeyCode.Tab))
+        {
+            Swap();
+        }
+
+        // Input for telling Friend actor to follow/stay
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            FriendCommand();
+        }
 
         // Handle interactions with other game entities
-        actor.CheckInteraction();
+        player.CheckInteraction();
         
         // Update camera perspective
-        PerspectiveController.Instance.UpdatePerspective(actor);
+        PerspectiveController.Instance.UpdatePerspective(player);
 
         // Update camera to follow player actor
-        CameraController.Instance.CameraUpdate(actor);
+        CameraController.Instance.CameraUpdate(player);
     }
 
     /// <summary>
-    /// Swaps player control between actors based on input (no effect when canSwap is false)
+    /// Switches player control to Friend actor
     /// </summary>
-    private void ActorSwapUpdate()
+    private void Swap()
     {
-        // Skip if swapping is disabled
-        if (!canSwap)
-            return;
-        
-        if(Input.GetKeyDown(KeyCode.Alpha1)) 
+        // Swap player/friend actors
+        Actor temp = player;
+        player = friend;
+        friend = temp;
+
+        // Copy the friend follow/idle movement over to the new actor
+        friend.SetMovement(player.movement);
+
+        // Restore player actor's previous perspective
+        PerspectiveController.Instance.SetPerspective(player, player.perspective);
+    }
+
+    /// <summary>
+    /// Toggles friend actor's movement between following player and staying idle
+    /// </summary>
+    private void FriendCommand()
+    {
+        // Switch to idle
+        if (friend.movement.GetType() == typeof(FollowMovement))
         {
-            // Switch player control to oliver
-            actor = oliver;
-
-            // Set cat to idle
-            cat.SetMovement(new NullMovement());
-
-            // Restore actor's previous perspective
-            PerspectiveController.Instance.SetPerspective(actor, actor.perspective);
+            Debug.LogFormat("Switching {0} movement from Follow to Idle", friend.name);
+            friend.SetMovement(new NullMovement());
         }
-        else if(Input.GetKeyDown(KeyCode.Alpha2)) 
+        // Switch to follow
+        else
         {
-            actor = cat;
-
-            // Set oliver to idle
-            oliver.SetMovement(new NullMovement());
-
-            // Restore actor's previous perspective
-            PerspectiveController.Instance.SetPerspective(actor, actor.perspective);
+            Debug.LogFormat("Switching {0} movement from Idle to Follow", friend.name);
+            friend.SetMovement(new FollowMovement(player.transform));
         }
     }
 
     /// <summary>
     /// Returns reference to currently-controlled Actor (the player)
     /// </summary>
-    /// <returns></returns>
-    public Actor GetActor()
+    public Actor GetPlayer()
     {
-        return actor;
+        return player;
+    }
+
+    public Actor GetFriend()
+    {
+        return friend;
     }
 }

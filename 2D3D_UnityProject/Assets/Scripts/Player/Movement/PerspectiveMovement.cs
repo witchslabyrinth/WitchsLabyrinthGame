@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Movement/Perspective Movement")]
 public class PerspectiveMovement : Movement
 {
-    public override Vector3 GetMovement(Actor player)
+    public override Vector3 GetMovement(Actor actor)
     {
         Vector3 movement = Vector3.zero;
 
@@ -33,11 +33,11 @@ public class PerspectiveMovement : Movement
 
         // TODO: consider making it use the camera transform rather than player?
         // Make movement relative to player-facing direction
-        movement = player.transform.TransformDirection(movement);
+        movement = actor.transform.TransformDirection(movement);
         return movement.normalized;
     }
 
-    public override Vector2 GetAnimation(Actor player)
+    public override Vector2 GetAnimation(Actor actor)
     {
         if (Input.GetKey(KeyCode.W))
         {

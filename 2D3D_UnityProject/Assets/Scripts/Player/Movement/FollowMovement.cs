@@ -18,56 +18,68 @@ public class FollowMovement : Movement
     /// <summary>
     /// Smaller radius of satisfaction around target - stop moving when we are this close
     /// </summary>
-    [SerializeField] protected float stoppingDistance = 1;
+    [SerializeField] protected float stoppingDistance = 2;
 
     /// <summary>
     /// Larger radius around target - start following the target when we're this far away
     /// </summary>
-    [SerializeField] protected float startingDistance = 3;
+    [SerializeField] protected float startingDistance = 3.5f;
 
-    public FollowMovement(Transform target, float stoppingDistance, float startingDistance)
-    {
-        this.target = target;
-        this.stoppingDistance = stoppingDistance;
-
-        // TODO: make the Get() method use starting distance again
-        this.startingDistance = startingDistance;
-    }
+    /// <summary>
+    /// True if actor has arrived at the target (stopped), false otherwise (moving)
+    /// </summary>
+    private bool arrived = true;
 
     public FollowMovement(Transform target)
     {
         this.target = target;
+
+        // TODO: ignore collision between target and self
     }
 
-    public override Vector3 GetMovement(Actor player)
+    /// <summary>
+    /// Returns movement towards Player actor
+    /// </summary>
+    /// <param name="actor">Actor requesting movement (should not be player-controlled)</param>
+    /// <returns></returns>
+    public override Vector3 GetMovement(Actor actor)
     {
-        if (target == null)
+        // Make sure actor is following player, not themselves (happens after swapping actors)
+        if (target.Equals(actor.transform))
         {
-            // Set target to player if specified
-            if (followPlayer)
-            {
-                target = PlayerController.Instance.GetActor().transform;
-            }
-            // Otherwise return 0
-            else
-            {
-                Debug.LogWarning(player.name + " | FollowMovement.target is null, cannot generate movement");
-                return Vector3.zero;
-            }
+            Actor player = PlayerController.Instance.GetPlayer();
+            target = player.transform;
         }
 
         // Get vector towards target
-        Vector3 toTarget = target.position - player.transform.position;
-        float distance = toTarget.magnitude;
+        Vector3 toTarget = target.position - actor.transform.position;
+        float distance = toTarget.magnitude; 
 
-        // Move towards target if outside stopping radius
-        if ((distance >= stoppingDistance))
-            return toTarget.normalized;
+        // If we've already arrived at the target
+        if (arrived)
+        {
+            // Wait until they exceed startingDistance to follow again
+            if (distance >= startingDistance)
+            {
+                arrived = false;
+                return toTarget.normalized;
+            }
+        }
+        // If we're still moving towards the target
         else
-            return Vector3.zero;
+        {
+            // Move towards target while outside stopping radius
+            if (distance >= stoppingDistance)
+                return toTarget.normalized;
+
+            // Stop moving when we've entered stopping radius
+            else
+                arrived = true;
+        }
+        return Vector3.zero;
     }
 
-    public override Vector2 GetAnimation(Actor player)
+    public override Vector2 GetAnimation(Actor actor)
     {
         // TODO: return proper animation values
         return Vector2.zero;

@@ -46,8 +46,7 @@ public class Actor : MonoBehaviour
     /// <summary>
     /// Used to generate Actor movement - varies depending on current camera perspective, or assigned NPC behavior
     /// </summary>
-    [SerializeField] 
-    protected Movement movement;
+    public Movement movement;
 
     /// <summary>
     /// Sets actor movement control scheme
@@ -79,12 +78,12 @@ public class Actor : MonoBehaviour
         perspective = PerspectiveController.Instance.GetPerspectiveByType(CameraController.CameraViews.THIRD_PERSON);
 
         // Give player movement control
-        if (PlayerController.Instance.GetActor() == this) {
+        if (PlayerController.Instance.GetPlayer() == this) {
             movement = perspective.movement;
         }
         // Give NPC idle movement
         else {
-            movement = new NullMovement();
+            movement = new FollowMovement(PlayerController.Instance.GetPlayer().transform);
         }
     }
 
@@ -104,7 +103,7 @@ public class Actor : MonoBehaviour
     private Vector3 Move()
     {
         // If player-controlled actor has NullMovement scheme, restore movement from last-used perspective
-        if(PlayerController.Instance.GetActor().Equals(this) && movement.GetType() == typeof(NullMovement)) {
+        if(PlayerController.Instance.GetPlayer().Equals(this) && movement.GetType() == typeof(NullMovement)) {
             movement = perspective.movement;
         }
         

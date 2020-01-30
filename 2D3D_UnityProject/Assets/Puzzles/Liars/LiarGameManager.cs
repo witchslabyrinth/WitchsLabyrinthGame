@@ -48,7 +48,7 @@ public class LiarGameManager : MonoBehaviour
     public void StartConversation(int npc)
     {
         // Disable player control
-        Actor actor = PlayerController.Instance.GetActor();
+        Actor actor = PlayerController.Instance.GetPlayer();
         actor.Disable();
 
         LiarStatue liar = npcs[npc].GetComponentInChildren<LiarStatue>();
@@ -57,7 +57,8 @@ public class LiarGameManager : MonoBehaviour
         dialogueCode.SetSubtitle(liar.GetSubtitle());
 
         canvasObject.SetActive(true);
-
+        liar.GetCamera().SetActive(true);
+        dialogueCode.liarCam = liar.GetCamera();
 
         currNpc = npc;
     }
@@ -65,7 +66,7 @@ public class LiarGameManager : MonoBehaviour
     public void CheckOrb(int npc)
     {
         // Disable player control
-        Actor actor = PlayerController.Instance.GetActor();
+        Actor actor = PlayerController.Instance.GetPlayer();
         actor.Disable();
 
         LiarStatue liar = npcs[npc].GetComponentInChildren<LiarStatue>();
@@ -81,7 +82,7 @@ public class LiarGameManager : MonoBehaviour
     public void CheckOrb()
     {
         // Disable player control
-        Actor actor = PlayerController.Instance.GetActor();
+        Actor actor = PlayerController.Instance.GetPlayer();
         actor.Disable();
 
         LiarStatue liar = npcs[currNpc].GetComponentInChildren<LiarStatue>();

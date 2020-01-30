@@ -35,7 +35,7 @@ public class CameraController : Singleton<CameraController>
         mainCamera = GetComponent<Camera>();
 
         // Parent self to Actor > GhostCamera object
-        Actor player = PlayerController.Instance.GetActor();
+        Actor player = PlayerController.Instance.GetPlayer();
         this.transform.SetParent (player.ghostCamera.transform);
 
         // Default to 3D perspective view

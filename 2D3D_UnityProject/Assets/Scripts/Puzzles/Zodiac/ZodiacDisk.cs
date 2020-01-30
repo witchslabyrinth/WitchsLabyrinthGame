@@ -91,18 +91,45 @@ public class ZodiacDisk : ZodiacPuzzlePiece
         PopulateSymbols();
     }
 
+    // OLD RING VERSION
+    // private void PopulateSymbols()
+    // {
+    //     // Instantiate each symbol around the ring
+    //     for(int i = 0; i < symbols.Count; i++) {
+    //         Sprite symbol = symbols[i];
+
+    //         // Calculate sprite rotation
+    //         Quaternion rotation = transform.localRotation * Quaternion.Euler(zodiacOffsetX, 0, i * angleBetweenSymbols);
+
+
+    //         // Instantiate symbol at pivot point
+    //         SpriteRenderer instance = Instantiate(spritePrefab, spritePivot.transform.position, rotation, transform);
+    //         instance.sprite = symbol;
+    //         instance.name = symbol.name;
+
+    //         // Rotate pivot around ring to position of next symbol
+    //         Vector3 localForward = transform.worldToLocalMatrix.MultiplyVector(transform.forward);
+    //         spritePivot.transform.RotateAround(transform.position, transform.up, -angleBetweenSymbols);
+    //     }
+
+    //     selectedSymbolIndex = 0;
+    // }
+
+    //NEW STATUE-THING VERSION
     private void PopulateSymbols()
     {
         // Instantiate each symbol around the ring
-        for(int i = 0; i < symbols.Count; i++) {
+        for(int i = 0; i < symbols.Count; i++) 
+        {
             Sprite symbol = symbols[i];
 
             // Calculate sprite rotation
-            Quaternion rotation = transform.rotation * Quaternion.Euler(zodiacOffsetX, 0, i * angleBetweenSymbols);
+            // Quaternion rotation = transform.localRotation * Quaternion.Euler(-7, i * angleBetweenSymbols, 0);
 
 
             // Instantiate symbol at pivot point
-            SpriteRenderer instance = Instantiate(spritePrefab, spritePivot.transform.position, rotation, transform);
+            SpriteRenderer instance = Instantiate(spritePrefab, spritePivot.transform.position, spritePivot.transform.localRotation, transform);
+            instance.gameObject.transform.Rotate(7, -90, 0);
             instance.sprite = symbol;
             instance.name = symbol.name;
 
@@ -136,22 +163,22 @@ public class ZodiacDisk : ZodiacPuzzlePiece
         Quaternion rotationChange = Quaternion.Euler(new Vector3(0, change));
 
         // Rotate towards that quaternion
-        Quaternion targetRotation = transform.rotation * rotationChange;
+        Quaternion targetRotation = transform.localRotation * rotationChange;
 
         // Track starting rotation to maintain lerp lower-bound
-        Quaternion startRotation = transform.rotation; 
+        Quaternion startRotation = transform.localRotation; 
 
         // Increment time each frame (scaled by rotationSpeed)
         for(float t=0; t<1; t += rotationSpeed * Time.fixedDeltaTime) {
             // Update rotation
             Quaternion rotation = Quaternion.Lerp(startRotation, targetRotation, t);
-            transform.rotation = rotation;
+            transform.localRotation = rotation;
 
             yield return null;
         }
 
         // Ensure we land exactly on target rotation
-        transform.rotation = targetRotation;
+        transform.localRotation = targetRotation;
 
         // Check which symbol we landed on
         UpdateSelectedSymbol(direction);
