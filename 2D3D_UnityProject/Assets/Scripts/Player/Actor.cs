@@ -26,7 +26,7 @@ public class Actor : MonoBehaviour
     /// <summary>
     /// 3D perspective camera 
     /// </summary>
-    public PerspectiveCameraControl ghostCamera;
+    public PerspectiveCameraControl ghostCamera { get; private set;}
 
     #endregion
 
@@ -54,35 +54,48 @@ public class Actor : MonoBehaviour
     /// <summary>
     /// Used to generate Actor movement - varies depending on current camera perspective, or assigned NPC behavior
     /// </summary>
-    [SerializeField] 
-    protected Movement movement;
+    public Movement movement;
 
     /// <summary>
     /// For updating animations, stores whether or not player is using top view
     /// </summary>
     private bool inTopView;
 
-    private void Start()
+    /// Sets actor movement control scheme
+    /// </summary>
+    /// <param name="movement">Movement control scheme</param>
+    public void SetMovement(Movement movement)
     {
+        this.movement = movement;
+    }
+
+    /// <summary>
+    /// Current perspective used for this actor (remains unchanged when not player-controlled)
+    /// </summary>
+    /// <value></value>
+    public Perspective perspective;
+    
+    void Awake()
+    {
+        // Get components in Awake() before other scripts request them in Start()
         rigidbody = GetComponent<Rigidbody>();
         interactionController = GetComponent<PlayerInteractionController>();
+        ghostCamera = GetComponentInChildren<PerspectiveCameraControl>();
+    }
 
-        // TODO: set default movement scheme and camera perspective in the same place
-        // Make sure there's a movement type specified
-        if (movement == null)
-        {
-            // Throw error if no movement specified for player actor
-            if (PlayerController.Instance.GetActor() == this)
-            {
-                Debug.LogError("No movement type specified for player-controlled Actor");
-            }
-            // Otherwise default to following player
-            // TODO: maybe not a good idea, find a way around this
-            else
-            {
-                Debug.LogWarning(name + " | no Movement specified for this Actor, defaulting to FollowMovement");
-                movement = new FollowMovement(PlayerController.Instance.GetActor().transform);
-            }
+    private void Start()
+    {
+        // TODO: make sure we only set initial perspective in one place
+        // Default to third-person perspective for both actors
+        perspective = PerspectiveController.Instance.GetPerspectiveByType(CameraController.CameraViews.THIRD_PERSON);
+
+        // Give player movement control
+        if (PlayerController.Instance.GetPlayer() == this) {
+            movement = perspective.movement;
+        }
+        // Give NPC idle movement
+        else {
+            movement = new FollowMovement(PlayerController.Instance.GetPlayer().transform);
         }
 
         moveStatus = 0;
@@ -103,6 +116,11 @@ public class Actor : MonoBehaviour
     /// <returns>Vector of movement</returns>
     private Vector3 Move()
     {
+        // If player-controlled actor has NullMovement scheme, restore movement from last-used perspective
+        if(PlayerController.Instance.GetPlayer().Equals(this) && movement.GetType() == typeof(NullMovement)) {
+            movement = perspective.movement;
+        }
+        
         // Get move direction (as unit vector) from movement class
         Vector3 direction = movement.GetMovement(this);
         if(direction != Vector3.zero)
@@ -139,11 +157,6 @@ public class Actor : MonoBehaviour
 
         // Generate proper animations bsed on movement (on x-z plane)
         animationController.UpdateAnims(direction, moveStatus, inTopView);
-    }
-
-    public void SetMovementType(Movement movement)
-    {
-        this.movement = movement;
     }
 
     /// <summary>

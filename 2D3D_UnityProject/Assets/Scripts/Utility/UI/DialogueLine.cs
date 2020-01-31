@@ -73,6 +73,8 @@ public class DialogueLine : MonoBehaviour
 
     public PlayerController playCont;
 
+    public GameObject liarCam;
+
     ///    CAN PROBABLY DISCARD NEXT SECTION IN REFACTOR - END    ///
 
     // Update is called once per frame
@@ -109,6 +111,14 @@ public class DialogueLine : MonoBehaviour
             {
                 StopPrinting();
             }
+        }
+        if(Input.GetKeyDown(KeyCode.Y) && yesNoButtons.activeSelf == true)
+        {
+            LiarGameManager.Instance().CheckOrb();
+        }
+        if(Input.GetKeyDown(KeyCode.N) && yesNoButtons.activeSelf == true)
+        {
+            Exit();
         }
 
         ///    CAN PROBABLY DISCARD NEXT SECTION IN REFACTOR - END    ///
@@ -257,8 +267,9 @@ public class DialogueLine : MonoBehaviour
         canvasObj.SetActive(false);
 
         // Restore player actor control
-        Actor player = PlayerController.Instance.GetActor();
+        Actor player = PlayerController.Instance.GetPlayer();
         player.Enable();
+        liarCam.SetActive(false);
     }
 
     ///    CAN PROBABLY DISCARD NEXT SECTION IN REFACTOR - END    ///

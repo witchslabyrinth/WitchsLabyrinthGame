@@ -2,12 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Camera))]
-public class CameraController : MonoBehaviour {
 
-    public GameObject ghostCamera;
-    public GameObject player;
-    protected Camera myCam;
+/// <summary>
+/// Manipulates the position/rotation of the camera based on the currently-selected camera perspective
+/// </summary>
+[RequireComponent(typeof(Camera))]
+public class CameraController : Singleton<CameraController>
+{
+    /// <summary>
+    /// Reference to main camera
+    /// </summary>
+    protected Camera mainCamera;
 
     protected Vector3 rightRotation = new Vector3 (0f, -90f, 0f);
     protected Vector3 topRotation = new Vector3 (90f, 0f, 0f);
@@ -16,70 +21,81 @@ public class CameraController : MonoBehaviour {
     public float orthoOffset = 2.0f;
     public float headway = 2.0f;
 
-    protected enum CameraViews {
+    public enum CameraViews {
         RIGHT,
         TOP,
         BACK,
-        PERSPECTIVE,
+        THIRD_PERSON,
     }
     protected CameraViews currentView;
+    protected Perspective perspective;
 
-    void Start () {
-        this.transform.SetParent (ghostCamera.transform);
-        myCam = this.GetComponent<Camera> ();
-        currentView = CameraViews.PERSPECTIVE;
+    void Start () 
+    {
+        mainCamera = GetComponent<Camera>();
+
+        // Parent self to Actor > GhostCamera object
+        Actor player = PlayerController.Instance.GetPlayer();
+        this.transform.SetParent (player.ghostCamera.transform);
+
+        // Default to 3D perspective view
+        currentView = CameraViews.THIRD_PERSON;
     }
 
-    // Update is called once per frame
-    void Update () {
-        switch (currentView) {
-        case CameraViews.PERSPECTIVE:
-            PerspectiveUpdate ();
-            break;
-        case CameraViews.RIGHT:
-            OrthographicUpdate(new Vector3(headway, 4f, headway));
-            break;
-        case CameraViews.TOP:
-            OrthographicUpdate(new Vector3(0, 20f, 2f));
-            break;
-        case CameraViews.BACK:
-            OrthographicUpdate(new Vector3(headway, 4f, -orthoOffset));
-            break;
+    /// <summary>
+    /// Updates camera position/rotation relative to provided (player-controlled) Actor
+    /// </summary>
+    /// <param name="player">Actor currently controlled by player</param>
+    public void CameraUpdate (Actor player) 
+    {
+        if(perspective.orthographic)
+            OrthographicUpdate(player, perspective.orthographicCameraOffset);
+        else 
+            PerspectiveUpdate(player);
+    }
+
+    /// <summary>
+    /// Initializes camera to follow specified Actor with specified Perspective.
+    /// </summary>
+    /// <param name="actor">Actor to follow</param>
+    /// <param name="perspective">New camera perspective</param>
+    public void SetPerspective(Actor actor, Perspective perspective)
+    {
+        // Make sure we have ref to Camera component
+        if (!mainCamera)
+            mainCamera = GetComponent<Camera>();
+
+        // Save current perspective
+        this.perspective = perspective;
+        
+        // Set fixed camera rotation for orthographic
+        if(perspective.orthographic) {
+            transform.eulerAngles = perspective.orthographicCameraRotation;
         }
+        mainCamera.orthographic = perspective.orthographic;
+
+        // Parent CameraController to actor's ghostCamera
+        transform.SetParent(actor.ghostCamera.transform);
     }
 
-    /******  SET VARIOUS CAMERA VIEWS ******/
-    public void SetToPerspective () {
-        currentView = CameraViews.PERSPECTIVE;
-        myCam.orthographic = false;
-        this.transform.SetParent (ghostCamera.transform);
+    /// <summary>
+    /// Updates camera position/rotation to follow the player.
+    /// Called on Update() when using a 3D Perspective
+    /// </summary>
+    /// <param name="player">Player actor</param>
+    private void PerspectiveUpdate (Actor player) 
+    {
+        this.transform.position = player.ghostCamera.transform.position;
+        this.transform.rotation = player.ghostCamera.transform.rotation;
     }
 
-    public void SetToRightOrtho () {
-        currentView = CameraViews.RIGHT;
-        myCam.orthographic = true;
-        this.transform.eulerAngles = rightRotation;
-    }
-
-    public void SetToTopOrtho () {
-        currentView = CameraViews.TOP;
-        myCam.orthographic = true;
-        this.transform.eulerAngles = topRotation;
-    }
-
-    public void SetToBackOrtho () {
-        currentView = CameraViews.BACK;
-        myCam.orthographic = true;
-        this.transform.eulerAngles = backRotation;
-    }
-
-    /******  UPDATE VARIOUS CAMERA VIEWS ******/
-    private void PerspectiveUpdate () {
-        this.transform.position = ghostCamera.transform.position;
-        this.transform.rotation = ghostCamera.transform.rotation;
-    }
-
-    private void OrthographicUpdate(Vector3 cameraOffset)
+    /// <summary>
+    /// Updates camera position to follow the player.
+    /// Called on Update() when using an orthographic Perspective
+    /// </summary>
+    /// <param name="player">Player actor</param>
+    /// <param name="cameraOffset">Position offset between camera and player</param>
+    private void OrthographicUpdate(Actor player, Vector3 cameraOffset)
     {
         transform.position = player.transform.position + cameraOffset;
     }
