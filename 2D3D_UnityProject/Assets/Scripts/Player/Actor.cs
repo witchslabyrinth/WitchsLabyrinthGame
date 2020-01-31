@@ -99,6 +99,7 @@ public class Actor : MonoBehaviour
         }
 
         moveStatus = 0;
+        inTopView = false;
     }
 
     private void FixedUpdate()
