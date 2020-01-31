@@ -158,13 +158,14 @@ public class PlayerInteractionController : MonoBehaviour
         interactCanvas.SetActive(withinZone);
     }
 
-    public void SetInInspectZone(bool withinZone, GameObject camInspect)
+    public void SetInInspectZone(bool withinZone, GameObject camInspect = null)
     {
+        inInspectZone = withinZone;
         if (withinZone)
         {
-            inInspectZone = true;
             inspectCam = camInspect;
         }
+
         interactCanvas.SetActive(withinZone);
     }
 }
