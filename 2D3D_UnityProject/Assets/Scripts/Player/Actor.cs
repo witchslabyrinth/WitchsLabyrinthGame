@@ -57,6 +57,11 @@ public class Actor : MonoBehaviour
     [SerializeField] 
     protected Movement movement;
 
+    /// <summary>
+    /// For updating animations, stores whether or not player is using top view
+    /// </summary>
+    private bool inTopView;
+
     private void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
@@ -133,7 +138,7 @@ public class Actor : MonoBehaviour
         Vector2 direction = movement.GetAnimation(this);
 
         // Generate proper animations bsed on movement (on x-z plane)
-        animationController.UpdateAnims(direction, moveStatus);
+        animationController.UpdateAnims(direction, moveStatus, inTopView);
     }
 
     public void SetMovementType(Movement movement)
@@ -147,6 +152,11 @@ public class Actor : MonoBehaviour
     public void CheckInteraction()
     {
         interactionController.CheckInteraction();
+    }
+
+    public void SetTopView(bool isTop)
+    {
+        inTopView = isTop;
     }
 
     /// <summary>

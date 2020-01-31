@@ -50,6 +50,9 @@ public class GameManager : MonoBehaviour
             // Update camera
             camControl.SetToTopOrtho();
             perspControl.enabled = false;
+
+            // Update Top View
+            playerActor.SetTopView(true);
         }
         else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
@@ -59,6 +62,9 @@ public class GameManager : MonoBehaviour
             // Update camera
             camControl.SetToRightOrtho();
             perspControl.enabled = false;
+
+            // Update Top View
+            playerActor.SetTopView(false);
         }
         else if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
@@ -68,6 +74,9 @@ public class GameManager : MonoBehaviour
             // Update camera
             camControl.SetToPerspective();
             perspControl.enabled = true;
+
+            // Update Top View
+            playerActor.SetTopView(false);
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
@@ -77,6 +86,9 @@ public class GameManager : MonoBehaviour
             // Update camera
             camControl.SetToBackOrtho();
             perspControl.enabled = false;
+
+            // Update Top View
+            playerActor.SetTopView(false);
         }
     }
 }
