@@ -96,6 +96,12 @@ public class PlayerController : Singleton<PlayerController>
             FriendCommand();
         }
 
+        // Pause menu
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            PauseMenu.Instance.TogglePaused();
+        }
+
         // Handle interactions with other game entities
         player.CheckInteraction();
         
