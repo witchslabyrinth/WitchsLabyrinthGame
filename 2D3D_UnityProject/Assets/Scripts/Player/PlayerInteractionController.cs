@@ -99,7 +99,8 @@ public class PlayerInteractionController : MonoBehaviour
             else if (inInspectZone)
             {
                 inspectCam.SetActive(true);
-                Cursor.lockState = CursorLockMode.None;
+                //Cursor.lockState = CursorLockMode.None;
+                GameManager.SetCursorActive(true);
             }
             // Ignore interact button press if no nearby interactable
             else

@@ -99,7 +99,8 @@ public class DialogueLine : MonoBehaviour
                     printDialogue = StartCoroutine(PrintDialogueCoroutine());
                     finalLine = true;
                     yesNoPrompt = true;
-                    Cursor.lockState = CursorLockMode.None;
+                    //Cursor.lockState = CursorLockMode.None;
+                    GameManager.SetCursorActive(true);
                 }
                 else
                 {

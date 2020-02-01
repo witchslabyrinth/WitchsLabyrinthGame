@@ -46,6 +46,9 @@ public class PauseMenu : Singleton<PauseMenu>
         // Set up button events
         resumeButton.onClick.AddListener(() => SetPaused(false));
         quitButton.onClick.AddListener(() => Application.Quit());
+
+        // Start with the game unpaused
+        SetPaused(false);
     }
 
     /// <summary>
@@ -68,6 +71,12 @@ public class PauseMenu : Singleton<PauseMenu>
 
         // Show/hide pause menu
         pauseMenu.SetActive(paused);
+
+        // Show/hide cursor when pausing/unpausing (respectively)
+        if (paused)
+            GameManager.SetCursorActive(true);
+        else
+            GameManager.SetCursorActive(false);
 
         // Update pause event listeners
         onSetGamePaused?.Invoke(paused);
