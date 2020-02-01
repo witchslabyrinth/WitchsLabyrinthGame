@@ -617,12 +617,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueText: {fileID: 255135114605556775}
+  nameText: {fileID: 0}
+  subtitleText: {fileID: 0}
   line: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
     incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
     exercitation.
   printSpeed: 100
   soundBlip: {fileID: 11400000, guid: a291fdbea70e0457ab97d5e682dc7751, type: 2}
   soundBlipSpeed: 0.02
+  canvasObj: {fileID: 255135113701429437}
+  yesNoButtons: {fileID: 0}
+  playCont: {fileID: 0}
+  liarCam: {fileID: 0}
 --- !u!1 &255135114605556793
 GameObject:
   m_ObjectHideFlags: 0
