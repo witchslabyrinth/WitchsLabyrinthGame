@@ -158,8 +158,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2209244120044855643}
   - component: {fileID: 4880679677700088360}
+  - component: {fileID: 8640012759132591328}
   m_Layer: 5
-  m_Name: Main Menu
+  m_Name: MainMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -200,6 +201,21 @@ MonoBehaviour:
   playButton: {fileID: 1156976027886145433}
   settingsButton: {fileID: 3571176682523863829}
   quitButton: {fileID: 7774496961219569186}
+--- !u!114 &8640012759132591328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2209244120044855640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e345da8cf920804085f7749357444cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MainMenuScene: 
+  UkiyoeScene: 
+  TeledoorScene: 
 --- !u!1 &2714909691325654954
 GameObject:
   m_ObjectHideFlags: 0

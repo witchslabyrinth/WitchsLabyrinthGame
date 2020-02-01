@@ -25,13 +25,8 @@ public class MainMenu : MonoBehaviour
     void Start()
     {
         // Set up button events
-        //playButton.onClick.AddListener(() => );
+        playButton.onClick.AddListener(() => SceneLoader.LoadScene(SCENE_ID.UKIYOE));
         quitButton.onClick.AddListener(() => Application.Quit());
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        // TODO: implement Settings button functionality
     }
 }
