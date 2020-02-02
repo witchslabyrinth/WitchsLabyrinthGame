@@ -19,16 +19,16 @@ namespace AK
 
     namespace STATES
     {
-        namespace INTERACTING_WITH_SOMETHING
+        namespace INTERACTION
         {
-            static const AkUniqueID GROUP = 4244533829U;
+            static const AkUniqueID GROUP = 3900887599U;
 
             namespace STATE
             {
                 static const AkUniqueID INTERACTING = 3884110025U;
                 static const AkUniqueID NOTINTERACTING = 927376446U;
             } // namespace STATE
-        } // namespace INTERACTING_WITH_SOMETHING
+        } // namespace INTERACTION
 
     } // namespace STATES
 

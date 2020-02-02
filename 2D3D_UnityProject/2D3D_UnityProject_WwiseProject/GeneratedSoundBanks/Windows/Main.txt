@@ -11,15 +11,15 @@ Switch	ID	Name	Switch Group			Notes
 	4248645337	Grass	Material			
 
 State Group	ID	Name			Wwise Object Path	Notes
-	4244533829	Interacting_With_Something			\Default Work Unit\Interacting_With_Something	
+	3900887599	Interaction			\Default Work Unit\Interaction	
 
 State	ID	Name	State Group			Notes
-	0	None	Interacting_With_Something			
-	927376446	NotInteracting	Interacting_With_Something			
-	3884110025	Interacting	Interacting_With_Something			
+	0	None	Interaction			
+	927376446	NotInteracting	Interaction			
+	3884110025	Interacting	Interaction			
 
 Custom State	ID	Name	State Group	Owner		Notes
-	723265791	Interacting	Interacting_With_Something	\Actor-Mixer Hierarchy\Default Work Unit\Music\bgm_Broad_Strokes		
+	723265791	Interacting	Interaction	\Actor-Mixer Hierarchy\Default Work Unit\Music\bgm_Broad_Strokes		
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	386537885	step_Wood	D:\Github\WitchsLabyrinthGame\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Windows\SFX\Footsteps\step_Wood_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Footsteps\step_Wood		43020
