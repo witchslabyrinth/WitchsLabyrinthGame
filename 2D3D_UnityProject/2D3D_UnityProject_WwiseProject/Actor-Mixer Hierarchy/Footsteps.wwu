@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{0F0D0FCB-67A7-4262-B16E-6823E3E3879E}" SchemaVersion="94" RootDocumentID="{F35C23EA-DF72-4530-971C-FBEBF715C8AD}">
+	<AudioObjects>
+		<WorkUnit Name="Footsteps" ID="{0F0D0FCB-67A7-4262-B16E-6823E3E3879E}" OwnerID="{F35C23EA-DF72-4530-971C-FBEBF715C8AD}" PersistMode="Nested">
+			<ChildrenList>
+				<SwitchContainer Name="Footsteps" ID="{4607511B-35B9-4AB6-AAE3-B9E3089DACDD}" ShortID="70321064">
+					<PropertyList>
+						<Property Name="Lowpass" Type="int16">
+							<ValueList>
+								<Value>16</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{24C7AD02-E66A-4B4B-8735-0AC29636FC00}"/>
+						</Reference>
+						<Reference Name="DefaultSwitchOrState">
+							<ObjectRef Name="Grass" ID="{1C2E81CF-7483-4940-8926-979CA934FF58}" WorkUnitID="{D47C5FCB-7D3E-46CE-B55A-B3766D658E16}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CB9D8304-7AAA-4374-9412-CD9A3A2EDD3D}"/>
+						</Reference>
+						<Reference Name="SwitchGroupOrStateGroup">
+							<ObjectRef Name="Material" ID="{AC0877DE-BF5D-4F25-8434-A7A64284CA29}" WorkUnitID="{D47C5FCB-7D3E-46CE-B55A-B3766D658E16}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="step_Grass" ID="{C2225223-59FE-43B4-A415-9B66D24C3395}" ShortID="461231821">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{B68EF2EE-6001-462B-84ED-225556E44511}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="909"/>
+													<Property Name="Min" Type="Real64" Value="-859"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{24C7AD02-E66A-4B4B-8735-0AC29636FC00}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CB9D8304-7AAA-4374-9412-CD9A3A2EDD3D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="step_Grass" ID="{81BB0EE4-A209-4062-A156-8B93459490DA}" ShortID="1015469370">
+									<Language>SFX</Language>
+									<AudioFile>Footsteps\step_Grass.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="step_Grass" ID="{81BB0EE4-A209-4062-A156-8B93459490DA}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Step_Stone" ID="{7690AA35-FA3D-4E75-986C-E5401DE56D6A}" ShortID="658188951">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{711DCF13-59CE-455A-8041-B0A0A4401970}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="707"/>
+													<Property Name="Min" Type="Real64" Value="-227"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{24C7AD02-E66A-4B4B-8735-0AC29636FC00}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CB9D8304-7AAA-4374-9412-CD9A3A2EDD3D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Step_Stone" ID="{2B4D7C04-259E-4890-8F46-F77D8D187CBA}" ShortID="611871310">
+									<Language>SFX</Language>
+									<AudioFile>Footsteps\Step_Stone.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Step_Stone" ID="{2B4D7C04-259E-4890-8F46-F77D8D187CBA}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="step_Wood" ID="{E409D303-5B3B-4BD1-824C-EDDA7B6F1AC0}" ShortID="927679582">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{E844A572-3819-427A-885D-CFD7DB901603}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="834"/>
+													<Property Name="Min" Type="Real64" Value="-960"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{24C7AD02-E66A-4B4B-8735-0AC29636FC00}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CB9D8304-7AAA-4374-9412-CD9A3A2EDD3D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="step_Wood" ID="{E3F351D2-5AD9-4A5E-A9B5-EF5F148EA311}" ShortID="386537885">
+									<Language>SFX</Language>
+									<AudioFile>Footsteps\step_Wood.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="step_Wood" ID="{E3F351D2-5AD9-4A5E-A9B5-EF5F148EA311}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+					<GroupingInfo>
+						<GroupingBehaviorList>
+							<GroupingBehavior>
+								<ItemRef Name="step_Wood" ID="{E409D303-5B3B-4BD1-824C-EDDA7B6F1AC0}"/>
+							</GroupingBehavior>
+							<GroupingBehavior>
+								<ItemRef Name="step_Grass" ID="{C2225223-59FE-43B4-A415-9B66D24C3395}"/>
+							</GroupingBehavior>
+							<GroupingBehavior>
+								<ItemRef Name="Step_Stone" ID="{7690AA35-FA3D-4E75-986C-E5401DE56D6A}"/>
+							</GroupingBehavior>
+						</GroupingBehaviorList>
+						<GroupingList>
+							<Grouping>
+								<SwitchRef Name="Wood" ID="{D771E980-D2DE-43D8-906A-D35A4994B5FA}"/>
+								<ItemList>
+									<ItemRef Name="step_Wood" ID="{E409D303-5B3B-4BD1-824C-EDDA7B6F1AC0}"/>
+								</ItemList>
+							</Grouping>
+							<Grouping>
+								<SwitchRef Name="Stone" ID="{61B2E5CA-A9AB-4D25-9F84-FA9D786AAFAA}"/>
+								<ItemList>
+									<ItemRef Name="Step_Stone" ID="{7690AA35-FA3D-4E75-986C-E5401DE56D6A}"/>
+								</ItemList>
+							</Grouping>
+							<Grouping>
+								<SwitchRef Name="Grass" ID="{1C2E81CF-7483-4940-8926-979CA934FF58}"/>
+								<ItemList>
+									<ItemRef Name="step_Grass" ID="{C2225223-59FE-43B4-A415-9B66D24C3395}"/>
+								</ItemList>
+							</Grouping>
+						</GroupingList>
+					</GroupingInfo>
+				</SwitchContainer>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

@@ -1,0 +1,29 @@
+Event	ID	Name			Wwise Object Path	Notes
+	202194903	Music_Play			\Default Work Unit\Scene\Music_Play	
+	648916573	Footstep_Player			\Default Work Unit\Oliver\Interactions\Footstep_Player	
+
+Switch Group	ID	Name			Wwise Object Path	Notes
+	3865314626	Material			\Default Work Unit\Material	
+
+Switch	ID	Name	Switch Group			Notes
+	1216965916	Stone	Material			
+	2058049674	Wood	Material			
+	4248645337	Grass	Material			
+
+State Group	ID	Name			Wwise Object Path	Notes
+	4244533829	Interacting_With_Something			\Default Work Unit\Interacting_With_Something	
+
+State	ID	Name	State Group			Notes
+	0	None	Interacting_With_Something			
+	927376446	NotInteracting	Interacting_With_Something			
+	3884110025	Interacting	Interacting_With_Something			
+
+Custom State	ID	Name	State Group	Owner		Notes
+	723265791	Interacting	Interacting_With_Something	\Actor-Mixer Hierarchy\Default Work Unit\Music\bgm_Broad_Strokes		
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	386537885	step_Wood	D:\Github\WitchsLabyrinthGame\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Mac\SFX\Footsteps\step_Wood_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Footsteps\step_Wood		43020
+	541310400	bgm_Broad_Strokes	D:\Github\WitchsLabyrinthGame\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Mac\SFX\bgm_Broad_Strokes_59EF85A5.wem		\Actor-Mixer Hierarchy\Default Work Unit\Music\bgm_Broad_Strokes		30580428
+	611871310	Step_Stone	D:\Github\WitchsLabyrinthGame\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Mac\SFX\Footsteps\Step_Stone_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Footsteps\Step_Stone		11712
+	1015469370	step_Grass	D:\Github\WitchsLabyrinthGame\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Mac\SFX\Footsteps\step_Grass_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Footsteps\step_Grass		73404
+

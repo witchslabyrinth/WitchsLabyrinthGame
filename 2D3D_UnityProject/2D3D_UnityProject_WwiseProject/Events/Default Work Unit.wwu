@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{87EA0156-343C-49F4-957B-D3B5DED1C2C6}" SchemaVersion="94">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{87EA0156-343C-49F4-957B-D3B5DED1C2C6}" PersistMode="Standalone">
+			<ChildrenList>
+				<Folder Name="Oliver" ID="{4E540086-DBAB-4B89-B45E-0B46E8896DD6}" ShortID="863458148">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="2"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Folder Name="Voice" ID="{ECBBC79A-EE71-481A-B371-DC32BDB8305B}" ShortID="896431559"/>
+						<Folder Name="Interactions" ID="{9F02ED5C-0563-40D0-9306-9260EAF4D19D}" ShortID="111689867">
+							<ChildrenList>
+								<Event Name="Footstep_Player" ID="{B6C64F55-19C9-4BA4-8D1A-F2F067892E8A}">
+									<ChildrenList>
+										<Action Name="" ID="{9C97B35C-BE91-41B3-9F54-29B991EF1224}" ShortID="240277486">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Footsteps" ID="{4607511B-35B9-4AB6-AAE3-B9E3089DACDD}" WorkUnitID="{0F0D0FCB-67A7-4262-B16E-6823E3E3879E}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Cat" ID="{1A26EB8D-73BB-4DA1-B2D7-5F63A33C4641}" ShortID="1052724458">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="10"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+				</Folder>
+				<Folder Name="Witch" ID="{08175C69-0559-4E0B-BA88-1F8E84DC2C65}" ShortID="288048569">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="8"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+				</Folder>
+				<Folder Name="Scene" ID="{729CFC91-1C2E-45CC-A097-78D8265DFBA8}" ShortID="261404419">
+					<ChildrenList>
+						<Event Name="Music_Play" ID="{97615C5D-6E84-4AC2-A6A5-AF8AA2D73E46}">
+							<ChildrenList>
+								<Action Name="" ID="{AC59A66D-8011-4C4A-B98C-255B667AD7BF}" ShortID="585689050">
+									<PropertyList>
+										<Property Name="FadeTime" Type="Real64" Value="1.5"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="bgm_Broad_Strokes" ID="{29028CA5-A0D5-4658-AB46-1E8F549DA0D4}" WorkUnitID="{AC394B22-B424-42F1-91AE-4207A146B3EA}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="11" SoundbankVersion="134">
+	<RootPaths>
+		<ProjectRoot>D:\Github\WitchsLabyrinthGame\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>D:\Github\WitchsLabyrinthGame\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>D:\Github\WitchsLabyrinthGame\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>D:\Github\WitchsLabyrinthGame\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles/>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Language="SFX">
+			<ObjectPath>Init</ObjectPath>
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="3161908922" Language="SFX">
+			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
+			<ShortName>Main</ShortName>
+			<Path>Main.bnk</Path>
+			<IncludedEvents>
+				<Event Id="648916573" Name="Footstep_Player" ObjectPath="\Events\Default Work Unit\Oliver\Interactions\Footstep_Player" DurationType="OneShot" DurationMin="0.150421" DurationMax="0.682857"/>
+				<Event Id="202194903" Name="Music_Play" ObjectPath="\Events\Default Work Unit\Scene\Music_Play" DurationType="Infinite"/>
+			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="386537885" Language="SFX">
+					<ShortName>Footsteps\step_Wood.wav</ShortName>
+					<Path>SFX\Footsteps\step_Wood_10C4C929.wem</Path>
+				</File>
+				<File Id="541310400" Language="SFX">
+					<ShortName>bgm_Broad_Strokes.wav</ShortName>
+					<Path>SFX\bgm_Broad_Strokes_59EF85A5.wem</Path>
+				</File>
+				<File Id="611871310" Language="SFX">
+					<ShortName>Footsteps\Step_Stone.wav</ShortName>
+					<Path>SFX\Footsteps\Step_Stone_10C4C929.wem</Path>
+				</File>
+				<File Id="1015469370" Language="SFX">
+					<ShortName>Footsteps\step_Grass.wav</ShortName>
+					<Path>SFX\Footsteps\step_Grass_10C4C929.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>
