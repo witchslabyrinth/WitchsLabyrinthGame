@@ -4,18 +4,15 @@ using UnityEngine;
 
 public class ZodiacLight : MonoBehaviour
 {
-    private Light light;
-
-    private void Start()
-    {
-        light = GetComponent<Light>();
-    }
+    [SerializeField]
+    private List<Light> lights;
 
     /// <summary>
     /// Enables the light associated with this script
     /// </summary>
     public void TurnOn()
     {
-        light.enabled = true;
+        foreach (Light light in lights)
+            light.enabled = true;
     }
 }
