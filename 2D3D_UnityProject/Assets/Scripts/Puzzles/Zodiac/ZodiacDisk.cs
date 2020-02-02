@@ -7,7 +7,7 @@ public class ZodiacDisk : ZodiacPuzzlePiece
     /// <summary>
     /// Need to offset the x rotation of all children of the zodiac puzzle by this to account for it's default rotation being different than Unity default rotation
     /// </summary>
-    private const float zodiacOffsetX = 90f;
+    private const float zodiacOffsetY = -90f;
 
     /// <summary>
     /// How fast the disk should rotate
@@ -129,7 +129,7 @@ public class ZodiacDisk : ZodiacPuzzlePiece
 
             // Instantiate symbol at pivot point
             SpriteRenderer instance = Instantiate(spritePrefab, spritePivot.transform.position, spritePivot.transform.localRotation, transform);
-            instance.gameObject.transform.Rotate(7, -90, 0);
+            instance.gameObject.transform.Rotate(0, zodiacOffsetY, 0);
             instance.sprite = symbol;
             instance.name = symbol.name;
 
