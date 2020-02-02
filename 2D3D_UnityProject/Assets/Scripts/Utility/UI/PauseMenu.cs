@@ -45,7 +45,7 @@ public class PauseMenu : Singleton<PauseMenu>
     {
         // Set up button events
         resumeButton.onClick.AddListener(() => SetPaused(false));
-        quitButton.onClick.AddListener(() => Application.Quit());
+        quitButton.onClick.AddListener(() => SceneLoader.LoadScene(SCENE_ID.MAIN_MENU));
 
         // Start with the game unpaused
         SetPaused(false);
