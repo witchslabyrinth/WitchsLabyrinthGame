@@ -15,7 +15,7 @@ public class PreviewObjectFunctionality : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButton(0) && linkedInspectCam.GetComponent<CameraFollow>().objectIndex == index) 
+        if (linkedInspectCam.GetComponent<CameraFollow>().objectIndex == index && Input.GetMouseButton(0)) 
         {
             RaycastHit hit;
 

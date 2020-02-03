@@ -175,6 +175,10 @@ namespace Yarn.Unity
         {
             isDialogueRunning = false;
             this.dialogueUI.DialogueComplete();
+
+            // VICTOR - DON'T YOU DARE MISS THIS FOR LATER
+            Actor player = PlayerController.Instance.GetPlayer();
+            player.Enable();
         }
 
         private void HandleOptions(OptionSet options)
