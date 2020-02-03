@@ -58,6 +58,13 @@ public class PlayerInteractionController : MonoBehaviour
 
     public GameObject interactCanvas;
 
+    /// <summary>
+    /// True if player is in an inspection zone
+    /// </summary>
+    private bool inInspectZone;
+
+    private GameObject inspectCam;
+
     void Start()
     {
         if (!TryGetComponent(out actor))
@@ -94,6 +101,12 @@ public class PlayerInteractionController : MonoBehaviour
                 // Hide interact canvas and return without disabling actor
                 interactCanvas.SetActive(false);
                 return;
+            }
+            else if (inInspectZone)
+            {
+                inspectCam.SetActive(true);
+                //Cursor.lockState = CursorLockMode.None;
+                GameManager.SetCursorActive(true);
             }
             // Ignore interact button press if no nearby interactable
             else
@@ -157,6 +170,17 @@ public class PlayerInteractionController : MonoBehaviour
 
         // Show/hide interact canvas
         // TODO: find a way to hide canvas when swapping to actor out of interact zone
+        interactCanvas.SetActive(withinZone);
+    }
+
+    public void SetInInspectZone(bool withinZone, GameObject camInspect = null)
+    {
+        inInspectZone = withinZone;
+        if (withinZone)
+        {
+            inspectCam = camInspect;
+        }
+
         interactCanvas.SetActive(withinZone);
     }
 }
