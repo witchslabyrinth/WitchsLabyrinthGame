@@ -1,10 +1,22 @@
 State Group	ID	Name			Wwise Object Path	Notes
-	3900887599	Interaction			\Default Work Unit\Interaction	
+	2607556080	Menu			\Default Work Unit\Music\Menu	
+	3900887599	Interaction			\Default Work Unit\Music\Interaction	
+	4247146625	Lantern_Solved			\Default Work Unit\Puzzles\Zodiac\Lantern_Solved	
+	4275285196	Playing_As			\Default Work Unit\Playing_As	
 
 State	ID	Name	State Group			Notes
+	0	None	Menu			
+	3190209385	OutOfMenu	Menu			
+	3374585465	InMenu	Menu			
 	0	None	Interaction			
 	927376446	NotInteracting	Interaction			
 	3884110025	Interacting	Interaction			
+	0	None	Lantern_Solved			
+	2997843623	NotSolved	Lantern_Solved			
+	4249573878	Solved	Lantern_Solved			
+	0	None	Playing_As			
+	983016379	Cat	Playing_As			
+	3589411296	Oliver	Playing_As			
 
 Audio Bus	ID	Name			Wwise Object Path	Notes
 	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	

@@ -2,6 +2,10 @@
 <WwiseDocument Type="WorkUnit" ID="{AC394B22-B424-42F1-91AE-4207A146B3EA}" SchemaVersion="94" RootDocumentID="{F35C23EA-DF72-4530-971C-FBEBF715C8AD}">
 	<AudioObjects>
 		<WorkUnit Name="Music" ID="{AC394B22-B424-42F1-91AE-4207A146B3EA}" OwnerID="{F35C23EA-DF72-4530-971C-FBEBF715C8AD}" PersistMode="Nested">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="13"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
 			<ChildrenList>
 				<Sound Name="bgm_Broad_Strokes" ID="{29028CA5-A0D5-4658-AB46-1E8F549DA0D4}" ShortID="460958074">
 					<PropertyList>
@@ -31,18 +35,35 @@
 							<StateGroupInfo>
 								<StateGroupRef Name="Interaction" ID="{4E3F8488-1ADE-4670-8BB8-91D343BE183A}"/>
 							</StateGroupInfo>
+							<StateGroupInfo>
+								<StateGroupRef Name="Menu" ID="{DB75D7B9-D1BD-430D-ADB5-76C1A0E13C2F}"/>
+							</StateGroupInfo>
 						</StateGroupList>
 						<CustomStateList>
 							<CustomState>
+								<StateRef Name="InMenu" ID="{904CACE3-60CE-4302-A0C7-6AE9469DFF3E}"/>
+								<CustomState Name="" ID="{F9DE9776-1287-4114-8348-AF60AFEC39D1}" ShortID="690701677">
+									<PropertyList>
+										<Property Name="Lowpass" Type="int16" Value="50"/>
+										<Property Name="MakeUpGain" Type="Real64" Value="-10"/>
+										<Property Name="Volume" Type="Real64" Value="-2"/>
+									</PropertyList>
+								</CustomState>
+							</CustomState>
+							<CustomState>
 								<StateRef Name="NotInteracting" ID="{C91F658C-F0E9-4948-BB74-2D7A1220222C}"/>
 								<CustomState Name="" ID="{DBA5F0FC-041F-484B-9A6E-93692557713C}" ShortID="455819488"/>
+							</CustomState>
+							<CustomState>
+								<StateRef Name="OutOfMenu" ID="{37C8EC30-AA38-4B3C-B250-C005A1232A98}"/>
+								<CustomState Name="" ID="{22C7303C-216E-4B83-846F-7CDA7B3DFBE8}" ShortID="617115453"/>
 							</CustomState>
 							<CustomState>
 								<StateRef Name="Interacting" ID="{82E506BF-33E5-4E93-935E-E5FF4EF7B9A2}"/>
 								<CustomState Name="" ID="{14F5819A-F46C-4E01-B69C-1F370B6FFDAA}" ShortID="723265791">
 									<PropertyList>
 										<Property Name="Lowpass" Type="int16" Value="50"/>
-										<Property Name="MakeUpGain" Type="Real64" Value="-5"/>
+										<Property Name="MakeUpGain" Type="Real64" Value="-10"/>
 									</PropertyList>
 								</CustomState>
 							</CustomState>

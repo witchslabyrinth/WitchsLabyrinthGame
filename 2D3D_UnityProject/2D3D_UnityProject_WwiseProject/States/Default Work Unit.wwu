@@ -3,20 +3,75 @@
 	<States>
 		<WorkUnit Name="Default Work Unit" ID="{33026480-5FB4-434C-AF47-B7ED0E86FA70}" PersistMode="Standalone">
 			<ChildrenList>
-				<StateGroup Name="Interaction" ID="{4E3F8488-1ADE-4670-8BB8-91D343BE183A}">
+				<Folder Name="Puzzles" ID="{D5BA72F0-8DBC-4FD0-BF9E-567185F51BE0}" ShortID="78482283">
 					<ChildrenList>
-						<State Name="None" ID="{D3E046BD-A0B4-413A-BA7E-9EFDDA6531F9}"/>
-						<State Name="NotInteracting" ID="{C91F658C-F0E9-4948-BB74-2D7A1220222C}"/>
-						<State Name="Interacting" ID="{82E506BF-33E5-4E93-935E-E5FF4EF7B9A2}"/>
+						<Folder Name="Zodiac" ID="{69C96651-858D-411A-9EB5-C4CE4941646C}" ShortID="336673915">
+							<ChildrenList>
+								<StateGroup Name="Lantern_Solved" ID="{427E568A-812C-42B3-B064-A6A2295DFF86}">
+									<ChildrenList>
+										<State Name="None" ID="{42748BA7-C7A2-4000-8281-C6FDF4BD4F39}"/>
+										<State Name="NotSolved" ID="{41FE89CD-F58A-4F1C-9DFB-DA831F6C90F7}"/>
+										<State Name="Solved" ID="{9B184523-702F-4F83-8CF0-FD75C0C500C8}"/>
+									</ChildrenList>
+									<TransitionList>
+										<Transition>
+											<StartState Name="NotSolved" ID="{41FE89CD-F58A-4F1C-9DFB-DA831F6C90F7}"/>
+											<EndState Name="Solved" ID="{9B184523-702F-4F83-8CF0-FD75C0C500C8}"/>
+											<Time>1</Time>
+											<IsShared>false</IsShared>
+										</Transition>
+									</TransitionList>
+								</StateGroup>
+							</ChildrenList>
+						</Folder>
 					</ChildrenList>
-					<TransitionList>
-						<Transition>
-							<StartState Name="NotInteracting" ID="{C91F658C-F0E9-4948-BB74-2D7A1220222C}"/>
-							<EndState Name="Interacting" ID="{82E506BF-33E5-4E93-935E-E5FF4EF7B9A2}"/>
-							<Time>1</Time>
-							<IsShared>true</IsShared>
-						</Transition>
-					</TransitionList>
+				</Folder>
+				<Folder Name="Music" ID="{319D1EB9-35A0-4C38-BE64-C959C69734D0}" ShortID="345928235">
+					<ChildrenList>
+						<StateGroup Name="Interaction" ID="{4E3F8488-1ADE-4670-8BB8-91D343BE183A}">
+							<PropertyList>
+								<Property Name="DefaultTransitionTime" Type="Real64" Value="0.5"/>
+							</PropertyList>
+							<ChildrenList>
+								<State Name="None" ID="{D3E046BD-A0B4-413A-BA7E-9EFDDA6531F9}"/>
+								<State Name="NotInteracting" ID="{C91F658C-F0E9-4948-BB74-2D7A1220222C}"/>
+								<State Name="Interacting" ID="{82E506BF-33E5-4E93-935E-E5FF4EF7B9A2}"/>
+							</ChildrenList>
+							<TransitionList>
+								<Transition>
+									<StartState Name="NotInteracting" ID="{C91F658C-F0E9-4948-BB74-2D7A1220222C}"/>
+									<EndState Name="Interacting" ID="{82E506BF-33E5-4E93-935E-E5FF4EF7B9A2}"/>
+									<Time>0.5</Time>
+									<IsShared>true</IsShared>
+								</Transition>
+							</TransitionList>
+						</StateGroup>
+						<StateGroup Name="Menu" ID="{DB75D7B9-D1BD-430D-ADB5-76C1A0E13C2F}">
+							<PropertyList>
+								<Property Name="DefaultTransitionTime" Type="Real64" Value="0.5"/>
+							</PropertyList>
+							<ChildrenList>
+								<State Name="None" ID="{41B86AD0-353D-4610-B3D5-72731BC94C3F}"/>
+								<State Name="InMenu" ID="{904CACE3-60CE-4302-A0C7-6AE9469DFF3E}"/>
+								<State Name="OutOfMenu" ID="{37C8EC30-AA38-4B3C-B250-C005A1232A98}"/>
+							</ChildrenList>
+							<TransitionList>
+								<Transition>
+									<StartState Name="OutOfMenu" ID="{37C8EC30-AA38-4B3C-B250-C005A1232A98}"/>
+									<EndState Name="InMenu" ID="{904CACE3-60CE-4302-A0C7-6AE9469DFF3E}"/>
+									<Time>0.5</Time>
+									<IsShared>true</IsShared>
+								</Transition>
+							</TransitionList>
+						</StateGroup>
+					</ChildrenList>
+				</Folder>
+				<StateGroup Name="Playing_As" ID="{2F579B70-41B0-4764-9D31-363601909738}">
+					<ChildrenList>
+						<State Name="None" ID="{E60385D5-B6EB-461D-80BA-4817FEC30802}"/>
+						<State Name="Oliver" ID="{7706D5DD-6B34-46AB-85C8-239B803BEE1C}"/>
+						<State Name="Cat" ID="{B520C327-583F-44FE-BC42-F17807CA9555}"/>
+					</ChildrenList>
 				</StateGroup>
 			</ChildrenList>
 		</WorkUnit>

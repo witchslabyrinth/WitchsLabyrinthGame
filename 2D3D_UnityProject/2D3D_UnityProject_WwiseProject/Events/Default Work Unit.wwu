@@ -9,7 +9,32 @@
 						<Property Name="OverrideColor" Type="bool" Value="True"/>
 					</PropertyList>
 					<ChildrenList>
-						<Folder Name="Voice" ID="{ECBBC79A-EE71-481A-B371-DC32BDB8305B}" ShortID="896431559"/>
+						<Folder Name="Voice" ID="{ECBBC79A-EE71-481A-B371-DC32BDB8305B}" ShortID="896431559">
+							<ChildrenList>
+								<Event Name="WithinPuzzleZone" ID="{166CE977-E011-4255-9505-6A79CCD9E37A}">
+									<ChildrenList>
+										<Action Name="" ID="{5B67AAE8-7A3A-4A63-901E-97BE4F027C9C}" ShortID="727183840">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Hmm" ID="{4D33E0E2-3288-4EF5-91EF-778A8B3FBFC3}" WorkUnitID="{D7C316F4-AB81-4BC2-8FEC-BB6CC1D8C110}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="StayThereOliver" ID="{0D58E3F9-33F7-42FA-9166-18490111EDB3}">
+									<ChildrenList>
+										<Action Name="" ID="{73DC4196-3F3F-4FAC-B7B4-0C4CAB81119A}" ShortID="925641170">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="luke_oh (1)" ID="{36DDBF85-7FCF-41BE-9D44-9E35428F875A}" WorkUnitID="{D7C316F4-AB81-4BC2-8FEC-BB6CC1D8C110}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
 						<Folder Name="Interactions" ID="{9F02ED5C-0563-40D0-9306-9260EAF4D19D}" ShortID="111689867">
 							<ChildrenList>
 								<Event Name="Footstep_Player" ID="{B6C64F55-19C9-4BA4-8D1A-F2F067892E8A}">
@@ -25,6 +50,17 @@
 								</Event>
 							</ChildrenList>
 						</Folder>
+						<Event Name="OliverSwitchSound" ID="{580F8B20-2994-48A8-BCD7-2391A18396F6}">
+							<ChildrenList>
+								<Action Name="" ID="{D9EB1C90-D8CD-403B-8F34-2070E3DE9307}" ShortID="542390319">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Oliver_UghOkayFine" ID="{55B4390D-7EFA-4E5B-94B6-06754F6B3FA7}" WorkUnitID="{D7C316F4-AB81-4BC2-8FEC-BB6CC1D8C110}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Cat" ID="{1A26EB8D-73BB-4DA1-B2D7-5F63A33C4641}" ShortID="1052724458">
@@ -32,6 +68,30 @@
 						<Property Name="Color" Type="int16" Value="10"/>
 						<Property Name="OverrideColor" Type="bool" Value="True"/>
 					</PropertyList>
+					<ChildrenList>
+						<Event Name="CatSwitchSound" ID="{5FC4A8D1-9F83-4F90-BC04-FE586E18BB61}">
+							<ChildrenList>
+								<Action Name="" ID="{DDAE3D9F-B961-4686-8249-E400E5AB981B}" ShortID="688783811">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Cat_Meow" ID="{44EE2CC7-85E9-4626-904F-12A5B1E585A7}" WorkUnitID="{713C05F8-2814-4EDA-B3B2-F621186647E9}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="StayThereCat" ID="{E1F7A7C0-60AD-4750-8177-7390795EB00F}">
+							<ChildrenList>
+								<Action Name="" ID="{E71A4166-4944-4C0C-BB9A-1082500820EF}" ShortID="767091196">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Cat_Mrow_01" ID="{BCC1BF6C-5D53-4419-B186-BCBB2D4A6E9E}" WorkUnitID="{713C05F8-2814-4EDA-B3B2-F621186647E9}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
 				</Folder>
 				<Folder Name="Witch" ID="{08175C69-0559-4E0B-BA88-1F8E84DC2C65}" ShortID="288048569">
 					<PropertyList>
@@ -55,6 +115,47 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Puzzles" ID="{993E4F9B-D4F1-43B7-8C48-1C2D2C1A58C4}" ShortID="276487877">
+					<ChildrenList>
+						<Folder Name="Zodiac" ID="{D9E9C881-FE86-438D-BE29-A74AC067B8C0}" ShortID="939472994">
+							<ChildrenList>
+								<Event Name="Stone_Grind" ID="{86C1E159-0CCC-4C0F-B362-5A1009756B14}">
+									<ChildrenList>
+										<Action Name="" ID="{F33BCB94-EEBD-40F6-9182-C073876079C9}" ShortID="361727166">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Stone_Grind" ID="{DED71847-2A59-4882-8334-8E7E69931A07}" WorkUnitID="{787AA6C8-A80B-4C2F-B9CE-E9178ECBB4E3}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Lantern_LightUp" ID="{AF3FB6A6-0859-467E-98AB-526D8D2A82E5}">
+									<ChildrenList>
+										<Action Name="" ID="{33A8A824-DA35-4211-BC7C-C30941218477}" ShortID="190059072">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Light_Bell" ID="{D0029F98-83E2-4EDA-ABD6-F5DB3B11A322}" WorkUnitID="{787AA6C8-A80B-4C2F-B9CE-E9178ECBB4E3}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Door_Open" ID="{F9441F57-0631-4F32-BF23-0F6E2E8053B5}">
+									<ChildrenList>
+										<Action Name="" ID="{AF68582C-6C47-482F-B0DA-6144B242EA8A}" ShortID="834976382">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Sliding_Door_Opening" ID="{70E8D8D9-623E-45FC-BE7B-0D7193CE77FB}" WorkUnitID="{787AA6C8-A80B-4C2F-B9CE-E9178ECBB4E3}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>

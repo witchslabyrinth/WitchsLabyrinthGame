@@ -7,6 +7,14 @@ using UnityEngine;
 
 public class ZodiacPuzzle : MonoBehaviour
 {
+    [Header("Wwise")]
+    /// <summary>
+    /// Set Wwise variables
+    /// </summary>
+    /// <param name="paused">Set Wwise variables for sounds here</param>
+    public AK.Wwise.Event stoneMove;
+    public AK.Wwise.Event doorMove;
+
     /// <summary>
     /// The number of rounds that must be solved in order to complete the puzzle
     /// </summary>
@@ -148,9 +156,12 @@ public class ZodiacPuzzle : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.D)) {
             currentDisk.Rotate(Direction.CLOCKWISE);
+            stoneMove.Post(gameObject); //Wwise
         }
         else if (Input.GetKeyDown(KeyCode.A)) {
             currentDisk.Rotate(Direction.COUNTER_CLOCKWISE);
+            stoneMove.Post(gameObject); //Wwise
+
         }
     }
 
@@ -189,15 +200,20 @@ public class ZodiacPuzzle : MonoBehaviour
         // currentDisk.PieceInOut(ZodiacPuzzlePiece.ZodiacPuzzlePiecePosition.In);
         // center.PieceInOut(ZodiacPuzzlePiece.ZodiacPuzzlePiecePosition.Out);
         zodiacDoor.Open();
+        doorMove.Post(gameObject); //Wwise
     }
 
     void OnEnable()
     {
         zodiacCanvas.SetActive(true);
+        //AkSoundEngine.SetState("Interaction", "Interacting"); //Set state to muffle music
+
     }
 
     void OnDisable()
     {
         zodiacCanvas.SetActive(false);
+        //AkSoundEngine.SetState("Interaction", "NotInteracting"); //Set state to re-enable music
+
     }
 }

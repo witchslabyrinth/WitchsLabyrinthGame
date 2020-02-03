@@ -5,8 +5,20 @@
 			<ChildrenList>
 				<SoundBank Name="Main" ID="{FAAE851D-79E0-448F-ADC3-648C94A6ABD2}">
 					<ObjectInclusionList>
+						<ObjectRef Name="WithinPuzzleZone" ID="{166CE977-E011-4255-9505-6A79CCD9E37A}" WorkUnitID="{87EA0156-343C-49F4-957B-D3B5DED1C2C6}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="StayThereOliver" ID="{0D58E3F9-33F7-42FA-9166-18490111EDB3}" WorkUnitID="{87EA0156-343C-49F4-957B-D3B5DED1C2C6}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="OnMenuSelect" ID="{92C79FCB-0BC9-4344-9DBF-DA2317A48BE3}" WorkUnitID="{167BFD91-0A39-4FD8-BC6D-407FAD2D1946}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="OnMenuOpen" ID="{951C01C8-2F3E-4345-978B-0329C1F64F17}" WorkUnitID="{167BFD91-0A39-4FD8-BC6D-407FAD2D1946}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="OnMenuHover" ID="{FFB6B4CC-5159-4634-96B0-8A017E95393E}" WorkUnitID="{167BFD91-0A39-4FD8-BC6D-407FAD2D1946}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Lantern_LightUp" ID="{AF3FB6A6-0859-467E-98AB-526D8D2A82E5}" WorkUnitID="{87EA0156-343C-49F4-957B-D3B5DED1C2C6}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="StayThereCat" ID="{E1F7A7C0-60AD-4750-8177-7390795EB00F}" WorkUnitID="{87EA0156-343C-49F4-957B-D3B5DED1C2C6}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="OliverSwitchSound" ID="{580F8B20-2994-48A8-BCD7-2391A18396F6}" WorkUnitID="{87EA0156-343C-49F4-957B-D3B5DED1C2C6}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Music_Play" ID="{97615C5D-6E84-4AC2-A6A5-AF8AA2D73E46}" WorkUnitID="{87EA0156-343C-49F4-957B-D3B5DED1C2C6}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Footstep_Player" ID="{B6C64F55-19C9-4BA4-8D1A-F2F067892E8A}" WorkUnitID="{87EA0156-343C-49F4-957B-D3B5DED1C2C6}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Stone_Grind" ID="{86C1E159-0CCC-4C0F-B362-5A1009756B14}" WorkUnitID="{87EA0156-343C-49F4-957B-D3B5DED1C2C6}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="OnMenuClose" ID="{FEFDC2B0-1F82-4D1D-877A-0E550088C4FB}" WorkUnitID="{167BFD91-0A39-4FD8-BC6D-407FAD2D1946}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Door_Open" ID="{F9441F57-0631-4F32-BF23-0F6E2E8053B5}" WorkUnitID="{87EA0156-343C-49F4-957B-D3B5DED1C2C6}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="CatSwitchSound" ID="{5FC4A8D1-9F83-4F90-BC04-FE586E18BB61}" WorkUnitID="{87EA0156-343C-49F4-957B-D3B5DED1C2C6}" Filter="7" Origin="Manual"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>
