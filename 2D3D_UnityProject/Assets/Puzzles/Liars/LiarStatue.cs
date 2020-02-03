@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Yarn.Unity.Example;
 
 ///    ENTIRE SCRIPT MARKED FOR DELETION IN REFACTOR    ///
 
@@ -52,7 +53,7 @@ public class LiarStatue : MonoBehaviour
     {
         PlayerInteractionController controller = other.GetComponent<PlayerInteractionController>();
         if (controller != null)
-            controller.SetInDialogueZone(true, id);
+            controller.SetInDialogueZone(true, GetComponentInParent<NPC>());
         Debug.Log("Talking to " + statueName);
     }
 
@@ -60,7 +61,7 @@ public class LiarStatue : MonoBehaviour
     {
         PlayerInteractionController controller = other.GetComponent<PlayerInteractionController>();
         if (controller != null)
-            controller.SetInDialogueZone(false, id);
+            controller.SetInDialogueZone(false, GetComponentInParent<NPC>());
         Debug.Log("Leaving conversation with " + statueName);
     }
 

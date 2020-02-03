@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Yarn.Unity;
+using Yarn.Unity.Example;
 
 // TODO: refactor this to be more generalized - each interaction should be processed more-or-less the same way
 
@@ -17,7 +19,7 @@ public class PlayerInteractionController : MonoBehaviour
 
     ///    CAN PROBABLY DISCARD NEXT SECTION IN REFACTOR    ///
 
-    
+
     /// <summary>
     /// Reference to nearby KoiFish that can be fed. Null if actor not in a fish-feeding trigger zone
     /// </summary>
@@ -31,7 +33,9 @@ public class PlayerInteractionController : MonoBehaviour
     /// <summary>
     /// the id of the npc in range of the player
     /// </summary>
-    private int dialoguePartner;
+    // private int dialoguePartner;
+
+    private NPC dialoguePartner;
 
     /// <summary>
     /// reference to the orb the player is trying to find
@@ -56,7 +60,7 @@ public class PlayerInteractionController : MonoBehaviour
 
     void Start()
     {
-        if(!TryGetComponent(out actor)) 
+        if (!TryGetComponent(out actor))
         {
             Debug.LogWarning(name + " | PlayerInteractionController failed to get Actor component from this game object");
         }
@@ -73,7 +77,8 @@ public class PlayerInteractionController : MonoBehaviour
             if (inDialogueZone)
             {
                 // Show dialogue conversation if interacting with NPC
-                LiarGameManager.Instance().StartConversation(dialoguePartner);
+                // LiarGameManager.Instance().StartConversation(dialoguePartner);
+                FindObjectOfType<DialogueRunner>().StartDialogue(dialoguePartner.talkToNode);
             }
             else if (inZodiacZone)
             {
@@ -112,13 +117,21 @@ public class PlayerInteractionController : MonoBehaviour
     /// </summary>
     /// <param name="withinZone">true on enter, false on exit</param>
     /// <param name="partner">ID of npc</param>
-    public void SetInDialogueZone(bool withinZone, int partner)
+    // public void SetInDialogueZone(bool withinZone, int partner)
+    // {
+    //     inDialogueZone = withinZone;
+    //     dialoguePartner = partner;
+
+    //     // TODO: find a way to hide canvas when swapping to actor out of interact zone
+    //     // Show/hide interact canvas
+    //     interactCanvas.SetActive(withinZone);
+    // }
+
+    public void SetInDialogueZone(bool withinZone, NPC partner)
     {
         inDialogueZone = withinZone;
         dialoguePartner = partner;
 
-        // TODO: find a way to hide canvas when swapping to actor out of interact zone
-        // Show/hide interact canvas
         interactCanvas.SetActive(withinZone);
     }
 
