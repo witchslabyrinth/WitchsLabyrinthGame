@@ -72,6 +72,14 @@
 						<State Name="Oliver" ID="{7706D5DD-6B34-46AB-85C8-239B803BEE1C}"/>
 						<State Name="Cat" ID="{B520C327-583F-44FE-BC42-F17807CA9555}"/>
 					</ChildrenList>
+					<TransitionList>
+						<Transition>
+							<StartState Name="Cat" ID="{B520C327-583F-44FE-BC42-F17807CA9555}"/>
+							<EndState Name="Oliver" ID="{7706D5DD-6B34-46AB-85C8-239B803BEE1C}"/>
+							<Time>0</Time>
+							<IsShared>true</IsShared>
+						</Transition>
+					</TransitionList>
 				</StateGroup>
 			</ChildrenList>
 		</WorkUnit>
