@@ -11,8 +11,6 @@ public class PauseMenu : Singleton<PauseMenu>
     /// Set Wwise variables
     /// </summary>
     /// <param name="paused">Set Wwise variables for UI here</param>
-    //public AK.Wwise.Event OnMenuEnter;
-    public AK.Wwise.Event OnMenuExit;
     public AK.Wwise.Event OnMenuHover;
     public AK.Wwise.Event OnMenuSelect;
 
@@ -86,7 +84,6 @@ public class PauseMenu : Singleton<PauseMenu>
     {
         // Set paused status
         this.paused = paused;
-        Debug.LogFormat("Game " + (paused ? "paused" : "unpaused"));
 
         // Show/hide pause menu
         pauseMenu.SetActive(paused);
