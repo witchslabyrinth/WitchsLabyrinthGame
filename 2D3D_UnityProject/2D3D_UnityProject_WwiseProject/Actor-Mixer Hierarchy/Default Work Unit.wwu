@@ -91,6 +91,105 @@
 				<WorkUnit Name="Oliver" ID="{EDD942DA-81AE-4B41-A9E7-814C558A9CF5}" PersistMode="Reference"/>
 				<WorkUnit Name="Cat" ID="{420DBC9C-F5DF-4C94-83FD-A48ABD6BE150}" PersistMode="Reference"/>
 				<WorkUnit Name="Music" ID="{AC394B22-B424-42F1-91AE-4207A146B3EA}" PersistMode="Reference"/>
+				<Folder Name="Environment" ID="{0109B075-C828-4358-8E8C-B22A651F853D}" ShortID="478263867">
+					<ChildrenList>
+						<Sound Name="Lantern_idle_crackle" ID="{234238B1-830A-4301-B735-B810F4C0F2F9}" ShortID="1035276100">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{24C7AD02-E66A-4B4B-8735-0AC29636FC00}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CB9D8304-7AAA-4374-9412-CD9A3A2EDD3D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="lantern_idle_crackle" ID="{36F9D006-9FF3-4ECC-A581-40FA01CE06C2}" ShortID="278856569">
+									<Language>SFX</Language>
+									<AudioFile>lantern_idle_crackle.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="lantern_idle_crackle" ID="{36F9D006-9FF3-4ECC-A581-40FA01CE06C2}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Lantern_swinging" ID="{99073529-5A68-4C58-BEFB-BAF19A54CCA2}" ShortID="749396913">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{24C7AD02-E66A-4B4B-8735-0AC29636FC00}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CB9D8304-7AAA-4374-9412-CD9A3A2EDD3D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="lantern_swing" ID="{A6E2577A-94A0-4A4D-8699-BBCA5907A381}" ShortID="760521609">
+									<Language>SFX</Language>
+									<AudioFile>lantern_swing.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="lantern_swing" ID="{A6E2577A-94A0-4A4D-8699-BBCA5907A381}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Fish_splashing" ID="{6CD3359E-7964-440A-ACD8-3D375A2A9169}" ShortID="926310808">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{24C7AD02-E66A-4B4B-8735-0AC29636FC00}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CB9D8304-7AAA-4374-9412-CD9A3A2EDD3D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="fish_splashing" ID="{C4D12ED6-2626-46F2-B361-1CD00318CDEF}" ShortID="234490942">
+									<Language>SFX</Language>
+									<AudioFile>fish_splashing.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="fish_splashing" ID="{C4D12ED6-2626-46F2-B361-1CD00318CDEF}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Fish_bubbles" ID="{E79B403B-012F-4FCD-84CE-CD00D5552E95}" ShortID="443381536">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{24C7AD02-E66A-4B4B-8735-0AC29636FC00}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CB9D8304-7AAA-4374-9412-CD9A3A2EDD3D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="fish_bubbles" ID="{B07154BA-9D04-4C88-B9F1-ECCF88EF136A}" ShortID="134846272">
+									<Language>SFX</Language>
+									<AudioFile>fish_bubbles.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="fish_bubbles" ID="{B07154BA-9D04-4C88-B9F1-ECCF88EF136A}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="wind_blowing_soft" ID="{D98CC0D1-870C-4F84-B25C-AA775FC4EBB8}" ShortID="741526525">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{24C7AD02-E66A-4B4B-8735-0AC29636FC00}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CB9D8304-7AAA-4374-9412-CD9A3A2EDD3D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="wind_blowing_soft" ID="{790059A7-4C70-4392-B39F-0F567FA2AC27}" ShortID="81852934">
+									<Language>SFX</Language>
+									<AudioFile>wind_blowing_soft.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="wind_blowing_soft" ID="{790059A7-4C70-4392-B39F-0F567FA2AC27}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>
