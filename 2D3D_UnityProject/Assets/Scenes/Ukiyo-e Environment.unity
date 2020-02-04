@@ -872,8 +872,7 @@ MonoBehaviour:
   data:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: fa0917a549e048b46850230a04ffcbe2,
-      type: 2}
+    WwiseObjectReference: {fileID: 0}
   useCallbacks: 0
   Callbacks: []
   playingId: 0
@@ -29535,8 +29534,7 @@ PrefabInstance:
         type: 3}
       propertyPath: playerReaction.WwiseObjectReference
       value: 
-      objectReference: {fileID: 11400000, guid: 9b50bf9610cf7e544a5f03980ed958e4,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 1572441100334143986, guid: 14aa88c43fd3d874989f821b940a1074,
         type: 3}
       propertyPath: leftDoor
@@ -44484,23 +44482,19 @@ MonoBehaviour:
   oliverSwitchSound:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 665e27342b521c54f8859f5360f121ee,
-      type: 2}
+    WwiseObjectReference: {fileID: 0}
   catSwitchSound:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 2808c5d1c696e08438451c4a3b4487bf,
-      type: 2}
+    WwiseObjectReference: {fileID: 0}
   oliverStaySound:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 9760d3a7e86a3dd45a02a0411f16315a,
-      type: 2}
+    WwiseObjectReference: {fileID: 0}
   catStaySound:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 09f8d37fccf9e744faa650937a9b6b29,
-      type: 2}
+    WwiseObjectReference: {fileID: 0}
   canSwap: 1
   oliver: {fileID: 1616911467}
   cat: {fileID: 800036970}
@@ -57746,6 +57740,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -533.3333
+      objectReference: {fileID: 0}
+    - target: {fileID: 9097688, guid: d0f746cf35c2fe841a148fa4d8110bc7, type: 3}
+      propertyPath: OnMenuEnter.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 846b2277660dd094e94ba56b87809876,
+        type: 2}
+    - target: {fileID: 9097688, guid: d0f746cf35c2fe841a148fa4d8110bc7, type: 3}
+      propertyPath: OnMenuExit.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 846b2277660dd094e94ba56b87809876,
+        type: 2}
+    - target: {fileID: 4932283027702639970, guid: d0f746cf35c2fe841a148fa4d8110bc7,
+        type: 3}
+      propertyPath: triggerList.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4932283027702639970, guid: d0f746cf35c2fe841a148fa4d8110bc7,
+        type: 3}
+      propertyPath: triggerList.Array.data[0]
+      value: 1281810935
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0f746cf35c2fe841a148fa4d8110bc7, type: 3}

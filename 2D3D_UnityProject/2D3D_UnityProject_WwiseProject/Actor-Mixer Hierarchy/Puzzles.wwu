@@ -11,6 +11,7 @@
 					<ChildrenList>
 						<Sound Name="Stone_Grind" ID="{DED71847-2A59-4882-8334-8E7E69931A07}" ShortID="771998208">
 							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
 								<Property Name="Lowpass" Type="int16">
 									<ValueList>
 										<Value>16</Value>
@@ -30,6 +31,12 @@
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{24C7AD02-E66A-4B4B-8735-0AC29636FC00}"/>
+								</Reference>
+								<Reference Name="Effect0" PluginName="Wwise Expander" CompanyID="0" PluginID="109" PluginType="3">
+									<ObjectRef Name="Noise_Gate_Fast_Attack" ID="{747A6B61-E953-474C-8227-672C884DA616}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+								</Reference>
+								<Reference Name="Effect1" PluginName="Wwise Harmonizer" CompanyID="0" PluginID="138" PluginType="3">
+									<ObjectRef Name="Repeat_after_me" ID="{7A0568D0-BE8B-4233-B3E8-200344DB7AE0}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CB9D8304-7AAA-4374-9412-CD9A3A2EDD3D}"/>
@@ -77,11 +84,6 @@
 												<Value>80</Value>
 											</ValueList>
 										</Property>
-										<Property Name="Volume" Type="Real64">
-											<ValueList>
-												<Value>-6</Value>
-											</ValueList>
-										</Property>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
@@ -105,7 +107,7 @@
 									<PropertyList>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>9</Value>
+												<Value>12</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -135,7 +137,7 @@
 						</RandomSequenceContainer>
 						<Sound Name="Light_Bell" ID="{D0029F98-83E2-4EDA-ABD6-F5DB3B11A322}" ShortID="377118096">
 							<PropertyList>
-								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="3DSpatialization" Type="int16" Value="2"/>
 								<Property Name="Pitch" Type="int32">
 									<ModifierList>
 										<ModifierInfo>
