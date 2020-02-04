@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57f3492ca1ff7d245afd19d27e60e137, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clampInDegrees: {x: 360, y: 180}
+  clampInDegrees: {x: 360, y: 120}
   lockCursor: 1
   sensitivity: {x: 2, y: 2}
   smoothing: {x: 3, y: 3}
@@ -103,6 +103,12 @@ MonoBehaviour:
   movementSpeed: 10
   sprintMultiplier: 1.5
   movement: {fileID: 11400000, guid: 9f92dfbfb814c49998d29f12230cbef7, type: 2}
+  perspective:
+    cameraView: 0
+    movement: {fileID: 0}
+    orthographic: 0
+    orthographicCameraRotation: {x: 0, y: 0, z: 0}
+    orthographicCameraOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &5586352356814453199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,7 +122,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orb: {fileID: 6556679171278252735}
-  mainCam: {fileID: 0}
   interactCanvas: {fileID: 0}
 --- !u!136 &1404111577490424630
 CapsuleCollider:
