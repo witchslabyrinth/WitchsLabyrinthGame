@@ -59,8 +59,15 @@ public class PauseMenu : Singleton<PauseMenu>
 
         // Start with the game unpaused
         SetPaused(false);
-        AkSoundEngine.SetState("Menu", "OutOfMenu"); //Set state to muffle music
-        Debug.Log("Set State to OutOfMenu");
+
+        // Muffle/unmuffle music on pause/unpause
+        onSetGamePaused += (paused =>
+        {
+            if (paused)
+                AkSoundEngine.SetState("Menu", "InMenu");
+            else
+                AkSoundEngine.SetState("Menu", "OutOfMenu");
+        });
     }
 
     /// <summary>
@@ -69,9 +76,6 @@ public class PauseMenu : Singleton<PauseMenu>
     public void TogglePaused()
     {
         SetPaused(!paused);
-        AkSoundEngine.SetState("Menu", "InMenu"); //Set state to play regular music
-        Debug.Log("Set State to InMenu");
-        OnMenuExit.Post(gameObject);
     }
 
     /// <summary>
@@ -86,13 +90,6 @@ public class PauseMenu : Singleton<PauseMenu>
 
         // Show/hide pause menu
         pauseMenu.SetActive(paused);
-
-        //return to unmuffled after unpause
-        if (!paused)
-        {
-            AkSoundEngine.SetState("Menu", "OutOfMenu"); //Set state to muffle music
-            Debug.Log("Set State to OutOfMenu");
-        }
 
         // Show/hide cursor when pausing/unpausing (respectively)
         if (paused)
