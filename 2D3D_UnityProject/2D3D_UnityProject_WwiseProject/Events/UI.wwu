@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{167BFD91-0A39-4FD8-BC6D-407FAD2D1946}" SchemaVersion="94">
+	<Events>
+		<WorkUnit Name="UI" ID="{167BFD91-0A39-4FD8-BC6D-407FAD2D1946}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="OnMenuOpen" ID="{951C01C8-2F3E-4345-978B-0329C1F64F17}">
+					<ChildrenList>
+						<Action Name="" ID="{3172A10C-CA2A-40F6-9349-5C4EEEA356C9}" ShortID="287252108">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="UI_OpenMenu" ID="{7A3F651A-24D2-40ED-8B2B-3F312EAA181A}" WorkUnitID="{F35C23EA-DF72-4530-971C-FBEBF715C8AD}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="OnMenuClose" ID="{FEFDC2B0-1F82-4D1D-877A-0E550088C4FB}">
+					<ChildrenList>
+						<Action Name="" ID="{B22EA1E5-1C4C-443F-984D-21A86100AC67}" ShortID="925805457">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="UI_Exit" ID="{A831CC62-CA02-485E-BF0D-E9822CA00C21}" WorkUnitID="{F35C23EA-DF72-4530-971C-FBEBF715C8AD}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="OnMenuHover" ID="{FFB6B4CC-5159-4634-96B0-8A017E95393E}">
+					<ChildrenList>
+						<Action Name="" ID="{4DBDB1B8-98BD-4B7B-9987-FB76251A3FF0}" ShortID="289853800">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="UI_Hover" ID="{A9A8197C-F75A-4209-B57B-CA8613B3A93A}" WorkUnitID="{F35C23EA-DF72-4530-971C-FBEBF715C8AD}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="OnMenuSelect" ID="{92C79FCB-0BC9-4344-9DBF-DA2317A48BE3}">
+					<ChildrenList>
+						<Action Name="" ID="{8994BCDB-78F8-4AF4-9415-30A915348524}" ShortID="437385042">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="UI_Select" ID="{4E6836DC-D38E-47F2-B04D-0EAF619C6D86}" WorkUnitID="{F35C23EA-DF72-4530-971C-FBEBF715C8AD}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>
