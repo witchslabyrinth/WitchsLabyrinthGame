@@ -3198,6 +3198,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   linkedInspectCam: {fileID: 737669435}
   index: 0
+  rotationSpeed: 0.25
 --- !u!65 &222073152
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24930,7 +24931,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inspectMode: 0
-  objectIndex: -1
 --- !u!114 &737669433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25002,7 +25002,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 737669431}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0.056, y: 0.357, z: -0.13188246}
+  m_LocalPosition: {x: -0.189, y: 0.559, z: -0.13188246}
   m_LocalScale: {x: 0.17851084, y: 0.17851084, z: 0.17851084}
   m_Children: []
   m_Father: {fileID: 620674453}
@@ -27692,6 +27692,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   linkedInspectCam: {fileID: 737669435}
   index: 1
+  rotationSpeed: 0.25
 --- !u!65 &959891645
 BoxCollider:
   m_ObjectHideFlags: 0
