@@ -5,37 +5,42 @@ using UnityEngine;
 //allows an interactable object to be rotated in 3 dimensions
 public class PreviewObjectFunctionality : MonoBehaviour
 {
-    Vector3 mPrevPos = Vector3.zero;
-    Vector3 mPosDelta = Vector3.zero;
+    private Vector3 mPrevPos;
+    private Vector3 mPosDelta;
 
     [SerializeField]
     private Camera linkedInspectCam;
 
-    public int index;
+    [SerializeField]
+    private int index;
 
-    void Update()
+    [SerializeField]
+    private float rotationSpeed = 0.25f;
+
+    private void Start()
     {
-        if (Input.GetMouseButton(0) && linkedInspectCam.GetComponent<CameraFollow>().objectIndex == index) 
+        mPrevPos = Vector3.zero;
+        mPosDelta = Vector3.zero;
+    }
+
+    private void Update()
+    {
+        if (Input.GetMouseButton(0) && linkedInspectCam.GetComponent<CameraFollow>().GetObjectIndex() == index)
         {
-            RaycastHit hit;
 
-            Ray ray = linkedInspectCam.ScreenPointToRay(Input.mousePosition);
+            mPosDelta = Input.mousePosition - mPrevPos;
+            Vector3 angle = mPosDelta * rotationSpeed;
 
-            if (Physics.Raycast(ray, out hit, 10000.0f))
-            {
-                if (hit.collider.gameObject == gameObject) 
-                {
-                    if (hit.collider.gameObject.GetComponent<PreviewObjectFunctionality>().enabled == true)//check that it's an interactable object
-                    {
-                        mPosDelta = Input.mousePosition - mPrevPos;
+            transform.Rotate(Vector3.up, -Vector3.Dot(angle, linkedInspectCam.transform.right), Space.World); //project left and right mouse movement onto object
 
-                        transform.Rotate(Vector3.up, -Vector3.Dot(mPosDelta, linkedInspectCam.transform.right), Space.World); //project left and right mouse movement onto object
+            transform.Rotate(linkedInspectCam.transform.right, Vector3.Dot(angle, linkedInspectCam.transform.up), Space.World); //project other mouse movement onto object
 
-                        transform.Rotate(linkedInspectCam.transform.right, Vector3.Dot(mPosDelta, linkedInspectCam.transform.up), Space.World); //project other mouse movement onto object
-                    }
-                }
-            }
         }
         mPrevPos = Input.mousePosition;
+    }
+
+    public int GetIndex()
+    {
+        return index;
     }
 }
