@@ -6,6 +6,14 @@ using UnityEngine.UI;
 
 public class PauseMenu : Singleton<PauseMenu>
 {
+    [Header("Wwise")]
+    /// <summary>
+    /// Set Wwise variables
+    /// </summary>
+    /// <param name="paused">Set Wwise variables for UI here</param>
+    public AK.Wwise.Event OnMenuHover;
+    public AK.Wwise.Event OnMenuSelect;
+
     public bool paused { get; private set; }
 
     /// <summary>
@@ -49,6 +57,15 @@ public class PauseMenu : Singleton<PauseMenu>
 
         // Start with the game unpaused
         SetPaused(false);
+
+        // Muffle/unmuffle music on pause/unpause
+        onSetGamePaused += (paused =>
+        {
+            if (paused)
+                AkSoundEngine.SetState("Menu", "InMenu");
+            else
+                AkSoundEngine.SetState("Menu", "OutOfMenu");
+        });
     }
 
     /// <summary>
@@ -67,7 +84,6 @@ public class PauseMenu : Singleton<PauseMenu>
     {
         // Set paused status
         this.paused = paused;
-        Debug.LogFormat("Game " + (paused ? "paused" : "unpaused"));
 
         // Show/hide pause menu
         pauseMenu.SetActive(paused);

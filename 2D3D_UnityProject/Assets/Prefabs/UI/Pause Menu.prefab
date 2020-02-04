@@ -83,6 +83,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1444646206463067570}
   - component: {fileID: 9097688}
+  - component: {fileID: 4932283027702639970}
+  - component: {fileID: 6384579418340366094}
   m_Layer: 5
   m_Name: Pause Menu
   m_TagString: Untagged
@@ -122,10 +124,72 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 574940d5fa83ba14fa5a82e66778d4e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnMenuExit:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 846b2277660dd094e94ba56b87809876,
+      type: 2}
+  OnMenuHover:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 3d63e073a71be2046a0d63499b6b0dc3,
+      type: 2}
+  OnMenuSelect:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 74d4726a0746c884a861461c402ec402,
+      type: 2}
   pauseMenu: {fileID: 1444646207670202068}
   resumeButton: {fileID: 1921561844929522544}
   settingsButton: {fileID: 0}
   quitButton: {fileID: 7007647251214664395}
+--- !u!114 &4932283027702639970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1444646206463067569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f5f6e89965465b41b022e8d45522227, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: 
+  useOtherObject: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 9a090c3755b207a42ae8211d98546a3c,
+      type: 2}
+  valueIdInternal: 0
+  groupIdInternal: 0
+  valueGuidInternal: 
+  groupGuidInternal: 
+--- !u!114 &6384579418340366094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1444646206463067569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b54dd2eb293a6644fb1ad0f113ef6ee0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_listeners:
+    initialListenerList: []
+    useDefaultListeners: 1
+  isEnvironmentAware: 1
+  isStaticObject: 0
+  m_positionOffsetData:
+    KeepMe: 0
+    positionOffset: {x: 0, y: 0, z: 0}
+  m_posOffsetData: {fileID: 0}
+  listenerMask: 1
 --- !u!1 &1444646207136480629
 GameObject:
   m_ObjectHideFlags: 0
