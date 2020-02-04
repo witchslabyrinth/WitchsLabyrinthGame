@@ -17,7 +17,6 @@ public class PlayerInteractionController : MonoBehaviour
 
     ///    CAN PROBABLY DISCARD NEXT SECTION IN REFACTOR    ///
 
-    
     /// <summary>
     /// Reference to nearby KoiFish that can be fed. Null if actor not in a fish-feeding trigger zone
     /// </summary>
@@ -54,9 +53,16 @@ public class PlayerInteractionController : MonoBehaviour
 
     public GameObject interactCanvas;
 
+    /// <summary>
+    /// True if player is in an inspection zone
+    /// </summary>
+    private bool inInspectZone;
+
+    private GameObject inspectCam;
+
     void Start()
     {
-        if(!TryGetComponent(out actor)) 
+        if (!TryGetComponent(out actor))
         {
             Debug.LogWarning(name + " | PlayerInteractionController failed to get Actor component from this game object");
         }
@@ -74,12 +80,14 @@ public class PlayerInteractionController : MonoBehaviour
             {
                 // Show dialogue conversation if interacting with NPC
                 LiarGameManager.Instance().StartConversation(dialoguePartner);
+
             }
             else if (inZodiacZone)
             {
                 // Enable and shift focus to Zodiac puzzle
                 zodiacPuzzle.enabled = true;
                 zodiacCam.SetActive(true);
+
             }
             else if (nearbyFish)
             {
@@ -90,9 +98,16 @@ public class PlayerInteractionController : MonoBehaviour
                 interactCanvas.SetActive(false);
                 return;
             }
+            else if (inInspectZone)
+            {
+                inspectCam.SetActive(true);
+                //Cursor.lockState = CursorLockMode.None;
+                GameManager.SetCursorActive(true);
+            }
             // Ignore interact button press if no nearby interactable
             else
-                return;
+            return;
+
 
             // Disable player actor control
             Actor actor = PlayerController.Instance.GetPlayer();
@@ -144,6 +159,17 @@ public class PlayerInteractionController : MonoBehaviour
 
         // Show/hide interact canvas
         // TODO: find a way to hide canvas when swapping to actor out of interact zone
+        interactCanvas.SetActive(withinZone);
+    }
+
+    public void SetInInspectZone(bool withinZone, GameObject camInspect = null)
+    {
+        inInspectZone = withinZone;
+        if (withinZone)
+        {
+            inspectCam = camInspect;
+        }
+
         interactCanvas.SetActive(withinZone);
     }
 }

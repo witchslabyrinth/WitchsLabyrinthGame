@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{EDD942DA-81AE-4B41-A9E7-814C558A9CF5}" SchemaVersion="94" RootDocumentID="{F35C23EA-DF72-4530-971C-FBEBF715C8AD}">
+	<AudioObjects>
+		<WorkUnit Name="Oliver" ID="{EDD942DA-81AE-4B41-A9E7-814C558A9CF5}" OwnerID="{F35C23EA-DF72-4530-971C-FBEBF715C8AD}" PersistMode="Nested">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="2"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
+			<ChildrenList>
+				<WorkUnit Name="Footsteps" ID="{0F0D0FCB-67A7-4262-B16E-6823E3E3879E}" PersistMode="Reference"/>
+				<WorkUnit Name="Oliver_Voice" ID="{D7C316F4-AB81-4BC2-8FEC-BB6CC1D8C110}" PersistMode="Reference"/>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

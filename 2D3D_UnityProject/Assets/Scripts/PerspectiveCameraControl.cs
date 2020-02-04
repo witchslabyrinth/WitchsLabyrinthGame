@@ -9,7 +9,7 @@ public class PerspectiveCameraControl : MonoBehaviour {
     Vector2 _smoothMouse;
 
     public Vector2 clampInDegrees = new Vector2 (360, 180);
-    public bool lockCursor;
+    //public bool lockCursor;
     public Vector2 sensitivity = new Vector2 (2, 2);
     public Vector2 smoothing = new Vector2 (3, 3);
     public Vector2 targetDirection;
@@ -26,11 +26,9 @@ public class PerspectiveCameraControl : MonoBehaviour {
             targetCharacterDirection = characterBody.transform.localRotation.eulerAngles;
     }
 
-    void Update () {
+    void FixedUpdate () {
         // Ensure the cursor is always locked when set
-        if (lockCursor) {
-            Cursor.lockState = CursorLockMode.Locked;
-        }
+        GameManager.SetCursorActive(false);
 
         // Allow the script to clamp based on a desired target value.
         var targetOrientation = Quaternion.Euler (targetDirection);
