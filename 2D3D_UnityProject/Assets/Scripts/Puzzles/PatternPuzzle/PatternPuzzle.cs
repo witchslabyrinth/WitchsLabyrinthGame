@@ -61,7 +61,14 @@ public class PatternPuzzle : MonoBehaviour
 
             patCamera.SetActive(false);
             this.enabled = false;
+
+            patternCubes[_currentCube].Deselect();
         }
+    }
+
+    private void OnEnable()
+    {
+        CurrentCube = _currentCube;
     }
 
     public enum Direction
