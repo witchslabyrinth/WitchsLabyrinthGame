@@ -5,6 +5,9 @@ using UnityEngine;
 public class PatternPuzzle : MonoBehaviour
 {
     [SerializeField]
+    private GameObject patCamera;
+
+    [SerializeField]
     private List<PatternCube> patternCubes;
 
     [SerializeField]
@@ -46,6 +49,18 @@ public class PatternPuzzle : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.D))
         {
             CurrentCube = Mathf.Clamp(CurrentCube + 1, 0, 4);
+        }
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            // Restore control to player actor
+            Actor actor = PlayerController.Instance.GetPlayer();
+            actor.Enable();
+
+            // Restore actor swapping
+            PlayerController.Instance.canSwap = true;
+
+            patCamera.SetActive(false);
+            this.enabled = false;
         }
     }
 
