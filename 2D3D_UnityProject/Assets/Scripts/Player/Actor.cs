@@ -197,6 +197,9 @@ public class Actor : MonoBehaviour
     {
         gameObject.SetActive(active);
         interactionController.enabled = active;
-        ghostCamera.enabled = active;
+
+        // Re-enable ghost camera (for 3D perspective only)
+        if(perspective.cameraView.Equals(CameraController.CameraViews.THIRD_PERSON)) 
+            ghostCamera.enabled = active;
     }
 }
