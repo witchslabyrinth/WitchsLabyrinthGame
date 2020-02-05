@@ -55,9 +55,6 @@ public class PauseMenu : Singleton<PauseMenu>
         resumeButton.onClick.AddListener(() => SetPaused(false));
         quitButton.onClick.AddListener(() => SceneLoader.LoadScene(SCENE_ID.MAIN_MENU));
 
-        // Start with the game unpaused
-        SetPaused(false);
-
         // Muffle/unmuffle music on pause/unpause
         onSetGamePaused += (paused =>
         {
@@ -66,6 +63,9 @@ public class PauseMenu : Singleton<PauseMenu>
             else
                 AkSoundEngine.SetState("Menu", "OutOfMenu");
         });
+
+        // Start with the game unpaused
+        SetPaused(false);
     }
 
     /// <summary>
@@ -89,10 +89,7 @@ public class PauseMenu : Singleton<PauseMenu>
         pauseMenu.SetActive(paused);
 
         // Show/hide cursor when pausing/unpausing (respectively)
-        if (paused)
-            GameManager.SetCursorActive(true);
-        else
-            GameManager.SetCursorActive(false);
+        GameManager.SetCursorActive(paused);
 
         // Update pause event listeners
         onSetGamePaused?.Invoke(paused);
