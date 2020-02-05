@@ -7,14 +7,10 @@ public class PerspectiveUI : Singleton<PerspectiveUI>
 {
     private List<PerspectiveIndicator> perspectiveIndicators;
 
-    void Start()
+    void Awake()
     {
         // Get perspective indicators from children
         perspectiveIndicators = GetComponentsInChildren<PerspectiveIndicator>().ToList();
-
-        // Get player actor's perspective and select that one in UI
-        Actor actor = PlayerController.Instance.GetPlayer();
-        SelectPerspective(actor.perspective);
     }
 
     public void SelectPerspective(Perspective perspective)
