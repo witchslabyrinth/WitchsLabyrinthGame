@@ -101,7 +101,7 @@ public class ZodiacPuzzle : MonoBehaviour
         }
 
         //TODO: Remove this when it's no longer necessary
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.R))
         {
             // for ukiyoe scene
             // mainCam.SetActive(true);
