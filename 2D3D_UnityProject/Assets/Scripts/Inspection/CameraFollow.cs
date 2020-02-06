@@ -46,7 +46,7 @@ public class CameraFollow : MonoBehaviour
     private GameObject inspectLoc;
 
     [SerializeField]
-    private float moveTime;
+    private float moveTime = 1;
 
     int cameraSpeed = 30; //use this to control camera move speed
 
