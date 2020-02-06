@@ -16,15 +16,15 @@ public class CameraFollow : MonoBehaviour
     /// </summary>
     private int objectIndex = -1;
 
-    /// <summary>
-    /// Store the position of the camera before inspecting
-    /// </summary>
-    private Vector3 startCamPos;
+    // /// <summary>
+    // /// Store the position of the camera before inspecting
+    // /// </summary>
+    // private Vector3 startCamPos;
 
-    /// <summary>
-    /// Store the rotation of the camera before inspecting
-    /// </summary>
-    private Quaternion startCamRot;
+    // /// <summary>
+    // /// Store the rotation of the camera before inspecting
+    // /// </summary>
+    // private Quaternion startCamRot;
 
     /// <summary>
     /// store the positino of the inspectable object before inspecting
@@ -41,6 +41,12 @@ public class CameraFollow : MonoBehaviour
     public RaycastHit hit;
 
     private GameObject inspectObj;
+
+    [SerializeField]
+    private GameObject inspectLoc;
+
+    [SerializeField]
+    private float moveTime;
 
     int cameraSpeed = 30; //use this to control camera move speed
 
@@ -62,20 +68,21 @@ public class CameraFollow : MonoBehaviour
                     startObjPos = inspectObj.transform.position;
                     startObjRot = inspectObj.transform.rotation;
 
-                    startCamPos = transform.position;
-                    startCamRot = transform.rotation;
+                    // startCamPos = transform.position;
+                    // startCamRot = transform.rotation;
 
                     var FollowPos = hit.transform; //what to rotate to if raycast hit an object
 
-                    rotTarget = Quaternion.LookRotation(FollowPos.position - transform.position); //set up the smooth interval that Quaternion.RotateTowards uses later as an endpoint 
+                    // rotTarget = Quaternion.LookRotation(FollowPos.position - transform.position); //set up the smooth interval that Quaternion.RotateTowards uses later as an endpoint 
+                    inspectObj.GetComponent<PreviewObjectFunctionality>().MoveToCamera(inspectLoc.transform.position, moveTime);
                 }
             }
         }
 
-        if (inspectMode == 1)
-        {
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, rotTarget, Time.deltaTime * cameraSpeed); //point to rotate to at each update/frame
-        }
+        // if (inspectMode == 1)
+        // {
+        //     transform.rotation = Quaternion.RotateTowards(transform.rotation, rotTarget, Time.deltaTime * cameraSpeed); //point to rotate to at each update/frame
+        // }
 
         if (Input.GetKeyDown(KeyCode.Space) & inspectMode == 1)
         {
@@ -100,10 +107,12 @@ public class CameraFollow : MonoBehaviour
     {
         inspectMode = 0;
         objectIndex = -1;
-        transform.position = startCamPos;
-        transform.rotation = startCamRot;
-        inspectObj.transform.position = startObjPos;
-        inspectObj.transform.rotation = startObjRot;
+        // transform.position = startCamPos;
+        // transform.rotation = startCamRot;
+        // inspectObj.transform.position = startObjPos;
+        // inspectObj.transform.rotation = startObjRot;
+
+        inspectObj.GetComponent<PreviewObjectFunctionality>().ResetObject(moveTime);
     }
 
     public int GetInspectMode()
