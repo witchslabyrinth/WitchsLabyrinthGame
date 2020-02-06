@@ -132,6 +132,9 @@ public class PerspectiveController : Singleton<PerspectiveController>
 
         // Enable ghost camera for 3D, disable for orthographic
         player.ghostCamera.enabled = !perspective.orthographic;
+
+        // Update UI with selected perspective
+        PerspectiveUI.Instance.SelectPerspective(perspective);
     }
 
     /// <summary>

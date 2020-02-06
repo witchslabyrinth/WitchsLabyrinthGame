@@ -80,12 +80,14 @@ public class PlayerInteractionController : MonoBehaviour
             {
                 // Show dialogue conversation if interacting with NPC
                 LiarGameManager.Instance().StartConversation(dialoguePartner);
+
             }
             else if (inZodiacZone)
             {
                 // Enable and shift focus to Zodiac puzzle
                 zodiacPuzzle.enabled = true;
                 zodiacCam.SetActive(true);
+
             }
             else if (nearbyFish)
             {
@@ -104,7 +106,8 @@ public class PlayerInteractionController : MonoBehaviour
             }
             // Ignore interact button press if no nearby interactable
             else
-                return;
+            return;
+
 
             // Disable player actor control
             Actor actor = PlayerController.Instance.GetPlayer();
