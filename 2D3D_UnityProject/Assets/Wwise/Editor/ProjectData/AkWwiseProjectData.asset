@@ -24,14 +24,14 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 04839dcbaa7a74439412cd9a3a2edd3d
     GuidInternal: 
-    m_lastTime: -8586210021156184000
+    m_lastTime: -8586208039214600463
     List: []
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 31c7159bb637e0438b0b0a3598f10701
     GuidInternal: 
-    m_lastTime: -8586209160481890721
+    m_lastTime: -8586209032222024607
     List:
     - name: Main
       guid: 1d85aefae0798f44adc3648c94a6abd2
@@ -47,8 +47,22 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 5601ea873c34f449957bd3b5ded1c2c6
     GuidInternal: 
-    m_lastTime: -8586209064162309333
+    m_lastTime: -8586208039230738727
     List:
+    - name: CatSwitchSound
+      guid: d1a8c45f839f904fbc04fe586e18bb61
+      id: 3589155492
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Cat
+        ObjectType: 4
+      - ElementName: CatSwitchSound
+        ObjectType: 3
+      Path: Default Work Unit\Cat\CatSwitchSound
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Door_Open
       guid: 571f44f93106324fbf230f6e2e8053b5
       id: 535830432
@@ -63,8 +77,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Puzzles\Zodiac\Door_Open
       maxAttenuation: 0
-      maxDuration: 3.509682
-      minDuration: 2.22644
+      maxDuration: -1
+      minDuration: -1
     - name: Footstep_Player
       guid: 554fc6b6c919a44b8d1af2f067892e8a
       id: 648916573
@@ -79,8 +93,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Oliver\Interactions\Footstep_Player
       maxAttenuation: 0
-      maxDuration: 0.682857
-      minDuration: 0.150421
+      maxDuration: -1
+      minDuration: -1
     - name: Lantern_LightUp
       guid: a6b63faf59087e4698ab526d8d2a82e5
       id: 2716631521
@@ -95,8 +109,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Puzzles\Zodiac\Lantern_LightUp
       maxAttenuation: 0
-      maxDuration: 7.069659
-      minDuration: 5.934558
+      maxDuration: -1
+      minDuration: -1
     - name: Music_Play
       guid: 5d5c6197846ec24aa6a5af8aa2d73e46
       id: 202194903
@@ -108,6 +122,50 @@ MonoBehaviour:
       - ElementName: Music_Play
         ObjectType: 3
       Path: Default Work Unit\Scene\Music_Play
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: OliverSwitchSound
+      guid: 208b0f589429a848bcd72391a18396f6
+      id: 2136553153
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Oliver
+        ObjectType: 4
+      - ElementName: OliverSwitchSound
+        ObjectType: 3
+      Path: Default Work Unit\Oliver\OliverSwitchSound
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: StayThereCat
+      guid: c0a7f7e1ad60504781777390795eb00f
+      id: 1041426236
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Cat
+        ObjectType: 4
+      - ElementName: StayThereCat
+        ObjectType: 3
+      Path: Default Work Unit\Cat\StayThereCat
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: StayThereOliver
+      guid: f9e3580df733fa42916618490111edb3
+      id: 4294117557
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Oliver
+        ObjectType: 4
+      - ElementName: Voice
+        ObjectType: 4
+      - ElementName: StayThereOliver
+        ObjectType: 3
+      Path: Default Work Unit\Oliver\Voice\StayThereOliver
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -125,8 +183,24 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Puzzles\Zodiac\Stone_Grind
       maxAttenuation: 0
-      maxDuration: 1.904954
-      minDuration: 1.904954
+      maxDuration: -1
+      minDuration: -1
+    - name: WithinPuzzleZone
+      guid: 77e96c1611e0554295056a79ccd9e37a
+      id: 3954690858
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Oliver
+        ObjectType: 4
+      - ElementName: Voice
+        ObjectType: 4
+      - ElementName: WithinPuzzleZone
+        ObjectType: 3
+      Path: Default Work Unit\Oliver\Voice\WithinPuzzleZone
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
   - PhysicalPath: Events\UI.wwu
     ParentPhysicalPath: 
     guid: 91fd7b16390ad84fbc6d407fad2d1946
@@ -193,7 +267,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 80640233b45f4c43af47b7ed0e86fa70
     GuidInternal: 
-    m_lastTime: -8586209151708153777
+    m_lastTime: -8586209016657185468
     List:
     - name: Interaction
       guid: 88843f4ede1a70468bb891d343be183a
@@ -296,6 +370,37 @@ MonoBehaviour:
       ValueGuids: []
       ValueIcons: []
       valuesInternal: []
+    - name: Playing_As
+      guid: 709b572fb04164479d31363601909738
+      id: 4275285196
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Playing_As
+        ObjectType: 9
+      Path: Default Work Unit\Playing_As
+      values:
+      - name: Cat
+        guid: 27c320b53f58fe44bc42f17807ca9555
+        id: 983016379
+        PathAndIcons:
+        - ElementName: Cat
+          ObjectType: 8
+      - name: None
+        guid: d58503e6ebb61d4680ba4817fec30802
+        id: 748895195
+        PathAndIcons:
+        - ElementName: None
+          ObjectType: 8
+      - name: Oliver
+        guid: ddd50677346bab4685c8239b803bee1c
+        id: 3589411296
+        PathAndIcons:
+        - ElementName: Oliver
+          ObjectType: 8
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
     ParentPhysicalPath: 
@@ -348,5 +453,7 @@ MonoBehaviour:
   - /2D3D_UnityProject_WwiseProject/Events/Default Work Unit/Oliver
   - /2D3D_UnityProject_WwiseProject/Events/Default Work Unit/Puzzles
   - /2D3D_UnityProject_WwiseProject/Events/Default Work Unit/Puzzles/Zodiac
+  - /2D3D_UnityProject_WwiseProject/States
+  - /2D3D_UnityProject_WwiseProject/Switches
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

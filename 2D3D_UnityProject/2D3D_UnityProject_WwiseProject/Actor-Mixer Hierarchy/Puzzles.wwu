@@ -45,10 +45,8 @@
 							<ChildrenList>
 								<AudioFileSource Name="Stone_Grind" ID="{B2799845-C5BB-4D53-87A9-8205DAB039AD}" ShortID="856612096">
 									<PropertyList>
-										<Property Name="FadeInDuration" Type="Real64" Value="0.260054864411518"/>
-										<Property Name="LoopBegin" Type="Real64" Value="1.85688297921908"/>
 										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-										<Property Name="TrimBegin" Type="Real64" Value="1.73369909607679"/>
+										<Property Name="TrimBegin" Type="Real64" Value="2.0047"/>
 									</PropertyList>
 									<Language>SFX</Language>
 									<AudioFile>Stone_Grind.wav</AudioFile>
@@ -138,6 +136,11 @@
 						<Sound Name="Light_Bell" ID="{D0029F98-83E2-4EDA-ABD6-F5DB3B11A322}" ShortID="377118096">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="2"/>
+								<Property Name="OutputBusVolume" Type="Real64">
+									<ValueList>
+										<Value>12</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Pitch" Type="int32">
 									<ModifierList>
 										<ModifierInfo>
