@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{420DBC9C-F5DF-4C94-83FD-A48ABD6BE150}" SchemaVersion="94" RootDocumentID="{F35C23EA-DF72-4530-971C-FBEBF715C8AD}">
+	<AudioObjects>
+		<WorkUnit Name="Cat" ID="{420DBC9C-F5DF-4C94-83FD-A48ABD6BE150}" OwnerID="{F35C23EA-DF72-4530-971C-FBEBF715C8AD}" PersistMode="Nested">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="23"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
+			<ChildrenList>
+				<WorkUnit Name="Cat_Voice" ID="{713C05F8-2814-4EDA-B3B2-F621186647E9}" PersistMode="Reference"/>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>
