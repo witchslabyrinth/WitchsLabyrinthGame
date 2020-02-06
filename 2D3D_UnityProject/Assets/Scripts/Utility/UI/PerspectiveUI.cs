@@ -25,4 +25,9 @@ public class PerspectiveUI : Singleton<PerspectiveUI>
             perspectiveIndicator.SetSelected(false);
         }
     }
+
+    public void SetActive(bool active)
+    {
+        gameObject.SetActive(active);
+    }
 }
