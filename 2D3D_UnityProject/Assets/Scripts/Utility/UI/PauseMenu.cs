@@ -13,6 +13,8 @@ public class PauseMenu : Singleton<PauseMenu>
     /// <param name="paused">Set Wwise variables for UI here</param>
     public AK.Wwise.Event OnMenuHover;
     public AK.Wwise.Event OnMenuSelect;
+    public AK.Wwise.Event OnMenuEnter;
+
 
     public bool paused { get; private set; }
 
@@ -74,6 +76,7 @@ public class PauseMenu : Singleton<PauseMenu>
     public void TogglePaused()
     {
         SetPaused(!paused);
+        OnMenuEnter.Post(gameObject);
     }
 
     /// <summary>
