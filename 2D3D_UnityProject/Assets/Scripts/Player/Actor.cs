@@ -44,11 +44,23 @@ public class Actor : MonoBehaviour
     protected float sprintMultiplier = 1.5f;
 
     /// <summary>
+    /// Current status of actor's movement
+    /// 0 - stationary
+    /// 1 - walking
+    /// 2 - sprinting
+    /// </summary>
+    private int moveStatus;
+
+    /// <summary>
     /// Used to generate Actor movement - varies depending on current camera perspective, or assigned NPC behavior
     /// </summary>
     public Movement movement;
 
     /// <summary>
+    /// For updating animations, stores whether or not player is using top view
+    /// </summary>
+    private bool inTopView;
+
     /// Sets actor movement control scheme
     /// </summary>
     /// <param name="movement">Movement control scheme</param>
@@ -85,6 +97,9 @@ public class Actor : MonoBehaviour
         else {
             movement = new FollowMovement(PlayerController.Instance.GetPlayer().transform);
         }
+
+        moveStatus = 0;
+        inTopView = false;
     }
 
     private void FixedUpdate()
@@ -109,13 +124,23 @@ public class Actor : MonoBehaviour
         
         // Get move direction (as unit vector) from movement class
         Vector3 direction = movement.GetMovement(this);
+        if(direction != Vector3.zero)
+        {
+            moveStatus = 1;
+        }
+        else
+        {
+            moveStatus = 0;
+        }
 
         // Apply movement (scaled by movement speed)
         float magnitude = movementSpeed * Time.fixedDeltaTime;
 
         // Apply speed multiplier if sprinting
-        if(Input.GetKey(KeyCode.LeftShift)) {
+        if(Input.GetKey(KeyCode.LeftShift)) 
+        {
             magnitude *= sprintMultiplier;
+            moveStatus *= 2;
         }
 
         // Apply movement
@@ -132,7 +157,7 @@ public class Actor : MonoBehaviour
         Vector2 direction = movement.GetAnimation(this);
 
         // Generate proper animations bsed on movement (on x-z plane)
-        animationController.UpdateAnims(direction);
+        animationController.UpdateAnims(direction, moveStatus, inTopView);
     }
 
     /// <summary>
@@ -141,6 +166,11 @@ public class Actor : MonoBehaviour
     public void CheckInteraction()
     {
         interactionController.CheckInteraction();
+    }
+
+    public void SetTopView(bool isTop)
+    {
+        inTopView = isTop;
     }
 
     /// <summary>
@@ -167,6 +197,9 @@ public class Actor : MonoBehaviour
     {
         gameObject.SetActive(active);
         interactionController.enabled = active;
-        ghostCamera.enabled = active;
+
+        // Re-enable ghost camera (for 3D perspective only)
+        if(perspective.cameraView.Equals(CameraController.CameraViews.THIRD_PERSON)) 
+            ghostCamera.enabled = active;
     }
 }
