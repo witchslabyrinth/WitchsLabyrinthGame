@@ -20,7 +20,7 @@ public class CameraZoomController : MonoBehaviour
     void Update()
     {
         float ScrollWheelChange = Input.GetAxis("Mouse ScrollWheel");
-        if (GetComponent<CameraFollow>().GetInspectMode() == 1 && ScrollWheelChange != 0)
+        if (GetComponent<CameraFollow>().inspectMode == 1 && ScrollWheelChange != 0)
         {                                                                       //If the scrollwheel has changed
             float R = ScrollWheelChange * 5;                                    //The radius from current camera
             float PosX = cam.transform.eulerAngles.x + 90;              //Get up and down

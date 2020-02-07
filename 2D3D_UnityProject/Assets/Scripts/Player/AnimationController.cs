@@ -42,7 +42,7 @@ public class AnimationController : MonoBehaviour
     /// Update animation parameters
     /// </summary>
     /// <param name="movement">Unit-vector representing movement in form (x, z)</param>
-    public void UpdateAnims(Vector2 movement, float currSpeed, bool top)
+    public void UpdateAnims(Vector2 movement)
     {
         // If player is not moving, use values from last non-zero movement input (so we maintian direction after stopping)
         if (movement == Vector2.zero)
@@ -58,8 +58,7 @@ public class AnimationController : MonoBehaviour
         // Set animation values
         anim.SetFloat("MoveX", movement.x);
         anim.SetFloat("MoveY", movement.y);
-        anim.SetFloat("Speed", currSpeed);
-        anim.SetBool("TopCam", top);
+        anim.SetFloat("Speed", 0);
     }
 
     private void LateUpdate()

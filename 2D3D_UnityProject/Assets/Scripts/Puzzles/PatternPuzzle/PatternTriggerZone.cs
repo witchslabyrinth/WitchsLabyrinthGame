@@ -34,4 +34,6 @@ public class PatternTriggerZone : MonoBehaviour
         Debug.Log("Out of range of Pattern Puzzle");
 
     }
+
+    
 }

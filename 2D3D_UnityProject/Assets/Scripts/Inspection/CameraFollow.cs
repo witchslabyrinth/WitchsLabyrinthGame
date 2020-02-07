@@ -7,24 +7,23 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    [SerializeField]
-    private int inspectMode = 0; // 0 is not in inspect mode, 1 is in inspect mode
+    public int inspectMode = 0; // 0 is not in inspect mode, 1 is in inspect mode
 
     /// <summary>
     /// ID of object currently being inspected
     /// -1 when no object selected
     /// </summary>
-    private int objectIndex = -1;
+    public int objectIndex = -1;
 
-    // /// <summary>
-    // /// Store the position of the camera before inspecting
-    // /// </summary>
-    // private Vector3 startCamPos;
+    /// <summary>
+    /// Store the position of the camera before inspecting
+    /// </summary>
+    private Vector3 startCamPos;
 
-    // /// <summary>
-    // /// Store the rotation of the camera before inspecting
-    // /// </summary>
-    // private Quaternion startCamRot;
+    /// <summary>
+    /// Store the rotation of the camera before inspecting
+    /// </summary>
+    private Quaternion startCamRot;
 
     /// <summary>
     /// store the positino of the inspectable object before inspecting
@@ -42,16 +41,7 @@ public class CameraFollow : MonoBehaviour
 
     private GameObject inspectObj;
 
-    [SerializeField]
-    private GameObject inspectLoc;
-
-    [SerializeField]
-    private float moveTime = 1;
-
     int cameraSpeed = 30; //use this to control camera move speed
-
-    [SerializeField]
-    private GameObject inspectCanvas;
 
     void Update()
     {
@@ -66,26 +56,25 @@ public class CameraFollow : MonoBehaviour
                 if (inspectObj.GetComponent<PreviewObjectFunctionality>() != null)
                 {
                     inspectMode = 1; //change to 1 (enter inspect mode)
-                    objectIndex = inspectObj.GetComponent<PreviewObjectFunctionality>().GetIndex();
+                    objectIndex = inspectObj.GetComponent<PreviewObjectFunctionality>().index;
 
                     startObjPos = inspectObj.transform.position;
                     startObjRot = inspectObj.transform.rotation;
 
-                    // startCamPos = transform.position;
-                    // startCamRot = transform.rotation;
+                    startCamPos = transform.position;
+                    startCamRot = transform.rotation;
 
                     var FollowPos = hit.transform; //what to rotate to if raycast hit an object
 
-                    // rotTarget = Quaternion.LookRotation(FollowPos.position - transform.position); //set up the smooth interval that Quaternion.RotateTowards uses later as an endpoint 
-                    inspectObj.GetComponent<PreviewObjectFunctionality>().MoveToCamera(inspectLoc.transform.position, moveTime);
+                    rotTarget = Quaternion.LookRotation(FollowPos.position - transform.position); //set up the smooth interval that Quaternion.RotateTowards uses later as an endpoint 
                 }
             }
         }
 
-        // if (inspectMode == 1)
-        // {
-        //     transform.rotation = Quaternion.RotateTowards(transform.rotation, rotTarget, Time.deltaTime * cameraSpeed); //point to rotate to at each update/frame
-        // }
+        if (inspectMode == 1)
+        {
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, rotTarget, Time.deltaTime * cameraSpeed); //point to rotate to at each update/frame
+        }
 
         if (Input.GetKeyDown(KeyCode.Space) & inspectMode == 1)
         {
@@ -99,9 +88,7 @@ public class CameraFollow : MonoBehaviour
 
             if(inspectMode == 1)
             {
-                inspectMode = 0;
-                objectIndex = -1;
-                inspectObj.GetComponent<PreviewObjectFunctionality>().ResetObjectInstant();
+                ResetCamAndObj();
             }
 
             gameObject.SetActive(false);
@@ -112,31 +99,9 @@ public class CameraFollow : MonoBehaviour
     {
         inspectMode = 0;
         objectIndex = -1;
-        // transform.position = startCamPos;
-        // transform.rotation = startCamRot;
-        // inspectObj.transform.position = startObjPos;
-        // inspectObj.transform.rotation = startObjRot;
-
-        inspectObj.GetComponent<PreviewObjectFunctionality>().ResetObject(moveTime);
-    }
-
-    public int GetInspectMode()
-    {
-        return inspectMode;
-    }
-
-    public int GetObjectIndex()
-    {
-        return objectIndex;
-    }
-
-    private void OnEnable()
-    {
-        inspectCanvas.SetActive(true);
-    }
-    
-    private void OnDisable()
-    {
-        inspectCanvas.SetActive(false);
+        transform.position = startCamPos;
+        transform.rotation = startCamRot;
+        inspectObj.transform.position = startObjPos;
+        inspectObj.transform.rotation = startObjRot;
     }
 }

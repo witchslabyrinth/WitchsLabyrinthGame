@@ -5,90 +5,37 @@ using UnityEngine;
 //allows an interactable object to be rotated in 3 dimensions
 public class PreviewObjectFunctionality : MonoBehaviour
 {
-    /// <summary>
-    /// Mouse attributes
-    /// </summary>
-    private Vector3 mPrevPos;
-    private Vector3 mPosDelta;
+    Vector3 mPrevPos = Vector3.zero;
+    Vector3 mPosDelta = Vector3.zero;
 
     [SerializeField]
     private Camera linkedInspectCam;
 
-    [SerializeField]
-    private int index;
+    public int index;
 
-    [SerializeField]
-    private float rotationSpeed = 0.25f;
-
-    /// <summary>
-    /// Initial object location and rotation
-    /// </summary>
-    private Vector3 initPos;
-
-    private Quaternion initRot;
-
-    private void Start()
+    void Update()
     {
-        mPrevPos = Vector3.zero;
-        mPosDelta = Vector3.zero;
-
-        initPos = transform.position;
-        initRot = transform.rotation;
-    }
-
-    private void Update()
-    {
-        if (Input.GetMouseButton(0) && linkedInspectCam.GetComponent<CameraFollow>().GetObjectIndex() == index)
+        if (Input.GetMouseButton(0) && linkedInspectCam.GetComponent<CameraFollow>().objectIndex == index) 
         {
+            RaycastHit hit;
 
-            mPosDelta = Input.mousePosition - mPrevPos;
-            Vector3 angle = mPosDelta * rotationSpeed;
+            Ray ray = linkedInspectCam.ScreenPointToRay(Input.mousePosition);
 
-            transform.Rotate(Vector3.up, -Vector3.Dot(angle, linkedInspectCam.transform.right), Space.World); //project left and right mouse movement onto object
+            if (Physics.Raycast(ray, out hit, 10000.0f))
+            {
+                if (hit.collider.gameObject == gameObject) 
+                {
+                    if (hit.collider.gameObject.GetComponent<PreviewObjectFunctionality>().enabled == true)//check that it's an interactable object
+                    {
+                        mPosDelta = Input.mousePosition - mPrevPos;
 
-            transform.Rotate(linkedInspectCam.transform.right, Vector3.Dot(angle, linkedInspectCam.transform.up), Space.World); //project other mouse movement onto object
+                        transform.Rotate(Vector3.up, -Vector3.Dot(mPosDelta, linkedInspectCam.transform.right), Space.World); //project left and right mouse movement onto object
 
+                        transform.Rotate(linkedInspectCam.transform.right, Vector3.Dot(mPosDelta, linkedInspectCam.transform.up), Space.World); //project other mouse movement onto object
+                    }
+                }
+            }
         }
         mPrevPos = Input.mousePosition;
-    }
-
-    public int GetIndex()
-    {
-        return index;
-    }
-
-    public void MoveToCamera(Vector3 endPos, float moveTime)
-    {
-        StartCoroutine(MoveObjectCoroutine(transform.position, endPos, transform.rotation, transform.rotation, moveTime));
-    }
-
-    public void ResetObject(float moveTime)
-    {
-        StartCoroutine(MoveObjectCoroutine(transform.position, initPos, transform.rotation, initRot, moveTime));
-    }
-
-    public void ResetObjectInstant()
-    {
-        transform.position = initPos;
-        transform.rotation = initRot;
-    }
-
-    private IEnumerator MoveObjectCoroutine(Vector3 startPos, Vector3 endPos, Quaternion startRot, Quaternion endRot, float moveTime)
-    {
-        for (float time = 0; time < moveTime; time += Time.deltaTime)
-        {
-            float curveEval = time / moveTime;
-
-            Vector3 newPos = Vector3.Lerp(startPos, endPos, curveEval);
-            transform.position = newPos;
-
-            Quaternion newRot = Quaternion.Lerp(startRot, endRot, curveEval);
-            transform.rotation = newRot;
-
-            yield return null;
-        }
-
-        // Unlikely last loop of curve will land on exactly openCloseTime so set final position
-        transform.position = endPos;
     }
 }

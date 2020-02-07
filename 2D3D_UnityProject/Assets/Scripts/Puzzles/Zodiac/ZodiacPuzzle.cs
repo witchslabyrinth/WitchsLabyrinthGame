@@ -64,8 +64,6 @@ public class ZodiacPuzzle : MonoBehaviour
     [SerializeField]
     private GameObject zodCamera;
 
-    private bool solved = false;
-
     //more probably bad stuff
     //public PlayerController player;
 
@@ -86,7 +84,6 @@ public class ZodiacPuzzle : MonoBehaviour
 
         // Set control to first (outermost) disk in puzzle
         currentDisk = disks[0];
-        currentDisk.GlowCurrentSymbol(true);
         // currentDisk.PieceInOut(ZodiacPuzzlePiece.ZodiacPuzzlePiecePosition.Out);
 
         currentRound = 1;
@@ -131,7 +128,6 @@ public class ZodiacPuzzle : MonoBehaviour
     {
         // Get disk index
         int diskIndex = disks.IndexOf(currentDisk);
-        currentDisk.GlowCurrentSymbol(false);
 
         try {
             // Select next disk (moving towards center)
@@ -150,7 +146,6 @@ public class ZodiacPuzzle : MonoBehaviour
             return;
         }
 
-        currentDisk.GlowCurrentSymbol(true);
         disks[diskIndex].PieceInOut(ZodiacPuzzlePiece.ZodiacPuzzlePiecePosition.In);
     }
 
@@ -195,8 +190,7 @@ public class ZodiacPuzzle : MonoBehaviour
         }
         else
         {
-            if (!solved)
-                PuzzleSolved();
+            PuzzleSolved();
         }
     }
 
@@ -207,7 +201,6 @@ public class ZodiacPuzzle : MonoBehaviour
         // center.PieceInOut(ZodiacPuzzlePiece.ZodiacPuzzlePiecePosition.Out);
         zodiacDoor.Open();
         doorMove.Post(gameObject); //Wwise
-        solved = true;
     }
 
     void OnEnable()

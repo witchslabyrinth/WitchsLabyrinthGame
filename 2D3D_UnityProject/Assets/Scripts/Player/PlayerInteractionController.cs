@@ -58,16 +58,16 @@ public class PlayerInteractionController : MonoBehaviour
     /// </summary>
     private bool inInspectZone;
 
-    private GameObject inspectCam;
-
-    /// <summary>
-    /// True if player is in the pattern puzzle zone
-    /// </summary>
     private bool inPatternZone;
+
 
     private PatternPuzzle patternPuzzle;
 
     private GameObject patternCam;
+
+    private GameObject inspectCam;
+
+    
 
     void Start()
     {
@@ -91,18 +91,18 @@ public class PlayerInteractionController : MonoBehaviour
                 LiarGameManager.Instance().StartConversation(dialoguePartner);
 
             }
-            else if (inZodiacZone)
-            {
-                // Enable and shift focus to Zodiac puzzle
-                zodiacPuzzle.enabled = true;
-                zodiacCam.SetActive(true);
-
-            }
             else if (inPatternZone)
             {
                 // Enable and shift focus to Zodiac puzzle
                 patternPuzzle.enabled = true;
                 patternCam.SetActive(true);
+
+            }
+            else if (inZodiacZone)
+            {
+                // Enable and shift focus to Zodiac puzzle
+                zodiacPuzzle.enabled = true;
+                zodiacCam.SetActive(true);
 
             }
             else if (nearbyFish)
@@ -199,4 +199,7 @@ public class PlayerInteractionController : MonoBehaviour
         // Show/hide interact canvas
         interactCanvas.SetActive(withinZone);
     }
+
+    
+
 }
