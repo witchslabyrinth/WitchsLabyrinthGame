@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using System.Collections;
+using System.Security.Cryptography;
 using UnityEngine.UI;
 
 public class FadeEffect : MonoBehaviour
@@ -61,6 +62,7 @@ public class FadeEffect : MonoBehaviour
 
         // Ensure we hit target
         SetAlpha(fadeInstance, target);
+        Destroy(fadeInstance);
     }
 
     private void SetAlpha(Graphic graphic, float alpha)
