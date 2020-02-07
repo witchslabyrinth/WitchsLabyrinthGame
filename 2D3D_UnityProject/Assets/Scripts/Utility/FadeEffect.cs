@@ -62,7 +62,6 @@ public class FadeEffect : MonoBehaviour
 
         // Ensure we hit target
         SetAlpha(fadeInstance, target);
-        Destroy(fadeInstance);
     }
 
     private void SetAlpha(Graphic graphic, float alpha)
