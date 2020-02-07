@@ -108,7 +108,8 @@ public class PlayerInteractionController : MonoBehaviour
             else if (nearbyFish)
             {
                 // Feed nearby fish
-                nearbyFish.Feed();
+                //nearbyFish.Feed();
+                KoiFishPuzzle.Instance.FeedFish(nearbyFish);
 
                 // Hide interact canvas and return without disabling actor
                 interactCanvas.SetActive(false);
