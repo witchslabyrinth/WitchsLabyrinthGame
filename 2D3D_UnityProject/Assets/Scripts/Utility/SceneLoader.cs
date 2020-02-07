@@ -9,6 +9,7 @@ using UnityEngine.SceneManagement;
 public enum SCENE_ID
 {
     MAIN_MENU,
+    INTRO,
     UKIYOE,
     TELEDOOR,
 }
@@ -24,6 +25,7 @@ public class SceneLoader
     private const string MainMenuScene = "MainMenu";
     private const string UkiyoeScene = "Ukiyo-e Environment";
     private const string TeledoorScene = "Puzzles/TeledoorPuzzle";
+    private const string IntroScene = "Intro";
 
     /// <summary>
     /// Dictionary associating scene ID with file path (for ease of use when calling LoadScene()). Scene key/value pair must be in the dictionary to allow loading
@@ -31,6 +33,7 @@ public class SceneLoader
     private static Dictionary<SCENE_ID, string> SceneNameDictionary = new Dictionary<SCENE_ID,string>()
     {
         {SCENE_ID.MAIN_MENU, MainMenuScene},
+        {SCENE_ID.INTRO, IntroScene},
         {SCENE_ID.UKIYOE, UkiyoeScene},
         {SCENE_ID.TELEDOOR, TeledoorScene},
     };

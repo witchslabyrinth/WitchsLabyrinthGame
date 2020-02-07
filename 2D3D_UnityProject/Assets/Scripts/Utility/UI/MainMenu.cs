@@ -25,7 +25,7 @@ public class MainMenu : MonoBehaviour
     void Start()
     {
         // Set up button events
-        playButton.onClick.AddListener(() => SceneLoader.LoadScene(SCENE_ID.UKIYOE));
+        playButton.onClick.AddListener(() => SceneLoader.LoadScene(SCENE_ID.INTRO));
         quitButton.onClick.AddListener(() => Application.Quit());
         // TODO: implement Settings button functionality
     }
