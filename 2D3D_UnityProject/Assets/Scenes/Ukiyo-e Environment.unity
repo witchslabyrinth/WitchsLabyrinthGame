@@ -898,8 +898,7 @@ MonoBehaviour:
   data:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: fa0917a549e048b46850230a04ffcbe2,
-      type: 2}
+    WwiseObjectReference: {fileID: 0}
   useCallbacks: 0
   Callbacks: []
   playingId: 0
@@ -6988,6 +6987,61 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7338606176312312768, guid: a35781147a94058489b00fbdd5e890fc,
+        type: 3}
+      propertyPath: playerReaction.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5269282643760255570, guid: a35781147a94058489b00fbdd5e890fc,
+        type: 3}
+      propertyPath: raiseLowerTime
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5269282643760255570, guid: a35781147a94058489b00fbdd5e890fc,
+        type: 3}
+      propertyPath: rotateTime
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5269282644067777749, guid: a35781147a94058489b00fbdd5e890fc,
+        type: 3}
+      propertyPath: raiseLowerTime
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5269282644067777749, guid: a35781147a94058489b00fbdd5e890fc,
+        type: 3}
+      propertyPath: rotateTime
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5269282644423356979, guid: a35781147a94058489b00fbdd5e890fc,
+        type: 3}
+      propertyPath: raiseLowerTime
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5269282644423356979, guid: a35781147a94058489b00fbdd5e890fc,
+        type: 3}
+      propertyPath: rotateTime
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5269282644988738123, guid: a35781147a94058489b00fbdd5e890fc,
+        type: 3}
+      propertyPath: raiseLowerTime
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5269282644988738123, guid: a35781147a94058489b00fbdd5e890fc,
+        type: 3}
+      propertyPath: rotateTime
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5269282645515024953, guid: a35781147a94058489b00fbdd5e890fc,
+        type: 3}
+      propertyPath: raiseLowerTime
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5269282645515024953, guid: a35781147a94058489b00fbdd5e890fc,
+        type: 3}
+      propertyPath: rotateTime
+      value: 0.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a35781147a94058489b00fbdd5e890fc, type: 3}
@@ -24730,7 +24784,7 @@ MonoBehaviour:
   decodeBank: 0
   loadAsynchronous: 0
   saveDecodedBank: 0
-  unloadTriggerList: 958ca0ea
+  unloadTriggerList: 
   bankNameInternal: 
   valueGuidInternal: 
 --- !u!1001 &1219356904
