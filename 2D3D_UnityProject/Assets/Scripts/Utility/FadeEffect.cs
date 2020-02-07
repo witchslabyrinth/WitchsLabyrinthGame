@@ -14,11 +14,6 @@ public class FadeEffect : MonoBehaviour
 
     public static float duration = 1f;
 
-    void Start()
-    {
-        FadeIn();
-    }
-
     /// <summary>
     /// Fades from black screen to transparent
     /// </summary>
