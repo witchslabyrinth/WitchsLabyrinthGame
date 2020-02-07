@@ -60,6 +60,15 @@ public class PlayerInteractionController : MonoBehaviour
 
     private GameObject inspectCam;
 
+    /// <summary>
+    /// True if player is in the pattern puzzle zone
+    /// </summary>
+    private bool inPatternZone;
+
+    private PatternPuzzle patternPuzzle;
+
+    private GameObject patternCam;
+
     void Start()
     {
         if (!TryGetComponent(out actor))
@@ -87,6 +96,13 @@ public class PlayerInteractionController : MonoBehaviour
                 // Enable and shift focus to Zodiac puzzle
                 zodiacPuzzle.enabled = true;
                 zodiacCam.SetActive(true);
+
+            }
+            else if (inPatternZone)
+            {
+                // Enable and shift focus to Zodiac puzzle
+                patternPuzzle.enabled = true;
+                patternCam.SetActive(true);
 
             }
             else if (nearbyFish)
@@ -170,6 +186,17 @@ public class PlayerInteractionController : MonoBehaviour
             inspectCam = camInspect;
         }
 
+        interactCanvas.SetActive(withinZone);
+    }
+
+    public void SetInPatternZone(bool withinZone, PatternPuzzle patPuz, GameObject patCam)
+    {
+        inPatternZone = withinZone;
+        patternPuzzle = patPuz;
+        patternCam = patCam;
+
+        // TODO: find a way to hide canvas when swapping to actor out of interact zone
+        // Show/hide interact canvas
         interactCanvas.SetActive(withinZone);
     }
 }

@@ -58,6 +58,10 @@ public class ZodiacDisk : ZodiacPuzzlePiece
     public SelectedSymbol selectedSymbol;
     public delegate void SelectedSymbol();
 
+    [SerializeField]
+    private Material iconMaterial;
+    private List<SpriteRenderer> iconRenderers = new List<SpriteRenderer>();
+
     private void Start()
     {
         // Print error if no correct symbol assigned for this disk
@@ -132,6 +136,8 @@ public class ZodiacDisk : ZodiacPuzzlePiece
             instance.gameObject.transform.Rotate(0, zodiacOffsetY, 0);
             instance.sprite = symbol;
             instance.name = symbol.name;
+            instance.material = iconMaterial;
+            iconRenderers.Add(instance);
 
             // Rotate pivot around ring to position of next symbol
             Vector3 localForward = transform.worldToLocalMatrix.MultiplyVector(transform.forward);
@@ -169,7 +175,7 @@ public class ZodiacDisk : ZodiacPuzzlePiece
         Quaternion startRotation = transform.localRotation; 
 
         // Increment time each frame (scaled by rotationSpeed)
-        for(float t=0; t<1; t += rotationSpeed * Time.fixedDeltaTime) {
+        for(float t=0; t<1; t += rotationSpeed * Time.deltaTime) {
             // Update rotation
             Quaternion rotation = Quaternion.Lerp(startRotation, targetRotation, t);
             transform.localRotation = rotation;
@@ -194,27 +200,35 @@ public class ZodiacDisk : ZodiacPuzzlePiece
     /// <param name="direction">Rotation direction</param>
     private void UpdateSelectedSymbol(ZodiacPuzzle.Direction direction)
     {
+        GlowCurrentSymbol(false);
         // Update selected symbol index
-        if (direction.Equals(ZodiacPuzzle.Direction.CLOCKWISE)) {
+        if (direction.Equals(ZodiacPuzzle.Direction.CLOCKWISE))
+        {
             // Wrap around to first symbol
-            if (selectedSymbolIndex >= symbols.Count - 1) {
+            if (selectedSymbolIndex >= symbols.Count - 1)
+            {
                 selectedSymbolIndex = 0;
             }
             // or increment normally
-            else {
+            else
+            {
                 selectedSymbolIndex++;
             }
         }
-        else if (direction.Equals(ZodiacPuzzle.Direction.COUNTER_CLOCKWISE)) {
+        else if (direction.Equals(ZodiacPuzzle.Direction.COUNTER_CLOCKWISE))
+        {
             // Wrap around to last symbol
-            if (selectedSymbolIndex == 0) {
+            if (selectedSymbolIndex == 0)
+            {
                 selectedSymbolIndex = symbols.Count-1;
             }
             // or decrement normally
-            else {
+            else
+            {
                 selectedSymbolIndex--;
             }
         }
+        GlowCurrentSymbol(true);
 
         // Fire symbol selected event
         selectedSymbol?.Invoke();
@@ -227,5 +241,14 @@ public class ZodiacDisk : ZodiacPuzzlePiece
     public bool Correct()
     {
         return symbols[selectedSymbolIndex].Equals(correctSymbols[puzzle.currentRound - 1]);
+    }
+
+    /// <summary>
+    /// Turns on/off the glow effect on the currently selected icon
+    /// </summary>
+    /// <param name="glow"></param>
+    public void GlowCurrentSymbol(bool glow)
+    {
+        iconRenderers[selectedSymbolIndex].material.SetInt("_Glow", System.Convert.ToInt32(glow));
     }
 }
