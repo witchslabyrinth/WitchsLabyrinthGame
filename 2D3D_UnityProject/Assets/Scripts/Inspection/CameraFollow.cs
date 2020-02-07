@@ -96,7 +96,9 @@ public class CameraFollow : MonoBehaviour
 
             if(inspectMode == 1)
             {
-                ResetCamAndObj();
+                inspectMode = 0;
+                objectIndex = -1;
+                inspectObj.GetComponent<PreviewObjectFunctionality>().ResetObjectInstant();
             }
 
             gameObject.SetActive(false);

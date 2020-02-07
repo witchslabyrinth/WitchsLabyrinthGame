@@ -67,6 +67,12 @@ public class PreviewObjectFunctionality : MonoBehaviour
         StartCoroutine(MoveObjectCoroutine(transform.position, initPos, transform.rotation, initRot, moveTime));
     }
 
+    public void ResetObjectInstant()
+    {
+        transform.position = initPos;
+        transform.rotation = initRot;
+    }
+
     private IEnumerator MoveObjectCoroutine(Vector3 startPos, Vector3 endPos, Quaternion startRot, Quaternion endRot, float moveTime)
     {
         for (float time = 0; time < moveTime; time += Time.deltaTime)
