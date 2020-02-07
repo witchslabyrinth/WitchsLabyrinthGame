@@ -169,7 +169,7 @@ public class ZodiacDisk : ZodiacPuzzlePiece
         Quaternion startRotation = transform.localRotation; 
 
         // Increment time each frame (scaled by rotationSpeed)
-        for(float t=0; t<1; t += rotationSpeed * Time.fixedDeltaTime) {
+        for(float t=0; t<1; t += rotationSpeed * Time.deltaTime) {
             // Update rotation
             Quaternion rotation = Quaternion.Lerp(startRotation, targetRotation, t);
             transform.localRotation = rotation;
