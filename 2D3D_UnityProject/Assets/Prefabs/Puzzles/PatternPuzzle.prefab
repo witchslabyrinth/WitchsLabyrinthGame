@@ -106,8 +106,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectYOffset: 1.1
-  raiseLowerTime: 1
-  rotateTime: 0.5
+  raiseLowerTime: 0.5
+  rotateTime: 0.25
 --- !u!1 &3240260535570964400
 GameObject:
   m_ObjectHideFlags: 0
@@ -214,8 +214,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectYOffset: 1.1
-  raiseLowerTime: 1
-  rotateTime: 0.5
+  raiseLowerTime: 0.5
+  rotateTime: 0.25
 --- !u!1 &3240260536056336722
 GameObject:
   m_ObjectHideFlags: 0
@@ -322,8 +322,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectYOffset: 1.1
-  raiseLowerTime: 1
-  rotateTime: 0.5
+  raiseLowerTime: 0.5
+  rotateTime: 0.25
 --- !u!1 &3240260536197472088
 GameObject:
   m_ObjectHideFlags: 0
@@ -372,12 +372,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7af39e02abefb7942b46b982ce48d48f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  patCamera: {fileID: 0}
   patternCubes:
   - {fileID: 3240260536554346796}
   - {fileID: 3240260536056336724}
   - {fileID: 3240260535342657845}
   - {fileID: 3240260535570964402}
   - {fileID: 3240260537101801822}
+  patternCanvas: {fileID: 0}
   initalCube: 2
 --- !u!1 &3240260536554346794
 GameObject:
@@ -485,8 +487,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectYOffset: 1.1
-  raiseLowerTime: 1
-  rotateTime: 0.5
+  raiseLowerTime: 0.5
+  rotateTime: 0.25
 --- !u!1 &3240260537101801820
 GameObject:
   m_ObjectHideFlags: 0
@@ -593,5 +595,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectYOffset: 1.1
-  raiseLowerTime: 1
-  rotateTime: 0.5
+  raiseLowerTime: 0.5
+  rotateTime: 0.25
