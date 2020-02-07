@@ -86,6 +86,7 @@ public class ZodiacPuzzle : MonoBehaviour
 
         // Set control to first (outermost) disk in puzzle
         currentDisk = disks[0];
+        currentDisk.GlowCurrentSymbol(true);
         // currentDisk.PieceInOut(ZodiacPuzzlePiece.ZodiacPuzzlePiecePosition.Out);
 
         currentRound = 1;
@@ -130,6 +131,7 @@ public class ZodiacPuzzle : MonoBehaviour
     {
         // Get disk index
         int diskIndex = disks.IndexOf(currentDisk);
+        currentDisk.GlowCurrentSymbol(false);
 
         try {
             // Select next disk (moving towards center)
@@ -148,6 +150,7 @@ public class ZodiacPuzzle : MonoBehaviour
             return;
         }
 
+        currentDisk.GlowCurrentSymbol(true);
         disks[diskIndex].PieceInOut(ZodiacPuzzlePiece.ZodiacPuzzlePiecePosition.In);
     }
 
