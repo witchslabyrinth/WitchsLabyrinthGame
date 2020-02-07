@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: ZodiacSprite
   m_Shader: {fileID: 4800000, guid: 3886181a78b225b47a0e907bfd0fc46d, type: 3}
-  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA _GLOW_ON
+  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -63,7 +63,7 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _Glow: 1
+    - _Glow: 0
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1

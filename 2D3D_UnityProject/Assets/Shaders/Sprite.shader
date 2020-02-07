@@ -3,7 +3,7 @@
 	Properties{
 		_Color("Glow Color", Color) = (0, 0, 0, 1)
 		_MainTex("Texture", 2D) = "white" {}
-		[Toggle]_Glow("Glow", Float) = 0
+		[Toggle]_Glow("Glow", Int) = 0
 	}
 
 	SubShader{
@@ -30,7 +30,7 @@
 			float4 _MainTex_ST;
 
 			fixed4 _Color;
-			float _Glow;
+			int _Glow;
 
 			struct appdata {
 				float4 vertex : POSITION;
