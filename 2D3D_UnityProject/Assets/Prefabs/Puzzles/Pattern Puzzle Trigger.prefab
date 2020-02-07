@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7338606176232069603}
   - component: {fileID: 4251591070161632234}
   m_Layer: 0
-  m_Name: Inspection Camera
+  m_Name: Pattern Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -203,13 +203,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4a4b4f13a6e1f1459749d85fd63db56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  puzzleScript: {fileID: 5269282644547517500}
-  camPattern: {fileID: 7338606176232069601}
+  puzzleScript: {fileID: 0}
+  camPattern: {fileID: 0}
   playerReaction:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 9b50bf9610cf7e544a5f03980ed958e4,
-      type: 2}
+    WwiseObjectReference: {fileID: 0}
 --- !u!1001 &7338606176196027239
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -236,7 +235,7 @@ PrefabInstance:
         type: 3}
       propertyPath: patCamera
       value: 
-      objectReference: {fileID: 7338606176232069601}
+      objectReference: {fileID: 0}
     - target: {fileID: 3240260536197472090, guid: 61cc08266f7775d41a55b2ce2ea15439,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -315,15 +314,3 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7338606176196027239}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5269282644547517500 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3240260536197472091, guid: 61cc08266f7775d41a55b2ce2ea15439,
-    type: 3}
-  m_PrefabInstance: {fileID: 7338606176196027239}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7af39e02abefb7942b46b982ce48d48f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
