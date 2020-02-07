@@ -50,6 +50,9 @@ public class CameraFollow : MonoBehaviour
 
     int cameraSpeed = 30; //use this to control camera move speed
 
+    [SerializeField]
+    private GameObject inspectCanvas;
+
     void Update()
     {
         //Cursor.lockState = CursorLockMode.None;
@@ -125,5 +128,15 @@ public class CameraFollow : MonoBehaviour
     public int GetObjectIndex()
     {
         return objectIndex;
+    }
+
+    private void OnEnable()
+    {
+        inspectCanvas.SetActive(true);
+    }
+    
+    private void OnDisable()
+    {
+        inspectCanvas.SetActive(false);
     }
 }
