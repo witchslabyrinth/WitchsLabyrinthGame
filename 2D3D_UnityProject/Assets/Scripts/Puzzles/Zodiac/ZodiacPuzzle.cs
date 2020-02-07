@@ -64,6 +64,8 @@ public class ZodiacPuzzle : MonoBehaviour
     [SerializeField]
     private GameObject zodCamera;
 
+    private bool solved = false;
+
     //more probably bad stuff
     //public PlayerController player;
 
@@ -101,7 +103,7 @@ public class ZodiacPuzzle : MonoBehaviour
         }
 
         //TODO: Remove this when it's no longer necessary
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             // for ukiyoe scene
             // mainCam.SetActive(true);
@@ -190,7 +192,8 @@ public class ZodiacPuzzle : MonoBehaviour
         }
         else
         {
-            PuzzleSolved();
+            if (!solved)
+                PuzzleSolved();
         }
     }
 
@@ -201,6 +204,7 @@ public class ZodiacPuzzle : MonoBehaviour
         // center.PieceInOut(ZodiacPuzzlePiece.ZodiacPuzzlePiecePosition.Out);
         zodiacDoor.Open();
         doorMove.Post(gameObject); //Wwise
+        solved = true;
     }
 
     void OnEnable()
