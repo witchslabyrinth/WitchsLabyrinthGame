@@ -11,6 +11,9 @@ public class PatternPuzzle : MonoBehaviour
     private List<PatternCube> patternCubes;
 
     [SerializeField]
+    private GameObject patternCanvas;
+
+    [SerializeField]
     [Tooltip("The cube that will start selected when the scene loads. 0 for leftmost cube, 4 for rightmost cube.")]
     [Range(0, 4)]
     private int initalCube;
@@ -69,11 +72,18 @@ public class PatternPuzzle : MonoBehaviour
     private void OnEnable()
     {
         CurrentCube = _currentCube;
+
+        patternCanvas.SetActive(true);
     }
 
     public enum Direction
     {
         FORWARD = 1,
         BACKWARD = -1
+    }
+
+    private void OnDisable()
+    {
+        patternCanvas.SetActive(false);
     }
 }
