@@ -16,6 +16,14 @@ public class KoiFishPuzzle : Singleton<KoiFishPuzzle>
     private KoiFish nextFishToFeed;
 
     /// <summary>
+    /// Number of next fish to be fed
+    /// </summary>
+    private int currentFishNumber
+    {
+        get { return koiFishFeedingOrder.IndexOf(nextFishToFeed) + 1; }
+    }
+
+    /// <summary>
     /// Amount of time remaining to feed the fish - if this reaches 0 the puzzle is reset
     /// </summary>
     private float timeRemaining;
@@ -70,6 +78,10 @@ public class KoiFishPuzzle : Singleton<KoiFishPuzzle>
     public void FeedFish(KoiFish fish)
     {
         Debug.LogFormat("Feeding fish {0}", fish.name);
+
+        // Feed fish (pass order it was fed in)
+        fish.Feed(currentFishNumber);
+
         // Reset puzzle if player fed wrong fish
         if (fish != nextFishToFeed)
         {

@@ -21,12 +21,16 @@ public class MainMenu : MonoBehaviour
     /// </summary>
     [SerializeField] private Button quitButton;
 
+    [SerializeField] private FadeEffect fadeEffect;
+
     // Start is called before the first frame update
     void Start()
     {
         // Set up button events
-        playButton.onClick.AddListener(() => SceneLoader.LoadScene(SCENE_ID.UKIYOE));
+        playButton.onClick.AddListener(() => SceneLoader.LoadScene(SCENE_ID.INTRO));
         quitButton.onClick.AddListener(() => Application.Quit());
         // TODO: implement Settings button functionality
+
+        //fadeEffect.FadeIn();
     }
 }
