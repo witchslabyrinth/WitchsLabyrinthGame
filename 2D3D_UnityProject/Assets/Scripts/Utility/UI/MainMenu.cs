@@ -31,6 +31,6 @@ public class MainMenu : MonoBehaviour
         quitButton.onClick.AddListener(() => Application.Quit());
         // TODO: implement Settings button functionality
 
-        //fadeEffect.FadeIn();
+        fadeEffect.FadeIn();
     }
 }

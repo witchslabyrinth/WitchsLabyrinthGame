@@ -55,7 +55,14 @@ public class PauseMenu : Singleton<PauseMenu>
     {
         // Set up button events
         resumeButton.onClick.AddListener(() => SetPaused(false));
-        quitButton.onClick.AddListener(() => SceneLoader.LoadScene(SCENE_ID.MAIN_MENU));
+        quitButton.onClick.AddListener(() =>
+        {
+            // Restore timescale to 1
+            Time.timeScale = 1;
+
+            // Load MainMenu scene
+            SceneLoader.LoadScene(SCENE_ID.MAIN_MENU);
+        });
 
         // Muffle/unmuffle music on pause/unpause
         onSetGamePaused += (paused =>
