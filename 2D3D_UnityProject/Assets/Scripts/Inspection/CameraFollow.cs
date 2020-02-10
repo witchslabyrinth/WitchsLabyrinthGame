@@ -45,7 +45,6 @@ public class CameraFollow : MonoBehaviour
 
     void Update()
     {
-        //Cursor.lockState = CursorLockMode.None;
         GameManager.SetCursorActive(true);
         if (Input.GetMouseButton(0) & inspectMode == 0) //check for left click
         {

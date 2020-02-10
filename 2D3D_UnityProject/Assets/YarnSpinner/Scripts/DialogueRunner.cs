@@ -179,6 +179,8 @@ namespace Yarn.Unity
             // VICTOR - DON'T YOU DARE MISS THIS FOR LATER
             Actor player = PlayerController.Instance.GetPlayer();
             player.Enable();
+            GameManager.SetCursorActive(false);
+            Camera.current.gameObject.SetActive(false);
         }
 
         private void HandleOptions(OptionSet options)
