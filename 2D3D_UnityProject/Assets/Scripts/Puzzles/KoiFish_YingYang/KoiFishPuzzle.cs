@@ -5,6 +5,17 @@ using UnityEngine.UI;
 
 public class KoiFishPuzzle : Singleton<KoiFishPuzzle>
 {
+    //n8-bit 2/11/2020
+    public void cheat_it_up()
+    {
+        foreach(KoiFish i in koiFishFeedingOrder)
+        {
+            Debug.Log("Dev cheat activated! Feeding Fish.");
+            FeedFish(i);
+        }
+    }
+
+
     /// <summary>
     /// Proper order to feed the fish in (may not include all fish in the pond).
     /// </summary>
