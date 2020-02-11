@@ -113,7 +113,7 @@ public class PauseMenu : Singleton<PauseMenu>
     {
         SetPaused(!paused);
 
-        // TODO: move this to SetPaused()
+        // TODO: do the OnMenuExit() sound too
         OnMenuEnter.Post(gameObject);
     }
 
