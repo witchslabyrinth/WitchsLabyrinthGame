@@ -94,42 +94,44 @@ public class PlayerController : Singleton<PlayerController>
 
     private void Update()
     {
-        // Toggle currently-controlled actor between oliver/cat
-        if(canSwap && Input.GetKeyDown(KeyCode.Tab))
-        {
-            Swap();
-            if (player.Equals(oliver))
-                oliverSwitchSound.Post(gameObject); //Play Oliver switch sound
-            else if (player.Equals(cat))
-                catSwitchSound.Post(gameObject); //Play Cat switch sound
-
-        }
-
-        // Input for telling Friend actor to follow/stay
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            FriendCommand();
-            if (player.Equals(oliver))
-                catStaySound.Post(gameObject); //Play Cat stay sound
-            else if (player.Equals(cat))
-                oliverStaySound.Post(gameObject); //Play Oliver stay sound
-        }
-
-        // Pause menu
+        // Toggle paused/unpaused on ESC
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             PauseMenu.Instance.TogglePaused();
-
         }
-
-        // Handle interactions with other game entities
-        player.CheckInteraction();
         
-        // Update camera perspective
-        PerspectiveController.Instance.UpdatePerspective(player);
+        // Only allow actor control if game is unpaused
+        if (!PauseMenu.Instance.paused)
+        {
+            // Toggle currently-controlled actor between oliver/cat
+            if(canSwap && Input.GetKeyDown(KeyCode.Tab))
+            {
+                Swap();
+                if (player.Equals(oliver))
+                    oliverSwitchSound.Post(gameObject); //Play Oliver switch sound
+                else if (player.Equals(cat))
+                    catSwitchSound.Post(gameObject); //Play Cat switch sound
+            }
 
-        // Update camera to follow player actor
-        CameraController.Instance.CameraUpdate(player);
+            // Input for telling Friend actor to follow/stay
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                FriendCommand();
+                if (player.Equals(oliver))
+                    catStaySound.Post(gameObject); //Play Cat stay sound
+                else if (player.Equals(cat))
+                    oliverStaySound.Post(gameObject); //Play Oliver stay sound
+            }
+
+            // Handle interactions with other game entities
+            player.CheckInteraction();
+    
+            // Update camera perspective
+            PerspectiveController.Instance.UpdatePerspective(player);
+
+            // Update camera to follow player actor
+            CameraController.Instance.CameraUpdate(player);
+        }
     }
 
     /// <summary>
