@@ -4,7 +4,18 @@ using UnityEngine;
 
 public class DoorObserver : MonoBehaviour
 {
+    void cheat_it_up()
+    {
+        toObserve[doorToExitOnCheat].Exit(player);
+        Debug.Log("Dev cheat activated! Warping to exit.");
+    }
     //NOTE: This script should be attached to the "DoorList" in the "FullRoom" object of the teledoor puzzle
+
+    //This integer corresponds to a door in the list of doors observed. Since this scans the child's doors in order, it should be the same number as is shown in the hierarchy
+    [SerializeField]
+    private int doorToExitOnCheat = 0;
+    [SerializeField]
+    private GameObject player;
 
     //Observer pattern (close to it) used to aid in rotating room
     private List<TeleDoorScript> toObserve = new List<TeleDoorScript>();
@@ -28,6 +39,14 @@ public class DoorObserver : MonoBehaviour
         {
             //add this as one of its observers
             toObserve[i].addDoorObserver(this);
+        }
+    }
+
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha0) && Application.isEditor)
+        {
+            cheat_it_up();
         }
     }
 
