@@ -137,12 +137,6 @@ public class PlayerInteractionController : MonoBehaviour
             interactCanvas.SetActive(false);
             this.enabled = false;
         }
-
-        //n8-bit 2/11/2020
-        else if (Input.GetKeyDown(KeyCode.Alpha9) && nearbyFish && Application.isEditor)
-        {
-            KoiFishPuzzle.Instance.cheat_it_up();
-        }
     }
 
     /// <summary>

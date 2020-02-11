@@ -14,6 +14,7 @@ public class KoiFishPuzzle : Singleton<KoiFishPuzzle>
             FeedFish(i);
         }
     }
+    //End n8-bit 2/11/2020
 
 
     /// <summary>
@@ -80,6 +81,13 @@ public class KoiFishPuzzle : Singleton<KoiFishPuzzle>
                 //Debug.Log("Time remaining: " + timeStr);
             }
         }
+
+        //n8-bit 2/11/2020
+        if (Input.GetKeyDown(KeyCode.Alpha9) && Application.isEditor)
+        {
+            cheat_it_up();
+        }
+        //end n8-bit 2/11/2020
     }
 
     /// <summary>
