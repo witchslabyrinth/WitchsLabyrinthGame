@@ -29,10 +29,16 @@ public class PauseMenu : Singleton<PauseMenu>
     /// </summary>
     public SetPausedEvent onSetGamePaused;
 
+    [Header("Screens")]
     /// <summary>
     /// UI element containing pause menu contents
     /// </summary>
-    [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private Graphic pauseMenu;
+
+    /// <summary>
+    /// UI element containing controls
+    /// </summary>
+    [SerializeField] private Graphic controlsMenu;
 
     [Header("Buttons")]
     /// <summary>
@@ -46,6 +52,11 @@ public class PauseMenu : Singleton<PauseMenu>
     [SerializeField] private Button settingsButton;
 
     /// <summary>
+    /// Player presses this to open controls menu
+    /// </summary>
+    [SerializeField] private Button controlsButton;
+
+    /// <summary>
     /// Player presses this to quit game
     /// </summary>
     [SerializeField] private Button quitButton;
@@ -54,7 +65,34 @@ public class PauseMenu : Singleton<PauseMenu>
     void Start()
     {
         // Set up button events
+        InitializeButtons();
+        
+        // Set up game pause/unpause events
+        onSetGamePaused += (paused =>
+        {
+            // Muffle/unmuffle music on pause/unpause
+            if (paused)
+                AkSoundEngine.SetState("Menu", "InMenu");
+            else
+                AkSoundEngine.SetState("Menu", "OutOfMenu");
+
+            // Hide controls menu (whether pausing or unpausing)
+            SetControlsMenuActive(false);
+        });
+
+        // Start with the game unpaused
+        SetPaused(false);
+    }
+
+    /// <summary>
+    /// Sets up button events
+    /// </summary>
+    private void InitializeButtons()
+    {
+        // Resume button unpauses game
         resumeButton.onClick.AddListener(() => SetPaused(false));
+
+        // Quit button returns to main menu
         quitButton.onClick.AddListener(() =>
         {
             // Restore timescale to 1
@@ -63,18 +101,9 @@ public class PauseMenu : Singleton<PauseMenu>
             // Load MainMenu scene
             SceneLoader.LoadScene(SCENE_ID.MAIN_MENU);
         });
-
-        // Muffle/unmuffle music on pause/unpause
-        onSetGamePaused += (paused =>
-        {
-            if (paused)
-                AkSoundEngine.SetState("Menu", "InMenu");
-            else
-                AkSoundEngine.SetState("Menu", "OutOfMenu");
-        });
-
-        // Start with the game unpaused
-        SetPaused(false);
+        
+        // Controls button shows controls menu
+        controlsButton.onClick.AddListener(() => SetControlsMenuActive(true));
     }
 
     /// <summary>
@@ -83,6 +112,8 @@ public class PauseMenu : Singleton<PauseMenu>
     public void TogglePaused()
     {
         SetPaused(!paused);
+
+        // TODO: do the OnMenuExit() sound too
         OnMenuEnter.Post(gameObject);
     }
 
@@ -96,7 +127,7 @@ public class PauseMenu : Singleton<PauseMenu>
         this.paused = paused;
 
         // Show/hide pause menu
-        pauseMenu.SetActive(paused);
+        pauseMenu.gameObject.SetActive(paused);
 
         // Show/hide cursor when pausing/unpausing (respectively)
         GameManager.SetCursorActive(paused);
@@ -104,7 +135,16 @@ public class PauseMenu : Singleton<PauseMenu>
         // Update pause event listeners
         onSetGamePaused?.Invoke(paused);
 
-        // Pause/resume game time based
+        // Pause/resume game time
         Time.timeScale = paused ? 0 : 1;
+    }
+
+    /// <summary>
+    /// Shows/hides controls menu
+    /// </summary>
+    /// <param name="active">Shows menu if true, hides if false</param>
+    private void SetControlsMenuActive(bool active)
+    {
+        controlsMenu.gameObject.SetActive(active);
     }
 }
