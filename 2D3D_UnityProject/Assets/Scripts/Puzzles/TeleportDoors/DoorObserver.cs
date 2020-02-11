@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class DoorObserver : MonoBehaviour
 {
+    //This code activates the dev cheat to teleport to the final door upon pressing 0.
     void cheat_it_up()
     {
+        //Teleport to the given door
         toObserve[doorToExitOnCheat].Exit(player);
         Debug.Log("Dev cheat activated! Warping to exit.");
     }
@@ -44,6 +46,7 @@ public class DoorObserver : MonoBehaviour
 
     public void Update()
     {
+        //If in editor and 0 is pressed, run the dev cheat
         if (Input.GetKeyDown(KeyCode.Alpha0) && Application.isEditor)
         {
             cheat_it_up();
