@@ -32,18 +32,30 @@ public class PatternPuzzle : MonoBehaviour
 
     private void Start()
     {
-        CurrentCube = initalCube;
+        _currentCube = initalCube;
+        patternCubes[_currentCube].Select();
     }
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            CurrentCube = Mathf.Clamp(CurrentCube - 1, 0, 4);
+        }
         if (Input.GetKeyDown(KeyCode.W))
         {
             patternCubes[CurrentCube].Rotate(Direction.BACKWARD);
         }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            CurrentCube = Mathf.Clamp(CurrentCube + 1, 0, 4);
+        }
         if (Input.GetKeyDown(KeyCode.A))
         {
-            CurrentCube = Mathf.Clamp(CurrentCube - 1, 0, 4);
+            SwapCubes(CurrentCube, CurrentCube - 1);
+
+            // Current cube index changed, set it directly so select and deslect aren't called
+            _currentCube = CurrentCube - 1;
         }
         if (Input.GetKeyDown(KeyCode.S))
         {
@@ -51,9 +63,10 @@ public class PatternPuzzle : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
-            CurrentCube = Mathf.Clamp(CurrentCube + 1, 0, 4);
+            SwapCubes(CurrentCube, CurrentCube + 1);
+            _currentCube = CurrentCube + 1;
         }
-        if(Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             // Restore control to player actor
             Actor actor = PlayerController.Instance.GetPlayer();
@@ -69,11 +82,27 @@ public class PatternPuzzle : MonoBehaviour
         }
     }
 
+    private void SwapCubes(int cubeIndexOne, int cubeIndexTwo)
+    {
+        // Tell cubes to animate
+        Vector3 cubeOnePosition = patternCubes[cubeIndexOne].gameObject.transform.localPosition;
+        Vector3 cubeTwoPosition = patternCubes[cubeIndexTwo].gameObject.transform.localPosition;
+        // Ignore Y value so they don't raise or lower
+        patternCubes[cubeIndexOne].Translate(cubeOnePosition, new Vector3(cubeTwoPosition.x, cubeOnePosition.y, cubeTwoPosition.z));
+        patternCubes[cubeIndexTwo].Translate(cubeTwoPosition, new Vector3(cubeOnePosition.x, cubeTwoPosition.y, cubeOnePosition.z));
+
+        // Swap cubes in patternCubes
+        PatternCube temp = patternCubes[cubeIndexOne];
+        patternCubes[cubeIndexOne] = patternCubes[cubeIndexTwo];
+        patternCubes[cubeIndexTwo] = temp;
+    }
+
     private void OnEnable()
     {
-        CurrentCube = _currentCube;
+        _currentCube = initalCube;
+        patternCubes[_currentCube].Select();
 
-        patternCanvas.SetActive(true);
+        //patternCanvas.SetActive(true);
     }
 
     public enum Direction
