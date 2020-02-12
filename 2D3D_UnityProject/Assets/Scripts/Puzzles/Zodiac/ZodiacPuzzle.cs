@@ -7,6 +7,14 @@ using UnityEngine;
 
 public class ZodiacPuzzle : MonoBehaviour
 {
+    [Header("Wwise")]
+    /// <summary>
+    /// Set Wwise variables
+    /// </summary>
+    /// <param name="paused">Set Wwise variables for sounds here</param>
+    public AK.Wwise.Event stoneMove;
+    public AK.Wwise.Event doorMove;
+
     /// <summary>
     /// The number of rounds that must be solved in order to complete the puzzle
     /// </summary>
@@ -56,6 +64,8 @@ public class ZodiacPuzzle : MonoBehaviour
     [SerializeField]
     private GameObject zodCamera;
 
+    private bool solved = false;
+
     //more probably bad stuff
     //public PlayerController player;
 
@@ -76,6 +86,7 @@ public class ZodiacPuzzle : MonoBehaviour
 
         // Set control to first (outermost) disk in puzzle
         currentDisk = disks[0];
+        currentDisk.GlowCurrentSymbol(true);
         // currentDisk.PieceInOut(ZodiacPuzzlePiece.ZodiacPuzzlePiecePosition.Out);
 
         currentRound = 1;
@@ -93,7 +104,7 @@ public class ZodiacPuzzle : MonoBehaviour
         }
 
         //TODO: Remove this when it's no longer necessary
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             // for ukiyoe scene
             // mainCam.SetActive(true);
@@ -120,6 +131,7 @@ public class ZodiacPuzzle : MonoBehaviour
     {
         // Get disk index
         int diskIndex = disks.IndexOf(currentDisk);
+        currentDisk.GlowCurrentSymbol(false);
 
         try {
             // Select next disk (moving towards center)
@@ -138,6 +150,7 @@ public class ZodiacPuzzle : MonoBehaviour
             return;
         }
 
+        currentDisk.GlowCurrentSymbol(true);
         disks[diskIndex].PieceInOut(ZodiacPuzzlePiece.ZodiacPuzzlePiecePosition.In);
     }
 
@@ -148,9 +161,12 @@ public class ZodiacPuzzle : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.D)) {
             currentDisk.Rotate(Direction.CLOCKWISE);
+            stoneMove.Post(gameObject); //Wwise
         }
         else if (Input.GetKeyDown(KeyCode.A)) {
             currentDisk.Rotate(Direction.COUNTER_CLOCKWISE);
+            stoneMove.Post(gameObject); //Wwise
+
         }
     }
 
@@ -179,7 +195,8 @@ public class ZodiacPuzzle : MonoBehaviour
         }
         else
         {
-            PuzzleSolved();
+            if (!solved)
+                PuzzleSolved();
         }
     }
 
@@ -189,15 +206,21 @@ public class ZodiacPuzzle : MonoBehaviour
         // currentDisk.PieceInOut(ZodiacPuzzlePiece.ZodiacPuzzlePiecePosition.In);
         // center.PieceInOut(ZodiacPuzzlePiece.ZodiacPuzzlePiecePosition.Out);
         zodiacDoor.Open();
+        doorMove.Post(gameObject); //Wwise
+        solved = true;
     }
 
     void OnEnable()
     {
         zodiacCanvas.SetActive(true);
+        //AkSoundEngine.SetState("Interaction", "Interacting"); //Set state to muffle music
+
     }
 
     void OnDisable()
     {
         zodiacCanvas.SetActive(false);
+        //AkSoundEngine.SetState("Interaction", "NotInteracting"); //Set state to re-enable music
+
     }
 }

@@ -64,6 +64,15 @@ public class PlayerInteractionController : MonoBehaviour
 
     private GameObject inspectCam;
 
+    /// <summary>
+    /// True if player is in the pattern puzzle zone
+    /// </summary>
+    private bool inPatternZone;
+
+    private PatternPuzzle patternPuzzle;
+
+    private GameObject patternCam;
+
     void Start()
     {
         if (!TryGetComponent(out actor))
@@ -92,11 +101,20 @@ public class PlayerInteractionController : MonoBehaviour
                 // Enable and shift focus to Zodiac puzzle
                 zodiacPuzzle.enabled = true;
                 zodiacCam.SetActive(true);
+
+            }
+            else if (inPatternZone)
+            {
+                // Enable and shift focus to Zodiac puzzle
+                patternPuzzle.enabled = true;
+                patternCam.SetActive(true);
+
             }
             else if (nearbyFish)
             {
                 // Feed nearby fish
-                nearbyFish.Feed();
+                //nearbyFish.Feed();
+                KoiFishPuzzle.Instance.FeedFish(nearbyFish);
 
                 // Hide interact canvas and return without disabling actor
                 interactCanvas.SetActive(false);
@@ -109,7 +127,8 @@ public class PlayerInteractionController : MonoBehaviour
             }
             // Ignore interact button press if no nearby interactable
             else
-                return;
+            return;
+
 
             // Disable player actor control
             Actor actor = PlayerController.Instance.GetPlayer();
@@ -171,6 +190,17 @@ public class PlayerInteractionController : MonoBehaviour
             inspectCam = camInspect;
         }
 
+        interactCanvas.SetActive(withinZone);
+    }
+
+    public void SetInPatternZone(bool withinZone, PatternPuzzle patPuz, GameObject patCam)
+    {
+        inPatternZone = withinZone;
+        patternPuzzle = patPuz;
+        patternCam = patCam;
+
+        // TODO: find a way to hide canvas when swapping to actor out of interact zone
+        // Show/hide interact canvas
         interactCanvas.SetActive(withinZone);
     }
 }

@@ -4,18 +4,25 @@ using UnityEngine;
 
 public class ZodiacLight : MonoBehaviour
 {
-    private Light light;
+    [SerializeField]
+    private List<Light> lights;
 
-    private void Start()
-    {
-        light = GetComponent<Light>();
-    }
+    [Header("Wwise")]
+    /// <summary>
+    /// Set Wwise variables
+    /// </summary>
+    /// <param name="paused">Set Wwise variables for sounds here</param>
+    public AK.Wwise.Event lightOn;
 
     /// <summary>
     /// Enables the light associated with this script
     /// </summary>
     public void TurnOn()
     {
-        light.enabled = true;
+        foreach (Light light in lights)
+            light.enabled = true;
+        
+        lightOn.Post(gameObject);
+        Debug.Log("Played Lantern sound");
     }
 }

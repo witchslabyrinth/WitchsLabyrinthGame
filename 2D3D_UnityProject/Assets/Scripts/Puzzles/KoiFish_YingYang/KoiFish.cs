@@ -60,13 +60,14 @@ public class KoiFish : MonoBehaviour
     /// Triggers fish path animation and sends message to KoiFishPuzzle.FeedFish().
     /// Called by PlayerInteractionController when player feeds fish.
     /// </summary>
-    public void Feed()
+    /// <param name="feedOrder">Order this fish was fed in</param>
+    public void Feed(int feedOrder)
     {
         // Start fish path animation
-        StartCoroutine(PlayAnimation(fishAnimationNumber));
+        StartCoroutine(PlayAnimation(feedOrder));
 
         // Update puzzle accordingly
-        KoiFishPuzzle.Instance.FeedFish(this);
+        //KoiFishPuzzle.Instance.FeedFish(this);
     }
 
 
@@ -78,13 +79,12 @@ public class KoiFish : MonoBehaviour
     /// <returns></returns>
     IEnumerator PlayAnimation(int animNumber)
     {
-        // TODO: change this to play wrong animation when fish fed out of order
-        // Play wrong animation if we're holding shift
-        if (Input.GetKey(KeyCode.LeftShift)) {
-            animNumber *= -1;
+        // Play wrong animation if fed out of order
+        if (animNumber != fishAnimationNumber) {
+            Debug.Log(name + " | fed out of order");
         }
 
-        // Fire path trigger
+        // Fire path trigger and pass order fish was fed in
         animator.SetInteger("ActivationOrder", animNumber);
         animator.SetTrigger("PathTrigger");
 
