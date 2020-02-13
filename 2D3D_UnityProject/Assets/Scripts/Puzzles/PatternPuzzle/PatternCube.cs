@@ -39,16 +39,20 @@ public class PatternCube : MonoBehaviour
         switch (correctRotation)
         {
             case Rotation.Forward:
-                Debug.DrawRay(transform.position, gameObject.transform.forward, Color.green);
+                Ray forwardRay = new Ray(transform.position, gameObject.transform.forward);
+                Gizmos.DrawRay(forwardRay);
                 break;
             case Rotation.Back:
-                Debug.DrawRay(transform.position, gameObject.transform.forward * -1f, Color.green);
+                Ray backRay = new Ray(transform.position, gameObject.transform.forward * -1f);
+                Gizmos.DrawRay(backRay);
                 break;
             case Rotation.Up:
-                Debug.DrawRay(transform.position, gameObject.transform.up, Color.green);
+                Ray upRay = new Ray(transform.position, gameObject.transform.up);
+                Gizmos.DrawRay(upRay);
                 break;
             case Rotation.Down:
-                Debug.DrawRay(transform.position, gameObject.transform.up * -1f, Color.green);
+                Ray downRay = new Ray(transform.position, gameObject.transform.up * -1f);
+                Gizmos.DrawRay(downRay);
                 break;
         }
     }
@@ -225,9 +229,9 @@ public class PatternCube : MonoBehaviour
         switch(direction)
         {
             case PatternPuzzle.Direction.BACKWARD:
-                return Quaternion.AngleAxis(RotationAmount, Vector3.left);
+                return Quaternion.AngleAxis(RotationAmount, gameObject.transform.right);
             case PatternPuzzle.Direction.FORWARD:
-                return Quaternion.AngleAxis(RotationAmount, Vector3.right);
+                return Quaternion.AngleAxis(RotationAmount, gameObject.transform.right * -1f);
         }
         throw new System.Exception("Unexpected code path reached.");
     }
