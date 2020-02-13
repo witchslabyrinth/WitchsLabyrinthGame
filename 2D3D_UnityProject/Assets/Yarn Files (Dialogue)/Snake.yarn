@@ -5,7 +5,7 @@ Snake: There is one truth teller in this room.
 Snake: Am I the one with the orb?
 
 [[Yes|Snake.Win]]
-[[No|Snake.Lose]]
+[[Exit|Snake.Lose]]
 ===
 
 title: Snake.Win
@@ -15,6 +15,6 @@ Snake: Well done.
 ===
 
 title: Snake.Lose
-tags: You have been misled. You must try again!
+tags: 
 ---
 ===
