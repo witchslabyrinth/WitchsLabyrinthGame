@@ -179,6 +179,7 @@ public class Actor : MonoBehaviour
     public void Enable()
     {
         SetActive(true);
+        PlayerController.Instance.canSwap = true;
     }
 
     /// <summary>
