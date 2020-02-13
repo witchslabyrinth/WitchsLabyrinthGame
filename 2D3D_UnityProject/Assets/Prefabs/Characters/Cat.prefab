@@ -48,6 +48,7 @@ MonoBehaviour:
   smoothing: {x: 3, y: 3}
   targetDirection: {x: 0, y: 0}
   targetCharacterDirection: {x: 0, y: 0}
+  distance: 3
   characterBody: {fileID: 1943238834350032811}
 --- !u!1 &1943238834350032811
 GameObject:
@@ -98,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animationController: {fileID: 7226554937751361443}
+  actorCamera: {fileID: 0}
   movementSpeed: 10
   sprintMultiplier: 1.5
   movement: {fileID: 0}

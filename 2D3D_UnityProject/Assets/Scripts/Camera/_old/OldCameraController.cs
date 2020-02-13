@@ -7,7 +7,7 @@ using UnityEngine;
 /// Manipulates the position/rotation of the camera based on the currently-selected camera perspective
 /// </summary>
 [RequireComponent(typeof(Camera))]
-public class CameraController : Singleton<CameraController>
+public class OldCameraController : Singleton<OldCameraController>
 {
     /// <summary>
     /// Reference to main camera

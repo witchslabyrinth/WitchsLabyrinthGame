@@ -8,7 +8,7 @@ public class PerspectiveIndicator : MonoBehaviour
     /// <summary>
     /// Associated camera perspective
     /// </summary>
-    public CameraController.CameraViews cameraView;
+    public OldCameraController.CameraViews cameraView;
 
     /// <summary>
     /// Perspective indicator alpha value when not selected

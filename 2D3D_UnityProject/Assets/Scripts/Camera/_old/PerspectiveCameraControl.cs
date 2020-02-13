@@ -35,7 +35,7 @@ public class PerspectiveCameraControl : MonoBehaviour
             targetCharacterDirection = characterBody.transform.localRotation.eulerAngles;
     }
 
-    void FixedUpdate()
+    public void CameraUpdate()
     {
         // Ensure the cursor is always locked when set
         GameManager.SetCursorActive(false);

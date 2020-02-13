@@ -130,7 +130,9 @@ public class PlayerController : Singleton<PlayerController>
             PerspectiveController.Instance.UpdatePerspective(player);
 
             // Update camera to follow player actor
-            CameraController.Instance.CameraUpdate(player);
+            // OldCameraController.Instance.CameraUpdate(player);
+            player.actorCamera.CameraUpdate();
+            
         }
     }
 

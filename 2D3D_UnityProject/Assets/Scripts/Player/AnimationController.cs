@@ -9,8 +9,6 @@ public class AnimationController : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
 
-    private Camera mainCamera;
-
     /// <summary>
     /// Direction we were facing after last movement input
     /// </summary>
@@ -32,9 +30,6 @@ public class AnimationController : MonoBehaviour
                 name +
                 " | SpriteRenderer component not found in AnimationController - please attach an Animator to this GameObject");
         }
-
-        // Set ref to main camera (avoids GameObject.Find() calls performed by Camera.main references)
-        mainCamera = Camera.main;
     }
 
 
@@ -73,6 +68,7 @@ public class AnimationController : MonoBehaviour
     /// </summary>
     private void FaceCamera()
     {
-        transform.forward = mainCamera.transform.forward;
+        CameraEntity mainCam = CameraController.Instance.GetMainCamera();
+        transform.forward = mainCam.transform.forward;
     }
 }
