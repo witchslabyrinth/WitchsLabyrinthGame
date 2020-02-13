@@ -59,9 +59,6 @@ public class PatternPuzzle : MonoBehaviour
             Actor actor = PlayerController.Instance.GetPlayer();
             actor.Enable();
 
-            // Restore actor swapping
-            PlayerController.Instance.canSwap = true;
-
             patCamera.SetActive(false);
             this.enabled = false;
 
