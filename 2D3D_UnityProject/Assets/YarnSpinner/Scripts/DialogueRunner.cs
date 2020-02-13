@@ -176,6 +176,12 @@ namespace Yarn.Unity
 
         private void HandleDialogueComplete()
         {
+            Camera.current.gameObject.SetActive(false);
+            Actor player = PlayerController.Instance.GetPlayer();
+            player.Enable();
+            GameManager.SetCursorActive(false);
+            
+
             isDialogueRunning = false;
             this.dialogueUI.DialogueComplete();
         }
