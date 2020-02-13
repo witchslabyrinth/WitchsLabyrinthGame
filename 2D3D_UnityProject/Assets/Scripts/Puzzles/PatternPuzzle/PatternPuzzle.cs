@@ -40,45 +40,68 @@ public class PatternPuzzle : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            CurrentCube = Mathf.Clamp(CurrentCube - 1, 0, 4);
+            if (!ACubeIsAnimating())
+                CurrentCube = Mathf.Clamp(CurrentCube - 1, 0, 4);
         }
         if (Input.GetKeyDown(KeyCode.W))
         {
-            patternCubes[CurrentCube].Rotate(Direction.BACKWARD);
+            if (!ACubeIsAnimating())
+            {
+                patternCubes[CurrentCube].Rotate(Direction.BACKWARD);
+                StartCoroutine(CheckSolved());
+            }
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
-            CurrentCube = Mathf.Clamp(CurrentCube + 1, 0, 4);
+            if (!ACubeIsAnimating())
+                CurrentCube = Mathf.Clamp(CurrentCube + 1, 0, 4);
         }
         if (Input.GetKeyDown(KeyCode.A))
         {
-            SwapCubes(CurrentCube, CurrentCube - 1);
+            if (!ACubeIsAnimating())
+            {
+                SwapCubes(CurrentCube, CurrentCube - 1);
 
-            // Current cube index changed, set it directly so select and deslect aren't called
-            _currentCube = CurrentCube - 1;
+                // Current cube index changed, set it directly so select and deslect aren't called
+                _currentCube = CurrentCube - 1;
+
+                StartCoroutine(CheckSolved());
+            }
         }
         if (Input.GetKeyDown(KeyCode.S))
         {
-            patternCubes[CurrentCube].Rotate(Direction.FORWARD);
+            if (!ACubeIsAnimating())
+            {
+                patternCubes[CurrentCube].Rotate(Direction.FORWARD);
+                StartCoroutine(CheckSolved());
+            }
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
-            SwapCubes(CurrentCube, CurrentCube + 1);
-            _currentCube = CurrentCube + 1;
+            if (!ACubeIsAnimating())
+            {
+                SwapCubes(CurrentCube, CurrentCube + 1);
+                _currentCube = CurrentCube + 1;
+
+                StartCoroutine(CheckSolved());
+            }
         }
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            // Restore control to player actor
-            Actor actor = PlayerController.Instance.GetPlayer();
-            actor.Enable();
+            if (!ACubeIsAnimating())
+            {
+                // Restore control to player actor
+                Actor actor = PlayerController.Instance.GetPlayer();
+                actor.Enable();
 
-            // Restore actor swapping
-            PlayerController.Instance.canSwap = true;
+                // Restore actor swapping
+                PlayerController.Instance.canSwap = true;
 
-            patCamera.SetActive(false);
-            this.enabled = false;
+                patCamera.SetActive(false);
+                this.enabled = false;
 
-            patternCubes[_currentCube].Deselect();
+                patternCubes[_currentCube].Deselect();
+            }
         }
     }
 
@@ -114,5 +137,44 @@ public class PatternPuzzle : MonoBehaviour
     private void OnDisable()
     {
         patternCanvas.SetActive(false);
+    }
+
+    private IEnumerator CheckSolved()
+    {
+        bool ready = false;
+        while (!ready)
+        {
+            ready = !ACubeIsAnimating();
+            yield return null;
+        }
+
+        bool correct = true;
+        for (int i = 0; i < patternCubes.Count; i++)
+        {
+            if (!patternCubes[i].Correct(i))
+                correct = false;
+        }
+
+        if (correct)
+            Solved();
+    }
+
+    private bool ACubeIsAnimating()
+    {
+        bool animating = false;
+        foreach (PatternCube pc in patternCubes)
+        {
+            if (pc.animating)
+            {
+                animating = true;
+                break;
+            }
+        }
+        return animating;
+    }
+
+    private void Solved()
+    {
+        Debug.Log("Solved");
     }
 }

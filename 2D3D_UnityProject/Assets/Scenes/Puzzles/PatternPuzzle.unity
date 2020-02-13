@@ -170,6 +170,9 @@ MonoBehaviour:
   raiseLowerTime: 1
   rotateTime: 0.5
   translateTime: 1
+  correctPosition: 1
+  correctRotation: 2
+  animating: 0
 --- !u!65 &114594574
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -539,6 +542,9 @@ MonoBehaviour:
   raiseLowerTime: 1
   rotateTime: 0.5
   translateTime: 1
+  correctPosition: 2
+  correctRotation: 3
+  animating: 0
 --- !u!65 &736288236
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -648,6 +654,9 @@ MonoBehaviour:
   raiseLowerTime: 1
   rotateTime: 0.5
   translateTime: 1
+  correctPosition: 3
+  correctRotation: 0
+  animating: 0
 --- !u!65 &1029616493
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -757,6 +766,9 @@ MonoBehaviour:
   raiseLowerTime: 1
   rotateTime: 0.5
   translateTime: 1
+  correctPosition: 4
+  correctRotation: 0
+  animating: 0
 --- !u!65 &1143282440
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -924,6 +936,9 @@ MonoBehaviour:
   raiseLowerTime: 1
   rotateTime: 0.5
   translateTime: 1
+  correctPosition: 0
+  correctRotation: 1
+  animating: 0
 --- !u!65 &1686608758
 BoxCollider:
   m_ObjectHideFlags: 0

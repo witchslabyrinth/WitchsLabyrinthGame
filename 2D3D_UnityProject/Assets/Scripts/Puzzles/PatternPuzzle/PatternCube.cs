@@ -20,13 +20,76 @@ public class PatternCube : MonoBehaviour
     [Tooltip("The amount of time it takes to translate the cube.")]
     private float translateTime;
 
+    [SerializeField]
+    [Tooltip("The correct position of this cube for the solved puzzle. 0 for leftmost, 4 for rightmost.")]
+    private int correctPosition;
+
+    [SerializeField]
+    [Tooltip("The correct rotation of the cube for the solved puzzle. The correct rotation is when the drawn debug ray is pointed upwards (So when the selected local direction matches world up.")]
+    private Rotation correctRotation;
+
+    [HideInInspector]
+    public bool animating;
+
     private const float RotationAmount = 90f;
 
-    private Vector3 startPosition;
+    #if UNITY_EDITOR
+    private void OnDrawGizmos()
+    {
+        switch (correctRotation)
+        {
+            case Rotation.Forward:
+                Debug.DrawRay(transform.position, gameObject.transform.forward, Color.green);
+                break;
+            case Rotation.Back:
+                Debug.DrawRay(transform.position, gameObject.transform.forward * -1f, Color.green);
+                break;
+            case Rotation.Up:
+                Debug.DrawRay(transform.position, gameObject.transform.up, Color.green);
+                break;
+            case Rotation.Down:
+                Debug.DrawRay(transform.position, gameObject.transform.up * -1f, Color.green);
+                break;
+        }
+    }
+    #endif
 
     private void Awake()
     {
-        startPosition = transform.localPosition;
+        animating = false;
+    }
+
+    public bool Correct(int position)
+    {
+        if (position == correctPosition)
+        {
+            Vector3 direction = Vector3.left;
+
+            switch (correctRotation)
+            {
+                case Rotation.Forward:
+                    direction = gameObject.transform.forward;
+                    break;
+                case Rotation.Back:
+                    direction = gameObject.transform.forward * -1f;
+                    break;
+                case Rotation.Up:
+                    direction = gameObject.transform.up;
+                    break;
+                case Rotation.Down:
+                    direction = gameObject.transform.up * -1f;
+                    break;
+            }
+
+            if (direction == Vector3.up)
+                return true;
+            else
+                return false;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     public void Select()
@@ -51,6 +114,8 @@ public class PatternCube : MonoBehaviour
     /// <returns></returns>
     private IEnumerator RaiseCoroutine(bool raise)
     {
+        animating = true;
+
         // Get the inital position and the final position of the raise/lower based on the parameter
         Vector3 raisePosition = new Vector3(transform.localPosition.x, transform.localPosition.y + selectYOffset, transform.localPosition.z);
         Vector3 lowerPosition = new Vector3(transform.localPosition.x, transform.localPosition.y - selectYOffset, transform.localPosition.z);
@@ -68,6 +133,8 @@ public class PatternCube : MonoBehaviour
 
         // Set final location on last frame of coroutine
         transform.localPosition = finalPosition;
+
+        animating = false;
     }
 
     /// <summary>
@@ -86,6 +153,8 @@ public class PatternCube : MonoBehaviour
     private IEnumerator rotateCoroutineInstance;
     private IEnumerator RotateCoroutine(PatternPuzzle.Direction direction)
     {
+        animating = true;
+
         // Get the initial rotation and calculate final rotation based on parameter
         Quaternion initRotation = transform.localRotation;
         Quaternion rotationAmount = DirectionToQuaternion(direction);
@@ -105,6 +174,8 @@ public class PatternCube : MonoBehaviour
 
         // Set coroutine instance to null so it can run again
         rotateCoroutineInstance = null;
+
+        animating = false;
     }
 
     /// <summary>
@@ -124,6 +195,8 @@ public class PatternCube : MonoBehaviour
     private IEnumerator translateCoroutineInstance;
     private IEnumerator translateCoroutine(Vector3 initPosition, Vector3 targetPosition)
     {
+        animating = true;
+
         // Animate from initPosition to targetPosition
         for (float time = 0f; time < translateTime; time += Time.deltaTime)
         {
@@ -138,6 +211,8 @@ public class PatternCube : MonoBehaviour
 
         // Set coroutine instance to null so it can run again
         translateCoroutineInstance = null;
+
+        animating = false;
     }
 
     /// <summary>
@@ -155,5 +230,13 @@ public class PatternCube : MonoBehaviour
                 return Quaternion.AngleAxis(RotationAmount, Vector3.right);
         }
         throw new System.Exception("Unexpected code path reached.");
+    }
+
+    private enum Rotation
+    {
+        Forward,
+        Back,
+        Up,
+        Down
     }
 }
