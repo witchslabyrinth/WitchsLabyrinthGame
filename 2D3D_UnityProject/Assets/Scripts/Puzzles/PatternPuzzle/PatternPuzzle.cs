@@ -18,6 +18,13 @@ public class PatternPuzzle : MonoBehaviour
     [Range(0, 4)]
     private int initalCube;
 
+    [SerializeField]
+    private AnimationCurve winAnimationCurve;
+    [SerializeField]
+    private float winAnimationJumpTime;
+    [SerializeField]
+    private float winAnimationTimeInBetween;
+
     private int _currentCube;
     private int CurrentCube
     {
@@ -175,6 +182,21 @@ public class PatternPuzzle : MonoBehaviour
 
     private void Solved()
     {
+        patternCubes[CurrentCube].Deselect();
+
         Debug.Log("Solved");
+        StartCoroutine(WinAnimation());
+    }
+
+    private IEnumerator WinAnimation()
+    {
+        while (ACubeIsAnimating())
+            yield return null;
+
+        for (int i = 0; i < patternCubes.Count; i++)
+        {
+            patternCubes[i].Jump(winAnimationCurve, winAnimationJumpTime);
+            yield return new WaitForSeconds(winAnimationTimeInBetween);
+        }
     }
 }

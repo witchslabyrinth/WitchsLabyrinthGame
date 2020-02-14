@@ -219,6 +219,27 @@ public class PatternCube : MonoBehaviour
         animating = false;
     }
 
+    public void Jump(AnimationCurve animationCurve, float jumpTime)
+    {
+        StartCoroutine(JumpCoroutine(animationCurve, jumpTime));
+    }
+
+    private IEnumerator JumpCoroutine(AnimationCurve animationCurve, float jumpTime)
+    {
+        Vector3 startPosition = transform.position;
+
+        for (float time = 0f; time < 1f; time += Time.deltaTime)
+        {
+            float newY = animationCurve.Evaluate(time / jumpTime);
+            Vector3 newPosition = new Vector3(startPosition.x, startPosition.y + newY, startPosition.z);
+            transform.position = newPosition;
+
+            yield return null;
+        }
+
+        transform.position = startPosition;
+    }
+
     /// <summary>
     /// Helper function that takes in a Direction and returns a quaternion that represents a rotation in that direction.
     /// </summary>
