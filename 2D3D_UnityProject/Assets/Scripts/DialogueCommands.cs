@@ -18,13 +18,15 @@ public class DialogueCommands : MonoBehaviour
     public void Awake() 
     {
         dialogueRunner.AddCommandHandler("op_camera_3", OpCamera3);
-        dialogueRunner.AddCommandHandler("dial_input", DialInput);
+        dialogueRunner.AddCommandHandler("reset_input", ResetInput);
     }
 
-    private void DialInput(string[] parameters, System.Action onComplete)
+    private void ResetInput(string[] parameters, System.Action onComplete)
     {
-        PlayerController.Instance.GetPlayer().enabled = false;
-        GameManager.SetCursorActive(true);
+        Actor actor = PlayerController.Instance.GetPlayer();
+        actor.ghostCamera.enabled = true;
+        actor.enabled = true;
+        GameManager.SetCursorActive(false);
         onComplete();
     }
 
