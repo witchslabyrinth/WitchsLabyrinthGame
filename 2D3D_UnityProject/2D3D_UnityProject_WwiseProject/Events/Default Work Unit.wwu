@@ -121,12 +121,12 @@
 					<ChildrenList>
 						<Folder Name="Zodiac" ID="{D9E9C881-FE86-438D-BE29-A74AC067B8C0}" ShortID="939472994">
 							<ChildrenList>
-								<Event Name="Stone_Grind" ID="{86C1E159-0CCC-4C0F-B362-5A1009756B14}">
+								<Event Name="Stones_Move" ID="{86C1E159-0CCC-4C0F-B362-5A1009756B14}">
 									<ChildrenList>
-										<Action Name="" ID="{F33BCB94-EEBD-40F6-9182-C073876079C9}" ShortID="361727166">
+										<Action Name="" ID="{0C138363-13E9-4991-82A9-9FB443113D92}" ShortID="52998755">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="Stone_Grind" ID="{DED71847-2A59-4882-8334-8E7E69931A07}" WorkUnitID="{787AA6C8-A80B-4C2F-B9CE-E9178ECBB4E3}"/>
+													<ObjectRef Name="Stones" ID="{FB906353-D46E-48C3-BA05-69BB868899BB}" WorkUnitID="{787AA6C8-A80B-4C2F-B9CE-E9178ECBB4E3}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -156,6 +156,43 @@
 								</Event>
 							</ChildrenList>
 						</Folder>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Pond" ID="{0B2DDE12-6B79-4122-917B-E9CDA08002EB}" ShortID="196801830">
+					<ChildrenList>
+						<Event Name="Pond_Sound" ID="{4F706652-FE23-4C55-B6AE-4A50A6021658}">
+							<ChildrenList>
+								<Action Name="" ID="{0BCD7506-BA11-4B03-AA59-E8F6CDBFB27D}" ShortID="209382656">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Pond_Sounds" ID="{A87913E5-E67D-4449-8819-07395282C698}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{6BF51797-31E1-46A3-AB49-585373EDD7A0}" ShortID="841276064">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Pond_Sounds" ID="{94087147-52FC-4C59-AC55-3385A0C2AB3B}" WorkUnitID="{F35C23EA-DF72-4530-971C-FBEBF715C8AD}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Ambience" ID="{3D94F239-0917-4F95-B2BC-64326CBFF66C}" ShortID="617626420">
+					<ChildrenList>
+						<Event Name="Wind" ID="{51DA3693-A227-409D-A9E5-0C825686EF97}">
+							<ChildrenList>
+								<Action Name="" ID="{180B3AAB-42CD-4CEE-AF00-23B076E82710}" ShortID="700451252">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Wind_Ambience" ID="{ABE486B4-B892-4025-A8B7-09599F4A1900}" WorkUnitID="{1BAF4E43-D480-476A-8D94-BA81CA478199}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>
