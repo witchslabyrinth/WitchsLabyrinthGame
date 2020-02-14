@@ -45,12 +45,11 @@ public class PlayerInteractionController : MonoBehaviour
 
     ///    CAN PROBABLY DISCARD NEXT SECTION IN REFACTOR - END    ///
 
-    // this is probably all bad, but should work for tomorrow's demo
     private ZodiacPuzzle zodiacPuzzle;
 
-    private GameObject zodiacCam;
-    // end of bad stuff
-
+    /// <summary>
+    /// Shown when actor is near an interactable
+    /// </summary>
     public GameObject interactCanvas;
 
     /// <summary>
@@ -68,6 +67,11 @@ public class PlayerInteractionController : MonoBehaviour
     private PatternPuzzle patternPuzzle;
 
     private GameObject patternCam;
+
+    /// <summary>
+    /// Holds CameraEntity of nearby interactable (if it has one)
+    /// </summary>
+    private CameraEntity interactionCameraEntity;
 
     void Start()
     {
@@ -95,7 +99,7 @@ public class PlayerInteractionController : MonoBehaviour
             {
                 // Enable and shift focus to Zodiac puzzle
                 zodiacPuzzle.enabled = true;
-                zodiacCam.SetActive(true);
+                CameraController.Instance.SetMainCamera(interactionCameraEntity);
 
             }
             else if (inPatternZone)
@@ -154,11 +158,13 @@ public class PlayerInteractionController : MonoBehaviour
         interactCanvas.SetActive(withinZone);
     }
 
-    public void SetInZodiacZone(bool withinZone, ZodiacPuzzle zodPuz, GameObject zodCam)
+    public void SetInZodiacZone(bool withinZone, ZodiacPuzzle zodPuz, CameraEntity zodCam)
     {
         inZodiacZone = withinZone;
         zodiacPuzzle = zodPuz;
-        zodiacCam = zodCam;
+
+        // Store reference to zodiac camera
+        interactionCameraEntity = zodCam;
 
         // TODO: find a way to hide canvas when swapping to actor out of interact zone
         // Show/hide interact canvas

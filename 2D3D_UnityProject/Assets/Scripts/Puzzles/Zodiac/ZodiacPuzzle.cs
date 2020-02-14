@@ -61,15 +61,7 @@ public class ZodiacPuzzle : MonoBehaviour
     [SerializeField]
     private DoubleSlidingDoors zodiacDoor;
 
-    [SerializeField]
-    private GameObject zodCamera;
-
     private bool solved = false;
-
-    //more probably bad stuff
-    //public PlayerController player;
-
-    public GameObject mainCam;
 
     public GameObject zodiacCanvas;
 
@@ -103,20 +95,18 @@ public class ZodiacPuzzle : MonoBehaviour
             SwitchDisk(true);
         }
 
-        //TODO: Remove this when it's no longer necessary
+        //TODO: Move this to a generalized interaction script
         if (Input.GetKeyDown(KeyCode.E))
         {
-            // for ukiyoe scene
-            // mainCam.SetActive(true);
-
             // Restore control to player actor
             Actor actor = PlayerController.Instance.GetPlayer();
             actor.Enable();
+            CameraController.Instance.SetMainCamera(actor.actorCamera);
 
             // Restore actor swapping
             PlayerController.Instance.canSwap = true;
 
-            zodCamera.SetActive(false);
+            // Disable the puzzle
             this.enabled = false;
         }
 

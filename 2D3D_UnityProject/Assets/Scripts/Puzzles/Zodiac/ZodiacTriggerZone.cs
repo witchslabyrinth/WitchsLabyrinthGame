@@ -8,7 +8,7 @@ public class ZodiacTriggerZone : MonoBehaviour
     private ZodiacPuzzle puzzleScript;
 
     [SerializeField]
-    private GameObject camZodiac;
+    private CameraEntity camZodiac;
 
     [Header("Wwise")]
     /// <summary>

@@ -9,6 +9,8 @@ using UnityEngine;
 [RequireComponent(typeof(Camera))]
 public abstract class CameraEntity : MonoBehaviour
 {
+    protected Camera camera;
+
     /// <summary>
     /// Awake is called when the script instance is being loaded.
     /// </summary>
@@ -20,10 +22,17 @@ public abstract class CameraEntity : MonoBehaviour
         }
     }
 
-    protected Camera camera;
-
     /// <summary>
     /// Updates camera position/orientation
     /// </summary>
     public abstract void CameraUpdate();
+
+    /// <summary>
+    /// Enables/disables Camera component (call this to turn cameras on/off)
+    /// </summary>
+    /// <param name="active">True to turn camera on, false to turn it off</param>
+    public void SetCameraActive(bool active)
+    {
+        camera.enabled = active;
+    }
 }
