@@ -101,6 +101,14 @@ public class PerspectiveController : Singleton<PerspectiveController>
             // If button is being pressed
             if (Input.GetKeyDown(key)) 
             {
+                if(key == KeyCode.Alpha2)
+                {
+                    PlayerController.Instance.GetPlayer().SetTopView(true);
+                }
+                else
+                {
+                    PlayerController.Instance.GetPlayer().SetTopView(false);
+                }
                 // Try and pull associated Perspective from list
                 CameraController.CameraViews cameraView = buttonPerspectiveMapping[key];
                 Perspective perspective = cameraPerspectives.Find(i => i.cameraView.Equals(cameraView));
