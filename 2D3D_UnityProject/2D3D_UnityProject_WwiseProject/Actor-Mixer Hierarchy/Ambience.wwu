@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{1BAF4E43-D480-476A-8D94-BA81CA478199}" SchemaVersion="94" RootDocumentID="{F35C23EA-DF72-4530-971C-FBEBF715C8AD}">
+	<AudioObjects>
+		<WorkUnit Name="Ambience" ID="{1BAF4E43-D480-476A-8D94-BA81CA478199}" OwnerID="{F35C23EA-DF72-4530-971C-FBEBF715C8AD}" PersistMode="Nested">
+			<ChildrenList>
+				<Sound Name="Wind_Ambience" ID="{ABE486B4-B892-4025-A8B7-09599F4A1900}" ShortID="393612978">
+					<PropertyList>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-30</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{24C7AD02-E66A-4B4B-8735-0AC29636FC00}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CB9D8304-7AAA-4374-9412-CD9A3A2EDD3D}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Wind_Ambience" ID="{A0CD3F09-DD68-4544-938B-2134F9AE2E99}" ShortID="887464685">
+							<Language>SFX</Language>
+							<AudioFile>Wind_Ambience.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Wind_Ambience" ID="{A0CD3F09-DD68-4544-938B-2134F9AE2E99}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>
