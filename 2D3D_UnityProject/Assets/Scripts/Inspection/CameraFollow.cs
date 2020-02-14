@@ -53,6 +53,12 @@ public class CameraFollow : MonoBehaviour
     [SerializeField]
     private GameObject inspectCanvas;
 
+    void Awake()
+    {
+        // Component should be disabled on scene load
+        enabled = false;
+    }
+
     void Update()
     {
         //Cursor.lockState = CursorLockMode.None;
@@ -94,8 +100,10 @@ public class CameraFollow : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E))
         {
+            // Restore control to player actor
             Actor player = PlayerController.Instance.GetPlayer();
             player.Enable();
+            CameraController.Instance.SetMainCamera(player.actorCamera);
 
             if(inspectMode == 1)
             {
@@ -104,7 +112,8 @@ public class CameraFollow : MonoBehaviour
                 inspectObj.GetComponent<PreviewObjectFunctionality>().ResetObjectInstant();
             }
 
-            gameObject.SetActive(false);
+            // Disable component until we interact again
+            enabled = false;
         }
     }
 

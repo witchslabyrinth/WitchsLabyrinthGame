@@ -57,7 +57,10 @@ public class PlayerInteractionController : MonoBehaviour
     /// </summary>
     private bool inInspectZone;
 
-    private GameObject inspectCam;
+    /// <summary>
+    /// Inspection behavior component
+    /// </summary>
+    private CameraFollow inspectCameraFollow;
 
     /// <summary>
     /// True if player is in the pattern puzzle zone
@@ -102,7 +105,7 @@ public class PlayerInteractionController : MonoBehaviour
             }
             else if (inPatternZone)
             {
-                // Enable and shift focus to Zodiac puzzle
+                // Enable and shift focus to Pattern puzzle
                 patternPuzzle.enabled = true;
                 CameraController.Instance.SetMainCamera(interactionCamera);
 
@@ -118,7 +121,10 @@ public class PlayerInteractionController : MonoBehaviour
             }
             else if (inInspectZone)
             {
-                inspectCam.SetActive(true);
+                // Enable and shift focus to inspection
+                CameraController.Instance.SetMainCamera(interactionCamera);
+                inspectCameraFollow.enabled = true;
+
                 //Cursor.lockState = CursorLockMode.None;
                 GameManager.SetCursorActive(true);
             }
@@ -160,10 +166,9 @@ public class PlayerInteractionController : MonoBehaviour
         inZodiacZone = withinZone;
         zodiacPuzzle = zodPuz;
 
-        // Store reference to zodiac camera
-        interactionCamera = zodCam;
+        // Store reference to zodiac camera (or set null if out of zone)
+        interactionCamera = withinZone ? zodCam : null;
 
-        // TODO: find a way to hide canvas when swapping to actor out of interact zone
         // Show/hide interact canvas
         interactCanvas.SetActive(withinZone);
     }
@@ -178,18 +183,19 @@ public class PlayerInteractionController : MonoBehaviour
             nearbyFish = null;
 
         // Show/hide interact canvas
-        // TODO: find a way to hide canvas when swapping to actor out of interact zone
         interactCanvas.SetActive(withinZone);
     }
 
-    public void SetInInspectZone(bool withinZone, GameObject camInspect = null)
+    public void SetInInspectZone(bool withinZone, CameraFollow cameraFollow, CameraEntity camInspect)
     {
         inInspectZone = withinZone;
-        if (withinZone)
-        {
-            inspectCam = camInspect;
-        }
 
+        // Store reference to camera if entering zone, or set null if exiting
+        interactionCamera = withinZone ? camInspect : null;
+
+        inspectCameraFollow = cameraFollow;
+
+        // Show/hide interact canvas
         interactCanvas.SetActive(withinZone);
     }
 
@@ -197,9 +203,10 @@ public class PlayerInteractionController : MonoBehaviour
     {
         inPatternZone = withinZone;
         patternPuzzle = patPuz;
-        interactionCamera = cameraEntity;
 
-        // TODO: find a way to hide canvas when swapping to actor out of interact zone
+        // Store reference to camera if entering zone, or set null if exiting
+        interactionCamera = withinZone ? cameraEntity : null;
+
         // Show/hide interact canvas
         interactCanvas.SetActive(withinZone);
     }

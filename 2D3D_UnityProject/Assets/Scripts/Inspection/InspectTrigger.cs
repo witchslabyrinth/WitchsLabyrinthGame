@@ -5,13 +5,16 @@ using UnityEngine;
 public class InspectTrigger : MonoBehaviour
 {
     [SerializeField]
-    private GameObject camInspect;
+    private CameraEntity camInspect;
+
+    [SerializeField]
+    private CameraFollow cameraFollow;
 
     private void OnTriggerEnter(Collider other)
     {
         PlayerInteractionController controller = other.GetComponent<PlayerInteractionController>();
         if (controller != null)
-            controller.SetInInspectZone(true, camInspect);
+            controller.SetInInspectZone(true, cameraFollow, camInspect);
         Debug.Log("In range of Inspection");
     }
 
@@ -19,7 +22,7 @@ public class InspectTrigger : MonoBehaviour
     {
         PlayerInteractionController controller = other.GetComponent<PlayerInteractionController>();
         if (controller != null)
-            controller.SetInInspectZone(false, camInspect);
+            controller.SetInInspectZone(false, cameraFollow, camInspect);
         Debug.Log("Out of range of Inspection");
     }
 }
