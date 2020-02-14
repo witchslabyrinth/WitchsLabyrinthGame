@@ -185,6 +185,28 @@
 								<ActiveSource Name="luke_oh (1)" ID="{BB8737DA-CC4C-4B85-BB49-ECE6FCAB3F60}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<Sound Name="oliver_grunt" ID="{00F1336E-A4BA-4C90-A289-B4FE5D07DB45}" ShortID="943382799">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{24C7AD02-E66A-4B4B-8735-0AC29636FC00}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CB9D8304-7AAA-4374-9412-CD9A3A2EDD3D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Oliver_grunt" ID="{B706A6C9-DE42-478F-AB6D-689AF1E18278}" ShortID="129237066">
+									<Language>English(US)</Language>
+									<AudioFile>Oliver_grunt.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Oliver_grunt" ID="{B706A6C9-DE42-478F-AB6D-689AF1E18278}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>

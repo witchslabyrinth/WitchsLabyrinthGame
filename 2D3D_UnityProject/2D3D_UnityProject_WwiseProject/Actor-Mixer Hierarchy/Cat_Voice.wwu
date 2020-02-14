@@ -41,6 +41,82 @@
 						<ActiveSource Name="Cat_Mrow_01" ID="{FF1F6407-3143-4041-87D3-33EC2B5C33AC}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
+				<Sound Name="cat_purr" ID="{27772B16-CFB0-4CEA-ABAA-363FFF36814F}" ShortID="755808955">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{24C7AD02-E66A-4B4B-8735-0AC29636FC00}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CB9D8304-7AAA-4374-9412-CD9A3A2EDD3D}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="cat_purr" ID="{638AF16F-1CA3-4060-A3DA-E67BA452464F}" ShortID="424675865">
+							<Language>SFX</Language>
+							<AudioFile>cat_purr.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="cat_purr" ID="{638AF16F-1CA3-4060-A3DA-E67BA452464F}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="cat_jump" ID="{6F4CDBE1-95ED-4E4C-8564-248E1EEF841F}" ShortID="514576882">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{24C7AD02-E66A-4B4B-8735-0AC29636FC00}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CB9D8304-7AAA-4374-9412-CD9A3A2EDD3D}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="cat_jump" ID="{44F0C8FA-7E7C-4B55-B92D-1356020882B8}" ShortID="249837338">
+							<Language>SFX</Language>
+							<AudioFile>cat_jump.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="cat_jump" ID="{44F0C8FA-7E7C-4B55-B92D-1356020882B8}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="cat_hurt" ID="{E52F2FC9-FAC1-458A-8CD4-C0A580737885}" ShortID="1044043090">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{24C7AD02-E66A-4B4B-8735-0AC29636FC00}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CB9D8304-7AAA-4374-9412-CD9A3A2EDD3D}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="cat_hurt" ID="{EA31C88B-0B19-4533-88E0-D01F05DB2B47}" ShortID="31132208">
+							<Language>SFX</Language>
+							<AudioFile>cat_hurt.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="cat_hurt" ID="{EA31C88B-0B19-4533-88E0-D01F05DB2B47}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="cat_hiss" ID="{5AA00A0F-B134-47BF-A9A4-D31501FDCEE4}" ShortID="656416263">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{24C7AD02-E66A-4B4B-8735-0AC29636FC00}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CB9D8304-7AAA-4374-9412-CD9A3A2EDD3D}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="cat_hiss" ID="{3651499E-89FC-49F5-B476-A6F44B7E5232}" ShortID="169277455">
+							<Language>SFX</Language>
+							<AudioFile>cat_hiss.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="cat_hiss" ID="{3651499E-89FC-49F5-B476-A6F44B7E5232}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

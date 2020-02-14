@@ -30,6 +30,44 @@
 						<ActiveSource Name="Wind_Ambience" ID="{A0CD3F09-DD68-4544-938B-2134F9AE2E99}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
+				<Sound Name="Lantern_idle_crackle" ID="{AE51607A-F15E-424A-AC48-65BBDF195FD7}" ShortID="53610593">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{24C7AD02-E66A-4B4B-8735-0AC29636FC00}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CB9D8304-7AAA-4374-9412-CD9A3A2EDD3D}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="lantern_idle_crackle" ID="{31B2416D-627C-4EDA-ADE6-FCB2C546A449}" ShortID="1062345633">
+							<Language>SFX</Language>
+							<AudioFile>lantern_idle_crackle.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="lantern_idle_crackle" ID="{31B2416D-627C-4EDA-ADE6-FCB2C546A449}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="lantern_swinging" ID="{D621B67C-58EB-4E08-8723-D79BCFA54D02}" ShortID="683335284">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{24C7AD02-E66A-4B4B-8735-0AC29636FC00}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CB9D8304-7AAA-4374-9412-CD9A3A2EDD3D}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="lantern_swing" ID="{AF1A81C1-0872-4E62-948C-F8CE330F9630}" ShortID="719286639">
+							<Language>SFX</Language>
+							<AudioFile>lantern_swing.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="lantern_swing" ID="{AF1A81C1-0872-4E62-948C-F8CE330F9630}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

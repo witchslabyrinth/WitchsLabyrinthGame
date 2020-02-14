@@ -228,6 +228,67 @@
 						</RandomSequenceContainer>
 					</ChildrenList>
 				</Folder>
+				<Folder Name="Fish" ID="{D92FE4CD-17B3-41AC-9118-B457AC6392ED}" ShortID="672740462">
+					<ChildrenList>
+						<Sound Name="fish_splash" ID="{D7A376B9-5BBD-4F2E-B711-922D566CC2AF}" ShortID="256358366">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{24C7AD02-E66A-4B4B-8735-0AC29636FC00}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CB9D8304-7AAA-4374-9412-CD9A3A2EDD3D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="fish_splashing" ID="{CD2A4C1B-3A52-492F-BA01-245BA883533F}" ShortID="49699035">
+									<Language>SFX</Language>
+									<AudioFile>fish_splashing.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="fish_splashing" ID="{CD2A4C1B-3A52-492F-BA01-245BA883533F}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="fish_gulp" ID="{8FCD9EDC-522B-4E67-A509-ED61E3726EE1}" ShortID="1041793875">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{24C7AD02-E66A-4B4B-8735-0AC29636FC00}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CB9D8304-7AAA-4374-9412-CD9A3A2EDD3D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="fish_gulp" ID="{6244C4B6-7CA0-41C5-95F9-68023DF251A5}" ShortID="384661821">
+									<Language>SFX</Language>
+									<AudioFile>fish_gulp.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="fish_gulp" ID="{6244C4B6-7CA0-41C5-95F9-68023DF251A5}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="bubbles" ID="{D3F0EB64-D31D-46E4-B68B-322A664F5B4A}" ShortID="44348913">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{24C7AD02-E66A-4B4B-8735-0AC29636FC00}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CB9D8304-7AAA-4374-9412-CD9A3A2EDD3D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="fish_bubbles" ID="{0A6F4C81-939D-4D93-8800-C534C9D03447}" ShortID="17834162">
+									<Language>SFX</Language>
+									<AudioFile>fish_bubbles.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="fish_bubbles" ID="{0A6F4C81-939D-4D93-8800-C534C9D03447}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>
