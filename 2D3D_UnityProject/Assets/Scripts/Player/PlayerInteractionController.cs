@@ -66,12 +66,10 @@ public class PlayerInteractionController : MonoBehaviour
 
     private PatternPuzzle patternPuzzle;
 
-    private GameObject patternCam;
-
     /// <summary>
     /// Holds CameraEntity of nearby interactable (if it has one)
     /// </summary>
-    private CameraEntity interactionCameraEntity;
+    private CameraEntity interactionCamera;
 
     void Start()
     {
@@ -99,20 +97,19 @@ public class PlayerInteractionController : MonoBehaviour
             {
                 // Enable and shift focus to Zodiac puzzle
                 zodiacPuzzle.enabled = true;
-                CameraController.Instance.SetMainCamera(interactionCameraEntity);
+                CameraController.Instance.SetMainCamera(interactionCamera);
 
             }
             else if (inPatternZone)
             {
                 // Enable and shift focus to Zodiac puzzle
                 patternPuzzle.enabled = true;
-                patternCam.SetActive(true);
+                CameraController.Instance.SetMainCamera(interactionCamera);
 
             }
             else if (nearbyFish)
             {
                 // Feed nearby fish
-                //nearbyFish.Feed();
                 KoiFishPuzzle.Instance.FeedFish(nearbyFish);
 
                 // Hide interact canvas and return without disabling actor
@@ -164,7 +161,7 @@ public class PlayerInteractionController : MonoBehaviour
         zodiacPuzzle = zodPuz;
 
         // Store reference to zodiac camera
-        interactionCameraEntity = zodCam;
+        interactionCamera = zodCam;
 
         // TODO: find a way to hide canvas when swapping to actor out of interact zone
         // Show/hide interact canvas
@@ -196,11 +193,11 @@ public class PlayerInteractionController : MonoBehaviour
         interactCanvas.SetActive(withinZone);
     }
 
-    public void SetInPatternZone(bool withinZone, PatternPuzzle patPuz, GameObject patCam)
+    public void SetInPatternZone(bool withinZone, PatternPuzzle patPuz, CameraEntity cameraEntity)
     {
         inPatternZone = withinZone;
         patternPuzzle = patPuz;
-        patternCam = patCam;
+        interactionCamera = cameraEntity;
 
         // TODO: find a way to hide canvas when swapping to actor out of interact zone
         // Show/hide interact canvas

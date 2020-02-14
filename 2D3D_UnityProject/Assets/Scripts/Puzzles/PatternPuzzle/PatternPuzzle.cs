@@ -5,9 +5,6 @@ using UnityEngine;
 public class PatternPuzzle : MonoBehaviour
 {
     [SerializeField]
-    private GameObject patCamera;
-
-    [SerializeField]
     private List<PatternCube> patternCubes;
 
     [SerializeField]
@@ -58,11 +55,12 @@ public class PatternPuzzle : MonoBehaviour
             // Restore control to player actor
             Actor actor = PlayerController.Instance.GetPlayer();
             actor.Enable();
+            CameraController.Instance.SetMainCamera(actor.actorCamera);
 
             // Restore actor swapping
             PlayerController.Instance.canSwap = true;
-
-            patCamera.SetActive(false);
+            
+            // Disable puzzle
             this.enabled = false;
 
             patternCubes[_currentCube].Deselect();

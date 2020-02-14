@@ -178,13 +178,14 @@ GameObject:
   - component: {fileID: 6783761817549129676}
   - component: {fileID: 3603107580409522126}
   - component: {fileID: 6995260278851269216}
+  - component: {fileID: 83399072687871839}
   m_Layer: 0
   m_Name: Pattern Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3276378933100957385
 Transform:
   m_ObjectHideFlags: 0
@@ -206,7 +207,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2716887996980952323}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -308,8 +309,24 @@ MonoBehaviour:
   m_ShowCustomSorter: 0
   breakBeforeColorGrading: 0
   m_BeforeTransparentBundles: []
-  m_BeforeStackBundles: []
+  m_BeforeStackBundles:
+  - assemblyQualifiedName: IL3DN_Fog_PP, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  - assemblyQualifiedName: PostProcessOutline, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
   m_AfterStackBundles: []
+--- !u!114 &83399072687871839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2716887996980952323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b2fe876df5f4eb4f8f439d1c96e34be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3725115269114641989
 GameObject:
   m_ObjectHideFlags: 0
@@ -360,7 +377,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7af39e02abefb7942b46b982ce48d48f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  patCamera: {fileID: 2716887996980952323}
+  patCamera: {fileID: 83399072687871839}
   patternCubes:
   - {fileID: 602784397452107048}
   - {fileID: 986295921031366894}
@@ -430,7 +447,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   puzzleScript: {fileID: 3992060753734116005}
-  camPattern: {fileID: 2716887996980952323}
+  camPattern: {fileID: 83399072687871839}
   playerReaction:
     idInternal: 0
     valueGuidInternal: 

@@ -4,7 +4,8 @@ using UnityEngine;
 
 
 /// <summary>
-/// Base class for all camera-controlling scripts
+/// Base class for all camera-controlling scripts.
+/// ONLY ONE should be enabled at any given time
 /// </summary>
 [RequireComponent(typeof(Camera))]
 public abstract class CameraEntity : MonoBehaviour
