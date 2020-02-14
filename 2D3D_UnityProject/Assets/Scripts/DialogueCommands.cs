@@ -17,10 +17,15 @@ public class DialogueCommands : MonoBehaviour
 
     public void Awake() 
     {
-        dialogueRunner.AddCommandHandler(
-            "op_camera_3",
-            OpCamera3
-        );
+        dialogueRunner.AddCommandHandler("op_camera_3", OpCamera3);
+        dialogueRunner.AddCommandHandler("dial_input", DialInput);
+    }
+
+    private void DialInput(string[] parameters, System.Action onComplete)
+    {
+        PlayerController.Instance.GetPlayer().enabled = false;
+        GameManager.SetCursorActive(true);
+        onComplete();
     }
 
     /// <summary>
