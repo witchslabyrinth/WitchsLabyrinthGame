@@ -33,6 +33,15 @@ public class CameraController : Singleton<CameraController>
         // TODO: disable all other Cameras in scene?
     }
 
+    void Update()
+    {
+        // If main camera is orthographic, then outline camera should be too
+        outlineCamera.orthographic = main.camera.orthographic;
+
+        // Call camera update
+        main.CameraUpdate();
+    }
+
     public CameraEntity GetMainCamera()
     {
         return main;

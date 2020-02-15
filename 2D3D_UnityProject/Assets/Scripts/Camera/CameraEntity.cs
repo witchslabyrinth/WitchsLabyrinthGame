@@ -10,7 +10,7 @@ using UnityEngine;
 [RequireComponent(typeof(Camera))]
 public abstract class CameraEntity : MonoBehaviour
 {
-    protected Camera camera;
+    public Camera camera { get; protected set; }
 
     /// <summary>
     /// Awake is called when the script instance is being loaded.
@@ -18,13 +18,14 @@ public abstract class CameraEntity : MonoBehaviour
     void Awake()
     {
         // Throw error if camera component not attached
-        if(!TryGetComponent(out camera)) {
+        camera = GetComponent<Camera>();
+        if(!camera) {
             Debug.LogError(name + " | missing Camera component");
         }
     }
 
     /// <summary>
-    /// Updates camera position/orientation
+    /// Updates camera position/orientation (only called on currently used camera)
     /// </summary>
     public abstract void CameraUpdate();
 
