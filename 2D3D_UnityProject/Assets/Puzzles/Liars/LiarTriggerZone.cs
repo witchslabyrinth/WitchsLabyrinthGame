@@ -8,7 +8,7 @@ public class LiarTriggerZone : MonoBehaviour
     private NPC npcScript;
 
     [SerializeField]
-    private GameObject dialogueCam;
+    private CameraEntity dialogueCam;
 
     private void Start()
     {

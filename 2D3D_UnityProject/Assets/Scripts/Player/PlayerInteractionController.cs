@@ -34,7 +34,7 @@ public class PlayerInteractionController : MonoBehaviour
     /// </summary>
     private NPC dialoguePartner;
 
-    private GameObject dialogueCam;
+    //private GameObject dialogueCam;
 
     /// <summary>
     /// reference to the orb the player is trying to find
@@ -98,7 +98,8 @@ public class PlayerInteractionController : MonoBehaviour
             {
                 // Show dialogue conversation if interacting with NPC
                 FindObjectOfType<DialogueRunner>().StartDialogue(dialoguePartner.talkToNode);
-                dialogueCam.SetActive(true);
+                CameraController.Instance.SetMainCamera(interactionCamera);
+
                 GameManager.SetCursorActive(true);
             }
             else if (inZodiacZone)
@@ -156,11 +157,13 @@ public class PlayerInteractionController : MonoBehaviour
     /// </summary>
     /// <param name="withinZone">true on enter, false on exit</param>
     /// <param name="partner">NPC player is currently in zone of</param>
-    public void SetInDialogueZone(bool withinZone, NPC partner, GameObject diaCam)
+    public void SetInDialogueZone(bool withinZone, NPC partner, CameraEntity diaCam)
     {
         inDialogueZone = withinZone;
         dialoguePartner = partner;
-        dialogueCam = diaCam;
+
+        // Store reference to dialogue camera (or set null if out of zone)
+        interactionCamera = withinZone ? diaCam : null;
 
         interactCanvas.SetActive(withinZone);
     }
