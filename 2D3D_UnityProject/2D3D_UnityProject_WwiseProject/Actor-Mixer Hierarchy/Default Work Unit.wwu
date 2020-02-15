@@ -68,6 +68,13 @@
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="UI_Exit" ID="{A831CC62-CA02-485E-BF0D-E9822CA00C21}" ShortID="676901710">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-14</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{24C7AD02-E66A-4B4B-8735-0AC29636FC00}"/>
@@ -86,11 +93,98 @@
 								<ActiveSource Name="UI_Exit" ID="{CBD5169E-4536-4345-AB52-91592FAA7789}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<Sound Name="UI_Menu" ID="{B198421B-0D6B-4BFD-B4AA-1DF5734340E4}" ShortID="441537048">
+							<PropertyList>
+								<Property Name="Highpass" Type="int16">
+									<ValueList>
+										<Value>5</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>39</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>-10</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-9</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{24C7AD02-E66A-4B4B-8735-0AC29636FC00}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CB9D8304-7AAA-4374-9412-CD9A3A2EDD3D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="UI_Menu" ID="{605944E2-ED18-4B26-9B07-7FD6ADAE17DA}" ShortID="686948955">
+									<Language>SFX</Language>
+									<AudioFile>UI_Menu.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="UI_Menu" ID="{605944E2-ED18-4B26-9B07-7FD6ADAE17DA}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</Folder>
 				<WorkUnit Name="Oliver" ID="{EDD942DA-81AE-4B41-A9E7-814C558A9CF5}" PersistMode="Reference"/>
 				<WorkUnit Name="Cat" ID="{420DBC9C-F5DF-4C94-83FD-A48ABD6BE150}" PersistMode="Reference"/>
 				<WorkUnit Name="Music" ID="{AC394B22-B424-42F1-91AE-4207A146B3EA}" PersistMode="Reference"/>
+				<Folder Name="Pond" ID="{E4E07F08-E117-4607-976F-FD9B5FE04E87}" ShortID="285114210">
+					<ChildrenList>
+						<Sound Name="Pond_Sounds" ID="{94087147-52FC-4C59-AC55-3385A0C2AB3B}" ShortID="482496526">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="2"/>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>8</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>-50</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-17</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="Pond" ID="{EF358F24-EB4E-49BF-A5A2-52AE6C7C41FD}" WorkUnitID="{0DCEC620-0804-4E59-BF74-C1BAA1C456CD}"/>
+								</Reference>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{24C7AD02-E66A-4B4B-8735-0AC29636FC00}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CB9D8304-7AAA-4374-9412-CD9A3A2EDD3D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Pond_Sounds" ID="{3AD1686C-A16E-4970-A535-C6119B22C84E}" ShortID="783317803">
+									<Language>SFX</Language>
+									<AudioFile>Pond_Sounds.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Pond_Sounds" ID="{3AD1686C-A16E-4970-A535-C6119B22C84E}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</Folder>
+				<WorkUnit Name="Ambience" ID="{1BAF4E43-D480-476A-8D94-BA81CA478199}" PersistMode="Reference"/>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>
