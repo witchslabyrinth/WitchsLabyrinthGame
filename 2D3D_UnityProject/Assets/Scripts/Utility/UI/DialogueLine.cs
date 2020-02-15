@@ -99,7 +99,6 @@ public class DialogueLine : MonoBehaviour
                     printDialogue = StartCoroutine(PrintDialogueCoroutine());
                     finalLine = true;
                     yesNoPrompt = true;
-                    //Cursor.lockState = CursorLockMode.None;
                     GameManager.SetCursorActive(true);
                 }
                 else
@@ -113,10 +112,10 @@ public class DialogueLine : MonoBehaviour
                 StopPrinting();
             }
         }
-        if(Input.GetKeyDown(KeyCode.Y) && yesNoButtons.activeSelf == true)
-        {
-            LiarGameManager.Instance().CheckOrb();
-        }
+        // if(Input.GetKeyDown(KeyCode.Y) && yesNoButtons.activeSelf == true)
+        // {
+        //     LiarGameManager.Instance().CheckOrb();
+        // }
         if(Input.GetKeyDown(KeyCode.N) && yesNoButtons.activeSelf == true)
         {
             Exit();
