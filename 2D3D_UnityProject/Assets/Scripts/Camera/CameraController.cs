@@ -4,11 +4,19 @@ using UnityEngine;
 
 public class CameraController : Singleton<CameraController>
 {
+    /// <summary>
+    /// Handles camera currently being displayed on screen
+    /// </summary>
     [SerializeField]
     private CameraEntity main;
 
     /// <summary>
-    /// Stores previous CameraEntity used before calling SetMainCamera()
+    /// Camera used to render outline effect
+    /// </summary>
+    private Camera outlineCamera => RenderReplacementShaderToTexture.camera;
+
+    /// <summary>
+    /// Reference to previous CameraEntity used before calling SetMainCamera()
     /// </summary>
     private CameraEntity previous;
 
@@ -39,5 +47,8 @@ public class CameraController : Singleton<CameraController>
         // Disable previous camera, enable new one
         previous.SetCameraActive(false);
         main.SetCameraActive(true);
+
+        // Make the outline camera a child of the main camera (so it renders the outline on top)
+        outlineCamera.transform.SetParent(main.transform, false);
     }
 }
