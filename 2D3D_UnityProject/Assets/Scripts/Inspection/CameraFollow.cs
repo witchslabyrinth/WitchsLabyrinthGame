@@ -61,8 +61,6 @@ public class CameraFollow : MonoBehaviour
 
     void Update()
     {
-        //Cursor.lockState = CursorLockMode.None;
-        GameManager.SetCursorActive(true);
         if (Input.GetMouseButton(0) & inspectMode == 0) //check for left click
         {
             if (Physics.Raycast(GetComponent<Camera>().ScreenPointToRay(Input.mousePosition), out hit, 10000.0f)) //check if left mouse clicked on an object
@@ -103,6 +101,7 @@ public class CameraFollow : MonoBehaviour
             // Restore control to player actor
             Actor player = PlayerController.Instance.GetPlayer();
             player.Enable();
+            GameManager.SetCursorActive(false);
             CameraController.Instance.SetMainCamera(player.actorCamera);
 
             if(inspectMode == 1)

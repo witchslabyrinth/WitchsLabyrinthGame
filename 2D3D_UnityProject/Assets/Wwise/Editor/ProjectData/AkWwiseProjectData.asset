@@ -17,21 +17,21 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: b78bc27069c5b345a641d26b82c7e1fb
     GuidInternal: 
-    m_lastTime: -8586210021152584583
+    m_lastTime: -8586206345781206517
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 04839dcbaa7a74439412cd9a3a2edd3d
     GuidInternal: 
-    m_lastTime: -8586208039214600463
+    m_lastTime: -8586206345785693093
     List: []
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 31c7159bb637e0438b0b0a3598f10701
     GuidInternal: 
-    m_lastTime: -8586209032222024607
+    m_lastTime: -8586200380606912835
     List:
     - name: Main
       guid: 1d85aefae0798f44adc3648c94a6abd2
@@ -47,7 +47,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 5601ea873c34f449957bd3b5ded1c2c6
     GuidInternal: 
-    m_lastTime: -8586208039230738727
+    m_lastTime: -8586200380607002913
     List:
     - name: CatSwitchSound
       guid: d1a8c45f839f904fbc04fe586e18bb61
@@ -61,8 +61,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Cat\CatSwitchSound
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 1.339342
+      minDuration: 1.339342
     - name: Door_Open
       guid: 571f44f93106324fbf230f6e2e8053b5
       id: 535830432
@@ -77,8 +77,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Puzzles\Zodiac\Door_Open
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 3.509682
+      minDuration: 2.22644
     - name: Footstep_Player
       guid: 554fc6b6c919a44b8d1af2f067892e8a
       id: 648916573
@@ -93,8 +93,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Oliver\Interactions\Footstep_Player
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0.682857
+      minDuration: 0.150421
     - name: Lantern_LightUp
       guid: a6b63faf59087e4698ab526d8d2a82e5
       id: 2716631521
@@ -109,8 +109,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Puzzles\Zodiac\Lantern_LightUp
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 7.069659
+      minDuration: 5.934558
     - name: Music_Play
       guid: 5d5c6197846ec24aa6a5af8aa2d73e46
       id: 202194903
@@ -137,6 +137,20 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Oliver\OliverSwitchSound
       maxAttenuation: 0
+      maxDuration: 2.210295
+      minDuration: 2.210295
+    - name: Pond_Sound
+      guid: 5266704f23fe554cb6ae4a50a6021658
+      id: 661114568
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Pond
+        ObjectType: 4
+      - ElementName: Pond_Sound
+        ObjectType: 3
+      Path: Default Work Unit\Pond\Pond_Sound
+      maxAttenuation: 60
       maxDuration: -1
       minDuration: -1
     - name: StayThereCat
@@ -151,8 +165,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Cat\StayThereCat
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0.762585
+      minDuration: 0.762585
     - name: StayThereOliver
       guid: f9e3580df733fa42916618490111edb3
       id: 4294117557
@@ -167,11 +181,11 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Oliver\Voice\StayThereOliver
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
-    - name: Stone_Grind
+      maxDuration: 0.478435
+      minDuration: 0.478435
+    - name: Stones_Move
       guid: 59e1c186cc0c0f4cb3625a1009756b14
-      id: 2221763179
+      id: 2574112889
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
@@ -179,9 +193,23 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Zodiac
         ObjectType: 4
-      - ElementName: Stone_Grind
+      - ElementName: Stones_Move
         ObjectType: 3
-      Path: Default Work Unit\Puzzles\Zodiac\Stone_Grind
+      Path: Default Work Unit\Puzzles\Zodiac\Stones_Move
+      maxAttenuation: 0
+      maxDuration: 0.432
+      minDuration: 0.432
+    - name: Wind
+      guid: 9336da5127a29d40a9e50c825686ef97
+      id: 1537061107
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ambience
+        ObjectType: 4
+      - ElementName: Wind
+        ObjectType: 3
+      Path: Default Work Unit\Ambience\Wind
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -199,13 +227,13 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Oliver\Voice\WithinPuzzleZone
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 1.234558
+      minDuration: 0.406808
   - PhysicalPath: Events\UI.wwu
     ParentPhysicalPath: 
     guid: 91fd7b16390ad84fbc6d407fad2d1946
     GuidInternal: 
-    m_lastTime: -8586209217104961479
+    m_lastTime: -8586200475683206082
     List:
     - name: OnMenuClose
       guid: b0c2fdfe821f1d4d877a0e550088c4fb
@@ -217,8 +245,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: UI\OnMenuClose
       maxAttenuation: 0
-      maxDuration: 0.144036
-      minDuration: 0.144036
+      maxDuration: 0.27516
+      minDuration: 0.27516
     - name: OnMenuHover
       guid: ccb4b6ff5951344696b08a017e95393e
       id: 961842423
@@ -260,14 +288,14 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: f097083e8173b046a10e637ecb6d4f17
     GuidInternal: 
-    m_lastTime: -8586210021161250457
+    m_lastTime: -8586206345791064058
     List: []
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 80640233b45f4c43af47b7ed0e86fa70
     GuidInternal: 
-    m_lastTime: -8586209016657185468
+    m_lastTime: -8586206345781236565
     List:
     - name: Interaction
       guid: 88843f4ede1a70468bb891d343be183a
@@ -406,7 +434,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: cb5f7cd43e7dce46b55ab3766d658e16
     GuidInternal: 
-    m_lastTime: -8586210021152624468
+    m_lastTime: -8586206345781226556
     List:
     - name: Material
       guid: de7708ac5dbf254f8434a7a64284ca29
@@ -444,16 +472,15 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 1e1b318908282c4c824d18e0f417ffa5
     GuidInternal: 
-    m_lastTime: -8586210021152604515
+    m_lastTime: -8586206345781216548
     List: []
   ExpandedItems:
   - /2D3D_UnityProject_WwiseProject
   - /2D3D_UnityProject_WwiseProject/Events
   - /2D3D_UnityProject_WwiseProject/Events/Default Work Unit
-  - /2D3D_UnityProject_WwiseProject/Events/Default Work Unit/Oliver
+  - /2D3D_UnityProject_WwiseProject/Events/Default Work Unit/Ambience
   - /2D3D_UnityProject_WwiseProject/Events/Default Work Unit/Puzzles
   - /2D3D_UnityProject_WwiseProject/Events/Default Work Unit/Puzzles/Zodiac
-  - /2D3D_UnityProject_WwiseProject/States
-  - /2D3D_UnityProject_WwiseProject/Switches
+  - /2D3D_UnityProject_WwiseProject/Events/UI
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

@@ -176,7 +176,8 @@ public class Actor : MonoBehaviour
     /// </summary>
     public void CheckInteraction()
     {
-        interactionController.CheckInteraction();
+        if (enabled)
+            interactionController.CheckInteraction();
     }
 
     public void SetTopView(bool isTop)
@@ -207,7 +208,7 @@ public class Actor : MonoBehaviour
     private void SetActive(bool active)
     {
         gameObject.SetActive(active);
-        interactionController.enabled = active;
+        enabled = active;
 
         // Re-enable ghost camera (for 3D perspective only)
         if(perspective.cameraView.Equals(OldCameraController.CameraViews.THIRD_PERSON)) 
