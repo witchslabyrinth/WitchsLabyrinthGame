@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Yarn.Unity;
+using Yarn.Unity.Example;
 
 // TODO: refactor this to be more generalized - each interaction should be processed more-or-less the same way
 
@@ -30,7 +32,9 @@ public class PlayerInteractionController : MonoBehaviour
     /// <summary>
     /// the id of the npc in range of the player
     /// </summary>
-    private int dialoguePartner;
+    private NPC dialoguePartner;
+
+    private GameObject dialogueCam;
 
     /// <summary>
     /// reference to the orb the player is trying to find
@@ -88,8 +92,9 @@ public class PlayerInteractionController : MonoBehaviour
             if (inDialogueZone)
             {
                 // Show dialogue conversation if interacting with NPC
-                LiarGameManager.Instance().StartConversation(dialoguePartner);
-
+                FindObjectOfType<DialogueRunner>().StartDialogue(dialoguePartner.talkToNode);
+                dialogueCam.SetActive(true);
+                GameManager.SetCursorActive(true);
             }
             else if (inZodiacZone)
             {
@@ -118,7 +123,6 @@ public class PlayerInteractionController : MonoBehaviour
             else if (inInspectZone)
             {
                 inspectCam.SetActive(true);
-                //Cursor.lockState = CursorLockMode.None;
                 GameManager.SetCursorActive(true);
             }
             // Ignore interact button press if no nearby interactable
@@ -143,14 +147,13 @@ public class PlayerInteractionController : MonoBehaviour
     /// called by OnTriggerEnter and OnTriggerExit of npc zones. Determines whether the player can talk or not
     /// </summary>
     /// <param name="withinZone">true on enter, false on exit</param>
-    /// <param name="partner">ID of npc</param>
-    public void SetInDialogueZone(bool withinZone, int partner)
+    /// <param name="partner">NPC player is currently in zone of</param>
+    public void SetInDialogueZone(bool withinZone, NPC partner, GameObject diaCam)
     {
         inDialogueZone = withinZone;
         dialoguePartner = partner;
+        dialogueCam = diaCam;
 
-        // TODO: find a way to hide canvas when swapping to actor out of interact zone
-        // Show/hide interact canvas
         interactCanvas.SetActive(withinZone);
     }
 
