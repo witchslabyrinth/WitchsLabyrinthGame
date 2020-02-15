@@ -86,6 +86,12 @@ public class Actor : MonoBehaviour
         rigidbody = GetComponent<Rigidbody>();
         interactionController = GetComponent<PlayerInteractionController>();
         ghostCamera = GetComponentInChildren<PerspectiveCameraControl>();
+
+        if (!actorCamera)
+        {
+            Debug.LogWarning(name + " | missing reference to ActorCamera; attempting to find via FindObjectOfType()...");
+            actorCamera = FindObjectOfType<ActorCamera>();
+        }
     }
 
     private void Start()
