@@ -111,6 +111,12 @@ public class PerspectiveController : Singleton<PerspectiveController>
                     Debug.LogErrorFormat("ERROR - no perspective linked to {0} in PerspectiveController.perspectives list", key);
                     continue;
                 }
+
+                // Tell animator if we're using the top-down perspective (so it displays appropriate sprites)
+                if(perspective.cameraView == OldCameraController.CameraViews.TOP)
+                    PlayerController.Instance.GetPlayer().SetTopView(true);
+                else
+                    PlayerController.Instance.GetPlayer().SetTopView(false);
                 
                 SetPerspective(player, perspective);
 
