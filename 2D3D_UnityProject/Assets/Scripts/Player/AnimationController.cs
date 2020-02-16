@@ -16,6 +16,8 @@ public class AnimationController : MonoBehaviour
     /// </summary>
     private Vector2 lastFacing;
 
+    private bool isTop;
+
     private void Start()
     {
         // fuckin sweet way to get components check this shit out
@@ -35,6 +37,8 @@ public class AnimationController : MonoBehaviour
 
         // Set ref to main camera (avoids GameObject.Find() calls performed by Camera.main references)
         mainCamera = Camera.main;
+
+        isTop = false;
     }
 
 
@@ -54,12 +58,14 @@ public class AnimationController : MonoBehaviour
         {
             lastFacing = movement;
         }
+        isTop = top;
 
         // Set animation values
         anim.SetFloat("MoveX", movement.x);
         anim.SetFloat("MoveY", movement.y);
         anim.SetFloat("Speed", currSpeed);
         anim.SetBool("TopCam", top);
+
     }
 
     private void LateUpdate()
@@ -73,6 +79,18 @@ public class AnimationController : MonoBehaviour
     /// </summary>
     private void FaceCamera()
     {
-        transform.forward = mainCamera.transform.forward;
+        // transform.forward = mainCamera.transform.forward;
+        transform.rotation = mainCamera.transform.rotation;
+        if (isTop)
+        {
+            if (lastFacing.x != 0)
+            {
+                transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, lastFacing.x * 90f, transform.rotation.eulerAngles.z);
+            }
+            else if (lastFacing.y == -1)
+            {
+                transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, 180f, transform.rotation.eulerAngles.z);
+            }
+        }
     }
 }
