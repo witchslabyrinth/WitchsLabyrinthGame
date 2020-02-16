@@ -106,6 +106,7 @@ public class ZodiacPuzzle : MonoBehaviour
     void Update()
     {
         //n8-bit 2/16/2020
+        //If we're in the editor and press 0, run the dev cheat
         if (Input.GetKeyDown(KeyCode.Alpha0) && Application.isEditor)
         {
             cheat_it_up();

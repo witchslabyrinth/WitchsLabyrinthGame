@@ -6,6 +6,46 @@ using UnityEngine;
 
 public class LiarGameManager : MonoBehaviour
 {
+
+    //n8-bit 2/16/2020
+    /// <summary>
+    /// This code activates the dev cheat to solve the Liars puzzle upon pressing 8
+    /// </summary>
+    public void cheat_it_up()
+    {
+        int guyWithOrb = 0;
+        for (int i = 0; i < npcs.Length; i++)
+        {
+            if (npcs[i].GetComponentInChildren<LiarStatue>().GetOrbState())
+            {
+                guyWithOrb = i;
+                break;
+            }
+        }
+        Actor actor = PlayerController.Instance.GetPlayer();
+        actor.Disable();
+
+        LiarStatue liar = npcs[guyWithOrb].GetComponentInChildren<LiarStatue>();
+
+        canvasObject.SetActive(true);
+        liar.GetCamera().SetActive(true);
+        dialogueCode.liarCam = liar.GetCamera();
+
+        currNpc = guyWithOrb;
+
+        CheckOrb();
+    }
+
+    private void Update()
+    {
+        //If we're in the editor and press 8, run the dev cheat.
+        if (Input.GetKeyDown(KeyCode.Alpha8) && Application.isEditor)
+        {
+            cheat_it_up();
+        }
+    }
+    //End n8-bit 2/16/2020
+
     /// <summary>
     /// reference to the canvas
     /// </summary>
