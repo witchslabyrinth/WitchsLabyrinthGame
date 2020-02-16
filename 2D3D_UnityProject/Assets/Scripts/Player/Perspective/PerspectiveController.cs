@@ -128,8 +128,7 @@ public class PerspectiveController : Singleton<PerspectiveController>
         player.SetMovement(perspective.movement);
 
         // Apply camera perspective to player actor
-        // OldCameraController.Instance.SetPerspective(player, perspective);
-        player.actorCamera.SetPerspective(player, perspective);
+        player.actorCamera.SetPerspective(perspective);
 
         // Enable ghost camera for 3D, disable for orthographic
         player.ghostCamera.enabled = !perspective.orthographic;

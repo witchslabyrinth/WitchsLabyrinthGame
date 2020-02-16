@@ -30,6 +30,9 @@ public class CameraController : Singleton<CameraController>
             main = player.actorCamera;
         }
 
+        // Initialize main camera
+        SetMainCamera(main);
+
         // TODO: disable all other Cameras in scene?
     }
 
@@ -53,8 +56,9 @@ public class CameraController : Singleton<CameraController>
         previous = main;
         main = cameraEntity;
 
-        // Disable previous camera, enable new one
-        previous.SetCameraActive(false);
+        // Disable previous camera (if exists), enable new one
+        if(previous)
+            previous.SetCameraActive(false);
         main.SetCameraActive(true);
 
         // Make the outline camera a child of the main camera (so it renders the outline on top)
