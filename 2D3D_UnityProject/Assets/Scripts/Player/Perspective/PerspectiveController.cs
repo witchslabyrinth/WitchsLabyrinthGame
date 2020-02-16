@@ -101,14 +101,6 @@ public class PerspectiveController : Singleton<PerspectiveController>
             // If button is being pressed
             if (Input.GetKeyDown(key)) 
             {
-                if(key == KeyCode.Alpha2)
-                {
-                    PlayerController.Instance.GetPlayer().SetTopView(true);
-                }
-                else
-                {
-                    PlayerController.Instance.GetPlayer().SetTopView(false);
-                }
                 // Try and pull associated Perspective from list
                 CameraController.CameraViews cameraView = buttonPerspectiveMapping[key];
                 Perspective perspective = cameraPerspectives.Find(i => i.cameraView.Equals(cameraView));
@@ -119,6 +111,12 @@ public class PerspectiveController : Singleton<PerspectiveController>
                     Debug.LogErrorFormat("ERROR - no perspective linked to {0} in PerspectiveController.perspectives list", key);
                     continue;
                 }
+
+                // Tell animator if we're using the top-down perspective (so it displays appropriate sprites)
+                if(perspective.cameraView == CameraController.CameraViews.TOP)
+                    PlayerController.Instance.GetPlayer().SetTopView(true);
+                else
+                    PlayerController.Instance.GetPlayer().SetTopView(false);
                 
                 SetPerspective(player, perspective);
 
