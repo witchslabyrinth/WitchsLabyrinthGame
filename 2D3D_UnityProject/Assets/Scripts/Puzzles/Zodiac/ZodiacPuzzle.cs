@@ -7,6 +7,17 @@ using UnityEngine;
 
 public class ZodiacPuzzle : MonoBehaviour
 {
+    //n8-bit 2/16/2020
+    /// <summary>
+    /// This code activates the dev cheat to solve the Zodiac puzzle upon pressing 0
+    /// </summary>
+    public void cheat_it_up()
+    {
+        //Well, this function makes it pretty simple
+        PuzzleSolved();
+    }
+    //End n8-bit 2/16/2020
+
     [Header("Wwise")]
     /// <summary>
     /// Set Wwise variables
@@ -94,6 +105,13 @@ public class ZodiacPuzzle : MonoBehaviour
 
     void Update()
     {
+        //n8-bit 2/16/2020
+        if (Input.GetKeyDown(KeyCode.Alpha0) && Application.isEditor)
+        {
+            cheat_it_up();
+        }
+        //End n8-bit 2/16/2020
+
         if (Input.GetKeyDown(KeyCode.W)) 
         {
             SwitchDisk(false);
