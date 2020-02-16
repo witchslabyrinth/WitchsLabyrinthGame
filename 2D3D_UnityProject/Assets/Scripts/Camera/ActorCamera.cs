@@ -20,15 +20,23 @@ public class ActorCamera : CameraEntity
     protected CameraViews currentView;
     protected Perspective perspective;
 
+    /// <summary>
+    /// Actor this camera is attached to
+    /// </summary>
+    [SerializeField]
+    private Actor actor;
+
     void Start () 
     {
-        // mainCamera = GetComponent<Camera>();
-
         // Parent self to Actor > GhostCamera object
+        //this.transform.SetParent (player.ghostCamera.transform);
+
+        // Enable camera if attached to the player, disable if attached to the friend
         Actor player = PlayerController.Instance.GetPlayer();
-        this.transform.SetParent (player.ghostCamera.transform);
+        SetCameraActive(actor == player);
 
         // Default to 3D perspective view
+        // TODO: make this correspond to the actor's actual starting perspective
         currentView = CameraViews.THIRD_PERSON;
     }
 
@@ -38,12 +46,12 @@ public class ActorCamera : CameraEntity
     /// <param name="player">Actor currently controlled by player</param>
     public override void CameraUpdate () 
     {
-        Actor player = PlayerController.Instance.GetPlayer();
+        //Actor actor = PlayerController.Instance.GetPlayer();
 
         if(perspective.orthographic)
-            OrthographicUpdate(player, perspective.orthographicCameraOffset);
+            OrthographicUpdate(actor, perspective.orthographicCameraOffset);
         else 
-            PerspectiveUpdate(player);
+            PerspectiveUpdate(actor);
     }
 
     /// <summary>
@@ -63,7 +71,7 @@ public class ActorCamera : CameraEntity
         camera.orthographic = perspective.orthographic;
 
         // Parent CameraController to actor's ghostCamera
-        transform.SetParent(actor.ghostCamera.transform);
+        // transform.SetParent(actor.ghostCamera.transform);
     }
 
     /// <summary>
@@ -73,7 +81,7 @@ public class ActorCamera : CameraEntity
     /// <param name="player">Player actor</param>
     private void PerspectiveUpdate (Actor player) 
     {
-        // Update ghost camrea orientataion
+        // Update ghost camrea orientation
         player.ghostCamera.CameraUpdate();
 
         this.transform.position = player.ghostCamera.transform.position;

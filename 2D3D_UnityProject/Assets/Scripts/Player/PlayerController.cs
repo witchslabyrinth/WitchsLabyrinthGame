@@ -144,6 +144,9 @@ public class PlayerController : Singleton<PlayerController>
         // Copy the friend follow/idle movement over to the new actor
         friend.SetMovement(player.movement);
 
+        // Switch to the player's camera
+        CameraController.Instance.SetMainCamera(player.actorCamera);
+
         // Restore player actor's previous perspective
         PerspectiveController.Instance.SetPerspective(player, player.perspective);
     }
