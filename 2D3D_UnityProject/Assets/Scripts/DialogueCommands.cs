@@ -33,14 +33,29 @@ public class DialogueCommands : MonoBehaviour
     [SerializeField]
     private float angle = 10f;
 
+    [SerializeField]
+    private GameObject[] liarCameras;
+
     private Coroutine currCoroutine;
 
-    public void Awake() 
+    public void Awake()
     {
         dialogueRunner.AddCommandHandler("op_camera_1", OpCamera1);
         dialogueRunner.AddCommandHandler("op_camera_3", OpCamera3);
         dialogueRunner.AddCommandHandler("op_camera_4", OpCamera4);
         dialogueRunner.AddCommandHandler("reset_input", ResetInput);
+        dialogueRunner.AddCommandHandler("reset_camera", ResetCameras);
+    }
+
+    private void ResetCameras(string[] parameters, System.Action onComplete)
+    {
+        int cameraIndex = int.Parse(parameters[0]);
+        Actor player = PlayerController.Instance.GetPlayer();
+        player.Enable();
+        GameManager.SetCursorActive(false);
+        liarCameras[cameraIndex].SetActive(false);
+
+        onComplete();
     }
 
     private void ResetInput(string[] parameters, System.Action onComplete)
@@ -49,7 +64,7 @@ public class DialogueCommands : MonoBehaviour
         oliver.ghostCamera.gameObject.SetActive(true);
         oliver.ghostCamera.enabled = true;
         oliver.enabled = true;
-        
+
         Actor cat = PlayerController.Instance.GetFriend();
         cat.enabled = true;
         cat.GetComponentInChildren<AnimationController>().enabled = true;
@@ -87,7 +102,7 @@ public class DialogueCommands : MonoBehaviour
     {
         Vector3 startPos = opCamera.transform.position;
         Quaternion startRot = opCamera.transform.rotation;
-        for(float time = 0; time < panToCatTime; time += Time.deltaTime)
+        for (float time = 0; time < panToCatTime; time += Time.deltaTime)
         {
             float percentage = time / panToCatTime;
             opCamera.transform.position = Vector3.Lerp(startPos, cameraLoc1.position, percentage);
@@ -101,9 +116,9 @@ public class DialogueCommands : MonoBehaviour
 
     private IEnumerator WholeMapPan()
     {
-        while(true)
+        while (true)
         {
-            opCamera.transform.RotateAround(cameraLoc3Center.position, Vector3.up, angle*Time.deltaTime);
+            opCamera.transform.RotateAround(cameraLoc3Center.position, Vector3.up, angle * Time.deltaTime);
             yield return null;
         }
     }
@@ -112,7 +127,7 @@ public class DialogueCommands : MonoBehaviour
     {
         Vector3 startPos = opCamera.transform.position;
         Quaternion startRot = opCamera.transform.rotation;
-        for(float time = 0; time < panToTempleTime; time += Time.deltaTime)
+        for (float time = 0; time < panToTempleTime; time += Time.deltaTime)
         {
             float percentage = time / panToTempleTime;
             opCamera.transform.position = Vector3.Lerp(startPos, cameraLoc4.position, percentage);
