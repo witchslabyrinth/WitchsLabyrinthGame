@@ -5,6 +5,22 @@ using UnityEngine.UI;
 
 public class KoiFishPuzzle : Singleton<KoiFishPuzzle>
 {
+    //n8-bit 2/11/2020
+    /// <summary>
+    /// This code activates the dev cheat to solve the Koi Fish puzzle upon pressing 9
+    /// </summary>
+    public void cheat_it_up()
+    {
+        //For each fish in the order list, feed it.
+        foreach(KoiFish i in koiFishFeedingOrder)
+        {
+            Debug.Log("Dev cheat activated! Feeding Fish.");
+            FeedFish(i);
+        }
+    }
+    //End n8-bit 2/11/2020
+
+
     /// <summary>
     /// Proper order to feed the fish in (may not include all fish in the pond).
     /// </summary>
@@ -69,6 +85,14 @@ public class KoiFishPuzzle : Singleton<KoiFishPuzzle>
                 //Debug.Log("Time remaining: " + timeStr);
             }
         }
+
+        //n8-bit 2/11/2020
+        //If we're in the editor and press 9, run the dev cheat.
+        if (Input.GetKeyDown(KeyCode.Alpha9) && Application.isEditor)
+        {
+            cheat_it_up();
+        }
+        //end n8-bit 2/11/2020
     }
 
     /// <summary>

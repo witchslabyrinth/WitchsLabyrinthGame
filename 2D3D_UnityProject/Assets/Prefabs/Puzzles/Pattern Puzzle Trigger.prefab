@@ -192,13 +192,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2716887996980952323}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.2, y: 0.2199281, z: -0.44799998}
+  m_LocalRotation: {x: 0.3329771, y: -0, z: -0, w: 0.94293493}
+  m_LocalPosition: {x: 0.19999976, y: 0.559, z: -0.015}
   m_LocalScale: {x: 0.15039623, y: 0.15039623, z: 0.15039623}
   m_Children: []
   m_Father: {fileID: 6186541269912999423}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 38.899002, y: 0, z: 0}
 --- !u!20 &6783761817549129676
 Camera:
   m_ObjectHideFlags: 0
@@ -369,6 +369,14 @@ MonoBehaviour:
   - {fileID: 7248586625721864293}
   patternCanvas: {fileID: 8402247873134322534}
   initalCube: 2
+  winAnimationCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  winAnimationJumpTime: 0
+  winAnimationTimeInBetween: 0
 --- !u!1 &4257723700277811640
 GameObject:
   m_ObjectHideFlags: 0
@@ -717,6 +725,10 @@ MonoBehaviour:
   selectYOffset: 1.1
   raiseLowerTime: 0.5
   rotateTime: 0.25
+  translateTime: 0.5
+  correctPosition: 2
+  correctRotation: 1
+  animating: 0
 --- !u!65 &7601991459724343157
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -772,7 +784,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6186541270413433817}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.1, y: 0, z: 0}
+  m_LocalPosition: {x: -1.1, y: 0, z: 0}
   m_LocalScale: {x: 6, y: 6, z: 6}
   m_Children: []
   m_Father: {fileID: 526852061498814165}
@@ -839,6 +851,10 @@ MonoBehaviour:
   selectYOffset: 1.1
   raiseLowerTime: 0.5
   rotateTime: 0.25
+  translateTime: 0.5
+  correctPosition: 1
+  correctRotation: 2
+  animating: 0
 --- !u!65 &4870430998647730003
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -894,7 +910,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6186541270413433820}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.2, y: 0, z: 0}
+  m_LocalPosition: {x: -2.2, y: 0, z: 0}
   m_LocalScale: {x: 6, y: 6, z: 6}
   m_Children: []
   m_Father: {fileID: 526852061498814165}
@@ -961,6 +977,10 @@ MonoBehaviour:
   selectYOffset: 1.1
   raiseLowerTime: 0.5
   rotateTime: 0.25
+  translateTime: 0.5
+  correctPosition: 0
+  correctRotation: 2
+  animating: 0
 --- !u!65 &3216842321176885540
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1016,7 +1036,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6186541270413433822}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.2, y: 0, z: 0}
+  m_LocalPosition: {x: 2.2, y: 0, z: 0}
   m_LocalScale: {x: 6, y: 6, z: 6}
   m_Children: []
   m_Father: {fileID: 526852061498814165}
@@ -1083,6 +1103,10 @@ MonoBehaviour:
   selectYOffset: 1.1
   raiseLowerTime: 0.5
   rotateTime: 0.25
+  translateTime: 0.5
+  correctPosition: 4
+  correctRotation: 2
+  animating: 0
 --- !u!65 &4077464317238011295
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1138,7 +1162,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6186541270413433823}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.1, y: 0, z: 0}
+  m_LocalPosition: {x: 1.1, y: 0, z: 0}
   m_LocalScale: {x: 6, y: 6, z: 6}
   m_Children: []
   m_Father: {fileID: 526852061498814165}
@@ -1205,6 +1229,10 @@ MonoBehaviour:
   selectYOffset: 1.1
   raiseLowerTime: 0.5
   rotateTime: 0.25
+  translateTime: 0.5
+  correctPosition: 3
+  correctRotation: 2
+  animating: 0
 --- !u!65 &574336656739635619
 BoxCollider:
   m_ObjectHideFlags: 0
