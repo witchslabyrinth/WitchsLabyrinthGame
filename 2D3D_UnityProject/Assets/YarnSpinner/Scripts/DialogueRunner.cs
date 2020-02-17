@@ -174,19 +174,8 @@ namespace Yarn.Unity
             onComplete();
         }
 
-        /// <summary>
-        /// Called when player exits dialogue
-        /// </summary>
         private void HandleDialogueComplete()
         {
-            // Restore control to player
-            Actor player = PlayerController.Instance.GetPlayer();
-            player.Enable();
-            CameraController.Instance.SetMainCamera(player.actorCamera);
-
-            // Hide cursor
-            GameManager.SetCursorActive(false);
-
             isDialogueRunning = false;
             this.dialogueUI.DialogueComplete();
         }

@@ -169,6 +169,10 @@ MonoBehaviour:
   selectYOffset: 1.1
   raiseLowerTime: 1
   rotateTime: 0.5
+  translateTime: 1
+  correctPosition: 1
+  correctRotation: 2
+  animating: 0
 --- !u!65 &114594574
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -257,12 +261,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7af39e02abefb7942b46b982ce48d48f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  patCamera: {fileID: 0}
   patternCubes:
   - {fileID: 1686608757}
   - {fileID: 114594573}
   - {fileID: 1029616492}
   - {fileID: 736288235}
   - {fileID: 1143282439}
+  patternCanvas: {fileID: 0}
   initalCube: 2
 --- !u!4 &239738115
 Transform:
@@ -535,6 +541,10 @@ MonoBehaviour:
   selectYOffset: 1.1
   raiseLowerTime: 1
   rotateTime: 0.5
+  translateTime: 1
+  correctPosition: 2
+  correctRotation: 3
+  animating: 0
 --- !u!65 &736288236
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -643,6 +653,10 @@ MonoBehaviour:
   selectYOffset: 1.1
   raiseLowerTime: 1
   rotateTime: 0.5
+  translateTime: 1
+  correctPosition: 3
+  correctRotation: 0
+  animating: 0
 --- !u!65 &1029616493
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -751,6 +765,10 @@ MonoBehaviour:
   selectYOffset: 1.1
   raiseLowerTime: 1
   rotateTime: 0.5
+  translateTime: 1
+  correctPosition: 4
+  correctRotation: 0
+  animating: 0
 --- !u!65 &1143282440
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -917,6 +935,10 @@ MonoBehaviour:
   selectYOffset: 1.1
   raiseLowerTime: 1
   rotateTime: 0.5
+  translateTime: 1
+  correctPosition: 0
+  correctRotation: 1
+  animating: 0
 --- !u!65 &1686608758
 BoxCollider:
   m_ObjectHideFlags: 0
