@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Yarn.Unity;
 
 
 public class PlayerController : Singleton<PlayerController>
@@ -90,6 +91,9 @@ public class PlayerController : Singleton<PlayerController>
                 Physics.IgnoreCollision(oliverCollider, catCollider);
             }
         }
+        // making sure everything's loaded before starting opening cutscene
+        // can probably be deleted later
+        StartCoroutine(DialInput());
     }
 
     private void Update()
@@ -181,5 +185,18 @@ public class PlayerController : Singleton<PlayerController>
     public Actor GetFriend()
     {
         return friend;
+    }
+
+    private IEnumerator DialInput()
+    {
+        for(float i = 0; i < 1; i += Time.deltaTime)
+        {
+            yield return null;
+        }
+        Actor actor = PlayerController.Instance.GetPlayer();
+        actor.ghostCamera.enabled = false;
+        actor.enabled = false;
+        GameManager.SetCursorActive(true);
+        FindObjectOfType<DialogueRunner>().StartDialogue("OpeningScene");
     }
 }
