@@ -12,7 +12,7 @@ public class Perspective
     /// <summary>
     /// Unique perspective identifier
     /// </summary>
-    public CameraController.CameraViews cameraView;
+    public OldCameraController.CameraViews cameraView;
 
     /// <summary>
     /// Reference to movement scheme assocaited with perspective
@@ -46,7 +46,7 @@ public class PerspectiveController : Singleton<PerspectiveController>
     /// Default perspective used at game start
     /// </summary>
     [SerializeField]
-    private CameraController.CameraViews defaultPerspective;
+    private OldCameraController.CameraViews defaultPerspective;
 
     /// <summary>
     /// List of camera perspectives
@@ -60,15 +60,15 @@ public class PerspectiveController : Singleton<PerspectiveController>
     /// <typeparam name="KeyCode">Button to press</typeparam>
     /// <typeparam name="CameraController.CameraView">Camera perspective applied when button is pressed</typeparam>
     /// <returns></returns>
-    private Dictionary<KeyCode, CameraController.CameraViews> buttonPerspectiveMapping = new Dictionary<KeyCode, CameraController.CameraViews>() 
+    private Dictionary<KeyCode, OldCameraController.CameraViews> buttonPerspectiveMapping = new Dictionary<KeyCode, OldCameraController.CameraViews>() 
     {
         // Orthographic perspectives
-        {KeyCode.Alpha2, CameraController.CameraViews.TOP},
-        {KeyCode.Alpha3, CameraController.CameraViews.BACK},
-        {KeyCode.Alpha4, CameraController.CameraViews.RIGHT},
+        {KeyCode.Alpha2, OldCameraController.CameraViews.TOP},
+        {KeyCode.Alpha3, OldCameraController.CameraViews.BACK},
+        {KeyCode.Alpha4, OldCameraController.CameraViews.RIGHT},
 
         // 3D perspective
-        {KeyCode.Alpha1, CameraController.CameraViews.THIRD_PERSON},
+        {KeyCode.Alpha1, OldCameraController.CameraViews.THIRD_PERSON},
     };
 
     /// <summary>
@@ -81,7 +81,7 @@ public class PerspectiveController : Singleton<PerspectiveController>
         Perspective perspective = cameraPerspectives.Find(i => i.cameraView.Equals(defaultPerspective));
         if(perspective == null) {
             Debug.LogWarningFormat("{0} | Specified perspective {1} not found, defaulting to 3D perspective", name, defaultPerspective);
-            perspective = cameraPerspectives.Find(i => i.cameraView.Equals(CameraController.CameraViews.THIRD_PERSON));
+            perspective = cameraPerspectives.Find(i => i.cameraView.Equals(OldCameraController.CameraViews.THIRD_PERSON));
         }
         
         // TODO: make sure we only set initial perspective in one place
@@ -102,7 +102,7 @@ public class PerspectiveController : Singleton<PerspectiveController>
             if (Input.GetKeyDown(key)) 
             {
                 // Try and pull associated Perspective from list
-                CameraController.CameraViews cameraView = buttonPerspectiveMapping[key];
+                OldCameraController.CameraViews cameraView = buttonPerspectiveMapping[key];
                 Perspective perspective = cameraPerspectives.Find(i => i.cameraView.Equals(cameraView));
 
                 // Continue with error if perspective not found
@@ -113,7 +113,7 @@ public class PerspectiveController : Singleton<PerspectiveController>
                 }
 
                 // Tell animator if we're using the top-down perspective (so it displays appropriate sprites)
-                if(perspective.cameraView == CameraController.CameraViews.TOP)
+                if(perspective.cameraView == OldCameraController.CameraViews.TOP)
                     PlayerController.Instance.GetPlayer().SetTopView(true);
                 else
                     PlayerController.Instance.GetPlayer().SetTopView(false);
@@ -134,7 +134,7 @@ public class PerspectiveController : Singleton<PerspectiveController>
         player.SetMovement(perspective.movement);
 
         // Apply camera perspective to player actor
-        CameraController.Instance.SetPerspective(player, perspective);
+        player.actorCamera.SetPerspective(perspective);
 
         // Enable ghost camera for 3D, disable for orthographic
         player.ghostCamera.enabled = !perspective.orthographic;
@@ -148,7 +148,7 @@ public class PerspectiveController : Singleton<PerspectiveController>
     /// </summary>
     /// <param name="type">Type of perspective requested</param>
     /// <returns></returns>
-    public Perspective GetPerspectiveByType(CameraController.CameraViews type)
+    public Perspective GetPerspectiveByType(OldCameraController.CameraViews type)
     {
         return cameraPerspectives.Find(i => i.cameraView.Equals(type));
     }

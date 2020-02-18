@@ -12,13 +12,14 @@ GameObject:
   - component: {fileID: 189910769}
   - component: {fileID: 189910768}
   - component: {fileID: 8031534191238094022}
+  - component: {fileID: 7952192215319347711}
   m_Layer: 0
-  m_Name: Camera
+  m_Name: Cat Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &189910767
 Transform:
   m_ObjectHideFlags: 0
@@ -40,7 +41,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 189910766}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -142,8 +143,24 @@ MonoBehaviour:
   m_ShowCustomSorter: 0
   breakBeforeColorGrading: 0
   m_BeforeTransparentBundles: []
-  m_BeforeStackBundles: []
+  m_BeforeStackBundles:
+  - assemblyQualifiedName: IL3DN_Fog_PP, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  - assemblyQualifiedName: PostProcessOutline, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
   m_AfterStackBundles: []
+--- !u!114 &7952192215319347711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 189910766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b2fe876df5f4eb4f8f439d1c96e34be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &793031134
 GameObject:
   m_ObjectHideFlags: 0
@@ -156,13 +173,14 @@ GameObject:
   - component: {fileID: 793031137}
   - component: {fileID: 793031136}
   - component: {fileID: 7576094648433756285}
+  - component: {fileID: 1721195238576075297}
   m_Layer: 0
-  m_Name: Camera
+  m_Name: Rat Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &793031135
 Transform:
   m_ObjectHideFlags: 0
@@ -184,7 +202,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 793031134}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -286,8 +304,24 @@ MonoBehaviour:
   m_ShowCustomSorter: 0
   breakBeforeColorGrading: 0
   m_BeforeTransparentBundles: []
-  m_BeforeStackBundles: []
+  m_BeforeStackBundles:
+  - assemblyQualifiedName: IL3DN_Fog_PP, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  - assemblyQualifiedName: PostProcessOutline, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
   m_AfterStackBundles: []
+--- !u!114 &1721195238576075297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793031134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b2fe876df5f4eb4f8f439d1c96e34be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1201776963
 GameObject:
   m_ObjectHideFlags: 0
@@ -300,13 +334,14 @@ GameObject:
   - component: {fileID: 1201776966}
   - component: {fileID: 1201776965}
   - component: {fileID: 5405119888573720470}
+  - component: {fileID: 381600004104482049}
   m_Layer: 0
-  m_Name: Camera
+  m_Name: Chicken Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1201776964
 Transform:
   m_ObjectHideFlags: 0
@@ -328,7 +363,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1201776963}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -430,8 +465,24 @@ MonoBehaviour:
   m_ShowCustomSorter: 0
   breakBeforeColorGrading: 0
   m_BeforeTransparentBundles: []
-  m_BeforeStackBundles: []
+  m_BeforeStackBundles:
+  - assemblyQualifiedName: IL3DN_Fog_PP, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  - assemblyQualifiedName: PostProcessOutline, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
   m_AfterStackBundles: []
+--- !u!114 &381600004104482049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201776963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b2fe876df5f4eb4f8f439d1c96e34be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1697974556
 GameObject:
   m_ObjectHideFlags: 0
@@ -444,13 +495,14 @@ GameObject:
   - component: {fileID: 1697974559}
   - component: {fileID: 1697974558}
   - component: {fileID: 6331978970973447901}
+  - component: {fileID: 7710930071468751773}
   m_Layer: 0
-  m_Name: Camera
+  m_Name: Pig Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1697974557
 Transform:
   m_ObjectHideFlags: 0
@@ -472,7 +524,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1697974556}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -574,8 +626,24 @@ MonoBehaviour:
   m_ShowCustomSorter: 0
   breakBeforeColorGrading: 0
   m_BeforeTransparentBundles: []
-  m_BeforeStackBundles: []
+  m_BeforeStackBundles:
+  - assemblyQualifiedName: IL3DN_Fog_PP, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  - assemblyQualifiedName: PostProcessOutline, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
   m_AfterStackBundles: []
+--- !u!114 &7710930071468751773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697974556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b2fe876df5f4eb4f8f439d1c96e34be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1723382584
 GameObject:
   m_ObjectHideFlags: 0
@@ -588,13 +656,14 @@ GameObject:
   - component: {fileID: 1723382587}
   - component: {fileID: 1723382586}
   - component: {fileID: 1297241722074290697}
+  - component: {fileID: 6078593186899567881}
   m_Layer: 0
-  m_Name: Camera
+  m_Name: Snake Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1723382585
 Transform:
   m_ObjectHideFlags: 0
@@ -616,7 +685,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1723382584}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -718,8 +787,24 @@ MonoBehaviour:
   m_ShowCustomSorter: 0
   breakBeforeColorGrading: 0
   m_BeforeTransparentBundles: []
-  m_BeforeStackBundles: []
+  m_BeforeStackBundles:
+  - assemblyQualifiedName: IL3DN_Fog_PP, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  - assemblyQualifiedName: PostProcessOutline, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
   m_AfterStackBundles: []
+--- !u!114 &6078593186899567881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1723382584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b2fe876df5f4eb4f8f439d1c96e34be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1865657498
 GameObject:
   m_ObjectHideFlags: 0
@@ -732,13 +817,14 @@ GameObject:
   - component: {fileID: 1865657501}
   - component: {fileID: 1865657500}
   - component: {fileID: 8388176386490037201}
+  - component: {fileID: 5204476169523957219}
   m_Layer: 0
-  m_Name: Camera
+  m_Name: Bunny Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1865657499
 Transform:
   m_ObjectHideFlags: 0
@@ -760,7 +846,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1865657498}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -862,8 +948,24 @@ MonoBehaviour:
   m_ShowCustomSorter: 0
   breakBeforeColorGrading: 0
   m_BeforeTransparentBundles: []
-  m_BeforeStackBundles: []
+  m_BeforeStackBundles:
+  - assemblyQualifiedName: IL3DN_Fog_PP, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  - assemblyQualifiedName: PostProcessOutline, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
   m_AfterStackBundles: []
+--- !u!114 &5204476169523957219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865657498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b2fe876df5f4eb4f8f439d1c96e34be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6551569950819693514
 GameObject:
   m_ObjectHideFlags: 0
@@ -961,7 +1063,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2db04ee5513d86441be99cefb8a9ff3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueCam: {fileID: 1201776963}
+  dialogueCam: {fileID: 381600004104482049}
 --- !u!114 &7870222316319733513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1131,7 +1233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2db04ee5513d86441be99cefb8a9ff3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueCam: {fileID: 1723382584}
+  dialogueCam: {fileID: 6078593186899567881}
 --- !u!114 &6425228219519709536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1209,7 +1311,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2db04ee5513d86441be99cefb8a9ff3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueCam: {fileID: 189910766}
+  dialogueCam: {fileID: 7952192215319347711}
 --- !u!114 &6924631098654111702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1287,7 +1389,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2db04ee5513d86441be99cefb8a9ff3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueCam: {fileID: 793031134}
+  dialogueCam: {fileID: 1721195238576075297}
 --- !u!114 &8430597474321615938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1365,7 +1467,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2db04ee5513d86441be99cefb8a9ff3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueCam: {fileID: 1865657498}
+  dialogueCam: {fileID: 5204476169523957219}
 --- !u!114 &6621069047198170010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1443,7 +1545,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2db04ee5513d86441be99cefb8a9ff3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueCam: {fileID: 1697974556}
+  dialogueCam: {fileID: 7710930071468751773}
 --- !u!114 &1031376982850543069
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -8,7 +8,7 @@ public class PatternTriggerZone : MonoBehaviour
     private PatternPuzzle puzzleScript;
 
     [SerializeField]
-    private GameObject camPattern;
+    private CameraEntity camPattern;
 
     [Header("Wwise")]
     /// <summary>

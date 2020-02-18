@@ -28,6 +28,11 @@ public class Actor : MonoBehaviour
     /// </summary>
     public PerspectiveCameraControl ghostCamera { get; private set;}
 
+    /// <summary>
+    /// Controls actor's camera positioning
+    /// </summary>
+    public ActorCamera actorCamera;
+
     #endregion
 
     [Header("Movement Settings")]
@@ -81,20 +86,26 @@ public class Actor : MonoBehaviour
         rigidbody = GetComponent<Rigidbody>();
         interactionController = GetComponent<PlayerInteractionController>();
         ghostCamera = GetComponentInChildren<PerspectiveCameraControl>();
+
+        if (!actorCamera)
+        {
+            Debug.LogWarning(name + " | missing reference to ActorCamera; attempting to find via FindObjectOfType()...");
+            actorCamera = FindObjectOfType<ActorCamera>();
+        }
     }
 
     private void Start()
     {
         // TODO: make sure we only set initial perspective in one place
         // Default to third-person perspective for both actors
-        perspective = PerspectiveController.Instance.GetPerspectiveByType(CameraController.CameraViews.THIRD_PERSON);
+        perspective = PerspectiveController.Instance.GetPerspectiveByType(OldCameraController.CameraViews.THIRD_PERSON);
 
         // Give player movement control
         if (PlayerController.Instance.GetPlayer() == this) {
             movement = perspective.movement;
         }
-        // Give NPC idle movement
-        else {
+        // Give friend Follow movement (if no movement specified)
+        else if(movement == null) {
             movement = new FollowMovement(PlayerController.Instance.GetPlayer().transform);
         }
 
@@ -200,7 +211,7 @@ public class Actor : MonoBehaviour
         enabled = active;
 
         // Re-enable ghost camera (for 3D perspective only)
-        if(perspective.cameraView.Equals(CameraController.CameraViews.THIRD_PERSON)) 
+        if(perspective.cameraView.Equals(OldCameraController.CameraViews.THIRD_PERSON)) 
             ghostCamera.enabled = active;
 
         // Hide/show perspective UI

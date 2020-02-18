@@ -35,7 +35,7 @@ public class PerspectiveCameraControl : MonoBehaviour
             targetCharacterDirection = characterBody.transform.localRotation.eulerAngles;
     }
 
-    void FixedUpdate()
+    public void CameraUpdate()
     {
         // Allow the script to clamp based on a desired target value.
         var targetOrientation = Quaternion.Euler(targetDirection);

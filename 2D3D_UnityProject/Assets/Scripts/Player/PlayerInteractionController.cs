@@ -34,7 +34,7 @@ public class PlayerInteractionController : MonoBehaviour
     /// </summary>
     private NPC dialoguePartner;
 
-    private GameObject dialogueCam;
+    //private GameObject dialogueCam;
 
     /// <summary>
     /// reference to the orb the player is trying to find
@@ -49,12 +49,11 @@ public class PlayerInteractionController : MonoBehaviour
 
     ///    CAN PROBABLY DISCARD NEXT SECTION IN REFACTOR - END    ///
 
-    // this is probably all bad, but should work for tomorrow's demo
     private ZodiacPuzzle zodiacPuzzle;
 
-    private GameObject zodiacCam;
-    // end of bad stuff
-
+    /// <summary>
+    /// Shown when actor is near an interactable
+    /// </summary>
     public GameObject interactCanvas;
 
     /// <summary>
@@ -62,7 +61,10 @@ public class PlayerInteractionController : MonoBehaviour
     /// </summary>
     private bool inInspectZone;
 
-    private GameObject inspectCam;
+    /// <summary>
+    /// Inspection behavior component
+    /// </summary>
+    private CameraFollow inspectCameraFollow;
 
     /// <summary>
     /// True if player is in the pattern puzzle zone
@@ -71,7 +73,10 @@ public class PlayerInteractionController : MonoBehaviour
 
     private PatternPuzzle patternPuzzle;
 
-    private GameObject patternCam;
+    /// <summary>
+    /// Holds CameraEntity of nearby interactable (if it has one)
+    /// </summary>
+    private CameraEntity interactionCamera;
 
     void Start()
     {
@@ -93,27 +98,27 @@ public class PlayerInteractionController : MonoBehaviour
             {
                 // Show dialogue conversation if interacting with NPC
                 FindObjectOfType<DialogueRunner>().StartDialogue(dialoguePartner.talkToNode);
-                dialogueCam.SetActive(true);
+                CameraController.Instance.SetMainCamera(interactionCamera);
+
                 GameManager.SetCursorActive(true);
             }
             else if (inZodiacZone)
             {
                 // Enable and shift focus to Zodiac puzzle
                 zodiacPuzzle.enabled = true;
-                zodiacCam.SetActive(true);
+                CameraController.Instance.SetMainCamera(interactionCamera);
 
             }
             else if (inPatternZone)
             {
-                // Enable and shift focus to Zodiac puzzle
+                // Enable and shift focus to Pattern puzzle
                 patternPuzzle.enabled = true;
-                patternCam.SetActive(true);
+                CameraController.Instance.SetMainCamera(interactionCamera);
 
             }
             else if (nearbyFish)
             {
                 // Feed nearby fish
-                //nearbyFish.Feed();
                 KoiFishPuzzle.Instance.FeedFish(nearbyFish);
 
                 // Hide interact canvas and return without disabling actor
@@ -122,7 +127,11 @@ public class PlayerInteractionController : MonoBehaviour
             }
             else if (inInspectZone)
             {
-                inspectCam.SetActive(true);
+                // Enable and shift focus to inspection
+                CameraController.Instance.SetMainCamera(interactionCamera);
+                inspectCameraFollow.enabled = true;
+
+                //Cursor.lockState = CursorLockMode.None;
                 GameManager.SetCursorActive(true);
             }
             // Ignore interact button press if no nearby interactable
@@ -148,22 +157,25 @@ public class PlayerInteractionController : MonoBehaviour
     /// </summary>
     /// <param name="withinZone">true on enter, false on exit</param>
     /// <param name="partner">NPC player is currently in zone of</param>
-    public void SetInDialogueZone(bool withinZone, NPC partner, GameObject diaCam)
+    public void SetInDialogueZone(bool withinZone, NPC partner, CameraEntity diaCam)
     {
         inDialogueZone = withinZone;
         dialoguePartner = partner;
-        dialogueCam = diaCam;
+
+        // Store reference to dialogue camera (or set null if out of zone)
+        interactionCamera = withinZone ? diaCam : null;
 
         interactCanvas.SetActive(withinZone);
     }
 
-    public void SetInZodiacZone(bool withinZone, ZodiacPuzzle zodPuz, GameObject zodCam)
+    public void SetInZodiacZone(bool withinZone, ZodiacPuzzle zodPuz, CameraEntity zodCam)
     {
         inZodiacZone = withinZone;
         zodiacPuzzle = zodPuz;
-        zodiacCam = zodCam;
 
-        // TODO: find a way to hide canvas when swapping to actor out of interact zone
+        // Store reference to zodiac camera (or set null if out of zone)
+        interactionCamera = withinZone ? zodCam : null;
+
         // Show/hide interact canvas
         interactCanvas.SetActive(withinZone);
     }
@@ -178,28 +190,30 @@ public class PlayerInteractionController : MonoBehaviour
             nearbyFish = null;
 
         // Show/hide interact canvas
-        // TODO: find a way to hide canvas when swapping to actor out of interact zone
         interactCanvas.SetActive(withinZone);
     }
 
-    public void SetInInspectZone(bool withinZone, GameObject camInspect = null)
+    public void SetInInspectZone(bool withinZone, CameraFollow cameraFollow, CameraEntity camInspect)
     {
         inInspectZone = withinZone;
-        if (withinZone)
-        {
-            inspectCam = camInspect;
-        }
 
+        // Store reference to camera if entering zone, or set null if exiting
+        interactionCamera = withinZone ? camInspect : null;
+
+        inspectCameraFollow = cameraFollow;
+
+        // Show/hide interact canvas
         interactCanvas.SetActive(withinZone);
     }
 
-    public void SetInPatternZone(bool withinZone, PatternPuzzle patPuz, GameObject patCam)
+    public void SetInPatternZone(bool withinZone, PatternPuzzle patPuz, CameraEntity cameraEntity)
     {
         inPatternZone = withinZone;
         patternPuzzle = patPuz;
-        patternCam = patCam;
 
-        // TODO: find a way to hide canvas when swapping to actor out of interact zone
+        // Store reference to camera if entering zone, or set null if exiting
+        interactionCamera = withinZone ? cameraEntity : null;
+
         // Show/hide interact canvas
         interactCanvas.SetActive(withinZone);
     }

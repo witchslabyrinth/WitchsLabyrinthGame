@@ -9,8 +9,6 @@ public class AnimationController : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
 
-    private Camera mainCamera;
-
     /// <summary>
     /// Direction we were facing after last movement input
     /// </summary>
@@ -36,7 +34,7 @@ public class AnimationController : MonoBehaviour
         }
 
         // Set ref to main camera (avoids GameObject.Find() calls performed by Camera.main references)
-        mainCamera = Camera.main;
+        //mainCamera = Camera.main;
 
         isTop = false;
     }
@@ -80,7 +78,8 @@ public class AnimationController : MonoBehaviour
     private void FaceCamera()
     {
         // transform.forward = mainCamera.transform.forward;
-        transform.rotation = mainCamera.transform.rotation;
+        CameraEntity mainCam = CameraController.Instance.GetMainCamera();
+        transform.rotation = mainCam.transform.rotation;
         if (isTop)
         {
             if (lastFacing.x != 0)
@@ -92,5 +91,6 @@ public class AnimationController : MonoBehaviour
                 transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, 180f, transform.rotation.eulerAngles.z);
             }
         }
+        
     }
 }

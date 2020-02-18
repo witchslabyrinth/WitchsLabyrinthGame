@@ -4,6 +4,7 @@ using System.Collections;
 /// <summary>
 /// Used for freezing player movement/animation
 /// </summary>
+[CreateAssetMenu(menuName = "Movement/Null Movement")]
 public class NullMovement : Movement
 {
 
