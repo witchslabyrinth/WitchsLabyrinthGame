@@ -33,7 +33,7 @@ public abstract class CameraEntity : MonoBehaviour
     /// Enables/disables Camera component (call this to turn cameras on/off)
     /// </summary>
     /// <param name="active">True to turn camera on, false to turn it off</param>
-    public void SetCameraActive(bool active)
+    public virtual void SetCameraActive(bool active)
     {
         camera.enabled = active;
     }
