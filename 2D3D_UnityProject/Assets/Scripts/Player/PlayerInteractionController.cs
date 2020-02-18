@@ -102,7 +102,7 @@ public class PlayerInteractionController : MonoBehaviour
 
                 GameManager.SetCursorActive(true);
             }
-            else if (inZodiacZone)
+            else if (inZodiacZone && !zodiacPuzzle.solved)
             {
                 // Enable and shift focus to Zodiac puzzle
                 zodiacPuzzle.enabled = true;

@@ -72,7 +72,10 @@ public class ZodiacPuzzle : MonoBehaviour
     [SerializeField]
     private DoubleSlidingDoors zodiacDoor;
 
-    private bool solved = false;
+    /// <summary>
+    /// Indicates whether player has solved the puzzle
+    /// </summary>
+    public bool solved = false;
 
     public GameObject zodiacCanvas;
 
@@ -193,8 +196,7 @@ public class ZodiacPuzzle : MonoBehaviour
         }
         else
         {
-            if (!solved)
-                PuzzleSolved();
+            PuzzleSolved();
         }
     }
 
@@ -203,6 +205,10 @@ public class ZodiacPuzzle : MonoBehaviour
     /// </summary>
     private void PuzzleSolved()
     {
+        // Make sure we haven't already solved it before (shouldn't be possible)
+        if (solved)
+            return;
+
         // TODO: maybe a smooth camera pan from puzzle view to doors
         // Show camera view of doors opening
         CameraController cameraController = CameraController.Instance;
