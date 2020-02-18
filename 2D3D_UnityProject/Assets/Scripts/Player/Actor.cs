@@ -104,8 +104,8 @@ public class Actor : MonoBehaviour
         if (PlayerController.Instance.GetPlayer() == this) {
             movement = perspective.movement;
         }
-        // Give NPC idle movement
-        else {
+        // Give friend Follow movement (if no movement specified)
+        else if(movement == null) {
             movement = new FollowMovement(PlayerController.Instance.GetPlayer().transform);
         }
 
