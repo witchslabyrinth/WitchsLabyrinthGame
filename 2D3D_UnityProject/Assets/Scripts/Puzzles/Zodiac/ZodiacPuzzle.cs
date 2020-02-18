@@ -203,6 +203,7 @@ public class ZodiacPuzzle : MonoBehaviour
     /// </summary>
     private void PuzzleSolved()
     {
+        // TODO: maybe a smooth camera pan from puzzle view to doors
         // Show camera view of doors opening
         CameraController cameraController = CameraController.Instance;
         cameraController.SetMainCamera(doorsOpenCamera);
@@ -217,6 +218,9 @@ public class ZodiacPuzzle : MonoBehaviour
         zodiacDoor.Open();
         doorMove.Post(gameObject); //Wwise
         solved = true;
+        
+        // Disable puzzle
+        enabled = false;
     }
 
     
