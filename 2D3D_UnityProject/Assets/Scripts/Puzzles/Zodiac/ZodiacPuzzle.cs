@@ -7,16 +7,6 @@ using UnityEngine;
 
 public class ZodiacPuzzle : MonoBehaviour
 {
-    //n8-bit 2/16/2020
-    /// <summary>
-    /// This code activates the dev cheat to solve the Zodiac puzzle upon pressing 0
-    /// </summary>
-    public void cheat_it_up()
-    {
-        //Well, this function makes it pretty simple
-        PuzzleSolved();
-    }
-    //End n8-bit 2/16/2020
 
     [Header("Wwise")]
     /// <summary>
@@ -25,6 +15,15 @@ public class ZodiacPuzzle : MonoBehaviour
     /// <param name="paused">Set Wwise variables for sounds here</param>
     public AK.Wwise.Event stoneMove;
     public AK.Wwise.Event doorMove;
+
+    [Header("Camera Settings")] 
+
+    /// <summary>
+    /// Camera that shows doors opening when puzzle is solved
+    /// </summary>
+    [SerializeField]
+    private CameraEntity doorsOpenCamera;
+
 
     /// <summary>
     /// The number of rounds that must be solved in order to complete the puzzle
@@ -38,6 +37,7 @@ public class ZodiacPuzzle : MonoBehaviour
         CLOCKWISE = 1,
         COUNTER_CLOCKWISE = -1,
     }
+    [Header("Puzzle Settings")]
 
     /// <summary>
     /// Ordered list of rotating disks, from outermost to innermost
@@ -72,7 +72,10 @@ public class ZodiacPuzzle : MonoBehaviour
     [SerializeField]
     private DoubleSlidingDoors zodiacDoor;
 
-    private bool solved = false;
+    /// <summary>
+    /// Indicates whether player has solved the puzzle
+    /// </summary>
+    public bool solved = false;
 
     public GameObject zodiacCanvas;
 
@@ -97,13 +100,11 @@ public class ZodiacPuzzle : MonoBehaviour
 
     void Update()
     {
-        //n8-bit 2/16/2020
         //If we're in the editor and press 0, run the dev cheat
         if (Input.GetKeyDown(KeyCode.Alpha0) && Application.isEditor)
         {
-            cheat_it_up();
+            PuzzleSolved();
         }
-        //End n8-bit 2/16/2020
 
         if (Input.GetKeyDown(KeyCode.W)) 
         {
@@ -117,16 +118,7 @@ public class ZodiacPuzzle : MonoBehaviour
         //TODO: Move this to a generalized interaction script
         if (Input.GetKeyDown(KeyCode.E))
         {
-            // Restore control to player actor
-            Actor actor = PlayerController.Instance.GetPlayer();
-            actor.Enable();
-            CameraController.Instance.SetMainCamera(actor.actorCamera);
-
-            // Restore actor swapping
-            PlayerController.Instance.canSwap = true;
-
-            // Disable the puzzle
-            this.enabled = false;
+            ExitPuzzle();
         }
 
         RotateDisk();
@@ -204,19 +196,55 @@ public class ZodiacPuzzle : MonoBehaviour
         }
         else
         {
-            if (!solved)
-                PuzzleSolved();
+            PuzzleSolved();
         }
     }
 
+    /// <summary>
+    /// Opens doors and restores control to player
+    /// </summary>
     private void PuzzleSolved()
     {
-        // TODO: Maybe disable to center coming out now that we have lights
-        // currentDisk.PieceInOut(ZodiacPuzzlePiece.ZodiacPuzzlePiecePosition.In);
-        // center.PieceInOut(ZodiacPuzzlePiece.ZodiacPuzzlePiecePosition.Out);
+        // Make sure we haven't already solved it before (shouldn't be possible)
+        if (solved)
+            return;
+
+        // TODO: maybe a smooth camera pan from puzzle view to doors
+        // Show camera view of doors opening
+        CameraController cameraController = CameraController.Instance;
+        cameraController.SetMainCamera(doorsOpenCamera);
+
+        // Switch back to player actor when doors finished opening
+        zodiacDoor.onFinished += () =>
+        {
+            ExitPuzzle();
+        };
+
+        // Open doors
         zodiacDoor.Open();
         doorMove.Post(gameObject); //Wwise
         solved = true;
+        
+        // Disable puzzle
+        enabled = false;
+    }
+
+    
+    /// <summary>
+    /// Exits puzzle and restores control to player
+    /// </summary>
+    private void ExitPuzzle()
+    {
+        // Restore control to player actor
+        Actor actor = PlayerController.Instance.GetPlayer();
+        actor.Enable();
+        CameraController.Instance.SetMainCamera(actor.actorCamera);
+
+        // Restore actor swapping
+        PlayerController.Instance.canSwap = true;
+
+        // Disable the puzzle
+        this.enabled = false;
     }
 
     void OnEnable()

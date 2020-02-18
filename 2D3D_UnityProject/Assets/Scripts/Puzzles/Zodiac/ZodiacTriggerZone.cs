@@ -19,6 +19,10 @@ public class ZodiacTriggerZone : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        // Ignore interaction if we've already solved the zodiac puzzle
+        if (puzzleScript.solved)
+            return;
+
         PlayerInteractionController controller = other.GetComponent<PlayerInteractionController>();
         if (controller != null)
             controller.SetInZodiacZone(true, puzzleScript, camZodiac);
