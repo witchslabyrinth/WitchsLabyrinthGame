@@ -4693,17 +4693,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5969970294282569019, guid: ad23a6d0b7a18e24398df7583b0cd3b5,
         type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
+      propertyPath: movement
+      value: 
+      objectReference: {fileID: 11400000, guid: 1a0f1aed1c19e9a40a0ba1158c4648c1,
+        type: 2}
     - target: {fileID: 7226554937751361443, guid: ad23a6d0b7a18e24398df7583b0cd3b5,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 807440143, guid: ad23a6d0b7a18e24398df7583b0cd3b5, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8443913750112641304, guid: ad23a6d0b7a18e24398df7583b0cd3b5,
         type: 3}
@@ -8445,7 +8446,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 449837863}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2443f96ba3b3c47b5b9607648a3fee16, type: 3}
   m_Name: 
