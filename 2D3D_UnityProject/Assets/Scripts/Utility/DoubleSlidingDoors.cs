@@ -13,7 +13,14 @@ public class DoubleSlidingDoors : MonoBehaviour
     [SerializeField]
     private float openCloseTime;
 
-    private float openCloseOffset = 50f;
+    private float openCloseOffset = 3f;
+
+    public delegate void OnFinishedOpenClose();
+
+    /// <summary>
+    /// Event fired after door finished opening/closing
+    /// </summary>
+    public OnFinishedOpenClose onFinished;
 
     public void Open()
     {
@@ -30,6 +37,7 @@ public class DoubleSlidingDoors : MonoBehaviour
         // Create start and end positions for both doors
         Vector3 leftDoorStartPos = leftDoor.localPosition;
         Vector3 leftDoorEndPos = new Vector3(leftDoorStartPos.x, leftDoorStartPos.y, leftDoorStartPos.z + offset);
+
         Vector3 rightDoorStartPos = rightDoor.localPosition;
         Vector3 rightDoorEndPos = new Vector3(rightDoorStartPos.x, rightDoorStartPos.y, rightDoorStartPos.z - offset);
 
@@ -52,5 +60,8 @@ public class DoubleSlidingDoors : MonoBehaviour
         // Unlikely last loop of curve will land on exactly openCloseTime so set final position
         leftDoor.localPosition = leftDoorEndPos;
         rightDoor.localPosition = rightDoorEndPos;
+
+        // Fire finished opening/closing event
+        onFinished?.Invoke();
     }
 }
