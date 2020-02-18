@@ -45,27 +45,24 @@ public class PatternPuzzle : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (!ACubeIsAnimating())
         {
-            if (!ACubeIsAnimating())
-                CurrentCube = Mathf.Clamp(CurrentCube - 1, 0, 4);
-        }
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            if (!ACubeIsAnimating())
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                if (CurrentCube - 1 >= 0)
+                    CurrentCube--;
+            }
+            if (Input.GetKeyDown(KeyCode.W))
             {
                 patternCubes[CurrentCube].Rotate(Direction.BACKWARD);
                 StartCoroutine(CheckSolved());
             }
-        }
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            if (!ACubeIsAnimating())
-                CurrentCube = Mathf.Clamp(CurrentCube + 1, 0, 4);
-        }
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            if (!ACubeIsAnimating())
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                if (CurrentCube + 1 < patternCubes.Count)
+                    CurrentCube++;
+            }
+            if (Input.GetKeyDown(KeyCode.A))
             {
                 SwapCubes(CurrentCube, CurrentCube - 1);
 
@@ -74,28 +71,19 @@ public class PatternPuzzle : MonoBehaviour
 
                 StartCoroutine(CheckSolved());
             }
-        }
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            if (!ACubeIsAnimating())
+            if (Input.GetKeyDown(KeyCode.S))
             {
                 patternCubes[CurrentCube].Rotate(Direction.FORWARD);
                 StartCoroutine(CheckSolved());
             }
-        }
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            if (!ACubeIsAnimating())
+            if (Input.GetKeyDown(KeyCode.D))
             {
                 SwapCubes(CurrentCube, CurrentCube + 1);
                 _currentCube = CurrentCube + 1;
 
                 StartCoroutine(CheckSolved());
             }
-        }
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (!ACubeIsAnimating())
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
                 // Restore control to player actor
                 Actor actor = PlayerController.Instance.GetPlayer();
