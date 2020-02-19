@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Yarn.Unity;
 
 public class DialogueCommands : MonoBehaviour
@@ -43,34 +44,12 @@ public class DialogueCommands : MonoBehaviour
         dialogueRunner.AddCommandHandler("op_camera_1", OpCamera1);
         dialogueRunner.AddCommandHandler("op_camera_3", OpCamera3);
         dialogueRunner.AddCommandHandler("op_camera_4", OpCamera4);
-        dialogueRunner.AddCommandHandler("reset_input", ResetInput);
-        dialogueRunner.AddCommandHandler("reset_camera", ResetCameras);
+        dialogueRunner.AddCommandHandler("load_scene", LoadScene);
     }
 
-    private void ResetCameras(string[] parameters, System.Action onComplete)
+    private void LoadScene(string[] parameters, System.Action onComplete)
     {
-        int cameraIndex = int.Parse(parameters[0]);
-        Actor player = PlayerController.Instance.GetPlayer();
-        player.Enable();
-        GameManager.SetCursorActive(false);
-        liarCameras[cameraIndex].SetActive(false);
-
-        onComplete();
-    }
-
-    private void ResetInput(string[] parameters, System.Action onComplete)
-    {
-        Actor oliver = PlayerController.Instance.GetPlayer();
-        oliver.ghostCamera.gameObject.SetActive(true);
-        oliver.ghostCamera.enabled = true;
-        oliver.enabled = true;
-
-        Actor cat = PlayerController.Instance.GetFriend();
-        cat.enabled = true;
-        cat.GetComponentInChildren<AnimationController>().enabled = true;
-
-        GameManager.SetCursorActive(false);
-        StopCoroutine(currCoroutine);
+        SceneManager.LoadScene("Ukiyo-e Environment");
         onComplete();
     }
 

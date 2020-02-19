@@ -91,9 +91,6 @@ public class PlayerController : Singleton<PlayerController>
                 Physics.IgnoreCollision(oliverCollider, catCollider);
             }
         }
-        // making sure everything's loaded before starting opening cutscene
-        // can probably be deleted later
-        //StartCoroutine(DialInput());
     }
 
     private void Update()
@@ -185,21 +182,5 @@ public class PlayerController : Singleton<PlayerController>
     public Actor GetFriend()
     {
         return friend;
-    }
-
-    private IEnumerator DialInput()
-    {
-        for(float i = 0; i < 1; i += Time.deltaTime)
-        {
-            yield return null;
-        }
-        // Freeze the player actor's controls and disable swapping until cutscene completes
-        player.ghostCamera.enabled = false;
-        player.enabled = false;
-        // TODO: disable actor swapping
-        // TODO: disable pausing
-
-        GameManager.SetCursorActive(true);
-        FindObjectOfType<DialogueRunner>().StartDialogue("OpeningScene");
     }
 }
