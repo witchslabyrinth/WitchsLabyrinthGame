@@ -34,9 +34,6 @@ public class DialogueCommands : MonoBehaviour
     [SerializeField]
     private float angle = 10f;
 
-    [SerializeField]
-    private GameObject[] liarCameras;
-
     private Coroutine currCoroutine;
 
     public void Awake()
@@ -45,6 +42,17 @@ public class DialogueCommands : MonoBehaviour
         dialogueRunner.AddCommandHandler("op_camera_3", OpCamera3);
         dialogueRunner.AddCommandHandler("op_camera_4", OpCamera4);
         dialogueRunner.AddCommandHandler("load_scene", LoadScene);
+        dialogueRunner.AddCommandHandler("reset_camera", ResetCamera);
+    }
+
+    private void ResetCamera(string[] parameters, System.Action onComplete)
+    {
+        Actor actor = PlayerController.Instance.GetPlayer();
+        actor.Enable();
+        CameraController.Instance.SetMainCamera(actor.actorCamera);
+        PlayerController.Instance.canSwap = true;
+
+        onComplete();
     }
 
     private void LoadScene(string[] parameters, System.Action onComplete)
