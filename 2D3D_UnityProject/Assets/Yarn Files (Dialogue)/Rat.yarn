@@ -12,6 +12,7 @@ title: Rat.Win
 tags: 
 ---
 <<reset_camera>>
+<<set_mouse_on false>>
 ===
 
 title: Rat.Lose
@@ -19,4 +20,5 @@ tags:
 ---
 Rat: You have been misled. You must try again!
 <<reset_camera>>
+<<set_mouse_on false>>
 ===

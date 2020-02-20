@@ -43,6 +43,7 @@ public class DialogueCommands : MonoBehaviour
         dialogueRunner.AddCommandHandler("op_camera_4", OpCamera4);
         dialogueRunner.AddCommandHandler("load_scene", LoadScene);
         dialogueRunner.AddCommandHandler("reset_camera", ResetCamera);
+        dialogueRunner.AddCommandHandler("set_mouse_on", SetMouseActive);
     }
 
     private void ResetCamera(string[] parameters, System.Action onComplete)
@@ -61,13 +62,15 @@ public class DialogueCommands : MonoBehaviour
         onComplete();
     }
 
+    private void SetMouseActive(string[] parameters, System.Action onComplete)
+    {
+        bool isMouseOn = bool.Parse(parameters[0]);
+        GameManager.SetCursorActive(isMouseOn);
+        onComplete();
+    }
+
     private void OpCamera1(string[] parameters, System.Action onComplete)
     {
-        opCamera.transform.position = PlayerController.Instance.GetPlayer().ghostCamera.transform.position;
-        opCamera.transform.rotation = PlayerController.Instance.GetPlayer().ghostCamera.transform.rotation;
-        opCamera.SetActive(true);
-
-        PlayerController.Instance.GetPlayer().ghostCamera.gameObject.SetActive(false);
         currCoroutine = StartCoroutine(PanToCat(onComplete));
     }
 
