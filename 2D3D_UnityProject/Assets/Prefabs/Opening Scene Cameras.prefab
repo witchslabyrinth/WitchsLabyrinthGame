@@ -48,7 +48,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3511910587727205907
 Transform:
   m_ObjectHideFlags: 0
@@ -56,13 +56,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3511910587727205908}
-  m_LocalRotation: {x: 0.16557723, y: -0, z: -0, w: 0.9861968}
-  m_LocalPosition: {x: 0, y: 61.2, z: -68.3}
+  m_LocalRotation: {x: 0.10342529, y: -0, z: -0, w: 0.99463725}
+  m_LocalPosition: {x: 70.3, y: 1.989, z: 47.06}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3511910588834235115}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 19.062, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &3511910587727205904
 Camera:
   m_ObjectHideFlags: 0
@@ -240,6 +240,7 @@ Transform:
   - {fileID: 2074465264800515133}
   - {fileID: 3511910589127211901}
   - {fileID: 3511910587803767890}
+  - {fileID: 231941127390514806}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -261,9 +262,11 @@ MonoBehaviour:
   cameraLoc3: {fileID: 3511910589337901769}
   cameraLoc3Center: {fileID: 3511910589127211901}
   cameraLoc4: {fileID: 3511910587803767890}
+  cameraLoc5: {fileID: 231941127390514806}
   panToCatTime: 1
   panToTempleTime: 2
   angle: 10
+  panToZodiacTime: 2
 --- !u!1 &3511910589127211902
 GameObject:
   m_ObjectHideFlags: 0
@@ -325,3 +328,33 @@ Transform:
   m_Father: {fileID: 3511910589127211901}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 36.502003, y: 0, z: 0}
+--- !u!1 &5198379415585502673
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 231941127390514806}
+  m_Layer: 0
+  m_Name: Camera Loc 5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &231941127390514806
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5198379415585502673}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 41.89, y: 2.04, z: 54.33}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3511910588834235115}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
