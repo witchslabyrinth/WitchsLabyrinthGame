@@ -41,6 +41,25 @@
 						<ActiveSource Name="Cat_Mrow_01" ID="{FF1F6407-3143-4041-87D3-33EC2B5C33AC}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
+				<Sound Name="cat_hiss" ID="{67D40956-207F-4748-AA70-416EBCB970BD}" ShortID="587174049">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{24C7AD02-E66A-4B4B-8735-0AC29636FC00}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CB9D8304-7AAA-4374-9412-CD9A3A2EDD3D}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="cat_hiss" ID="{491F51A7-DE75-40EB-B4D8-FA7F9F9F4C70}" ShortID="1020522357">
+							<Language>SFX</Language>
+							<AudioFile>cat_hiss.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="cat_hiss" ID="{491F51A7-DE75-40EB-B4D8-FA7F9F9F4C70}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>
