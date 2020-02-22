@@ -34,6 +34,18 @@ public class PatternPuzzle : MonoBehaviour
         }
     }
 
+    //n8-bit 2/11/2020
+    /// <summary>
+    /// This code activates the dev cheat to solve the Koi Fish puzzle upon pressing 9
+    /// </summary>
+    public void cheat_it_up()
+    {
+        //Solve the puzzle
+        Debug.Log("Dev cheat activated! Solving Pattern.");
+        Solved();
+    }
+    //End n8-bit 2/11/2020
+
     private void Start()
     {
         _currentCube = initalCube;
@@ -42,6 +54,10 @@ public class PatternPuzzle : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Alpha8)&&Application.isEditor)
+        {
+            cheat_it_up();
+        }
         if (!ACubeIsAnimating())
         {
             if (Input.GetKeyDown(KeyCode.Q))
