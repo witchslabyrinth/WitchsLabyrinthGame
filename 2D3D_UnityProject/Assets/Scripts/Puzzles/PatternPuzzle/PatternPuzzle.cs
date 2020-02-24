@@ -34,6 +34,11 @@ public class PatternPuzzle : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Indicates whether player has solved the puzzle
+    /// </summary>
+    public bool solved = false;
+
     private void Start()
     {
         _currentCube = initalCube;
@@ -174,6 +179,7 @@ public class PatternPuzzle : MonoBehaviour
     {
 
         Debug.Log("Solved");
+        solved = true;
         Exit();
         StartCoroutine(WinAnimation());
     }
