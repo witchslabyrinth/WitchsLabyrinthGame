@@ -82,17 +82,7 @@ public class PatternPuzzle : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.Escape))
             {
-                // Restore control to player actor
-                Actor player = PlayerController.Instance.GetPlayer();
-                player.Enable();
-                CameraController.Instance.SetMainCamera(player.actorCamera);
-
-                // Restore actor swapping
-                PlayerController.Instance.canSwap = true;
-                
-                // Disable puzzle and deselect cube
-                this.enabled = false;
-                patternCubes[_currentCube].Deselect();
+                Exit();
             }
         }
     }
@@ -165,11 +155,26 @@ public class PatternPuzzle : MonoBehaviour
         return animating;
     }
 
+    private void Exit()
+    {
+        // Restore control to player actor
+        Actor player = PlayerController.Instance.GetPlayer();
+        player.Enable();
+        CameraController.Instance.SetMainCamera(player.actorCamera);
+
+        // Restore actor swapping
+        PlayerController.Instance.canSwap = true;
+
+        // Disable puzzle and deselect cube
+        this.enabled = false;
+        patternCubes[_currentCube].Deselect();
+    }
+
     private void Solved()
     {
-        patternCubes[CurrentCube].Deselect();
 
         Debug.Log("Solved");
+        Exit();
         StartCoroutine(WinAnimation());
     }
 
