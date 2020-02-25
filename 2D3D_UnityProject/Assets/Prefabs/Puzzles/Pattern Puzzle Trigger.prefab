@@ -377,7 +377,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7af39e02abefb7942b46b982ce48d48f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  patCamera: {fileID: 83399072687871839}
   patternCubes:
   - {fileID: 602784397452107048}
   - {fileID: 986295921031366894}
@@ -388,12 +387,39 @@ MonoBehaviour:
   initalCube: 2
   winAnimationCurve:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.5
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  winAnimationJumpTime: 0
-  winAnimationTimeInBetween: 0
+  winAnimationJumpTime: 1
+  winAnimationTimeInBetween: 0.25
 --- !u!1 &4257723700277811640
 GameObject:
   m_ObjectHideFlags: 0
