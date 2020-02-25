@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4208683251683716152}
   - component: {fileID: 1782685005}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: PerspectiveController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53,8 +53,8 @@ MonoBehaviour:
   - cameraView: 1
     movement: {fileID: 11400000, guid: cf8fffaca5b5f4fa09eb844ae0652b28, type: 2}
     orthographic: 1
-    orthographicCameraRotation: {x: 90, y: 0, z: 0}
-    orthographicCameraOffset: {x: 0, y: 20, z: 2}
+    orthographicCameraRotation: {x: 90, y: -90, z: 0}
+    orthographicCameraOffset: {x: 0, y: 20, z: 0}
   - cameraView: 2
     movement: {fileID: 11400000, guid: 61ffe63a94824490bb2910930cba2845, type: 2}
     orthographic: 1

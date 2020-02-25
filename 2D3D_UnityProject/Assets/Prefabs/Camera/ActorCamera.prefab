@@ -92,8 +92,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efafdc3f1ba5f4bbea4f0af8b162052e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orthoOffset: 2
-  headway: 2
+  actor: {fileID: 0}
+  perspectiveTransitionSpeed: 1
+  lastThirdPersonCameraPosition: {x: 0, y: 0, z: 0}
+  lastThirdPersonCameraRotation: {x: 0, y: 0, z: 0}
 --- !u!114 &7753082780663901557
 MonoBehaviour:
   m_ObjectHideFlags: 0
