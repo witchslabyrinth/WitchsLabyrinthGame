@@ -217,7 +217,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3511910588834235115}
-  - component: {fileID: 3511910588834235116}
+  - component: {fileID: 4421984818086579183}
   m_Layer: 0
   m_Name: Opening Scene Cameras
   m_TagString: Untagged
@@ -244,7 +244,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3511910588834235116
+--- !u!114 &4421984818086579183
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -253,7 +253,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3511910588834235117}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d806b3b30e71673439d24c4e29d25129, type: 3}
+  m_Script: {fileID: 11500000, guid: c533d64209bab174caf439758b9310d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueRunner: {fileID: 0}
@@ -263,7 +263,7 @@ MonoBehaviour:
   cameraLoc3Center: {fileID: 3511910589127211901}
   cameraLoc4: {fileID: 3511910587803767890}
   cameraLoc5: {fileID: 231941127390514806}
-  panToCatTime: 1
+  panToCatTime: 2
   panToTempleTime: 2
   angle: 10
   panToZodiacTime: 2

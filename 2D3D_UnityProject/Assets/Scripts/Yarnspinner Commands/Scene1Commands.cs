@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using Yarn.Unity;
 
-public class DialogueCommands : MonoBehaviour
+public class Scene1Commands : MonoBehaviour
 {
     // Drag and drop your Dialogue Runner into this variable.
     [SerializeField]
@@ -48,33 +48,6 @@ public class DialogueCommands : MonoBehaviour
         dialogueRunner.AddCommandHandler("op_camera_3", OpCamera3);
         dialogueRunner.AddCommandHandler("op_camera_4", OpCamera4);
         dialogueRunner.AddCommandHandler("op_camera_5", OpCamera5);
-        dialogueRunner.AddCommandHandler("liar_win", LiarWin);
-        dialogueRunner.AddCommandHandler("load_scene", LoadScene);
-        dialogueRunner.AddCommandHandler("reset_camera", ResetCamera);
-        dialogueRunner.AddCommandHandler("set_mouse_on", SetMouseActive);
-    }
-
-    private void ResetCamera(string[] parameters, System.Action onComplete)
-    {
-        Actor actor = PlayerController.Instance.GetPlayer();
-        actor.Enable();
-        CameraController.Instance.SetMainCamera(actor.actorCamera);
-        PlayerController.Instance.canSwap = true;
-
-        onComplete();
-    }
-
-    private void LoadScene(string[] parameters, System.Action onComplete)
-    {
-        SceneManager.LoadScene("Ukiyo-e Environment");
-        onComplete();
-    }
-
-    private void SetMouseActive(string[] parameters, System.Action onComplete)
-    {
-        bool isMouseOn = bool.Parse(parameters[0]);
-        GameManager.SetCursorActive(isMouseOn);
-        onComplete();
     }
 
     private void OpCamera1(string[] parameters, System.Action onComplete)
@@ -100,11 +73,6 @@ public class DialogueCommands : MonoBehaviour
     {
         StopCoroutine(currCoroutine);
         currCoroutine = StartCoroutine(panToZodiac());
-    }
-
-    private void LiarWin(string[] parameters)
-    {
-        //stuff for when players solve liars puzzle
     }
 
     private IEnumerator PanToCat(System.Action onComplete)
