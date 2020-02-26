@@ -250,9 +250,9 @@ public class PatternCube : MonoBehaviour
         switch(direction)
         {
             case PatternPuzzle.Direction.BACKWARD:
-                return Quaternion.AngleAxis(RotationAmount, gameObject.transform.right);
+                return Quaternion.AngleAxis(RotationAmount, Vector3.right);// gameObject.transform.right);
             case PatternPuzzle.Direction.FORWARD:
-                return Quaternion.AngleAxis(RotationAmount, gameObject.transform.right * -1f);
+                return Quaternion.AngleAxis(RotationAmount, Vector3.right * -1f);// gameObject.transform.right * -1f);
         }
         throw new System.Exception("Unexpected code path reached.");
     }
