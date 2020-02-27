@@ -11,12 +11,15 @@ Snake: Am I the one with the orb?
 title: Snake.Win
 tags: 
 ---
+<<liar_win>>
 Snake: Well done.
-<<reset_camera 0>>
+<<reset_camera>>
+<<set_mouse_on false>>
 ===
 
 title: Snake.Lose
 tags: 
 ---
-<<reset_camera 0>>
+<<reset_camera>>
+<<set_mouse_on false>>
 ===
