@@ -12,6 +12,9 @@ public class DialogueCommands : MonoBehaviour
 
     protected Coroutine currCoroutine;
 
+    /// <summary>
+    /// add all commands to DialogueRunner
+    /// </summary>
     private void Awake()
     {
         dialogueRunner.AddCommandHandler("load_scene", LoadScene);
@@ -19,6 +22,11 @@ public class DialogueCommands : MonoBehaviour
         dialogueRunner.AddCommandHandler("set_mouse_on", SetMouseActive);
     }
 
+    /// <summary>
+    /// reset to player control
+    /// </summary>
+    /// <param name="parameters"></param>
+    /// <param name="onComplete"></param>
     private void ResetCamera(string[] parameters, System.Action onComplete)
     {
         Actor actor = PlayerController.Instance.GetPlayer();
@@ -29,6 +37,11 @@ public class DialogueCommands : MonoBehaviour
         onComplete();
     }
 
+    /// <summary>
+    /// load new scene
+    /// </summary>
+    /// <param name="parameters"></param>
+    /// <param name="onComplete"></param>
     private void LoadScene(string[] parameters, System.Action onComplete)
     {
         string sceneName = "";
@@ -44,6 +57,16 @@ public class DialogueCommands : MonoBehaviour
         onComplete();
     }
 
+    private void Update()
+    {
+        Debug.Log(Cursor.lockState);
+    }
+
+    /// <summary>
+    /// turns mouse on and off
+    /// </summary>
+    /// <param name="parameters"></param>
+    /// <param name="onComplete"></param>
     private void SetMouseActive(string[] parameters, System.Action onComplete)
     {
         bool isMouseOn = bool.Parse(parameters[0]);
@@ -51,6 +74,13 @@ public class DialogueCommands : MonoBehaviour
         onComplete();
     }
 
+    /// <summary>
+    /// pans the camera from one point to another.
+    /// </summary>
+    /// <param name="camera">camera to pan</param>
+    /// <param name="target">ending position and rotation</param>
+    /// <param name="panTime">length of pan</param>
+    /// <returns></returns>
     protected IEnumerator PanCamera(Transform camera, Transform target, float panTime)
     {
         Vector3 startPos = camera.position;
@@ -66,6 +96,14 @@ public class DialogueCommands : MonoBehaviour
         camera.rotation = target.rotation;
     }
 
+    /// <summary>
+    /// pans the camera from one point to another. blocking version
+    /// </summary>
+    /// <param name="camera">camera to pan</param>
+    /// <param name="target">ending position and rotation</param>
+    /// <param name="panTime">length of pan</param>
+    /// <param name="onComplete">called at the end to let DialogueRunner know this function is complete</param>
+    /// <returns></returns>
     protected IEnumerator PanCamera(Transform camera, Transform target, float panTime, System.Action onComplete)
     {
         Vector3 startPos = camera.position;
