@@ -4,12 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using Yarn.Unity;
 
-public class Scene1Commands : MonoBehaviour
+public class Scene1Commands : DialogueCommands
 {
-    // Drag and drop your Dialogue Runner into this variable.
-    [SerializeField]
-    private DialogueRunner dialogueRunner;
-
     [SerializeField]
     private GameObject opCamera;
 
@@ -40,8 +36,6 @@ public class Scene1Commands : MonoBehaviour
     [SerializeField]
     private float panToZodiacTime = 2f;
 
-    private Coroutine currCoroutine;
-
     private void Awake()
     {
         dialogueRunner.AddCommandHandler("op_camera_1", OpCamera1);
@@ -52,7 +46,7 @@ public class Scene1Commands : MonoBehaviour
 
     private void OpCamera1(string[] parameters, System.Action onComplete)
     {
-        currCoroutine = StartCoroutine(PanToCat(onComplete));
+        currCoroutine = StartCoroutine(PanCamera(opCamera.transform, cameraLoc1, panToCatTime, onComplete));
     }
 
     private void OpCamera3(string[] parameters)
@@ -66,29 +60,13 @@ public class Scene1Commands : MonoBehaviour
     private void OpCamera4(string[] parameters)
     {
         StopCoroutine(currCoroutine);
-        currCoroutine = StartCoroutine(PanToTemple());
+        currCoroutine = StartCoroutine(PanCamera(opCamera.transform, cameraLoc4, panToTempleTime));
     }
 
     private void OpCamera5(string[] parameters)
     {
         StopCoroutine(currCoroutine);
-        currCoroutine = StartCoroutine(panToZodiac());
-    }
-
-    private IEnumerator PanToCat(System.Action onComplete)
-    {
-        Vector3 startPos = opCamera.transform.position;
-        Quaternion startRot = opCamera.transform.rotation;
-        for (float time = 0; time < panToCatTime; time += Time.deltaTime)
-        {
-            float percentage = time / panToCatTime;
-            opCamera.transform.position = Vector3.Lerp(startPos, cameraLoc1.position, percentage);
-            opCamera.transform.rotation = Quaternion.Lerp(startRot, cameraLoc1.rotation, percentage);
-            yield return null;
-        }
-        opCamera.transform.position = cameraLoc1.position;
-        opCamera.transform.rotation = cameraLoc1.rotation;
-        onComplete();
+        currCoroutine = StartCoroutine(PanCamera(opCamera.transform, cameraLoc5, panToZodiacTime));
     }
 
     private IEnumerator WholeMapPan()
@@ -98,36 +76,5 @@ public class Scene1Commands : MonoBehaviour
             opCamera.transform.RotateAround(cameraLoc3Center.position, Vector3.up, angle * Time.deltaTime);
             yield return null;
         }
-    }
-
-    private IEnumerator PanToTemple()
-    {
-        Vector3 startPos = opCamera.transform.position;
-        Quaternion startRot = opCamera.transform.rotation;
-        for (float time = 0; time < panToTempleTime; time += Time.deltaTime)
-        {
-            float percentage = time / panToTempleTime;
-            opCamera.transform.position = Vector3.Lerp(startPos, cameraLoc4.position, percentage);
-            opCamera.transform.rotation = Quaternion.Lerp(startRot, cameraLoc4.rotation, percentage);
-            yield return null;
-        }
-
-        opCamera.transform.position = cameraLoc4.position;
-        opCamera.transform.rotation = cameraLoc4.rotation;
-    }
-
-    private IEnumerator panToZodiac()
-    {
-        Vector3 startPos = opCamera.transform.position;
-        Quaternion startRot = opCamera.transform.rotation;
-        for (float time = 0; time < panToZodiacTime; time += Time.deltaTime)
-        {
-            float percentage = time / panToZodiacTime;
-            opCamera.transform.position = Vector3.Lerp(startPos, cameraLoc5.position, percentage);
-            opCamera.transform.rotation = Quaternion.Lerp(startRot, cameraLoc5.rotation, percentage);
-            yield return null;
-        }
-        opCamera.transform.position = cameraLoc5.position;
-        opCamera.transform.rotation = cameraLoc5.rotation;
     }
 }

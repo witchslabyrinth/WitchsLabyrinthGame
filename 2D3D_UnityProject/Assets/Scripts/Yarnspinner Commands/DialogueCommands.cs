@@ -8,9 +8,9 @@ public class DialogueCommands : MonoBehaviour
 {
     // Drag and drop your Dialogue Runner into this variable.
     [SerializeField]
-    private DialogueRunner dialogueRunner;
+    protected DialogueRunner dialogueRunner;
 
-    private Coroutine currCoroutine;
+    protected Coroutine currCoroutine;
 
     private void Awake()
     {
@@ -31,8 +31,16 @@ public class DialogueCommands : MonoBehaviour
 
     private void LoadScene(string[] parameters, System.Action onComplete)
     {
-        string scene = parameters[0];
-        SceneManager.LoadScene(scene);
+        string sceneName = "";
+        for (int i = 0; i < parameters.Length; i++)
+        {
+            sceneName += parameters[i];
+            if (i < parameters.Length-1)
+            {
+                sceneName += " ";
+            }
+        }
+        SceneManager.LoadScene(sceneName);
         onComplete();
     }
 
@@ -40,6 +48,37 @@ public class DialogueCommands : MonoBehaviour
     {
         bool isMouseOn = bool.Parse(parameters[0]);
         GameManager.SetCursorActive(isMouseOn);
+        onComplete();
+    }
+
+    protected IEnumerator PanCamera(Transform camera, Transform target, float panTime)
+    {
+        Vector3 startPos = camera.position;
+        Quaternion startRot = camera.rotation;
+        for (float time = 0; time < panTime; time += Time.deltaTime)
+        {
+            float percentage = time / panTime;
+            camera.position = Vector3.Lerp(startPos, target.position, percentage);
+            camera.rotation = Quaternion.Lerp(startRot, target.rotation, percentage);
+            yield return null;
+        }
+        camera.position = target.position;
+        camera.rotation = target.rotation;
+    }
+
+    protected IEnumerator PanCamera(Transform camera, Transform target, float panTime, System.Action onComplete)
+    {
+        Vector3 startPos = camera.position;
+        Quaternion startRot = camera.rotation;
+        for (float time = 0; time < panTime; time += Time.deltaTime)
+        {
+            float percentage = time / panTime;
+            camera.position = Vector3.Lerp(startPos, target.position, percentage);
+            camera.rotation = Quaternion.Lerp(startRot, target.rotation, percentage);
+            yield return null;
+        }
+        camera.position = target.position;
+        camera.rotation = target.rotation;
         onComplete();
     }
 }

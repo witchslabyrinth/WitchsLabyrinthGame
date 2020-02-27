@@ -12138,6 +12138,21 @@ PrefabInstance:
       propertyPath: dialogueRunner
       value: 
       objectReference: {fileID: 3591557725304414876}
+    - target: {fileID: 4421984818086579183, guid: 97212c30defe4c345ae51dccf7d82158,
+        type: 3}
+      propertyPath: panToCatTime
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4421984818086579183, guid: 97212c30defe4c345ae51dccf7d82158,
+        type: 3}
+      propertyPath: panToTempleTime
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4421984818086579183, guid: 97212c30defe4c345ae51dccf7d82158,
+        type: 3}
+      propertyPath: panToZodiacTime
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97212c30defe4c345ae51dccf7d82158, type: 3}
 --- !u!1001 &1072392859
@@ -14532,16 +14547,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 525419124}
     m_Modifications:
-    - target: {fileID: 5471623200013091428, guid: bf05070427ba2d54d9ff399958f9a07d,
-        type: 3}
-      propertyPath: dialogueRunner
-      value: 
-      objectReference: {fileID: 3591557725304414876}
     - target: {fileID: 6551569950819693514, guid: bf05070427ba2d54d9ff399958f9a07d,
         type: 3}
       propertyPath: m_Name
       value: Liar_Puzzle
       objectReference: {fileID: 0}
+    - target: {fileID: 5471623200013091428, guid: bf05070427ba2d54d9ff399958f9a07d,
+        type: 3}
+      propertyPath: dialogueRunner
+      value: 
+      objectReference: {fileID: 3591557725304414876}
     - target: {fileID: 4393796704609228232, guid: bf05070427ba2d54d9ff399958f9a07d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -64596,6 +64611,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5801511757757655383, guid: 8f0facbab6e2a9f4b8b028fb7147ebf2,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5801511756839228644, guid: 8f0facbab6e2a9f4b8b028fb7147ebf2,
         type: 3}
       propertyPath: m_SizeDelta.y
@@ -64780,6 +64800,22 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5801511757377914369, guid: 8f0facbab6e2a9f4b8b028fb7147ebf2,
+        type: 3}
+      propertyPath: yarnScripts.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5801511757377914369, guid: 8f0facbab6e2a9f4b8b028fb7147ebf2,
+        type: 3}
+      propertyPath: yarnScripts.Array.data[0]
+      value: 
+      objectReference: {fileID: 2480198943629176163, guid: 3159525fe7b433a4fab6f4f9fd8fe20d,
+        type: 3}
+    - target: {fileID: 5801511757377914369, guid: 8f0facbab6e2a9f4b8b028fb7147ebf2,
+        type: 3}
+      propertyPath: startAutomatically
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f0facbab6e2a9f4b8b028fb7147ebf2, type: 3}
