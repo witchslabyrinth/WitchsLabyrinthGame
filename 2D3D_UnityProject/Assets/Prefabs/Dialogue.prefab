@@ -439,13 +439,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bec29c0a230741bdac901dba8da47ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  yarnScripts:
-  - {fileID: 2480198943629176163, guid: 3159525fe7b433a4fab6f4f9fd8fe20d, type: 3}
+  yarnScripts: []
   textLanguage: 
   variableStorage: {fileID: 5801511757377914375}
   dialogueUI: {fileID: 5801511757377914374}
   startNode: OpeningScene
-  startAutomatically: 1
+  startAutomatically: 0
   automaticCommands: 1
   onNodeComplete:
     m_PersistentCalls:

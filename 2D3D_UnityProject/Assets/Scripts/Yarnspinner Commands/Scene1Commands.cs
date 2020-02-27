@@ -42,7 +42,7 @@ public class Scene1Commands : MonoBehaviour
 
     private Coroutine currCoroutine;
 
-    public void Awake()
+    private void Awake()
     {
         dialogueRunner.AddCommandHandler("op_camera_1", OpCamera1);
         dialogueRunner.AddCommandHandler("op_camera_3", OpCamera3);
@@ -122,7 +122,7 @@ public class Scene1Commands : MonoBehaviour
         Quaternion startRot = opCamera.transform.rotation;
         for (float time = 0; time < panToZodiacTime; time += Time.deltaTime)
         {
-            float percentage = time / panToCatTime;
+            float percentage = time / panToZodiacTime;
             opCamera.transform.position = Vector3.Lerp(startPos, cameraLoc5.position, percentage);
             opCamera.transform.rotation = Quaternion.Lerp(startRot, cameraLoc5.rotation, percentage);
             yield return null;

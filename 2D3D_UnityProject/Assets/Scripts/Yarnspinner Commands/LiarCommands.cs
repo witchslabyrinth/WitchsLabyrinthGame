@@ -10,7 +10,7 @@ public class LiarCommands : MonoBehaviour
     [SerializeField]
     private DialogueRunner dialogueRunner;
 
-    public void Awake()
+    private void Awake()
     {
         dialogueRunner.AddCommandHandler("liar_win", LiarWin);
     }

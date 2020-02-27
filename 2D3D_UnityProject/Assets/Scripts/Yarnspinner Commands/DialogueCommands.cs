@@ -12,7 +12,7 @@ public class DialogueCommands : MonoBehaviour
 
     private Coroutine currCoroutine;
 
-    public void Awake()
+    private void Awake()
     {
         dialogueRunner.AddCommandHandler("load_scene", LoadScene);
         dialogueRunner.AddCommandHandler("reset_camera", ResetCamera);
@@ -31,7 +31,8 @@ public class DialogueCommands : MonoBehaviour
 
     private void LoadScene(string[] parameters, System.Action onComplete)
     {
-        SceneManager.LoadScene("Ukiyo-e Environment");
+        string scene = parameters[0];
+        SceneManager.LoadScene(scene);
         onComplete();
     }
 
