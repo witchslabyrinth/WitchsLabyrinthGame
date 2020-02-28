@@ -192,6 +192,10 @@
 									</ReferenceList>
 								</Action>
 								<Action Name="" ID="{B9CB0D09-FDC0-457D-B1E9-7B386AACC284}" ShortID="822155556">
+									<PropertyList>
+										<Property Name="FadeInCurve" Type="int16" Value="6"/>
+										<Property Name="FadeTime" Type="Real64" Value="1"/>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="Song_Ikigai" ID="{F57C6975-47CD-4679-857A-03D8670B6E89}" WorkUnitID="{1BAF4E43-D480-476A-8D94-BA81CA478199}"/>

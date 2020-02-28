@@ -31,7 +31,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 31c7159bb637e0438b0b0a3598f10701
     GuidInternal: 
-    m_lastTime: -8586200380606912835
+    m_lastTime: -8586187405695190145
     List:
     - name: Main
       guid: 1d85aefae0798f44adc3648c94a6abd2
@@ -47,7 +47,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 5601ea873c34f449957bd3b5ded1c2c6
     GuidInternal: 
-    m_lastTime: -8586200380607002913
+    m_lastTime: -8586187356347010440
     List:
     - name: CatSwitchSound
       guid: d1a8c45f839f904fbc04fe586e18bb61
@@ -93,8 +93,20 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Oliver\Interactions\Footstep_Player
       maxAttenuation: 0
-      maxDuration: 0.682857
-      minDuration: 0.150421
+      maxDuration: 0
+      minDuration: 0
+    - name: Footsteps
+      guid: d97fc7de0a81804d877c9f8322b47e2b
+      id: 2385628198
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Footsteps
+        ObjectType: 3
+      Path: Default Work Unit\Footsteps
+      maxAttenuation: 0
+      maxDuration: 1.578667
+      minDuration: 0.361333
     - name: Lantern_LightUp
       guid: a6b63faf59087e4698ab526d8d2a82e5
       id: 2716631521
@@ -122,6 +134,18 @@ MonoBehaviour:
       - ElementName: Music_Play
         ObjectType: 3
       Path: Default Work Unit\Scene\Music_Play
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Music_WInd
+      guid: 62d5144b153a5e47aa11c22961c99661
+      id: 214611115
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Music_WInd
+        ObjectType: 3
+      Path: Default Work Unit\Music_WInd
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -245,8 +269,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: UI\OnMenuClose
       maxAttenuation: 0
-      maxDuration: 0.689909
-      minDuration: 0.689909
+      maxDuration: 0.697925
+      minDuration: 0.697925
     - name: OnMenuHover
       guid: ccb4b6ff5951344696b08a017e95393e
       id: 961842423
@@ -434,32 +458,51 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: cb5f7cd43e7dce46b55ab3766d658e16
     GuidInternal: 
-    m_lastTime: -8586206345781226556
+    m_lastTime: -8586187361598896769
     List:
-    - name: Material
-      guid: de7708ac5dbf254f8434a7a64284ca29
-      id: 3865314626
+    - name: Ambience
+      guid: d9221d5e920cb94f94e2c9630f469d66
+      id: 85412153
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: Material
+      - ElementName: Ambience
         ObjectType: 11
-      Path: Default Work Unit\Material
+      Path: Default Work Unit\Ambience
+      values:
+      - name: Music
+        guid: dd28e44e75b0224c9f4527c4f8408bb8
+        id: 3991942870
+        PathAndIcons:
+        - ElementName: Music
+          ObjectType: 10
+      - name: Wind_Cicadas
+        guid: 00fc34be00ce0d479a43a601451d7985
+        id: 104544698
+        PathAndIcons:
+        - ElementName: Wind_Cicadas
+          ObjectType: 10
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
+    - name: Footsteps
+      guid: 417b58f419dba040ad3dd0412bb2a926
+      id: 2385628198
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Footsteps
+        ObjectType: 11
+      Path: Default Work Unit\Footsteps
       values:
       - name: Grass
-        guid: cf812e1c837440498926979ca934ff58
+        guid: f97f755a785a8f46b3d5e29a7bc15f95
         id: 4248645337
         PathAndIcons:
         - ElementName: Grass
           ObjectType: 10
-      - name: Stone
-        guid: cae5b261aba9254d9f84fa9d786aafaa
-        id: 1216965916
-        PathAndIcons:
-        - ElementName: Stone
-          ObjectType: 10
       - name: Wood
-        guid: 80e971d7ded2d843906ad35a4994b5fa
+        guid: e72d0c8432fa054c8bf430890ef37b6b
         id: 2058049674
         PathAndIcons:
         - ElementName: Wood
@@ -479,8 +522,5 @@ MonoBehaviour:
   - /2D3D_UnityProject_WwiseProject/Events
   - /2D3D_UnityProject_WwiseProject/Events/Default Work Unit
   - /2D3D_UnityProject_WwiseProject/Events/Default Work Unit/Ambience
-  - /2D3D_UnityProject_WwiseProject/Events/Default Work Unit/Puzzles
-  - /2D3D_UnityProject_WwiseProject/Events/Default Work Unit/Puzzles/Zodiac
-  - /2D3D_UnityProject_WwiseProject/Events/UI
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

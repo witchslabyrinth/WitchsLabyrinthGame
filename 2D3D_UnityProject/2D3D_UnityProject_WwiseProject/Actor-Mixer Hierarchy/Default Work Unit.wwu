@@ -107,7 +107,7 @@
 								</Property>
 								<Property Name="Pitch" Type="int32">
 									<ValueList>
-										<Value>-150</Value>
+										<Value>-250</Value>
 									</ValueList>
 								</Property>
 								<Property Name="Volume" Type="Real64">
@@ -187,6 +187,13 @@
 				<Folder Name="Footsteps" ID="{9B81F181-482A-436A-8C5D-2E719F9C2199}" ShortID="118602945">
 					<ChildrenList>
 						<SwitchContainer Name="Footsteps" ID="{B71B41CC-B265-4B5D-8070-37B65FFEF565}" ShortID="369693006">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-12</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{24C7AD02-E66A-4B4B-8735-0AC29636FC00}"/>
@@ -270,6 +277,13 @@
 											</ActiveSourceList>
 										</Sound>
 										<Sound Name="Footsteps_Grass_4" ID="{C26A04DC-DF5B-4FDD-98BD-75212EBEC13F}" ShortID="35660974">
+											<PropertyList>
+												<Property Name="Pitch" Type="int32">
+													<ValueList>
+														<Value>630</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{24C7AD02-E66A-4B4B-8735-0AC29636FC00}"/>
