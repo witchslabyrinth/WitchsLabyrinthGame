@@ -12,6 +12,9 @@ public enum SCENE_ID
     INTRO,
     UKIYOE,
     TELEDOOR,
+    OPENING,
+    TELEDOOR_INTRO,
+    FINAL
 }
 
 /// <summary>
@@ -26,6 +29,9 @@ public class SceneLoader
     private const string UkiyoeScene = "Ukiyo-e Environment";
     private const string TeledoorScene = "Puzzles/TeledoorPuzzle";
     private const string IntroScene = "Intro";
+    private const string OpeningScene = "Opening Scene";
+    private const string FinalScene = "Final Scene";
+    private const string TeledoorIntroScene = "Teledoor Intro";
 
     /// <summary>
     /// Dictionary associating scene ID with file path (for ease of use when calling LoadScene()). Scene key/value pair must be in the dictionary to allow loading
@@ -36,6 +42,9 @@ public class SceneLoader
         {SCENE_ID.INTRO, IntroScene},
         {SCENE_ID.UKIYOE, UkiyoeScene},
         {SCENE_ID.TELEDOOR, TeledoorScene},
+        {SCENE_ID.OPENING, OpeningScene},
+        {SCENE_ID.FINAL, FinalScene},
+        {SCENE_ID.TELEDOOR_INTRO, TeledoorIntroScene}
     };
 
     /// <summary>
