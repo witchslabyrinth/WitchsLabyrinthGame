@@ -19,7 +19,7 @@ public class Intro : MonoBehaviour
     {
         // Load game scene after player input
         if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
-            SceneLoader.LoadScene(SCENE_ID.UKIYOE);
+            SceneLoader.LoadScene(SCENE_ID.OPENING);
     }
 
     private IEnumerator FlashPrompt()

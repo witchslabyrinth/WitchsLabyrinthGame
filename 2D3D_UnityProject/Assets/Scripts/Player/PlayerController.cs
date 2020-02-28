@@ -124,6 +124,12 @@ public class PlayerController : Singleton<PlayerController>
                     oliverStaySound.Post(gameObject); //Play Oliver stay sound
             }
 
+            // TODO: Review possible better locations for this command
+            if (FindObjectOfType<DialogueRunner>().isDialogueRunning == true && Input.GetKeyDown(KeyCode.E)) 
+            {
+                FindObjectOfType<DialogueUI>().MarkLineComplete();
+            }
+
             // Handle interactions with other game entities
             player.CheckInteraction();
     
