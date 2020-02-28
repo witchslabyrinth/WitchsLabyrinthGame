@@ -1984,8 +1984,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 516bb75350f6c0249b893248673c4f0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene8: {fileID: 2480198943629176163, guid: 8449a3bb524d37d4f82ce2f5965db28f, type: 3}
-  scene8Cam: {fileID: 4455491329326276863}
+  scene: {fileID: 2480198943629176163, guid: 8449a3bb524d37d4f82ce2f5965db28f, type: 3}
+  sceneCam: {fileID: 4455491329326276863}
+  startNode: AfterPortalPuzzle
 --- !u!1 &744398750
 GameObject:
   m_ObjectHideFlags: 0
@@ -8496,6 +8497,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 427322746333258640, guid: 32947eaf7c97b2a4d8080c537d46a25c,
+        type: 3}
+      propertyPath: m_Name
+      value: Scene 8 Cameras
+      objectReference: {fileID: 0}
     - target: {fileID: 1679122280833809495, guid: 32947eaf7c97b2a4d8080c537d46a25c,
         type: 3}
       propertyPath: m_Enabled
@@ -8510,11 +8516,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 427322746333258640, guid: 32947eaf7c97b2a4d8080c537d46a25c,
-        type: 3}
-      propertyPath: m_Name
-      value: Scene 8 Cameras
       objectReference: {fileID: 0}
     - target: {fileID: 5275739980813883466, guid: 32947eaf7c97b2a4d8080c537d46a25c,
         type: 3}
