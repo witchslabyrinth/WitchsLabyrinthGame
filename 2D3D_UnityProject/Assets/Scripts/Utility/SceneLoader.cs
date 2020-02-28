@@ -31,7 +31,7 @@ public class SceneLoader
     private const string IntroScene = "Intro";
     private const string OpeningScene = "Opening Scene";
     private const string FinalScene = "Final Scene";
-    private const string TeledoorIntroScene = "Teledoor Intro";
+    private const string TeledoorIntroScene = "TeledoorPuzzle Intro";
 
     /// <summary>
     /// Dictionary associating scene ID with file path (for ease of use when calling LoadScene()). Scene key/value pair must be in the dictionary to allow loading
