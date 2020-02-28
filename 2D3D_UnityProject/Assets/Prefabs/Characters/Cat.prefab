@@ -48,6 +48,7 @@ MonoBehaviour:
   smoothing: {x: 3, y: 3}
   targetDirection: {x: 0, y: 0}
   targetCharacterDirection: {x: 0, y: 0}
+  distance: 3
   characterBody: {fileID: 1943238834350032811}
 --- !u!1 &1943238834350032811
 GameObject:
@@ -101,6 +102,7 @@ MonoBehaviour:
   movementSpeed: 10
   sprintMultiplier: 1.5
   movement: {fileID: 0}
+  footstepFrequency: 0.26
   perspective:
     cameraView: 0
     movement: {fileID: 0}

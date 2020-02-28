@@ -49,17 +49,26 @@ public class Actor : MonoBehaviour
     /// 1 - walking
     /// 2 - sprinting
     /// </summary>
-    private int moveStatus;
+    private int moveStatus = 0;
 
     /// <summary>
     /// Used to generate Actor movement - varies depending on current camera perspective, or assigned NPC behavior
     /// </summary>
     public Movement movement;
 
+    [Header("Footstep Settings")]
+
+    /// <summary>
+    /// Controls how often the footstep sound is played
+    /// </summary>
+    [SerializeField]
+    [Range(0, 1)]
+    private float footstepFrequency = .5f;
+
     /// <summary>
     /// For updating animations, stores whether or not player is using top view
     /// </summary>
-    private bool inTopView;
+    private bool inTopView = false;
 
     /// Sets actor movement control scheme
     /// </summary>
@@ -98,8 +107,8 @@ public class Actor : MonoBehaviour
             movement = new FollowMovement(PlayerController.Instance.GetPlayer().transform);
         }
 
-        moveStatus = 0;
-        inTopView = false;
+        // Start coroutine that handles footstep sound effects
+        StartCoroutine(PlayFootstep());
     }
 
     private void FixedUpdate()
@@ -125,14 +134,9 @@ public class Actor : MonoBehaviour
         // Get move direction (as unit vector) from movement class
         Vector3 direction = movement.GetMovement(this);
         if(direction != Vector3.zero)
-        {
             moveStatus = 1;
-            AkSoundEngine.PostEvent("Footsteps", gameObject);
-        }
         else
-        {
             moveStatus = 0;
-        }
 
         // Apply movement (scaled by movement speed)
         float magnitude = movementSpeed * Time.fixedDeltaTime;
@@ -172,6 +176,18 @@ public class Actor : MonoBehaviour
     public void SetTopView(bool isTop)
     {
         inTopView = isTop;
+    }
+
+    private IEnumerator PlayFootstep()
+    {
+        while(true) {
+            if(moveStatus == 1 && PlayerController.Instance.GetPlayer() == this) {
+                AkSoundEngine.PostEvent("Footsteps", gameObject);
+                // Debug.Log(name + " FOOTSTEP");
+            }
+            
+            yield return new WaitForSeconds(footstepFrequency);
+        }
     }
 
     /// <summary>
