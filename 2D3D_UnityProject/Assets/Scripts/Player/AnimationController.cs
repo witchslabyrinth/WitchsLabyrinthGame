@@ -75,4 +75,5 @@ public class AnimationController : MonoBehaviour
     {
         transform.forward = mainCamera.transform.forward;
     }
+    
 }

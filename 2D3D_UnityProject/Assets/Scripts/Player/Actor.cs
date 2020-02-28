@@ -127,6 +127,7 @@ public class Actor : MonoBehaviour
         if(direction != Vector3.zero)
         {
             moveStatus = 1;
+            AkSoundEngine.PostEvent("Footsteps", gameObject);
         }
         else
         {

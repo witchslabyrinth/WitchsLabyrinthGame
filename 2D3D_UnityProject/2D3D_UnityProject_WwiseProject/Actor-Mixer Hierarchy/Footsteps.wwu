@@ -15,14 +15,8 @@
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{24C7AD02-E66A-4B4B-8735-0AC29636FC00}"/>
 						</Reference>
-						<Reference Name="DefaultSwitchOrState">
-							<ObjectRef Name="Grass" ID="{1C2E81CF-7483-4940-8926-979CA934FF58}" WorkUnitID="{D47C5FCB-7D3E-46CE-B55A-B3766D658E16}"/>
-						</Reference>
 						<Reference Name="OutputBus">
 							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CB9D8304-7AAA-4374-9412-CD9A3A2EDD3D}"/>
-						</Reference>
-						<Reference Name="SwitchGroupOrStateGroup">
-							<ObjectRef Name="Material" ID="{AC0877DE-BF5D-4F25-8434-A7A64284CA29}" WorkUnitID="{D47C5FCB-7D3E-46CE-B55A-B3766D658E16}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -141,26 +135,6 @@
 								<ItemRef Name="Step_Stone" ID="{7690AA35-FA3D-4E75-986C-E5401DE56D6A}"/>
 							</GroupingBehavior>
 						</GroupingBehaviorList>
-						<GroupingList>
-							<Grouping>
-								<SwitchRef Name="Wood" ID="{D771E980-D2DE-43D8-906A-D35A4994B5FA}"/>
-								<ItemList>
-									<ItemRef Name="step_Wood" ID="{E409D303-5B3B-4BD1-824C-EDDA7B6F1AC0}"/>
-								</ItemList>
-							</Grouping>
-							<Grouping>
-								<SwitchRef Name="Stone" ID="{61B2E5CA-A9AB-4D25-9F84-FA9D786AAFAA}"/>
-								<ItemList>
-									<ItemRef Name="Step_Stone" ID="{7690AA35-FA3D-4E75-986C-E5401DE56D6A}"/>
-								</ItemList>
-							</Grouping>
-							<Grouping>
-								<SwitchRef Name="Grass" ID="{1C2E81CF-7483-4940-8926-979CA934FF58}"/>
-								<ItemList>
-									<ItemRef Name="step_Grass" ID="{C2225223-59FE-43B4-A415-9B66D24C3395}"/>
-								</ItemList>
-							</Grouping>
-						</GroupingList>
 					</GroupingInfo>
 				</SwitchContainer>
 			</ChildrenList>

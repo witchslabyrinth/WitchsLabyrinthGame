@@ -16,6 +16,7 @@ namespace AK
         static const AkUniqueID CATSWITCHSOUND = 3589155492U;
         static const AkUniqueID DOOR_OPEN = 535830432U;
         static const AkUniqueID FOOTSTEP_PLAYER = 648916573U;
+        static const AkUniqueID FOOTSTEPS = 2385628198U;
         static const AkUniqueID LANTERN_LIGHTUP = 2716631521U;
         static const AkUniqueID MUSIC_PLAY = 202194903U;
         static const AkUniqueID OLIVERSWITCHSOUND = 2136553153U;
@@ -81,17 +82,16 @@ namespace AK
 
     namespace SWITCHES
     {
-        namespace MATERIAL
+        namespace FOOTSTEPS
         {
-            static const AkUniqueID GROUP = 3865314626U;
+            static const AkUniqueID GROUP = 2385628198U;
 
             namespace SWITCH
             {
                 static const AkUniqueID GRASS = 4248645337U;
-                static const AkUniqueID STONE = 1216965916U;
                 static const AkUniqueID WOOD = 2058049674U;
             } // namespace SWITCH
-        } // namespace MATERIAL
+        } // namespace FOOTSTEPS
 
     } // namespace SWITCHES
 

@@ -191,10 +191,28 @@
 										</Reference>
 									</ReferenceList>
 								</Action>
+								<Action Name="" ID="{B9CB0D09-FDC0-457D-B1E9-7B386AACC284}" ShortID="822155556">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Song_Ikigai" ID="{F57C6975-47CD-4679-857A-03D8670B6E89}" WorkUnitID="{1BAF4E43-D480-476A-8D94-BA81CA478199}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 							</ChildrenList>
 						</Event>
 					</ChildrenList>
 				</Folder>
+				<Event Name="Footsteps" ID="{DEC77FD9-810A-4D80-877C-9F8322B47E2B}">
+					<ChildrenList>
+						<Action Name="" ID="{53E52124-A43E-4ADD-924E-428DDB0A6079}" ShortID="782581336">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Footsteps" ID="{B71B41CC-B265-4B5D-8070-37B65FFEF565}" WorkUnitID="{F35C23EA-DF72-4530-971C-FBEBF715C8AD}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

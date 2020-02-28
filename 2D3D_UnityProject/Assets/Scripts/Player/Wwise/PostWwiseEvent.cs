@@ -6,9 +6,8 @@ public class PostWwiseEvent : MonoBehaviour
 {
     public AK.Wwise.Event MyEvent;
 
-    /*public void PlayFootstepSound()   //Call footstep sounds. Terrain sound handler is already in Wwise.
+    private void PlayFootStepAudio()
     {
-        MyEvent.Post(gameObject);
+        AkSoundEngine.PostEvent("Footsteps", gameObject);
     }
-    */
 }
