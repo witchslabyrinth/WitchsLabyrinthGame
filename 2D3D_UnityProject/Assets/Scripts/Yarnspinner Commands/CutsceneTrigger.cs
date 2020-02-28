@@ -3,22 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using Yarn.Unity;
 
-public class Scene8Trigger : MonoBehaviour
+public class CutsceneTrigger : MonoBehaviour
 {
     [SerializeField]
-    private YarnProgram scene8;
+    private YarnProgram scene;
 
     [SerializeField]
-    private CameraEntity scene8Cam;
+    private CameraEntity sceneCam;
+
+    [SerializeField]
+    private string startNode;
 
     private bool scenePlayed;
 
     void Start()
     {
-        if (scene8 != null)
+        if (scene != null)
         {
             DialogueRunner dialogueRunner = FindObjectOfType<Yarn.Unity.DialogueRunner>();
-            dialogueRunner.Add(scene8);
+            dialogueRunner.Add(scene);
         }
         scenePlayed = false;
     }
@@ -27,8 +30,9 @@ public class Scene8Trigger : MonoBehaviour
     {
         if (!scenePlayed)
         {
-            FindObjectOfType<DialogueRunner>().StartDialogue("AfterPortalPuzzle");
-            CameraController.Instance.SetMainCamera(scene8Cam);
+            FindObjectOfType<DialogueRunner>().StartDialogue(startNode);
+            CameraController.Instance.SetMainCamera(sceneCam);
+            scenePlayed = true;
         }
     }
 }
