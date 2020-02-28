@@ -10,6 +10,9 @@ public class LiarCommands : MonoBehaviour
     [SerializeField]
     private DialogueRunner dialogueRunner;
 
+    [SerializeField]
+    private GameObject cutscene5;
+
     private void Awake()
     {
         dialogueRunner.AddCommandHandler("liar_win", LiarWin);
@@ -18,5 +21,6 @@ public class LiarCommands : MonoBehaviour
     private void LiarWin(string[] parameters)
     {
         //stuff for when players solve liars puzzle
+        cutscene5.SetActive(true);
     }
 }

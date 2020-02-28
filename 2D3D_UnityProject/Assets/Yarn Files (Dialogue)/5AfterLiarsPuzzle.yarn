@@ -1,7 +1,8 @@
-title: OpeningScene
+title: AfterLiarsPuzzle
 tags: 
 ---
 <<set_mouse_on true>>
+<<scene5_camera_1>>
 Oliver: Yes! I found the white pearl! Even though I don't know what it's for yet...
 
 'There is a noise like a door opening, sounding like it came from the other side of the temple. Oliver watches as Kuro quickly stands, stretches, and walks over to the door back into the lobby.'
@@ -67,4 +68,6 @@ Oliver: Oh Kuro... What if I'm not strong enough?
 
 Oliver: Can I do this?
 Oliver: I can do this.
+<<reset_camera>>
+<<set_mouse_on false>>
 ===

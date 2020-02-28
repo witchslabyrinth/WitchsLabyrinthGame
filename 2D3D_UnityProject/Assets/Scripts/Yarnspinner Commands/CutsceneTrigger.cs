@@ -32,6 +32,10 @@ public class CutsceneTrigger : MonoBehaviour
         {
             FindObjectOfType<DialogueRunner>().StartDialogue(startNode);
             CameraController.Instance.SetMainCamera(sceneCam);
+
+            Actor actor = PlayerController.Instance.GetPlayer();
+            actor.Disable();
+            
             scenePlayed = true;
         }
     }

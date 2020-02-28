@@ -57,11 +57,6 @@ public class DialogueCommands : MonoBehaviour
         onComplete();
     }
 
-    private void Update()
-    {
-        Debug.Log(Cursor.lockState);
-    }
-
     /// <summary>
     /// turns mouse on and off
     /// </summary>
