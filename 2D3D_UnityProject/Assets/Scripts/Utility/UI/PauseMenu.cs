@@ -135,6 +135,7 @@ public class PauseMenu : Singleton<PauseMenu>
         // Update pause event listeners
         onSetGamePaused?.Invoke(paused);
 
+        // Lock/Unlock camera movement when pausing/unpausing
         CameraController.Instance.enabled = !paused;
 
         // Pause/resume game time
