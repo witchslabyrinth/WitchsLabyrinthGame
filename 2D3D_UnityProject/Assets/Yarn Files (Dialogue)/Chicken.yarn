@@ -11,12 +11,14 @@ Chicken: Am I the one with the orb?
 title: Chicken.Win
 tags: 
 ---
-<<reset_camera 5>>
+<<reset_camera>>
+<<set_mouse_on false>>
 ===
 
 title: Chicken.Lose
 tags: 
 ---
 Chicken: You have been misled. You must try again!
-<<reset_camera 5>>
+<<reset_camera>>
+<<set_mouse_on false>>
 ===

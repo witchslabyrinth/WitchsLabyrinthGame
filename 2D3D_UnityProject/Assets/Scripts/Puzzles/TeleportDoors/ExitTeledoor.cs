@@ -26,6 +26,6 @@ public class ExitTeledoor : MonoBehaviour
             return;
         }
         //otherwise continue
-        SceneManager.LoadScene("Scenes/Ukiyo-e Environment");
+        SceneLoader.LoadScene(SCENE_ID.FINAL);
     }
 }

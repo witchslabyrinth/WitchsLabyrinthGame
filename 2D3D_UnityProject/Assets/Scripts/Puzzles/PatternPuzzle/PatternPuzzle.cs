@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Yarn.Unity;
 
 public class PatternPuzzle : MonoBehaviour
 {
@@ -34,17 +35,33 @@ public class PatternPuzzle : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Indicates whether player has solved the puzzle
+    /// </summary>
+    public bool solved = false;
+
+
+    // TODO: find a better place for this
+    [SerializeField]
+    private YarnProgram scene3;
+    [SerializeField]
+    private CameraEntity scene3Cam;
+
     private void Start()
     {
         _currentCube = initalCube;
         patternCubes[_currentCube].Select();
+
+
+        DialogueRunner dialogueRunner = FindObjectOfType<Yarn.Unity.DialogueRunner>();
+        dialogueRunner.Add(scene3);
     }
 
     private void Update()
     {
-        if (!ACubeIsAnimating())
+        if (!ACubeIsAnimating() && !solved)
         {
-            if (Input.GetKeyDown(KeyCode.Q))
+            if (Input.GetKeyDown(KeyCode.J))
             {
                 if (CurrentCube - 1 >= 0)
                     CurrentCube--;
@@ -54,7 +71,7 @@ public class PatternPuzzle : MonoBehaviour
                 patternCubes[CurrentCube].Rotate(Direction.BACKWARD);
                 StartCoroutine(CheckSolved());
             }
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.L))
             {
                 if (CurrentCube + 1 < patternCubes.Count)
                     CurrentCube++;
@@ -80,19 +97,9 @@ public class PatternPuzzle : MonoBehaviour
 
                 StartCoroutine(CheckSolved());
             }
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if (Input.GetKeyDown(KeyCode.E))
             {
-                // Restore control to player actor
-                Actor player = PlayerController.Instance.GetPlayer();
-                player.Enable();
-                CameraController.Instance.SetMainCamera(player.actorCamera);
-
-                // Restore actor swapping
-                PlayerController.Instance.canSwap = true;
-                
-                // Disable puzzle and deselect cube
-                this.enabled = false;
-                patternCubes[_currentCube].Deselect();
+                Exit();
             }
         }
     }
@@ -165,11 +172,30 @@ public class PatternPuzzle : MonoBehaviour
         return animating;
     }
 
+    private void Exit()
+    {
+        // // Restore control to player actor
+        // Actor player = PlayerController.Instance.GetPlayer();
+        // player.Enable();
+        // CameraController.Instance.SetMainCamera(player.actorCamera);
+
+        // // Restore actor swapping
+        // PlayerController.Instance.canSwap = true;
+
+        // // Disable puzzle and deselect cube
+        // this.enabled = false;
+        patternCubes[_currentCube].Deselect();
+
+
+        FindObjectOfType<DialogueRunner>().StartDialogue("sceneAfterSecondPuzzle");
+        CameraController.Instance.SetMainCamera(scene3Cam);
+    }
+
     private void Solved()
     {
-        patternCubes[CurrentCube].Deselect();
-
         Debug.Log("Solved");
+        solved = true;
+        Exit();
         StartCoroutine(WinAnimation());
     }
 
