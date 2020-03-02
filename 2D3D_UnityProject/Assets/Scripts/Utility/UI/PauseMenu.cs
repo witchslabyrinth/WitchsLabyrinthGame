@@ -70,14 +70,17 @@ public class PauseMenu : Singleton<PauseMenu>
         // Set up game pause/unpause events
         onSetGamePaused += (paused =>
         {
+            // Lock/Unlock camera movement when pausing/unpausing
+            CameraController.Instance.enabled = !paused;
+
+            // Hide controls menu (whether pausing or unpausing)
+            SetControlsMenuActive(false);
+
             // Muffle/unmuffle music on pause/unpause
             if (paused)
                 AkSoundEngine.SetState("Menu", "InMenu");
             else
                 AkSoundEngine.SetState("Menu", "OutOfMenu");
-
-            // Hide controls menu (whether pausing or unpausing)
-            SetControlsMenuActive(false);
         });
 
         // Start with the game unpaused
@@ -134,9 +137,6 @@ public class PauseMenu : Singleton<PauseMenu>
 
         // Update pause event listeners
         onSetGamePaused?.Invoke(paused);
-
-        // Lock/Unlock camera movement when pausing/unpausing
-        CameraController.Instance.enabled = !paused;
 
         // Pause/resume game time
         Time.timeScale = paused ? 0 : 1;
