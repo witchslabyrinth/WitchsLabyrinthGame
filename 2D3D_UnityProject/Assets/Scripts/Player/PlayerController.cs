@@ -125,7 +125,8 @@ public class PlayerController : Singleton<PlayerController>
             }
 
             // TODO: Review possible better locations for this command
-            if (FindObjectOfType<DialogueRunner>().isDialogueRunning == true && Input.GetKeyDown(KeyCode.E)) 
+            DialogueRunner dialRun = FindObjectOfType<DialogueRunner>();
+            if (Input.GetKeyDown(KeyCode.E) && dialRun != null && dialRun.isDialogueRunning == true) 
             {
                 FindObjectOfType<DialogueUI>().MarkLineComplete();
             }
