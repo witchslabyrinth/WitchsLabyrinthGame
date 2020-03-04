@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5238849471718570826}
   - component: {fileID: 1679122280833809495}
-  - component: {fileID: 169406574282730507}
+  - component: {fileID: 8279839601163038939}
   - component: {fileID: 5083377011315961015}
   - component: {fileID: 3934381770125395251}
   - component: {fileID: 8343041753354830047}
@@ -111,7 +111,7 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!114 &169406574282730507
+--- !u!114 &8279839601163038939
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,12 +120,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 4171994807395546570}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efafdc3f1ba5f4bbea4f0af8b162052e, type: 3}
+  m_Script: {fileID: 11500000, guid: 6b2fe876df5f4eb4f8f439d1c96e34be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orthoOffset: 2
-  headway: 2
-  actor: {fileID: 0}
 --- !u!114 &5083377011315961015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,11 +180,11 @@ MonoBehaviour:
   m_ShowToolkit: 0
   m_ShowCustomSorter: 1
   breakBeforeColorGrading: 0
-  m_BeforeTransparentBundles: []
+  m_BeforeTransparentBundles:
+  - assemblyQualifiedName: PostProcessOutline, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
   m_BeforeStackBundles:
   - assemblyQualifiedName: IL3DN_Fog_PP, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-  - assemblyQualifiedName: PostProcessOutline, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   m_AfterStackBundles: []
 --- !u!114 &3934381770125395251
