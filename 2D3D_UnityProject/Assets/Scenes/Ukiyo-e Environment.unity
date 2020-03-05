@@ -9864,6 +9864,41 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 656671889937962998, guid: 8add51d69b1c30049a505289996ce794,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 656671889937962999, guid: 8add51d69b1c30049a505289996ce794,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 656671889937962996, guid: 8add51d69b1c30049a505289996ce794,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 656671889937962997, guid: 8add51d69b1c30049a505289996ce794,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 656671889937962994, guid: 8add51d69b1c30049a505289996ce794,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 656671889937962995, guid: 8add51d69b1c30049a505289996ce794,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 656671889937962992, guid: 8add51d69b1c30049a505289996ce794,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8add51d69b1c30049a505289996ce794, type: 3}
 --- !u!4 &894987727 stripped
@@ -28934,6 +28969,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10a6802b92fbc0544bf270f85d2cc6d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2047806977 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2147339339865615704, guid: 8add51d69b1c30049a505289996ce794,
+    type: 3}
+  m_PrefabInstance: {fileID: 894987726}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2047806988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047806977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eab4d47e5bca0484d92481cfcda0a19f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: f7f422d6
+  useOtherObject: 1
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 827e8fbf313f6fc43b9c8759dbb2bb70,
+      type: 2}
+  valueIdInternal: 0
+  groupIdInternal: 0
+  valueGuidInternal: 
+  groupGuidInternal: 
 --- !u!1 &2050262183
 GameObject:
   m_ObjectHideFlags: 0
