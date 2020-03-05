@@ -47,7 +47,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 5601ea873c34f449957bd3b5ded1c2c6
     GuidInternal: 
-    m_lastTime: -8586187356347010440
+    m_lastTime: -8586187347016197330
     List:
     - name: CatSwitchSound
       guid: d1a8c45f839f904fbc04fe586e18bb61
@@ -106,7 +106,7 @@ MonoBehaviour:
       Path: Default Work Unit\Footsteps
       maxAttenuation: 0
       maxDuration: 1.578667
-      minDuration: 0.361333
+      minDuration: 0.252039
     - name: Lantern_LightUp
       guid: a6b63faf59087e4698ab526d8d2a82e5
       id: 2716631521
@@ -137,18 +137,6 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
-    - name: Music_WInd
-      guid: 62d5144b153a5e47aa11c22961c99661
-      id: 214611115
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: Music_WInd
-        ObjectType: 3
-      Path: Default Work Unit\Music_WInd
-      maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
     - name: OliverSwitchSound
       guid: 208b0f589429a848bcd72391a18396f6
       id: 2136553153
@@ -221,8 +209,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Puzzles\Zodiac\Stones_Move
       maxAttenuation: 0
-      maxDuration: 0.560235
-      minDuration: 0.560235
+      maxDuration: 0.614479
+      minDuration: 0.614479
     - name: Wind
       guid: 9336da5127a29d40a9e50c825686ef97
       id: 1537061107
@@ -269,8 +257,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: UI\OnMenuClose
       maxAttenuation: 0
-      maxDuration: 0.697925
-      minDuration: 0.697925
+      maxDuration: 0.739426
+      minDuration: 0.739426
     - name: OnMenuHover
       guid: ccb4b6ff5951344696b08a017e95393e
       id: 961842423
@@ -458,33 +446,8 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: cb5f7cd43e7dce46b55ab3766d658e16
     GuidInternal: 
-    m_lastTime: -8586187361598896769
+    m_lastTime: -8586187351079113367
     List:
-    - name: Ambience
-      guid: d9221d5e920cb94f94e2c9630f469d66
-      id: 85412153
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: Ambience
-        ObjectType: 11
-      Path: Default Work Unit\Ambience
-      values:
-      - name: Music
-        guid: dd28e44e75b0224c9f4527c4f8408bb8
-        id: 3991942870
-        PathAndIcons:
-        - ElementName: Music
-          ObjectType: 10
-      - name: Wind_Cicadas
-        guid: 00fc34be00ce0d479a43a601451d7985
-        id: 104544698
-        PathAndIcons:
-        - ElementName: Wind_Cicadas
-          ObjectType: 10
-      ValueGuids: []
-      ValueIcons: []
-      valuesInternal: []
     - name: Footsteps
       guid: 417b58f419dba040ad3dd0412bb2a926
       id: 2385628198
@@ -522,5 +485,8 @@ MonoBehaviour:
   - /2D3D_UnityProject_WwiseProject/Events
   - /2D3D_UnityProject_WwiseProject/Events/Default Work Unit
   - /2D3D_UnityProject_WwiseProject/Events/Default Work Unit/Ambience
+  - /2D3D_UnityProject_WwiseProject/Switches
+  - /2D3D_UnityProject_WwiseProject/Switches/Default Work Unit
+  - /2D3D_UnityProject_WwiseProject/Switches/Default Work Unit/Footsteps
   autoPopulateEnabled: 1
   CurrentPluginConfig: 
