@@ -42,8 +42,8 @@ public class PatternPuzzle : MonoBehaviour
 
 
     // TODO: find a better place for this
-    [SerializeField]
-    private YarnProgram scene3;
+    // [SerializeField]
+    // private YarnProgram scene3;
     [SerializeField]
     private CameraEntity scene3Cam;
 
@@ -53,8 +53,8 @@ public class PatternPuzzle : MonoBehaviour
         patternCubes[_currentCube].Select();
 
 
-        DialogueRunner dialogueRunner = FindObjectOfType<Yarn.Unity.DialogueRunner>();
-        dialogueRunner.Add(scene3);
+        // DialogueRunner dialogueRunner = FindObjectOfType<Yarn.Unity.DialogueRunner>();
+        // dialogueRunner.Add(scene3);
     }
 
     private void Update()
@@ -194,7 +194,7 @@ public class PatternPuzzle : MonoBehaviour
         patternCubes[_currentCube].Deselect();
         StartCoroutine(WinAnimation());
 
-        FindObjectOfType<DialogueRunner>().StartDialogue("sceneAfterSecondPuzzle");
+        FindObjectOfType<DialogueRunner>().StartDialogue("Switcher-3&5");
         CameraController.Instance.SetMainCamera(scene3Cam);
     }
 

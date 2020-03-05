@@ -1,0 +1,9 @@
+title: Switcher-3&5
+tags: 
+---
+<<if visited("sceneAfterSecondPuzzle") is false>>
+    [[sceneAfterSecondPuzzle]]
+<<elseif visited("AfterLiarsPuzzle") is false>>
+    [[AfterLiarsPuzzle]]
+<<endif>>
+===

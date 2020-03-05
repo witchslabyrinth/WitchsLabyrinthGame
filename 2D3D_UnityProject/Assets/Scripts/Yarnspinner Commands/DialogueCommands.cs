@@ -12,6 +12,9 @@ public class DialogueCommands : MonoBehaviour
 
     protected Coroutine currCoroutine;
 
+    [SerializeField]
+    private YarnProgram[] yarnPrograms;
+
     /// <summary>
     /// add all commands to DialogueRunner
     /// </summary>
@@ -20,6 +23,11 @@ public class DialogueCommands : MonoBehaviour
         dialogueRunner.AddCommandHandler("load_scene", LoadScene);
         dialogueRunner.AddCommandHandler("reset_camera", ResetCamera);
         dialogueRunner.AddCommandHandler("set_mouse_on", SetMouseActive);
+
+        for(int i = 0; i < yarnPrograms.Length; i++)
+        {
+            dialogueRunner.Add(yarnPrograms[i]);
+        }
     }
 
     /// <summary>
