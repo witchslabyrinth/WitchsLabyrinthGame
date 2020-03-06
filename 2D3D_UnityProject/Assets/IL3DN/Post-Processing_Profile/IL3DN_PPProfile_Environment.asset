@@ -17,8 +17,6 @@ MonoBehaviour:
   - {fileID: 114877922873275810}
   - {fileID: 114580363392588112}
   - {fileID: 114164252138188686}
-  - {fileID: 114724893383954526}
-  - {fileID: 7803699062917355442}
 --- !u!114 &114164252138188686
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -75,7 +73,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1cb7e9e120078f43bce4f0b1be547a7, type: 3}
   m_Name: AmbientOcclusion
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   enabled:
     overrideState: 1
     value: 1
@@ -124,7 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48a79b01ea5641d4aa6daa2e23605641, type: 3}
   m_Name: Bloom
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   enabled:
     overrideState: 1
     value: 1
@@ -1567,7 +1565,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 669bacfdaa8c8e24e9c632dc94ffdae4, type: 3}
   m_Name: PostProcessOutline
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   enabled:
     overrideState: 1
     value: 1
@@ -1579,7 +1577,7 @@ MonoBehaviour:
     value: 1.5
   normalThreshold:
     overrideState: 1
-    value: 0.799
+    value: 0.341
   depthNormalThreshold:
     overrideState: 0
     value: 1
@@ -1588,4 +1586,4 @@ MonoBehaviour:
     value: 7
   color:
     overrideState: 1
-    value: {r: 0.1509434, g: 0.13807268, b: 0.11747953, a: 1}
+    value: {r: 0.13207549, g: 0.12062791, b: 0.101548605, a: 1}
