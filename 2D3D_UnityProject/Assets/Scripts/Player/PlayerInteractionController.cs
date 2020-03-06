@@ -73,6 +73,10 @@ public class PlayerInteractionController : MonoBehaviour
 
     private PatternPuzzle patternPuzzle;
 
+    private bool inBackDoorZone;
+
+    private BackDoor backDoor;
+
     /// <summary>
     /// Holds CameraEntity of nearby interactable (if it has one)
     /// </summary>
@@ -134,9 +138,14 @@ public class PlayerInteractionController : MonoBehaviour
                 //Cursor.lockState = CursorLockMode.None;
                 GameManager.SetCursorActive(true);
             }
+            else if (inBackDoorZone)
+            {
+                backDoor.OpenBackDoor();
+                return;
+            }
             // Ignore interact button press if no nearby interactable
             else
-            return;
+                return;
 
 
             // Disable player actor control
@@ -215,6 +224,16 @@ public class PlayerInteractionController : MonoBehaviour
         interactionCamera = withinZone ? cameraEntity : null;
 
         // Show/hide interact canvas
+        interactCanvas.SetActive(withinZone);
+    }
+
+    public void SetInBackDoorZone(bool withinZone, BackDoor doorBack)
+    {
+        inBackDoorZone = withinZone;
+        backDoor = doorBack;
+
+
+
         interactCanvas.SetActive(withinZone);
     }
 }
