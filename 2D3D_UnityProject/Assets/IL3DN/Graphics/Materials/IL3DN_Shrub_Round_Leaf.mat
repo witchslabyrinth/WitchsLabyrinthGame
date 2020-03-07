@@ -10,6 +10,7 @@ Material:
   m_Name: IL3DN_Shrub_Round_Leaf
   m_Shader: {fileID: 4800000, guid: 5a31b57bf4856e940b34c99ac2bf12b6, type: 3}
   m_ShaderKeywords: EFFECT_HUE_VARIATION GEOM_TYPE_LEAF _BEND_ON _SHOWFRONTFACES_ON
+    _WIND_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
@@ -81,7 +82,7 @@ Material:
     - LeavesAlphaCutoff: 0.5
     - SnowLeavesFloat: 1
     - SnowSizeFloat: 1
-    - _AlphaCutoff: 0.5
+    - _AlphaCutoff: 0.18
     - _Bend: 1
     - _BumpScale: 1
     - _Cull: 2
@@ -114,16 +115,16 @@ Material:
     - _WIND_ON: 0
     - _Wiggle: 0
     - _WiggleStrenght: 1
-    - _Wind: 0
+    - _Wind: 1
     - _WindAmplitudeMultiplier: 1
     - _WindFLoat: 1
     - _WindQuality: 0
-    - _WindStrenght: 0.5
+    - _WindStrenght: 0
     - _WindSwinging: 0.25
     - _ZWrite: 1
     - __dirty: 1
     m_Colors:
-    - _Color: {r: 0.33986667, g: 0.4339623, b: 0.2804379, a: 1}
+    - _Color: {r: 0.42070147, g: 0.43396208, b: 0.10439638, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
     - _HueVariation: {r: 1, g: 1, b: 1, a: 1}
     - _Snow: {r: 1, g: 1, b: 1, a: 0}

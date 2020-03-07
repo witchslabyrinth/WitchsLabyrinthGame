@@ -14,6 +14,7 @@ public class PauseMenu : Singleton<PauseMenu>
     public AK.Wwise.Event OnMenuHover;
     public AK.Wwise.Event OnMenuSelect;
     public AK.Wwise.Event OnMenuEnter;
+    public AK.Wwise.Event OnMenuExit;
 
 
     public bool paused { get; private set; }
@@ -78,9 +79,9 @@ public class PauseMenu : Singleton<PauseMenu>
 
             // Muffle/unmuffle music on pause/unpause
             if (paused)
-                AkSoundEngine.SetState("Menu", "InMenu");
+                OnMenuEnter.Post(gameObject);
             else
-                AkSoundEngine.SetState("Menu", "OutOfMenu");
+                OnMenuExit.Post(gameObject);
         });
 
         // Start with the game unpaused
@@ -100,6 +101,7 @@ public class PauseMenu : Singleton<PauseMenu>
         {
             // Restore timescale to 1
             Time.timeScale = 1;
+
 
             // Load MainMenu scene
             SceneLoader.LoadScene(SCENE_ID.MAIN_MENU);

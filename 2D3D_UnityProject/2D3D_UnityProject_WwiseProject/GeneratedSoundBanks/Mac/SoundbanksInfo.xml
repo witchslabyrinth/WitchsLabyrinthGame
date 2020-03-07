@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="11" SoundbankVersion="134">
 	<RootPaths>
-		<ProjectRoot>C:\Users\Ang\Documents\GitHub\WitchsLabyrinthGame-HouseEdits\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\</ProjectRoot>
-		<SourceFilesRoot>C:\Users\Ang\Documents\GitHub\WitchsLabyrinthGame-HouseEdits\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Mac\</SourceFilesRoot>
-		<SoundBanksRoot>C:\Users\Ang\Documents\GitHub\WitchsLabyrinthGame-HouseEdits\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\GeneratedSoundBanks\Mac\</SoundBanksRoot>
+		<ProjectRoot>C:\Users\Maggie\Documents\GitHub\WitchsLabyrinthGame\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\Maggie\Documents\GitHub\WitchsLabyrinthGame\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Mac\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\Maggie\Documents\GitHub\WitchsLabyrinthGame\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\GeneratedSoundBanks\Mac\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>C:\Users\Ang\Documents\GitHub\WitchsLabyrinthGame-HouseEdits\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\GeneratedSoundBanks\Mac</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>C:\Users\Maggie\Documents\GitHub\WitchsLabyrinthGame\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\GeneratedSoundBanks\Mac</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>
@@ -21,28 +21,29 @@
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<IncludedEvents>
+				<Event Id="4166407614" Name="Activate" ObjectPath="\Events\Default Work Unit\Puzzles\Portal\Activate" MaxAttenuation="100.000000" DurationType="OneShot" DurationMin="1.268949" DurationMax="1.268949"/>
+				<Event Id="77978275" Name="Ambient" ObjectPath="\Events\Default Work Unit\Puzzles\Portal\Ambient" DurationType="OneShot" DurationMin="6.461859" DurationMax="6.461859"/>
 				<Event Id="3589155492" Name="CatSwitchSound" ObjectPath="\Events\Default Work Unit\Cat\CatSwitchSound" DurationType="OneShot" DurationMin="1.339342" DurationMax="1.339342"/>
 				<Event Id="535830432" Name="Door_Open" ObjectPath="\Events\Default Work Unit\Puzzles\Zodiac\Door_Open" DurationType="OneShot" DurationMin="2.226440" DurationMax="3.509682"/>
 				<Event Id="648916573" Name="Footstep_Player" ObjectPath="\Events\Default Work Unit\Oliver\Interactions\Footstep_Player" DurationType="OneShot" DurationMin="0.150421" DurationMax="0.682857"/>
+				<Event Id="1466384055" Name="Interact" ObjectPath="\Events\Default Work Unit\Puzzles\Block\Interact" DurationType="OneShot" DurationMin="3.769484" DurationMax="3.769484"/>
 				<Event Id="2716631521" Name="Lantern_LightUp" ObjectPath="\Events\Default Work Unit\Puzzles\Zodiac\Lantern_LightUp" DurationType="OneShot" DurationMin="5.934558" DurationMax="7.069659"/>
+				<Event Id="3011204530" Name="Move" ObjectPath="\Events\Default Work Unit\Puzzles\Block\Move" DurationType="OneShot" DurationMin="5.031657" DurationMax="5.031657"/>
 				<Event Id="202194903" Name="Music_Play" ObjectPath="\Events\Default Work Unit\Scene\Music_Play" DurationType="Infinite"/>
 				<Event Id="2136553153" Name="OliverSwitchSound" ObjectPath="\Events\Default Work Unit\Oliver\OliverSwitchSound" DurationType="OneShot" DurationMin="2.210295" DurationMax="2.210295"/>
-				<Event Id="1237780649" Name="OnMenuClose" ObjectPath="\Events\UI\OnMenuClose" DurationType="OneShot" DurationMin="0.643708" DurationMax="0.643708"/>
-				<Event Id="961842423" Name="OnMenuHover" ObjectPath="\Events\UI\OnMenuHover" DurationType="OneShot" DurationMin="0.339229" DurationMax="0.339229"/>
-				<Event Id="547102971" Name="OnMenuOpen" ObjectPath="\Events\UI\OnMenuOpen" DurationType="OneShot" DurationMin="3.937279" DurationMax="3.937279"/>
-				<Event Id="1412352919" Name="OnMenuSelect" ObjectPath="\Events\UI\OnMenuSelect" DurationType="OneShot" DurationMin="0.667347" DurationMax="0.667347"/>
+				<Event Id="1237780649" Name="OnMenuClose" ObjectPath="\Events\UI\OnMenuClose" DurationType="OneShot" DurationMin="5.304907" DurationMax="5.304907"/>
+				<Event Id="961842423" Name="OnMenuHover" ObjectPath="\Events\UI\OnMenuHover" DurationType="OneShot" DurationMin="5.330855" DurationMax="5.330855"/>
+				<Event Id="547102971" Name="OnMenuOpen" ObjectPath="\Events\UI\OnMenuOpen" DurationType="OneShot" DurationMin="5.304907" DurationMax="5.304907"/>
+				<Event Id="1412352919" Name="OnMenuSelect" ObjectPath="\Events\UI\OnMenuSelect" DurationType="OneShot" DurationMin="4.749252" DurationMax="4.749252"/>
 				<Event Id="661114568" Name="Pond_Sound" ObjectPath="\Events\Default Work Unit\Pond\Pond_Sound" MaxAttenuation="60.000000" DurationType="Infinite"/>
 				<Event Id="1041426236" Name="StayThereCat" ObjectPath="\Events\Default Work Unit\Cat\StayThereCat" DurationType="OneShot" DurationMin="0.762585" DurationMax="0.762585"/>
 				<Event Id="4294117557" Name="StayThereOliver" ObjectPath="\Events\Default Work Unit\Oliver\Voice\StayThereOliver" DurationType="OneShot" DurationMin="0.478435" DurationMax="0.478435"/>
 				<Event Id="2574112889" Name="Stones_Move" ObjectPath="\Events\Default Work Unit\Puzzles\Zodiac\Stones_Move" DurationType="OneShot" DurationMin="0.432000" DurationMax="0.432000"/>
+				<Event Id="979765101" Name="Win" ObjectPath="\Events\Default Work Unit\Puzzles\Block\Win" DurationType="OneShot" DurationMin="5.007165" DurationMax="5.007165"/>
 				<Event Id="1537061107" Name="Wind" ObjectPath="\Events\Default Work Unit\Ambience\Wind" DurationType="Infinite"/>
 				<Event Id="3954690858" Name="WithinPuzzleZone" ObjectPath="\Events\Default Work Unit\Oliver\Voice\WithinPuzzleZone" DurationType="OneShot" DurationMin="0.406808" DurationMax="1.234558"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
-				<File Id="120502" Language="SFX">
-					<ShortName>UI_Hover.wav</ShortName>
-					<Path>SFX\UI_Hover_10C4C929.wem</Path>
-				</File>
 				<File Id="37461322" Language="SFX">
 					<ShortName>Hmm\Oliver_hmm_01.wav</ShortName>
 					<Path>SFX\Hmm\Oliver_hmm_01_10C4C929.wem</Path>
@@ -63,6 +64,14 @@
 					<ShortName>Stone_Grind_2.wav</ShortName>
 					<Path>SFX\Stone_Grind_2_10C4C929.wem</Path>
 				</File>
+				<File Id="184421600" Language="SFX">
+					<ShortName>SE_confirm.wav</ShortName>
+					<Path>SFX\SE_confirm_10C4C929.wem</Path>
+				</File>
+				<File Id="191426012" Language="SFX">
+					<ShortName>SE_open.wav</ShortName>
+					<Path>SFX\SE_open_10C4C929.wem</Path>
+				</File>
 				<File Id="311189447" Language="SFX">
 					<ShortName>Light_Bell.wav</ShortName>
 					<Path>SFX\Light_Bell_10C4C929.wem</Path>
@@ -71,21 +80,29 @@
 					<ShortName>Footsteps\step_Wood.wav</ShortName>
 					<Path>SFX\Footsteps\step_Wood_10C4C929.wem</Path>
 				</File>
+				<File Id="411092960" Language="SFX">
+					<ShortName>exit.wav</ShortName>
+					<Path>SFX\exit_10C4C929.wem</Path>
+				</File>
 				<File Id="436406679" Language="SFX">
 					<ShortName>luke_huh (2).wav</ShortName>
 					<Path>SFX\luke_huh (2)_10C4C929.wem</Path>
+				</File>
+				<File Id="436665720" Language="SFX">
+					<ShortName>SE_solve.wav</ShortName>
+					<Path>SFX\SE_solve_10C4C929.wem</Path>
 				</File>
 				<File Id="444177177" Language="SFX">
 					<ShortName>Cat_Mrow_01.wav</ShortName>
 					<Path>SFX\Cat_Mrow_01_10C4C929.wem</Path>
 				</File>
-				<File Id="487315166" Language="SFX">
-					<ShortName>UI_OpenMenu.wav</ShortName>
-					<Path>SFX\UI_OpenMenu_10C4C929.wem</Path>
-				</File>
 				<File Id="541310400" Language="SFX">
 					<ShortName>bgm_Broad_Strokes.wav</ShortName>
 					<Path>SFX\bgm_Broad_Strokes_59EF85A5.wem</Path>
+				</File>
+				<File Id="545480457" Language="SFX">
+					<ShortName>SE_hover.wav</ShortName>
+					<Path>SFX\SE_hover_10C4C929.wem</Path>
 				</File>
 				<File Id="557928960" Language="SFX">
 					<ShortName>Hmm\Oliver_hmm_02.wav</ShortName>
@@ -99,14 +116,6 @@
 					<ShortName>Footsteps\Step_Stone.wav</ShortName>
 					<Path>SFX\Footsteps\Step_Stone_10C4C929.wem</Path>
 				</File>
-				<File Id="646612860" Language="SFX">
-					<ShortName>UI_Select.wav</ShortName>
-					<Path>SFX\UI_Select_10C4C929.wem</Path>
-				</File>
-				<File Id="686948955" Language="SFX">
-					<ShortName>UI_Menu.wav</ShortName>
-					<Path>SFX\UI_Menu_10C4C929.wem</Path>
-				</File>
 				<File Id="731026582" Language="SFX">
 					<ShortName>Hmm\Oliver_hmm_03.wav</ShortName>
 					<Path>SFX\Hmm\Oliver_hmm_03_10C4C929.wem</Path>
@@ -118,6 +127,10 @@
 				<File Id="783317803" Language="SFX">
 					<ShortName>Pond_Sounds.wav</ShortName>
 					<Path>SFX\Pond_Sounds_D79FB2B7.wem</Path>
+				</File>
+				<File Id="848014385" Language="SFX">
+					<ShortName>select.wav</ShortName>
+					<Path>SFX\select_10C4C929.wem</Path>
 				</File>
 				<File Id="877330443" Language="SFX">
 					<ShortName>Cat_Meow.wav</ShortName>
@@ -131,9 +144,21 @@
 					<ShortName>SlidingDoor_Opening.wav</ShortName>
 					<Path>SFX\SlidingDoor_Opening_10C4C929.wem</Path>
 				</File>
+				<File Id="955577415" Language="SFX">
+					<ShortName>Portal_Ambient.wav</ShortName>
+					<Path>SFX\Portal_Ambient_10C4C929.wem</Path>
+				</File>
+				<File Id="968747887" Language="SFX">
+					<ShortName>String_1.wav</ShortName>
+					<Path>SFX\String_1_10C4C929_969B9A4D.wem</Path>
+				</File>
 				<File Id="1015469370" Language="SFX">
 					<ShortName>Footsteps\step_Grass.wav</ShortName>
 					<Path>SFX\Footsteps\step_Grass_10C4C929.wem</Path>
+				</File>
+				<File Id="1030826174" Language="SFX">
+					<ShortName>menu.wav</ShortName>
+					<Path>SFX\menu_10C4C929.wem</Path>
 				</File>
 				<File Id="1035784692" Language="SFX">
 					<ShortName>SlidingDoor_Open.wav</ShortName>

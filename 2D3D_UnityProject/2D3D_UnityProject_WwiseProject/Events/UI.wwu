@@ -12,6 +12,13 @@
 								</Reference>
 							</ReferenceList>
 						</Action>
+						<Action Name="" ID="{D575822F-E57D-4FC5-8124-13D6E4510462}" ShortID="735060100">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="UI_Menu" ID="{B198421B-0D6B-4BFD-B4AA-1DF5734340E4}" WorkUnitID="{F35C23EA-DF72-4530-971C-FBEBF715C8AD}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
 					</ChildrenList>
 				</Event>
 				<Event Name="OnMenuClose" ID="{FEFDC2B0-1F82-4D1D-877A-0E550088C4FB}">
@@ -20,6 +27,13 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="UI_Menu" ID="{B198421B-0D6B-4BFD-B4AA-1DF5734340E4}" WorkUnitID="{F35C23EA-DF72-4530-971C-FBEBF715C8AD}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{EB2DD038-F8E9-4887-BB59-2651BDFACA9F}" ShortID="571634882">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="UI_Exit" ID="{A831CC62-CA02-485E-BF0D-E9822CA00C21}" WorkUnitID="{F35C23EA-DF72-4530-971C-FBEBF715C8AD}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

@@ -11,9 +11,27 @@
 					</PropertyList>
 					<ChildrenList>
 						<Sound Name="UI_Hover" ID="{A9A8197C-F75A-4209-B57B-CA8613B3A93A}" ShortID="679563441">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>-200</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>9</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{24C7AD02-E66A-4B4B-8735-0AC29636FC00}"/>
+								</Reference>
+								<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+									<ObjectRef Name="Room_Medium_High_Absorbtion" ID="{E22DBBB6-7656-4B93-A28D-C003FD416889}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+								</Reference>
+								<Reference Name="Effect1" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+									<ObjectRef Name="Holy" ID="{CC7B8638-C670-4AD5-B3FB-331EA81037F6}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CB9D8304-7AAA-4374-9412-CD9A3A2EDD3D}"/>
@@ -24,12 +42,23 @@
 									<Language>SFX</Language>
 									<AudioFile>UI_Hover.wav</AudioFile>
 								</AudioFileSource>
+								<AudioFileSource Name="SE_confirm" ID="{9B72270A-20AD-434B-A9DC-D9A2CE33420D}" ShortID="184421600">
+									<Language>SFX</Language>
+									<AudioFile>SE_confirm.wav</AudioFile>
+								</AudioFileSource>
 							</ChildrenList>
 							<ActiveSourceList>
-								<ActiveSource Name="UI_Hover" ID="{8956AE15-0D23-4DE2-98B4-37731D9A8AE0}" Platform="Linked"/>
+								<ActiveSource Name="SE_confirm" ID="{9B72270A-20AD-434B-A9DC-D9A2CE33420D}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="UI_OpenMenu" ID="{7A3F651A-24D2-40ED-8B2B-3F312EAA181A}" ShortID="118726226">
+							<PropertyList>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{24C7AD02-E66A-4B4B-8735-0AC29636FC00}"/>
@@ -49,9 +78,22 @@
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="UI_Select" ID="{4E6836DC-D38E-47F2-B04D-0EAF619C6D86}" ShortID="549530513">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-10</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{24C7AD02-E66A-4B4B-8735-0AC29636FC00}"/>
+								</Reference>
+								<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+									<ObjectRef Name="Holy" ID="{CC7B8638-C670-4AD5-B3FB-331EA81037F6}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+								</Reference>
+								<Reference Name="Effect1" PluginName="Wwise Pitch Shifter" CompanyID="0" PluginID="136" PluginType="3">
+									<ObjectRef Name="Octave_Down" ID="{062EC4B1-5372-4D1E-917B-C757293F2B42}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CB9D8304-7AAA-4374-9412-CD9A3A2EDD3D}"/>
@@ -62,22 +104,32 @@
 									<Language>SFX</Language>
 									<AudioFile>UI_Select.wav</AudioFile>
 								</AudioFileSource>
+								<AudioFileSource Name="select" ID="{EB7862BF-144E-4878-9BFA-20138F63A999}" ShortID="848014385">
+									<Language>SFX</Language>
+									<AudioFile>select.wav</AudioFile>
+								</AudioFileSource>
 							</ChildrenList>
 							<ActiveSourceList>
-								<ActiveSource Name="UI_Select" ID="{A2213D5B-7A18-488B-A4B5-81B43B0B2D01}" Platform="Linked"/>
+								<ActiveSource Name="select" ID="{EB7862BF-144E-4878-9BFA-20138F63A999}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="UI_Exit" ID="{A831CC62-CA02-485E-BF0D-E9822CA00C21}" ShortID="676901710">
 							<PropertyList>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-14</Value>
+										<Value>-8</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{24C7AD02-E66A-4B4B-8735-0AC29636FC00}"/>
+								</Reference>
+								<Reference Name="Effect0" PluginName="Wwise Pitch Shifter" CompanyID="0" PluginID="136" PluginType="3">
+									<ObjectRef Name="Octave_Down" ID="{062EC4B1-5372-4D1E-917B-C757293F2B42}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+								</Reference>
+								<Reference Name="Effect1" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+									<ObjectRef Name="Holy" ID="{CC7B8638-C670-4AD5-B3FB-331EA81037F6}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CB9D8304-7AAA-4374-9412-CD9A3A2EDD3D}"/>
@@ -88,9 +140,13 @@
 									<Language>SFX</Language>
 									<AudioFile>UI_Exit.wav</AudioFile>
 								</AudioFileSource>
+								<AudioFileSource Name="exit" ID="{A59068BA-B363-47B3-A58A-1F80E3E42779}" ShortID="411092960">
+									<Language>SFX</Language>
+									<AudioFile>exit.wav</AudioFile>
+								</AudioFileSource>
 							</ChildrenList>
 							<ActiveSourceList>
-								<ActiveSource Name="UI_Exit" ID="{CBD5169E-4536-4345-AB52-91592FAA7789}" Platform="Linked"/>
+								<ActiveSource Name="exit" ID="{A59068BA-B363-47B3-A58A-1F80E3E42779}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="UI_Menu" ID="{B198421B-0D6B-4BFD-B4AA-1DF5734340E4}" ShortID="441537048">
@@ -107,18 +163,24 @@
 								</Property>
 								<Property Name="Pitch" Type="int32">
 									<ValueList>
-										<Value>-10</Value>
+										<Value>-100</Value>
 									</ValueList>
 								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-9</Value>
+										<Value>-20</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{24C7AD02-E66A-4B4B-8735-0AC29636FC00}"/>
+								</Reference>
+								<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+									<ObjectRef Name="Holy" ID="{CC7B8638-C670-4AD5-B3FB-331EA81037F6}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+								</Reference>
+								<Reference Name="Effect1" PluginName="Wwise Pitch Shifter" CompanyID="0" PluginID="136" PluginType="3">
+									<ObjectRef Name="Octave_Down" ID="{062EC4B1-5372-4D1E-917B-C757293F2B42}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CB9D8304-7AAA-4374-9412-CD9A3A2EDD3D}"/>
@@ -129,9 +191,13 @@
 									<Language>SFX</Language>
 									<AudioFile>UI_Menu.wav</AudioFile>
 								</AudioFileSource>
+								<AudioFileSource Name="menu" ID="{FF125ACB-843F-434A-B9F9-1371BB2452C8}" ShortID="1030826174">
+									<Language>SFX</Language>
+									<AudioFile>menu.wav</AudioFile>
+								</AudioFileSource>
 							</ChildrenList>
 							<ActiveSourceList>
-								<ActiveSource Name="UI_Menu" ID="{605944E2-ED18-4B26-9B07-7FD6ADAE17DA}" Platform="Linked"/>
+								<ActiveSource Name="menu" ID="{FF125ACB-843F-434A-B9F9-1371BB2452C8}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>

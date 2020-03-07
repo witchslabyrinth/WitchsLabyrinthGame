@@ -6,14 +6,19 @@
 				<SoundBank Name="Main" ID="{FAAE851D-79E0-448F-ADC3-648C94A6ABD2}">
 					<ObjectInclusionList>
 						<ObjectRef Name="Wind" ID="{51DA3693-A227-409D-A9E5-0C825686EF97}" WorkUnitID="{87EA0156-343C-49F4-957B-D3B5DED1C2C6}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Ambient" ID="{00E3AA26-21E3-4148-95A2-ACCF3698B753}" WorkUnitID="{87EA0156-343C-49F4-957B-D3B5DED1C2C6}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="WithinPuzzleZone" ID="{166CE977-E011-4255-9505-6A79CCD9E37A}" WorkUnitID="{87EA0156-343C-49F4-957B-D3B5DED1C2C6}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="StayThereOliver" ID="{0D58E3F9-33F7-42FA-9166-18490111EDB3}" WorkUnitID="{87EA0156-343C-49F4-957B-D3B5DED1C2C6}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="OnMenuSelect" ID="{92C79FCB-0BC9-4344-9DBF-DA2317A48BE3}" WorkUnitID="{167BFD91-0A39-4FD8-BC6D-407FAD2D1946}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="OnMenuOpen" ID="{951C01C8-2F3E-4345-978B-0329C1F64F17}" WorkUnitID="{167BFD91-0A39-4FD8-BC6D-407FAD2D1946}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Activate" ID="{52D05207-9612-4401-9396-8EE79270F1CB}" WorkUnitID="{87EA0156-343C-49F4-957B-D3B5DED1C2C6}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Win" ID="{549A9D61-FFCF-443E-AD29-B6D6759C105B}" WorkUnitID="{87EA0156-343C-49F4-957B-D3B5DED1C2C6}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="OnMenuHover" ID="{FFB6B4CC-5159-4634-96B0-8A017E95393E}" WorkUnitID="{167BFD91-0A39-4FD8-BC6D-407FAD2D1946}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Lantern_LightUp" ID="{AF3FB6A6-0859-467E-98AB-526D8D2A82E5}" WorkUnitID="{87EA0156-343C-49F4-957B-D3B5DED1C2C6}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Interact" ID="{1777E7B7-8F7E-4735-AE45-0E6F641DDF9F}" WorkUnitID="{87EA0156-343C-49F4-957B-D3B5DED1C2C6}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="StayThereCat" ID="{E1F7A7C0-60AD-4750-8177-7390795EB00F}" WorkUnitID="{87EA0156-343C-49F4-957B-D3B5DED1C2C6}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="OliverSwitchSound" ID="{580F8B20-2994-48A8-BCD7-2391A18396F6}" WorkUnitID="{87EA0156-343C-49F4-957B-D3B5DED1C2C6}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Move" ID="{932F9F65-6C62-4A5C-9274-330233DC5004}" WorkUnitID="{87EA0156-343C-49F4-957B-D3B5DED1C2C6}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Music_Play" ID="{97615C5D-6E84-4AC2-A6A5-AF8AA2D73E46}" WorkUnitID="{87EA0156-343C-49F4-957B-D3B5DED1C2C6}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Footstep_Player" ID="{B6C64F55-19C9-4BA4-8D1A-F2F067892E8A}" WorkUnitID="{87EA0156-343C-49F4-957B-D3B5DED1C2C6}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Stones_Move" ID="{86C1E159-0CCC-4C0F-B362-5A1009756B14}" WorkUnitID="{87EA0156-343C-49F4-957B-D3B5DED1C2C6}" Filter="7" Origin="Manual"/>

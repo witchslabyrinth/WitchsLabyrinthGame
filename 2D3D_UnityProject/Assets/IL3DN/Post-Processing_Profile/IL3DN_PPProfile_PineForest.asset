@@ -31,7 +31,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40b924e2dad56384a8df2a1e111bb675, type: 3}
   m_Name: Vignette
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   enabled:
     overrideState: 1
     value: 1
@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48a79b01ea5641d4aa6daa2e23605641, type: 3}
   m_Name: Bloom
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   enabled:
     overrideState: 1
     value: 1
@@ -248,8 +248,8 @@ MonoBehaviour:
     overrideState: 0
     value: 0
   colorFilter:
-    overrideState: 0
-    value: {r: 1, g: 1, b: 1, a: 1}
+    overrideState: 1
+    value: {r: 1, g: 0.94569707, b: 0.9056604, a: 1}
   hueShift:
     overrideState: 0
     value: 0
@@ -264,7 +264,7 @@ MonoBehaviour:
     value: 1.5
   contrast:
     overrideState: 1
-    value: 20
+    value: 50
   mixerRedOutRedIn:
     overrideState: 1
     value: 105
@@ -1579,7 +1579,7 @@ MonoBehaviour:
     value: 3.76
   normalThreshold:
     overrideState: 1
-    value: 0.253
+    value: 0.11
   depthNormalThreshold:
     overrideState: 0
     value: 0.625
@@ -1588,4 +1588,4 @@ MonoBehaviour:
     value: 7
   color:
     overrideState: 1
-    value: {r: 0, g: 0, b: 0, a: 1}
+    value: {r: 0.16981131, g: 0.15936838, b: 0.06247774, a: 1}

@@ -5,6 +5,21 @@ using Yarn.Unity;
 
 public class PatternPuzzle : MonoBehaviour
 {
+
+     [Header("Wwise")]
+    /// <summary>
+    /// Set Wwise variables
+    /// </summary>
+    /// <param name="paused">Set Wwise variables for sounds here</param>
+    public AK.Wwise.Event blockMove;
+    public AK.Wwise.Event blockInteract;
+    public AK.Wwise.Event blockWin;
+
+
+
+
+
+
     [SerializeField]
     private List<PatternCube> patternCubes;
 
@@ -65,16 +80,19 @@ public class PatternPuzzle : MonoBehaviour
             {
                 if (CurrentCube - 1 >= 0)
                     CurrentCube--;
+                 blockMove.Post(gameObject); //Wwise
             }
             if (Input.GetKeyDown(KeyCode.W))
             {
                 patternCubes[CurrentCube].Rotate(Direction.BACKWARD);
                 StartCoroutine(CheckSolved());
+                blockInteract.Post(gameObject); //Wwise
             }
             if (Input.GetKeyDown(KeyCode.L))
             {
                 if (CurrentCube + 1 < patternCubes.Count)
                     CurrentCube++;
+                blockMove.Post(gameObject); //Wwise
             }
             if (Input.GetKeyDown(KeyCode.A))
             {
@@ -82,18 +100,21 @@ public class PatternPuzzle : MonoBehaviour
 
                 // Current cube index changed, set it directly so select and deslect aren't called
                 _currentCube = CurrentCube - 1;
+                blockInteract.Post(gameObject); //Wwise
 
                 StartCoroutine(CheckSolved());
             }
             if (Input.GetKeyDown(KeyCode.S))
             {
                 patternCubes[CurrentCube].Rotate(Direction.FORWARD);
+                blockInteract.Post(gameObject); //Wwise
                 StartCoroutine(CheckSolved());
             }
             if (Input.GetKeyDown(KeyCode.D))
             {
                 SwapCubes(CurrentCube, CurrentCube + 1);
                 _currentCube = CurrentCube + 1;
+                blockInteract.Post(gameObject); //Wwise
 
                 StartCoroutine(CheckSolved());
             }
@@ -207,6 +228,7 @@ public class PatternPuzzle : MonoBehaviour
         for (int i = 0; i < patternCubes.Count; i++)
         {
             patternCubes[i].Jump(winAnimationCurve, winAnimationJumpTime);
+             blockWin.Post(gameObject); //Wwise
             yield return new WaitForSeconds(winAnimationTimeInBetween);
         }
     }

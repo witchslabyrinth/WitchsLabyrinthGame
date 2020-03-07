@@ -156,6 +156,69 @@
 								</Event>
 							</ChildrenList>
 						</Folder>
+						<Folder Name="Portal" ID="{BBA0E8D0-0D0E-4A6D-A6A7-16CAA30BF252}" ShortID="908396050">
+							<ChildrenList>
+								<Event Name="Activate" ID="{52D05207-9612-4401-9396-8EE79270F1CB}">
+									<ChildrenList>
+										<Action Name="" ID="{8D71BE55-0685-4BEC-BE7E-A5DE8D21F8F7}" ShortID="386451756">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Portal_Activate" ID="{78ED372E-5A3F-42CB-9C7D-652750A93064}" WorkUnitID="{787AA6C8-A80B-4C2F-B9CE-E9178ECBB4E3}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Ambient" ID="{00E3AA26-21E3-4148-95A2-ACCF3698B753}">
+									<ChildrenList>
+										<Action Name="" ID="{D03823EF-8621-4735-8926-F9168A14EA82}" ShortID="320403720">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Portal_Amb" ID="{9A7A588B-94BE-4D69-BF12-C1592278D33F}" WorkUnitID="{787AA6C8-A80B-4C2F-B9CE-E9178ECBB4E3}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="Block" ID="{4D0B8ED2-A6AF-4D1A-8293-D94DC4B8BB8F}" ShortID="900073668">
+							<ChildrenList>
+								<Event Name="Move" ID="{932F9F65-6C62-4A5C-9274-330233DC5004}">
+									<ChildrenList>
+										<Action Name="" ID="{62582129-7D44-4FFA-AC2A-A53F115DABDE}" ShortID="195568342">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Block_Move" ID="{3A806E30-93DC-4153-B3B4-8F7E01FD6067}" WorkUnitID="{787AA6C8-A80B-4C2F-B9CE-E9178ECBB4E3}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Win" ID="{549A9D61-FFCF-443E-AD29-B6D6759C105B}">
+									<ChildrenList>
+										<Action Name="" ID="{66D98334-F093-4E4C-918E-D84F0EA2A5FF}" ShortID="632431848">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Block_Solve" ID="{EC50BB2C-4DE8-4080-978E-1419A465D1A4}" WorkUnitID="{787AA6C8-A80B-4C2F-B9CE-E9178ECBB4E3}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Interact" ID="{1777E7B7-8F7E-4735-AE45-0E6F641DDF9F}">
+									<ChildrenList>
+										<Action Name="" ID="{CB13F32B-89CC-40FF-9DCD-3F46B06CBA73}" ShortID="540607577">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Block_Interact" ID="{037F5533-A69B-4235-B089-73D96EEC3BB1}" WorkUnitID="{787AA6C8-A80B-4C2F-B9CE-E9178ECBB4E3}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Pond" ID="{0B2DDE12-6B79-4122-917B-E9CDA08002EB}" ShortID="196801830">

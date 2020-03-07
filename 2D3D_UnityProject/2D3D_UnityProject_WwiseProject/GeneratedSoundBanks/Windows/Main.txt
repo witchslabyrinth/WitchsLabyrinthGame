@@ -1,19 +1,24 @@
 Event	ID	Name			Wwise Object Path	Notes
+	77978275	Ambient			\Default Work Unit\Puzzles\Portal\Ambient	
 	202194903	Music_Play			\Default Work Unit\Scene\Music_Play	
 	535830432	Door_Open			\Default Work Unit\Puzzles\Zodiac\Door_Open	
 	547102971	OnMenuOpen			\UI\OnMenuOpen	
 	648916573	Footstep_Player			\Default Work Unit\Oliver\Interactions\Footstep_Player	
 	661114568	Pond_Sound			\Default Work Unit\Pond\Pond_Sound	
 	961842423	OnMenuHover			\UI\OnMenuHover	
+	979765101	Win			\Default Work Unit\Puzzles\Block\Win	
 	1041426236	StayThereCat			\Default Work Unit\Cat\StayThereCat	
 	1237780649	OnMenuClose			\UI\OnMenuClose	
 	1412352919	OnMenuSelect			\UI\OnMenuSelect	
+	1466384055	Interact			\Default Work Unit\Puzzles\Block\Interact	
 	1537061107	Wind			\Default Work Unit\Ambience\Wind	
 	2136553153	OliverSwitchSound			\Default Work Unit\Oliver\OliverSwitchSound	
 	2574112889	Stones_Move			\Default Work Unit\Puzzles\Zodiac\Stones_Move	
 	2716631521	Lantern_LightUp			\Default Work Unit\Puzzles\Zodiac\Lantern_LightUp	
+	3011204530	Move			\Default Work Unit\Puzzles\Block\Move	
 	3589155492	CatSwitchSound			\Default Work Unit\Cat\CatSwitchSound	
 	3954690858	WithinPuzzleZone			\Default Work Unit\Oliver\Voice\WithinPuzzleZone	
+	4166407614	Activate			\Default Work Unit\Puzzles\Portal\Activate	
 	4294117557	StayThereOliver			\Default Work Unit\Oliver\Voice\StayThereOliver	
 
 Switch Group	ID	Name			Wwise Object Path	Notes
@@ -51,31 +56,39 @@ Custom State	ID	Name	State Group	Owner		Notes
 
 Effect plug-ins	ID	Name	Type				Notes
 	48620415	Have_U_Ever_Been_Outside	Wwise RoomVerb			
+	2891462749	Room_Medium_High_Absorbtion	Wwise RoomVerb			
+	3164629247	Holy	Wwise RoomVerb			
+	3948262040	Octave_Down	Wwise Pitch Shifter			
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	120502	UI_Hover	C:\Users\Ang\Documents\GitHub\WitchsLabyrinthGame-HouseEdits\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Windows\SFX\UI_Hover_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\UI_Hover		15024
-	37461322	Oliver_hmm_01	C:\Users\Ang\Documents\GitHub\WitchsLabyrinthGame-HouseEdits\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Windows\SFX\Hmm\Oliver_hmm_01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Oliver\Oliver_Voice\Sounds\Hmm\Oliver_hmm_01		217840
-	79774885	Stone_Grind_1	C:\Users\Ang\Documents\GitHub\WitchsLabyrinthGame-HouseEdits\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Windows\SFX\Stone_Grind_1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Puzzles\Zodiac\Stones\Stone_Grind_1		83008
-	128788558	Oliver_UghOkayFine	C:\Users\Ang\Documents\GitHub\WitchsLabyrinthGame-HouseEdits\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Windows\SFX\Oliver_UghOkayFine_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Oliver\Oliver_Voice\Dialogue\Oliver_UghOkayFine		389960
-	169643882	Stone_Grind_3	C:\Users\Ang\Documents\GitHub\WitchsLabyrinthGame-HouseEdits\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Windows\SFX\Stone_Grind_3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Puzzles\Zodiac\Stones\Stone_Grind_3		83008
-	171327225	Stone_Grind_2	C:\Users\Ang\Documents\GitHub\WitchsLabyrinthGame-HouseEdits\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Windows\SFX\Stone_Grind_2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Puzzles\Zodiac\Stones\Stone_Grind_2		83008
-	311189447	Light_Bell	C:\Users\Ang\Documents\GitHub\WitchsLabyrinthGame-HouseEdits\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Windows\SFX\Light_Bell_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Puzzles\Zodiac\Light_Bell		1046920
-	386537885	step_Wood	C:\Users\Ang\Documents\GitHub\WitchsLabyrinthGame-HouseEdits\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Windows\SFX\Footsteps\step_Wood_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Oliver\Footsteps\Footsteps\step_Wood		43020
-	436406679	luke_huh (2)	C:\Users\Ang\Documents\GitHub\WitchsLabyrinthGame-HouseEdits\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Windows\SFX\luke_huh (2)_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Oliver\Oliver_Voice\Sounds\Hmm\luke_huh (2)		76136
-	444177177	Cat_Mrow_01	C:\Users\Ang\Documents\GitHub\WitchsLabyrinthGame-HouseEdits\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Windows\SFX\Cat_Mrow_01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Cat\Cat_Voice\Cat_Mrow_01		134584
-	487315166	UI_OpenMenu	C:\Users\Ang\Documents\GitHub\WitchsLabyrinthGame-HouseEdits\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Windows\SFX\UI_OpenMenu_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\UI_OpenMenu		694600
-	541310400	bgm_Broad_Strokes	C:\Users\Ang\Documents\GitHub\WitchsLabyrinthGame-HouseEdits\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Windows\SFX\bgm_Broad_Strokes_59EF85A5.wem		\Actor-Mixer Hierarchy\Default Work Unit\Music\bgm_Broad_Strokes		30580428
-	557928960	Oliver_hmm_02	C:\Users\Ang\Documents\GitHub\WitchsLabyrinthGame-HouseEdits\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Windows\SFX\Hmm\Oliver_hmm_02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Oliver\Oliver_Voice\Sounds\Hmm\Oliver_hmm_02		177396
-	572545504	luke_huh (1)	C:\Users\Ang\Documents\GitHub\WitchsLabyrinthGame-HouseEdits\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Windows\SFX\luke_huh (1)_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Oliver\Oliver_Voice\Sounds\Hmm\luke_huh (1)		98720
-	611871310	Step_Stone	C:\Users\Ang\Documents\GitHub\WitchsLabyrinthGame-HouseEdits\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Windows\SFX\Footsteps\Step_Stone_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Oliver\Footsteps\Footsteps\Step_Stone		11712
-	646612860	UI_Select	C:\Users\Ang\Documents\GitHub\WitchsLabyrinthGame-HouseEdits\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Windows\SFX\UI_Select_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\UI_Select		117784
-	686948955	UI_Menu	C:\Users\Ang\Documents\GitHub\WitchsLabyrinthGame-HouseEdits\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Windows\SFX\UI_Menu_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\UI_Menu		122944
-	731026582	Oliver_hmm_03	C:\Users\Ang\Documents\GitHub\WitchsLabyrinthGame-HouseEdits\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Windows\SFX\Hmm\Oliver_hmm_03_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Oliver\Oliver_Voice\Sounds\Hmm\Oliver_hmm_03		177400
-	757562996	luke_oh (1)	C:\Users\Ang\Documents\GitHub\WitchsLabyrinthGame-HouseEdits\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Windows\SFX\luke_oh (1)_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Oliver\Oliver_Voice\Sounds\luke_oh (1)		84460
-	783317803	Pond_Sounds	C:\Users\Ang\Documents\GitHub\WitchsLabyrinthGame-HouseEdits\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Windows\SFX\Pond_Sounds_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Pond\Pond_Sounds		18786664
-	877330443	Cat_Meow	C:\Users\Ang\Documents\GitHub\WitchsLabyrinthGame-HouseEdits\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Windows\SFX\Cat_Meow_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Cat\Cat_Voice\Cat_Meow		236324
-	887464685	Wind_Ambience	C:\Users\Ang\Documents\GitHub\WitchsLabyrinthGame-HouseEdits\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Windows\SFX\Wind_Ambience_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\Wind_Ambience		3471800
-	914604628	SlidingDoor_Opening	C:\Users\Ang\Documents\GitHub\WitchsLabyrinthGame-HouseEdits\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Windows\SFX\SlidingDoor_Opening_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Puzzles\Zodiac\Sliding_Door_Opening\SlidingDoor_Opening		392808
-	1015469370	step_Grass	C:\Users\Ang\Documents\GitHub\WitchsLabyrinthGame-HouseEdits\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Windows\SFX\Footsteps\step_Grass_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Oliver\Footsteps\Footsteps\step_Grass		73404
-	1035784692	SlidingDoor_Open	C:\Users\Ang\Documents\GitHub\WitchsLabyrinthGame-HouseEdits\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Windows\SFX\SlidingDoor_Open_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Puzzles\Zodiac\Sliding_Door_Opening\SlidingDoor_Open		94224
+	37461322	Oliver_hmm_01	C:\Users\Maggie\Documents\GitHub\WitchsLabyrinthGame\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Windows\SFX\Hmm\Oliver_hmm_01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Oliver\Oliver_Voice\Sounds\Hmm\Oliver_hmm_01		217840
+	79774885	Stone_Grind_1	C:\Users\Maggie\Documents\GitHub\WitchsLabyrinthGame\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Windows\SFX\Stone_Grind_1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Puzzles\Zodiac\Stones\Stone_Grind_1		83008
+	128788558	Oliver_UghOkayFine	C:\Users\Maggie\Documents\GitHub\WitchsLabyrinthGame\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Windows\SFX\Oliver_UghOkayFine_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Oliver\Oliver_Voice\Dialogue\Oliver_UghOkayFine		389960
+	169643882	Stone_Grind_3	C:\Users\Maggie\Documents\GitHub\WitchsLabyrinthGame\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Windows\SFX\Stone_Grind_3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Puzzles\Zodiac\Stones\Stone_Grind_3		83008
+	171327225	Stone_Grind_2	C:\Users\Maggie\Documents\GitHub\WitchsLabyrinthGame\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Windows\SFX\Stone_Grind_2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Puzzles\Zodiac\Stones\Stone_Grind_2		83008
+	184421600	UI_Hover	C:\Users\Maggie\Documents\GitHub\WitchsLabyrinthGame\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Windows\SFX\SE_confirm_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\UI_Hover		837832
+	191426012	Block_Interact	C:\Users\Maggie\Documents\GitHub\WitchsLabyrinthGame\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Windows\SFX\SE_open_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Puzzles\Block\Block_Interact		837832
+	311189447	Light_Bell	C:\Users\Maggie\Documents\GitHub\WitchsLabyrinthGame\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Windows\SFX\Light_Bell_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Puzzles\Zodiac\Light_Bell		1046920
+	386537885	step_Wood	C:\Users\Maggie\Documents\GitHub\WitchsLabyrinthGame\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Windows\SFX\Footsteps\step_Wood_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Oliver\Footsteps\Footsteps\step_Wood		43020
+	411092960	UI_Exit	C:\Users\Maggie\Documents\GitHub\WitchsLabyrinthGame\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Windows\SFX\exit_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\UI_Exit		837832
+	436406679	luke_huh (2)	C:\Users\Maggie\Documents\GitHub\WitchsLabyrinthGame\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Windows\SFX\luke_huh (2)_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Oliver\Oliver_Voice\Sounds\Hmm\luke_huh (2)		76136
+	436665720	Block_Solve	C:\Users\Maggie\Documents\GitHub\WitchsLabyrinthGame\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Windows\SFX\SE_solve_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Puzzles\Block\Block_Solve		883328
+	444177177	Cat_Mrow_01	C:\Users\Maggie\Documents\GitHub\WitchsLabyrinthGame\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Windows\SFX\Cat_Mrow_01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Cat\Cat_Voice\Cat_Mrow_01		134584
+	541310400	bgm_Broad_Strokes	C:\Users\Maggie\Documents\GitHub\WitchsLabyrinthGame\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Windows\SFX\bgm_Broad_Strokes_59EF85A5.wem		\Actor-Mixer Hierarchy\Default Work Unit\Music\bgm_Broad_Strokes		30580428
+	545480457	Block_Move	C:\Users\Maggie\Documents\GitHub\WitchsLabyrinthGame\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Windows\SFX\SE_hover_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Puzzles\Block\Block_Move		837832
+	557928960	Oliver_hmm_02	C:\Users\Maggie\Documents\GitHub\WitchsLabyrinthGame\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Windows\SFX\Hmm\Oliver_hmm_02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Oliver\Oliver_Voice\Sounds\Hmm\Oliver_hmm_02		177396
+	572545504	luke_huh (1)	C:\Users\Maggie\Documents\GitHub\WitchsLabyrinthGame\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Windows\SFX\luke_huh (1)_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Oliver\Oliver_Voice\Sounds\Hmm\luke_huh (1)		98720
+	611871310	Step_Stone	C:\Users\Maggie\Documents\GitHub\WitchsLabyrinthGame\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Windows\SFX\Footsteps\Step_Stone_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Oliver\Footsteps\Footsteps\Step_Stone		11712
+	731026582	Oliver_hmm_03	C:\Users\Maggie\Documents\GitHub\WitchsLabyrinthGame\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Windows\SFX\Hmm\Oliver_hmm_03_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Oliver\Oliver_Voice\Sounds\Hmm\Oliver_hmm_03		177400
+	757562996	luke_oh (1)	C:\Users\Maggie\Documents\GitHub\WitchsLabyrinthGame\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Windows\SFX\luke_oh (1)_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Oliver\Oliver_Voice\Sounds\luke_oh (1)		84460
+	783317803	Pond_Sounds	C:\Users\Maggie\Documents\GitHub\WitchsLabyrinthGame\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Windows\SFX\Pond_Sounds_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Pond\Pond_Sounds		18786664
+	848014385	UI_Select	C:\Users\Maggie\Documents\GitHub\WitchsLabyrinthGame\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Windows\SFX\select_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\UI_Select		837832
+	877330443	Cat_Meow	C:\Users\Maggie\Documents\GitHub\WitchsLabyrinthGame\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Windows\SFX\Cat_Meow_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Cat\Cat_Voice\Cat_Meow		236324
+	887464685	Wind_Ambience	C:\Users\Maggie\Documents\GitHub\WitchsLabyrinthGame\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Windows\SFX\Wind_Ambience_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\Wind_Ambience		3471800
+	914604628	SlidingDoor_Opening	C:\Users\Maggie\Documents\GitHub\WitchsLabyrinthGame\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Windows\SFX\SlidingDoor_Opening_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Puzzles\Zodiac\Sliding_Door_Opening\SlidingDoor_Opening		392808
+	955577415	Portal_Amb	C:\Users\Maggie\Documents\GitHub\WitchsLabyrinthGame\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Windows\SFX\Portal_Ambient_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Puzzles\Portal\Portal_Amb		1139936
+	968747887	Portal_Activate	C:\Users\Maggie\Documents\GitHub\WitchsLabyrinthGame\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Windows\SFX\String_1_10C4C929_969B9A4D.wem		\Actor-Mixer Hierarchy\Default Work Unit\Puzzles\Portal\Portal_Activate		1589312
+	1015469370	step_Grass	C:\Users\Maggie\Documents\GitHub\WitchsLabyrinthGame\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Windows\SFX\Footsteps\step_Grass_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Oliver\Footsteps\Footsteps\step_Grass		73404
+	1030826174	UI_Menu	C:\Users\Maggie\Documents\GitHub\WitchsLabyrinthGame\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Windows\SFX\menu_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\UI_Menu		883328
+	1035784692	SlidingDoor_Open	C:\Users\Maggie\Documents\GitHub\WitchsLabyrinthGame\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Windows\SFX\SlidingDoor_Open_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Puzzles\Zodiac\Sliding_Door_Opening\SlidingDoor_Open		94224
 
