@@ -109,7 +109,7 @@ public class PlayerInteractionController : MonoBehaviour
                 CameraController.Instance.SetMainCamera(interactionCamera);
 
             }
-            else if (inPatternZone)
+            else if (inPatternZone && !patternPuzzle.solved)
             {
                 // Enable and shift focus to Pattern puzzle
                 patternPuzzle.enabled = true;

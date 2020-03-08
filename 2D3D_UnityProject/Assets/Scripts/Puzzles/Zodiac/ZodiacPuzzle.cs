@@ -5,6 +5,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using Yarn.Unity;
+
 public class ZodiacPuzzle : MonoBehaviour
 {
 
@@ -16,7 +18,7 @@ public class ZodiacPuzzle : MonoBehaviour
     public AK.Wwise.Event stoneMove;
     public AK.Wwise.Event doorMove;
 
-    [Header("Camera Settings")] 
+    [Header("Camera Settings")]
 
     /// <summary>
     /// Camera that shows doors opening when puzzle is solved
@@ -33,7 +35,8 @@ public class ZodiacPuzzle : MonoBehaviour
     /// <summary>
     /// Direction used for disk rotation
     /// </summary>
-    public enum Direction {
+    public enum Direction
+    {
         CLOCKWISE = 1,
         COUNTER_CLOCKWISE = -1,
     }
@@ -48,7 +51,7 @@ public class ZodiacPuzzle : MonoBehaviour
     /// Disk currently being controlled by the player
     /// </summary>
     private ZodiacDisk currentDisk;
-    
+
     /// <summary>
     /// The current round the puzzle is in. Dictates what the solution currently is.
     /// </summary>
@@ -79,10 +82,17 @@ public class ZodiacPuzzle : MonoBehaviour
 
     public GameObject zodiacCanvas;
 
+    // TODO: find a better place for this
+    [SerializeField]
+    private YarnProgram scene2;
+    [SerializeField]
+    private CameraEntity scene2Cam;
+
     void Start()
     {
         // Initialize each disk
-        foreach(ZodiacDisk disk in disks) {
+        foreach (ZodiacDisk disk in disks)
+        {
             // moving this to ZodiacDisk's Start function
             // disk.Init(this);
 
@@ -96,6 +106,10 @@ public class ZodiacPuzzle : MonoBehaviour
         // currentDisk.PieceInOut(ZodiacPuzzlePiece.ZodiacPuzzlePiecePosition.Out);
 
         currentRound = 1;
+
+
+        DialogueRunner dialogueRunner = FindObjectOfType<Yarn.Unity.DialogueRunner>();
+        dialogueRunner.Add(scene2);
     }
 
     void Update()
@@ -106,11 +120,11 @@ public class ZodiacPuzzle : MonoBehaviour
             PuzzleSolved();
         }
 
-        if (Input.GetKeyDown(KeyCode.W)) 
+        if (Input.GetKeyDown(KeyCode.W))
         {
             SwitchDisk(false);
         }
-        else if (Input.GetKeyDown(KeyCode.S)) 
+        else if (Input.GetKeyDown(KeyCode.S))
         {
             SwitchDisk(true);
         }
@@ -134,20 +148,24 @@ public class ZodiacPuzzle : MonoBehaviour
         int diskIndex = disks.IndexOf(currentDisk);
         currentDisk.GlowCurrentSymbol(false);
 
-        try {
+        try
+        {
             // Select next disk (moving towards center)
-            if (next) {
+            if (next)
+            {
                 ZodiacDisk disk = disks[diskIndex + 1];
                 currentDisk = disk;
             }
             // Select previous disk (moving away from center)
-            else {
+            else
+            {
                 ZodiacDisk disk = disks[diskIndex - 1];
                 currentDisk = disk;
             }
             // currentDisk.PieceInOut(ZodiacPuzzlePiece.ZodiacPuzzlePiecePosition.Out);
         }
-        catch(System.ArgumentOutOfRangeException ex) {
+        catch (System.ArgumentOutOfRangeException ex)
+        {
             return;
         }
 
@@ -160,11 +178,13 @@ public class ZodiacPuzzle : MonoBehaviour
     /// </summary>
     public void RotateDisk()
     {
-        if (Input.GetKeyDown(KeyCode.D)) {
+        if (Input.GetKeyDown(KeyCode.D))
+        {
             currentDisk.Rotate(Direction.CLOCKWISE);
             stoneMove.Post(gameObject); //Wwise
         }
-        else if (Input.GetKeyDown(KeyCode.A)) {
+        else if (Input.GetKeyDown(KeyCode.A))
+        {
             currentDisk.Rotate(Direction.COUNTER_CLOCKWISE);
             stoneMove.Post(gameObject); //Wwise
 
@@ -174,8 +194,10 @@ public class ZodiacPuzzle : MonoBehaviour
     private void CheckSolution()
     {
         // Make sure each disk has the correct symbol selected
-        foreach(ZodiacDisk disk in disks) {
-            if(!disk.Correct()) {
+        foreach (ZodiacDisk disk in disks)
+        {
+            if (!disk.Correct())
+            {
                 return;
             }
         }
@@ -217,19 +239,20 @@ public class ZodiacPuzzle : MonoBehaviour
         // Switch back to player actor when doors finished opening
         zodiacDoor.onFinished += () =>
         {
-            ExitPuzzle();
+            FindObjectOfType<DialogueRunner>().StartDialogue("SceneAfterZodiac");
+            CameraController.Instance.SetMainCamera(scene2Cam);
         };
 
         // Open doors
         zodiacDoor.Open();
         doorMove.Post(gameObject); //Wwise
         solved = true;
-        
+
         // Disable puzzle
         enabled = false;
     }
 
-    
+
     /// <summary>
     /// Exits puzzle and restores control to player
     /// </summary>
