@@ -78,10 +78,8 @@ public class PauseMenu : Singleton<PauseMenu>
             SetControlsMenuActive(false);
 
             // Muffle/unmuffle music on pause/unpause
-            if (paused)
-                OnMenuEnter.Post(gameObject);
-            else
-                OnMenuExit.Post(gameObject);
+          
+                
         });
 
         // Start with the game unpaused
@@ -119,7 +117,7 @@ public class PauseMenu : Singleton<PauseMenu>
         SetPaused(!paused);
 
         // TODO: do the OnMenuExit() sound too
-        OnMenuEnter.Post(gameObject);
+        
     }
 
     /// <summary>
