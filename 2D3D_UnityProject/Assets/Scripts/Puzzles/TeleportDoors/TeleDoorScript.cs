@@ -9,6 +9,9 @@ public class TeleDoorScript : MonoBehaviour
     private int yLeft = -90;
     private int yRight = 90;
 
+    //This corrects the position of where to send the player.
+    private int rotationCorrection = 90;
+
     //These handle positioning upon exiting the door.
     private float UnitsInFront = 1.75f;
     private float UnitsBelow = 1.5f;//Door is Taller than Oliver, so to place him on the floor we need to subtract this from the exit door's y position.
@@ -44,6 +47,7 @@ public class TeleDoorScript : MonoBehaviour
     public void Enter(GameObject toSendThrough)
     {
         //This door doesn't need to know the exact location to send the player. This can be handled by the exit door (PairedDoor)
+        Debug.Log(transform.name + "Enter");
         PairedDoor.Exit(toSendThrough);
     }
 
@@ -51,8 +55,13 @@ public class TeleDoorScript : MonoBehaviour
     public void Exit(GameObject thatWasSentThrough)
     {
         //Set the object's position based on orientation of this door, approx. 1.75 units in front of door's position
-        if (myYDir == yBehind)//if front is facing negative z (the front is the only side you can enter or exit)
+        Vector3 newPos = Quaternion.AngleAxis(transform.rotation.eulerAngles.y, transform.up) * (transform.forward * -UnitsInFront);
+        //newPos.y -= UnitsBelow;
+        thatWasSentThrough.transform.Translate(newPos);
+        Debug.Log(transform.name + "Exit");
+        /*if (myYDir == yBehind)//if front is facing negative z (the front is the only side you can enter or exit)
         {
+            //thatWasSentThrough.transform.Translate()
             thatWasSentThrough.transform.position = new Vector3(transform.position.x, transform.position.y - UnitsBelow, transform.position.z - UnitsInFront);
         }
         else if(myYDir == yLeft)//otherwise, if front is facing negative x
@@ -66,7 +75,7 @@ public class TeleDoorScript : MonoBehaviour
         else //otherwise, (front is facing positive z)
         {
             thatWasSentThrough.transform.position = new Vector3(transform.position.x, transform.position.y - UnitsBelow, transform.position.z + UnitsInFront);
-        }
+        }*/
 
         // Check if player was sent through
         // TODO: verify this still works properly - i changed it to use the Actor componentn instead of PlayerController
