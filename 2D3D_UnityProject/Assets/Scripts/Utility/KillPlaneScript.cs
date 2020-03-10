@@ -5,20 +5,11 @@ using UnityEngine;
 public class KillPlaneScript : MonoBehaviour
 {
     [SerializeField]
-    private Vector3 defaultRespawnPosition;
+    private Vector3 defaultRespawnPosition = Vector3.zero;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    // The kill plane will detect any object that falls into it.
+    // If it has a KillPlaneRespawn script attached, then it will be returned to its initial position.
+    // Otherwise, the kill plane will send it to a default position set in the editor (or the room's Origin if that wasn't set).
     private void OnTriggerEnter(Collider other)
     {
         KillPlaneRespawn killPlaneRespawn = other.GetComponent<KillPlaneRespawn>();
