@@ -55,8 +55,9 @@ public class TeleDoorScript : MonoBehaviour
     public void Exit(GameObject thatWasSentThrough)
     {
         //Set the object's position based on orientation of this door, approx. 1.75 units in front of door's position
-        Vector3 newPos = Quaternion.AngleAxis(transform.rotation.eulerAngles.y, transform.up) * (transform.forward * -UnitsInFront);
-        //newPos.y -= UnitsBelow;
+        Vector3 newPos = Quaternion.AngleAxis(transform.rotation.eulerAngles.y, transform.up) * (transform.forward * UnitsInFront);
+        newPos.y -= UnitsBelow;
+        thatWasSentThrough.transform.position = transform.position;
         thatWasSentThrough.transform.Translate(newPos);
         Debug.Log(transform.name + "Exit");
         /*if (myYDir == yBehind)//if front is facing negative z (the front is the only side you can enter or exit)
@@ -86,7 +87,7 @@ public class TeleDoorScript : MonoBehaviour
             PerspectiveCameraControl cameraControl = player.ghostCamera;
             if(cameraControl != null)
             {
-                cameraControl.targetCharacterDirection = faceAwayFromDoor();
+                //cameraControl.targetCharacterDirection = faceAwayFromDoor();
             }
             else
             {
