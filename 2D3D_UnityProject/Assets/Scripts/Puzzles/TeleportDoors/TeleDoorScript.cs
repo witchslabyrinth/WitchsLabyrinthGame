@@ -12,13 +12,9 @@ public class TeleDoorScript : MonoBehaviour
     [SerializeField]
     private TeleDoorScript PairedDoor;
 
-    //Observer pattern used to aid in rotating room
+    //Observer pattern used to aid in rotating room.
+    //Set to be removed in future if DoorObserver is unneeded.
     private List<DoorObserver> observers = new List<DoorObserver>();
-
-    private void Start()
-    {
-        
-    }
 
     //Called upon colliding with the door
     public void Enter(GameObject toSendThrough)
@@ -44,7 +40,7 @@ public class TeleDoorScript : MonoBehaviour
             PerspectiveCameraControl cameraControl = player.ghostCamera;
             if(cameraControl != null)
             {
-                cameraControl.targetCharacterDirection = faceAwayFromDoor();
+                cameraControl.targetCharacterDirection = FaceAwayFromDoor();
             }
             else
             {
@@ -65,7 +61,7 @@ public class TeleDoorScript : MonoBehaviour
     }
 
     // used to make the camera face away from the door the player enters
-    private Vector3 faceAwayFromDoor()
+    private Vector3 FaceAwayFromDoor()
     {
         //This vector faces away from the door.
         return transform.rotation * Vector3.forward;
