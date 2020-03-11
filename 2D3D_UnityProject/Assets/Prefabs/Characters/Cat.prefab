@@ -64,7 +64,6 @@ GameObject:
   - component: {fileID: 6817140406685672407}
   - component: {fileID: 3622394286213893130}
   - component: {fileID: 8723928139838727323}
-  - component: {fileID: 5487345308675342926}
   m_Layer: 0
   m_Name: Cat
   m_TagString: Untagged
@@ -155,18 +154,6 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5487345308675342926
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1943238834350032811}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b43178a17f4a1c141a9691c2803fee23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5166871927216861789
 GameObject:
   m_ObjectHideFlags: 0
@@ -353,6 +340,22 @@ PrefabInstance:
       propertyPath: actor
       value: 
       objectReference: {fileID: 5969970294282569019}
+    - target: {fileID: 7753082780663901557, guid: 7bfa28b270e823c4fb7b87724352206b,
+        type: 3}
+      propertyPath: m_BeforeTransparentBundles.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7753082780663901557, guid: 7bfa28b270e823c4fb7b87724352206b,
+        type: 3}
+      propertyPath: m_BeforeStackBundles.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7753082780663901557, guid: 7bfa28b270e823c4fb7b87724352206b,
+        type: 3}
+      propertyPath: m_BeforeTransparentBundles.Array.data[0].assemblyQualifiedName
+      value: PostProcessOutline, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7bfa28b270e823c4fb7b87724352206b, type: 3}
 --- !u!4 &6513895268698067266 stripped
