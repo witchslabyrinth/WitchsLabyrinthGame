@@ -237,13 +237,13 @@ public class ZodiacPuzzle : MonoBehaviour
         cameraController.SetMainCamera(doorsOpenCamera);
 
         // Switch back to player actor when doors finished opening
-        zodiacDoor.onFinished += () =>
+        zodiacDoor.onOpened += () =>
         {
-            // FindObjectOfType<DialogueRunner>().StartDialogue("SceneAfterZodiac");
-            // CameraController.Instance.SetMainCamera(scene2Cam);
+            FindObjectOfType<DialogueRunner>().StartDialogue("SceneAfterZodiac");
+            CameraController.Instance.SetMainCamera(scene2Cam);
         };
-        FindObjectOfType<DialogueRunner>().StartDialogue("SceneAfterZodiac");
-        CameraController.Instance.SetMainCamera(scene2Cam);
+        // FindObjectOfType<DialogueRunner>().StartDialogue("SceneAfterZodiac");
+        // CameraController.Instance.SetMainCamera(scene2Cam);
 
         // Open doors
         zodiacDoor.Open();

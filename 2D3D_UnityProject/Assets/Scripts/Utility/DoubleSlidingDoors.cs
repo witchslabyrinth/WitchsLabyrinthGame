@@ -1,4 +1,4 @@
-﻿    using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,22 +18,33 @@ public class DoubleSlidingDoors : MonoBehaviour
     public delegate void OnFinishedOpenClose();
 
     /// <summary>
-    /// Event fired after door finished opening/closing
+    /// Event fired after door finished opening
     /// </summary>
-    public OnFinishedOpenClose onFinished;
+    public OnFinishedOpenClose onOpened;
+
+    /// <summary>
+    /// Event fired after door finished closing
+    /// </summary>
+    public OnFinishedOpenClose onClosed;
 
     public void Open()
     {
-        StartCoroutine(OpenCloseCoroutine(-openCloseOffset));
+        StartCoroutine(OpenCloseCoroutine(openCloseOffset, true));
     }
 
     public void Close()
     {
-        StartCoroutine(OpenCloseCoroutine(openCloseOffset));
+        StartCoroutine(OpenCloseCoroutine(openCloseOffset, false));
     }
 
-    private IEnumerator OpenCloseCoroutine(float offset)
+    private IEnumerator OpenCloseCoroutine(float offset, bool isOpening)
     {
+        // if door's opening, set offset to negative
+        if (isOpening)
+        {
+            offset = -offset;
+        }
+
         // Create start and end positions for both doors
         Vector3 leftDoorStartPos = leftDoor.localPosition;
         Vector3 leftDoorEndPos = new Vector3(leftDoorStartPos.x, leftDoorStartPos.y, leftDoorStartPos.z + offset);
@@ -62,6 +73,13 @@ public class DoubleSlidingDoors : MonoBehaviour
         rightDoor.localPosition = rightDoorEndPos;
 
         // Fire finished opening/closing event
-        onFinished?.Invoke();
+        if (isOpening)
+        {
+            onOpened?.Invoke();
+        }
+        else
+        {
+            onClosed?.Invoke();
+        }
     }
 }
