@@ -4495,6 +4495,22 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -8059062742068585544, guid: 6d020ecd2708b684db1f546a2b08fd23,
         type: 3}
+    - target: {fileID: 6513895268698067268, guid: ad23a6d0b7a18e24398df7583b0cd3b5,
+        type: 3}
+      propertyPath: m_BeforeTransparentBundles.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6513895268698067268, guid: ad23a6d0b7a18e24398df7583b0cd3b5,
+        type: 3}
+      propertyPath: m_BeforeStackBundles.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6513895268698067268, guid: ad23a6d0b7a18e24398df7583b0cd3b5,
+        type: 3}
+      propertyPath: m_BeforeTransparentBundles.Array.data[0].assemblyQualifiedName
+      value: PostProcessOutline, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad23a6d0b7a18e24398df7583b0cd3b5, type: 3}
 --- !u!1 &450153170
@@ -62936,6 +62952,90 @@ PrefabInstance:
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 391d0c14576dcbb48847806ef980a0fb, type: 3}
+--- !u!1001 &7152054182508612674
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7152054182270004159, guid: 9ea82824b37ff4744bd7a9926c1e4add,
+        type: 3}
+      propertyPath: m_Name
+      value: KillPlane
+      objectReference: {fileID: 0}
+    - target: {fileID: 7152054182270002240, guid: 9ea82824b37ff4744bd7a9926c1e4add,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7152054182270002240, guid: 9ea82824b37ff4744bd7a9926c1e4add,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -548
+      objectReference: {fileID: 0}
+    - target: {fileID: 7152054182270002240, guid: 9ea82824b37ff4744bd7a9926c1e4add,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 51.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7152054182270002240, guid: 9ea82824b37ff4744bd7a9926c1e4add,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7152054182270002240, guid: 9ea82824b37ff4744bd7a9926c1e4add,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7152054182270002240, guid: 9ea82824b37ff4744bd7a9926c1e4add,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7152054182270002240, guid: 9ea82824b37ff4744bd7a9926c1e4add,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7152054182270002240, guid: 9ea82824b37ff4744bd7a9926c1e4add,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 7152054182270002240, guid: 9ea82824b37ff4744bd7a9926c1e4add,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7152054182270002240, guid: 9ea82824b37ff4744bd7a9926c1e4add,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7152054182270002240, guid: 9ea82824b37ff4744bd7a9926c1e4add,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4244258083571430878, guid: 9ea82824b37ff4744bd7a9926c1e4add,
+        type: 3}
+      propertyPath: defaultRespawnPosition.x
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 4244258083571430878, guid: 9ea82824b37ff4744bd7a9926c1e4add,
+        type: 3}
+      propertyPath: defaultRespawnPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4244258083571430878, guid: 9ea82824b37ff4744bd7a9926c1e4add,
+        type: 3}
+      propertyPath: defaultRespawnPosition.z
+      value: 50
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9ea82824b37ff4744bd7a9926c1e4add, type: 3}
 --- !u!1001 &7187866082589497127
 PrefabInstance:
   m_ObjectHideFlags: 0
