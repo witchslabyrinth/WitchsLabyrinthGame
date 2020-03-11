@@ -2822,24 +2822,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 334389650}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &334842905 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2032480695334426566, guid: bbdd8feba155b90439ae87218fe6a1ba,
-    type: 3}
-  m_PrefabInstance: {fileID: 1616911461}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &334842909
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 334842905}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b43178a17f4a1c141a9691c2803fee23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &335186823
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3196,24 +3178,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 335186823}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &341000564 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1943238834350032811, guid: ad23a6d0b7a18e24398df7583b0cd3b5,
-    type: 3}
-  m_PrefabInstance: {fileID: 449837863}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &341000569
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 341000564}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b43178a17f4a1c141a9691c2803fee23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &351910261
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4531,6 +4495,22 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -8059062742068585544, guid: 6d020ecd2708b684db1f546a2b08fd23,
         type: 3}
+    - target: {fileID: 6513895268698067268, guid: ad23a6d0b7a18e24398df7583b0cd3b5,
+        type: 3}
+      propertyPath: m_BeforeTransparentBundles.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6513895268698067268, guid: ad23a6d0b7a18e24398df7583b0cd3b5,
+        type: 3}
+      propertyPath: m_BeforeStackBundles.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6513895268698067268, guid: ad23a6d0b7a18e24398df7583b0cd3b5,
+        type: 3}
+      propertyPath: m_BeforeTransparentBundles.Array.data[0].assemblyQualifiedName
+      value: PostProcessOutline, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad23a6d0b7a18e24398df7583b0cd3b5, type: 3}
 --- !u!1 &450153170
@@ -8185,7 +8165,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 449837863}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 341000564}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2443f96ba3b3c47b5b9607648a3fee16, type: 3}
@@ -21769,7 +21749,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1616911461}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 334842905}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2443f96ba3b3c47b5b9607648a3fee16, type: 3}

@@ -66,6 +66,11 @@ public class Actor : MonoBehaviour
     /// </summary>
     private bool inTopView;
 
+    /// <summary>
+    /// Position the actor started at on scene load.
+    /// </summary>
+    public Vector3 spawnPosition { get; private set; }
+
     /// Sets actor movement control scheme
     /// </summary>
     /// <param name="movement">Movement control scheme</param>
@@ -92,6 +97,9 @@ public class Actor : MonoBehaviour
             Debug.LogWarning(name + " | missing reference to ActorCamera; attempting to find via FindObjectOfType()...");
             actorCamera = FindObjectOfType<ActorCamera>();
         }
+
+        // Save spawn position, so if we fall out of map we can respawn there
+        spawnPosition = transform.position;
     }
 
     private void Start()
