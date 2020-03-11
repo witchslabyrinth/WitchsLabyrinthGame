@@ -240,17 +240,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 7759913024785632345, guid: abe8d208b6a29c643b370418c1177370,
-        type: 3}
-      propertyPath: cameraView
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7759913024785632345, guid: abe8d208b6a29c643b370418c1177370,
-        type: 3}
-      propertyPath: sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 32a4ed5cbf5977d498d6477111d8726a,
-        type: 3}
     - target: {fileID: 4279651082906731662, guid: abe8d208b6a29c643b370418c1177370,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -281,11 +270,22 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 7759913024785632345, guid: abe8d208b6a29c643b370418c1177370,
+        type: 3}
+      propertyPath: cameraView
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7759913024785632345, guid: abe8d208b6a29c643b370418c1177370,
+        type: 3}
+      propertyPath: sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 82c6d244ba014ff45a1568c7e7e3ecd4,
+        type: 3}
     - target: {fileID: 6060154649510301388, guid: abe8d208b6a29c643b370418c1177370,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 32a4ed5cbf5977d498d6477111d8726a,
+      objectReference: {fileID: 21300000, guid: 82c6d244ba014ff45a1568c7e7e3ecd4,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abe8d208b6a29c643b370418c1177370, type: 3}
@@ -442,6 +442,18 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 7759913024785632345, guid: abe8d208b6a29c643b370418c1177370,
+        type: 3}
+      propertyPath: sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6acc37c8cc4b57e479755253cb296eac,
+        type: 3}
+    - target: {fileID: 6060154649510301388, guid: abe8d208b6a29c643b370418c1177370,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6acc37c8cc4b57e479755253cb296eac,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abe8d208b6a29c643b370418c1177370, type: 3}
 --- !u!224 &1996570061 stripped
@@ -567,17 +579,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 7759913024785632345, guid: abe8d208b6a29c643b370418c1177370,
-        type: 3}
-      propertyPath: cameraView
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7759913024785632345, guid: abe8d208b6a29c643b370418c1177370,
-        type: 3}
-      propertyPath: sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 034990378d94fb44c9a5b5219bce1147,
-        type: 3}
     - target: {fileID: 4279651082906731662, guid: abe8d208b6a29c643b370418c1177370,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -608,11 +609,22 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 7759913024785632345, guid: abe8d208b6a29c643b370418c1177370,
+        type: 3}
+      propertyPath: cameraView
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7759913024785632345, guid: abe8d208b6a29c643b370418c1177370,
+        type: 3}
+      propertyPath: sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a5c44b1f4a87c5349abb90b1e8c308e4,
+        type: 3}
     - target: {fileID: 6060154649510301388, guid: abe8d208b6a29c643b370418c1177370,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 034990378d94fb44c9a5b5219bce1147,
+      objectReference: {fileID: 21300000, guid: a5c44b1f4a87c5349abb90b1e8c308e4,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abe8d208b6a29c643b370418c1177370, type: 3}
@@ -657,7 +669,7 @@ PrefabInstance:
     - target: {fileID: 7481434411305587718, guid: abe8d208b6a29c643b370418c1177370,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7481434411305587718, guid: abe8d208b6a29c643b370418c1177370,
         type: 3}
@@ -667,7 +679,7 @@ PrefabInstance:
     - target: {fileID: 7481434411305587718, guid: abe8d208b6a29c643b370418c1177370,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7481434411305587718, guid: abe8d208b6a29c643b370418c1177370,
         type: 3}
@@ -682,7 +694,7 @@ PrefabInstance:
     - target: {fileID: 7481434411305587718, guid: abe8d208b6a29c643b370418c1177370,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 7481434411305587718, guid: abe8d208b6a29c643b370418c1177370,
         type: 3}
@@ -739,17 +751,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 7759913024785632345, guid: abe8d208b6a29c643b370418c1177370,
-        type: 3}
-      propertyPath: cameraView
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7759913024785632345, guid: abe8d208b6a29c643b370418c1177370,
-        type: 3}
-      propertyPath: sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: b7b18ad61827bb04490cdbf385f4da2f,
-        type: 3}
     - target: {fileID: 4279651082906731662, guid: abe8d208b6a29c643b370418c1177370,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -780,11 +781,22 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 7759913024785632345, guid: abe8d208b6a29c643b370418c1177370,
+        type: 3}
+      propertyPath: cameraView
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7759913024785632345, guid: abe8d208b6a29c643b370418c1177370,
+        type: 3}
+      propertyPath: sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a5c44b1f4a87c5349abb90b1e8c308e4,
+        type: 3}
     - target: {fileID: 6060154649510301388, guid: abe8d208b6a29c643b370418c1177370,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: b7b18ad61827bb04490cdbf385f4da2f,
+      objectReference: {fileID: 21300000, guid: a5c44b1f4a87c5349abb90b1e8c308e4,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abe8d208b6a29c643b370418c1177370, type: 3}
