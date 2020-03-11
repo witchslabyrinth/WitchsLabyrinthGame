@@ -340,6 +340,22 @@ PrefabInstance:
       propertyPath: actor
       value: 
       objectReference: {fileID: 5969970294282569019}
+    - target: {fileID: 7753082780663901557, guid: 7bfa28b270e823c4fb7b87724352206b,
+        type: 3}
+      propertyPath: m_BeforeTransparentBundles.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7753082780663901557, guid: 7bfa28b270e823c4fb7b87724352206b,
+        type: 3}
+      propertyPath: m_BeforeStackBundles.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7753082780663901557, guid: 7bfa28b270e823c4fb7b87724352206b,
+        type: 3}
+      propertyPath: m_BeforeTransparentBundles.Array.data[0].assemblyQualifiedName
+      value: PostProcessOutline, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7bfa28b270e823c4fb7b87724352206b, type: 3}
 --- !u!4 &6513895268698067266 stripped
