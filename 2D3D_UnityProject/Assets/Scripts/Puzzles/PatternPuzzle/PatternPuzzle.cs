@@ -122,9 +122,17 @@ public class PatternPuzzle : MonoBehaviour
     private void OnEnable()
     {
         _currentCube = initalCube;
-        patternCubes[_currentCube].Select();
 
+        StartCoroutine(WaitThenSelect());
         //patternCanvas.SetActive(true);
+    }
+
+    private IEnumerator WaitThenSelect()
+    {
+        while (ACubeIsAnimating())
+            yield return null;
+
+        patternCubes[_currentCube].Select();
     }
 
     public enum Direction

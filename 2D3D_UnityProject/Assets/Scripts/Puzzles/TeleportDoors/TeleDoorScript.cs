@@ -4,27 +4,16 @@ using UnityEngine;
 
 public class TeleDoorScript : MonoBehaviour
 {
-    //These are used to handle Camera rotation upon exiting a door.
-    private int yBehind = 180;
-    private int yLeft = -90;
-    private int yRight = 90;
-
-    //Used to rotate Room
-    public enum DoorOrientation { FLOOR, CEILING, WALL_NEG_X, WALL_POS_X, WALL_NEG_Z, WALL_POS_Z };
+    //These handle positioning upon exiting the door.
+    private float UnitsInFront = 1.75f;//If Oliver is teleported to the door's position, he will collide with it and be teleported again. This distance in front of the door will avoid him immediately colliding with it and will give the illusion that he exited through it.
+    private float UnitsBelow = 1.5f;//Door is Taller than Oliver, so to place him on the floor we need to subtract this from the exit door's y position.
 
     //Used to determine which door this connects to
     [SerializeField]
     private TeleDoorScript PairedDoor;
 
-    //Used to determine where this door lets out
-    [SerializeField]
-    private Vector3 TeleportOnExitToCoordinate;
-
-    //By default, all doors assume they're on the floor
-    [SerializeField]
-    private DoorOrientation myOrientation = DoorOrientation.FLOOR;
-
-    //Observer pattern used to aid in rotating room
+    //Observer pattern used to aid in rotating room.
+    //Set to be removed in future if DoorObserver is unneeded.
     private List<DoorObserver> observers = new List<DoorObserver>();
 
     //Called upon colliding with the door
@@ -37,8 +26,10 @@ public class TeleDoorScript : MonoBehaviour
     //Called by a different, "Enter"-ed door to teleport the player to this one
     public void Exit(GameObject thatWasSentThrough)
     {
-        //Set the object's position to the value of "TeleportOnExitToCoordinate"
-        thatWasSentThrough.transform.position = new Vector3(TeleportOnExitToCoordinate.x,TeleportOnExitToCoordinate.y,TeleportOnExitToCoordinate.z);
+        //Set the object's position based on orientation of this door, approx. 1.75 units in front of door's positive z face.
+        Vector3 adjustPos = transform.rotation * Vector3.forward * UnitsInFront;
+        adjustPos.y -= UnitsBelow;
+        thatWasSentThrough.transform.position = new Vector3(transform.position.x + adjustPos.x, transform.position.y + adjustPos.y, transform.position.z + adjustPos.z);
 
         // Check if player was sent through
         // TODO: verify this still works properly - i changed it to use the Actor componentn instead of PlayerController
@@ -49,7 +40,7 @@ public class TeleDoorScript : MonoBehaviour
             PerspectiveCameraControl cameraControl = player.ghostCamera;
             if(cameraControl != null)
             {
-                cameraControl.targetCharacterDirection = faceAwayFromDoor();
+                cameraControl.targetCharacterDirection = FaceAwayFromDoor();
             }
             else
             {
@@ -60,17 +51,6 @@ public class TeleDoorScript : MonoBehaviour
         {
             Debug.Log("Non-player Collision detected");
         }
-
-        //If there are observers, do the following:
-        if (observers.Count > 0)
-        {
-            //For each observer, do the following:
-            for (int i = 0; i < observers.Count; i++)
-            {
-                //Call its "doorObserve" function, passing in myOrientation.
-                observers[i].doorObserve(myOrientation);
-            }
-        }
     }
 
     //This function is called when any object collides with the door
@@ -80,34 +60,10 @@ public class TeleDoorScript : MonoBehaviour
         Enter(other.gameObject);
     }
 
-    //Used for the observer pattern
-    public void addDoorObserver(DoorObserver toAdd)
-    {
-        //Add this observer to the list
-        observers.Add(toAdd);
-    }
-
     // used to make the camera face away from the door the player enters
-    private Vector3 faceAwayFromDoor()
+    private Vector3 FaceAwayFromDoor()
     {
-        //Set up our default rotation
-        Vector3 defaultVec = Vector3.zero;
-
-        //Change the y-value of the rotation based on where the door is.
-        if (transform.localPosition.z == -25)
-        {
-            defaultVec.y = yBehind;
-        }
-        else if (transform.localPosition.x == -25)
-        {
-            defaultVec.y = yLeft;
-        }
-        else if (transform.localPosition.x == 25)
-        {
-            defaultVec.y = yRight;
-        }
-
-        //Return the resultant rotation.
-        return defaultVec;
+        //This vector faces away from the door.
+        return transform.rotation * Vector3.forward;
     }
 }

@@ -266,7 +266,7 @@ SpriteRenderer:
   m_Size: {x: 4, y: 9}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &6556679171278252735
@@ -433,6 +433,22 @@ PrefabInstance:
       propertyPath: actor
       value: 
       objectReference: {fileID: 927036935176466216}
+    - target: {fileID: 7753082780663901557, guid: 7bfa28b270e823c4fb7b87724352206b,
+        type: 3}
+      propertyPath: m_BeforeTransparentBundles.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7753082780663901557, guid: 7bfa28b270e823c4fb7b87724352206b,
+        type: 3}
+      propertyPath: m_BeforeStackBundles.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7753082780663901557, guid: 7bfa28b270e823c4fb7b87724352206b,
+        type: 3}
+      propertyPath: m_BeforeTransparentBundles.Array.data[0].assemblyQualifiedName
+      value: PostProcessOutline, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7bfa28b270e823c4fb7b87724352206b, type: 3}
 --- !u!4 &3649414127892114922 stripped

@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class DoorObserver : MonoBehaviour
 {
+    //This script is set to be deleted in the future.
+
     //This code activates the dev cheat to teleport to the final door upon pressing 0.
-    void cheat_it_up()
+    /*void cheat_it_up()
     {
         //Teleport to the given door
         toObserve[doorToExitOnCheat].Exit(player);
@@ -93,5 +95,5 @@ public class DoorObserver : MonoBehaviour
 
         //Set the room's rotation to that determined above.
         transform.parent.transform.rotation = Quaternion.Euler(newRotation);
-    }
+    }*/
 }

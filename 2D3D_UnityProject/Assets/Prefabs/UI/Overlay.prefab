@@ -130,11 +130,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1008492656559437067}
     m_Modifications:
-    - target: {fileID: 7481434411305587719, guid: abe8d208b6a29c643b370418c1177370,
-        type: 3}
-      propertyPath: m_Name
-      value: Perspective_Indicator_TOP
-      objectReference: {fileID: 0}
     - target: {fileID: 7481434411305587718, guid: abe8d208b6a29c643b370418c1177370,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -240,17 +235,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 7759913024785632345, guid: abe8d208b6a29c643b370418c1177370,
+    - target: {fileID: 7481434411305587719, guid: abe8d208b6a29c643b370418c1177370,
         type: 3}
-      propertyPath: cameraView
-      value: 1
+      propertyPath: m_Name
+      value: Perspective_Indicator_TOP
       objectReference: {fileID: 0}
-    - target: {fileID: 7759913024785632345, guid: abe8d208b6a29c643b370418c1177370,
-        type: 3}
-      propertyPath: sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 32a4ed5cbf5977d498d6477111d8726a,
-        type: 3}
     - target: {fileID: 4279651082906731662, guid: abe8d208b6a29c643b370418c1177370,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -281,11 +270,22 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 7759913024785632345, guid: abe8d208b6a29c643b370418c1177370,
+        type: 3}
+      propertyPath: cameraView
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7759913024785632345, guid: abe8d208b6a29c643b370418c1177370,
+        type: 3}
+      propertyPath: sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 82c6d244ba014ff45a1568c7e7e3ecd4,
+        type: 3}
     - target: {fileID: 6060154649510301388, guid: abe8d208b6a29c643b370418c1177370,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 32a4ed5cbf5977d498d6477111d8726a,
+      objectReference: {fileID: 21300000, guid: 82c6d244ba014ff45a1568c7e7e3ecd4,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abe8d208b6a29c643b370418c1177370, type: 3}
@@ -302,11 +302,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1008492656559437067}
     m_Modifications:
-    - target: {fileID: 7481434411305587719, guid: abe8d208b6a29c643b370418c1177370,
-        type: 3}
-      propertyPath: m_Name
-      value: Perspective_Indicator_3D
-      objectReference: {fileID: 0}
     - target: {fileID: 7481434411305587718, guid: abe8d208b6a29c643b370418c1177370,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -412,6 +407,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7481434411305587719, guid: abe8d208b6a29c643b370418c1177370,
+        type: 3}
+      propertyPath: m_Name
+      value: Perspective_Indicator_3D
+      objectReference: {fileID: 0}
     - target: {fileID: 4279651082906731662, guid: abe8d208b6a29c643b370418c1177370,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -442,6 +442,18 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 7759913024785632345, guid: abe8d208b6a29c643b370418c1177370,
+        type: 3}
+      propertyPath: sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6acc37c8cc4b57e479755253cb296eac,
+        type: 3}
+    - target: {fileID: 6060154649510301388, guid: abe8d208b6a29c643b370418c1177370,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6acc37c8cc4b57e479755253cb296eac,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abe8d208b6a29c643b370418c1177370, type: 3}
 --- !u!224 &1996570061 stripped
@@ -457,11 +469,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1008492656559437067}
     m_Modifications:
-    - target: {fileID: 7481434411305587719, guid: abe8d208b6a29c643b370418c1177370,
-        type: 3}
-      propertyPath: m_Name
-      value: Perspective_Indicator_BACK
-      objectReference: {fileID: 0}
     - target: {fileID: 7481434411305587718, guid: abe8d208b6a29c643b370418c1177370,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -567,17 +574,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 7759913024785632345, guid: abe8d208b6a29c643b370418c1177370,
+    - target: {fileID: 7481434411305587719, guid: abe8d208b6a29c643b370418c1177370,
         type: 3}
-      propertyPath: cameraView
-      value: 2
+      propertyPath: m_Name
+      value: Perspective_Indicator_BACK
       objectReference: {fileID: 0}
-    - target: {fileID: 7759913024785632345, guid: abe8d208b6a29c643b370418c1177370,
-        type: 3}
-      propertyPath: sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 034990378d94fb44c9a5b5219bce1147,
-        type: 3}
     - target: {fileID: 4279651082906731662, guid: abe8d208b6a29c643b370418c1177370,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -608,11 +609,22 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 7759913024785632345, guid: abe8d208b6a29c643b370418c1177370,
+        type: 3}
+      propertyPath: cameraView
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7759913024785632345, guid: abe8d208b6a29c643b370418c1177370,
+        type: 3}
+      propertyPath: sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a5c44b1f4a87c5349abb90b1e8c308e4,
+        type: 3}
     - target: {fileID: 6060154649510301388, guid: abe8d208b6a29c643b370418c1177370,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 034990378d94fb44c9a5b5219bce1147,
+      objectReference: {fileID: 21300000, guid: a5c44b1f4a87c5349abb90b1e8c308e4,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abe8d208b6a29c643b370418c1177370, type: 3}
@@ -629,11 +641,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1008492656559437067}
     m_Modifications:
-    - target: {fileID: 7481434411305587719, guid: abe8d208b6a29c643b370418c1177370,
-        type: 3}
-      propertyPath: m_Name
-      value: Perspective_Indicator_RIGHT
-      objectReference: {fileID: 0}
     - target: {fileID: 7481434411305587718, guid: abe8d208b6a29c643b370418c1177370,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -739,17 +746,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 7759913024785632345, guid: abe8d208b6a29c643b370418c1177370,
+    - target: {fileID: 7481434411305587719, guid: abe8d208b6a29c643b370418c1177370,
         type: 3}
-      propertyPath: cameraView
-      value: 0
+      propertyPath: m_Name
+      value: Perspective_Indicator_RIGHT
       objectReference: {fileID: 0}
-    - target: {fileID: 7759913024785632345, guid: abe8d208b6a29c643b370418c1177370,
-        type: 3}
-      propertyPath: sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: b7b18ad61827bb04490cdbf385f4da2f,
-        type: 3}
     - target: {fileID: 4279651082906731662, guid: abe8d208b6a29c643b370418c1177370,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -780,11 +781,22 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 7759913024785632345, guid: abe8d208b6a29c643b370418c1177370,
+        type: 3}
+      propertyPath: cameraView
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7759913024785632345, guid: abe8d208b6a29c643b370418c1177370,
+        type: 3}
+      propertyPath: sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a5c44b1f4a87c5349abb90b1e8c308e4,
+        type: 3}
     - target: {fileID: 6060154649510301388, guid: abe8d208b6a29c643b370418c1177370,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: b7b18ad61827bb04490cdbf385f4da2f,
+      objectReference: {fileID: 21300000, guid: 8c561c7f1d33a834cb06bce8b9243590,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abe8d208b6a29c643b370418c1177370, type: 3}
