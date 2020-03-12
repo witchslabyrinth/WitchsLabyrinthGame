@@ -5,6 +5,19 @@ using Yarn.Unity;
 
 public class PatternPuzzle : MonoBehaviour
 {
+     [Header("Wwise")]
+    /// <summary>
+    /// Set Wwise variables
+    /// </summary>
+    
+    public AK.Wwise.Event blockMove;
+    public AK.Wwise.Event blockTurn;
+    public AK.Wwise.Event blockWin;
+
+  
+  
+  
+  
     [SerializeField]
     private List<PatternCube> patternCubes;
 
@@ -63,21 +76,25 @@ public class PatternPuzzle : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.J))
             {
+                public AK.Wwise.Event blockMove;
                 if (CurrentCube - 1 >= 0)
                     CurrentCube--;
             }
             if (Input.GetKeyDown(KeyCode.W))
             {
+                public AK.Wwise.Event blockMove;
                 patternCubes[CurrentCube].Rotate(Direction.BACKWARD);
                 StartCoroutine(CheckSolved());
             }
             if (Input.GetKeyDown(KeyCode.L))
             {
+                public AK.Wwise.Event blockMove;
                 if (CurrentCube + 1 < patternCubes.Count)
                     CurrentCube++;
             }
             if (Input.GetKeyDown(KeyCode.A))
             {
+                public AK.Wwise.Event blockMove;
                 SwapCubes(CurrentCube, CurrentCube - 1);
 
                 // Current cube index changed, set it directly so select and deslect aren't called
@@ -92,6 +109,7 @@ public class PatternPuzzle : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.D))
             {
+                public AK.Wwise.Event blockMove;
                 SwapCubes(CurrentCube, CurrentCube + 1);
                 _currentCube = CurrentCube + 1;
 

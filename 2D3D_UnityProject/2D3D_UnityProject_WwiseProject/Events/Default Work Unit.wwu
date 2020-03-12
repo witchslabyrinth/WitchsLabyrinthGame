@@ -156,6 +156,69 @@
 								</Event>
 							</ChildrenList>
 						</Folder>
+						<Folder Name="Portal" ID="{3097A55F-7EB7-4A7F-964A-D28235791C4D}" ShortID="717405888">
+							<ChildrenList>
+								<Event Name="P_Ambient" ID="{8AE639F3-B374-4C7C-86A3-59CC2F428B5E}">
+									<ChildrenList>
+										<Action Name="" ID="{7D5B76EB-63E9-473A-8A8C-1CEF63A4C442}" ShortID="411504860">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Portal_Activate" ID="{FECDAE8B-6EC5-4599-B88F-873649AEBC0A}" WorkUnitID="{787AA6C8-A80B-4C2F-B9CE-E9178ECBB4E3}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="P_Activate" ID="{01A9A3F3-5EAA-4236-BB69-1F5FA275A417}">
+									<ChildrenList>
+										<Action Name="" ID="{86A621F2-A492-49BF-A3FD-B08CFB96AC24}" ShortID="917622883">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Portal_Ambient" ID="{50957B98-367E-4935-B984-385E2728D8FC}" WorkUnitID="{787AA6C8-A80B-4C2F-B9CE-E9178ECBB4E3}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="Block" ID="{ABB7D65D-8954-43C4-8C7B-1859ECC917ED}" ShortID="127204187">
+							<ChildrenList>
+								<Event Name="Win" ID="{1C06739F-3FD3-4BC0-B848-E34E30E7B0E7}">
+									<ChildrenList>
+										<Action Name="" ID="{93BBE5DB-7380-4B51-BC8C-41B4B74ED2B6}" ShortID="96524706">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Win" ID="{5A12D3F6-50F0-4928-A95A-E5FBAD3B48C0}" WorkUnitID="{787AA6C8-A80B-4C2F-B9CE-E9178ECBB4E3}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Turn" ID="{06737B7F-BA3A-4D16-9932-B26ACC30E064}">
+									<ChildrenList>
+										<Action Name="" ID="{7457EB12-89E9-4E0C-B8CF-597BCA0873AF}" ShortID="895913643">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Turn" ID="{42A49C39-E2E6-491B-A91C-FA67C66A8B23}" WorkUnitID="{787AA6C8-A80B-4C2F-B9CE-E9178ECBB4E3}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Switch" ID="{2E769F98-9786-4BD1-81A8-5C24ED2EC0B7}">
+									<ChildrenList>
+										<Action Name="" ID="{908BE2A9-9DA7-46EC-958C-620D3061CCA7}" ShortID="238726090">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Switch" ID="{FDAEEB2E-7D0A-4E17-BC7A-40F0B44CC480}" WorkUnitID="{787AA6C8-A80B-4C2F-B9CE-E9178ECBB4E3}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Pond" ID="{0B2DDE12-6B79-4122-917B-E9CDA08002EB}" ShortID="196801830">

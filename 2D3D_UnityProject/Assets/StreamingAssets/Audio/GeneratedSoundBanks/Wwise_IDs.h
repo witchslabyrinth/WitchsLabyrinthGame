@@ -23,10 +23,15 @@ namespace AK
         static const AkUniqueID ONMENUHOVER = 961842423U;
         static const AkUniqueID ONMENUOPEN = 547102971U;
         static const AkUniqueID ONMENUSELECT = 1412352919U;
+        static const AkUniqueID P_ACTIVATE = 38157853U;
+        static const AkUniqueID P_AMBIENT = 3454196126U;
         static const AkUniqueID POND_SOUND = 661114568U;
         static const AkUniqueID STAYTHERECAT = 1041426236U;
         static const AkUniqueID STAYTHEREOLIVER = 4294117557U;
         static const AkUniqueID STONES_MOVE = 2574112889U;
+        static const AkUniqueID SWITCH = 3202316517U;
+        static const AkUniqueID TURN = 3137665780U;
+        static const AkUniqueID WIN = 979765101U;
         static const AkUniqueID WIND = 1537061107U;
         static const AkUniqueID WITHINPUZZLEZONE = 3954690858U;
     } // namespace EVENTS
