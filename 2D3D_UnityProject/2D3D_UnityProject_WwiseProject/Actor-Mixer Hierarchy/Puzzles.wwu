@@ -226,6 +226,28 @@
 								</Sound>
 							</ChildrenList>
 						</RandomSequenceContainer>
+						<Sound Name="Lantern_crackle" ID="{E3EE1D0C-8F50-4EEB-B459-60FDFAE95C79}" ShortID="944588846">
+							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="Lantern_crackle" ID="{4A74A4B1-CFFF-4C55-A57A-ECF496F17C51}" WorkUnitID="{0DCEC620-0804-4E59-BF74-C1BAA1C456CD}"/>
+								</Reference>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{24C7AD02-E66A-4B4B-8735-0AC29636FC00}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CB9D8304-7AAA-4374-9412-CD9A3A2EDD3D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="lantern_idle_crackle" ID="{0129D413-9444-4887-BC94-4E314178B4BF}" ShortID="672825148">
+									<Language>SFX</Language>
+									<AudioFile>lantern_idle_crackle.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="lantern_idle_crackle" ID="{0129D413-9444-4887-BC94-4E314178B4BF}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>
