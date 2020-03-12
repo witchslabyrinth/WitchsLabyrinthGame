@@ -103,13 +103,10 @@
 					<ChildrenList>
 						<Event Name="Music_Play" ID="{97615C5D-6E84-4AC2-A6A5-AF8AA2D73E46}">
 							<ChildrenList>
-								<Action Name="" ID="{AC59A66D-8011-4C4A-B98C-255B667AD7BF}" ShortID="585689050">
-									<PropertyList>
-										<Property Name="FadeTime" Type="Real64" Value="1.5"/>
-									</PropertyList>
+								<Action Name="" ID="{B78A991E-5C32-477F-918B-8C8CE358429C}" ShortID="661917049">
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="bgm_Broad_Strokes" ID="{29028CA5-A0D5-4658-AB46-1E8F549DA0D4}" WorkUnitID="{AC394B22-B424-42F1-91AE-4207A146B3EA}"/>
+											<ObjectRef Name="dorime" ID="{27619A80-DAC0-4817-AA17-4C6230C8F112}" WorkUnitID="{AC394B22-B424-42F1-91AE-4207A146B3EA}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
