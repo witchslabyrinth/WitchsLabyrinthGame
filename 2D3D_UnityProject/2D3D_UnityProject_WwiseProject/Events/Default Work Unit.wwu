@@ -101,12 +101,13 @@
 				</Folder>
 				<Folder Name="Scene" ID="{729CFC91-1C2E-45CC-A097-78D8265DFBA8}" ShortID="261404419">
 					<ChildrenList>
-						<Event Name="Music_Play" ID="{97615C5D-6E84-4AC2-A6A5-AF8AA2D73E46}">
+						<Event Name="Music_Play" ID="{97615C5D-6E84-4AC2-A6A5-AF8AA2D73E46}"/>
+						<Event Name="Title_Music" ID="{8132F5EA-4747-45B3-9DF9-006594CC5240}">
 							<ChildrenList>
-								<Action Name="" ID="{B78A991E-5C32-477F-918B-8C8CE358429C}" ShortID="661917049">
+								<Action Name="" ID="{4179F66B-17BE-4D23-8E2F-896078FAA2FF}" ShortID="890554729">
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="dorime" ID="{27619A80-DAC0-4817-AA17-4C6230C8F112}" WorkUnitID="{AC394B22-B424-42F1-91AE-4207A146B3EA}"/>
+											<ObjectRef Name="bgm_Broad_Strokes" ID="{29028CA5-A0D5-4658-AB46-1E8F549DA0D4}" WorkUnitID="{AC394B22-B424-42F1-91AE-4207A146B3EA}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -153,6 +154,17 @@
 								</Event>
 							</ChildrenList>
 						</Folder>
+						<Event Name="Puzzle_Solved" ID="{8ABEBFAB-6808-4416-B0AE-C09C71537E13}">
+							<ChildrenList>
+								<Action Name="" ID="{59FCD0E9-89A6-401B-838C-8AA52056825E}" ShortID="726664492">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SE_solve" ID="{AE2958FD-D12E-400C-8E5B-0E5A6016E51A}" WorkUnitID="{F35C23EA-DF72-4530-971C-FBEBF715C8AD}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Pond" ID="{0B2DDE12-6B79-4122-917B-E9CDA08002EB}" ShortID="196801830">

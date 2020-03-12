@@ -17,6 +17,8 @@ public class ZodiacPuzzle : MonoBehaviour
     /// <param name="paused">Set Wwise variables for sounds here</param>
     public AK.Wwise.Event stoneMove;
     public AK.Wwise.Event doorMove;
+    public AK.Wwise.Event puzzleSolved;
+
 
     [Header("Camera Settings")]
 
@@ -245,6 +247,7 @@ public class ZodiacPuzzle : MonoBehaviour
 
         // Open doors
         zodiacDoor.Open();
+        puzzleSolved.Post(gameObject); //Wwise
         doorMove.Post(gameObject); //Wwise
         solved = true;
 
