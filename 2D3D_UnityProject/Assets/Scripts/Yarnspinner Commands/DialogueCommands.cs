@@ -38,6 +38,7 @@ public class DialogueCommands : MonoBehaviour
         dialogueRunner.AddCommandHandler("reset_camera", ResetCamera);
         dialogueRunner.AddCommandHandler("set_mouse_on", SetMouseActive);
 
+        talkingSprites = new List<SpriteInfo>();
         LoadSprites(spriteFolder);
     }
 
@@ -173,7 +174,7 @@ public class DialogueCommands : MonoBehaviour
     private void LoadSprites(string pathname)
     {
         Sprite[] allSprites = Resources.LoadAll<Sprite>(pathname);
-        foreach(Sprite sprite in allSprites)
+        foreach (Sprite sprite in allSprites)
         {
             SpriteInfo newSpriteInfo;
             newSpriteInfo.sprite = sprite;
