@@ -40,6 +40,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3511910587727205907}
   - component: {fileID: 3511910587727205904}
+  - component: {fileID: 4059246944113375340}
   - component: {fileID: 3511910587727205905}
   - component: {fileID: 3511910587727205906}
   m_Layer: 0
@@ -106,6 +107,18 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &4059246944113375340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3511910587727205908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b2fe876df5f4eb4f8f439d1c96e34be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!81 &3511910587727205905
 AudioListener:
   m_ObjectHideFlags: 0
@@ -171,11 +184,11 @@ MonoBehaviour:
   m_ShowToolkit: 0
   m_ShowCustomSorter: 0
   breakBeforeColorGrading: 0
-  m_BeforeTransparentBundles: []
+  m_BeforeTransparentBundles:
+  - assemblyQualifiedName: PostProcessOutline, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
   m_BeforeStackBundles:
   - assemblyQualifiedName: IL3DN_Fog_PP, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-  - assemblyQualifiedName: PostProcessOutline, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   m_AfterStackBundles: []
 --- !u!1 &3511910587803767891

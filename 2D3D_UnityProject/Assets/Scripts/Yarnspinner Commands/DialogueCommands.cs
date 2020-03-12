@@ -114,4 +114,9 @@ public class DialogueCommands : MonoBehaviour
         camera.rotation = target.rotation;
         onComplete();
     }
+
+    protected void StartCutscene(CameraEntity cutsceneCam)
+    {
+        CameraController.Instance.SetMainCamera(cutsceneCam);
+    }
 }

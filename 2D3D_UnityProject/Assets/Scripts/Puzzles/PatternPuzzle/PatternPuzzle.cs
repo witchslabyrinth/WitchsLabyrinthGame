@@ -122,9 +122,17 @@ public class PatternPuzzle : MonoBehaviour
     private void OnEnable()
     {
         _currentCube = initalCube;
-        patternCubes[_currentCube].Select();
 
+        StartCoroutine(WaitThenSelect());
         //patternCanvas.SetActive(true);
+    }
+
+    private IEnumerator WaitThenSelect()
+    {
+        while (ACubeIsAnimating())
+            yield return null;
+
+        patternCubes[_currentCube].Select();
     }
 
     public enum Direction
@@ -174,29 +182,28 @@ public class PatternPuzzle : MonoBehaviour
 
     private void Exit()
     {
-        // // Restore control to player actor
-        // Actor player = PlayerController.Instance.GetPlayer();
-        // player.Enable();
-        // CameraController.Instance.SetMainCamera(player.actorCamera);
+        // Restore control to player actor
+        Actor player = PlayerController.Instance.GetPlayer();
+        player.Enable();
+        CameraController.Instance.SetMainCamera(player.actorCamera);
 
-        // // Restore actor swapping
-        // PlayerController.Instance.canSwap = true;
+        // Restore actor swapping
+        PlayerController.Instance.canSwap = true;
 
-        // // Disable puzzle and deselect cube
-        // this.enabled = false;
+        // Disable puzzle and deselect cube
+        this.enabled = false;
         patternCubes[_currentCube].Deselect();
-
-
-        FindObjectOfType<DialogueRunner>().StartDialogue("sceneAfterSecondPuzzle");
-        CameraController.Instance.SetMainCamera(scene3Cam);
     }
 
     private void Solved()
     {
         Debug.Log("Solved");
         solved = true;
-        Exit();
+        patternCubes[_currentCube].Deselect();
         StartCoroutine(WinAnimation());
+
+        FindObjectOfType<DialogueRunner>().StartDialogue("sceneAfterSecondPuzzle");
+        CameraController.Instance.SetMainCamera(scene3Cam);
     }
 
     private IEnumerator WinAnimation()

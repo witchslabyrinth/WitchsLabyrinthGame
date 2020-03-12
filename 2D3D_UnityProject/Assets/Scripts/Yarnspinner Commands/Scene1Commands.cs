@@ -38,10 +38,16 @@ public class Scene1Commands : DialogueCommands
 
     private void Awake()
     {
+        dialogueRunner.AddCommandHandler("start_cutscene_1", StartCutscene1);
         dialogueRunner.AddCommandHandler("op_camera_1", OpCamera1);
         dialogueRunner.AddCommandHandler("op_camera_3", OpCamera3);
         dialogueRunner.AddCommandHandler("op_camera_4", OpCamera4);
         dialogueRunner.AddCommandHandler("op_camera_5", OpCamera5);
+    }
+
+    private void StartCutscene1(string[] parameters)
+    {
+        StartCutscene(opCamera.GetComponent<CameraEntity>());
     }
 
     private void OpCamera1(string[] parameters, System.Action onComplete)
