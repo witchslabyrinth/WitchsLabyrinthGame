@@ -30,6 +30,25 @@
 						<ActiveSource Name="Wind_Ambience" ID="{A0CD3F09-DD68-4544-938B-2134F9AE2E99}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
+				<Sound Name="183881__erokia__elementary-wave-11" ID="{53C0AAF8-60C4-4012-8F7B-6952DB78CDD6}" ShortID="260723676">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{24C7AD02-E66A-4B4B-8735-0AC29636FC00}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CB9D8304-7AAA-4374-9412-CD9A3A2EDD3D}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="183881__erokia__elementary-wave-11" ID="{C886EE55-8EE6-4169-9593-32BA407986FF}" ShortID="204148065">
+							<Language>SFX</Language>
+							<AudioFile>183881__erokia__elementary-wave-11.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="183881__erokia__elementary-wave-11" ID="{C886EE55-8EE6-4169-9593-32BA407986FF}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

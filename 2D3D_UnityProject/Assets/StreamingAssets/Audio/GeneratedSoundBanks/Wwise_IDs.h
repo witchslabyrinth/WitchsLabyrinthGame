@@ -27,6 +27,7 @@ namespace AK
         static const AkUniqueID STAYTHERECAT = 1041426236U;
         static const AkUniqueID STAYTHEREOLIVER = 4294117557U;
         static const AkUniqueID STONES_MOVE = 2574112889U;
+        static const AkUniqueID TEST = 3157003241U;
         static const AkUniqueID WIND = 1537061107U;
         static const AkUniqueID WITHINPUZZLEZONE = 3954690858U;
     } // namespace EVENTS

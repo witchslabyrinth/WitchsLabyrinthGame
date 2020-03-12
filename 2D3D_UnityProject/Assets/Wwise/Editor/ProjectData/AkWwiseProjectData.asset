@@ -13,25 +13,25 @@ MonoBehaviour:
   m_Name: AkWwiseProjectData
   m_EditorClassIdentifier: 
   AcousticTextureWwu:
-  - PhysicalPath: Virtual Acoustics\Default Work Unit.wwu
+  - PhysicalPath: Virtual Acoustics/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: b78bc27069c5b345a641d26b82c7e1fb
     GuidInternal: 
-    m_lastTime: -8586206345781206517
+    m_lastTime: -8586201220754775808
     List: []
   AuxBusWwu:
-  - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
+  - PhysicalPath: Master-Mixer Hierarchy/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 04839dcbaa7a74439412cd9a3a2edd3d
     GuidInternal: 
-    m_lastTime: -8586206345785693093
+    m_lastTime: -8586201220764775808
     List: []
   BankWwu:
-  - PhysicalPath: SoundBanks\Default Work Unit.wwu
+  - PhysicalPath: SoundBanks/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 31c7159bb637e0438b0b0a3598f10701
     GuidInternal: 
-    m_lastTime: -8586200380606912835
+    m_lastTime: -8586176286424775808
     List:
     - name: Main
       guid: 1d85aefae0798f44adc3648c94a6abd2
@@ -41,13 +41,13 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: Main
         ObjectType: 7
-      Path: Default Work Unit\Main
+      Path: Default Work Unit/Main
   EventWwu:
-  - PhysicalPath: Events\Default Work Unit.wwu
+  - PhysicalPath: Events/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 5601ea873c34f449957bd3b5ded1c2c6
     GuidInternal: 
-    m_lastTime: -8586200380607002913
+    m_lastTime: -8586176286424775808
     List:
     - name: CatSwitchSound
       guid: d1a8c45f839f904fbc04fe586e18bb61
@@ -59,7 +59,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: CatSwitchSound
         ObjectType: 3
-      Path: Default Work Unit\Cat\CatSwitchSound
+      Path: Default Work Unit/Cat/CatSwitchSound
       maxAttenuation: 0
       maxDuration: 1.339342
       minDuration: 1.339342
@@ -75,7 +75,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Door_Open
         ObjectType: 3
-      Path: Default Work Unit\Puzzles\Zodiac\Door_Open
+      Path: Default Work Unit/Puzzles/Zodiac/Door_Open
       maxAttenuation: 0
       maxDuration: 3.509682
       minDuration: 2.22644
@@ -91,7 +91,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Footstep_Player
         ObjectType: 3
-      Path: Default Work Unit\Oliver\Interactions\Footstep_Player
+      Path: Default Work Unit/Oliver/Interactions/Footstep_Player
       maxAttenuation: 0
       maxDuration: 0.682857
       minDuration: 0.150421
@@ -107,7 +107,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Lantern_LightUp
         ObjectType: 3
-      Path: Default Work Unit\Puzzles\Zodiac\Lantern_LightUp
+      Path: Default Work Unit/Puzzles/Zodiac/Lantern_LightUp
       maxAttenuation: 0
       maxDuration: 7.069659
       minDuration: 5.934558
@@ -121,7 +121,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Music_Play
         ObjectType: 3
-      Path: Default Work Unit\Scene\Music_Play
+      Path: Default Work Unit/Scene/Music_Play
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -135,7 +135,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: OliverSwitchSound
         ObjectType: 3
-      Path: Default Work Unit\Oliver\OliverSwitchSound
+      Path: Default Work Unit/Oliver/OliverSwitchSound
       maxAttenuation: 0
       maxDuration: 2.210295
       minDuration: 2.210295
@@ -149,7 +149,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Pond_Sound
         ObjectType: 3
-      Path: Default Work Unit\Pond\Pond_Sound
+      Path: Default Work Unit/Pond/Pond_Sound
       maxAttenuation: 60
       maxDuration: -1
       minDuration: -1
@@ -163,7 +163,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: StayThereCat
         ObjectType: 3
-      Path: Default Work Unit\Cat\StayThereCat
+      Path: Default Work Unit/Cat/StayThereCat
       maxAttenuation: 0
       maxDuration: 0.762585
       minDuration: 0.762585
@@ -179,7 +179,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: StayThereOliver
         ObjectType: 3
-      Path: Default Work Unit\Oliver\Voice\StayThereOliver
+      Path: Default Work Unit/Oliver/Voice/StayThereOliver
       maxAttenuation: 0
       maxDuration: 0.478435
       minDuration: 0.478435
@@ -195,10 +195,24 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Stones_Move
         ObjectType: 3
-      Path: Default Work Unit\Puzzles\Zodiac\Stones_Move
+      Path: Default Work Unit/Puzzles/Zodiac/Stones_Move
       maxAttenuation: 0
       maxDuration: 0.432
       minDuration: 0.432
+    - name: TEST
+      guid: 9cdb1993c067e5459cba6462377bcd58
+      id: 3157003241
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ambience
+        ObjectType: 4
+      - ElementName: TEST
+        ObjectType: 3
+      Path: Default Work Unit/Ambience/TEST
+      maxAttenuation: 0
+      maxDuration: 51.71875
+      minDuration: 51.71875
     - name: Wind
       guid: 9336da5127a29d40a9e50c825686ef97
       id: 1537061107
@@ -209,7 +223,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Wind
         ObjectType: 3
-      Path: Default Work Unit\Ambience\Wind
+      Path: Default Work Unit/Ambience/Wind
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -225,15 +239,15 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: WithinPuzzleZone
         ObjectType: 3
-      Path: Default Work Unit\Oliver\Voice\WithinPuzzleZone
+      Path: Default Work Unit/Oliver/Voice/WithinPuzzleZone
       maxAttenuation: 0
       maxDuration: 1.234558
       minDuration: 0.406808
-  - PhysicalPath: Events\UI.wwu
+  - PhysicalPath: Events/UI.wwu
     ParentPhysicalPath: 
     guid: 91fd7b16390ad84fbc6d407fad2d1946
     GuidInternal: 
-    m_lastTime: -8586200475683206082
+    m_lastTime: -8586182485104775808
     List:
     - name: OnMenuClose
       guid: b0c2fdfe821f1d4d877a0e550088c4fb
@@ -243,10 +257,10 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: OnMenuClose
         ObjectType: 3
-      Path: UI\OnMenuClose
+      Path: UI/OnMenuClose
       maxAttenuation: 0
-      maxDuration: 0.27516
-      minDuration: 0.27516
+      maxDuration: 0.643708
+      minDuration: 0.643708
     - name: OnMenuHover
       guid: ccb4b6ff5951344696b08a017e95393e
       id: 961842423
@@ -255,7 +269,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: OnMenuHover
         ObjectType: 3
-      Path: UI\OnMenuHover
+      Path: UI/OnMenuHover
       maxAttenuation: 0
       maxDuration: 0.339229
       minDuration: 0.339229
@@ -267,7 +281,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: OnMenuOpen
         ObjectType: 3
-      Path: UI\OnMenuOpen
+      Path: UI/OnMenuOpen
       maxAttenuation: 0
       maxDuration: 3.937279
       minDuration: 3.937279
@@ -279,23 +293,23 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: OnMenuSelect
         ObjectType: 3
-      Path: UI\OnMenuSelect
+      Path: UI/OnMenuSelect
       maxAttenuation: 0
       maxDuration: 0.667347
       minDuration: 0.667347
   RtpcWwu:
-  - PhysicalPath: Game Parameters\Default Work Unit.wwu
+  - PhysicalPath: Game Parameters/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: f097083e8173b046a10e637ecb6d4f17
     GuidInternal: 
-    m_lastTime: -8586206345791064058
+    m_lastTime: -8586201220774775808
     List: []
   StateWwu:
-  - PhysicalPath: States\Default Work Unit.wwu
+  - PhysicalPath: States/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 80640233b45f4c43af47b7ed0e86fa70
     GuidInternal: 
-    m_lastTime: -8586206345781236565
+    m_lastTime: -8586199922854775808
     List:
     - name: Interaction
       guid: 88843f4ede1a70468bb891d343be183a
@@ -307,7 +321,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Interaction
         ObjectType: 9
-      Path: Default Work Unit\Music\Interaction
+      Path: Default Work Unit/Music/Interaction
       values:
       - name: Interacting
         guid: bf06e582e533934e935ee5ff4ef7b9a2
@@ -342,7 +356,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Lantern_Solved
         ObjectType: 9
-      Path: Default Work Unit\Puzzles\Zodiac\Lantern_Solved
+      Path: Default Work Unit/Puzzles/Zodiac/Lantern_Solved
       values:
       - name: None
         guid: a78b7442a2c700408281c6fdf4bd4f39
@@ -375,7 +389,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Menu
         ObjectType: 9
-      Path: Default Work Unit\Music\Menu
+      Path: Default Work Unit/Music/Menu
       values:
       - name: InMenu
         guid: e3ac4c90ce600243a0c76ae9469dff3e
@@ -406,7 +420,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: Playing_As
         ObjectType: 9
-      Path: Default Work Unit\Playing_As
+      Path: Default Work Unit/Playing_As
       values:
       - name: Cat
         guid: 27c320b53f58fe44bc42f17807ca9555
@@ -430,11 +444,11 @@ MonoBehaviour:
       ValueIcons: []
       valuesInternal: []
   SwitchWwu:
-  - PhysicalPath: Switches\Default Work Unit.wwu
+  - PhysicalPath: Switches/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: cb5f7cd43e7dce46b55ab3766d658e16
     GuidInternal: 
-    m_lastTime: -8586206345781226556
+    m_lastTime: -8586182423834775808
     List:
     - name: Material
       guid: de7708ac5dbf254f8434a7a64284ca29
@@ -444,7 +458,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: Material
         ObjectType: 11
-      Path: Default Work Unit\Material
+      Path: Default Work Unit/Material
       values:
       - name: Grass
         guid: cf812e1c837440498926979ca934ff58
@@ -468,19 +482,13 @@ MonoBehaviour:
       ValueIcons: []
       valuesInternal: []
   TriggerWwu:
-  - PhysicalPath: Triggers\Default Work Unit.wwu
+  - PhysicalPath: Triggers/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 1e1b318908282c4c824d18e0f417ffa5
     GuidInternal: 
-    m_lastTime: -8586206345781216548
+    m_lastTime: -8586201220754775808
     List: []
   ExpandedItems:
   - /2D3D_UnityProject_WwiseProject
-  - /2D3D_UnityProject_WwiseProject/Events
-  - /2D3D_UnityProject_WwiseProject/Events/Default Work Unit
-  - /2D3D_UnityProject_WwiseProject/Events/Default Work Unit/Ambience
-  - /2D3D_UnityProject_WwiseProject/Events/Default Work Unit/Puzzles
-  - /2D3D_UnityProject_WwiseProject/Events/Default Work Unit/Puzzles/Zodiac
-  - /2D3D_UnityProject_WwiseProject/Events/UI
   autoPopulateEnabled: 1
   CurrentPluginConfig: 
