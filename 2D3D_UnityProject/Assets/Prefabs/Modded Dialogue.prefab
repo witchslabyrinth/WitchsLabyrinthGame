@@ -377,8 +377,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5801511757377914374}
-        m_MethodName: SetOption
+      - m_Target: {fileID: 2129285318920181016}
+        m_MethodName: SelectOption
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -418,7 +418,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5801511757377914368}
   - component: {fileID: 5801511757377914369}
-  - component: {fileID: 5801511757377914374}
+  - component: {fileID: 2129285318920181016}
   - component: {fileID: 5801511757377914375}
   m_Layer: 0
   m_Name: Dialogue Runner
@@ -456,7 +456,7 @@ MonoBehaviour:
   yarnScripts: []
   textLanguage: 
   variableStorage: {fileID: 5801511757377914375}
-  dialogueUI: {fileID: 5801511757377914374}
+  dialogueUI: {fileID: 2129285318920181016}
   startNode: OpeningScene
   startAutomatically: 0
   automaticCommands: 1
@@ -474,7 +474,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &5801511757377914374
+--- !u!114 &2129285318920181016
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -483,7 +483,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5801511757377914372}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04317fce65da54f4997a5c4465b4e93c, type: 3}
+  m_Script: {fileID: 11500000, guid: 6ede0848095aca2419858f899cc2de9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueContainer: {fileID: 5801511756839228645}
@@ -961,8 +961,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5801511757377914374}
-        m_MethodName: SetOption
+      - m_Target: {fileID: 2129285318920181016}
+        m_MethodName: SelectOption
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1188,8 +1188,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5801511757377914374}
-        m_MethodName: SetOption
+      - m_Target: {fileID: 2129285318920181016}
+        m_MethodName: SelectOption
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1492,8 +1492,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5801511757377914374}
-        m_MethodName: SetOption
+      - m_Target: {fileID: 2129285318920181016}
+        m_MethodName: SelectOption
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1722,7 +1722,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5801511757377914374}
+      - m_Target: {fileID: 2129285318920181016}
         m_MethodName: MarkLineComplete
         m_Mode: 1
         m_Arguments:
