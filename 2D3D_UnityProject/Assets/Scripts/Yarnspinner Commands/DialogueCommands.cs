@@ -26,7 +26,9 @@ public class DialogueCommands : MonoBehaviour
 
         for(int i = 0; i < yarnPrograms.Length; i++)
         {
+            Debug.Log("Adding Yarn file " + yarnPrograms[i].name);
             dialogueRunner.Add(yarnPrograms[i]);
+            Debug.Log("Add Successful");
         }
     }
 
