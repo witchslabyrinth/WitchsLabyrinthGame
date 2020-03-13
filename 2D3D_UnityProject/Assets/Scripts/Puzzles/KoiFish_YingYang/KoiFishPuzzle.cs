@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 public class KoiFishPuzzle : Singleton<KoiFishPuzzle>
 {
+    /// <summary>
+    /// True if puzzle has been solved, false otherwise
+    /// </summary>
+    public bool solved { get; private set; }
     //n8-bit 2/11/2020
     /// <summary>
     /// This code activates the dev cheat to solve the Koi Fish puzzle upon pressing 9
@@ -46,11 +50,11 @@ public class KoiFishPuzzle : Singleton<KoiFishPuzzle>
 
     void Start()
     {
+        solved = false;
+
         // Make sure there's a proper feeding order specified
         if (koiFishFeedingOrder == null)
-        {
             Debug.LogErrorFormat("{0} | Error: correct fish-feeding order not specified. Please specify this order in {0}.koiFishFeedingOrder", name);
-        }
 
         // Set puzzle to initial state
         ResetPuzzle();
@@ -63,6 +67,12 @@ public class KoiFishPuzzle : Singleton<KoiFishPuzzle>
     {
         nextFishToFeed = koiFishFeedingOrder[0];
         timeRemaining = 0f;
+
+        // If puzzle still running, disable trails on all fish
+        if(!solved) {
+            foreach(KoiFish fish in koiFishFeedingOrder)
+                fish.SetTrailActive(false);
+        }
     }
 
     private void Update()
@@ -85,6 +95,15 @@ public class KoiFishPuzzle : Singleton<KoiFishPuzzle>
                 //Debug.Log("Time remaining: " + timeStr);
             }
         }
+
+        if(Input.GetKeyDown(KeyCode.I))
+            FeedFish(koiFishFeedingOrder[0]);
+
+        if (Input.GetKeyDown(KeyCode.O))
+            FeedFish(koiFishFeedingOrder[1]);
+        
+        if (Input.GetKeyDown(KeyCode.P))
+            FeedFish(koiFishFeedingOrder[2]);
 
         //n8-bit 2/11/2020
         //If we're in the editor and press 9, run the dev cheat.
@@ -118,8 +137,9 @@ public class KoiFishPuzzle : Singleton<KoiFishPuzzle>
         int index = koiFishFeedingOrder.IndexOf(fish);
         if (index == koiFishFeedingOrder.Count-1)
         {
+            // TODO: handle end-of-puzzle logic here
             Debug.LogWarning("You solved the puzzle!");
-            ResetPuzzle();
+            solved = true;
         }
 
         // Otherwise assign the next fish in order

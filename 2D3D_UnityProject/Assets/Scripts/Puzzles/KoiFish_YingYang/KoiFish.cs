@@ -99,7 +99,7 @@ public class KoiFish : MonoBehaviour
     /// Enables/disables trail emission behind fish
     /// </summary>
     /// <param name="active"></param>
-    void SetTrailActive(bool active)
+    public void SetTrailActive(bool active)
     {
         ParticleSystem.EmissionModule emission = psystem.emission;
         emission.enabled = active;
