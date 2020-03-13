@@ -47,7 +47,10 @@ MonoBehaviour:
   - {fileID: 5263059488259277509}
   - {fileID: 5263059489005691377}
   zodiacDoor: {fileID: 5263059487704158320}
+  solved: 0
   zodiacCanvas: {fileID: 5263059489050712964}
+  scene2: {fileID: 0}
+  scene2Cam: {fileID: 0}
 --- !u!1 &662613903195942413
 GameObject:
   m_ObjectHideFlags: 0
@@ -778,11 +781,11 @@ MonoBehaviour:
   m_ShowToolkit: 0
   m_ShowCustomSorter: 0
   breakBeforeColorGrading: 0
-  m_BeforeTransparentBundles: []
+  m_BeforeTransparentBundles:
+  - assemblyQualifiedName: PostProcessOutline, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
   m_BeforeStackBundles:
   - assemblyQualifiedName: IL3DN_Fog_PP, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-  - assemblyQualifiedName: PostProcessOutline, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   m_AfterStackBundles: []
 --- !u!1 &5263059487704158321
@@ -1519,11 +1522,11 @@ MonoBehaviour:
   m_ShowToolkit: 0
   m_ShowCustomSorter: 0
   breakBeforeColorGrading: 0
-  m_BeforeTransparentBundles: []
+  m_BeforeTransparentBundles:
+  - assemblyQualifiedName: PostProcessOutline, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
   m_BeforeStackBundles:
   - assemblyQualifiedName: IL3DN_Fog_PP, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-  - assemblyQualifiedName: PostProcessOutline, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   m_AfterStackBundles: []
 --- !u!1 &6519992227752686012
@@ -1622,8 +1625,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: a771f7f07779829458980d32816999f9, type: 3}
   correctSymbols:
   - {fileID: 21300000, guid: 91f81b0df1d7b894aa2a5a355df84891, type: 3}
-  - {fileID: 21300000, guid: a771f7f07779829458980d32816999f9, type: 3}
-  - {fileID: 21300000, guid: 91f81b0df1d7b894aa2a5a355df84891, type: 3}
+  - {fileID: 21300000, guid: 81d9b8a8cf959114ea3e1e47da4d43ff, type: 3}
+  - {fileID: 21300000, guid: 9c4ef31232b8e5845a98f85940256cfb, type: 3}
   spritePrefab: {fileID: 7491430051395796194, guid: c07138c273c31a84fa41a879ed5fa251,
     type: 3}
   spritePivot: {fileID: 6519992227752686012}
@@ -1659,7 +1662,7 @@ MonoBehaviour:
   correctSymbols:
   - {fileID: 21300000, guid: e8d167ea1bb720744a8cfa2d636cc980, type: 3}
   - {fileID: 21300000, guid: ae1883601347ae04fb2aa0b6bad6277a, type: 3}
-  - {fileID: 21300000, guid: fbbcb37caf79e124caedd7fd1b0567b7, type: 3}
+  - {fileID: 21300000, guid: efb2cc5b87dc55742aab666687ccaa72, type: 3}
   spritePrefab: {fileID: 7491430051395796194, guid: c07138c273c31a84fa41a879ed5fa251,
     type: 3}
   spritePivot: {fileID: 5740832318448802473}
@@ -1842,6 +1845,31 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.1381601
       objectReference: {fileID: 0}
+    - target: {fileID: 3014614768876417435, guid: 700e2061b3648344181ad0617b19c0e6,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e290beb7914030b4b8544ade37e2168d, type: 2}
+    - target: {fileID: -7398665792422361232, guid: 700e2061b3648344181ad0617b19c0e6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9136055408513602493, guid: 700e2061b3648344181ad0617b19c0e6,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: daf76401325612449ba7977c2906eb1f, type: 2}
+    - target: {fileID: -2862265986340293583, guid: 700e2061b3648344181ad0617b19c0e6,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: daf76401325612449ba7977c2906eb1f, type: 2}
+    - target: {fileID: -6372521688188459560, guid: 700e2061b3648344181ad0617b19c0e6,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: daf76401325612449ba7977c2906eb1f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 700e2061b3648344181ad0617b19c0e6, type: 3}
 --- !u!1 &7381689219396276912 stripped
