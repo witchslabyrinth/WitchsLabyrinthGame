@@ -6089,6 +6089,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Inspection Trigger Zone
       objectReference: {fileID: 0}
+    - target: {fileID: 6963402602005164419, guid: ec3d9510a66d03e4c8a8d07722a7aada,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6963402602005164420, guid: ec3d9510a66d03e4c8a8d07722a7aada,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6144,6 +6149,27 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8003475793501735312, guid: ec3d9510a66d03e4c8a8d07722a7aada,
+        type: 3}
+      propertyPath: m_BeforeTransparentBundles.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8003475793501735312, guid: ec3d9510a66d03e4c8a8d07722a7aada,
+        type: 3}
+      propertyPath: m_BeforeStackBundles.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8003475793501735312, guid: ec3d9510a66d03e4c8a8d07722a7aada,
+        type: 3}
+      propertyPath: m_BeforeTransparentBundles.Array.data[0].assemblyQualifiedName
+      value: PostProcessOutline, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      objectReference: {fileID: 0}
+    - target: {fileID: 846609519349709493, guid: ec3d9510a66d03e4c8a8d07722a7aada,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0111d100e8c97974092117b256b29796, type: 2}
     m_RemovedComponents:
     - {fileID: 6963402602005164418, guid: ec3d9510a66d03e4c8a8d07722a7aada, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ec3d9510a66d03e4c8a8d07722a7aada, type: 3}
@@ -29111,7 +29137,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: f3325a5f000a540bf8426f7a7bc95299, type: 2}
+      objectReference: {fileID: 2100000, guid: 2ff16fc567760e84d92802a7cbb6497a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61a38070076c7dc4bab6d215bffd398e, type: 3}
 --- !u!4 &1741162124 stripped
@@ -93162,7 +93188,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 57901e6fbd10a484498722e44ac4df7f, type: 2}
+      objectReference: {fileID: 2100000, guid: 4edc0233d25a370419e9a16a33b0870a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61a38070076c7dc4bab6d215bffd398e, type: 3}
 --- !u!4 &7187866082728519856 stripped
