@@ -24,9 +24,11 @@ namespace AK
         static const AkUniqueID ONMENUOPEN = 547102971U;
         static const AkUniqueID ONMENUSELECT = 1412352919U;
         static const AkUniqueID POND_SOUND = 661114568U;
+        static const AkUniqueID PUZZLE_SOLVED = 1107599359U;
         static const AkUniqueID STAYTHERECAT = 1041426236U;
         static const AkUniqueID STAYTHEREOLIVER = 4294117557U;
         static const AkUniqueID STONES_MOVE = 2574112889U;
+        static const AkUniqueID TITLE_MUSIC = 309205993U;
         static const AkUniqueID WIND = 1537061107U;
         static const AkUniqueID WITHINPUZZLEZONE = 3954690858U;
     } // namespace EVENTS
@@ -94,6 +96,11 @@ namespace AK
         } // namespace MATERIAL
 
     } // namespace SWITCHES
+
+    namespace GAME_PARAMETERS
+    {
+        static const AkUniqueID TITLE_MUSIC = 309205993U;
+    } // namespace GAME_PARAMETERS
 
     namespace BANKS
     {
