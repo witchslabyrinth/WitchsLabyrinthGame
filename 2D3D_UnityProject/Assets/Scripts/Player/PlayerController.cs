@@ -65,7 +65,8 @@ public class PlayerController : Singleton<PlayerController>
     private void Awake()
     {
         // Make sure we have an actor (default to oliver if not specified)
-        if(player == null) {
+        if (player == null)
+        {
             player = oliver;
             friend = cat;
         }
@@ -100,12 +101,12 @@ public class PlayerController : Singleton<PlayerController>
         {
             PauseMenu.Instance.TogglePaused();
         }
-        
+
         // Only allow actor control if game is unpaused
         if (!PauseMenu.Instance.paused)
         {
             // Toggle currently-controlled actor between oliver/cat
-            if(canSwap && Input.GetKeyDown(KeyCode.Tab))
+            if (canSwap && Input.GetKeyDown(KeyCode.Tab))
             {
                 Swap();
                 if (player.Equals(oliver))
@@ -127,16 +128,29 @@ public class PlayerController : Singleton<PlayerController>
             // TODO: Review possible better locations for this command
             // If dialogue is running, skips text crawl or moves on to next line if text crawl has finished
             DialogueRunner dialRun = FindObjectOfType<DialogueRunner>();
-            if (Input.GetKeyDown(KeyCode.E) && dialRun != null && dialRun.isDialogueRunning == true) 
+            if (Input.GetKeyDown(KeyCode.E) && dialRun != null && dialRun.isDialogueRunning == true)
             {
                 FindObjectOfType<DialogueUI>().MarkLineComplete();
+            }
+            else if (Input.GetKeyDown(KeyCode.Q) && dialRun != null && dialRun.isDialogueRunning == true)
+            {
+                StartCoroutine(skipCutscene(dialRun));
             }
 
             // Handle interactions with other game entities
             player.CheckInteraction();
-    
+
             // Update camera perspective
             PerspectiveController.Instance.UpdatePerspective(player);
+        }
+    }
+
+    private IEnumerator skipCutscene(DialogueRunner dialRunner)
+    {
+        while (dialRunner.isDialogueRunning == true)
+        {
+            FindObjectOfType<DialogueUI>().MarkLineComplete();
+            yield return null;
         }
     }
 
