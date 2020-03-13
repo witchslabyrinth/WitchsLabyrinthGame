@@ -61,6 +61,15 @@ public class Actor : MonoBehaviour
     /// </summary>
     public Movement movement;
 
+    [Header("Footstep Settings")]
+
+    /// <summary>
+    /// Controls how often footstep sound effect plays
+    /// </summary>
+    [Range(0,1)]
+    [SerializeField]
+    private float footstepFrequency = .5f;
+
     /// <summary>
     /// For updating animations, stores whether or not player is using top view
     /// </summary>
@@ -119,6 +128,8 @@ public class Actor : MonoBehaviour
 
         moveStatus = 0;
         inTopView = false;
+
+        StartCoroutine(PlayFootstep());
     }
 
     private void FixedUpdate()
@@ -168,6 +179,18 @@ public class Actor : MonoBehaviour
 
         // Return movement
         return moveVector;
+    }
+
+    private IEnumerator PlayFootstep()
+    {
+        while (true)
+        {
+            if (moveStatus == 1 && PlayerController.Instance.GetPlayer() == this) {
+                AkSoundEngine.PostEvent("Footsteps", gameObject);
+            }
+
+            yield return new WaitForSeconds(footstepFrequency);
+        }
     }
 
     private void Animate()
