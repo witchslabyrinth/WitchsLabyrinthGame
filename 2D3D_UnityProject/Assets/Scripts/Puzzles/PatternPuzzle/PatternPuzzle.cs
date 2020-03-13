@@ -23,6 +23,8 @@ public class PatternPuzzle : MonoBehaviour
     [SerializeField]
     private float winAnimationTimeInBetween;
 
+    public AK.Wwise.Event puzzleSolved;
+
     private int _currentCube;
     private int CurrentCube
     {
@@ -198,6 +200,7 @@ public class PatternPuzzle : MonoBehaviour
     private void Solved()
     {
         Debug.Log("Solved");
+        puzzleSolved.Post(gameObject); //Wwise
         solved = true;
         patternCubes[_currentCube].Deselect();
         StartCoroutine(WinAnimation());

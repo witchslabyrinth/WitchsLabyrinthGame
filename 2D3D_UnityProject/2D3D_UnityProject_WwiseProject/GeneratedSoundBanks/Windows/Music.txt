@@ -1,0 +1,27 @@
+Event	ID	Name			Wwise Object Path	Notes
+	202194903	Music_Play			\Default Work Unit\Scene\Music_Play	
+	309205993	Title_Music			\Default Work Unit\Scene\Title_Music	
+
+State Group	ID	Name			Wwise Object Path	Notes
+	2607556080	Menu			\Default Work Unit\Music\Menu	
+	3900887599	Interaction			\Default Work Unit\Music\Interaction	
+
+State	ID	Name	State Group			Notes
+	0	None	Menu			
+	3190209385	OutOfMenu	Menu			
+	3374585465	InMenu	Menu			
+	0	None	Interaction			
+	927376446	NotInteracting	Interaction			
+	3884110025	Interacting	Interaction			
+
+Custom State	ID	Name	State Group	Owner		Notes
+	690701677	InMenu	Menu	\Actor-Mixer Hierarchy\Default Work Unit\Music\bgm_Broad_Strokes		
+	723265791	Interacting	Interaction	\Actor-Mixer Hierarchy\Default Work Unit\Music\bgm_Broad_Strokes		
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	309205993	Title_Music			\Default Work Unit\Title_Music	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	406878912	dorime	D:\Github\WitchsLabyrinthGame\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Windows\SFX\dorime_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Music\dorime		7119424
+	541310400	bgm_Broad_Strokes	D:\Github\WitchsLabyrinthGame\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Windows\SFX\bgm_Broad_Strokes_59EF85A5.wem		\Actor-Mixer Hierarchy\Default Work Unit\Music\bgm_Broad_Strokes		30580428
+

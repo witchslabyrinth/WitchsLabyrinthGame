@@ -110,11 +110,6 @@
 										<Value>-10</Value>
 									</ValueList>
 								</Property>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>-9</Value>
-									</ValueList>
-								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -132,6 +127,82 @@
 							</ChildrenList>
 							<ActiveSourceList>
 								<ActiveSource Name="UI_Menu" ID="{605944E2-ED18-4B26-9B07-7FD6ADAE17DA}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="SE_confirm" ID="{8302E76B-20FC-4CE8-83B8-BF2BC5B1748E}" ShortID="983734311">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{24C7AD02-E66A-4B4B-8735-0AC29636FC00}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CB9D8304-7AAA-4374-9412-CD9A3A2EDD3D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="SE_confirm" ID="{C77F52F7-E963-4150-BC6C-161EF5E7F1DF}" ShortID="305802001">
+									<Language>SFX</Language>
+									<AudioFile>SE_confirm.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="SE_confirm" ID="{C77F52F7-E963-4150-BC6C-161EF5E7F1DF}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="SE_hover" ID="{207A9C2E-7A3D-4032-8F61-1CB387E0EED6}" ShortID="991532550">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{24C7AD02-E66A-4B4B-8735-0AC29636FC00}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CB9D8304-7AAA-4374-9412-CD9A3A2EDD3D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="SE_hover" ID="{699E6CF9-310F-48D9-AE3A-08C7F0E620EF}" ShortID="576602793">
+									<Language>SFX</Language>
+									<AudioFile>SE_hover.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="SE_hover" ID="{699E6CF9-310F-48D9-AE3A-08C7F0E620EF}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="SE_open" ID="{1493F9AE-6834-4977-8CC9-D4262943D9D9}" ShortID="428481706">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{24C7AD02-E66A-4B4B-8735-0AC29636FC00}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CB9D8304-7AAA-4374-9412-CD9A3A2EDD3D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="SE_open" ID="{8A702255-1371-4696-9A42-FC2A8ADDCD41}" ShortID="341587664">
+									<Language>SFX</Language>
+									<AudioFile>SE_open.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="SE_open" ID="{8A702255-1371-4696-9A42-FC2A8ADDCD41}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="SE_solve" ID="{AE2958FD-D12E-400C-8E5B-0E5A6016E51A}" ShortID="732507024">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{24C7AD02-E66A-4B4B-8735-0AC29636FC00}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CB9D8304-7AAA-4374-9412-CD9A3A2EDD3D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="SE_solve" ID="{12A73EF4-18AA-4ECD-A5CD-8D8E6DD64AF9}" ShortID="640412345">
+									<Language>SFX</Language>
+									<AudioFile>SE_solve.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="SE_solve" ID="{12A73EF4-18AA-4ECD-A5CD-8D8E6DD64AF9}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>
