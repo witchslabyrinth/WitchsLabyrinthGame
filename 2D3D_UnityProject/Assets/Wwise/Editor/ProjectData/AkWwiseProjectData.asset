@@ -31,7 +31,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 31c7159bb637e0438b0b0a3598f10701
     GuidInternal: 
-    m_lastTime: -8586176153264282572
+    m_lastTime: -8586175453586960101
     List:
     - name: Main
       guid: 1d85aefae0798f44adc3648c94a6abd2
@@ -65,7 +65,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 5601ea873c34f449957bd3b5ded1c2c6
     GuidInternal: 
-    m_lastTime: -8586176155142845517
+    m_lastTime: -8586175407223353215
     List:
     - name: CatSwitchSound
       guid: d1a8c45f839f904fbc04fe586e18bb61
@@ -113,6 +113,22 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0.682857
       minDuration: 0.150421
+    - name: Lantern_Crackle
+      guid: 1eb9870f695a8c4bb41efb5416117c27
+      id: 2945412733
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Puzzles
+        ObjectType: 4
+      - ElementName: Zodiac
+        ObjectType: 4
+      - ElementName: Lantern_Crackle
+        ObjectType: 3
+      Path: Default Work Unit\Puzzles\Zodiac\Lantern_Crackle
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Lantern_LightUp
       guid: a6b63faf59087e4698ab526d8d2a82e5
       id: 2716631521
@@ -279,7 +295,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 91fd7b16390ad84fbc6d407fad2d1946
     GuidInternal: 
-    m_lastTime: -8586176156587330654
+    m_lastTime: -8586175453748641486
     List:
     - name: OnMenuClose
       guid: b0c2fdfe821f1d4d877a0e550088c4fb
@@ -334,7 +350,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: f097083e8173b046a10e637ecb6d4f17
     GuidInternal: 
-    m_lastTime: -8586176221656360639
+    m_lastTime: -8586175453748601505
     List:
     - name: Title_Music
       guid: 280423ae7a8bb843b06154ad7bb0eca5
@@ -532,6 +548,9 @@ MonoBehaviour:
   ExpandedItems:
   - /2D3D_UnityProject_WwiseProject
   - /2D3D_UnityProject_WwiseProject/Events
+  - /2D3D_UnityProject_WwiseProject/Events/Default Work Unit
+  - /2D3D_UnityProject_WwiseProject/Events/Default Work Unit/Puzzles
+  - /2D3D_UnityProject_WwiseProject/Events/Default Work Unit/Puzzles/Zodiac
   - /2D3D_UnityProject_WwiseProject/Events/UI
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

@@ -152,6 +152,17 @@
 										</Action>
 									</ChildrenList>
 								</Event>
+								<Event Name="Lantern_Crackle" ID="{0F87B91E-5A69-4B8C-B41E-FB5416117C27}">
+									<ChildrenList>
+										<Action Name="" ID="{FFA9F450-01B8-4B38-8ADF-D5AC40A94BDC}" ShortID="601601231">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Lantern_idle" ID="{45E82FC6-FD34-4CA1-8460-0AE875E57000}" WorkUnitID="{787AA6C8-A80B-4C2F-B9CE-E9178ECBB4E3}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Event Name="Puzzle_Solved" ID="{8ABEBFAB-6808-4416-B0AE-C09C71537E13}">
