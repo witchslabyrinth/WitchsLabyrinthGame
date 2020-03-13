@@ -186,7 +186,7 @@ public class Actor : MonoBehaviour
         while (true)
         {
             if (moveStatus == 1 && PlayerController.Instance.GetPlayer() == this) {
-                AkSoundEngine.PostEvent("Footstep_Player", gameObject);
+                AkSoundEngine.PostEvent("Footsteps", gameObject);
             }
 
             yield return new WaitForSeconds(footstepFrequency);
