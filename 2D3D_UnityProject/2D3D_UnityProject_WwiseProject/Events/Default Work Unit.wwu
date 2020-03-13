@@ -195,6 +195,21 @@
 						</Event>
 					</ChildrenList>
 				</Folder>
+				<Folder Name="Footsteps" ID="{DD4812C3-493C-4F6C-8D0C-6A3A6F2E5E09}" ShortID="885245156">
+					<ChildrenList>
+						<Event Name="Footsteps" ID="{ABE60599-068F-4EFD-8925-94A9A65FE9B1}">
+							<ChildrenList>
+								<Action Name="" ID="{C6349E3B-DE78-4F22-8CE9-6B6E8D8E8672}" ShortID="139200668">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Footsteps" ID="{3B036B00-17FA-445A-ACF2-4F6F308FA5CA}" WorkUnitID="{F35C23EA-DF72-4530-971C-FBEBF715C8AD}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
