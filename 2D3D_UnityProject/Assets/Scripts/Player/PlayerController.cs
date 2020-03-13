@@ -128,13 +128,14 @@ public class PlayerController : Singleton<PlayerController>
             // TODO: Review possible better locations for this command
             // If dialogue is running, skips text crawl or moves on to next line if text crawl has finished
             DialogueRunner dialRun = FindObjectOfType<DialogueRunner>();
-            if (Input.GetKeyDown(KeyCode.E) && dialRun != null && dialRun.isDialogueRunning == true)
+            DialogueUI dialUI = FindObjectOfType<DialogueUI>();
+            if (Input.GetKeyDown(KeyCode.E) && dialRun != null && dialUI != null && dialRun.isDialogueRunning == true)
             {
-                FindObjectOfType<DialogueUI>().MarkLineComplete();
+                dialUI.MarkLineComplete();
             }
-            else if (Input.GetKeyDown(KeyCode.Q) && dialRun != null && dialRun.isDialogueRunning == true)
+            if (Input.GetKeyDown(KeyCode.Q) && dialRun != null && dialUI != null && dialRun.isDialogueRunning == true)
             {
-                StartCoroutine(skipCutscene(dialRun));
+                StartCoroutine(skipCutscene(dialRun, dialUI));
             }
 
             // Handle interactions with other game entities
@@ -145,11 +146,11 @@ public class PlayerController : Singleton<PlayerController>
         }
     }
 
-    private IEnumerator skipCutscene(DialogueRunner dialRunner)
+    private IEnumerator skipCutscene(DialogueRunner dialRunner, DialogueUI dialUIComp)
     {
-        while (dialRunner.isDialogueRunning == true)
+        while (dialRunner.isDialogueRunning == true && dialUIComp.waitingForOptionSelection == false)
         {
-            FindObjectOfType<DialogueUI>().MarkLineComplete();
+            dialUIComp.MarkLineComplete();
             yield return null;
         }
     }

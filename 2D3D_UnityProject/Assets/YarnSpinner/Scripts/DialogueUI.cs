@@ -60,7 +60,7 @@ namespace Yarn.Unity {
 
         // When true, the DialogueRunner is waiting for the user to press
         // one of the option buttons.
-        private bool waitingForOptionSelection = false;     
+        public bool waitingForOptionSelection = false;     
 
         public UnityEngine.Events.UnityEvent onDialogueStart;
 
