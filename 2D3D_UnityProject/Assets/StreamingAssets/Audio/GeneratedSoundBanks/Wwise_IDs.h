@@ -13,6 +13,7 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID CAT_RANDOMMEOW = 437413055U;
         static const AkUniqueID CATSWITCHSOUND = 3589155492U;
         static const AkUniqueID DOOR_OPEN = 535830432U;
         static const AkUniqueID FOOTSTEP_PLAYER = 648916573U;

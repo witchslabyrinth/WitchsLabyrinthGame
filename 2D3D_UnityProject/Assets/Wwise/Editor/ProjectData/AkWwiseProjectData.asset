@@ -65,8 +65,22 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 5601ea873c34f449957bd3b5ded1c2c6
     GuidInternal: 
-    m_lastTime: -8586167563149562225
+    m_lastTime: -8586167003420188796
     List:
+    - name: Cat_randomMeow
+      guid: d16dc1820f912c4f96997453237ed1c7
+      id: 437413055
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Cat
+        ObjectType: 4
+      - ElementName: Cat_randomMeow
+        ObjectType: 3
+      Path: Default Work Unit\Cat\Cat_randomMeow
+      maxAttenuation: 0
+      maxDuration: 94.82229
+      minDuration: 91.10716
     - name: CatSwitchSound
       guid: d1a8c45f839f904fbc04fe586e18bb61
       id: 3589155492
@@ -585,6 +599,7 @@ MonoBehaviour:
   - /2D3D_UnityProject_WwiseProject/Events
   - /2D3D_UnityProject_WwiseProject/Events/Default Work Unit
   - /2D3D_UnityProject_WwiseProject/Events/Default Work Unit/Ambience
+  - /2D3D_UnityProject_WwiseProject/Events/Default Work Unit/Cat
   - /2D3D_UnityProject_WwiseProject/Events/UI
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

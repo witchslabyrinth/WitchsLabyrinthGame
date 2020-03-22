@@ -148,6 +148,7 @@
 			<ShortName>Voices</ShortName>
 			<Path>Voices.bnk</Path>
 			<IncludedEvents>
+				<Event Id="437413055" Name="Cat_randomMeow" ObjectPath="\Events\Default Work Unit\Cat\Cat_randomMeow" DurationType="OneShot" DurationMin="91.107162" DurationMax="94.822289"/>
 				<Event Id="3589155492" Name="CatSwitchSound" ObjectPath="\Events\Default Work Unit\Cat\CatSwitchSound" DurationType="OneShot" DurationMin="1.339342" DurationMax="1.339342"/>
 				<Event Id="2136553153" Name="OliverSwitchSound" ObjectPath="\Events\Default Work Unit\Oliver\OliverSwitchSound" DurationType="OneShot" DurationMin="2.210295" DurationMax="2.210295"/>
 				<Event Id="1041426236" Name="StayThereCat" ObjectPath="\Events\Default Work Unit\Cat\StayThereCat" DurationType="OneShot" DurationMin="0.762585" DurationMax="0.762585"/>
@@ -162,6 +163,10 @@
 				<File Id="128788558" Language="SFX">
 					<ShortName>Oliver_UghOkayFine.wav</ShortName>
 					<Path>SFX\Oliver_UghOkayFine_10C4C929.wem</Path>
+				</File>
+				<File Id="357831322" Language="SFX">
+					<ShortName>Cat_meow1.wav</ShortName>
+					<Path>SFX\Cat_meow1_10C4C929.wem</Path>
 				</File>
 				<File Id="436406679" Language="SFX">
 					<ShortName>luke_huh (2).wav</ShortName>
@@ -190,6 +195,14 @@
 				<File Id="877330443" Language="SFX">
 					<ShortName>Cat_Meow.wav</ShortName>
 					<Path>SFX\Cat_Meow_10C4C929.wem</Path>
+				</File>
+				<File Id="896819658" Language="SFX">
+					<ShortName>cat_purr.wav</ShortName>
+					<Path>SFX\cat_purr_10C4C929.wem</Path>
+				</File>
+				<File Id="1020655656" Language="SFX">
+					<ShortName>cat_meow2.wav</ShortName>
+					<Path>SFX\cat_meow2_10C4C929.wem</Path>
 				</File>
 			</IncludedMemoryFiles>
 		</SoundBank>
