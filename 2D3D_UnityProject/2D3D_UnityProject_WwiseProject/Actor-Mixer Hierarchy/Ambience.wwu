@@ -30,6 +30,28 @@
 						<ActiveSource Name="Wind_Ambience" ID="{A0CD3F09-DD68-4544-938B-2134F9AE2E99}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
+				<Sound Name="lantern_idle" ID="{54EBABB0-9E29-499E-8D57-5612F7446095}" ShortID="766510286">
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="Lanterns" ID="{CDCED9E5-9A80-4B0D-89F7-2F0D5A0BC21C}" WorkUnitID="{0DCEC620-0804-4E59-BF74-C1BAA1C456CD}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{24C7AD02-E66A-4B4B-8735-0AC29636FC00}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CB9D8304-7AAA-4374-9412-CD9A3A2EDD3D}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="lantern_idle_crackle" ID="{04B6BA69-9FD6-448B-91C3-0B5AD3B239BE}" ShortID="199647976">
+							<Language>SFX</Language>
+							<AudioFile>lantern_idle_crackle.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="lantern_idle_crackle" ID="{04B6BA69-9FD6-448B-91C3-0B5AD3B239BE}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

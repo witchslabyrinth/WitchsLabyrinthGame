@@ -202,6 +202,17 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="Lantern_crackle" ID="{9BC8AE21-D8E4-4669-B15A-2336C9442BB6}">
+							<ChildrenList>
+								<Action Name="" ID="{EB3BE1F0-BBCE-4A2A-95EE-3E09855DDA57}" ShortID="1056018164">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="lantern_idle" ID="{54EBABB0-9E29-499E-8D57-5612F7446095}" WorkUnitID="{1BAF4E43-D480-476A-8D94-BA81CA478199}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Event Name="Footsteps" ID="{53927BFA-91DC-43E3-A019-6C34BADB5233}">
