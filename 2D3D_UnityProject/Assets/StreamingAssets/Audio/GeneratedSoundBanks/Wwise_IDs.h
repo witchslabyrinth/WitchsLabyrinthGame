@@ -15,11 +15,13 @@ namespace AK
     {
         static const AkUniqueID ACTIVATE = 4166407614U;
         static const AkUniqueID AMBIENT = 77978275U;
+        static const AkUniqueID CAT_RANDOM = 1508371255U;
         static const AkUniqueID CATSWITCHSOUND = 3589155492U;
         static const AkUniqueID DOOR_OPEN = 535830432U;
         static const AkUniqueID FOOTSTEP_PLAYER = 648916573U;
         static const AkUniqueID FOOTSTEPS = 2385628198U;
         static const AkUniqueID INTERACT = 1466384055U;
+        static const AkUniqueID LANTERN_IDLE = 3443213188U;
         static const AkUniqueID LANTERN_LIGHTUP = 2716631521U;
         static const AkUniqueID MOVE = 3011204530U;
         static const AkUniqueID MUSIC_PLAY = 202194903U;
