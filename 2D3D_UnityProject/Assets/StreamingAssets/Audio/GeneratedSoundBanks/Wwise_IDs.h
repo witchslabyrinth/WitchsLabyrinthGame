@@ -18,7 +18,6 @@ namespace AK
         static const AkUniqueID DOOR_OPEN = 535830432U;
         static const AkUniqueID FOOTSTEP_PLAYER = 648916573U;
         static const AkUniqueID FOOTSTEPS = 2385628198U;
-        static const AkUniqueID LANTERN_CRACKLE = 2945412733U;
         static const AkUniqueID LANTERN_LIGHTUP = 2716631521U;
         static const AkUniqueID MUSIC_PLAY = 202194903U;
         static const AkUniqueID OLIVERSWITCHSOUND = 2136553153U;
