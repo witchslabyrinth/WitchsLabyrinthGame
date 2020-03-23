@@ -21,10 +21,12 @@
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<IncludedEvents>
+				<Event Id="437413055" Name="Cat_randomMeow" ObjectPath="\Events\Default Work Unit\Cat\Cat_randomMeow" DurationType="OneShot" DurationMin="91.107162" DurationMax="94.822289"/>
 				<Event Id="3589155492" Name="CatSwitchSound" ObjectPath="\Events\Default Work Unit\Cat\CatSwitchSound" DurationType="OneShot" DurationMin="1.339342" DurationMax="1.339342"/>
 				<Event Id="535830432" Name="Door_Open" ObjectPath="\Events\Default Work Unit\Puzzles\Zodiac\Door_Open" DurationType="OneShot" DurationMin="2.226440" DurationMax="3.509682"/>
 				<Event Id="648916573" Name="Footstep_Player" ObjectPath="\Events\Default Work Unit\Oliver\Interactions\Footstep_Player" DurationType="OneShot" DurationMin="0.150421" DurationMax="0.682857"/>
 				<Event Id="2385628198" Name="Footsteps" ObjectPath="\Events\Default Work Unit\Footsteps" DurationType="OneShot" DurationMin="0.361333" DurationMax="1.578667"/>
+				<Event Id="2945412733" Name="Lantern_crackle" ObjectPath="\Events\Default Work Unit\Ambience\Lantern_crackle" MaxAttenuation="60.000000" DurationType="OneShot" DurationMin="6.375578" DurationMax="6.375578"/>
 				<Event Id="2716631521" Name="Lantern_LightUp" ObjectPath="\Events\Default Work Unit\Puzzles\Zodiac\Lantern_LightUp" DurationType="OneShot" DurationMin="5.934558" DurationMax="7.069659"/>
 				<Event Id="1237780649" Name="OnMenuClose" ObjectPath="\Events\UI\OnMenuClose" DurationType="OneShot" DurationMin="0.144036" DurationMax="0.144036"/>
 				<Event Id="961842423" Name="OnMenuHover" ObjectPath="\Events\UI\OnMenuHover" DurationType="OneShot" DurationMin="4.749252" DurationMax="4.749252"/>
@@ -53,6 +55,10 @@
 					<ShortName>Stone_Grind_2.wav</ShortName>
 					<Path>SFX\Stone_Grind_2_10C4C929.wem</Path>
 				</File>
+				<File Id="199647976" Language="SFX">
+					<ShortName>lantern_idle_crackle.wav</ShortName>
+					<Path>SFX\lantern_idle_crackle_10C4C929.wem</Path>
+				</File>
 				<File Id="249066160" Language="SFX">
 					<ShortName>Footsteps_Grass_2.wav</ShortName>
 					<Path>SFX\Footsteps_Grass_2_10C4C929.wem</Path>
@@ -68,6 +74,10 @@
 				<File Id="341587664" Language="SFX">
 					<ShortName>SE_open.wav</ShortName>
 					<Path>SFX\SE_open_10C4C929.wem</Path>
+				</File>
+				<File Id="357831322" Language="SFX">
+					<ShortName>Cat_meow1.wav</ShortName>
+					<Path>SFX\Cat_meow1_10C4C929.wem</Path>
 				</File>
 				<File Id="364119781" Language="SFX">
 					<ShortName>Footsteps_Wood_3.wav</ShortName>
@@ -125,6 +135,10 @@
 					<ShortName>Wind_Ambience.wav</ShortName>
 					<Path>SFX\Wind_Ambience_D79FB2B7.wem</Path>
 				</File>
+				<File Id="896819658" Language="SFX">
+					<ShortName>cat_purr.wav</ShortName>
+					<Path>SFX\cat_purr_10C4C929.wem</Path>
+				</File>
 				<File Id="914604628" Language="SFX">
 					<ShortName>SlidingDoor_Opening.wav</ShortName>
 					<Path>SFX\SlidingDoor_Opening_10C4C929.wem</Path>
@@ -136,6 +150,10 @@
 				<File Id="1015469370" Language="SFX">
 					<ShortName>Footsteps\step_Grass.wav</ShortName>
 					<Path>SFX\Footsteps\step_Grass_10C4C929.wem</Path>
+				</File>
+				<File Id="1020655656" Language="SFX">
+					<ShortName>cat_meow2.wav</ShortName>
+					<Path>SFX\cat_meow2_10C4C929.wem</Path>
 				</File>
 				<File Id="1035784692" Language="SFX">
 					<ShortName>SlidingDoor_Open.wav</ShortName>
