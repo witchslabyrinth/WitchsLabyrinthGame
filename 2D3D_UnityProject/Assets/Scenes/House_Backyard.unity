@@ -3165,6 +3165,24 @@ PrefabInstance:
       propertyPath: scene3Cam
       value: 
       objectReference: {fileID: 1126211080}
+    - target: {fileID: 3992060753734116005, guid: a35781147a94058489b00fbdd5e890fc,
+        type: 3}
+      propertyPath: Block_Move.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 7c5bdc70c7944544ebdd4659f75547c8,
+        type: 2}
+    - target: {fileID: 3992060753734116005, guid: a35781147a94058489b00fbdd5e890fc,
+        type: 3}
+      propertyPath: Block_Interact.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 9691b73eeaddc674490bfb9c32000b57,
+        type: 2}
+    - target: {fileID: 3992060753734116005, guid: a35781147a94058489b00fbdd5e890fc,
+        type: 3}
+      propertyPath: Block_Win.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 69c61251ba814d647b09413cd89a7192,
+        type: 2}
     m_RemovedComponents:
     - {fileID: 5269282644988738120, guid: a35781147a94058489b00fbdd5e890fc, type: 3}
     - {fileID: 5269282643760255571, guid: a35781147a94058489b00fbdd5e890fc, type: 3}
@@ -21358,7 +21376,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1559680744
 Transform:
   m_ObjectHideFlags: 0

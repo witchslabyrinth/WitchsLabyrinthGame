@@ -165,6 +165,74 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Folder Name="Block" ID="{7B33FB6B-7669-4626-9892-B8BE5D9B7835}" ShortID="762022104">
+							<ChildrenList>
+								<Event Name="Move" ID="{D6D595B4-F89B-49DF-B9A4-5A6A31BE2384}">
+									<ChildrenList>
+										<Action Name="" ID="{58E14663-CE60-448D-9CE3-E81ED300CBB1}" ShortID="613797098">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Block_Interact" ID="{2C03F99E-A66B-441F-A6D5-0E570610C0E1}" WorkUnitID="{787AA6C8-A80B-4C2F-B9CE-E9178ECBB4E3}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Win" ID="{E5023BE3-EB4B-4621-9653-93AF57BEBE35}">
+									<ChildrenList>
+										<Action Name="" ID="{0AB7DB28-61EB-4804-B5E5-2D3A8BA23D39}" ShortID="63262598">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SE_solve" ID="{AE2958FD-D12E-400C-8E5B-0E5A6016E51A}" WorkUnitID="{F35C23EA-DF72-4530-971C-FBEBF715C8AD}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Rotate" ID="{C680FEEF-B2A3-42E8-9530-B61F7D5B3FEF}"/>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="Portal" ID="{E4CC9677-B73B-4819-8B41-591959A22380}" ShortID="688804157">
+							<ChildrenList>
+								<Event Name="Activate" ID="{CE419CC5-8ABB-45F8-81B5-4CC0D1BA071A}">
+									<ChildrenList>
+										<Action Name="" ID="{5338DC75-DCCC-4C14-A585-19AFDFD392DF}" ShortID="986456085">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Portal_Activate" ID="{8B4732D0-AF70-4F8D-8D02-A1EC04C10305}" WorkUnitID="{787AA6C8-A80B-4C2F-B9CE-E9178ECBB4E3}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Ambient" ID="{D7C74425-00D7-491F-B402-1AE712D965A9}">
+									<ChildrenList>
+										<Action Name="" ID="{CE1E2ADA-2D5B-4025-B85E-B9E2A0E2A48E}" ShortID="609714839">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Portal_Ambient" ID="{EEEF3AD7-E1DC-4BD9-8CF5-CC9EE149033E}" WorkUnitID="{787AA6C8-A80B-4C2F-B9CE-E9178ECBB4E3}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="Liars" ID="{937CF271-15AA-4826-8F39-98378F1EFBD7}" ShortID="857120500">
+							<ChildrenList>
+								<Event Name="Interact" ID="{BDBD5DAC-B84D-4411-9290-D6CB9C112742}">
+									<ChildrenList>
+										<Action Name="" ID="{4642621D-1902-41AE-83B1-8EAE18968BAE}" ShortID="895356183">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Interact_String" ID="{821447EC-7087-471E-9DF5-BD4E533A28A4}" WorkUnitID="{787AA6C8-A80B-4C2F-B9CE-E9178ECBB4E3}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Pond" ID="{0B2DDE12-6B79-4122-917B-E9CDA08002EB}" ShortID="196801830">
@@ -202,6 +270,7 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="Water" ID="{6057F958-19D3-4970-B752-13D0C3847B2C}"/>
 					</ChildrenList>
 				</Folder>
 				<Event Name="Footsteps" ID="{53927BFA-91DC-43E3-A019-6C34BADB5233}">

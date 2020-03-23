@@ -13,11 +13,15 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID ACTIVATE = 4166407614U;
+        static const AkUniqueID AMBIENT = 77978275U;
         static const AkUniqueID CATSWITCHSOUND = 3589155492U;
         static const AkUniqueID DOOR_OPEN = 535830432U;
         static const AkUniqueID FOOTSTEP_PLAYER = 648916573U;
         static const AkUniqueID FOOTSTEPS = 2385628198U;
+        static const AkUniqueID INTERACT = 1466384055U;
         static const AkUniqueID LANTERN_LIGHTUP = 2716631521U;
+        static const AkUniqueID MOVE = 3011204530U;
         static const AkUniqueID MUSIC_PLAY = 202194903U;
         static const AkUniqueID OLIVERSWITCHSOUND = 2136553153U;
         static const AkUniqueID ONMENUCLOSE = 1237780649U;
@@ -26,10 +30,12 @@ namespace AK
         static const AkUniqueID ONMENUSELECT = 1412352919U;
         static const AkUniqueID POND_SOUND = 661114568U;
         static const AkUniqueID PUZZLE_SOLVED = 1107599359U;
+        static const AkUniqueID ROTATE = 1302771492U;
         static const AkUniqueID STAYTHERECAT = 1041426236U;
         static const AkUniqueID STAYTHEREOLIVER = 4294117557U;
         static const AkUniqueID STONES_MOVE = 2574112889U;
         static const AkUniqueID TITLE_MUSIC = 309205993U;
+        static const AkUniqueID WIN = 979765101U;
         static const AkUniqueID WIND = 1537061107U;
         static const AkUniqueID WITHINPUZZLEZONE = 3954690858U;
     } // namespace EVENTS
