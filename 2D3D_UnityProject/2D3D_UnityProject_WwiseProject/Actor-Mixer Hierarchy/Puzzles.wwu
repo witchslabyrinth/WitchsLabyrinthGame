@@ -13,6 +13,11 @@
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
 								<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-10</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -154,7 +159,7 @@
 								<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="2"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-9</Value>
+										<Value>-10</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -168,6 +173,13 @@
 							</ReferenceList>
 							<ChildrenList>
 								<Sound Name="Stone_Grind_1" ID="{1526E680-E132-48D9-B3B2-5E5AA0B4EC9E}" ShortID="63790134">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-4</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{24C7AD02-E66A-4B4B-8735-0AC29636FC00}"/>
@@ -187,6 +199,13 @@
 									</ActiveSourceList>
 								</Sound>
 								<Sound Name="Stone_Grind_2" ID="{7ACE2B9B-4C95-448A-8DF1-DF76EEDB81E0}" ShortID="996196451">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-4</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{24C7AD02-E66A-4B4B-8735-0AC29636FC00}"/>
@@ -206,6 +225,13 @@
 									</ActiveSourceList>
 								</Sound>
 								<Sound Name="Stone_Grind_3" ID="{5D67EE0C-3827-41E3-A90D-57C98319A04A}" ShortID="509442826">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-4</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{24C7AD02-E66A-4B4B-8735-0AC29636FC00}"/>
@@ -239,7 +265,7 @@
 								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-16</Value>
+										<Value>-17</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -256,6 +282,13 @@
 							</ReferenceList>
 							<ChildrenList>
 								<Sound Name="Switch" ID="{E1E7A488-3B69-4573-B398-975667584F7E}" ShortID="1010112235">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>2</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{24C7AD02-E66A-4B4B-8735-0AC29636FC00}"/>
@@ -290,34 +323,17 @@
 				</Folder>
 				<Folder Name="Portal" ID="{108F43CC-DDC8-427A-A4B4-C0BA6C12FC7C}" ShortID="273648958">
 					<ChildrenList>
-						<Sound Name="Portal_Ambient" ID="{EEEF3AD7-E1DC-4BD9-8CF5-CC9EE149033E}" ShortID="61926439">
-							<ReferenceList>
-								<Reference Name="Attenuation">
-									<ObjectRef Name="Portal" ID="{3E763EE6-95DC-4038-9B7D-6BE2FA54B86D}" WorkUnitID="{0DCEC620-0804-4E59-BF74-C1BAA1C456CD}"/>
-								</Reference>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{24C7AD02-E66A-4B4B-8735-0AC29636FC00}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CB9D8304-7AAA-4374-9412-CD9A3A2EDD3D}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="Portal_Ambient" ID="{BF9FDB0B-AC20-4BD4-8043-0FCA58B02B91}" ShortID="862268755">
-									<Language>SFX</Language>
-									<AudioFile>Portal_Ambient.wav</AudioFile>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="Portal_Ambient" ID="{BF9FDB0B-AC20-4BD4-8043-0FCA58B02B91}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
 						<Sound Name="Portal_Activate" ID="{8B4732D0-AF70-4F8D-8D02-A1EC04C10305}" ShortID="709831192">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="2"/>
 								<Property Name="Pitch" Type="int32">
 									<ValueList>
 										<Value>-30</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>1</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -334,6 +350,13 @@
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="koto-hit" ID="{7C5654E2-9D37-4859-8678-BE6041572BBA}" ShortID="313135195">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.804835644181337"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="1.5815547593083"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.27062159214831"/>
+										<Property Name="TrimEnd" Type="Real64" Value="2.85031313288674"/>
+									</PropertyList>
 									<Language>SFX</Language>
 									<AudioFile>koto-hit.wav</AudioFile>
 								</AudioFileSource>
@@ -346,16 +369,6 @@
 				</Folder>
 				<Folder Name="Liars" ID="{9BA85107-8010-4A9C-8368-167981BFFE92}" ShortID="406608977">
 					<ChildrenList>
-						<Sound Name="Liars_Music" ID="{6DB788D4-FEEE-4557-9975-1BB205F00A5F}" ShortID="782766908">
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{24C7AD02-E66A-4B4B-8735-0AC29636FC00}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CB9D8304-7AAA-4374-9412-CD9A3A2EDD3D}"/>
-								</Reference>
-							</ReferenceList>
-						</Sound>
 						<Sound Name="Interact_String" ID="{821447EC-7087-471E-9DF5-BD4E533A28A4}" ShortID="774842914">
 							<PropertyList>
 								<Property Name="Pitch" Type="int32">
@@ -365,7 +378,7 @@
 								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>6</Value>
+										<Value>7</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -373,21 +386,94 @@
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{24C7AD02-E66A-4B4B-8735-0AC29636FC00}"/>
 								</Reference>
-								<Reference Name="Effect0" CompanyID="4095" PluginID="65535" PluginType="15">
-									<ObjectRef Name="Holy" ID="{CC7B8638-C670-4AD5-B3FB-331EA81037F6}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
-								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CB9D8304-7AAA-4374-9412-CD9A3A2EDD3D}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="String_1" ID="{CCCC5AA6-8467-43C1-98F0-56156F79AEC1}" ShortID="480598192">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.899529521732357"/>
+										<Property Name="LoopBegin" Type="Real64" Value="0"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+									</PropertyList>
 									<Language>SFX</Language>
 									<AudioFile>String_1.wav</AudioFile>
 								</AudioFileSource>
 							</ChildrenList>
 							<ActiveSourceList>
 								<ActiveSource Name="String_1" ID="{CCCC5AA6-8467-43C1-98F0-56156F79AEC1}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="KoiFish" ID="{6BC6F372-E8DA-4ED4-8FD9-BF1F83967AFD}" ShortID="203893745">
+					<ChildrenList>
+						<Sound Name="FishBubble" ID="{68A90EF7-E10D-4251-8960-002885869355}" ShortID="22715045">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-23</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{24C7AD02-E66A-4B4B-8735-0AC29636FC00}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CB9D8304-7AAA-4374-9412-CD9A3A2EDD3D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="loudBubbles" ID="{E987C284-171F-479E-BD51-2C97890515A4}" ShortID="169603152">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.46796515552786"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.714262605805681"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimEnd" Type="Real64" Value="4.89516182427169"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>loudBubbles.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="loudBubbles" ID="{E987C284-171F-479E-BD51-2C97890515A4}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Lose" ID="{6FD56852-352E-4B47-90CD-82FBF4E26AF1}" ShortID="768365974">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-5</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{24C7AD02-E66A-4B4B-8735-0AC29636FC00}"/>
+								</Reference>
+								<Reference Name="Effect0" PluginName="Wwise Pitch Shifter" CompanyID="0" PluginID="136" PluginType="3">
+									<ObjectRef Name="Octave_Down" ID="{062EC4B1-5372-4D1E-917B-C757293F2B42}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CB9D8304-7AAA-4374-9412-CD9A3A2EDD3D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="smallsplash" ID="{9A28871D-E973-48B8-8A9A-8C269A23DA9E}" ShortID="60449037">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.443341966557616"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.546677312146232"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimEnd" Type="Real64" Value="1.79336825569923"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>smallsplash.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="smallsplash" ID="{9A28871D-E973-48B8-8A9A-8C269A23DA9E}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>

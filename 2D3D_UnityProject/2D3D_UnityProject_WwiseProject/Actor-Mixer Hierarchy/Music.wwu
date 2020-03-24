@@ -176,6 +176,13 @@
 					</ActiveSourceList>
 				</Sound>
 				<Sound Name="garden" ID="{6329EB28-521F-4817-AD1E-7B8662F634C0}" ShortID="204748239">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>3</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{24C7AD02-E66A-4B4B-8735-0AC29636FC00}"/>
@@ -217,7 +224,7 @@
 					<PropertyList>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>8</Value>
+								<Value>12</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -231,6 +238,12 @@
 					</ReferenceList>
 					<ChildrenList>
 						<AudioFileSource Name="shakuhachi-flute-play" ID="{7C6C0A27-E34C-458A-B0B6-37B21261ADA8}" ShortID="423372702">
+							<PropertyList>
+								<Property Name="FadeOutDuration" Type="Real64" Value="3.80611126822214"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimBegin" Type="Real64" Value="144.476832434068"/>
+								<Property Name="TrimEnd" Type="Real64" Value="148.28294370229"/>
+							</PropertyList>
 							<Language>SFX</Language>
 							<AudioFile>shakuhachi-flute-play.wav</AudioFile>
 						</AudioFileSource>

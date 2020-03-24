@@ -3,44 +3,6 @@
 	<AudioObjects>
 		<WorkUnit Name="Cat_Voice" ID="{713C05F8-2814-4EDA-B3B2-F621186647E9}" OwnerID="{420DBC9C-F5DF-4C94-83FD-A48ABD6BE150}" PersistMode="Nested">
 			<ChildrenList>
-				<Sound Name="Cat_Meow" ID="{44EE2CC7-85E9-4626-904F-12A5B1E585A7}" ShortID="676203807">
-					<ReferenceList>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{24C7AD02-E66A-4B4B-8735-0AC29636FC00}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CB9D8304-7AAA-4374-9412-CD9A3A2EDD3D}"/>
-						</Reference>
-					</ReferenceList>
-					<ChildrenList>
-						<AudioFileSource Name="Cat_Meow" ID="{67696CDC-CDB1-4460-8F9F-753886D7470A}" ShortID="877330443">
-							<Language>SFX</Language>
-							<AudioFile>Cat_Meow.wav</AudioFile>
-						</AudioFileSource>
-					</ChildrenList>
-					<ActiveSourceList>
-						<ActiveSource Name="Cat_Meow" ID="{67696CDC-CDB1-4460-8F9F-753886D7470A}" Platform="Linked"/>
-					</ActiveSourceList>
-				</Sound>
-				<Sound Name="Cat_Mrow_01" ID="{BCC1BF6C-5D53-4419-B186-BCBB2D4A6E9E}" ShortID="367072193">
-					<ReferenceList>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{24C7AD02-E66A-4B4B-8735-0AC29636FC00}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CB9D8304-7AAA-4374-9412-CD9A3A2EDD3D}"/>
-						</Reference>
-					</ReferenceList>
-					<ChildrenList>
-						<AudioFileSource Name="Cat_Mrow_01" ID="{FF1F6407-3143-4041-87D3-33EC2B5C33AC}" ShortID="444177177">
-							<Language>SFX</Language>
-							<AudioFile>Cat_Mrow_01.wav</AudioFile>
-						</AudioFileSource>
-					</ChildrenList>
-					<ActiveSourceList>
-						<ActiveSource Name="Cat_Mrow_01" ID="{FF1F6407-3143-4041-87D3-33EC2B5C33AC}" Platform="Linked"/>
-					</ActiveSourceList>
-				</Sound>
 				<RandomSequenceContainer Name="cat_random" ID="{A264DE9B-8334-4B3F-B2A8-2B80561E727C}" ShortID="116853466">
 					<PropertyList>
 						<Property Name="3DSpatialization" Type="int16" Value="1"/>
@@ -48,6 +10,11 @@
 						<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
 						<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="45"/>
 						<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>4</Value>
+							</ValueList>
+						</Property>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Attenuation">
@@ -65,7 +32,7 @@
 							<PropertyList>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-13</Value>
+										<Value>-20</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -96,7 +63,7 @@
 								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-22</Value>
+										<Value>-40</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -127,7 +94,7 @@
 								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-14</Value>
+										<Value>-34</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>

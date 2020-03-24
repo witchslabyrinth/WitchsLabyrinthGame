@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="11" SoundbankVersion="134">
 	<RootPaths>
-		<ProjectRoot>C:\Users\gpfmi\Documents\Senior Project\WitchsLabyrinthGame\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\</ProjectRoot>
-		<SourceFilesRoot>C:\Users\gpfmi\Documents\Senior Project\WitchsLabyrinthGame\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Mac\</SourceFilesRoot>
-		<SoundBanksRoot>C:\Users\gpfmi\Documents\Senior Project\WitchsLabyrinthGame\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\GeneratedSoundBanks\Mac\</SoundBanksRoot>
+		<ProjectRoot>C:\Users\Maggie\Documents\GitHub\WitchsLabyrinthGame\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\Maggie\Documents\GitHub\WitchsLabyrinthGame\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\.cache\Mac\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\Maggie\Documents\GitHub\WitchsLabyrinthGame\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\GeneratedSoundBanks\Mac\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>C:\Users\gpfmi\Documents\Senior Project\WitchsLabyrinthGame\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\GeneratedSoundBanks\Mac</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>C:\Users\Maggie\Documents\GitHub\WitchsLabyrinthGame\2D3D_UnityProject\2D3D_UnityProject_WwiseProject\GeneratedSoundBanks\Mac</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>
@@ -21,11 +21,14 @@
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<IncludedEvents>
-				<Event Id="4166407614" Name="Activate" ObjectPath="\Events\Default Work Unit\Puzzles\Portal\Activate" DurationType="OneShot" DurationMin="3.747648" DurationMax="3.747648"/>
-				<Event Id="77978275" Name="Ambient" ObjectPath="\Events\Default Work Unit\Puzzles\Portal\Ambient" MaxAttenuation="100.000000" DurationType="OneShot" DurationMin="6.461859" DurationMax="6.461859"/>
+				<Event Id="4166407614" Name="Activate" ObjectPath="\Events\Default Work Unit\Puzzles\Portal\Activate" DurationType="OneShot" DurationMin="2.624784" DurationMax="2.624784"/>
+				<Event Id="368097181" Name="AmbientPortal" ObjectPath="\Events\Default Work Unit\Portal\AmbientPortal" MaxAttenuation="100.000000" DurationType="OneShot" DurationMin="37.795261" DurationMax="37.795261"/>
 				<Event Id="1508371255" Name="cat_random" ObjectPath="\Events\Default Work Unit\Cat\cat_random" MaxAttenuation="15.000000" DurationType="Infinite"/>
-				<Event Id="3589155492" Name="CatSwitchSound" ObjectPath="\Events\Default Work Unit\Cat\CatSwitchSound" DurationType="OneShot" DurationMin="1.339342" DurationMax="1.339342"/>
+				<Event Id="3589155492" Name="CatSwitchSound" ObjectPath="\Events\Default Work Unit\Cat\CatSwitchSound" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="535830432" Name="Door_Open" ObjectPath="\Events\Default Work Unit\Puzzles\Zodiac\Door_Open" DurationType="OneShot" DurationMin="2.226440" DurationMax="3.509682"/>
+				<Event Id="4000923032" Name="FishLose" ObjectPath="\Events\Default Work Unit\Puzzles\KoiFish\FishLose" DurationType="OneShot" DurationMin="1.793368" DurationMax="1.793368"/>
+				<Event Id="1856056972" Name="FishMove" ObjectPath="\Events\Default Work Unit\Puzzles\KoiFish\FishMove" DurationType="OneShot" DurationMin="4.895162" DurationMax="4.895162"/>
+				<Event Id="2765306547" Name="FishWin" ObjectPath="\Events\Default Work Unit\Puzzles\KoiFish\FishWin" DurationType="OneShot" DurationMin="3.806111" DurationMax="3.806111"/>
 				<Event Id="648916573" Name="Footstep_Player" ObjectPath="\Events\Default Work Unit\Oliver\Interactions\Footstep_Player" DurationType="OneShot" DurationMin="0.150421" DurationMax="0.682857"/>
 				<Event Id="2385628198" Name="Footsteps" ObjectPath="\Events\Default Work Unit\Footsteps" DurationType="OneShot" DurationMin="0.361333" DurationMax="1.578667"/>
 				<Event Id="1466384055" Name="Interact" ObjectPath="\Events\Default Work Unit\Puzzles\Liars\Interact" DurationType="OneShot" DurationMin="1.268949" DurationMax="1.268949"/>
@@ -37,14 +40,18 @@
 				<Event Id="547102971" Name="OnMenuOpen" ObjectPath="\Events\UI\OnMenuOpen" DurationType="OneShot" DurationMin="4.749252" DurationMax="4.749252"/>
 				<Event Id="1412352919" Name="OnMenuSelect" ObjectPath="\Events\UI\OnMenuSelect" DurationType="OneShot" DurationMin="4.749252" DurationMax="4.749252"/>
 				<Event Id="661114568" Name="Pond_Sound" ObjectPath="\Events\Default Work Unit\Pond\Pond_Sound" MaxAttenuation="60.000000" DurationType="Infinite"/>
-				<Event Id="1107599359" Name="Puzzle_Solved" ObjectPath="\Events\Default Work Unit\Puzzles\Puzzle_Solved" DurationType="OneShot" DurationMin="5.007165" DurationMax="5.007165"/>
+				<Event Id="1107599359" Name="Puzzle_Solved" ObjectPath="\Events\Default Work Unit\Puzzles\Puzzle_Solved" DurationType="OneShot" DurationMin="2.173913" DurationMax="2.173913"/>
 				<Event Id="1302771492" Name="Rotate" ObjectPath="\Events\Default Work Unit\Puzzles\Block\Rotate" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="1041426236" Name="StayThereCat" ObjectPath="\Events\Default Work Unit\Cat\StayThereCat" DurationType="OneShot" DurationMin="0.762585" DurationMax="0.762585"/>
+				<Event Id="1041426236" Name="StayThereCat" ObjectPath="\Events\Default Work Unit\Cat\StayThereCat" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="2574112889" Name="Stones_Move" ObjectPath="\Events\Default Work Unit\Puzzles\Zodiac\Stones_Move" DurationType="OneShot" DurationMin="0.432000" DurationMax="0.432000"/>
-				<Event Id="979765101" Name="Win" ObjectPath="\Events\Default Work Unit\Puzzles\Block\Win" DurationType="OneShot" DurationMin="5.007165" DurationMax="5.007165"/>
+				<Event Id="979765101" Name="Win" ObjectPath="\Events\Default Work Unit\Puzzles\Block\Win" DurationType="OneShot" DurationMin="2.173913" DurationMax="2.173913"/>
 				<Event Id="1537061107" Name="Wind" ObjectPath="\Events\Default Work Unit\Ambience\Wind" DurationType="Infinite"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
+				<File Id="60449037" Language="SFX">
+					<ShortName>smallsplash.wav</ShortName>
+					<Path>SFX\smallsplash_ABD57C14.wem</Path>
+				</File>
 				<File Id="68258827" Language="SFX">
 					<ShortName>cat noises\Cat Meow3.wav</ShortName>
 					<Path>SFX\cat noises\Cat Meow3_10C4C929.wem</Path>
@@ -60,6 +67,14 @@
 				<File Id="140455079" Language="SFX">
 					<ShortName>Switch.wav</ShortName>
 					<Path>SFX\Switch_10C4C929.wem</Path>
+				</File>
+				<File Id="154096204" Language="SFX">
+					<ShortName>garden-intro.wav</ShortName>
+					<Path>SFX\garden-intro_10C4C929.wem</Path>
+				</File>
+				<File Id="169603152" Language="SFX">
+					<ShortName>loudBubbles.wav</ShortName>
+					<Path>SFX\loudBubbles_149229B3.wem</Path>
 				</File>
 				<File Id="169643882" Language="SFX">
 					<ShortName>Stone_Grind_3.wav</ShortName>
@@ -83,7 +98,7 @@
 				</File>
 				<File Id="313135195" Language="SFX">
 					<ShortName>koto-hit.wav</ShortName>
-					<Path>SFX\koto-hit_10C4C929.wem</Path>
+					<Path>SFX\koto-hit_EAE6D283.wem</Path>
 				</File>
 				<File Id="341587664" Language="SFX">
 					<ShortName>SE_open.wav</ShortName>
@@ -97,13 +112,13 @@
 					<ShortName>Footsteps\step_Wood.wav</ShortName>
 					<Path>SFX\Footsteps\step_Wood_10C4C929.wem</Path>
 				</File>
-				<File Id="444177177" Language="SFX">
-					<ShortName>Cat_Mrow_01.wav</ShortName>
-					<Path>SFX\Cat_Mrow_01_10C4C929.wem</Path>
+				<File Id="423372702" Language="SFX">
+					<ShortName>shakuhachi-flute-play.wav</ShortName>
+					<Path>SFX\shakuhachi-flute-play_CFA0A9CF.wem</Path>
 				</File>
 				<File Id="480598192" Language="SFX">
 					<ShortName>String_1.wav</ShortName>
-					<Path>SFX\String_1_10C4C929.wem</Path>
+					<Path>SFX\String_1_9D91D442.wem</Path>
 				</File>
 				<File Id="544275902" Language="SFX">
 					<ShortName>Footsteps_Grass_3.wav</ShortName>
@@ -131,7 +146,7 @@
 				</File>
 				<File Id="640412345" Language="SFX">
 					<ShortName>SE_solve.wav</ShortName>
-					<Path>SFX\SE_solve_10C4C929.wem</Path>
+					<Path>SFX\SE_solve_6B3EEAC5.wem</Path>
 				</File>
 				<File Id="689704170" Language="SFX">
 					<ShortName>Footsteps_Wood.wav</ShortName>
@@ -148,14 +163,6 @@
 				<File Id="827277883" Language="SFX">
 					<ShortName>Footsteps_Wood_4.wav</ShortName>
 					<Path>SFX\Footsteps_Wood_4_10C4C929.wem</Path>
-				</File>
-				<File Id="862268755" Language="SFX">
-					<ShortName>Portal_Ambient.wav</ShortName>
-					<Path>SFX\Portal_Ambient_10C4C929.wem</Path>
-				</File>
-				<File Id="877330443" Language="SFX">
-					<ShortName>Cat_Meow.wav</ShortName>
-					<Path>SFX\Cat_Meow_10C4C929.wem</Path>
 				</File>
 				<File Id="887464685" Language="SFX">
 					<ShortName>Wind_Ambience.wav</ShortName>
@@ -189,9 +196,7 @@
 			<Path>Voices.bnk</Path>
 			<IncludedEvents>
 				<Event Id="1508371255" Name="cat_random" ObjectPath="\Events\Default Work Unit\Cat\cat_random" MaxAttenuation="15.000000" DurationType="Infinite"/>
-				<Event Id="3589155492" Name="CatSwitchSound" ObjectPath="\Events\Default Work Unit\Cat\CatSwitchSound" DurationType="OneShot" DurationMin="1.339342" DurationMax="1.339342"/>
 				<Event Id="2136553153" Name="OliverSwitchSound" ObjectPath="\Events\Default Work Unit\Oliver\OliverSwitchSound" DurationType="OneShot" DurationMin="2.210295" DurationMax="2.210295"/>
-				<Event Id="1041426236" Name="StayThereCat" ObjectPath="\Events\Default Work Unit\Cat\StayThereCat" DurationType="OneShot" DurationMin="0.762585" DurationMax="0.762585"/>
 				<Event Id="4294117557" Name="StayThereOliver" ObjectPath="\Events\Default Work Unit\Oliver\Voice\StayThereOliver" DurationType="OneShot" DurationMin="0.478435" DurationMax="0.478435"/>
 				<Event Id="3954690858" Name="WithinPuzzleZone" ObjectPath="\Events\Default Work Unit\Oliver\Voice\WithinPuzzleZone" DurationType="OneShot" DurationMin="0.406808" DurationMax="1.234558"/>
 			</IncludedEvents>
@@ -211,10 +216,6 @@
 				<File Id="436406679" Language="SFX">
 					<ShortName>luke_huh (2).wav</ShortName>
 					<Path>SFX\luke_huh (2)_10C4C929.wem</Path>
-				</File>
-				<File Id="444177177" Language="SFX">
-					<ShortName>Cat_Mrow_01.wav</ShortName>
-					<Path>SFX\Cat_Mrow_01_10C4C929.wem</Path>
 				</File>
 				<File Id="557928960" Language="SFX">
 					<ShortName>Hmm\Oliver_hmm_02.wav</ShortName>
@@ -236,10 +237,6 @@
 					<ShortName>luke_oh (1).wav</ShortName>
 					<Path>SFX\luke_oh (1)_10C4C929.wem</Path>
 				</File>
-				<File Id="877330443" Language="SFX">
-					<ShortName>Cat_Meow.wav</ShortName>
-					<Path>SFX\Cat_Meow_10C4C929.wem</Path>
-				</File>
 				<File Id="961772748" Language="SFX">
 					<ShortName>cat noises\Cat Meow2.wav</ShortName>
 					<Path>SFX\cat noises\Cat Meow2_10C4C929.wem</Path>
@@ -251,6 +248,7 @@
 			<ShortName>Music</ShortName>
 			<Path>Music.bnk</Path>
 			<IncludedEvents>
+				<Event Id="2765306547" Name="FishWin" ObjectPath="\Events\Default Work Unit\Puzzles\KoiFish\FishWin" DurationType="OneShot" DurationMin="3.806111" DurationMax="3.806111"/>
 				<Event Id="202194903" Name="Music_Play" ObjectPath="\Events\Default Work Unit\Scene\Music_Play" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="309205993" Name="Title_Music" ObjectPath="\Events\Default Work Unit\Scene\Title_Music" DurationType="Infinite"/>
 			</IncludedEvents>
@@ -265,7 +263,7 @@
 				</File>
 				<File Id="423372702" Language="SFX">
 					<ShortName>shakuhachi-flute-play.wav</ShortName>
-					<Path>SFX\shakuhachi-flute-play_10C4C929.wem</Path>
+					<Path>SFX\shakuhachi-flute-play_CFA0A9CF.wem</Path>
 				</File>
 				<File Id="541310400" Language="SFX">
 					<ShortName>bgm_Broad_Strokes.wav</ShortName>

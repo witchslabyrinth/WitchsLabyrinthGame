@@ -7,7 +7,14 @@ using Yarn.Unity;
 public class LiarCommands : MonoBehaviour
 {
 
+    [Header("Wwise")]
+    /// <summary>
+    /// Set Wwise variables
+    /// </summary>
+    /// <param name="paused">Set Wwise variables for sounds here</param>
     public AK.Wwise.Event puzzleSolved;
+    /// <summary>
+ 
 
     // Drag and drop your Dialogue Runner into this variable.
     [SerializeField]
