@@ -14,7 +14,7 @@
 							<PropertyList>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-8</Value>
+										<Value>-13</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -40,7 +40,7 @@
 							<PropertyList>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-11</Value>
+										<Value>-15</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -159,7 +159,7 @@
 							<PropertyList>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-7</Value>
+										<Value>-20</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -185,7 +185,7 @@
 							<PropertyList>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-9</Value>
+										<Value>-20</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -211,7 +211,7 @@
 							<PropertyList>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-10</Value>
+										<Value>-20</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -237,7 +237,7 @@
 							<PropertyList>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-6</Value>
+										<Value>-20</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -251,6 +251,11 @@
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="SE_solve" ID="{12A73EF4-18AA-4ECD-A5CD-8D8E6DD64AF9}" ShortID="640412345">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.893454155198976"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimEnd" Type="Real64" Value="2.17391251666061"/>
+									</PropertyList>
 									<Language>SFX</Language>
 									<AudioFile>SE_solve.wav</AudioFile>
 								</AudioFileSource>
@@ -282,7 +287,7 @@
 								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-17</Value>
+										<Value>11</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -357,6 +362,11 @@
 														<Value>36</Value>
 													</ValueList>
 												</Property>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>1</Value>
+													</ValueList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
@@ -386,6 +396,11 @@
 												<Property Name="Lowpass" Type="int16">
 													<ValueList>
 														<Value>34</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>1</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -419,6 +434,11 @@
 														<Value>35</Value>
 													</ValueList>
 												</Property>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>1</Value>
+													</ValueList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
@@ -448,6 +468,11 @@
 												<Property Name="Lowpass" Type="int16">
 													<ValueList>
 														<Value>22</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>1</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -489,6 +514,13 @@
 									</ReferenceList>
 									<ChildrenList>
 										<Sound Name="Footsteps_Wood" ID="{F379A041-8B32-454C-AE03-88E70C27CC17}" ShortID="55997861">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-1</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{24C7AD02-E66A-4B4B-8735-0AC29636FC00}"/>
@@ -508,6 +540,13 @@
 											</ActiveSourceList>
 										</Sound>
 										<Sound Name="Footsteps_Wood_3" ID="{A0E7C02B-A6E5-4643-8064-71EEC826ED07}" ShortID="212159750">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-1</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{24C7AD02-E66A-4B4B-8735-0AC29636FC00}"/>
@@ -527,6 +566,13 @@
 											</ActiveSourceList>
 										</Sound>
 										<Sound Name="Footsteps_Wood_4" ID="{825E685B-2215-49BD-8379-59E1829E4DE0}" ShortID="342349992">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-1</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{24C7AD02-E66A-4B4B-8735-0AC29636FC00}"/>
@@ -546,6 +592,13 @@
 											</ActiveSourceList>
 										</Sound>
 										<Sound Name="Footsteps_Wood_2" ID="{6ED8CC2E-3EF5-4C79-ADB0-CA4171193C10}" ShortID="416361838">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-1</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{24C7AD02-E66A-4B4B-8735-0AC29636FC00}"/>
@@ -594,6 +647,7 @@
 						</SwitchContainer>
 					</ChildrenList>
 				</Folder>
+				<WorkUnit Name="Portal" ID="{4C439619-C663-4011-B2C4-F2BDFDE501D1}" PersistMode="Reference"/>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

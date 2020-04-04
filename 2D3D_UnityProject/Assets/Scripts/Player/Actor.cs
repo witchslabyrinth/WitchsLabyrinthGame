@@ -129,7 +129,9 @@ public class Actor : MonoBehaviour
         moveStatus = 0;
         inTopView = false;
 
-        StartCoroutine(PlayFootstep());
+        // Start footstep coroutine
+        if (playFootstepCoroutine == null)
+            playFootstepCoroutine = StartCoroutine(PlayFootstep());
     }
 
     private void FixedUpdate()
@@ -181,14 +183,15 @@ public class Actor : MonoBehaviour
         return moveVector;
     }
 
+    private Coroutine playFootstepCoroutine;
     private IEnumerator PlayFootstep()
     {
         while (true)
         {
-            if (moveStatus == 1 && PlayerController.Instance.GetPlayer() == this) {
+            // Play footsteps when player is walking/running
+            if(moveStatus >= 1 && PlayerController.Instance.GetPlayer() == this) {
                 AkSoundEngine.PostEvent("Footsteps", gameObject);
             }
-
             yield return new WaitForSeconds(footstepFrequency);
         }
     }
@@ -222,6 +225,10 @@ public class Actor : MonoBehaviour
     public void Enable()
     {
         SetActive(true);
+
+        // Turn footsteps back on
+        if(playFootstepCoroutine == null)
+            playFootstepCoroutine = StartCoroutine(PlayFootstep());
     }
 
     /// <summary>
@@ -230,6 +237,10 @@ public class Actor : MonoBehaviour
     public void Disable()
     {
         SetActive(false);
+
+        // Turn off footsteps (should be taken care of by gameObject.SetActive(), but just in case)
+        StopCoroutine(playFootstepCoroutine);
+        playFootstepCoroutine = null;
     }
 
     /// <summary>

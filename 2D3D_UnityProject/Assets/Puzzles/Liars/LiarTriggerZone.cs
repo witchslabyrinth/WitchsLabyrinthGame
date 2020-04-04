@@ -5,6 +5,15 @@ using Yarn.Unity.Example;
 
 public class LiarTriggerZone : MonoBehaviour
 {
+
+     [Header("Wwise")]
+    /// <summary>
+    /// Set Wwise variables
+    /// </summary>
+    /// <param name="paused">Set Wwise variables for sounds here</param>
+    public AK.Wwise.Event Interact;
+    /// <summary>
+
     private NPC npcScript;
 
     [SerializeField]
@@ -28,5 +37,7 @@ public class LiarTriggerZone : MonoBehaviour
         if (controller != null)
             controller.SetInDialogueZone(false, npcScript, dialogueCam);
         Debug.Log("Leaving conversation with " + npcScript.characterName);
+        Interact.Post(gameObject); //Wwise
+
     }
 }
