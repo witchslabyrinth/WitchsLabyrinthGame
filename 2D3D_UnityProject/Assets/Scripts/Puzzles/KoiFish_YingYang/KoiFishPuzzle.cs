@@ -5,6 +5,20 @@ using UnityEngine.UI;
 
 public class KoiFishPuzzle : Singleton<KoiFishPuzzle>
 {
+   
+   [Header("Wwise")]
+    /// <summary>
+    /// Set Wwise variables
+    /// </summary>
+    /// <param name="paused">Set Wwise variables for sounds here</param>
+    public AK.Wwise.Event Fish1;
+    public AK.Wwise.Event FishWin;
+    public AK.Wwise.Event FishLose;
+    /// <summary>
+
+   
+   
+   
     //n8-bit 2/11/2020
     /// <summary>
     /// This code activates the dev cheat to solve the Koi Fish puzzle upon pressing 9
@@ -76,6 +90,7 @@ public class KoiFishPuzzle : Singleton<KoiFishPuzzle>
             if (timeRemaining < 0)
             {
                 Debug.Log("Time ran out, resetting puzzle");
+                FishLose.Post(gameObject); //Wwise
                 ResetPuzzle();
             }
             // Log time remaining to console
@@ -105,11 +120,13 @@ public class KoiFishPuzzle : Singleton<KoiFishPuzzle>
 
         // Feed fish (pass order it was fed in)
         fish.Feed(currentFishNumber);
+        Fish1.Post(gameObject); //Wwise
 
         // Reset puzzle if player fed wrong fish
         if (fish != nextFishToFeed)
         {
             Debug.Log("Fed wrong fish - resetting puzzle");
+            
             ResetPuzzle();
             return;
         }
@@ -119,7 +136,9 @@ public class KoiFishPuzzle : Singleton<KoiFishPuzzle>
         if (index == koiFishFeedingOrder.Count-1)
         {
             Debug.LogWarning("You solved the puzzle!");
+            FishWin.Post(gameObject); //Wwise
             ResetPuzzle();
+            
         }
 
         // Otherwise assign the next fish in order

@@ -5,10 +5,10 @@
 			<ChildrenList>
 				<Event Name="OnMenuOpen" ID="{951C01C8-2F3E-4345-978B-0329C1F64F17}">
 					<ChildrenList>
-						<Action Name="" ID="{3172A10C-CA2A-40F6-9349-5C4EEEA356C9}" ShortID="287252108">
+						<Action Name="" ID="{20910437-E793-4570-96F5-9965D6515BCE}" ShortID="23124255">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="UI_OpenMenu" ID="{7A3F651A-24D2-40ED-8B2B-3F312EAA181A}" WorkUnitID="{F35C23EA-DF72-4530-971C-FBEBF715C8AD}"/>
+									<ObjectRef Name="SE_open" ID="{1493F9AE-6834-4977-8CC9-D4262943D9D9}" WorkUnitID="{F35C23EA-DF72-4530-971C-FBEBF715C8AD}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -16,10 +16,10 @@
 				</Event>
 				<Event Name="OnMenuClose" ID="{FEFDC2B0-1F82-4D1D-877A-0E550088C4FB}">
 					<ChildrenList>
-						<Action Name="" ID="{6E16C62C-3C94-471D-BCB0-98F6666F30E9}" ShortID="192499663">
+						<Action Name="" ID="{E8486335-B9FD-4CB5-B06C-5F36252DC91C}" ShortID="295041913">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="UI_Menu" ID="{B198421B-0D6B-4BFD-B4AA-1DF5734340E4}" WorkUnitID="{F35C23EA-DF72-4530-971C-FBEBF715C8AD}"/>
+									<ObjectRef Name="UI_Exit" ID="{A831CC62-CA02-485E-BF0D-E9822CA00C21}" WorkUnitID="{F35C23EA-DF72-4530-971C-FBEBF715C8AD}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -27,10 +27,10 @@
 				</Event>
 				<Event Name="OnMenuHover" ID="{FFB6B4CC-5159-4634-96B0-8A017E95393E}">
 					<ChildrenList>
-						<Action Name="" ID="{4DBDB1B8-98BD-4B7B-9987-FB76251A3FF0}" ShortID="289853800">
+						<Action Name="" ID="{A2B74289-C0C5-4552-88EE-87C2FF9E2378}" ShortID="373837053">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="UI_Hover" ID="{A9A8197C-F75A-4209-B57B-CA8613B3A93A}" WorkUnitID="{F35C23EA-DF72-4530-971C-FBEBF715C8AD}"/>
+									<ObjectRef Name="SE_hover" ID="{207A9C2E-7A3D-4032-8F61-1CB387E0EED6}" WorkUnitID="{F35C23EA-DF72-4530-971C-FBEBF715C8AD}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -38,10 +38,10 @@
 				</Event>
 				<Event Name="OnMenuSelect" ID="{92C79FCB-0BC9-4344-9DBF-DA2317A48BE3}">
 					<ChildrenList>
-						<Action Name="" ID="{8994BCDB-78F8-4AF4-9415-30A915348524}" ShortID="437385042">
+						<Action Name="" ID="{615C66DB-74C1-4745-8306-0A852DE16BC5}" ShortID="1053231548">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="UI_Select" ID="{4E6836DC-D38E-47F2-B04D-0EAF619C6D86}" WorkUnitID="{F35C23EA-DF72-4530-971C-FBEBF715C8AD}"/>
+									<ObjectRef Name="SE_confirm" ID="{8302E76B-20FC-4CE8-83B8-BF2BC5B1748E}" WorkUnitID="{F35C23EA-DF72-4530-971C-FBEBF715C8AD}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

@@ -61,6 +61,15 @@ public class Actor : MonoBehaviour
     /// </summary>
     public Movement movement;
 
+    [Header("Footstep Settings")]
+
+    /// <summary>
+    /// Controls how often footstep sound effect plays
+    /// </summary>
+    [Range(0,1)]
+    [SerializeField]
+    private float footstepFrequency = .5f;
+
     /// <summary>
     /// For updating animations, stores whether or not player is using top view
     /// </summary>
@@ -119,6 +128,10 @@ public class Actor : MonoBehaviour
 
         moveStatus = 0;
         inTopView = false;
+
+        // Start footstep coroutine
+        if (playFootstepCoroutine == null)
+            playFootstepCoroutine = StartCoroutine(PlayFootstep());
     }
 
     private void FixedUpdate()
@@ -170,6 +183,19 @@ public class Actor : MonoBehaviour
         return moveVector;
     }
 
+    private Coroutine playFootstepCoroutine;
+    private IEnumerator PlayFootstep()
+    {
+        while (true)
+        {
+            // Play footsteps when player is walking/running
+            if(moveStatus >= 1 && PlayerController.Instance.GetPlayer() == this) {
+                AkSoundEngine.PostEvent("Footsteps", gameObject);
+            }
+            yield return new WaitForSeconds(footstepFrequency);
+        }
+    }
+
     private void Animate()
     {
         // Get movement direction as a unit vector (corresponds to player inputs, ignoring invalid movement directions)
@@ -199,6 +225,10 @@ public class Actor : MonoBehaviour
     public void Enable()
     {
         SetActive(true);
+
+        // Turn footsteps back on
+        if(playFootstepCoroutine == null)
+            playFootstepCoroutine = StartCoroutine(PlayFootstep());
     }
 
     /// <summary>
@@ -207,6 +237,10 @@ public class Actor : MonoBehaviour
     public void Disable()
     {
         SetActive(false);
+
+        // Turn off footsteps (should be taken care of by gameObject.SetActive(), but just in case)
+        StopCoroutine(playFootstepCoroutine);
+        playFootstepCoroutine = null;
     }
 
     /// <summary>
