@@ -25,8 +25,11 @@ public class CameraTrigger : MonoBehaviour
     /// </summary>
     private List<Actor> actorsInTrigger = new List<Actor>();
 
+    #region singleton_references
     private PerspectiveController perspectiveController => PerspectiveController.Instance;
     private CameraController cameraController => CameraController.Instance;
+    private PlayerController playerController => PlayerController.Instance;
+    #endregion
 
     void Awake()
     {
@@ -45,9 +48,9 @@ public class CameraTrigger : MonoBehaviour
             return;
 
         // If player is in trigger zone, make sure we're using the referenced camera (handles actor swapping)
-        Actor player = PlayerController.Instance.GetPlayer();
+        Actor player = playerController.GetPlayer();
         if (actorsInTrigger.Contains(player) && cameraController.GetMainCamera() == player.actorCamera) {
-            SwitchToCamera(player);
+            SwitchToReferencedCamera(player);
         }
     }
 
@@ -60,11 +63,9 @@ public class CameraTrigger : MonoBehaviour
         // Track actor in bounds
         actorsInTrigger.Add(actor);
 
-        // If this is the player, switch to the referenced camera
-        if (actor == PlayerController.Instance.GetPlayer())
-        {
-            SwitchToCamera(actor);
-        }
+        // If player entered trigger, switch to the referenced camera
+        if (actor == playerController.GetPlayer())
+            SwitchToReferencedCamera(actor);
     }
 
     private void OnTriggerExit(Collider other)
@@ -76,27 +77,33 @@ public class CameraTrigger : MonoBehaviour
         // Stop tracking this actor
         actorsInTrigger.Remove(actor);
 
-        // If this is the player, switch back to actor camera
-        if (actor == PlayerController.Instance.GetPlayer())
-        {
-            cameraController.SetMainCamera(actor.actorCamera);
-
-            // Set actor to 3rd person perspective
-            Perspective thirdPersonPerspective = perspectiveController.GetPerspectiveByType(OldCameraController.CameraViews.THIRD_PERSON);
-            perspectiveController.SetPerspective(actor, thirdPersonPerspective);
-        }
+        // If player left trigger, switch back to actor camera
+        if (actor == playerController.GetPlayer())
+            SwitchToActorCamera(actor);
     }
 
     /// <summary>
     /// Switches to referenced camera, updating actor movement/animation accordingly
     /// </summary>
-    /// <param name="actor"></param>
-    private void SwitchToCamera(Actor actor)
+    /// <param name="player">Player actor</param>
+    private void SwitchToReferencedCamera(Actor player)
     {
         // Set player movement/animation to match this camera's pespective
-        perspectiveController.SetPerspective(actor, perspectiveController.GetPerspectiveByType(cameraView));
+        perspectiveController.SetPerspective(player, perspectiveController.GetPerspectiveByType(cameraView));
 
         // Switch to specified camera
         cameraController.SetMainCamera(camera);
+    }
+    
+    /// <summary>
+    /// Restores control to actor camera
+    /// </summary>
+    /// <param name="player">Player actor</param>
+    private void SwitchToActorCamera(Actor player)
+    {
+        cameraController.SetMainCamera(player.actorCamera);
+
+        // Set actor to 3rd person perspective
+        perspectiveController.SetPerspective(player, perspectiveController.GetPerspectiveByType(OldCameraController.CameraViews.THIRD_PERSON));
     }
 }
