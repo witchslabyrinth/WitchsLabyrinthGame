@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 82394517}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.22, y: -0.49, z: -1.6}
+  m_LocalPosition: {x: -18.9, y: -0.49, z: -16.4}
   m_LocalScale: {x: 2, y: 0.2, z: 2}
   m_Children: []
   m_Father: {fileID: 4336892303693815517}
@@ -135,7 +135,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 541874475}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.94, y: -0.56, z: 4.36}
+  m_LocalPosition: {x: -14.2, y: -0.56, z: 15.6}
   m_LocalScale: {x: 2, y: 0.2, z: 2}
   m_Children: []
   m_Father: {fileID: 4336892303693815517}
@@ -242,7 +242,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1778993040}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.58, y: -0.607, z: 1.14}
+  m_LocalPosition: {x: -21.3, y: -0.607, z: 16.5}
   m_LocalScale: {x: 2, y: 0.2, z: 2}
   m_Children: []
   m_Father: {fileID: 4336892303693815517}
@@ -376,15 +376,18 @@ MonoBehaviour:
   Fish1:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 54c8793a9c2c0e340a9012f12a095a81,
+      type: 2}
   FishWin:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 335d7c95d300b394a8bc2bdacc820a37,
+      type: 2}
   FishLose:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 82c1b4517237f57449824be036a5a9c5,
+      type: 2}
   koiFishFeedingOrder:
   - {fileID: 4336892304538896218}
   - {fileID: 1695647121906843341}
@@ -848,7 +851,7 @@ PrefabInstance:
     - target: {fileID: 3145652739638300820, guid: c70da449cea496f43a91f05df312e485,
         type: 3}
       propertyPath: feedDuration
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3145652739638300820, guid: c70da449cea496f43a91f05df312e485,
         type: 3}
@@ -1010,7 +1013,7 @@ PrefabInstance:
     - target: {fileID: 3145652739638300820, guid: c70da449cea496f43a91f05df312e485,
         type: 3}
       propertyPath: feedDuration
-      value: 2.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3145652739638300820, guid: c70da449cea496f43a91f05df312e485,
         type: 3}
