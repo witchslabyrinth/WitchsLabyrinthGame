@@ -95,6 +95,9 @@ public class PerspectiveController : Singleton<PerspectiveController>
     /// <param name="player">Player actor to update perspective for</param>
     public void UpdatePerspective(Actor player)
     {
+        if (!player.canSwitchPerspectives)
+            return;
+
         // Check each button in KeyCode -> camera perspective mapping
         foreach(KeyCode key in buttonPerspectiveMapping.Keys) 
         {
@@ -112,9 +115,8 @@ public class PerspectiveController : Singleton<PerspectiveController>
                     continue;
                 }
 
-                
+                // Set perspective and break from loop
                 SetPerspective(player, perspective);
-
                 return;
             }
         }

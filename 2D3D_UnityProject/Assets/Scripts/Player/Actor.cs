@@ -88,12 +88,19 @@ public class Actor : MonoBehaviour
         this.movement = movement;
     }
 
+    [Header("Perspective Settings")]
+
     /// <summary>
     /// Current perspective used for this actor (remains unchanged when not player-controlled)
     /// </summary>
     /// <value></value>
     public Perspective perspective;
-    
+
+    /// <summary>
+    /// Determines whether this actor currently allows player to switch perspectives
+    /// </summary>
+    public bool canSwitchPerspectives = true;
+
     void Awake()
     {
         // Get components in Awake() before other scripts request them in Start()

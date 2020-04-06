@@ -21,6 +21,12 @@ public class CameraTrigger : MonoBehaviour
     private OldCameraController.CameraViews cameraView;
 
     /// <summary>
+    /// If true, player won't be able to switch perspectives inside the trigger
+    /// </summary>
+    [SerializeField]
+    private bool restrictPerspectiveSwitching = true;
+
+    /// <summary>
     /// Used to track actors within trigger bounds
     /// </summary>
     private List<Actor> actorsInTrigger = new List<Actor>();
@@ -63,6 +69,9 @@ public class CameraTrigger : MonoBehaviour
         // Track actor in bounds
         actorsInTrigger.Add(actor);
 
+        // Prevent actor from changing perspectives if specified
+        actor.canSwitchPerspectives = !restrictPerspectiveSwitching;
+
         // If player entered trigger, switch to the referenced camera
         if (actor == playerController.GetPlayer())
             SwitchToReferencedCamera(actor);
@@ -74,8 +83,9 @@ public class CameraTrigger : MonoBehaviour
         if (!other.TryGetComponent(out Actor actor))
             return;
 
-        // Stop tracking this actor
+        // Stop tracking this actor, and restore perspective switching
         actorsInTrigger.Remove(actor);
+        actor.canSwitchPerspectives = true;
 
         // If player left trigger, switch back to actor camera
         if (actor == playerController.GetPlayer())
