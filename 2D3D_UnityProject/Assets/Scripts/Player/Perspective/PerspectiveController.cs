@@ -112,11 +112,6 @@ public class PerspectiveController : Singleton<PerspectiveController>
                     continue;
                 }
 
-                // Tell animator if we're using the top-down perspective (so it displays appropriate sprites)
-                if(perspective.cameraView == OldCameraController.CameraViews.TOP)
-                    PlayerController.Instance.GetPlayer().SetTopView(true);
-                else
-                    PlayerController.Instance.GetPlayer().SetTopView(false);
                 
                 SetPerspective(player, perspective);
 
@@ -132,6 +127,9 @@ public class PerspectiveController : Singleton<PerspectiveController>
 
         // Update actor with associated movement scheme
         player.SetMovement(perspective.movement);
+
+        // Tell actor if we're using the top-down perspective (so animator displays appropriate sprites)
+        player.SetTopView(perspective.cameraView == OldCameraController.CameraViews.TOP);
 
         // Apply camera perspective to player actor
         player.actorCamera.SetPerspective(perspective);
