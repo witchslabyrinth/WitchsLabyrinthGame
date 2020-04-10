@@ -17,23 +17,23 @@ public class TopDownMovement : Movement
         // Up/Down = change in Z
         if (Input.GetKey(KeyCode.W))
         {
-            movement += Vector3.forward;
+            movement += Vector3.left;
         }
 
         if (Input.GetKey(KeyCode.S))
         {
-            movement += Vector3.back;
+            movement += Vector3.right;
         }
 
         // Left/Right = change in X
         if (Input.GetKey(KeyCode.A))
         {
-            movement += Vector3.left;
+            movement += Vector3.back;
         }
 
         if (Input.GetKey(KeyCode.D))
         {
-            movement += Vector3.right;
+            movement += Vector3.forward;
         }
 
         return movement.normalized;
