@@ -19,12 +19,22 @@ public class DetectHouseEnter : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //Depending on who entered the House, we need to bring the other one inside too, otherwise the other one will be trapped outside.
-        if(other.gameObject == Oliver)
+        if (other.gameObject == Oliver)
         {
+            //If the player is not controlling this, then do nothing and exit the function
+            if (!PlayerController.Instance.GetPlayer().Equals(other.GetComponent<Actor>()))
+            {
+                return;
+            }
             MoveBesideOtherActor(Cat, Oliver);
         }
         else if(other.gameObject == Cat)
         {
+            //If the player is not controlling this, then do nothing and exit the function
+            if (!PlayerController.Instance.GetPlayer().Equals(other.GetComponent<Actor>()))
+            {
+                return;
+            }
             MoveBesideOtherActor(Oliver, Cat);
         }
         //If the collision is with neither of the actors, then ignore the collision, otherwise we'll get both trapped outside.
@@ -33,6 +43,8 @@ public class DetectHouseEnter : MonoBehaviour
             return;
         }
         //Start the doors closing
+        Debug.Log("Enter Triggered");
+        //doorsToClose.StopAllCoroutines();
         doorsToClose.Close();
         //Activate a trigger zone that will detect if the player exits the house while the doors are closing. If they do, the doors will open again. This will prevent the player from getting stuck outside.
         HouseExitTriggerZone.SetActive(true);
