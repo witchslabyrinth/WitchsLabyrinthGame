@@ -91,6 +91,17 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="cat_random" ID="{BF08D408-733B-4B79-818A-B425A38439CF}">
+							<ChildrenList>
+								<Action Name="" ID="{390B44AB-5746-41E2-A05F-2E5F38CE8D84}" ShortID="820627691">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="cat_random" ID="{A264DE9B-8334-4B3F-B2A8-2B80561E727C}" WorkUnitID="{713C05F8-2814-4EDA-B3B2-F621186647E9}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Witch" ID="{08175C69-0559-4E0B-BA88-1F8E84DC2C65}" ShortID="288048569">
@@ -165,19 +176,106 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Folder Name="Block" ID="{7B33FB6B-7669-4626-9892-B8BE5D9B7835}" ShortID="762022104">
+							<ChildrenList>
+								<Event Name="Move" ID="{D6D595B4-F89B-49DF-B9A4-5A6A31BE2384}">
+									<ChildrenList>
+										<Action Name="" ID="{58E14663-CE60-448D-9CE3-E81ED300CBB1}" ShortID="613797098">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Block_Interact" ID="{2C03F99E-A66B-441F-A6D5-0E570610C0E1}" WorkUnitID="{787AA6C8-A80B-4C2F-B9CE-E9178ECBB4E3}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Win" ID="{E5023BE3-EB4B-4621-9653-93AF57BEBE35}">
+									<ChildrenList>
+										<Action Name="" ID="{0AB7DB28-61EB-4804-B5E5-2D3A8BA23D39}" ShortID="63262598">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SE_solve" ID="{AE2958FD-D12E-400C-8E5B-0E5A6016E51A}" WorkUnitID="{F35C23EA-DF72-4530-971C-FBEBF715C8AD}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Rotate" ID="{C680FEEF-B2A3-42E8-9530-B61F7D5B3FEF}"/>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="Portal" ID="{E4CC9677-B73B-4819-8B41-591959A22380}" ShortID="688804157">
+							<ChildrenList>
+								<Event Name="Activate" ID="{CE419CC5-8ABB-45F8-81B5-4CC0D1BA071A}">
+									<ChildrenList>
+										<Action Name="" ID="{5338DC75-DCCC-4C14-A585-19AFDFD392DF}" ShortID="986456085">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Portal_Activate" ID="{8B4732D0-AF70-4F8D-8D02-A1EC04C10305}" WorkUnitID="{787AA6C8-A80B-4C2F-B9CE-E9178ECBB4E3}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="Liars" ID="{937CF271-15AA-4826-8F39-98378F1EFBD7}" ShortID="857120500">
+							<ChildrenList>
+								<Event Name="Interact" ID="{BDBD5DAC-B84D-4411-9290-D6CB9C112742}">
+									<ChildrenList>
+										<Action Name="" ID="{4642621D-1902-41AE-83B1-8EAE18968BAE}" ShortID="895356183">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Interact_String" ID="{821447EC-7087-471E-9DF5-BD4E533A28A4}" WorkUnitID="{787AA6C8-A80B-4C2F-B9CE-E9178ECBB4E3}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="KoiFish" ID="{55F41174-490A-49E1-954D-DB9EC52170F9}" ShortID="926972926">
+							<ChildrenList>
+								<Event Name="FishMove" ID="{C9681A5D-942C-4637-895A-08875049A3B1}">
+									<ChildrenList>
+										<Action Name="" ID="{2C6E4EAE-034F-4802-BBDE-CB0EF40C5D0B}" ShortID="870324950">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="FishBubble" ID="{68A90EF7-E10D-4251-8960-002885869355}" WorkUnitID="{787AA6C8-A80B-4C2F-B9CE-E9178ECBB4E3}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="FishWin" ID="{D6F9A166-1FA3-4474-A47E-830958D64791}">
+									<ChildrenList>
+										<Action Name="" ID="{394C42F6-9147-49F6-99B7-CABB8E27CC82}" ShortID="675254559">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Flute" ID="{0DE8EDC3-DAB7-40F0-B031-CDC40E46682C}" WorkUnitID="{AC394B22-B424-42F1-91AE-4207A146B3EA}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="FishLose" ID="{C1B202A8-4062-425A-815B-2A31567A82B6}">
+									<ChildrenList>
+										<Action Name="" ID="{93775401-800A-49F4-8771-CB1C3F373A61}" ShortID="83833863">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Lose" ID="{6FD56852-352E-4B47-90CD-82FBF4E26AF1}" WorkUnitID="{787AA6C8-A80B-4C2F-B9CE-E9178ECBB4E3}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Pond" ID="{0B2DDE12-6B79-4122-917B-E9CDA08002EB}" ShortID="196801830">
 					<ChildrenList>
 						<Event Name="Pond_Sound" ID="{4F706652-FE23-4C55-B6AE-4A50A6021658}">
 							<ChildrenList>
-								<Action Name="" ID="{0BCD7506-BA11-4B03-AA59-E8F6CDBFB27D}" ShortID="209382656">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="Pond_Sounds" ID="{A87913E5-E67D-4449-8819-07395282C698}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
 								<Action Name="" ID="{6BF51797-31E1-46A3-AB49-585373EDD7A0}" ShortID="841276064">
 									<ReferenceList>
 										<Reference Name="Target">
@@ -197,6 +295,44 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="Wind_Ambience" ID="{ABE486B4-B892-4025-A8B7-09599F4A1900}" WorkUnitID="{1BAF4E43-D480-476A-8D94-BA81CA478199}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Water" ID="{6057F958-19D3-4970-B752-13D0C3847B2C}"/>
+						<Event Name="lantern_idle" ID="{2AC0AA5A-271B-4012-844E-FF60CC61AD25}">
+							<ChildrenList>
+								<Action Name="" ID="{F9F6FDCD-751B-4CA3-9BD4-37FC2D378BBA}" ShortID="569329879">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="lantern_idle_crackle" ID="{6A04E37E-8CA6-45A0-AAA7-9045CA58B684}" WorkUnitID="{1BAF4E43-D480-476A-8D94-BA81CA478199}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Event Name="Footsteps" ID="{53927BFA-91DC-43E3-A019-6C34BADB5233}">
+					<ChildrenList>
+						<Action Name="" ID="{E2290330-AE87-4908-8B85-0DB82181213D}" ShortID="829624699">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Footsteps" ID="{11040218-C826-44FA-BC73-D15FD9E062AF}" WorkUnitID="{F35C23EA-DF72-4530-971C-FBEBF715C8AD}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Folder Name="Portal" ID="{FD9A07BD-82A5-4496-91D2-78CCC15B1817}" ShortID="976424001">
+					<ChildrenList>
+						<Event Name="AmbientPortal" ID="{212C5812-4041-40FD-9997-130F2A4DF1AE}">
+							<ChildrenList>
+								<Action Name="" ID="{9A674F23-6778-42CF-9DEB-5C3D92B6AEE2}" ShortID="380282778">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="PortalAmbient" ID="{772EC1A5-8B0B-4EE3-B9A4-84B98481F1C3}" WorkUnitID="{4C439619-C663-4011-B2C4-F2BDFDE501D1}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

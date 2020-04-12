@@ -156,6 +156,102 @@
 						<ActiveSource Name="dorime" ID="{2E6489DA-208E-4584-881A-A48DA82339C7}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
+				<Sound Name="san" ID="{1523027E-D5F4-4DB1-B683-272E7AECE52E}" ShortID="199580682">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{24C7AD02-E66A-4B4B-8735-0AC29636FC00}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CB9D8304-7AAA-4374-9412-CD9A3A2EDD3D}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="fuji-san" ID="{C641FF5B-0D79-4C09-B00E-5627C79DCB61}" ShortID="755843143">
+							<Language>SFX</Language>
+							<AudioFile>fuji-san.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="fuji-san" ID="{C641FF5B-0D79-4C09-B00E-5627C79DCB61}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="garden" ID="{6329EB28-521F-4817-AD1E-7B8662F634C0}" ShortID="204748239">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>3</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{24C7AD02-E66A-4B4B-8735-0AC29636FC00}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CB9D8304-7AAA-4374-9412-CD9A3A2EDD3D}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="garden-intro" ID="{4060B16B-7319-4D1E-8A34-FD3CFB86C0EE}" ShortID="154096204">
+							<Language>SFX</Language>
+							<AudioFile>garden-intro.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="garden-intro" ID="{4060B16B-7319-4D1E-8A34-FD3CFB86C0EE}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="koto_loop" ID="{9DF5844B-89DE-4888-BCAE-2BBEDBBB25DF}" ShortID="178116692">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{24C7AD02-E66A-4B4B-8735-0AC29636FC00}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CB9D8304-7AAA-4374-9412-CD9A3A2EDD3D}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="koto-and-shamisen-loop" ID="{36E2BB61-0106-4490-BA23-19284911DA28}" ShortID="569977151">
+							<Language>SFX</Language>
+							<AudioFile>koto-and-shamisen-loop.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="koto-and-shamisen-loop" ID="{36E2BB61-0106-4490-BA23-19284911DA28}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Flute" ID="{0DE8EDC3-DAB7-40F0-B031-CDC40E46682C}" ShortID="1010312386">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>12</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{24C7AD02-E66A-4B4B-8735-0AC29636FC00}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CB9D8304-7AAA-4374-9412-CD9A3A2EDD3D}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="shakuhachi-flute-play" ID="{7C6C0A27-E34C-458A-B0B6-37B21261ADA8}" ShortID="423372702">
+							<PropertyList>
+								<Property Name="FadeOutDuration" Type="Real64" Value="3.80611126822214"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimBegin" Type="Real64" Value="144.476832434068"/>
+								<Property Name="TrimEnd" Type="Real64" Value="148.28294370229"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>shakuhachi-flute-play.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="shakuhachi-flute-play" ID="{7C6C0A27-E34C-458A-B0B6-37B21261ADA8}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

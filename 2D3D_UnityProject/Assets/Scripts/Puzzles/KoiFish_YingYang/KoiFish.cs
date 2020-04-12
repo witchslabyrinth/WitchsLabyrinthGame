@@ -5,7 +5,9 @@ using UnityEngine;
 // Author: Drew Graham
 public class KoiFish : MonoBehaviour
 {
-    /// <summary>
+   
+
+
     /// Index of path animation to play (see animation controller for mapping)
     /// </summary>
     [Range(1, 3)]
@@ -82,6 +84,7 @@ public class KoiFish : MonoBehaviour
         // Play wrong animation if fed out of order
         if (animNumber != fishAnimationNumber) {
             Debug.Log(name + " | fed out of order");
+
         }
 
         // Fire path trigger and pass order fish was fed in
