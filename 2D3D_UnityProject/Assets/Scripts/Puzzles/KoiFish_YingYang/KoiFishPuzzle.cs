@@ -60,7 +60,7 @@ public class KoiFishPuzzle : Singleton<KoiFishPuzzle>
     /// <summary>
     /// Amount of time remaining to feed the fish - if this reaches 0 the puzzle is reset
     /// </summary>
-    private float timeRemaining;
+    private float timeRemaining = 0f;
 
     void Start()
     {
@@ -71,7 +71,7 @@ public class KoiFishPuzzle : Singleton<KoiFishPuzzle>
             Debug.LogErrorFormat("{0} | Error: correct fish-feeding order not specified. Please specify this order in {0}.koiFishFeedingOrder", name);
 
         // Set puzzle to initial state
-        ResetPuzzle();
+        nextFishToFeed = koiFishFeedingOrder[0];
     }
 
     /// <summary>
@@ -86,6 +86,9 @@ public class KoiFishPuzzle : Singleton<KoiFishPuzzle>
         if(!solved) {
             foreach(KoiFish fish in koiFishFeedingOrder)
                 fish.SetTrailActive(false);
+            
+            // Play failure sound effect
+            FishLose.Post(gameObject);
         }
     }
 
@@ -100,7 +103,6 @@ public class KoiFishPuzzle : Singleton<KoiFishPuzzle>
             if (timeRemaining < 0)
             {
                 Debug.Log("Time ran out, resetting puzzle");
-                FishLose.Post(gameObject); //Wwise
                 ResetPuzzle();
             }
             // Log time remaining to console
