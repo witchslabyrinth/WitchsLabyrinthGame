@@ -6,18 +6,22 @@ using UnityEngine.UI;
 public class KoiFishPuzzle : Singleton<KoiFishPuzzle>
 {
    
-   [Header("Wwise")]
-    /// <summary>
-    /// Set Wwise variables
-    /// </summary>
-    /// <param name="paused">Set Wwise variables for sounds here</param>
-    public AK.Wwise.Event Fish1;
-    public AK.Wwise.Event FishWin;
-    public AK.Wwise.Event FishLose;
-    /// <summary>
+    [Header("Wwise")]
 
-   
-   
+    /// <summary>
+    /// Played when player feeds a fish in order
+    /// </summary>
+    public AK.Wwise.Event Fish1;
+
+    /// <summary>
+    /// Played when player solves puzzle
+    /// </summary>
+    public AK.Wwise.Event FishWin;
+
+    /// <summary>
+    /// Played when player fails puzzle (runs out of time, or feeds wrong fish)
+    /// </summary>
+    public AK.Wwise.Event FishLose;
    
     /// <summary>
     /// True if puzzle has been solved, false otherwise
@@ -90,12 +94,6 @@ public class KoiFishPuzzle : Singleton<KoiFishPuzzle>
                 Debug.Log("Time ran out, resetting puzzle");
                 ResetPuzzle();
             }
-            // Log time remaining to console
-            else
-            {
-                string timeStr = $"{timeRemaining:0.00}";
-                //Debug.Log("Time remaining: " + timeStr);
-            }
         }
 
         //If we're in the editor, check for dev cheats input.
@@ -113,7 +111,6 @@ public class KoiFishPuzzle : Singleton<KoiFishPuzzle>
 
         // Feed fish (pass order it was fed in)
         fish.Feed(currentFishNumber);
-        Fish1.Post(gameObject); //Wwise
 
         // Reset puzzle if player fed wrong fish
         if (fish != nextFishToFeed)
@@ -124,6 +121,9 @@ public class KoiFishPuzzle : Singleton<KoiFishPuzzle>
             return;
         }
 
+        // Play sound effect for feeding correct fish
+        Fish1.Post(gameObject);
+
         // Check if player fed last fish in the order
         int index = koiFishFeedingOrder.IndexOf(fish);
         if (index == koiFishFeedingOrder.Count-1)
@@ -131,13 +131,17 @@ public class KoiFishPuzzle : Singleton<KoiFishPuzzle>
             // TODO: handle end-of-puzzle logic here
             Debug.LogWarning("You solved the puzzle!");
             solved = true;
-            FishWin.Post(gameObject); //Wwise
+
+            // Play puzzle complete sound effect
+            FishWin.Post(gameObject);
+
             ResetPuzzle();
         }
 
         // Otherwise assign the next fish in order
         else
         {
+            // Track next fish we should feed
             nextFishToFeed = koiFishFeedingOrder[index + 1];
             Debug.Log("Next fish: " + nextFishToFeed.name);
 
