@@ -34,6 +34,18 @@ public class CameraController : Singleton<CameraController>
         SetMainCamera(main);
 
         // TODO: disable all other Cameras in scene?
+        foreach(CameraEntity cameraEntity in GameObject.FindObjectsOfType<CameraEntity>())
+        {
+            if(cameraEntity != main)
+            {
+                Camera camera = cameraEntity.GetComponent<Camera>();
+                if(camera.isActiveAndEnabled)
+                {
+                    Debug.LogWarning($"CameraController | found an enabled camera \"{camera.name}\"not in use, disabling it now");
+                    camera.enabled = false;
+                }
+            }
+        }
     }
 
     void Update()
