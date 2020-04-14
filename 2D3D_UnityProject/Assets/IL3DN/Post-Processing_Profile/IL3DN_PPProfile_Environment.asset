@@ -17,8 +17,7 @@ MonoBehaviour:
   - {fileID: 114877922873275810}
   - {fileID: 114580363392588112}
   - {fileID: 114164252138188686}
-  - {fileID: 114724893383954526}
-  - {fileID: 7803699062917355442}
+  - {fileID: 114834197018425584}
 --- !u!114 &114164252138188686
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -31,7 +30,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40b924e2dad56384a8df2a1e111bb675, type: 3}
   m_Name: Vignette
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   enabled:
     overrideState: 1
     value: 1
@@ -130,10 +129,10 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 0.6
+    value: 1
   threshold:
     overrideState: 1
-    value: 0.3
+    value: 0.5
   softKnee:
     overrideState: 0
     value: 0.5
@@ -141,25 +140,25 @@ MonoBehaviour:
     overrideState: 0
     value: 65472
   diffusion:
-    overrideState: 1
-    value: 7.58
+    overrideState: 0
+    value: 7
   anamorphicRatio:
     overrideState: 0
     value: 0
   color:
-    overrideState: 1
+    overrideState: 0
     value: {r: 1, g: 1, b: 1, a: 1}
   fastMode:
     overrideState: 0
     value: 0
   dirtTexture:
     overrideState: 0
-    value: {fileID: 2800000, guid: cc9c988506523e54a9a95670de2c6b83, type: 3}
+    value: {fileID: 0}
     defaultState: 1
   dirtIntensity:
-    overrideState: 1
-    value: 200
---- !u!114 &114724893383954526
+    overrideState: 0
+    value: 0
+--- !u!114 &114834197018425584
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -174,16 +173,16 @@ MonoBehaviour:
   active: 0
   enabled:
     overrideState: 1
-    value: 0
+    value: 1
   _Density:
     overrideState: 1
-    value: 20
+    value: 1
   _NearColor:
     overrideState: 1
     value: {r: 1, g: 0.6745098, b: 0.41960785, a: 0}
   _FarColor:
     overrideState: 1
-    value: {r: 0.21176471, g: 0.5803922, b: 1, a: 0.39215687}
+    value: {r: 0.21176471, g: 0.5803922, b: 1, a: 0.4}
   _GlowColor:
     overrideState: 1
     value: {r: 0.24705882, g: 0.11764706, b: 0, a: 0}
@@ -242,32 +241,32 @@ MonoBehaviour:
     overrideState: 0
     value: 1
   temperature:
-    overrideState: 1
-    value: -5
+    overrideState: 0
+    value: 0
   tint:
-    overrideState: 1
-    value: -3
+    overrideState: 0
+    value: 0
   colorFilter:
-    overrideState: 1
-    value: {r: 0.9245283, g: 0.82736844, b: 0.6279815, a: 1}
+    overrideState: 0
+    value: {r: 1, g: 1, b: 1, a: 1}
   hueShift:
     overrideState: 0
     value: 0
   saturation:
     overrideState: 1
-    value: -3
+    value: 10
   brightness:
     overrideState: 0
     value: 0
   postExposure:
     overrideState: 1
-    value: 1.3
+    value: 1.5
   contrast:
     overrideState: 1
-    value: 13
+    value: 20
   mixerRedOutRedIn:
     overrideState: 1
-    value: 91
+    value: 105
   mixerRedOutGreenIn:
     overrideState: 1
     value: 0
@@ -294,13 +293,13 @@ MonoBehaviour:
     value: 100
   lift:
     overrideState: 1
-    value: {x: 0.630686, y: 0.67605567, z: 1, w: -0.21712908}
+    value: {x: 0.63616914, y: 0.6739184, z: 1, w: -0.21712908}
   gamma:
     overrideState: 1
     value: {x: 1, y: 0.75328946, z: 0.9048926, w: 0.000000003754769}
   gain:
     overrideState: 1
-    value: {x: 0.9882042, y: 1, z: 0.9676381, w: -5.1201265e-10}
+    value: {x: 1, y: 1, z: 1, w: -5.1201265e-10}
   masterCurve:
     overrideState: 0
     value:
@@ -1555,37 +1554,3 @@ MonoBehaviour:
       - 0.50555557
       - 0.50555557
       - 0.50555557
---- !u!114 &7803699062917355442
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 669bacfdaa8c8e24e9c632dc94ffdae4, type: 3}
-  m_Name: PostProcessOutline
-  m_EditorClassIdentifier: 
-  active: 1
-  enabled:
-    overrideState: 1
-    value: 1
-  scale:
-    overrideState: 1
-    value: 2
-  depthThreshold:
-    overrideState: 0
-    value: 1.5
-  normalThreshold:
-    overrideState: 1
-    value: 0.799
-  depthNormalThreshold:
-    overrideState: 0
-    value: 1
-  depthNormalThresholdScale:
-    overrideState: 1
-    value: 7
-  color:
-    overrideState: 1
-    value: {r: 0.1509434, g: 0.13807268, b: 0.11747953, a: 1}
