@@ -17,6 +17,14 @@ public class PerspectiveCameraControl : MonoBehaviour
     public Vector2 targetCharacterDirection;
     public float distance = 3f;
 
+    [SerializeField]
+    private float verticalClampMax;
+    [SerializeField]
+    private float verticalClampMin;
+
+    [SerializeField]
+    private Transform cameraPivot;
+
     public GameObject characterBody;
 
     private Vector3 startLocalPosition;
@@ -59,10 +67,14 @@ public class PerspectiveCameraControl : MonoBehaviour
             _mouseAbsolute.x = Mathf.Clamp(_mouseAbsolute.x, -clampInDegrees.x * 0.5f, clampInDegrees.x * 0.5f);
 
         // Then clamp and apply the global y value.
-        if (clampInDegrees.y < 360)
-            _mouseAbsolute.y = Mathf.Clamp(_mouseAbsolute.y, -clampInDegrees.y * 0.5f, clampInDegrees.y * 0.5f);
+        //if (clampInDegrees.y < 360)
+        //    _mouseAbsolute.y = Mathf.Clamp(_mouseAbsolute.y, -clampInDegrees.y * 0.5f, clampInDegrees.y * 0.5f);
 
-        transform.localRotation = Quaternion.AngleAxis(-_mouseAbsolute.y, targetOrientation * Vector3.right) * targetOrientation;
+        _mouseAbsolute.y = Mathf.Clamp(_mouseAbsolute.y, verticalClampMin, verticalClampMax);
+        Vector3 newPosition = new Vector3(transform.localPosition.x, verticalClampMax - _mouseAbsolute.y + verticalClampMin, transform.localPosition.z);
+        transform.localPosition = newPosition;
+        transform.LookAt(cameraPivot);
+        //transform.localRotation = Quaternion.AngleAxis(-_mouseAbsolute.y, targetOrientation * Vector3.right) * targetOrientation;
 
         // If there's a character body that acts as a parent to the camera
         if (characterBody)
@@ -77,19 +89,19 @@ public class PerspectiveCameraControl : MonoBehaviour
         }
     }
 
-    void LateUpdate()
-    {
+    //void LateUpdate()
+    //{
 
-        RaycastHit hit;
-        Debug.DrawRay(characterBody.transform.position, relativePosition, Color.blue);
-        if (Physics.Raycast(characterBody.transform.position, relativePosition, out hit, distance + 0.5f))
-        {
-            transform.position = new Vector3(hit.point.x + hit.normal.x * 0.5f, transform.position.y, hit.point.z + hit.normal.z * 0.5f);
-        }
-        else
-        {
-            transform.localPosition = startLocalPosition;
-            relativePosition = transform.position - characterBody.transform.position;
-        }
-    }
+    //    RaycastHit hit;
+    //    Debug.DrawRay(characterBody.transform.position, relativePosition, Color.blue);
+    //    if (Physics.Raycast(characterBody.transform.position, relativePosition, out hit, distance + 0.5f))
+    //    {
+    //        transform.position = new Vector3(hit.point.x + hit.normal.x * 0.5f, transform.position.y, hit.point.z + hit.normal.z * 0.5f);
+    //    }
+    //    else
+    //    {
+    //        transform.localPosition = startLocalPosition;
+    //        relativePosition = transform.position - characterBody.transform.position;
+    //    }
+    //}
 }
