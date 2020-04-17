@@ -15,12 +15,13 @@ public class PerspectiveCameraControl : MonoBehaviour
     public Vector2 smoothing = new Vector2(3, 3);
     public Vector2 targetDirection;
     public Vector2 targetCharacterDirection;
-    public float distance = 3f;
 
     [SerializeField]
     private float verticalClampMax;
     [SerializeField]
     private float verticalClampMin;
+    [SerializeField]
+    private float distanceFromPivot;
 
     [SerializeField]
     private Transform cameraPivot;
@@ -70,9 +71,27 @@ public class PerspectiveCameraControl : MonoBehaviour
         //if (clampInDegrees.y < 360)
         //    _mouseAbsolute.y = Mathf.Clamp(_mouseAbsolute.y, -clampInDegrees.y * 0.5f, clampInDegrees.y * 0.5f);
 
+        // Transform y position of camera based on y input
         _mouseAbsolute.y = Mathf.Clamp(_mouseAbsolute.y, verticalClampMin, verticalClampMax);
         Vector3 newPosition = new Vector3(transform.localPosition.x, verticalClampMax - _mouseAbsolute.y + verticalClampMin, transform.localPosition.z);
         transform.localPosition = newPosition;
+
+        // Raycast from pivot to camera to see if something is in the way
+        RaycastHit hit;
+        if (Physics.Raycast(cameraPivot.position, transform.position - cameraPivot.position, out hit, distanceFromPivot))
+        {
+            // If the raycast hit something, put the camera at the point of collision
+            transform.position = hit.point;
+        }
+        else
+        {
+            // If the raycast didn't
+            Vector3 pointToCamera = (transform.position - cameraPivot.position).normalized;
+            pointToCamera *= distanceFromPivot;
+            transform.position = cameraPivot.position + pointToCamera;
+        }
+
+        // Point camera at pivot
         transform.LookAt(cameraPivot);
         //transform.localRotation = Quaternion.AngleAxis(-_mouseAbsolute.y, targetOrientation * Vector3.right) * targetOrientation;
 
