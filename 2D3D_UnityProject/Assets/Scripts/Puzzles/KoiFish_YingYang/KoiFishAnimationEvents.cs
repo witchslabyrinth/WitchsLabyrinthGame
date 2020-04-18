@@ -24,4 +24,14 @@ public class KoiFishAnimationEvents : MonoBehaviour
     {
         fish.ToggleTrailActive();
     }
+
+    void EnableTrail()
+    {
+        fish.SetTrailActive(true);
+    }
+
+    void DisableTrail()
+    {
+        fish.SetTrailActive(false);
+    }
 }
