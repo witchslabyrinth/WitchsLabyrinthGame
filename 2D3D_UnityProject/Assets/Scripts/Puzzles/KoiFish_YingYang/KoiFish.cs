@@ -88,8 +88,7 @@ public class KoiFish : MonoBehaviour
         // Only enable particle trail if fed in correct order
         else
         {
-            // Fire path trigger and pass order fish was fed in
-            animator.SetInteger("ActivationOrder", animNumber);
+            // Start path animation
             animator.SetTrigger("PathTrigger");
 
             // TODO: remove this hack when fish path animations are made seamless so fish don't warp
