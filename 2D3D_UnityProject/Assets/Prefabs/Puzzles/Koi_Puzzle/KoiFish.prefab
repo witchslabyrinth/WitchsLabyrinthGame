@@ -4708,7 +4708,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10308, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
   - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -4797,7 +4797,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e59f4640a1247504aa3229990875e32d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishNumber: 1
+  fishAnimationNumber: 0
+  feedDuration: 0
   trailColorOverLifetime:
     serializedVersion: 2
     key0: {r: 0.3443396, g: 0.93306404, b: 1, a: 1}
@@ -4876,11 +4877,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3145652739638300821}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 6360b896fe5db254ca47f7c08b41ddab,
-        type: 3}
-      propertyPath: m_Name
-      value: Koi1_Correct_animated
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 6360b896fe5db254ca47f7c08b41ddab,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4935,6 +4931,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 6360b896fe5db254ca47f7c08b41ddab,
+        type: 3}
+      propertyPath: m_Name
+      value: Koi1_Correct_animated
       objectReference: {fileID: 0}
     - target: {fileID: -6057140222963153312, guid: 6360b896fe5db254ca47f7c08b41ddab,
         type: 3}
