@@ -62,6 +62,9 @@ public class DoubleSlidingDoors : MonoBehaviour
         rightDoor.localPosition = rightDoorEndPos;
 
         // Fire finished opening/closing event
-        onFinished?.Invoke();
+        if (offset < 0)
+        {
+            onFinished?.Invoke();
+        }
     }
 }
