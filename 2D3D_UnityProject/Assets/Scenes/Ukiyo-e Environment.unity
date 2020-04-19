@@ -1052,7 +1052,7 @@ PrefabInstance:
     - target: {fileID: 9061613975822427690, guid: e18d5a2b5ddeb1d47bf52e683cce67ef,
         type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 9061613975822427690, guid: e18d5a2b5ddeb1d47bf52e683cce67ef,
         type: 3}
@@ -1635,6 +1635,7 @@ Transform:
   - {fileID: 1625974929}
   - {fileID: 1890559213}
   - {fileID: 450918689}
+  - {fileID: 1344558922}
   - {fileID: 5945355710227689545}
   - {fileID: 5945355710540924598}
   - {fileID: 5945355711001420422}
@@ -3336,7 +3337,7 @@ PrefabInstance:
     - target: {fileID: 9061613975822427690, guid: e18d5a2b5ddeb1d47bf52e683cce67ef,
         type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 9061613975822427690, guid: e18d5a2b5ddeb1d47bf52e683cce67ef,
         type: 3}
@@ -7386,7 +7387,7 @@ Transform:
   - {fileID: 5945355709287474639}
   - {fileID: 5945355710210125978}
   m_Father: {fileID: 172057613}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &712527290
 GameObject:
@@ -7939,6 +7940,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 172057613}
     m_Modifications:
+    - target: {fileID: 100000, guid: d74d9dc85262a704d958dc0bbeb58aab, type: 3}
+      propertyPath: m_Name
+      value: IL3DN_Rock_Boulder_02
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d74d9dc85262a704d958dc0bbeb58aab, type: 3}
       propertyPath: m_LocalPosition.x
       value: 24.484795
@@ -7969,7 +7974,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d74d9dc85262a704d958dc0bbeb58aab, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d74d9dc85262a704d958dc0bbeb58aab, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -7994,10 +7999,6 @@ PrefabInstance:
     - target: {fileID: 400000, guid: d74d9dc85262a704d958dc0bbeb58aab, type: 3}
       propertyPath: m_LocalScale.z
       value: 3.812502
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: d74d9dc85262a704d958dc0bbeb58aab, type: 3}
-      propertyPath: m_Name
-      value: IL3DN_Rock_Boulder_02
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d74d9dc85262a704d958dc0bbeb58aab, type: 3}
@@ -11450,7 +11451,7 @@ PrefabInstance:
     - target: {fileID: 9061613975822427690, guid: e18d5a2b5ddeb1d47bf52e683cce67ef,
         type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 9061613975822427690, guid: e18d5a2b5ddeb1d47bf52e683cce67ef,
         type: 3}
@@ -13482,6 +13483,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2097872022891691697}
     m_Modifications:
+    - target: {fileID: 100000, guid: d74d9dc85262a704d958dc0bbeb58aab, type: 3}
+      propertyPath: m_Name
+      value: IL3DN_Rock_Boulder_02
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d74d9dc85262a704d958dc0bbeb58aab, type: 3}
       propertyPath: m_LocalPosition.x
       value: -25.855742
@@ -13537,10 +13542,6 @@ PrefabInstance:
     - target: {fileID: 400000, guid: d74d9dc85262a704d958dc0bbeb58aab, type: 3}
       propertyPath: m_LocalScale.z
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: d74d9dc85262a704d958dc0bbeb58aab, type: 3}
-      propertyPath: m_Name
-      value: IL3DN_Rock_Boulder_02
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d74d9dc85262a704d958dc0bbeb58aab, type: 3}
@@ -13741,6 +13742,81 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 53ae5813bd2732c4780879ee0a1f361f,
     type: 3}
   m_PrefabInstance: {fileID: 478273364}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1344558921
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 172057613}
+    m_Modifications:
+    - target: {fileID: 6270901807083129729, guid: 45c3c9c7d3ddc45c8a94b4b02d7acc34,
+        type: 3}
+      propertyPath: m_Name
+      value: Portal_House_Prefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 9052140145297636716, guid: 45c3c9c7d3ddc45c8a94b4b02d7acc34,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -193.5592
+      objectReference: {fileID: 0}
+    - target: {fileID: 9052140145297636716, guid: 45c3c9c7d3ddc45c8a94b4b02d7acc34,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.7150507
+      objectReference: {fileID: 0}
+    - target: {fileID: 9052140145297636716, guid: 45c3c9c7d3ddc45c8a94b4b02d7acc34,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.0216637
+      objectReference: {fileID: 0}
+    - target: {fileID: 9052140145297636716, guid: 45c3c9c7d3ddc45c8a94b4b02d7acc34,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9052140145297636716, guid: 45c3c9c7d3ddc45c8a94b4b02d7acc34,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9052140145297636716, guid: 45c3c9c7d3ddc45c8a94b4b02d7acc34,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9052140145297636716, guid: 45c3c9c7d3ddc45c8a94b4b02d7acc34,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9052140145297636716, guid: 45c3c9c7d3ddc45c8a94b4b02d7acc34,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9052140145297636716, guid: 45c3c9c7d3ddc45c8a94b4b02d7acc34,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9052140145297636716, guid: 45c3c9c7d3ddc45c8a94b4b02d7acc34,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9052140145297636716, guid: 45c3c9c7d3ddc45c8a94b4b02d7acc34,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 45c3c9c7d3ddc45c8a94b4b02d7acc34, type: 3}
+--- !u!4 &1344558922 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9052140145297636716, guid: 45c3c9c7d3ddc45c8a94b4b02d7acc34,
+    type: 3}
+  m_PrefabInstance: {fileID: 1344558921}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1346949403
 PrefabInstance:
@@ -28435,7 +28511,7 @@ PrefabInstance:
     - target: {fileID: 9061613975822427690, guid: e18d5a2b5ddeb1d47bf52e683cce67ef,
         type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 9061613975822427690, guid: e18d5a2b5ddeb1d47bf52e683cce67ef,
         type: 3}
@@ -32494,59 +32570,6 @@ PrefabInstance:
       objectReference: {fileID: 449837864}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fcd278b052b596348bc0253f08964bb9, type: 3}
---- !u!4 &797272221011658727
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4416662362023081460}
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -205.45999, y: -5, z: 0.43000412}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 7169349157577921759}
-  m_Father: {fileID: 2097872023213072733}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!23 &1161021951573241084
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7874378657530237033}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 035033672aaee4922b4141fab2058fdf, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
 --- !u!4 &1392955473649227296
 Transform:
   m_ObjectHideFlags: 0
@@ -38777,6 +38800,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2097872022098413221}
     m_Modifications:
+    - target: {fileID: 6404268809379339476, guid: 9a32147e38101fd48876749fd208348d,
+        type: 3}
+      propertyPath: m_Name
+      value: IL3DN_Plant_Grass_01 (9)
+      objectReference: {fileID: 0}
     - target: {fileID: 3610065709873551529, guid: 9a32147e38101fd48876749fd208348d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -38846,11 +38874,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6404268809379339476, guid: 9a32147e38101fd48876749fd208348d,
-        type: 3}
-      propertyPath: m_Name
-      value: IL3DN_Plant_Grass_01 (9)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a32147e38101fd48876749fd208348d, type: 3}
@@ -39127,6 +39150,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2097872022098413221}
     m_Modifications:
+    - target: {fileID: 6404268809379339476, guid: 9a32147e38101fd48876749fd208348d,
+        type: 3}
+      propertyPath: m_Name
+      value: IL3DN_Plant_Grass_01 (3)
+      objectReference: {fileID: 0}
     - target: {fileID: 3610065709873551529, guid: 9a32147e38101fd48876749fd208348d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -39181,11 +39209,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6404268809379339476, guid: 9a32147e38101fd48876749fd208348d,
-        type: 3}
-      propertyPath: m_Name
-      value: IL3DN_Plant_Grass_01 (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a32147e38101fd48876749fd208348d, type: 3}
@@ -39335,7 +39358,7 @@ PrefabInstance:
     - target: {fileID: 9096055391507209482, guid: 3b1938075b2d08e409d75f1e32cc13a9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 9096055391507209482, guid: 3b1938075b2d08e409d75f1e32cc13a9,
         type: 3}
@@ -40283,7 +40306,7 @@ PrefabInstance:
     - target: {fileID: 4428639349309707350, guid: ac3db08af24fed848a922e464f5a5eaf,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4428639349309707350, guid: ac3db08af24fed848a922e464f5a5eaf,
         type: 3}
@@ -42248,6 +42271,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2097872022098413221}
     m_Modifications:
+    - target: {fileID: 6404268809379339476, guid: 9a32147e38101fd48876749fd208348d,
+        type: 3}
+      propertyPath: m_Name
+      value: IL3DN_Plant_Grass_01 (5)
+      objectReference: {fileID: 0}
     - target: {fileID: 3610065709873551529, guid: 9a32147e38101fd48876749fd208348d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -42302,11 +42330,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6404268809379339476, guid: 9a32147e38101fd48876749fd208348d,
-        type: 3}
-      propertyPath: m_Name
-      value: IL3DN_Plant_Grass_01 (5)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a32147e38101fd48876749fd208348d, type: 3}
@@ -42833,6 +42856,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2097872022098413221}
     m_Modifications:
+    - target: {fileID: 6404268809379339476, guid: 9a32147e38101fd48876749fd208348d,
+        type: 3}
+      propertyPath: m_Name
+      value: IL3DN_Plant_Grass_01
+      objectReference: {fileID: 0}
     - target: {fileID: 3610065709873551529, guid: 9a32147e38101fd48876749fd208348d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -42887,11 +42915,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6404268809379339476, guid: 9a32147e38101fd48876749fd208348d,
-        type: 3}
-      propertyPath: m_Name
-      value: IL3DN_Plant_Grass_01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a32147e38101fd48876749fd208348d, type: 3}
@@ -43098,6 +43121,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2097872023213072733}
     m_Modifications:
+    - target: {fileID: 5800906375986613077, guid: ae95750e4caabeb47993e78d5c6ba9f4,
+        type: 3}
+      propertyPath: m_Name
+      value: IL3DN_Rock_Boulder_01
+      objectReference: {fileID: 0}
     - target: {fileID: 6280177913000003068, guid: ae95750e4caabeb47993e78d5c6ba9f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -43136,7 +43164,7 @@ PrefabInstance:
     - target: {fileID: 6280177913000003068, guid: ae95750e4caabeb47993e78d5c6ba9f4,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6280177913000003068, guid: ae95750e4caabeb47993e78d5c6ba9f4,
         type: 3}
@@ -43168,11 +43196,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 5800906375986613077, guid: ae95750e4caabeb47993e78d5c6ba9f4,
-        type: 3}
-      propertyPath: m_Name
-      value: IL3DN_Rock_Boulder_01
-      objectReference: {fileID: 0}
     - target: {fileID: 2569219483663135492, guid: ae95750e4caabeb47993e78d5c6ba9f4,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -43198,6 +43221,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2097872022098413221}
     m_Modifications:
+    - target: {fileID: 6404268809379339476, guid: 9a32147e38101fd48876749fd208348d,
+        type: 3}
+      propertyPath: m_Name
+      value: IL3DN_Plant_Grass_01 (10)
+      objectReference: {fileID: 0}
     - target: {fileID: 3610065709873551529, guid: 9a32147e38101fd48876749fd208348d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -43267,11 +43295,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6404268809379339476, guid: 9a32147e38101fd48876749fd208348d,
-        type: 3}
-      propertyPath: m_Name
-      value: IL3DN_Plant_Grass_01 (10)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a32147e38101fd48876749fd208348d, type: 3}
@@ -44583,7 +44606,7 @@ Transform:
   - {fileID: 898437526}
   - {fileID: 1020956592}
   m_Father: {fileID: 2097872023213072733}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2097872022098413222
 GameObject:
@@ -44608,6 +44631,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2097872022098413221}
     m_Modifications:
+    - target: {fileID: 6404268809379339476, guid: 9a32147e38101fd48876749fd208348d,
+        type: 3}
+      propertyPath: m_Name
+      value: IL3DN_Plant_Grass_01 (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 3610065709873551529, guid: 9a32147e38101fd48876749fd208348d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -44662,11 +44690,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6404268809379339476, guid: 9a32147e38101fd48876749fd208348d,
-        type: 3}
-      propertyPath: m_Name
-      value: IL3DN_Plant_Grass_01 (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a32147e38101fd48876749fd208348d, type: 3}
@@ -46479,6 +46502,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2097872022098413221}
     m_Modifications:
+    - target: {fileID: 6404268809379339476, guid: 9a32147e38101fd48876749fd208348d,
+        type: 3}
+      propertyPath: m_Name
+      value: IL3DN_Plant_Grass_01 (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 3610065709873551529, guid: 9a32147e38101fd48876749fd208348d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -46533,11 +46561,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6404268809379339476, guid: 9a32147e38101fd48876749fd208348d,
-        type: 3}
-      propertyPath: m_Name
-      value: IL3DN_Plant_Grass_01 (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a32147e38101fd48876749fd208348d, type: 3}
@@ -47317,7 +47340,7 @@ PrefabInstance:
     - target: {fileID: 8760653856037471285, guid: c462ab8df416e3848b46d913d64a5114,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8760653856037471285, guid: c462ab8df416e3848b46d913d64a5114,
         type: 3}
@@ -53552,7 +53575,7 @@ Transform:
   - {fileID: 599328330}
   - {fileID: 1018921626}
   m_Father: {fileID: 2097872023213072733}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2097872022891691698
 GameObject:
@@ -53997,6 +54020,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2097872022098413221}
     m_Modifications:
+    - target: {fileID: 6404268809379339476, guid: 9a32147e38101fd48876749fd208348d,
+        type: 3}
+      propertyPath: m_Name
+      value: IL3DN_Plant_Grass_01 (6)
+      objectReference: {fileID: 0}
     - target: {fileID: 3610065709873551529, guid: 9a32147e38101fd48876749fd208348d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -54051,11 +54079,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6404268809379339476, guid: 9a32147e38101fd48876749fd208348d,
-        type: 3}
-      propertyPath: m_Name
-      value: IL3DN_Plant_Grass_01 (6)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a32147e38101fd48876749fd208348d, type: 3}
@@ -54412,6 +54435,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2097872022098413221}
     m_Modifications:
+    - target: {fileID: 6404268809379339476, guid: 9a32147e38101fd48876749fd208348d,
+        type: 3}
+      propertyPath: m_Name
+      value: IL3DN_Plant_Grass_01 (7)
+      objectReference: {fileID: 0}
     - target: {fileID: 3610065709873551529, guid: 9a32147e38101fd48876749fd208348d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -54466,11 +54494,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6404268809379339476, guid: 9a32147e38101fd48876749fd208348d,
-        type: 3}
-      propertyPath: m_Name
-      value: IL3DN_Plant_Grass_01 (7)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a32147e38101fd48876749fd208348d, type: 3}
@@ -54577,6 +54600,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2097872022098413221}
     m_Modifications:
+    - target: {fileID: 6404268809379339476, guid: 9a32147e38101fd48876749fd208348d,
+        type: 3}
+      propertyPath: m_Name
+      value: IL3DN_Plant_Grass_01 (8)
+      objectReference: {fileID: 0}
     - target: {fileID: 3610065709873551529, guid: 9a32147e38101fd48876749fd208348d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -54631,11 +54659,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6404268809379339476, guid: 9a32147e38101fd48876749fd208348d,
-        type: 3}
-      propertyPath: m_Name
-      value: IL3DN_Plant_Grass_01 (8)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a32147e38101fd48876749fd208348d, type: 3}
@@ -55822,6 +55845,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2097872022098413221}
     m_Modifications:
+    - target: {fileID: 470123331780626262, guid: a5b864fe7ab693b4ebbfb3e1502aac7e,
+        type: 3}
+      propertyPath: m_Name
+      value: IL3DN_Rock_Boulder_02
+      objectReference: {fileID: 0}
     - target: {fileID: 3360329922263324231, guid: a5b864fe7ab693b4ebbfb3e1502aac7e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -55891,11 +55919,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.9199998
-      objectReference: {fileID: 0}
-    - target: {fileID: 470123331780626262, guid: a5b864fe7ab693b4ebbfb3e1502aac7e,
-        type: 3}
-      propertyPath: m_Name
-      value: IL3DN_Rock_Boulder_02
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5b864fe7ab693b4ebbfb3e1502aac7e, type: 3}
@@ -56002,6 +56025,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2097872022098413221}
     m_Modifications:
+    - target: {fileID: 470123331780626262, guid: a5b864fe7ab693b4ebbfb3e1502aac7e,
+        type: 3}
+      propertyPath: m_Name
+      value: IL3DN_Rock_Boulder_02 (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 3360329922263324231, guid: a5b864fe7ab693b4ebbfb3e1502aac7e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -56056,11 +56084,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 470123331780626262, guid: a5b864fe7ab693b4ebbfb3e1502aac7e,
-        type: 3}
-      propertyPath: m_Name
-      value: IL3DN_Rock_Boulder_02 (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5b864fe7ab693b4ebbfb3e1502aac7e, type: 3}
@@ -57201,7 +57224,6 @@ Transform:
   m_LocalPosition: {x: 41.726685, y: -7.4357386, z: -12.502716}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 797272221011658727}
   - {fileID: 7187866084233379622}
   - {fileID: 7187866084368666998}
   - {fileID: 7187866084078131815}
@@ -57945,6 +57967,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2097872022098413221}
     m_Modifications:
+    - target: {fileID: 6404268809379339476, guid: 9a32147e38101fd48876749fd208348d,
+        type: 3}
+      propertyPath: m_Name
+      value: IL3DN_Plant_Grass_01 (4)
+      objectReference: {fileID: 0}
     - target: {fileID: 3610065709873551529, guid: 9a32147e38101fd48876749fd208348d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -57999,11 +58026,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6404268809379339476, guid: 9a32147e38101fd48876749fd208348d,
-        type: 3}
-      propertyPath: m_Name
-      value: IL3DN_Plant_Grass_01 (4)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a32147e38101fd48876749fd208348d, type: 3}
@@ -59025,23 +59047,6 @@ Transform:
   m_Father: {fileID: 5006512734995478455}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &4416662362023081460
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 797272221011658727}
-  - component: {fileID: 5650555263006436595}
-  m_Layer: 0
-  m_Name: Temple
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!4 &5006512734995478455
 Transform:
   m_ObjectHideFlags: 0
@@ -59071,7 +59076,7 @@ Transform:
   m_Children:
   - {fileID: 1842583716}
   m_Father: {fileID: 172057613}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1001 &5566565403100394325
 PrefabInstance:
@@ -60765,6 +60770,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2097872022098413221}
     m_Modifications:
+    - target: {fileID: 5800906375986613077, guid: ae95750e4caabeb47993e78d5c6ba9f4,
+        type: 3}
+      propertyPath: m_Name
+      value: IL3DN_Rock_Boulder_01
+      objectReference: {fileID: 0}
     - target: {fileID: 6280177913000003068, guid: ae95750e4caabeb47993e78d5c6ba9f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -60834,11 +60844,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 2.7789
-      objectReference: {fileID: 0}
-    - target: {fileID: 5800906375986613077, guid: ae95750e4caabeb47993e78d5c6ba9f4,
-        type: 3}
-      propertyPath: m_Name
-      value: IL3DN_Rock_Boulder_01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae95750e4caabeb47993e78d5c6ba9f4, type: 3}
@@ -61035,6 +61040,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2097872023213072733}
     m_Modifications:
+    - target: {fileID: 7949765178566123054, guid: 4219cbfc687e52d4abce92150222943d,
+        type: 3}
+      propertyPath: m_Name
+      value: ukioye_RockGroup1_with_colliders (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 6343430677062675517, guid: 4219cbfc687e52d4abce92150222943d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -61073,7 +61083,7 @@ PrefabInstance:
     - target: {fileID: 6343430677062675517, guid: 4219cbfc687e52d4abce92150222943d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 6343430677062675517, guid: 4219cbfc687e52d4abce92150222943d,
         type: 3}
@@ -61104,11 +61114,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 7.493132
-      objectReference: {fileID: 0}
-    - target: {fileID: 7949765178566123054, guid: 4219cbfc687e52d4abce92150222943d,
-        type: 3}
-      propertyPath: m_Name
-      value: ukioye_RockGroup1_with_colliders (2)
       objectReference: {fileID: 0}
     - target: {fileID: 8534298495537261298, guid: 4219cbfc687e52d4abce92150222943d,
         type: 3}
@@ -61468,19 +61473,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5650555262939486833}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &5650555263006436595
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4416662362023081460}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5650555263022185236
 GameObject:
   m_ObjectHideFlags: 0
@@ -62591,6 +62583,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2097872022098413221}
     m_Modifications:
+    - target: {fileID: 6404268809379339476, guid: 9a32147e38101fd48876749fd208348d,
+        type: 3}
+      propertyPath: m_Name
+      value: IL3DN_Plant_Grass_01
+      objectReference: {fileID: 0}
     - target: {fileID: 3610065709873551529, guid: 9a32147e38101fd48876749fd208348d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -62645,11 +62642,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6404268809379339476, guid: 9a32147e38101fd48876749fd208348d,
-        type: 3}
-      propertyPath: m_Name
-      value: IL3DN_Plant_Grass_01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a32147e38101fd48876749fd208348d, type: 3}
@@ -76610,7 +76602,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: d3ef05419a1c2f44b8777c1f1b03f7b8,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: d3ef05419a1c2f44b8777c1f1b03f7b8,
         type: 3}
@@ -81936,7 +81928,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: a0c2956e7508b4741b585bb90f53f0fd,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: a0c2956e7508b4741b585bb90f53f0fd,
         type: 3}
@@ -87428,7 +87420,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: a0c2956e7508b4741b585bb90f53f0fd,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: a0c2956e7508b4741b585bb90f53f0fd,
         type: 3}
@@ -90790,6 +90782,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 172057613}
     m_Modifications:
+    - target: {fileID: 5072153908042155032, guid: 391d0c14576dcbb48847806ef980a0fb,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5072153908042155032, guid: 391d0c14576dcbb48847806ef980a0fb,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bfff51de6e904b548ad2dd11518b4a3a, type: 2}
+    - target: {fileID: 3289639612550702919, guid: 391d0c14576dcbb48847806ef980a0fb,
+        type: 3}
+      propertyPath: m_Name
+      value: Torii
+      objectReference: {fileID: 0}
     - target: {fileID: 2016623160890594644, guid: 391d0c14576dcbb48847806ef980a0fb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -90860,21 +90867,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 3289639612550702919, guid: 391d0c14576dcbb48847806ef980a0fb,
-        type: 3}
-      propertyPath: m_Name
-      value: Torii
-      objectReference: {fileID: 0}
-    - target: {fileID: 5072153908042155032, guid: 391d0c14576dcbb48847806ef980a0fb,
-        type: 3}
-      propertyPath: m_Materials.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5072153908042155032, guid: 391d0c14576dcbb48847806ef980a0fb,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: bfff51de6e904b548ad2dd11518b4a3a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 391d0c14576dcbb48847806ef980a0fb, type: 3}
 --- !u!1001 &7152054182508612674
@@ -90961,20 +90953,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ea82824b37ff4744bd7a9926c1e4add, type: 3}
---- !u!4 &7169349157577921759
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7874378657530237033}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 797272221011658727}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &7187866082598753329
 Transform:
   m_ObjectHideFlags: 0
@@ -92235,7 +92213,7 @@ PrefabInstance:
     - target: {fileID: 8310962890358064632, guid: 6f761512e790af341aa62e5ab7aa880e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8310962890358064632, guid: 6f761512e790af341aa62e5ab7aa880e,
         type: 3}
@@ -92372,6 +92350,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2097872022891691697}
     m_Modifications:
+    - target: {fileID: 7949765178566123054, guid: 4219cbfc687e52d4abce92150222943d,
+        type: 3}
+      propertyPath: m_Name
+      value: ukioye_RockGroup1_with_colliders (3)
+      objectReference: {fileID: 0}
     - target: {fileID: 6343430677062675517, guid: 4219cbfc687e52d4abce92150222943d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -92441,11 +92424,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 3.7465646
-      objectReference: {fileID: 0}
-    - target: {fileID: 7949765178566123054, guid: 4219cbfc687e52d4abce92150222943d,
-        type: 3}
-      propertyPath: m_Name
-      value: ukioye_RockGroup1_with_colliders (3)
       objectReference: {fileID: 0}
     - target: {fileID: 8534298495537261298, guid: 4219cbfc687e52d4abce92150222943d,
         type: 3}
@@ -92632,6 +92610,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2097872022891691697}
     m_Modifications:
+    - target: {fileID: 6404268809379339476, guid: 9a32147e38101fd48876749fd208348d,
+        type: 3}
+      propertyPath: m_Name
+      value: IL3DN_Plant_Grass_01 (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 3610065709873551529, guid: 9a32147e38101fd48876749fd208348d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -92701,11 +92684,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6404268809379339476, guid: 9a32147e38101fd48876749fd208348d,
-        type: 3}
-      propertyPath: m_Name
-      value: IL3DN_Plant_Grass_01 (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a32147e38101fd48876749fd208348d, type: 3}
@@ -92805,19 +92783,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7187866083761310843}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &7187866083816512860
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7874378657530237033}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 20.000004, y: 37.38, z: 19.889341}
-  m_Center: {x: 0.0000038146973, y: 18.69, z: -0.055333138}
 --- !u!1001 &7187866083853129714
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -93005,6 +92970,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2097872023213072733}
     m_Modifications:
+    - target: {fileID: 5800906375986613077, guid: ae95750e4caabeb47993e78d5c6ba9f4,
+        type: 3}
+      propertyPath: m_Name
+      value: IL3DN_Rock_Boulder_01
+      objectReference: {fileID: 0}
     - target: {fileID: 6280177913000003068, guid: ae95750e4caabeb47993e78d5c6ba9f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -93043,7 +93013,7 @@ PrefabInstance:
     - target: {fileID: 6280177913000003068, guid: ae95750e4caabeb47993e78d5c6ba9f4,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6280177913000003068, guid: ae95750e4caabeb47993e78d5c6ba9f4,
         type: 3}
@@ -93074,11 +93044,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5800906375986613077, guid: ae95750e4caabeb47993e78d5c6ba9f4,
-        type: 3}
-      propertyPath: m_Name
-      value: IL3DN_Rock_Boulder_01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae95750e4caabeb47993e78d5c6ba9f4, type: 3}
@@ -93228,7 +93193,7 @@ PrefabInstance:
     - target: {fileID: 9061613975822427690, guid: e18d5a2b5ddeb1d47bf52e683cce67ef,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 9061613975822427690, guid: e18d5a2b5ddeb1d47bf52e683cce67ef,
         type: 3}
@@ -93318,7 +93283,7 @@ PrefabInstance:
     - target: {fileID: 9096055391507209482, guid: 3b1938075b2d08e409d75f1e32cc13a9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9096055391507209482, guid: 3b1938075b2d08e409d75f1e32cc13a9,
         type: 3}
@@ -93468,7 +93433,7 @@ PrefabInstance:
     - target: {fileID: 50001272765023951, guid: 99dc31ac46f4f6845aca2e64e46621eb,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 50001272765023951, guid: 99dc31ac46f4f6845aca2e64e46621eb,
         type: 3}
@@ -93558,7 +93523,7 @@ PrefabInstance:
     - target: {fileID: 4428639349309707350, guid: ac3db08af24fed848a922e464f5a5eaf,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4428639349309707350, guid: ac3db08af24fed848a922e464f5a5eaf,
         type: 3}
@@ -93928,33 +93893,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7187866084628774693}
   m_PrefabAsset: {fileID: 0}
---- !u!33 &7583610530739863564
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7874378657530237033}
-  m_Mesh: {fileID: -2432090755550338912, guid: ff305588434a444ddae7c785e8a6ee7a, type: 3}
---- !u!1 &7874378657530237033
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7169349157577921759}
-  - component: {fileID: 7583610530739863564}
-  - component: {fileID: 1161021951573241084}
-  - component: {fileID: 7187866083816512860}
-  m_Layer: 0
-  m_Name: default
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &8296172669003957668
 GameObject:
   m_ObjectHideFlags: 0
@@ -93987,7 +93925,7 @@ Transform:
   - {fileID: 7187866082668412912}
   - {fileID: 577336830}
   m_Father: {fileID: 172057613}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &8837504907696454669
 PrefabInstance:
