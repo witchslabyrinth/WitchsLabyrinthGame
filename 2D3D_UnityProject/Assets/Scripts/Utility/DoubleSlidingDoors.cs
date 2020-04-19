@@ -6,33 +6,37 @@ public class DoubleSlidingDoors : MonoBehaviour
 {
     [SerializeField]
     private Transform leftDoor;
+
     [SerializeField]
     private Transform rightDoor;
+
     [SerializeField]
     private AnimationCurve openCloseCurve;
+
     [SerializeField]
     private float openCloseTime;
 
     private float openCloseOffset = 3f;
 
-    public delegate void OnFinishedOpenClose();
-
     /// <summary>
     /// Event fired after door finished opening/closing
     /// </summary>
-    public OnFinishedOpenClose onFinished;
+    public delegate void OnFinishedOpenClose();
+
+    public OnFinishedOpenClose onFinishedOpening;
+    public OnFinishedOpenClose onFinishedClosing;
 
     public void Open()
     {
-        StartCoroutine(OpenCloseCoroutine(-openCloseOffset));
+        StartCoroutine(OpenCloseCoroutine(-openCloseOffset, onFinishedOpening));
     }
 
     public void Close()
     {
-        StartCoroutine(OpenCloseCoroutine(openCloseOffset));
+        StartCoroutine(OpenCloseCoroutine(openCloseOffset, onFinishedClosing));
     }
 
-    private IEnumerator OpenCloseCoroutine(float offset)
+    private IEnumerator OpenCloseCoroutine(float offset, OnFinishedOpenClose onFinishedEvent)
     {
         // Create start and end positions for both doors
         Vector3 leftDoorStartPos = leftDoor.localPosition;
@@ -61,10 +65,7 @@ public class DoubleSlidingDoors : MonoBehaviour
         leftDoor.localPosition = leftDoorEndPos;
         rightDoor.localPosition = rightDoorEndPos;
 
-        // Fire finished opening/closing event
-        if (offset < 0)
-        {
-            onFinished?.Invoke();
-        }
+        // Fire event when animation finished
+        onFinishedEvent?.Invoke();
     }
 }
