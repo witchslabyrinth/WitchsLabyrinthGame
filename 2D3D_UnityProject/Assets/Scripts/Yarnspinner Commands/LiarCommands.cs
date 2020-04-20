@@ -30,11 +30,17 @@ public class LiarCommands : DialogueCommands
         //stuff for when players solve liars puzzle
         puzzleSolved.Post(gameObject); //Wwise
         cutscene5.SetActive(true);
+
+        PlayerInteractionController controller = PlayerController.Instance.GetPlayer().GetComponent<PlayerInteractionController>();
+
+        if (controller != null)
+            controller.SetInDialogueZone(false, null, null);
+        
         foreach(Collider trigger in triggerZones)
         {
             trigger.enabled = false;
         }
-        
+
         onComplete();
     }
 }
