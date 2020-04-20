@@ -1015,12 +1015,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d5634f29acea4448b40e0680b79079a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueRunner: {fileID: 0}
+  triggerZones:
+  - {fileID: 8011365831497939017}
+  - {fileID: 8011365831870289557}
+  - {fileID: 8011365832499762058}
+  - {fileID: 8011365831755792321}
+  - {fileID: 8011365833003832196}
+  - {fileID: 8011365831434810144}
   puzzleSolved:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 8e4fff8ee6203de46844db3723dea656,
+    WwiseObjectReference: {fileID: 11400000, guid: 335d7c95d300b394a8bc2bdacc820a37,
       type: 2}
-  dialogueRunner: {fileID: 0}
   cutscene5: {fileID: 0}
 --- !u!1 &8011365831434810158
 GameObject:
