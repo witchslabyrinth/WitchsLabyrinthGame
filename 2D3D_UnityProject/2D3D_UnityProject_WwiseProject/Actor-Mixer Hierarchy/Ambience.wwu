@@ -8,7 +8,7 @@
 						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>-30</Value>
+								<Value>3</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -28,6 +28,38 @@
 					</ChildrenList>
 					<ActiveSourceList>
 						<ActiveSource Name="Wind_Ambience" ID="{A0CD3F09-DD68-4544-938B-2134F9AE2E99}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="lantern_idle_crackle" ID="{6A04E37E-8CA6-45A0-AAA7-9045CA58B684}" ShortID="1070931444">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="80"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>6</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="latnern" ID="{7D994F42-2748-4DB9-9660-DEE93748892A}" WorkUnitID="{0DCEC620-0804-4E59-BF74-C1BAA1C456CD}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{24C7AD02-E66A-4B4B-8735-0AC29636FC00}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CB9D8304-7AAA-4374-9412-CD9A3A2EDD3D}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="lantern_idle_crackle" ID="{AAEB4981-81CF-43BE-83BF-0AB118B7B384}" ShortID="608269658">
+							<Language>SFX</Language>
+							<AudioFile>lantern_idle_crackle.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="lantern_idle_crackle" ID="{AAEB4981-81CF-43BE-83BF-0AB118B7B384}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
 			</ChildrenList>

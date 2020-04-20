@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{4C439619-C663-4011-B2C4-F2BDFDE501D1}" SchemaVersion="94" RootDocumentID="{F35C23EA-DF72-4530-971C-FBEBF715C8AD}">
+	<AudioObjects>
+		<WorkUnit Name="Portal" ID="{4C439619-C663-4011-B2C4-F2BDFDE501D1}" OwnerID="{F35C23EA-DF72-4530-971C-FBEBF715C8AD}" PersistMode="Nested">
+			<ChildrenList>
+				<Sound Name="PortalAmbient" ID="{772EC1A5-8B0B-4EE3-B9A4-84B98481F1C3}" ShortID="863529610">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>12</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="Portal" ID="{3E763EE6-95DC-4038-9B7D-6BE2FA54B86D}" WorkUnitID="{0DCEC620-0804-4E59-BF74-C1BAA1C456CD}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{24C7AD02-E66A-4B4B-8735-0AC29636FC00}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CB9D8304-7AAA-4374-9412-CD9A3A2EDD3D}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="garden-intro" ID="{52326E32-9B98-4F49-90FA-F12F53F45E43}" ShortID="163375549">
+							<Language>SFX</Language>
+							<AudioFile>garden-intro.wav</AudioFile>
+							<ConvertedFileIDList>
+								<File ID="154096204"/>
+							</ConvertedFileIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="garden-intro" ID="{52326E32-9B98-4F49-90FA-F12F53F45E43}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

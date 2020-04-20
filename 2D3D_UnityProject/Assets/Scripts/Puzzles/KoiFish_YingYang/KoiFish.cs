@@ -5,7 +5,9 @@ using UnityEngine;
 // Author: Drew Graham
 public class KoiFish : MonoBehaviour
 {
-    /// <summary>
+   
+
+
     /// Index of path animation to play (see animation controller for mapping)
     /// </summary>
     [Range(1, 3)]
@@ -83,23 +85,25 @@ public class KoiFish : MonoBehaviour
         if (animNumber != fishAnimationNumber) {
             Debug.Log(name + " | fed out of order");
         }
+        // Only enable particle trail if fed in correct order
+        else
+        {
+            // Start path animation
+            animator.SetTrigger("PathTrigger");
 
-        // Fire path trigger and pass order fish was fed in
-        animator.SetInteger("ActivationOrder", animNumber);
-        animator.SetTrigger("PathTrigger");
-
-        // TODO: remove this hack when fish path animations are made seamless so fish don't warp
-        // Disable trail until fish warps to path starting position
-        SetTrailActive(false);
-        yield return new WaitForSeconds(.5f);
-        SetTrailActive(true);
+            // TODO: remove this hack when fish path animations are made seamless so fish don't warp
+            // Disable trail until fish warps to path starting position
+            SetTrailActive(false);
+            yield return new WaitForSeconds(.5f);
+            SetTrailActive(true);
+        }
     }
 
     /// <summary>
     /// Enables/disables trail emission behind fish
     /// </summary>
     /// <param name="active"></param>
-    void SetTrailActive(bool active)
+    public void SetTrailActive(bool active)
     {
         ParticleSystem.EmissionModule emission = psystem.emission;
         emission.enabled = active;

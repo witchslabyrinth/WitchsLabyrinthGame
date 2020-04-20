@@ -17,21 +17,21 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: b78bc27069c5b345a641d26b82c7e1fb
     GuidInternal: 
-    m_lastTime: -8586206345781206517
+    m_lastTime: -8586188208139194104
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 04839dcbaa7a74439412cd9a3a2edd3d
     GuidInternal: 
-    m_lastTime: -8586206345785693093
+    m_lastTime: -8586188208139234123
     List: []
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 31c7159bb637e0438b0b0a3598f10701
     GuidInternal: 
-    m_lastTime: -8586200380606912835
+    m_lastTime: -8586165971906435695
     List:
     - name: Main
       guid: 1d85aefae0798f44adc3648c94a6abd2
@@ -42,13 +42,75 @@ MonoBehaviour:
       - ElementName: Main
         ObjectType: 7
       Path: Default Work Unit\Main
+    - name: Music
+      guid: a60072451493f74cb24007fb3f717637
+      id: 3991942870
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Music
+        ObjectType: 7
+      Path: Default Work Unit\Music
+    - name: Voices
+      guid: 0a9040aaed14a744b871b4b666a30cb4
+      id: 3313685232
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Voices
+        ObjectType: 7
+      Path: Default Work Unit\Voices
   EventWwu:
   - PhysicalPath: Events\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 5601ea873c34f449957bd3b5ded1c2c6
     GuidInternal: 
-    m_lastTime: -8586200380607002913
+    m_lastTime: -8586165972399606486
     List:
+    - name: Activate
+      guid: c59c41cebb8af84581b54cc0d1ba071a
+      id: 4166407614
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Puzzles
+        ObjectType: 4
+      - ElementName: Portal
+        ObjectType: 4
+      - ElementName: Activate
+        ObjectType: 3
+      Path: Default Work Unit\Puzzles\Portal\Activate
+      maxAttenuation: 0
+      maxDuration: 2.624784
+      minDuration: 2.624784
+    - name: AmbientPortal
+      guid: 12582c214140fd409997130f2a4df1ae
+      id: 368097181
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Portal
+        ObjectType: 4
+      - ElementName: AmbientPortal
+        ObjectType: 3
+      Path: Default Work Unit\Portal\AmbientPortal
+      maxAttenuation: 100
+      maxDuration: 37.79526
+      minDuration: 37.79526
+    - name: cat_random
+      guid: 08d408bf3b73794b818ab425a38439cf
+      id: 1508371255
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Cat
+        ObjectType: 4
+      - ElementName: cat_random
+        ObjectType: 3
+      Path: Default Work Unit\Cat\cat_random
+      maxAttenuation: 15
+      maxDuration: -1
+      minDuration: -1
     - name: CatSwitchSound
       guid: d1a8c45f839f904fbc04fe586e18bb61
       id: 3589155492
@@ -61,8 +123,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Cat\CatSwitchSound
       maxAttenuation: 0
-      maxDuration: 1.339342
-      minDuration: 1.339342
+      maxDuration: 0
+      minDuration: 0
     - name: Door_Open
       guid: 571f44f93106324fbf230f6e2e8053b5
       id: 535830432
@@ -79,6 +141,54 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 3.509682
       minDuration: 2.22644
+    - name: FishLose
+      guid: a802b2c162405a42815b2a31567a82b6
+      id: 4000923032
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Puzzles
+        ObjectType: 4
+      - ElementName: KoiFish
+        ObjectType: 4
+      - ElementName: FishLose
+        ObjectType: 3
+      Path: Default Work Unit\Puzzles\KoiFish\FishLose
+      maxAttenuation: 0
+      maxDuration: 1.793368
+      minDuration: 1.793368
+    - name: FishMove
+      guid: 5d1a68c92c943746895a08875049a3b1
+      id: 1856056972
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Puzzles
+        ObjectType: 4
+      - ElementName: KoiFish
+        ObjectType: 4
+      - ElementName: FishMove
+        ObjectType: 3
+      Path: Default Work Unit\Puzzles\KoiFish\FishMove
+      maxAttenuation: 0
+      maxDuration: 4.895162
+      minDuration: 4.895162
+    - name: FishWin
+      guid: 66a1f9d6a31f7444a47e830958d64791
+      id: 2765306547
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Puzzles
+        ObjectType: 4
+      - ElementName: KoiFish
+        ObjectType: 4
+      - ElementName: FishWin
+        ObjectType: 3
+      Path: Default Work Unit\Puzzles\KoiFish\FishWin
+      maxAttenuation: 0
+      maxDuration: 3.806111
+      minDuration: 3.806111
     - name: Footstep_Player
       guid: 554fc6b6c919a44b8d1af2f067892e8a
       id: 648916573
@@ -95,6 +205,48 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0.682857
       minDuration: 0.150421
+    - name: Footsteps
+      guid: fa7b9253dc91e343a0196c34badb5233
+      id: 2385628198
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Footsteps
+        ObjectType: 3
+      Path: Default Work Unit\Footsteps
+      maxAttenuation: 0
+      maxDuration: 1.578667
+      minDuration: 0.361333
+    - name: Interact
+      guid: ac5dbdbd4db811449290d6cb9c112742
+      id: 1466384055
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Puzzles
+        ObjectType: 4
+      - ElementName: Liars
+        ObjectType: 4
+      - ElementName: Interact
+        ObjectType: 3
+      Path: Default Work Unit\Puzzles\Liars\Interact
+      maxAttenuation: 0
+      maxDuration: 1.268949
+      minDuration: 1.268949
+    - name: lantern_idle
+      guid: 5aaac02a1b271240844eff60cc61ad25
+      id: 3443213188
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ambience
+        ObjectType: 4
+      - ElementName: lantern_idle
+        ObjectType: 3
+      Path: Default Work Unit\Ambience\lantern_idle
+      maxAttenuation: 15
+      maxDuration: -1
+      minDuration: -1
     - name: Lantern_LightUp
       guid: a6b63faf59087e4698ab526d8d2a82e5
       id: 2716631521
@@ -111,6 +263,22 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 7.069659
       minDuration: 5.934558
+    - name: Move
+      guid: b495d5d69bf8df49b9a45a6a31be2384
+      id: 3011204530
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Puzzles
+        ObjectType: 4
+      - ElementName: Block
+        ObjectType: 4
+      - ElementName: Move
+        ObjectType: 3
+      Path: Default Work Unit\Puzzles\Block\Move
+      maxAttenuation: 0
+      maxDuration: 8.462205
+      minDuration: 8.462205
     - name: Music_Play
       guid: 5d5c6197846ec24aa6a5af8aa2d73e46
       id: 202194903
@@ -123,8 +291,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Scene\Music_Play
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0
+      minDuration: 0
     - name: OliverSwitchSound
       guid: 208b0f589429a848bcd72391a18396f6
       id: 2136553153
@@ -153,6 +321,36 @@ MonoBehaviour:
       maxAttenuation: 60
       maxDuration: -1
       minDuration: -1
+    - name: Puzzle_Solved
+      guid: abbfbe8a08681644b0aec09c71537e13
+      id: 1107599359
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Puzzles
+        ObjectType: 4
+      - ElementName: Puzzle_Solved
+        ObjectType: 3
+      Path: Default Work Unit\Puzzles\Puzzle_Solved
+      maxAttenuation: 0
+      maxDuration: 2.173913
+      minDuration: 2.173913
+    - name: Rotate
+      guid: effe80c6a3b2e8429530b61f7d5b3fef
+      id: 1302771492
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Puzzles
+        ObjectType: 4
+      - ElementName: Block
+        ObjectType: 4
+      - ElementName: Rotate
+        ObjectType: 3
+      Path: Default Work Unit\Puzzles\Block\Rotate
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: StayThereCat
       guid: c0a7f7e1ad60504781777390795eb00f
       id: 1041426236
@@ -165,8 +363,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Cat\StayThereCat
       maxAttenuation: 0
-      maxDuration: 0.762585
-      minDuration: 0.762585
+      maxDuration: 0
+      minDuration: 0
     - name: StayThereOliver
       guid: f9e3580df733fa42916618490111edb3
       id: 4294117557
@@ -199,6 +397,50 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0.432
       minDuration: 0.432
+    - name: Title_Music
+      guid: eaf532814747b3459df9006594cc5240
+      id: 309205993
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Scene
+        ObjectType: 4
+      - ElementName: Title_Music
+        ObjectType: 3
+      Path: Default Work Unit\Scene\Title_Music
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Water
+      guid: 58f95760d3197049b75213d0c3847b2c
+      id: 2654748154
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ambience
+        ObjectType: 4
+      - ElementName: Water
+        ObjectType: 3
+      Path: Default Work Unit\Ambience\Water
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Win
+      guid: e33b02e54beb2146965393af57bebe35
+      id: 979765101
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Puzzles
+        ObjectType: 4
+      - ElementName: Block
+        ObjectType: 4
+      - ElementName: Win
+        ObjectType: 3
+      Path: Default Work Unit\Puzzles\Block\Win
+      maxAttenuation: 0
+      maxDuration: 2.173913
+      minDuration: 2.173913
     - name: Wind
       guid: 9336da5127a29d40a9e50c825686ef97
       id: 1537061107
@@ -233,7 +475,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 91fd7b16390ad84fbc6d407fad2d1946
     GuidInternal: 
-    m_lastTime: -8586200475683206082
+    m_lastTime: -8586175349282173816
     List:
     - name: OnMenuClose
       guid: b0c2fdfe821f1d4d877a0e550088c4fb
@@ -245,8 +487,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: UI\OnMenuClose
       maxAttenuation: 0
-      maxDuration: 0.27516
-      minDuration: 0.27516
+      maxDuration: 0.144036
+      minDuration: 0.144036
     - name: OnMenuHover
       guid: ccb4b6ff5951344696b08a017e95393e
       id: 961842423
@@ -257,8 +499,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: UI\OnMenuHover
       maxAttenuation: 0
-      maxDuration: 0.339229
-      minDuration: 0.339229
+      maxDuration: 4.749252
+      minDuration: 4.749252
     - name: OnMenuOpen
       guid: c8011c953e2f4543978b0329c1f64f17
       id: 547102971
@@ -269,8 +511,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: UI\OnMenuOpen
       maxAttenuation: 0
-      maxDuration: 3.937279
-      minDuration: 3.937279
+      maxDuration: 4.749252
+      minDuration: 4.749252
     - name: OnMenuSelect
       guid: cb9fc792c90b44439dbfda2317a48be3
       id: 1412352919
@@ -281,21 +523,30 @@ MonoBehaviour:
         ObjectType: 3
       Path: UI\OnMenuSelect
       maxAttenuation: 0
-      maxDuration: 0.667347
-      minDuration: 0.667347
+      maxDuration: 4.749252
+      minDuration: 4.749252
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: f097083e8173b046a10e637ecb6d4f17
     GuidInternal: 
-    m_lastTime: -8586206345791064058
-    List: []
+    m_lastTime: -8586175349282143899
+    List:
+    - name: Title_Music
+      guid: 280423ae7a8bb843b06154ad7bb0eca5
+      id: 309205993
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Title_Music
+        ObjectType: 13
+      Path: Default Work Unit\Title_Music
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 80640233b45f4c43af47b7ed0e86fa70
     GuidInternal: 
-    m_lastTime: -8586206345781236565
+    m_lastTime: -8586188208139194104
     List:
     - name: Interaction
       guid: 88843f4ede1a70468bb891d343be183a
@@ -434,8 +685,33 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: cb5f7cd43e7dce46b55ab3766d658e16
     GuidInternal: 
-    m_lastTime: -8586206345781226556
+    m_lastTime: -8586167801914049872
     List:
+    - name: Footsteps
+      guid: a630a1ae3c04f34cbbb0d3da9f4abdbe
+      id: 2385628198
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Footsteps
+        ObjectType: 11
+      Path: Default Work Unit\Footsteps
+      values:
+      - name: Grass
+        guid: 4b5ed3097a85484fa3d3669e0c03bd29
+        id: 4248645337
+        PathAndIcons:
+        - ElementName: Grass
+          ObjectType: 10
+      - name: Wood
+        guid: 2568e73c2c5bd146a48e948bec3a3156
+        id: 2058049674
+        PathAndIcons:
+        - ElementName: Wood
+          ObjectType: 10
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
     - name: Material
       guid: de7708ac5dbf254f8434a7a64284ca29
       id: 3865314626
@@ -472,15 +748,13 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 1e1b318908282c4c824d18e0f417ffa5
     GuidInternal: 
-    m_lastTime: -8586206345781216548
+    m_lastTime: -8586188208139194104
     List: []
   ExpandedItems:
   - /2D3D_UnityProject_WwiseProject
   - /2D3D_UnityProject_WwiseProject/Events
   - /2D3D_UnityProject_WwiseProject/Events/Default Work Unit
-  - /2D3D_UnityProject_WwiseProject/Events/Default Work Unit/Ambience
   - /2D3D_UnityProject_WwiseProject/Events/Default Work Unit/Puzzles
-  - /2D3D_UnityProject_WwiseProject/Events/Default Work Unit/Puzzles/Zodiac
-  - /2D3D_UnityProject_WwiseProject/Events/UI
+  - /2D3D_UnityProject_WwiseProject/Events/Default Work Unit/Puzzles/Portal
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

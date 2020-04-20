@@ -6,6 +6,8 @@ using UnityEngine;
 /// <summary>
 /// Contains events called via KoiFish Animator component - don't call any of these methods directly!
 /// </summary>
+
+ 
 [RequireComponent(typeof(Animator))]
 public class KoiFishAnimationEvents : MonoBehaviour
 {
@@ -21,5 +23,15 @@ public class KoiFishAnimationEvents : MonoBehaviour
     void ToggleTrailActive()
     {
         fish.ToggleTrailActive();
+    }
+
+    void EnableTrail()
+    {
+        fish.SetTrailActive(true);
+    }
+
+    void DisableTrail()
+    {
+        fish.SetTrailActive(false);
     }
 }
