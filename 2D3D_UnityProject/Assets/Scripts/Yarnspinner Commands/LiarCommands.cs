@@ -31,12 +31,16 @@ public class LiarCommands : DialogueCommands
         puzzleSolved.Post(gameObject); //Wwise
         cutscene5.SetActive(true);
 
-        PlayerInteractionController controller = PlayerController.Instance.GetPlayer().GetComponent<PlayerInteractionController>();
+        // Prevent both actors from interacting with puzzle
+        PlayerInteractionController player = PlayerController.Instance.GetPlayer().GetComponent<PlayerInteractionController>();
+        PlayerInteractionController friend = PlayerController.Instance.GetFriend().GetComponent<PlayerInteractionController>();
 
-        if (controller != null)
-            controller.SetInDialogueZone(false, null, null);
-        
-        foreach(Collider trigger in triggerZones)
+        if (player != null)
+            player.SetInDialogueZone(false, null, null);
+        if(friend != null)
+            friend.SetInDialogueZone(false, null, null);
+
+        foreach (Collider trigger in triggerZones)
         {
             trigger.enabled = false;
         }
