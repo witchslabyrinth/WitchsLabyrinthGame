@@ -23,7 +23,7 @@ public class KoiFishFeedingPod : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent(out PlayerInteractionController playerInteractionController))
+        if (!KoiFishPuzzle.Instance.solved && other.TryGetComponent(out PlayerInteractionController playerInteractionController))
             playerInteractionController.SetInKoiFishZone(true, koiFish);
 
         Debug.Log(other.name + " in range of " + koiFish.name);

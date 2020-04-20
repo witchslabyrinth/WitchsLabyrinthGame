@@ -49,8 +49,6 @@ public class PlayerInteractionController : MonoBehaviour
 
     ///    CAN PROBABLY DISCARD NEXT SECTION IN REFACTOR - END    ///
 
-    private ZodiacPuzzle zodiacPuzzle;
-
     /// <summary>
     /// Shown when actor is near an interactable
     /// </summary>
@@ -71,7 +69,11 @@ public class PlayerInteractionController : MonoBehaviour
     /// </summary>
     private bool inPatternZone;
 
+    private ZodiacPuzzle zodiacPuzzle;
+
     private PatternPuzzle patternPuzzle;
+
+    private KoiFishPuzzle koiFishPuzzle => KoiFishPuzzle.Instance;
 
     /// <summary>
     /// Holds CameraEntity of nearby interactable (if it has one)
@@ -116,7 +118,7 @@ public class PlayerInteractionController : MonoBehaviour
                 CameraController.Instance.SetMainCamera(interactionCamera);
 
             }
-            else if (nearbyFish)
+            else if (nearbyFish && !koiFishPuzzle.solved)
             {
                 // Feed nearby fish
                 KoiFishPuzzle.Instance.FeedFish(nearbyFish);
@@ -135,9 +137,8 @@ public class PlayerInteractionController : MonoBehaviour
                 GameManager.SetCursorActive(true);
             }
             // Ignore interact button press if no nearby interactable
-            else
-            return;
-
+            else 
+                return;
 
             // Disable player actor control
             Actor actor = PlayerController.Instance.GetPlayer();
