@@ -4,8 +4,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using Yarn.Unity;
 
-public class LiarCommands : MonoBehaviour
+public class LiarCommands : DialogueCommands
 {
+    [SerializeField]
+    private Collider[] triggerZones;
 
     [Header("Wwise")]
     /// <summary>
@@ -14,11 +16,6 @@ public class LiarCommands : MonoBehaviour
     /// <param name="paused">Set Wwise variables for sounds here</param>
     public AK.Wwise.Event puzzleSolved;
     /// <summary>
- 
-
-    // Drag and drop your Dialogue Runner into this variable.
-    [SerializeField]
-    private DialogueRunner dialogueRunner;
 
     [SerializeField]
     private GameObject cutscene5;
@@ -28,10 +25,16 @@ public class LiarCommands : MonoBehaviour
         dialogueRunner.AddCommandHandler("liar_win", LiarWin);
     }
 
-    private void LiarWin(string[] parameters)
+    private void LiarWin(string[] parameters, System.Action onComplete)
     {
         //stuff for when players solve liars puzzle
         puzzleSolved.Post(gameObject); //Wwise
         cutscene5.SetActive(true);
+        foreach(Collider trigger in triggerZones)
+        {
+            trigger.enabled = false;
+        }
+        
+        onComplete();
     }
 }
