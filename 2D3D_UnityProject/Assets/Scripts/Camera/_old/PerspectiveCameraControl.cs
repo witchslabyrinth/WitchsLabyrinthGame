@@ -6,14 +6,17 @@ public class PerspectiveCameraControl : MonoBehaviour
 {
     public Camera Camera { get; private set; }
 
-    Vector2 _mouseAbsolute;
-    Vector2 _smoothMouse;
+    private Vector2 _mouseAbsolute;
+    private Vector2 _smoothMouse;
 
-    public Vector2 clampInDegrees = new Vector2(360, 180);
-    //public bool lockCursor;
-    public Vector2 sensitivity = new Vector2(2, 2);
-    public Vector2 smoothing = new Vector2(3, 3);
-    public Vector2 targetDirection;
+    [SerializeField]
+    private Vector2 clampInDegrees = new Vector2(360, 180);
+    [SerializeField]
+    private Vector2 sensitivity = new Vector2(2, 2);
+    [SerializeField]
+    private Vector2 smoothing = new Vector2(3, 3);
+    [SerializeField]
+    private Vector2 targetDirection;
     public Vector2 targetCharacterDirection;
 
     [SerializeField]
@@ -28,17 +31,8 @@ public class PerspectiveCameraControl : MonoBehaviour
 
     public GameObject characterBody;
 
-    private Vector3 startLocalPosition;
-    private Vector3 relativePosition;
-
     void Start()
     {
-        // Set target direction to the camera's initial orientation.
-        targetDirection = transform.localRotation.eulerAngles;
-
-        startLocalPosition = transform.localPosition;
-        relativePosition = transform.position - characterBody.transform.position;
-
         // Set target direction for the character body to its inital state.
         if (characterBody)
             targetCharacterDirection = characterBody.transform.localRotation.eulerAngles;
@@ -47,7 +41,6 @@ public class PerspectiveCameraControl : MonoBehaviour
     public void CameraUpdate()
     {
         // Allow the script to clamp based on a desired target value.
-        var targetOrientation = Quaternion.Euler(targetDirection);
         var targetCharacterOrientation = Quaternion.Euler(targetCharacterDirection);
 
         // Get raw mouse input for a cleaner reading on more sensitive mice.
@@ -67,10 +60,6 @@ public class PerspectiveCameraControl : MonoBehaviour
         if (clampInDegrees.x < 360)
             _mouseAbsolute.x = Mathf.Clamp(_mouseAbsolute.x, -clampInDegrees.x * 0.5f, clampInDegrees.x * 0.5f);
 
-        // Then clamp and apply the global y value.
-        //if (clampInDegrees.y < 360)
-        //    _mouseAbsolute.y = Mathf.Clamp(_mouseAbsolute.y, -clampInDegrees.y * 0.5f, clampInDegrees.y * 0.5f);
-
         // Transform y position of camera based on y input
         _mouseAbsolute.y = Mathf.Clamp(_mouseAbsolute.y, verticalClampMin, verticalClampMax);
         Vector3 newPosition = new Vector3(transform.localPosition.x, verticalClampMax - _mouseAbsolute.y + verticalClampMin, transform.localPosition.z);
@@ -85,7 +74,7 @@ public class PerspectiveCameraControl : MonoBehaviour
         }
         else
         {
-            // If the raycast didn't
+            // If the raycast didn't hit something then put it back in normal spot
             Vector3 pointToCamera = (transform.position - cameraPivot.position).normalized;
             pointToCamera *= distanceFromPivot;
             transform.position = cameraPivot.position + pointToCamera;
@@ -93,7 +82,6 @@ public class PerspectiveCameraControl : MonoBehaviour
 
         // Point camera at pivot
         transform.LookAt(cameraPivot);
-        //transform.localRotation = Quaternion.AngleAxis(-_mouseAbsolute.y, targetOrientation * Vector3.right) * targetOrientation;
 
         // If there's a character body that acts as a parent to the camera
         if (characterBody)
@@ -107,20 +95,4 @@ public class PerspectiveCameraControl : MonoBehaviour
             transform.localRotation *= yRotation;
         }
     }
-
-    //void LateUpdate()
-    //{
-
-    //    RaycastHit hit;
-    //    Debug.DrawRay(characterBody.transform.position, relativePosition, Color.blue);
-    //    if (Physics.Raycast(characterBody.transform.position, relativePosition, out hit, distance + 0.5f))
-    //    {
-    //        transform.position = new Vector3(hit.point.x + hit.normal.x * 0.5f, transform.position.y, hit.point.z + hit.normal.z * 0.5f);
-    //    }
-    //    else
-    //    {
-    //        transform.localPosition = startLocalPosition;
-    //        relativePosition = transform.position - characterBody.transform.position;
-    //    }
-    //}
 }
