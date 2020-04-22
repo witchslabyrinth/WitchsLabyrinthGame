@@ -6,39 +6,46 @@ public class PerspectiveCameraControl : MonoBehaviour
 {
     public Camera Camera { get; private set; }
 
-    Vector2 _mouseAbsolute;
-    Vector2 _smoothMouse;
+    private Vector2 _mouseAbsolute;
+    private Vector2 _smoothMouse;
 
-    public Vector2 clampInDegrees = new Vector2(360, 180);
-    //public bool lockCursor;
-    public Vector2 sensitivity = new Vector2(2, 2);
-    public Vector2 smoothing = new Vector2(3, 3);
-    public Vector2 targetDirection;
+    [SerializeField]
+    private Vector2 clampInDegrees = new Vector2(360, 180);
+    [SerializeField]
+    private Vector2 sensitivity = new Vector2(2, 2);
+    [SerializeField]
+    private Vector2 smoothing = new Vector2(3, 3);
+    [SerializeField]
+    private Vector2 targetDirection;
     public Vector2 targetCharacterDirection;
-    public float distance = 3f;
+
+    [SerializeField]
+    private float verticalClampMax;
+    [SerializeField]
+    private float verticalClampMin;
+    [SerializeField]
+    private float distanceFromPivot;
+    private float lastY;
+    // Set lastY to this value on start as this is the value given to it on the first frame
+    private const float INITIAL_Y = 0.5f;
+
+    [SerializeField]
+    private Transform cameraPivot;
 
     public GameObject characterBody;
 
-    private Vector3 startLocalPosition;
-    private Vector3 relativePosition;
-
     void Start()
     {
-        // Set target direction to the camera's initial orientation.
-        targetDirection = transform.localRotation.eulerAngles;
-
-        startLocalPosition = transform.localPosition;
-        relativePosition = transform.position - characterBody.transform.position;
-
         // Set target direction for the character body to its inital state.
         if (characterBody)
             targetCharacterDirection = characterBody.transform.localRotation.eulerAngles;
+
+        lastY = INITIAL_Y;
     }
 
     public void CameraUpdate()
     {
         // Allow the script to clamp based on a desired target value.
-        var targetOrientation = Quaternion.Euler(targetDirection);
         var targetCharacterOrientation = Quaternion.Euler(targetCharacterDirection);
 
         // Get raw mouse input for a cleaner reading on more sensitive mice.
@@ -58,11 +65,34 @@ public class PerspectiveCameraControl : MonoBehaviour
         if (clampInDegrees.x < 360)
             _mouseAbsolute.x = Mathf.Clamp(_mouseAbsolute.x, -clampInDegrees.x * 0.5f, clampInDegrees.x * 0.5f);
 
-        // Then clamp and apply the global y value.
-        if (clampInDegrees.y < 360)
-            _mouseAbsolute.y = Mathf.Clamp(_mouseAbsolute.y, -clampInDegrees.y * 0.5f, clampInDegrees.y * 0.5f);
+        // Clamp y value
+        _mouseAbsolute.y = Mathf.Clamp(_mouseAbsolute.y, verticalClampMin, verticalClampMax);
 
-        transform.localRotation = Quaternion.AngleAxis(-_mouseAbsolute.y, targetOrientation * Vector3.right) * targetOrientation;
+        // Get amount mouse has moved since last frame
+        float yChange =  _mouseAbsolute.y - lastY;
+        // Get pitch rotation based on yChange and apply it to vector pointing from the pivot to the camera
+        Quaternion rot = Quaternion.AngleAxis(-yChange, characterBody.transform.right);
+        Vector3 pivotToCamera = rot * (transform.position - cameraPivot.position);
+        pivotToCamera = pivotToCamera.normalized;
+
+        // New position is pivotToCamera vector multiplied by distanceFromPivot
+        Vector3 newPosition = cameraPivot.position + (pivotToCamera * distanceFromPivot);
+
+        // Check if there is an object in between camera and pivot
+        RaycastHit hit;
+        if (Physics.Raycast(cameraPivot.position, pivotToCamera, out hit, distanceFromPivot))
+        {
+            // If the raycast hit something, put the camera at the point of collision
+            transform.position = hit.point;
+        }
+        else
+        {
+            // If the raycast didn't hit something then put it in normal spot
+            transform.position = newPosition;
+        }
+
+        // Point camera at pivot
+        transform.LookAt(cameraPivot);
 
         // If there's a character body that acts as a parent to the camera
         if (characterBody)
@@ -75,21 +105,7 @@ public class PerspectiveCameraControl : MonoBehaviour
             var yRotation = Quaternion.AngleAxis(_mouseAbsolute.x, transform.InverseTransformDirection(Vector3.up));
             transform.localRotation *= yRotation;
         }
-    }
 
-    void LateUpdate()
-    {
-
-        RaycastHit hit;
-        Debug.DrawRay(characterBody.transform.position, relativePosition, Color.blue);
-        if (Physics.Raycast(characterBody.transform.position, relativePosition, out hit, distance + 0.5f))
-        {
-            transform.position = new Vector3(hit.point.x + hit.normal.x * 0.5f, transform.position.y, hit.point.z + hit.normal.z * 0.5f);
-        }
-        else
-        {
-            transform.localPosition = startLocalPosition;
-            relativePosition = transform.position - characterBody.transform.position;
-        }
+        lastY = _mouseAbsolute.y;
     }
 }
