@@ -26,6 +26,8 @@ public class PerspectiveCameraControl : MonoBehaviour
     [SerializeField]
     private float distanceFromPivot;
     private float lastY;
+    // Set lastY to this value on start as this is the value given to it on the first frame
+    private const float INITIAL_Y = 0.5f;
 
     [SerializeField]
     private Transform cameraPivot;
@@ -38,7 +40,7 @@ public class PerspectiveCameraControl : MonoBehaviour
         if (characterBody)
             targetCharacterDirection = characterBody.transform.localRotation.eulerAngles;
 
-        lastY = 0.5f;
+        lastY = INITIAL_Y;
     }
 
     public void CameraUpdate()
@@ -63,59 +65,31 @@ public class PerspectiveCameraControl : MonoBehaviour
         if (clampInDegrees.x < 360)
             _mouseAbsolute.x = Mathf.Clamp(_mouseAbsolute.x, -clampInDegrees.x * 0.5f, clampInDegrees.x * 0.5f);
 
-
-        // Transform y position of camera based on y input
+        // Clamp y value
         _mouseAbsolute.y = Mathf.Clamp(_mouseAbsolute.y, verticalClampMin, verticalClampMax);
 
-
-
-
-
-        //float yChange = verticalClampMax - _mouseAbsolute.y + verticalClampMin;
+        // Get amount mouse has moved since last frame
         float yChange =  _mouseAbsolute.y - lastY;
-        Debug.Log(yChange);
+        // Get pitch rotation based on yChange and apply it to vector pointing from the pivot to the camera
         Quaternion rot = Quaternion.AngleAxis(-yChange, characterBody.transform.right);
-        Vector3 projected = rot * (transform.position - cameraPivot.position);
-        projected = projected.normalized;
-        Vector3 newPosition = cameraPivot.position + (projected * distanceFromPivot);
-        Debug.DrawRay(cameraPivot.position, projected);
+        Vector3 pivotToCamera = rot * (transform.position - cameraPivot.position);
+        pivotToCamera = pivotToCamera.normalized;
 
+        // New position is pivotToCamera vector multiplied by distanceFromPivot
+        Vector3 newPosition = cameraPivot.position + (pivotToCamera * distanceFromPivot);
 
+        // Check if there is an object in between camera and pivot
         RaycastHit hit;
-        if (Physics.Raycast(cameraPivot.position, projected, out hit, distanceFromPivot))
+        if (Physics.Raycast(cameraPivot.position, pivotToCamera, out hit, distanceFromPivot))
         {
             // If the raycast hit something, put the camera at the point of collision
             transform.position = hit.point;
         }
         else
         {
-            // If the raycast didn't hit something then put it back in normal spot
+            // If the raycast didn't hit something then put it in normal spot
             transform.position = newPosition;
         }
-
-
-
-
-        //Vector3 newPosition = new Vector3(transform.localPosition.x, verticalClampMax - _mouseAbsolute.y + verticalClampMin, transform.localPosition.z);
-        //transform.localPosition = newPosition;
-
-
-
-
-        //// Raycast from pivot to camera to see if something is in the way
-        //RaycastHit hit;
-        //if (Physics.Raycast(cameraPivot.position, transform.position - cameraPivot.position, out hit, distanceFromPivot))
-        //{
-        //    // If the raycast hit something, put the camera at the point of collision
-        //    transform.position = hit.point;
-        //}
-        //else
-        //{
-        //    // If the raycast didn't hit something then put it back in normal spot
-        //    Vector3 pointToCamera = (transform.position - cameraPivot.position).normalized;
-        //    pointToCamera *= distanceFromPivot;
-        //    transform.position = cameraPivot.position + pointToCamera;
-        //}
 
         // Point camera at pivot
         transform.LookAt(cameraPivot);

@@ -50,7 +50,7 @@ MonoBehaviour:
   targetDirection: {x: 0, y: 0}
   targetCharacterDirection: {x: 0, y: 0}
   verticalClampMax: 0.5
-  verticalClampMin: -40
+  verticalClampMin: -30
   distanceFromPivot: 8
   cameraPivot: {fileID: 8540697867736045891}
   characterBody: {fileID: 2032480695334426566}
@@ -404,11 +404,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1572253898046683820}
     m_Modifications:
-    - target: {fileID: 7753082780663901560, guid: 7bfa28b270e823c4fb7b87724352206b,
+    - target: {fileID: 7753082780663901563, guid: 7bfa28b270e823c4fb7b87724352206b,
         type: 3}
-      propertyPath: actor
-      value: 
-      objectReference: {fileID: 927036935176466216}
+      propertyPath: m_Name
+      value: ActorCamera
+      objectReference: {fileID: 0}
     - target: {fileID: 7753082780663901555, guid: 7bfa28b270e823c4fb7b87724352206b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -464,11 +464,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7753082780663901563, guid: 7bfa28b270e823c4fb7b87724352206b,
+    - target: {fileID: 7753082780663901560, guid: 7bfa28b270e823c4fb7b87724352206b,
         type: 3}
-      propertyPath: m_Name
-      value: ActorCamera
-      objectReference: {fileID: 0}
+      propertyPath: actor
+      value: 
+      objectReference: {fileID: 927036935176466216}
     - target: {fileID: 7753082780663901557, guid: 7bfa28b270e823c4fb7b87724352206b,
         type: 3}
       propertyPath: m_BeforeTransparentBundles.Array.size
