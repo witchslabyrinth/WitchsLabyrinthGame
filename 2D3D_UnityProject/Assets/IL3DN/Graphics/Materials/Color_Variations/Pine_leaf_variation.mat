@@ -7,9 +7,10 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: IL3DN_Shrub_Round_Leaf
-  m_Shader: {fileID: 4800000, guid: 5a31b57bf4856e940b34c99ac2bf12b6, type: 3}
-  m_ShaderKeywords: EFFECT_HUE_VARIATION GEOM_TYPE_LEAF _BEND_ON _SHOWFRONTFACES_ON
+  m_Name: Pine_leaf_variation
+  m_Shader: {fileID: 4800000, guid: f437afc0dfb00a64680aee639387f5b4, type: 3}
+  m_ShaderKeywords: EFFECT_HUE_VARIATION GEOM_TYPE_LEAF _BEND_ON _CULLBACKFACES_ON
+    _CULLFRONTFACES_ON _FLOAT0_ON _FLOAT1_ON _SHOWBACKFACES_ON _SHOWFRONTFACES_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -48,7 +49,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: f5e5ed520e1094d3789ebce20622992f, type: 3}
+        m_Texture: {fileID: 2800000, guid: f6ca14d1b28767248b6da146831632a1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -76,26 +77,28 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _AlphaCutoff: 0.5
+    - _AlphaCutoff: 0.218
     - _Bend: 1
+    - _BendStrenght: 0.5
     - _BumpScale: 1
-    - _Cull: 2
+    - _Cull: 0
+    - _CullBackFaces: 1
+    - _CullFrontFaces: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _Float0: 10
-    - _Flutter: 10
+    - _Float0: 2.61
+    - _Float1: 1
     - _GlossMapScale: 1
     - _Glossiness: 0
     - _GlossyReflections: 1
-    - _MaxWindStrength: 0.25
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _ShadowStrength: 0.5
     - _Shininess: 0.15
-    - _ShowBackFaces: 0
+    - _ShowBackFaces: 1
     - _ShowFrontFaces: 1
     - _SmoothnessTextureChannel: 0
     - _Snow: 0
@@ -106,21 +109,21 @@ Material:
     - _Strenght: 0.5
     - _TranslucencyViewDependency: 0
     - _UVSec: 0
-    - _WIND_ON: 0
     - _Wiggle: 0
-    - _WiggleStrenght: 1
+    - _WiggleStrenght: 0.1
     - _Wind: 0
-    - _WindAmplitudeMultiplier: 1
-    - _WindFLoat: 1
     - _WindQuality: 0
     - _WindStrenght: 0.5
-    - _WindSwinging: 0.25
     - _ZWrite: 1
     - __dirty: 1
     m_Colors:
-    - _Color: {r: 0.42070147, g: 0.43396208, b: 0.10439638, a: 1}
+    - _Color: {r: 0.23471269, g: 0.2735849, b: 0.1509879, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
-    - _HueVariation: {r: 1, g: 1, b: 1, a: 1}
+    - _HueVariation: {r: 1, g: 0.8997179, b: 0.740566, a: 1}
+    - _Pivot: {r: 1, g: 1, b: 0, a: 0}
+    - _ShakePivot: {r: 0.75, g: 0, b: 0, a: 0}
     - _TranslucencyColor: {r: 0.72321427, g: 1, b: 0, a: 1}
     - _TreeInstanceColor: {r: 1, g: 1, b: 1, a: 1}
     - _TreeInstanceScale: {r: 1, g: 1, b: 1, a: 1}
+    - _Vector0: {r: 0, g: 0, b: -1, a: 0}
+    - _Vector1: {r: 0, g: 0, b: 1, a: 0}
