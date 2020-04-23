@@ -25,6 +25,6 @@ public class LoadTeledoorScene : MonoBehaviour
             return;
         }
         //otherwise continue
-        SceneLoader.LoadScene(SCENE_ID.TELEDOOR_INTRO);
+        SceneLoader.LoadScene(SCENE_ID.TELEDOOR);
     }
 }

@@ -27,7 +27,7 @@ public class SceneLoader
     // WARNING: IF THESE ARE INCORRECT SCENE LOADING WILL BREAK
     private const string MainMenuScene = "MainMenu";
     private const string UkiyoeScene = "Ukiyo-e Environment";
-    private const string TeledoorScene = "Puzzles/TeledoorPuzzle";
+    private const string TeledoorScene = "Puzzles/NewPortalPuzzle";
     private const string IntroScene = "Intro";
     private const string OpeningScene = "Opening Scene";
     private const string FinalScene = "Final Scene";
@@ -63,7 +63,8 @@ public class SceneLoader
         }
 
         // Load scene
+        // TODO: consider using LoadSceneAsync() to eliminate performance hiccups while loading
         Debug.LogFormat("Successfully found {0} scene path; loading scene {1}.unity", sceneId, scenePath);
-        SceneManager.LoadScene(scenePath);
+        SceneManager.LoadScene("Scenes/" + scenePath);
     }
 }
