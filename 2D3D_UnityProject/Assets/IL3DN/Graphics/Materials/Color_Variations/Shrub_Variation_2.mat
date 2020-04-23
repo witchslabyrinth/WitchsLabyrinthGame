@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: IL3DN_Shrub_Round_Leaf
+  m_Name: Shrub_Variation_2
   m_Shader: {fileID: 4800000, guid: 5a31b57bf4856e940b34c99ac2bf12b6, type: 3}
   m_ShaderKeywords: EFFECT_HUE_VARIATION GEOM_TYPE_LEAF _BEND_ON _SHOWFRONTFACES_ON
   m_LightmapFlags: 4
@@ -48,7 +48,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: f5e5ed520e1094d3789ebce20622992f, type: 3}
+        m_Texture: {fileID: 2800000, guid: 60e1c0ade03583e409cd4d7e6b5995fa, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -76,7 +76,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _AlphaCutoff: 0.5
+    - _AlphaCutoff: 0.863
     - _Bend: 1
     - _BumpScale: 1
     - _Cull: 2
@@ -118,7 +118,7 @@ Material:
     - _ZWrite: 1
     - __dirty: 1
     m_Colors:
-    - _Color: {r: 0.42070147, g: 0.43396208, b: 0.10439638, a: 1}
+    - _Color: {r: 0.27780113, g: 0.3207547, b: 0.18609825, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
     - _HueVariation: {r: 1, g: 1, b: 1, a: 1}
     - _TranslucencyColor: {r: 0.72321427, g: 1, b: 0, a: 1}
