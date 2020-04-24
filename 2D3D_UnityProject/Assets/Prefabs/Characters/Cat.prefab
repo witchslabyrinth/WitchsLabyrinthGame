@@ -45,11 +45,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clampInDegrees: {x: 360, y: 70}
-  sensitivity: {x: 2, y: 2}
+  sensitivity: {x: 2, y: 1}
   smoothing: {x: 3, y: 3}
   targetDirection: {x: 0, y: 0}
   targetCharacterDirection: {x: 0, y: 0}
-  distance: 3
+  verticalClampMax: 0.5
+  verticalClampMin: -30
+  distanceFromPivot: 8
+  cameraPivot: {fileID: 1907626002431489788}
   characterBody: {fileID: 1943238834350032811}
 --- !u!1 &1943238834350032811
 GameObject:
@@ -84,6 +87,7 @@ Transform:
   m_Children:
   - {fileID: 2450523174480923290}
   - {fileID: 807440142}
+  - {fileID: 1907626002431489788}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -111,6 +115,7 @@ MonoBehaviour:
     orthographic: 0
     orthographicCameraRotation: {x: 0, y: 0, z: 0}
     orthographicCameraOffset: {x: 0, y: 0, z: 0}
+  canSwitchPerspectives: 1
 --- !u!114 &6817140406685672407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,6 +160,36 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &3846220994493564294
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1907626002431489788}
+  m_Layer: 0
+  m_Name: CameraPivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1907626002431489788
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3846220994493564294}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 760704650693178956}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5166871927216861789
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,11 +311,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 807440142}
     m_Modifications:
-    - target: {fileID: 7753082780663901563, guid: 7bfa28b270e823c4fb7b87724352206b,
+    - target: {fileID: 7753082780663901560, guid: 7bfa28b270e823c4fb7b87724352206b,
         type: 3}
-      propertyPath: m_Name
-      value: ActorCamera
-      objectReference: {fileID: 0}
+      propertyPath: actor
+      value: 
+      objectReference: {fileID: 5969970294282569019}
     - target: {fileID: 7753082780663901555, guid: 7bfa28b270e823c4fb7b87724352206b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -336,11 +371,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7753082780663901560, guid: 7bfa28b270e823c4fb7b87724352206b,
+    - target: {fileID: 7753082780663901563, guid: 7bfa28b270e823c4fb7b87724352206b,
         type: 3}
-      propertyPath: actor
-      value: 
-      objectReference: {fileID: 5969970294282569019}
+      propertyPath: m_Name
+      value: ActorCamera
+      objectReference: {fileID: 0}
     - target: {fileID: 7753082780663901557, guid: 7bfa28b270e823c4fb7b87724352206b,
         type: 3}
       propertyPath: m_BeforeTransparentBundles.Array.size
