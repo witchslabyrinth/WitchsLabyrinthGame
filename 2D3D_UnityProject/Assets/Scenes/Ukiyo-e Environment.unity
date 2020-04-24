@@ -1773,6 +1773,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1010056867}
     m_Modifications:
+    - target: {fileID: 5800906375986613077, guid: ae95750e4caabeb47993e78d5c6ba9f4,
+        type: 3}
+      propertyPath: m_Name
+      value: IL3DN_Rock_Boulder_01
+      objectReference: {fileID: 0}
     - target: {fileID: 6280177913000003068, guid: ae95750e4caabeb47993e78d5c6ba9f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1842,11 +1847,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 3.500001
-      objectReference: {fileID: 0}
-    - target: {fileID: 5800906375986613077, guid: ae95750e4caabeb47993e78d5c6ba9f4,
-        type: 3}
-      propertyPath: m_Name
-      value: IL3DN_Rock_Boulder_01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae95750e4caabeb47993e78d5c6ba9f4, type: 3}
@@ -4031,17 +4031,17 @@ PrefabInstance:
     - target: {fileID: 3537598357331550151, guid: 98528cd411fb84f4ba0c306d8ad20a06,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -181.4
+      value: -191.53
       objectReference: {fileID: 0}
     - target: {fileID: 3537598357331550151, guid: 98528cd411fb84f4ba0c306d8ad20a06,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -25.51
+      value: -23.15
       objectReference: {fileID: 0}
     - target: {fileID: 3537598357331550151, guid: 98528cd411fb84f4ba0c306d8ad20a06,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.180003
+      value: 6.73
       objectReference: {fileID: 0}
     - target: {fileID: 3537598357331550151, guid: 98528cd411fb84f4ba0c306d8ad20a06,
         type: 3}
@@ -4091,13 +4091,13 @@ PrefabInstance:
     - target: {fileID: 3537598357331550151, guid: 98528cd411fb84f4ba0c306d8ad20a06,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 4.2375
+      value: 2.219179
       objectReference: {fileID: 0}
     - target: {fileID: 3537598357331550149, guid: 98528cd411fb84f4ba0c306d8ad20a06,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: ee8d40c8f42e54e3ebf133458e0c6dac, type: 2}
+      objectReference: {fileID: 2100000, guid: 6a19c5066b831b5499680e8faf5f7ccb, type: 2}
     - target: {fileID: 3537598357331550147, guid: 98528cd411fb84f4ba0c306d8ad20a06,
         type: 3}
       propertyPath: PairedDoor
@@ -4117,6 +4117,31 @@ PrefabInstance:
         type: 3}
       propertyPath: TeleportOnExitToCoordinate.z
       value: 68.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 3537598357331550148, guid: 98528cd411fb84f4ba0c306d8ad20a06,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 17.617172
+      objectReference: {fileID: 0}
+    - target: {fileID: 3537598357331550148, guid: 98528cd411fb84f4ba0c306d8ad20a06,
+        type: 3}
+      propertyPath: m_Center.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3537598357331550148, guid: 98528cd411fb84f4ba0c306d8ad20a06,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3537598357331550148, guid: 98528cd411fb84f4ba0c306d8ad20a06,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.3022667
+      objectReference: {fileID: 0}
+    - target: {fileID: 3537598357331550148, guid: 98528cd411fb84f4ba0c306d8ad20a06,
+        type: 3}
+      propertyPath: m_Center.y
+      value: -0.15113297
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98528cd411fb84f4ba0c306d8ad20a06, type: 3}
@@ -5876,6 +5901,12 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: ce9232187b3da1745b53df2bce0ce249, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 096674d783c364d42a651e98456638a0, type: 3}
+--- !u!4 &483190639 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7714596743700103401, guid: fd7faa83115f80249a233f9abedd7e27,
+    type: 3}
+  m_PrefabInstance: {fileID: 1553414912}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &517161358
 GameObject:
   m_ObjectHideFlags: 0
@@ -7142,6 +7173,50 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 611067444}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &611980978
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 611980979}
+  - component: {fileID: 611980980}
+  m_Layer: 0
+  m_Name: collider (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &611980979
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 611980978}
+  m_LocalRotation: {x: -0, y: -0, z: -0.3429502, w: 0.93935364}
+  m_LocalPosition: {x: -100.79, y: -2.29, z: 0}
+  m_LocalScale: {x: 1.0014579, y: 1.0014573, z: 1}
+  m_Children: []
+  m_Father: {fileID: 483190639}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -40.113003}
+--- !u!65 &611980980
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 611980978}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.129873, y: 0.4995493, z: 1.7627615}
+  m_Center: {x: 0.3350067, y: 0.26193184, z: 0.027239483}
 --- !u!1001 &613706699
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8944,6 +9019,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2097872023213072733}
     m_Modifications:
+    - target: {fileID: 100000, guid: d74d9dc85262a704d958dc0bbeb58aab, type: 3}
+      propertyPath: m_Name
+      value: IL3DN_Rock_Boulder_02
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d74d9dc85262a704d958dc0bbeb58aab, type: 3}
       propertyPath: m_LocalPosition.x
       value: -15.600157
@@ -8999,10 +9078,6 @@ PrefabInstance:
     - target: {fileID: 400000, guid: d74d9dc85262a704d958dc0bbeb58aab, type: 3}
       propertyPath: m_LocalScale.z
       value: 3.8125038
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: d74d9dc85262a704d958dc0bbeb58aab, type: 3}
-      propertyPath: m_Name
-      value: IL3DN_Rock_Boulder_02
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d74d9dc85262a704d958dc0bbeb58aab, type: 3}
@@ -14792,6 +14867,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2097872022891691697}
     m_Modifications:
+    - target: {fileID: 100000, guid: d74d9dc85262a704d958dc0bbeb58aab, type: 3}
+      propertyPath: m_Name
+      value: IL3DN_Rock_Boulder_02
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d74d9dc85262a704d958dc0bbeb58aab, type: 3}
       propertyPath: m_LocalPosition.x
       value: -25.855742
@@ -14847,10 +14926,6 @@ PrefabInstance:
     - target: {fileID: 400000, guid: d74d9dc85262a704d958dc0bbeb58aab, type: 3}
       propertyPath: m_LocalScale.z
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: d74d9dc85262a704d958dc0bbeb58aab, type: 3}
-      propertyPath: m_Name
-      value: IL3DN_Rock_Boulder_02
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d74d9dc85262a704d958dc0bbeb58aab, type: 3}
@@ -23065,6 +23140,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 322389296}
     m_Modifications:
+    - target: {fileID: -927199367670048503, guid: 2acbdb370bce0504abe2193c4ba47e0b,
+        type: 3}
+      propertyPath: m_Name
+      value: ukioye_foliage_lily_v01 (14)
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 2acbdb370bce0504abe2193c4ba47e0b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -23134,11 +23214,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.7997
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 2acbdb370bce0504abe2193c4ba47e0b,
-        type: 3}
-      propertyPath: m_Name
-      value: ukioye_foliage_lily_v01 (14)
       objectReference: {fileID: 0}
     - target: {fileID: 449489735629676091, guid: 2acbdb370bce0504abe2193c4ba47e0b,
         type: 3}
@@ -40551,6 +40626,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2097872023213072733}
     m_Modifications:
+    - target: {fileID: 5800906375986613077, guid: ae95750e4caabeb47993e78d5c6ba9f4,
+        type: 3}
+      propertyPath: m_Name
+      value: IL3DN_Rock_Boulder_01
+      objectReference: {fileID: 0}
     - target: {fileID: 6280177913000003068, guid: ae95750e4caabeb47993e78d5c6ba9f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -40620,11 +40700,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5800906375986613077, guid: ae95750e4caabeb47993e78d5c6ba9f4,
-        type: 3}
-      propertyPath: m_Name
-      value: IL3DN_Rock_Boulder_01
       objectReference: {fileID: 0}
     - target: {fileID: 2569219483663135492, guid: ae95750e4caabeb47993e78d5c6ba9f4,
         type: 3}
@@ -46473,6 +46548,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2097872022098413221}
     m_Modifications:
+    - target: {fileID: 470123331780626262, guid: a5b864fe7ab693b4ebbfb3e1502aac7e,
+        type: 3}
+      propertyPath: m_Name
+      value: IL3DN_Rock_Boulder_02
+      objectReference: {fileID: 0}
     - target: {fileID: 3360329922263324231, guid: a5b864fe7ab693b4ebbfb3e1502aac7e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -46542,11 +46622,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.9199998
-      objectReference: {fileID: 0}
-    - target: {fileID: 470123331780626262, guid: a5b864fe7ab693b4ebbfb3e1502aac7e,
-        type: 3}
-      propertyPath: m_Name
-      value: IL3DN_Rock_Boulder_02
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5b864fe7ab693b4ebbfb3e1502aac7e, type: 3}
@@ -46653,6 +46728,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2097872022098413221}
     m_Modifications:
+    - target: {fileID: 470123331780626262, guid: a5b864fe7ab693b4ebbfb3e1502aac7e,
+        type: 3}
+      propertyPath: m_Name
+      value: IL3DN_Rock_Boulder_02 (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 3360329922263324231, guid: a5b864fe7ab693b4ebbfb3e1502aac7e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -46707,11 +46787,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 470123331780626262, guid: a5b864fe7ab693b4ebbfb3e1502aac7e,
-        type: 3}
-      propertyPath: m_Name
-      value: IL3DN_Rock_Boulder_02 (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5b864fe7ab693b4ebbfb3e1502aac7e, type: 3}
@@ -49593,6 +49668,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2097872022098413221}
     m_Modifications:
+    - target: {fileID: 5800906375986613077, guid: ae95750e4caabeb47993e78d5c6ba9f4,
+        type: 3}
+      propertyPath: m_Name
+      value: IL3DN_Rock_Boulder_01
+      objectReference: {fileID: 0}
     - target: {fileID: 6280177913000003068, guid: ae95750e4caabeb47993e78d5c6ba9f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -49662,11 +49742,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 2.7789
-      objectReference: {fileID: 0}
-    - target: {fileID: 5800906375986613077, guid: ae95750e4caabeb47993e78d5c6ba9f4,
-        type: 3}
-      propertyPath: m_Name
-      value: IL3DN_Rock_Boulder_01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae95750e4caabeb47993e78d5c6ba9f4, type: 3}
@@ -49863,6 +49938,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2097872023213072733}
     m_Modifications:
+    - target: {fileID: 7949765178566123054, guid: 4219cbfc687e52d4abce92150222943d,
+        type: 3}
+      propertyPath: m_Name
+      value: ukioye_RockGroup1_with_colliders (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 6343430677062675517, guid: 4219cbfc687e52d4abce92150222943d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -49932,11 +50012,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 7.493132
-      objectReference: {fileID: 0}
-    - target: {fileID: 7949765178566123054, guid: 4219cbfc687e52d4abce92150222943d,
-        type: 3}
-      propertyPath: m_Name
-      value: ukioye_RockGroup1_with_colliders (2)
       objectReference: {fileID: 0}
     - target: {fileID: 8534298495537261298, guid: 4219cbfc687e52d4abce92150222943d,
         type: 3}
@@ -65097,6 +65172,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1834628213}
     m_Modifications:
+    - target: {fileID: -927199367670048503, guid: d3ef05419a1c2f44b8777c1f1b03f7b8,
+        type: 3}
+      propertyPath: m_Name
+      value: river
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: d3ef05419a1c2f44b8777c1f1b03f7b8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -65166,11 +65246,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.5675305
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: d3ef05419a1c2f44b8777c1f1b03f7b8,
-        type: 3}
-      propertyPath: m_Name
-      value: river
       objectReference: {fileID: 0}
     - target: {fileID: -1504981713932161579, guid: d3ef05419a1c2f44b8777c1f1b03f7b8,
         type: 3}
@@ -80194,6 +80269,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2097872022891691697}
     m_Modifications:
+    - target: {fileID: 100000, guid: 94d31e8bd1fae91498478875216adb61, type: 3}
+      propertyPath: m_Name
+      value: IL3DN_Rock_Boulder_01
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 94d31e8bd1fae91498478875216adb61, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.397419
@@ -80249,10 +80328,6 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 94d31e8bd1fae91498478875216adb61, type: 3}
       propertyPath: m_LocalScale.z
       value: 1.1758629
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 94d31e8bd1fae91498478875216adb61, type: 3}
-      propertyPath: m_Name
-      value: IL3DN_Rock_Boulder_01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94d31e8bd1fae91498478875216adb61, type: 3}
@@ -80719,6 +80794,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2097872022891691697}
     m_Modifications:
+    - target: {fileID: 7949765178566123054, guid: 4219cbfc687e52d4abce92150222943d,
+        type: 3}
+      propertyPath: m_Name
+      value: ukioye_RockGroup1_with_colliders (3)
+      objectReference: {fileID: 0}
     - target: {fileID: 6343430677062675517, guid: 4219cbfc687e52d4abce92150222943d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -80788,11 +80868,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 3.7465646
-      objectReference: {fileID: 0}
-    - target: {fileID: 7949765178566123054, guid: 4219cbfc687e52d4abce92150222943d,
-        type: 3}
-      propertyPath: m_Name
-      value: ukioye_RockGroup1_with_colliders (3)
       objectReference: {fileID: 0}
     - target: {fileID: 8534298495537261298, guid: 4219cbfc687e52d4abce92150222943d,
         type: 3}
@@ -81084,6 +81159,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2097872023213072733}
     m_Modifications:
+    - target: {fileID: 5800906375986613077, guid: ae95750e4caabeb47993e78d5c6ba9f4,
+        type: 3}
+      propertyPath: m_Name
+      value: IL3DN_Rock_Boulder_01
+      objectReference: {fileID: 0}
     - target: {fileID: 6280177913000003068, guid: ae95750e4caabeb47993e78d5c6ba9f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -81153,11 +81233,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5800906375986613077, guid: ae95750e4caabeb47993e78d5c6ba9f4,
-        type: 3}
-      propertyPath: m_Name
-      value: IL3DN_Rock_Boulder_01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae95750e4caabeb47993e78d5c6ba9f4, type: 3}
