@@ -29,6 +29,8 @@ public class PerspectiveCameraControl : MonoBehaviour
     // Set lastY to this value on start as this is the value given to it on the first frame
     private const float INITIAL_Y = 0.5f;
 
+    private int CAMERA_MASK;
+
     [SerializeField]
     private Transform cameraPivot;
 
@@ -36,6 +38,7 @@ public class PerspectiveCameraControl : MonoBehaviour
 
     void Start()
     {
+        CAMERA_MASK = LayerMask.GetMask("CameraCollision");
         // Set target direction for the character body to its inital state.
         if (characterBody)
             targetCharacterDirection = characterBody.transform.localRotation.eulerAngles;
@@ -80,7 +83,7 @@ public class PerspectiveCameraControl : MonoBehaviour
 
         // Check if there is an object in between camera and pivot
         RaycastHit hit;
-        if (Physics.Raycast(cameraPivot.position, pivotToCamera, out hit, distanceFromPivot))
+        if (Physics.Raycast(cameraPivot.position, pivotToCamera, out hit, distanceFromPivot, CAMERA_MASK))
         {
             // If the raycast hit something, put the camera at the point of collision
             transform.position = hit.point;
