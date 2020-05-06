@@ -2102,7 +2102,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 141319913}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.7774734, y: 8.214344, z: 29.49259}
+  m_LocalPosition: {x: 4.7774734, y: -0.1, z: 29.49259}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1370663848}
@@ -10714,6 +10714,13 @@ MonoBehaviour:
     - color: {r: 0.35220566, g: 0.3962264, b: 0.16634032, a: 1}
       mainTex: {fileID: 2800000, guid: 065bc5fea51e8408c8a71a3cfc3d5240, type: 3}
     selectedProperty: 2
+  - meterial: {fileID: 2100000, guid: 0007dba6afb45374c88b62d209ed9c5e, type: 2}
+    properties:
+    - color: {r: 0.064213075, g: 0.3109832, b: 0.3679243, a: 1}
+      mainTex: {fileID: 2800000, guid: 46fa255f11489784a86ff91e1485cca5, type: 3}
+    - color: {r: 0.23123793, g: 0.3018868, b: 0.1723033, a: 1}
+      mainTex: {fileID: 2800000, guid: 46fa255f11489784a86ff91e1485cca5, type: 3}
+    selectedProperty: 1
 --- !u!114 &722401816
 MonoBehaviour:
   m_ObjectHideFlags: 0
