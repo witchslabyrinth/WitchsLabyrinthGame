@@ -377,6 +377,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7af39e02abefb7942b46b982ce48d48f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Block_Move:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  Block_Interact:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  Block_Win:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
   patternCubes:
   - {fileID: 602784397452107048}
   - {fileID: 986295921031366894}
@@ -420,6 +432,10 @@ MonoBehaviour:
     m_RotationOrder: 4
   winAnimationJumpTime: 1
   winAnimationTimeInBetween: 0.25
+  puzzleSolved:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
   solved: 0
   scene3: {fileID: 0}
   scene3Cam: {fileID: 0}
