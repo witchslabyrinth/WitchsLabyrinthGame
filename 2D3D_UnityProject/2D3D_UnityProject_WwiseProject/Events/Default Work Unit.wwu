@@ -115,6 +115,9 @@
 						<Event Name="Title_Music" ID="{8132F5EA-4747-45B3-9DF9-006594CC5240}">
 							<ChildrenList>
 								<Action Name="" ID="{4179F66B-17BE-4D23-8E2F-896078FAA2FF}" ShortID="890554729">
+									<PropertyList>
+										<Property Name="FadeInCurve" Type="int16" Value="6"/>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="bgm_Broad_Strokes" ID="{29028CA5-A0D5-4658-AB46-1E8F549DA0D4}" WorkUnitID="{AC394B22-B424-42F1-91AE-4207A146B3EA}"/>

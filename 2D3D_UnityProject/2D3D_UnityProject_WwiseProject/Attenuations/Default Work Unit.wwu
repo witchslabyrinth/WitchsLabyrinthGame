@@ -5,7 +5,7 @@
 			<ChildrenList>
 				<Attenuation Name="Pond" ID="{EF358F24-EB4E-49BF-A5A2-52AE6C7C41FD}" ShortID="515663783">
 					<PropertyList>
-						<Property Name="RadiusMax" Type="Real64" Value="50"/>
+						<Property Name="RadiusMax" Type="Real64" Value="40"/>
 					</PropertyList>
 					<CurveUsageInfoList>
 						<VolumeDryUsage>
@@ -22,7 +22,7 @@
 											<SegmentShape>Log2</SegmentShape>
 										</Point>
 										<Point>
-											<XPos>50</XPos>
+											<XPos>40</XPos>
 											<YPos>-200</YPos>
 											<Flags>37</Flags>
 										</Point>
@@ -50,7 +50,7 @@
 											<SegmentShape>Exp2</SegmentShape>
 										</Point>
 										<Point>
-											<XPos>50</XPos>
+											<XPos>40</XPos>
 											<YPos>100</YPos>
 											<Flags>37</Flags>
 										</Point>

@@ -11,6 +11,9 @@
 					<PropertyList>
 						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-10</Value>
+							</ValueList>
 							<RTPCList>
 								<RTPC Name="" ID="{04A43B7C-90A0-473E-A016-E0805E183619}" ShortID="564323632">
 									<ReferenceList>
@@ -174,7 +177,7 @@
 						</Property>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>3</Value>
+								<Value>-9</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>

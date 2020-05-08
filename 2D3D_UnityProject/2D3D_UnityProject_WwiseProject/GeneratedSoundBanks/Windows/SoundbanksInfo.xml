@@ -29,7 +29,7 @@
 				<Event Id="4000923032" Name="FishLose" ObjectPath="\Events\Default Work Unit\Puzzles\KoiFish\FishLose" DurationType="OneShot" DurationMin="1.793368" DurationMax="1.793368"/>
 				<Event Id="1856056972" Name="FishMove" ObjectPath="\Events\Default Work Unit\Puzzles\KoiFish\FishMove" DurationType="OneShot" DurationMin="4.895162" DurationMax="4.895162"/>
 				<Event Id="2765306547" Name="FishWin" ObjectPath="\Events\Default Work Unit\Puzzles\KoiFish\FishWin" DurationType="OneShot" DurationMin="3.806111" DurationMax="3.806111"/>
-				<Event Id="648916573" Name="Footstep_Player" ObjectPath="\Events\Default Work Unit\Oliver\Interactions\Footstep_Player" DurationType="OneShot" DurationMin="0.150421" DurationMax="0.682857"/>
+				<Event Id="648916573" Name="Footstep_Player" ObjectPath="\Events\Default Work Unit\Oliver\Interactions\Footstep_Player" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="2385628198" Name="Footsteps" ObjectPath="\Events\Default Work Unit\Footsteps" DurationType="OneShot" DurationMin="0.361333" DurationMax="1.578667"/>
 				<Event Id="1466384055" Name="Interact" ObjectPath="\Events\Default Work Unit\Puzzles\Liars\Interact" DurationType="OneShot" DurationMin="1.268949" DurationMax="1.268949"/>
 				<Event Id="3443213188" Name="lantern_idle" ObjectPath="\Events\Default Work Unit\Ambience\lantern_idle" MaxAttenuation="15.000000" DurationType="Infinite"/>
@@ -39,7 +39,7 @@
 				<Event Id="961842423" Name="OnMenuHover" ObjectPath="\Events\UI\OnMenuHover" DurationType="OneShot" DurationMin="4.749252" DurationMax="4.749252"/>
 				<Event Id="547102971" Name="OnMenuOpen" ObjectPath="\Events\UI\OnMenuOpen" DurationType="OneShot" DurationMin="4.749252" DurationMax="4.749252"/>
 				<Event Id="1412352919" Name="OnMenuSelect" ObjectPath="\Events\UI\OnMenuSelect" DurationType="OneShot" DurationMin="4.749252" DurationMax="4.749252"/>
-				<Event Id="661114568" Name="Pond_Sound" ObjectPath="\Events\Default Work Unit\Pond\Pond_Sound" MaxAttenuation="50.000000" DurationType="Infinite"/>
+				<Event Id="661114568" Name="Pond_Sound" ObjectPath="\Events\Default Work Unit\Pond\Pond_Sound" MaxAttenuation="40.000000" DurationType="Infinite"/>
 				<Event Id="1107599359" Name="Puzzle_Solved" ObjectPath="\Events\Default Work Unit\Puzzles\Puzzle_Solved" DurationType="OneShot" DurationMin="2.173913" DurationMax="2.173913"/>
 				<Event Id="1302771492" Name="Rotate" ObjectPath="\Events\Default Work Unit\Puzzles\Block\Rotate" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="1041426236" Name="StayThereCat" ObjectPath="\Events\Default Work Unit\Cat\StayThereCat" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
@@ -108,10 +108,6 @@
 					<ShortName>Footsteps_Wood_3.wav</ShortName>
 					<Path>SFX\Footsteps_Wood_3_10C4C929.wem</Path>
 				</File>
-				<File Id="386537885" Language="SFX">
-					<ShortName>Footsteps\step_Wood.wav</ShortName>
-					<Path>SFX\Footsteps\step_Wood_10C4C929.wem</Path>
-				</File>
 				<File Id="423372702" Language="SFX">
 					<ShortName>shakuhachi-flute-play.wav</ShortName>
 					<Path>SFX\shakuhachi-flute-play_492A62EC.wem</Path>
@@ -139,10 +135,6 @@
 				<File Id="608269658" Language="SFX">
 					<ShortName>lantern_idle_crackle.wav</ShortName>
 					<Path>SFX\lantern_idle_crackle_D79FB2B7.wem</Path>
-				</File>
-				<File Id="611871310" Language="SFX">
-					<ShortName>Footsteps\Step_Stone.wav</ShortName>
-					<Path>SFX\Footsteps\Step_Stone_10C4C929.wem</Path>
 				</File>
 				<File Id="640412345" Language="SFX">
 					<ShortName>SE_solve.wav</ShortName>
@@ -179,10 +171,6 @@
 				<File Id="975385032" Language="SFX">
 					<ShortName>Footsteps_Wood_2.wav</ShortName>
 					<Path>SFX\Footsteps_Wood_2_10C4C929.wem</Path>
-				</File>
-				<File Id="1015469370" Language="SFX">
-					<ShortName>Footsteps\step_Grass.wav</ShortName>
-					<Path>SFX\Footsteps\step_Grass_10C4C929.wem</Path>
 				</File>
 				<File Id="1035784692" Language="SFX">
 					<ShortName>SlidingDoor_Open.wav</ShortName>
