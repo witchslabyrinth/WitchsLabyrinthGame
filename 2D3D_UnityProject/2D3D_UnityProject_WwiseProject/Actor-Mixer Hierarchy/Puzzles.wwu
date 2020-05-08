@@ -156,6 +156,11 @@
 						</Sound>
 						<RandomSequenceContainer Name="Stones" ID="{FB906353-D46E-48C3-BA05-69BB868899BB}" ShortID="369699205">
 							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>-150</Value>
+									</ValueList>
+								</Property>
 								<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="2"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>

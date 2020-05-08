@@ -31,7 +31,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 31c7159bb637e0438b0b0a3598f10701
     GuidInternal: 
-    m_lastTime: -8586165971906435695
+    m_lastTime: -8586149582149953451
     List:
     - name: Main
       guid: 1d85aefae0798f44adc3648c94a6abd2
@@ -65,7 +65,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 5601ea873c34f449957bd3b5ded1c2c6
     GuidInternal: 
-    m_lastTime: -8586165972399606486
+    m_lastTime: -8586149582177588639
     List:
     - name: Activate
       guid: c59c41cebb8af84581b54cc0d1ba071a
@@ -109,8 +109,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Cat\cat_random
       maxAttenuation: 15
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 4.82229
+      minDuration: 1.042221
     - name: CatSwitchSound
       guid: d1a8c45f839f904fbc04fe586e18bb61
       id: 3589155492
@@ -244,7 +244,7 @@ MonoBehaviour:
       - ElementName: lantern_idle
         ObjectType: 3
       Path: Default Work Unit\Ambience\lantern_idle
-      maxAttenuation: 15
+      maxAttenuation: 10
       maxDuration: -1
       minDuration: -1
     - name: Lantern_LightUp
@@ -318,7 +318,7 @@ MonoBehaviour:
       - ElementName: Pond_Sound
         ObjectType: 3
       Path: Default Work Unit\Pond\Pond_Sound
-      maxAttenuation: 60
+      maxAttenuation: 50
       maxDuration: -1
       minDuration: -1
     - name: Puzzle_Solved
@@ -395,8 +395,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Puzzles\Zodiac\Stones_Move
       maxAttenuation: 0
-      maxDuration: 0.432
-      minDuration: 0.432
+      maxDuration: 0.471099
+      minDuration: 0.471099
     - name: Title_Music
       guid: eaf532814747b3459df9006594cc5240
       id: 309205993
@@ -475,7 +475,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 91fd7b16390ad84fbc6d407fad2d1946
     GuidInternal: 
-    m_lastTime: -8586175349282173816
+    m_lastTime: -8586175317333681889
     List:
     - name: OnMenuClose
       guid: b0c2fdfe821f1d4d877a0e550088c4fb
@@ -530,7 +530,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: f097083e8173b046a10e637ecb6d4f17
     GuidInternal: 
-    m_lastTime: -8586175349282143899
+    m_lastTime: -8586175317333661882
     List:
     - name: Title_Music
       guid: 280423ae7a8bb843b06154ad7bb0eca5
@@ -685,7 +685,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: cb5f7cd43e7dce46b55ab3766d658e16
     GuidInternal: 
-    m_lastTime: -8586167801914049872
+    m_lastTime: -8586149582149893403
     List:
     - name: Footsteps
       guid: a630a1ae3c04f34cbbb0d3da9f4abdbe
@@ -754,7 +754,6 @@ MonoBehaviour:
   - /2D3D_UnityProject_WwiseProject
   - /2D3D_UnityProject_WwiseProject/Events
   - /2D3D_UnityProject_WwiseProject/Events/Default Work Unit
-  - /2D3D_UnityProject_WwiseProject/Events/Default Work Unit/Puzzles
-  - /2D3D_UnityProject_WwiseProject/Events/Default Work Unit/Puzzles/Portal
+  - /2D3D_UnityProject_WwiseProject/Events/Default Work Unit/Pond
   autoPopulateEnabled: 1
   CurrentPluginConfig: 
