@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -20658,7 +20658,7 @@ MonoBehaviour:
       mainTex: {fileID: 2800000, guid: 70b706d8f2de2dc42891234a863b5b62, type: 3}
     - color: {r: 1, g: 0.73434687, b: 0, a: 1}
       mainTex: {fileID: 2800000, guid: 70b706d8f2de2dc42891234a863b5b62, type: 3}
-    selectedProperty: 0
+    selectedProperty: 2
   - meterial: {fileID: 2100000, guid: e3ac01954a8b90b418546e44fa6011b2, type: 2}
     properties:
     - color: {r: 0.99056596, g: 0.8732876, b: 0.31305602, a: 1}
