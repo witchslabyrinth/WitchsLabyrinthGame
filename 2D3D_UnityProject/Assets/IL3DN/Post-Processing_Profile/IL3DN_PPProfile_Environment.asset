@@ -170,24 +170,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f011806d58d75c74191b40bd40594829, type: 3}
   m_Name: IL3DN_Fog_PP
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   enabled:
     overrideState: 1
     value: 1
   _Density:
     overrideState: 1
-    value: 1
+    value: 1.1
   _NearColor:
-    overrideState: 1
-    value: {r: 1, g: 0.6745098, b: 0.41960785, a: 0}
+    overrideState: 0
+    value: {r: 0.48008507, g: 0.5019608, b: 0.19999999, a: 0}
   _FarColor:
-    overrideState: 1
-    value: {r: 0.21176471, g: 0.5803922, b: 1, a: 0.4}
+    overrideState: 0
+    value: {r: 0.34550756, g: 0.4433962, b: 0.26980242, a: 0.4}
   _GlowColor:
     overrideState: 1
-    value: {r: 0.24705882, g: 0.11764706, b: 0, a: 0}
+    value: {r: 0.31132078, g: 0.2925608, b: 0.20412071, a: 0}
   _ExcludeSkybox:
-    overrideState: 1
+    overrideState: 0
     value: 0
 --- !u!114 &114877922873275810
 MonoBehaviour:
