@@ -37130,16 +37130,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6836743142534380026}
     m_Modifications:
-    - target: {fileID: 619694320097713837, guid: fcd278b052b596348bc0253f08964bb9,
-        type: 3}
-      propertyPath: m_Name
-      value: EnterTrigger
-      objectReference: {fileID: 0}
-    - target: {fileID: 619694320097713837, guid: fcd278b052b596348bc0253f08964bb9,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 619694320097713842, guid: fcd278b052b596348bc0253f08964bb9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -37195,6 +37185,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 619694320097713837, guid: fcd278b052b596348bc0253f08964bb9,
+        type: 3}
+      propertyPath: m_Name
+      value: EnterTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 619694320097713837, guid: fcd278b052b596348bc0253f08964bb9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 619694320097713843, guid: fcd278b052b596348bc0253f08964bb9,
         type: 3}
       propertyPath: HouseExitInvisibleWall
@@ -37215,11 +37215,6 @@ PrefabInstance:
       propertyPath: toClose
       value: 
       objectReference: {fileID: 1148877125796454450}
-    - target: {fileID: 619694320097713841, guid: fcd278b052b596348bc0253f08964bb9,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fcd278b052b596348bc0253f08964bb9, type: 3}
 --- !u!4 &8606622834704313367 stripped
