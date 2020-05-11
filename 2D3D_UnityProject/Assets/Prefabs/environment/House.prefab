@@ -6400,8 +6400,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cca76cd6cc4e3dd46a5ead049a22a97f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftDoor: {fileID: 0}
-  rightDoor: {fileID: 0}
+  leftDoor: {fileID: 1332193171289793711}
+  rightDoor: {fileID: 341543264387478431}
   openCloseCurve:
     serializedVersion: 2
     m_Curve:
@@ -37130,6 +37130,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6836743142534380026}
     m_Modifications:
+    - target: {fileID: 619694320097713837, guid: fcd278b052b596348bc0253f08964bb9,
+        type: 3}
+      propertyPath: m_Name
+      value: EnterTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 619694320097713837, guid: fcd278b052b596348bc0253f08964bb9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 619694320097713842, guid: fcd278b052b596348bc0253f08964bb9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -37184,16 +37194,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 619694320097713837, guid: fcd278b052b596348bc0253f08964bb9,
-        type: 3}
-      propertyPath: m_Name
-      value: EnterTrigger
-      objectReference: {fileID: 0}
-    - target: {fileID: 619694320097713837, guid: fcd278b052b596348bc0253f08964bb9,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 619694320097713843, guid: fcd278b052b596348bc0253f08964bb9,
         type: 3}
