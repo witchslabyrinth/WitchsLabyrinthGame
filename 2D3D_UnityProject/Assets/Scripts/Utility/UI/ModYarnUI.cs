@@ -89,7 +89,7 @@ namespace Yarn.Unity
             else
             {
                 string[] lineElements = text.Split(':');
-                if(lineElements.Length > 0)
+                if(lineElements.Length > 1)
                 {
                     name = lineElements[0];
                     name.Trim();
