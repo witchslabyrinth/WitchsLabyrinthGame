@@ -27,6 +27,7 @@ public class DialogueCommands : MonoBehaviour
         dialogueRunner.AddCommandHandler("reset_camera", ResetCamera);
         dialogueRunner.AddCommandHandler("set_mouse_on", SetMouseActive);
         dialogueRunner.AddCommandHandler("show_sprites", ShowSprites);
+        dialogueRunner.AddCommandHandler("enable_control", EnableControl);
     }
 
     /// <summary>
@@ -131,6 +132,14 @@ public class DialogueCommands : MonoBehaviour
     {
         oliverSprite.SetActive(true);
         catSprite.SetActive(true);
+        onComplete();
+    }
+
+    protected void EnableControl(string[] parameters, System.Action onComplete)
+    {
+        Actor actor = PlayerController.Instance.GetPlayer();
+        actor.SetControlActive(true);
+        CameraController.Instance.SetMainCamera(actor.actorCamera);
         onComplete();
     }
 }
