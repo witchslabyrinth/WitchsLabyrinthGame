@@ -250,6 +250,12 @@ public class Actor : MonoBehaviour
         playFootstepCoroutine = null;
     }
 
+    public void SetControlActive(bool active)
+    {
+        animationController.enabled = active;
+        enabled = active;
+    }
+
     /// <summary>
     /// Sets actor functionality (camera, movement, visibility, etc)
     /// </summary>
