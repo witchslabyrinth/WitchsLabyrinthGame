@@ -164,6 +164,28 @@
 										<ActiveSource Name="luke_huh (2)" ID="{3C07B5EF-4688-46D7-BCB8-6BBBA2790223}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
+								<Sound Name="Oliver_hmm_04 test" ID="{DD83AC73-439F-4DF7-A546-54421D676E9C}" ShortID="522402592">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{24C7AD02-E66A-4B4B-8735-0AC29636FC00}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CB9D8304-7AAA-4374-9412-CD9A3A2EDD3D}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Oliver_hmm_03" ID="{BF8C0CD7-7BED-4FBB-AB57-A11F538D9006}" ShortID="812432308">
+											<Language>SFX</Language>
+											<AudioFile>Hmm\Oliver_hmm_03.wav</AudioFile>
+											<ConvertedFileIDList>
+												<File ID="731026582"/>
+											</ConvertedFileIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Oliver_hmm_03" ID="{BF8C0CD7-7BED-4FBB-AB57-A11F538D9006}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
 							</ChildrenList>
 						</RandomSequenceContainer>
 						<Sound Name="luke_oh (1)" ID="{36DDBF85-7FCF-41BE-9D44-9E35428F875A}" ShortID="878172900">

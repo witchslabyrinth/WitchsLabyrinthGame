@@ -23,6 +23,10 @@ public class KoiFishFeedingPod : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        // Don't prompt player to interact if puzzle already solved
+        if (KoiFishPuzzle.Instance.solved)
+            return;
+
         if (other.TryGetComponent(out PlayerInteractionController playerInteractionController))
             playerInteractionController.SetInKoiFishZone(true, koiFish);
 

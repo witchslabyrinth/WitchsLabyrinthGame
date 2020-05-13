@@ -5,6 +5,19 @@ using Yarn.Unity;
 
 public class PatternPuzzle : MonoBehaviour
 {
+   [Header("Wwise")]
+    /// <summary>
+    /// Set Wwise variables
+    /// </summary>
+    /// <param name="paused">Set Wwise variables for sounds here</param>
+    public AK.Wwise.Event Block_Move;
+    public AK.Wwise.Event Block_Interact;
+    public AK.Wwise.Event Block_Win;
+   
+   
+   
+   
+   
     [SerializeField]
     private List<PatternCube> patternCubes;
 
@@ -22,6 +35,8 @@ public class PatternPuzzle : MonoBehaviour
     private float winAnimationJumpTime;
     [SerializeField]
     private float winAnimationTimeInBetween;
+
+    public AK.Wwise.Event puzzleSolved;
 
     private int _currentCube;
     private int CurrentCube
@@ -63,21 +78,25 @@ public class PatternPuzzle : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.J))
             {
+                Block_Move.Post(gameObject); //Wwise
                 if (CurrentCube - 1 >= 0)
                     CurrentCube--;
             }
             if (Input.GetKeyDown(KeyCode.W))
             {
+                Block_Move.Post(gameObject); //Wwise
                 patternCubes[CurrentCube].Rotate(Direction.BACKWARD);
                 StartCoroutine(CheckSolved());
             }
             if (Input.GetKeyDown(KeyCode.L))
             {
+                Block_Move.Post(gameObject); //Wwise
                 if (CurrentCube + 1 < patternCubes.Count)
                     CurrentCube++;
             }
             if (Input.GetKeyDown(KeyCode.A))
             {
+                Block_Move.Post(gameObject); //Wwise
                 SwapCubes(CurrentCube, CurrentCube - 1);
 
                 // Current cube index changed, set it directly so select and deslect aren't called
@@ -87,11 +106,13 @@ public class PatternPuzzle : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.S))
             {
+                Block_Move.Post(gameObject); //Wwise
                 patternCubes[CurrentCube].Rotate(Direction.FORWARD);
                 StartCoroutine(CheckSolved());
             }
             if (Input.GetKeyDown(KeyCode.D))
             {
+                Block_Move.Post(gameObject); //Wwise 
                 SwapCubes(CurrentCube, CurrentCube + 1);
                 _currentCube = CurrentCube + 1;
 
@@ -198,6 +219,7 @@ public class PatternPuzzle : MonoBehaviour
     private void Solved()
     {
         Debug.Log("Solved");
+        puzzleSolved.Post(gameObject); //Wwise
         solved = true;
         patternCubes[_currentCube].Deselect();
         StartCoroutine(WinAnimation());
@@ -209,6 +231,7 @@ public class PatternPuzzle : MonoBehaviour
     private IEnumerator WinAnimation()
     {
         while (ACubeIsAnimating())
+          
             yield return null;
 
         for (int i = 0; i < patternCubes.Count; i++)

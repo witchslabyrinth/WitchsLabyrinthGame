@@ -10,7 +10,7 @@ Material:
   m_Name: IL3DN_Ground_Decals
   m_Shader: {fileID: 4800000, guid: 3a3bd056d3da76149a37685b1aed06de, type: 3}
   m_ShaderKeywords: EFFECT_HUE_VARIATION GEOM_TYPE_LEAF _ALPHATEST_ON _WIND_ON
-  m_LightmapFlags: 0
+  m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -48,6 +48,10 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 7354d0ba027e23c4e91f1a0fe8c644d7, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainText:
         m_Texture: {fileID: 2800000, guid: 7354d0ba027e23c4e91f1a0fe8c644d7, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}

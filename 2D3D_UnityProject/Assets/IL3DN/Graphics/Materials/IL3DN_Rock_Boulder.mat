@@ -47,6 +47,10 @@ Material:
         m_Texture: {fileID: 2800000, guid: 73f9ff498af5bfb48bb4614c1957e6a8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _MainText:
+        m_Texture: {fileID: 2800000, guid: 73f9ff498af5bfb48bb4614c1957e6a8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -82,6 +86,7 @@ Material:
     - _Parallax: 0.02
     - _SmoothnessTextureChannel: 0
     - _Snow: 0
+    - _Snow1: 1
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Strenght: 0.5
@@ -90,8 +95,6 @@ Material:
     - _ZWrite: 1
     - __dirty: 0
     m_Colors:
-    - _Color: {r: 0.6509434, g: 0.5782386, b: 0.49434853, a: 1}
-    - _Color0: {r: 1, g: 0, b: 0, a: 1}
+    - _Color: {r: 0.745283, g: 0.69525945, b: 0.63630295, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
-    - _FoamColor1: {r: 1, g: 1, b: 1, a: 0}
     - _HueVariation: {r: 1, g: 0.5, b: 0, a: 0.1}

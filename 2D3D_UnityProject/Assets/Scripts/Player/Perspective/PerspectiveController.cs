@@ -95,6 +95,9 @@ public class PerspectiveController : Singleton<PerspectiveController>
     /// <param name="player">Player actor to update perspective for</param>
     public void UpdatePerspective(Actor player)
     {
+        if (!player.canSwitchPerspectives)
+            return;
+
         // Check each button in KeyCode -> camera perspective mapping
         foreach(KeyCode key in buttonPerspectiveMapping.Keys) 
         {
@@ -112,14 +115,8 @@ public class PerspectiveController : Singleton<PerspectiveController>
                     continue;
                 }
 
-                // Tell animator if we're using the top-down perspective (so it displays appropriate sprites)
-                if(perspective.cameraView == OldCameraController.CameraViews.TOP)
-                    PlayerController.Instance.GetPlayer().SetTopView(true);
-                else
-                    PlayerController.Instance.GetPlayer().SetTopView(false);
-                
+                // Set perspective and break from loop
                 SetPerspective(player, perspective);
-
                 return;
             }
         }
@@ -132,6 +129,9 @@ public class PerspectiveController : Singleton<PerspectiveController>
 
         // Update actor with associated movement scheme
         player.SetMovement(perspective.movement);
+
+        // Tell actor if we're using the top-down perspective (so animator displays appropriate sprites)
+        player.SetTopView(perspective.cameraView == OldCameraController.CameraViews.TOP);
 
         // Apply camera perspective to player actor
         player.actorCamera.SetPerspective(perspective);
