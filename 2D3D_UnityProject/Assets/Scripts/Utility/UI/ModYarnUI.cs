@@ -44,6 +44,7 @@ namespace Yarn.Unity
         public UnityEngine.Events.UnityEvent onLineStart;
         public UnityEngine.Events.UnityEvent onLineFinishDisplaying;
         public DialogueRunner.StringUnityEvent onLineUpdate;
+        public DialogueRunner.StringUnityEvent onNameUpdate;
         public UnityEngine.Events.UnityEvent onLineEnd;
 
         public UnityEngine.Events.UnityEvent onOptionsStart;
@@ -101,6 +102,8 @@ namespace Yarn.Unity
                 spokenWords.Trim();
             }
 
+            onNameUpdate?.Invoke(name);
+
             if (textSpeed > 0.0f)
             {
                 // Display the line one character at a time
@@ -114,7 +117,7 @@ namespace Yarn.Unity
                     {
                         // We've requested a skip of the entire line.
                         // Display all of the text immediately.
-                        onLineUpdate?.Invoke(text);
+                        onLineUpdate?.Invoke(spokenWords);
                         break;
                     }
                     yield return new WaitForSeconds(textSpeed);
@@ -123,7 +126,7 @@ namespace Yarn.Unity
             else
             {
                 // Display the entire line immediately if textSpeed <= 0
-                onLineUpdate?.Invoke(text);
+                onLineUpdate?.Invoke(spokenWords);
             }
 
             // We're now waiting for the player to move on to the next line
