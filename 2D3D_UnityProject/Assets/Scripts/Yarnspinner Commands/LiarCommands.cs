@@ -6,6 +6,13 @@ using Yarn.Unity;
 
 public class LiarCommands : DialogueCommands
 {
+    //n8-bit 5/13/2020
+    /// <summary>
+    /// Indicates whether player has solved the puzzle
+    /// </summary>
+    public bool solved = false;
+    //end n8-bit 5/13/2020
+
     [SerializeField]
     private Collider[] triggerZones;
 
@@ -40,6 +47,10 @@ public class LiarCommands : DialogueCommands
         {
             trigger.enabled = false;
         }
+
+        //n8-bit 5/13/2020
+        solved = true;
+        //end n8-bit 5/13/2020
 
         onComplete();
     }
