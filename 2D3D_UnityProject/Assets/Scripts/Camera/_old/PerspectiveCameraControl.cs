@@ -25,6 +25,8 @@ public class PerspectiveCameraControl : MonoBehaviour
     private float verticalClampMin;
     [SerializeField]
     private float distanceFromPivot;
+    [SerializeField]
+    private float smoothingFactor;
     private float lastY;
     // Set lastY to this value on start as this is the value given to it on the first frame
     private const float INITIAL_Y = 0.5f;
@@ -86,12 +88,14 @@ public class PerspectiveCameraControl : MonoBehaviour
         if (Physics.Raycast(cameraPivot.position, pivotToCamera, out hit, distanceFromPivot, CAMERA_MASK))
         {
             // If the raycast hit something, put the camera at the point of collision
-            transform.position = hit.point;
+            transform.position = Vector3.Lerp(transform.position, hit.point, smoothingFactor);
+            //transform.position = hit.point;
         }
         else
         {
             // If the raycast didn't hit something then put it in normal spot
-            transform.position = newPosition;
+            transform.position = Vector3.Lerp(transform.position, newPosition, smoothingFactor);
+            //transform.position = newPosition;
         }
 
         // Point camera at pivot
