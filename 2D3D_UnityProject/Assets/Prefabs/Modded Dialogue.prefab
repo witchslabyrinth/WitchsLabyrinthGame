@@ -126,7 +126,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueRunner: {fileID: 5801511757377914369}
   portrait: {fileID: 8902203080467541571}
-  spriteFolder: Talking Sprites
+  talkingSpriteFolder: 
+  oliverSprite: {fileID: 0}
+  catSprite: {fileID: 0}
 --- !u!114 &5796187899606733433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,7 +218,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Continue
+  m_Text: '...'
 --- !u!1 &5801511756839228645
 GameObject:
   m_ObjectHideFlags: 0
@@ -607,7 +609,18 @@ MonoBehaviour:
         m_CallState: 2
   onLineFinishDisplaying:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 9210939704250510064}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   onLineUpdate:
     m_PersistentCalls:
       m_Calls:
@@ -1817,10 +1830,10 @@ RectTransform:
   m_Father: {fileID: 5801511756839228644}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 569.97046, y: -317.95435}
+  m_SizeDelta: {x: 1119.9409, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7701680608585788015
 CanvasRenderer:
