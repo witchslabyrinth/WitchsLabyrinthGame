@@ -112,13 +112,29 @@
 				</Folder>
 				<Folder Name="Scene" ID="{729CFC91-1C2E-45CC-A097-78D8265DFBA8}" ShortID="261404419">
 					<ChildrenList>
-						<Event Name="Music_Play" ID="{97615C5D-6E84-4AC2-A6A5-AF8AA2D73E46}"/>
 						<Event Name="Title_Music" ID="{8132F5EA-4747-45B3-9DF9-006594CC5240}">
 							<ChildrenList>
 								<Action Name="" ID="{4179F66B-17BE-4D23-8E2F-896078FAA2FF}" ShortID="890554729">
+									<PropertyList>
+										<Property Name="FadeInCurve" Type="int16" Value="6"/>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="bgm_Broad_Strokes" ID="{29028CA5-A0D5-4658-AB46-1E8F549DA0D4}" WorkUnitID="{AC394B22-B424-42F1-91AE-4207A146B3EA}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Background_Music_Loop" ID="{5EF21B2A-B605-4899-9137-31CF22B4B037}">
+							<ChildrenList>
+								<Action Name="" ID="{E3AB9B7E-1A09-4D4B-A703-FBA9773F21E7}" ShortID="976112675">
+									<PropertyList>
+										<Property Name="FadeInCurve" Type="int16" Value="7"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Basic_Music" ID="{3CEDAFB7-5573-4FD0-9490-F39CF58B44B7}" WorkUnitID="{AC394B22-B424-42F1-91AE-4207A146B3EA}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

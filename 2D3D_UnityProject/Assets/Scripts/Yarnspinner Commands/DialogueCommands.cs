@@ -12,6 +12,12 @@ public class DialogueCommands : MonoBehaviour
 
     protected Coroutine currCoroutine;
 
+    [SerializeField]
+    protected GameObject oliverSprite;
+
+    [SerializeField]
+    protected GameObject catSprite;
+
     /// <summary>
     /// add all commands to DialogueRunner
     /// </summary>
@@ -20,6 +26,8 @@ public class DialogueCommands : MonoBehaviour
         dialogueRunner.AddCommandHandler("load_scene", LoadScene);
         dialogueRunner.AddCommandHandler("reset_camera", ResetCamera);
         dialogueRunner.AddCommandHandler("set_mouse_on", SetMouseActive);
+        dialogueRunner.AddCommandHandler("show_sprites", ShowSprites);
+        dialogueRunner.AddCommandHandler("enable_control", EnableControl);
     }
 
     /// <summary>
@@ -118,5 +126,20 @@ public class DialogueCommands : MonoBehaviour
     protected void StartCutscene(CameraEntity cutsceneCam)
     {
         CameraController.Instance.SetMainCamera(cutsceneCam);
+    }
+
+    protected void ShowSprites(string[] parameters, System.Action onComplete)
+    {
+        oliverSprite.SetActive(true);
+        catSprite.SetActive(true);
+        onComplete();
+    }
+
+    protected void EnableControl(string[] parameters, System.Action onComplete)
+    {
+        Actor actor = PlayerController.Instance.GetPlayer();
+        actor.SetControlActive(true);
+        CameraController.Instance.SetMainCamera(actor.actorCamera);
+        onComplete();
     }
 }
