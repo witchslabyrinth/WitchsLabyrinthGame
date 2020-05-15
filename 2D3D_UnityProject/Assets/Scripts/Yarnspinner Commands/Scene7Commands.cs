@@ -5,7 +5,7 @@ using UnityEngine;
 public class Scene7Commands : DialogueCommands
 {
     [SerializeField]
-    private GameObject scene7Camera;
+    private CameraEntity scene7Camera;
 
     private void Awake()
     {
@@ -14,6 +14,6 @@ public class Scene7Commands : DialogueCommands
 
     private void StartCutscene7(string[] parameters)
     {
-        StartCutscene(scene7Camera.GetComponent<CameraEntity>());
+        StartCutscene(scene7Camera);
     }
 }
