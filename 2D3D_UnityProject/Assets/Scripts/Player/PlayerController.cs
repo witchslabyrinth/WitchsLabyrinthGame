@@ -129,7 +129,7 @@ public class PlayerController : Singleton<PlayerController>
             DialogueRunner dialRun = FindObjectOfType<DialogueRunner>();
             if (Input.GetKeyDown(KeyCode.E) && dialRun != null && dialRun.isDialogueRunning == true) 
             {
-                FindObjectOfType<DialogueUI>().MarkLineComplete();
+                FindObjectOfType<ModYarnUI>().MarkLineComplete();
             }
 
             // Handle interactions with other game entities
