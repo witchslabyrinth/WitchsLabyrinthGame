@@ -19,6 +19,9 @@ public class PerspectiveCameraControl : MonoBehaviour
     private Vector2 targetDirection;
     public Vector2 targetCharacterDirection;
 
+    private bool setDirection = false;
+    private Quaternion newDirection;
+
     [SerializeField]
     private float verticalClampMax;
     [SerializeField]
@@ -27,9 +30,11 @@ public class PerspectiveCameraControl : MonoBehaviour
     private float distanceFromPivot;
     [SerializeField]
     private float smoothingFactor;
+    private float lastX;
     private float lastY;
     // Set lastY to this value on start as this is the value given to it on the first frame
     private const float INITIAL_Y = 0.5f;
+    private const float INITIAL_X = 0.0f;
 
     private int CAMERA_MASK;
 
@@ -45,7 +50,14 @@ public class PerspectiveCameraControl : MonoBehaviour
         if (characterBody)
             targetCharacterDirection = characterBody.transform.localRotation.eulerAngles;
 
+        lastX = INITIAL_X;
         lastY = INITIAL_Y;
+    }
+
+    public void SetCharacterDirection(Vector3 direction)
+    {
+        newDirection = Quaternion.LookRotation(direction, Vector3.up);
+        setDirection = true;
     }
 
     public void CameraUpdate()
@@ -74,7 +86,9 @@ public class PerspectiveCameraControl : MonoBehaviour
         _mouseAbsolute.y = Mathf.Clamp(_mouseAbsolute.y, verticalClampMin, verticalClampMax);
 
         // Get amount mouse has moved since last frame
-        float yChange =  _mouseAbsolute.y - lastY;
+        float xChange = _mouseAbsolute.x - lastX;
+        float yChange = _mouseAbsolute.y - lastY;
+
         // Get pitch rotation based on yChange and apply it to vector pointing from the pivot to the camera
         Quaternion rot = Quaternion.AngleAxis(-yChange, characterBody.transform.right);
         Vector3 pivotToCamera = rot * (transform.position - cameraPivot.position);
@@ -104,8 +118,17 @@ public class PerspectiveCameraControl : MonoBehaviour
         // If there's a character body that acts as a parent to the camera
         if (characterBody)
         {
-            var yRotation = Quaternion.AngleAxis(_mouseAbsolute.x, Vector3.up);
-            characterBody.transform.localRotation = yRotation * targetCharacterOrientation;
+            if (setDirection)
+            { 
+                characterBody.transform.rotation = newDirection;
+                setDirection = false;
+            }
+            else
+            {
+                var yRotation = Quaternion.AngleAxis(xChange, Vector3.up);
+                //characterBody.transform.localRotation = yRotation * targetCharacterOrientation;
+                characterBody.transform.localRotation *= yRotation;
+            }
         }
         else
         {
@@ -113,6 +136,7 @@ public class PerspectiveCameraControl : MonoBehaviour
             transform.localRotation *= yRotation;
         }
 
+        lastX = _mouseAbsolute.x;
         lastY = _mouseAbsolute.y;
     }
 }
