@@ -5,6 +5,13 @@ using UnityEngine.UI;
 
 public class KoiFishPuzzle : Singleton<KoiFishPuzzle>
 {
+
+    public delegate void OnSolved();
+
+    /// <summary>
+    /// Event fired when puzzle is solved
+    /// </summary>
+    public OnSolved onSolved;
    
     [Header("Wwise")]
 
@@ -61,6 +68,16 @@ public class KoiFishPuzzle : Singleton<KoiFishPuzzle>
 
         // Set puzzle to initial state
         nextFishToFeed = koiFishFeedingOrder[0];
+
+        // Add puzzle solved listeners
+        onSolved += () => {
+            // Play puzzle complete sound effect
+            FishWin.Post(gameObject);
+
+            // Set puzzle to initial state
+            // NOTE: may not be necessary now that puzzle is deactivated after solving
+            ResetPuzzle();
+        };
     }
 
     /// <summary>
@@ -128,14 +145,11 @@ public class KoiFishPuzzle : Singleton<KoiFishPuzzle>
         int index = koiFishFeedingOrder.IndexOf(fish);
         if (index == koiFishFeedingOrder.Count-1)
         {
-            // TODO: handle end-of-puzzle logic here
             Debug.LogWarning("You solved the puzzle!");
+
+            // Mark puzzle as solved and fire event
             solved = true;
-
-            // Play puzzle complete sound effect
-            FishWin.Post(gameObject);
-
-            ResetPuzzle();
+            onSolved();
         }
 
         // Otherwise assign the next fish in order
