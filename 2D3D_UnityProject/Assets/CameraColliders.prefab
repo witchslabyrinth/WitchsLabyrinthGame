@@ -1,5 +1,49 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &518898656774232463
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8342040986362597637}
+  - component: {fileID: 2429488530168482730}
+  m_Layer: 10
+  m_Name: Back Stairs
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8342040986362597637
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 518898656774232463}
+  m_LocalRotation: {x: 0, y: 0, z: 0.3843436, w: 0.9231902}
+  m_LocalPosition: {x: -3.25, y: 2.24, z: 54.43}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3101817620135199200}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45.206}
+--- !u!65 &2429488530168482730
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 518898656774232463}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7, y: 1, z: 14.5}
+  m_Center: {x: 0.11925244, y: 0.0000022046283, z: -0.17083097}
 --- !u!1 &3148845095664183401
 GameObject:
   m_ObjectHideFlags: 0
@@ -371,6 +415,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3101817620135199200}
   - component: {fileID: 8348704888299602255}
+  - component: {fileID: 6358792437970330211}
+  - component: {fileID: 7964939315558323072}
   m_Layer: 10
   m_Name: HouseFoundation
   m_TagString: Untagged
@@ -390,6 +436,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5133837382605987783}
+  - {fileID: 8342040986362597637}
   m_Father: {fileID: 6512510315441049253}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -404,8 +451,34 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 36.843246, y: 5.682926, z: 44.557167}
-  m_Center: {x: 4.385394, y: 2.341463, z: 54.087162}
+  m_Size: {x: 23.5, y: 5.682926, z: 44.557167}
+  m_Center: {x: 11, y: 2.341463, z: 54.087162}
+--- !u!65 &6358792437970330211
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8327099978929401197}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 16.96, y: 5.682926, z: 16.5}
+  m_Center: {x: -9.5, y: 2.341463, z: 69.3}
+--- !u!65 &7964939315558323072
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8327099978929401197}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 16.96, y: 5.682926, z: 16.5}
+  m_Center: {x: -9.5, y: 2.341463, z: 39.5}
 --- !u!1 &8732831021918050262
 GameObject:
   m_ObjectHideFlags: 0
@@ -417,7 +490,7 @@ GameObject:
   - component: {fileID: 5133837382605987783}
   - component: {fileID: 4928191096205036941}
   m_Layer: 10
-  m_Name: Stairs
+  m_Name: Front Stairs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
