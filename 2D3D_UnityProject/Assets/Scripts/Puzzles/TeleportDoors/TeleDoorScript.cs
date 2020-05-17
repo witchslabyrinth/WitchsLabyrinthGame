@@ -40,7 +40,8 @@ public class TeleDoorScript : MonoBehaviour
             PerspectiveCameraControl cameraControl = player.ghostCamera;
             if(cameraControl != null)
             {
-                cameraControl.targetCharacterDirection = FaceAwayFromDoor();
+                //cameraControl.targetCharacterDirection = FaceAwayFromDoor();
+                cameraControl.SetCharacterDirection(FaceAwayFromDoor());
             }
             else
             {
