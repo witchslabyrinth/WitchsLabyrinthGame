@@ -74,7 +74,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1cb7e9e120078f43bce4f0b1be547a7, type: 3}
   m_Name: AmbientOcclusion
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   enabled:
     overrideState: 1
     value: 1
@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48a79b01ea5641d4aa6daa2e23605641, type: 3}
   m_Name: Bloom
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   enabled:
     overrideState: 1
     value: 1
@@ -170,24 +170,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f011806d58d75c74191b40bd40594829, type: 3}
   m_Name: IL3DN_Fog_PP
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   enabled:
     overrideState: 1
     value: 1
   _Density:
     overrideState: 1
-    value: 1
+    value: 1.1
   _NearColor:
-    overrideState: 1
-    value: {r: 1, g: 0.6745098, b: 0.41960785, a: 0}
+    overrideState: 0
+    value: {r: 0.48008507, g: 0.5019608, b: 0.19999999, a: 0}
   _FarColor:
-    overrideState: 1
-    value: {r: 0.21176471, g: 0.5803922, b: 1, a: 0.4}
+    overrideState: 0
+    value: {r: 0.34550756, g: 0.4433962, b: 0.26980242, a: 0.4}
   _GlowColor:
     overrideState: 1
-    value: {r: 0.24705882, g: 0.11764706, b: 0, a: 0}
+    value: {r: 0.31132078, g: 0.2925608, b: 0.20412071, a: 0}
   _ExcludeSkybox:
-    overrideState: 1
+    overrideState: 0
     value: 0
 --- !u!114 &114877922873275810
 MonoBehaviour:
@@ -293,13 +293,13 @@ MonoBehaviour:
     value: 100
   lift:
     overrideState: 1
-    value: {x: 0.63616914, y: 0.6739184, z: 1, w: -0.21712908}
+    value: {x: 0.80819225, y: 0.7182261, z: 1, w: -0.21712908}
   gamma:
     overrideState: 1
-    value: {x: 1, y: 0.75328946, z: 0.9048926, w: 0.000000003754769}
+    value: {x: 1, y: 0.81156546, z: 0.8798646, w: 0.000000003754769}
   gain:
     overrideState: 1
-    value: {x: 1, y: 1, z: 1, w: -5.1201265e-10}
+    value: {x: 0.9924874, y: 1, z: 0.9522702, w: -5.1201265e-10}
   masterCurve:
     overrideState: 0
     value:
