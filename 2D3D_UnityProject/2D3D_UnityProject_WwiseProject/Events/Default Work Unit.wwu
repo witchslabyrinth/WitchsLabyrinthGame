@@ -126,15 +126,39 @@
 								</Action>
 							</ChildrenList>
 						</Event>
-						<Event Name="Background_Music_Loop" ID="{5EF21B2A-B605-4899-9137-31CF22B4B037}">
+						<Event Name="Environment_Music" ID="{80F61ACA-3628-4250-89ED-65261FDE6FF4}">
 							<ChildrenList>
-								<Action Name="" ID="{E3AB9B7E-1A09-4D4B-A703-FBA9773F21E7}" ShortID="976112675">
+								<Action Name="" ID="{6CA0C2A9-8E56-4644-96D6-93E0B9B01962}" ShortID="506067835">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Basic_Music" ID="{05BC5EF9-4DE1-40D8-9F07-45BDB465E691}" WorkUnitID="{AC394B22-B424-42F1-91AE-4207A146B3EA}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Portal_Music" ID="{07FE6AEF-52BA-4056-8511-5D362319ACEC}">
+							<ChildrenList>
+								<Action Name="" ID="{2B52A311-BDC2-4D13-9757-F055E91B4EF3}" ShortID="411374755">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Calm_2_Mastered" ID="{DE3A3690-7A3C-4B4D-B762-713DF12E604E}" WorkUnitID="{AC394B22-B424-42F1-91AE-4207A146B3EA}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Enviro_Stop" ID="{8656B3CD-75ED-4689-BF1D-135F7ABB2389}">
+							<ChildrenList>
+								<Action Name="" ID="{0A403001-5A06-4132-B0AF-815C1789A0EF}" ShortID="85161003">
 									<PropertyList>
-										<Property Name="FadeInCurve" Type="int16" Value="7"/>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="FadeOutCurve" Type="int16" Value="7"/>
+										<Property Name="Scope" Type="int16" Value="1"/>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="Basic_Music" ID="{3CEDAFB7-5573-4FD0-9490-F39CF58B44B7}" WorkUnitID="{AC394B22-B424-42F1-91AE-4207A146B3EA}"/>
+											<ObjectRef Name="Basic_Music" ID="{05BC5EF9-4DE1-40D8-9F07-45BDB465E691}" WorkUnitID="{AC394B22-B424-42F1-91AE-4207A146B3EA}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -265,6 +289,9 @@
 								<Event Name="FishWin" ID="{D6F9A166-1FA3-4474-A47E-830958D64791}">
 									<ChildrenList>
 										<Action Name="" ID="{394C42F6-9147-49F6-99B7-CABB8E27CC82}" ShortID="675254559">
+											<PropertyList>
+												<Property Name="FadeInCurve" Type="int16" Value="6"/>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="Flute" ID="{0DE8EDC3-DAB7-40F0-B031-CDC40E46682C}" WorkUnitID="{AC394B22-B424-42F1-91AE-4207A146B3EA}"/>
@@ -356,6 +383,17 @@
 						</Event>
 					</ChildrenList>
 				</Folder>
+				<Event Name="Music_BG" ID="{9C4F5A32-CC83-4CA1-8F2F-D0854B44652C}">
+					<ChildrenList>
+						<Action Name="" ID="{EA5DD8E5-6765-4232-AA54-AB68B5F27D92}" ShortID="775019108">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Music" ID="{091EBE69-F607-4E2F-AC42-E19C5B832EAF}" WorkUnitID="{9EE110FA-F3AB-4030-94E6-DB662E4ACD33}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

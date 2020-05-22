@@ -177,7 +177,7 @@
 						</Property>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>-9</Value>
+								<Value>-12</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -205,17 +205,12 @@
 						<ActiveSource Name="shakuhachi-flute-play" ID="{7C6C0A27-E34C-458A-B0B6-37B21261ADA8}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
-				<Sound Name="Basic_Music" ID="{3CEDAFB7-5573-4FD0-9490-F39CF58B44B7}" ShortID="332878963">
+				<Sound Name="Basic_Music" ID="{05BC5EF9-4DE1-40D8-9F07-45BDB465E691}" ShortID="74559061">
 					<PropertyList>
-						<Property Name="InitialDelay" Type="Real64">
-							<ValueList>
-								<Value>5</Value>
-							</ValueList>
-						</Property>
 						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>-11</Value>
+								<Value>-35</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -228,13 +223,47 @@
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
-						<AudioFileSource Name="Basic_Music" ID="{00104019-9CA6-401A-9A6C-DFC574CA5025}" ShortID="1051516057">
+						<AudioFileSource Name="Basic_Music" ID="{F37A905E-0DC0-4025-80F3-FB103BEDE98C}" ShortID="434386717">
 							<Language>SFX</Language>
 							<AudioFile>Basic_Music.wav</AudioFile>
+							<ConvertedFileIDList>
+								<File ID="79931867"/>
+							</ConvertedFileIDList>
 						</AudioFileSource>
 					</ChildrenList>
 					<ActiveSourceList>
-						<ActiveSource Name="Basic_Music" ID="{00104019-9CA6-401A-9A6C-DFC574CA5025}" Platform="Linked"/>
+						<ActiveSource Name="Basic_Music" ID="{F37A905E-0DC0-4025-80F3-FB103BEDE98C}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Calm_2_Mastered" ID="{DE3A3690-7A3C-4B4D-B762-713DF12E604E}" ShortID="178285087">
+					<PropertyList>
+						<Property Name="InitialDelay" Type="Real64">
+							<ValueList>
+								<Value>0.5</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-14</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{24C7AD02-E66A-4B4B-8735-0AC29636FC00}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CB9D8304-7AAA-4374-9412-CD9A3A2EDD3D}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Calm_2_Mastered" ID="{EB80AE72-2AB2-4176-B4E2-CE2D2AEE4D04}" ShortID="784301611">
+							<Language>SFX</Language>
+							<AudioFile>Calm_2_Mastered.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Calm_2_Mastered" ID="{EB80AE72-2AB2-4176-B4E2-CE2D2AEE4D04}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
 			</ChildrenList>

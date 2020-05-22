@@ -1,13 +1,23 @@
 State Group	ID	Name			Wwise Object Path	Notes
+	258110631	Game_Music			\Default Work Unit\Music\Game_Music	
+	508837813	Music_2			\Default Work Unit\Music_2	
 	2607556080	Menu			\Default Work Unit\Music\Menu	
+	3276221180	Game_Music_2			\Default Work Unit\Music\Game_Music_2	
 	3900887599	Interaction			\Default Work Unit\Music\Interaction	
 	4247146625	Lantern_Solved			\Default Work Unit\Puzzles\Zodiac\Lantern_Solved	
 	4275285196	Playing_As			\Default Work Unit\Playing_As	
 
 State	ID	Name	State Group			Notes
+	0	None	Game_Music			
+	2056434376	First_world	Game_Music			
+	3315072118	Portal_World	Game_Music			
+	0	None	Music_2			
+	1229948536	Environment	Music_2			
+	3118032615	Portal	Music_2			
 	0	None	Menu			
 	3190209385	OutOfMenu	Menu			
 	3374585465	InMenu	Menu			
+	0	None	Game_Music_2			
 	0	None	Interaction			
 	927376446	NotInteracting	Interaction			
 	3884110025	Interacting	Interaction			

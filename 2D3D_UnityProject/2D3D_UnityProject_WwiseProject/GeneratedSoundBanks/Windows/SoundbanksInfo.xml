@@ -236,11 +236,17 @@
 			<ShortName>Music</ShortName>
 			<Path>Music.bnk</Path>
 			<IncludedEvents>
-				<Event Id="2857056650" Name="Background_Music_Loop" ObjectPath="\Events\Default Work Unit\Scene\Background_Music_Loop" DurationType="Infinite"/>
+				<Event Id="566381285" Name="Enviro_Stop" ObjectPath="\Events\Default Work Unit\Scene\Enviro_Stop" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="2749390508" Name="Environment_Music" ObjectPath="\Events\Default Work Unit\Scene\Environment_Music" DurationType="Infinite"/>
 				<Event Id="2765306547" Name="FishWin" ObjectPath="\Events\Default Work Unit\Puzzles\KoiFish\FishWin" DurationType="OneShot" DurationMin="3.806111" DurationMax="3.806111"/>
+				<Event Id="2483004119" Name="Portal_Music" ObjectPath="\Events\Default Work Unit\Scene\Portal_Music" DurationType="OneShot" DurationMin="144.434708" DurationMax="144.434708"/>
 				<Event Id="309205993" Name="Title_Music" ObjectPath="\Events\Default Work Unit\Scene\Title_Music" DurationType="Infinite"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
+				<File Id="79931867" Language="SFX">
+					<ShortName>Basic_Music.wav</ShortName>
+					<Path>SFX\Basic_Music_D79FB2B7.wem</Path>
+				</File>
 				<File Id="154096204" Language="SFX">
 					<ShortName>garden-intro.wav</ShortName>
 					<Path>SFX\garden-intro_10C4C929.wem</Path>
@@ -261,9 +267,9 @@
 					<ShortName>fuji-san.wav</ShortName>
 					<Path>SFX\fuji-san_10C4C929.wem</Path>
 				</File>
-				<File Id="1051516057" Language="SFX">
-					<ShortName>Basic_Music.wav</ShortName>
-					<Path>SFX\Basic_Music_D79FB2B7.wem</Path>
+				<File Id="784301611" Language="SFX">
+					<ShortName>Calm_2_Mastered.wav</ShortName>
+					<Path>SFX\Calm_2_Mastered_10C4C929.wem</Path>
 				</File>
 			</IncludedMemoryFiles>
 		</SoundBank>
