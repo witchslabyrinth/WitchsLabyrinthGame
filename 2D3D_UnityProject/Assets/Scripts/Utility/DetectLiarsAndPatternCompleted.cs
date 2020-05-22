@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(DoubleSlidingDoors))]
 public class DetectLiarsAndPatternCompleted : MonoBehaviour
 {
     bool active = true;
@@ -28,6 +29,10 @@ public class DetectLiarsAndPatternCompleted : MonoBehaviour
             {
                 myDoorClose.Open();
                 active = false;
+
+                // Enable player to control cat 
+                PlayerController.Instance.canCommand = true;
+                PlayerController.Instance.canSwap = true;
             }
         }
     }
