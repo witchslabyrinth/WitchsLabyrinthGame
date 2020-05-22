@@ -91,7 +91,7 @@ public class DialogueCommands : MonoBehaviour
         Actor actor = PlayerController.Instance.GetPlayer();
         actor.Enable();
         CameraController.Instance.SetMainCamera(actor.actorCamera);
-        PlayerController.Instance.canSwap = true;
+        //PlayerController.Instance.canSwap = true;
 
         onComplete();
     }

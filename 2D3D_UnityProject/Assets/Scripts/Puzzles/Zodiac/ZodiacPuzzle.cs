@@ -267,7 +267,7 @@ public class ZodiacPuzzle : MonoBehaviour
         CameraController.Instance.SetMainCamera(actor.actorCamera);
 
         // Restore actor swapping
-        PlayerController.Instance.canSwap = true;
+        //PlayerController.Instance.canSwap = true;
 
         // Disable the puzzle
         this.enabled = false;

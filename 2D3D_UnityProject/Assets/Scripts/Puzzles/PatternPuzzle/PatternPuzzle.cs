@@ -209,7 +209,7 @@ public class PatternPuzzle : MonoBehaviour
         CameraController.Instance.SetMainCamera(player.actorCamera);
 
         // Restore actor swapping
-        PlayerController.Instance.canSwap = true;
+        //PlayerController.Instance.canSwap = true;
 
         // Disable puzzle and deselect cube
         this.enabled = false;
