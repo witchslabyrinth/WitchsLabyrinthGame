@@ -64,6 +64,18 @@
 								</Transition>
 							</TransitionList>
 						</StateGroup>
+						<StateGroup Name="Game_Music" ID="{0598A466-5F31-46F1-B19E-0F1EABD2170A}">
+							<ChildrenList>
+								<State Name="None" ID="{FAF8F538-F6E0-46A0-B321-87C559CFA800}"/>
+								<State Name="First_world" ID="{3FBF443C-DA48-4CC1-8A2C-693A7F5FE275}"/>
+								<State Name="Portal_World" ID="{CD46333E-DDCE-4649-9820-4D5EF2E0E634}"/>
+							</ChildrenList>
+						</StateGroup>
+						<StateGroup Name="Game_Music_2" ID="{6A44F4F4-4F10-4A02-BD16-A388B5D05608}">
+							<ChildrenList>
+								<State Name="None" ID="{3B9BD547-9AC4-48E7-B833-490310277A82}"/>
+							</ChildrenList>
+						</StateGroup>
 					</ChildrenList>
 				</Folder>
 				<StateGroup Name="Playing_As" ID="{2F579B70-41B0-4764-9D31-363601909738}">
@@ -80,6 +92,13 @@
 							<IsShared>true</IsShared>
 						</Transition>
 					</TransitionList>
+				</StateGroup>
+				<StateGroup Name="Music_2" ID="{A557DCAA-8919-4F47-9A92-E2896F03E7C3}">
+					<ChildrenList>
+						<State Name="None" ID="{207BB32D-AF40-473F-8707-782E49E98D27}"/>
+						<State Name="Portal" ID="{8E6690AF-8490-4219-BFF6-5FB409FC3A16}"/>
+						<State Name="Environment" ID="{93F4FA79-793A-4419-8C54-C471E803D25F}"/>
+					</ChildrenList>
 				</StateGroup>
 			</ChildrenList>
 		</WorkUnit>
