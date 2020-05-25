@@ -29,10 +29,6 @@ public class DetectLiarsAndPatternCompleted : MonoBehaviour
             {
                 myDoorClose.Open();
                 active = false;
-
-                // Enable player to control cat 
-                PlayerController.Instance.canCommand = true;
-                PlayerController.Instance.canSwap = true;
             }
         }
     }

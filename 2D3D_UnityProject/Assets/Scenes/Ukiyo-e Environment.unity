@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -46817,7 +46817,8 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 0}
-  canSwap: 1
+  canSwap: 0
+  canCommand: 0
   oliver: {fileID: 1616911467}
   cat: {fileID: 800036970}
   player: {fileID: 0}
@@ -47284,6 +47285,11 @@ PrefabInstance:
     - target: {fileID: 6921999257251302689, guid: fd7faa83115f80249a233f9abedd7e27,
         type: 3}
       propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8606622834704313366, guid: fd7faa83115f80249a233f9abedd7e27,
+        type: 3}
+      propertyPath: enableSwapping
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
