@@ -15,10 +15,11 @@ namespace AK
     {
         static const AkUniqueID ACTIVATE = 4166407614U;
         static const AkUniqueID AMBIENTPORTAL = 368097181U;
-        static const AkUniqueID BACKGROUND_MUSIC_LOOP = 2857056650U;
         static const AkUniqueID CAT_RANDOM = 1508371255U;
         static const AkUniqueID CATSWITCHSOUND = 3589155492U;
         static const AkUniqueID DOOR_OPEN = 535830432U;
+        static const AkUniqueID ENVIRO_STOP = 566381285U;
+        static const AkUniqueID ENVIRONMENT_MUSIC = 2749390508U;
         static const AkUniqueID FISHLOSE = 4000923032U;
         static const AkUniqueID FISHMOVE = 1856056972U;
         static const AkUniqueID FISHWIN = 2765306547U;
@@ -34,6 +35,7 @@ namespace AK
         static const AkUniqueID ONMENUOPEN = 547102971U;
         static const AkUniqueID ONMENUSELECT = 1412352919U;
         static const AkUniqueID POND_SOUND = 661114568U;
+        static const AkUniqueID PORTAL_MUSIC = 2483004119U;
         static const AkUniqueID PUZZLE_SOLVED = 1107599359U;
         static const AkUniqueID ROTATE = 1302771492U;
         static const AkUniqueID STAYTHERECAT = 1041426236U;
@@ -47,6 +49,26 @@ namespace AK
 
     namespace STATES
     {
+        namespace GAME_MUSIC
+        {
+            static const AkUniqueID GROUP = 258110631U;
+
+            namespace STATE
+            {
+                static const AkUniqueID FIRST_WORLD = 2056434376U;
+                static const AkUniqueID PORTAL_WORLD = 3315072118U;
+            } // namespace STATE
+        } // namespace GAME_MUSIC
+
+        namespace GAME_MUSIC_2
+        {
+            static const AkUniqueID GROUP = 3276221180U;
+
+            namespace STATE
+            {
+            } // namespace STATE
+        } // namespace GAME_MUSIC_2
+
         namespace INTERACTION
         {
             static const AkUniqueID GROUP = 3900887599U;
@@ -79,6 +101,17 @@ namespace AK
                 static const AkUniqueID OUTOFMENU = 3190209385U;
             } // namespace STATE
         } // namespace MENU
+
+        namespace MUSIC_2
+        {
+            static const AkUniqueID GROUP = 508837813U;
+
+            namespace STATE
+            {
+                static const AkUniqueID ENVIRONMENT = 1229948536U;
+                static const AkUniqueID PORTAL = 3118032615U;
+            } // namespace STATE
+        } // namespace MUSIC_2
 
         namespace PLAYING_AS
         {
@@ -117,6 +150,17 @@ namespace AK
                 static const AkUniqueID WOOD = 2058049674U;
             } // namespace SWITCH
         } // namespace MATERIAL
+
+        namespace MUSIC
+        {
+            static const AkUniqueID GROUP = 3991942870U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID ENVIRONMENT = 1229948536U;
+                static const AkUniqueID PORTAL = 3118032615U;
+            } // namespace SWITCH
+        } // namespace MUSIC
 
     } // namespace SWITCHES
 

@@ -31,7 +31,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 31c7159bb637e0438b0b0a3598f10701
     GuidInternal: 
-    m_lastTime: -8586126972490456575
+    m_lastTime: -8586114839594952466
     List:
     - name: Main
       guid: 1d85aefae0798f44adc3648c94a6abd2
@@ -65,7 +65,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 5601ea873c34f449957bd3b5ded1c2c6
     GuidInternal: 
-    m_lastTime: -8586126909903255030
+    m_lastTime: -8586114806664032079
     List:
     - name: Activate
       guid: c59c41cebb8af84581b54cc0d1ba071a
@@ -97,20 +97,6 @@ MonoBehaviour:
       maxAttenuation: 50
       maxDuration: 37.79526
       minDuration: 37.79526
-    - name: Background_Music_Loop
-      guid: 2a1bf25e05b69948913731cf22b4b037
-      id: 2857056650
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: Scene
-        ObjectType: 4
-      - ElementName: Background_Music_Loop
-        ObjectType: 3
-      Path: Default Work Unit\Scene\Background_Music_Loop
-      maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
     - name: cat_random
       guid: 08d408bf3b73794b818ab425a38439cf
       id: 1508371255
@@ -155,6 +141,34 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 3.509682
       minDuration: 2.22644
+    - name: Enviro_Stop
+      guid: cdb35686ed758946bf1d135f7abb2389
+      id: 566381285
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Scene
+        ObjectType: 4
+      - ElementName: Enviro_Stop
+        ObjectType: 3
+      Path: Default Work Unit\Scene\Enviro_Stop
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Environment_Music
+      guid: ca1af6802836504289ed65261fde6ff4
+      id: 2749390508
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Scene
+        ObjectType: 4
+      - ElementName: Environment_Music
+        ObjectType: 3
+      Path: Default Work Unit\Scene\Environment_Music
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: FishLose
       guid: a802b2c162405a42815b2a31567a82b6
       id: 4000923032
@@ -293,6 +307,18 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 8.462205
       minDuration: 8.462205
+    - name: Music_BG
+      guid: 325a4f9c83cca14c8f2fd0854b44652c
+      id: 2745210136
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Music_BG
+        ObjectType: 3
+      Path: Default Work Unit\Music_BG
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: OliverSwitchSound
       guid: 208b0f589429a848bcd72391a18396f6
       id: 2136553153
@@ -321,6 +347,20 @@ MonoBehaviour:
       maxAttenuation: 40
       maxDuration: -1
       minDuration: -1
+    - name: Portal_Music
+      guid: ef6afe07ba52564085115d362319acec
+      id: 2483004119
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Scene
+        ObjectType: 4
+      - ElementName: Portal_Music
+        ObjectType: 3
+      Path: Default Work Unit\Scene\Portal_Music
+      maxAttenuation: 0
+      maxDuration: 144.43471
+      minDuration: 144.43471
     - name: Puzzle_Solved
       guid: abbfbe8a08681644b0aec09c71537e13
       id: 1107599359
@@ -546,8 +586,62 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 80640233b45f4c43af47b7ed0e86fa70
     GuidInternal: 
-    m_lastTime: -8586188208139194104
+    m_lastTime: -8586114806635039792
     List:
+    - name: Game_Music
+      guid: 66a49805315ff146b19e0f1eabd2170a
+      id: 258110631
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Music
+        ObjectType: 4
+      - ElementName: Game_Music
+        ObjectType: 9
+      Path: Default Work Unit\Music\Game_Music
+      values:
+      - name: First_world
+        guid: 3c44bf3f48dac14c8a2c693a7f5fe275
+        id: 2056434376
+        PathAndIcons:
+        - ElementName: First_world
+          ObjectType: 8
+      - name: None
+        guid: 38f5f8fae0f6a046b32187c559cfa800
+        id: 748895195
+        PathAndIcons:
+        - ElementName: None
+          ObjectType: 8
+      - name: Portal_World
+        guid: 3e3346cdcedd494698204d5ef2e0e634
+        id: 3315072118
+        PathAndIcons:
+        - ElementName: Portal_World
+          ObjectType: 8
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
+    - name: Game_Music_2
+      guid: f4f4446a104f024abd16a388b5d05608
+      id: 3276221180
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Music
+        ObjectType: 4
+      - ElementName: Game_Music_2
+        ObjectType: 9
+      Path: Default Work Unit\Music\Game_Music_2
+      values:
+      - name: None
+        guid: 47d59b3bc49ae748b833490310277a82
+        id: 748895195
+        PathAndIcons:
+        - ElementName: None
+          ObjectType: 8
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
     - name: Interaction
       guid: 88843f4ede1a70468bb891d343be183a
       id: 3900887599
@@ -649,6 +743,37 @@ MonoBehaviour:
       ValueGuids: []
       ValueIcons: []
       valuesInternal: []
+    - name: Music_2
+      guid: aadc57a51989474f9a92e2896f03e7c3
+      id: 508837813
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Music_2
+        ObjectType: 9
+      Path: Default Work Unit\Music_2
+      values:
+      - name: Environment
+        guid: 79faf4933a7919448c54c471e803d25f
+        id: 1229948536
+        PathAndIcons:
+        - ElementName: Environment
+          ObjectType: 8
+      - name: None
+        guid: 2db37b2040af3f478707782e49e98d27
+        id: 748895195
+        PathAndIcons:
+        - ElementName: None
+          ObjectType: 8
+      - name: Portal
+        guid: af90668e90841942bff65fb409fc3a16
+        id: 3118032615
+        PathAndIcons:
+        - ElementName: Portal
+          ObjectType: 8
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
     - name: Playing_As
       guid: 709b572fb04164479d31363601909738
       id: 4275285196
@@ -685,7 +810,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: cb5f7cd43e7dce46b55ab3766d658e16
     GuidInternal: 
-    m_lastTime: -8586149582149893403
+    m_lastTime: -8586114806635029778
     List:
     - name: Footsteps
       guid: a630a1ae3c04f34cbbb0d3da9f4abdbe
@@ -743,6 +868,31 @@ MonoBehaviour:
       ValueGuids: []
       ValueIcons: []
       valuesInternal: []
+    - name: Music
+      guid: adeda97c7bef854ead570014bb905118
+      id: 3991942870
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Music
+        ObjectType: 11
+      Path: Default Work Unit\Music
+      values:
+      - name: Environment
+        guid: 3e331729474def49a4929c4cae55143a
+        id: 1229948536
+        PathAndIcons:
+        - ElementName: Environment
+          ObjectType: 10
+      - name: Portal
+        guid: da6a84f9d1a5da40a2f5fe654c0a22e8
+        id: 3118032615
+        PathAndIcons:
+        - ElementName: Portal
+          ObjectType: 10
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
     ParentPhysicalPath: 
@@ -754,5 +904,11 @@ MonoBehaviour:
   - /2D3D_UnityProject_WwiseProject
   - /2D3D_UnityProject_WwiseProject/Events
   - /2D3D_UnityProject_WwiseProject/Events/Default Work Unit
-  autoPopulateEnabled: 1
+  - /2D3D_UnityProject_WwiseProject/Events/Default Work Unit/Scene
+  - /2D3D_UnityProject_WwiseProject/States
+  - /2D3D_UnityProject_WwiseProject/States/Default Work Unit
+  - /2D3D_UnityProject_WwiseProject/Switches
+  - /2D3D_UnityProject_WwiseProject/Switches/Default Work Unit
+  - /2D3D_UnityProject_WwiseProject/Switches/Default Work Unit/Footsteps
+  autoPopulateEnabled: 0
   CurrentPluginConfig: 
