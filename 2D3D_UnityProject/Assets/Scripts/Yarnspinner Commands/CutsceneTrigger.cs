@@ -35,6 +35,7 @@ public class CutsceneTrigger : MonoBehaviour
 
             Actor actor = PlayerController.Instance.GetPlayer();
             actor.Disable();
+            PlayerController.Instance.canSwap = false;
             
             scenePlayed = true;
         }
