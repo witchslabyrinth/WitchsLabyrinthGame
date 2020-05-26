@@ -84,11 +84,13 @@ public class AnimationController : MonoBehaviour
         {
             if (lastFacing.x != 0)
             {
-                transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, lastFacing.x * 90f, transform.rotation.eulerAngles.z);
+                // transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, lastFacing.x * 90f, transform.rotation.eulerAngles.z);
+                transform.Rotate(transform.up, lastFacing.x * 90f);
             }
             else if (lastFacing.y == -1)
             {
-                transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, 180f, transform.rotation.eulerAngles.z);
+                // transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, 180f, transform.rotation.eulerAngles.z);
+                transform.Rotate(transform.up, 180f);
             }
         }
         
