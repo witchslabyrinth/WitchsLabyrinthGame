@@ -50,7 +50,7 @@ public class TeleDoorScript : MonoBehaviour
                 {
                     angleCorrection = 90;
                 }
-                else if(Input.GetKey(KeyCode.S))
+                else if(Input.GetKey(KeyCode.D))
                 {
                     angleCorrection = -90;
                 }
