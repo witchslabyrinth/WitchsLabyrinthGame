@@ -23,6 +23,11 @@ public class PlayerController : Singleton<PlayerController>
     public bool canSwap = true;
 
     /// <summary>
+    /// True when player can command friend actor to follow/stay
+    /// </summary>
+    public bool canCommand;
+
+    /// <summary>
     /// Reference to Oliver
     /// </summary>
     [SerializeField]
@@ -115,7 +120,7 @@ public class PlayerController : Singleton<PlayerController>
             }
 
             // Input for telling Friend actor to follow/stay
-            if (Input.GetKeyDown(KeyCode.F))
+            if (canCommand && Input.GetKeyDown(KeyCode.F))
             {
                 FriendCommand();
                 if (player.Equals(oliver))

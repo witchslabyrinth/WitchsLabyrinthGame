@@ -9,6 +9,12 @@ public class DoorCloseTriggerZone : MonoBehaviour
     [SerializeField]
     private GameObject HouseExitInvisibleWall;
 
+    /// <summary>
+    /// Enables actor swapping/commands when player passes through
+    /// </summary>
+    [SerializeField]
+    private bool enableSwapping;
+
     private Actor player => PlayerController.Instance.GetPlayer();
     private Actor friend => PlayerController.Instance.GetFriend();
 
@@ -17,18 +23,21 @@ public class DoorCloseTriggerZone : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // When the player enters the House, we need to bring the other actor over too, otherwise it will be trapped on the other side of the door.
+        // Make sure friend actor follows player through doors
         if (other.gameObject == player.gameObject)
-        {
             MoveBesideOtherActor(friend, player);
-        }
-        //If the collision is with neither of the actors, then ignore the collision, otherwise we'll get both trapped outside.
         else
-        {
             return;
-        }
-        //Start the doors closing
+
+        // Close doors behind player
         toClose.Close();
+
+        // Allow player to control friend actor
+        if(enableSwapping) {
+            PlayerController.Instance.canSwap = true;
+            PlayerController.Instance.canCommand = true;
+        }
+        
         //Activate a trigger zone that will detect if the player exits the house while the doors are closing. If they do, the doors will open again. This will prevent the player from getting stuck outside.
         HouseExitInvisibleWall.SetActive(true);
         //Deactivate this trigger zone so we don't try to close the already closed doors if the player walks here again.
