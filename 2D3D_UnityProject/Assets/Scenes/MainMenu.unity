@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -835,6 +835,7 @@ MonoBehaviour:
   canvas: {fileID: 1684514769}
   fadePrefab: {fileID: 3996012030313505607, guid: 89f44dcf005e74a4296ed2f0d7008cb7,
     type: 3}
+  duration: 1.5
 --- !u!1001 &478657186255709762
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -952,6 +953,66 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4750042250217753874, guid: 174393b806e0f304e890ef3ad625402d,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4750042250217753874, guid: 174393b806e0f304e890ef3ad625402d,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4750042250217753874, guid: 174393b806e0f304e890ef3ad625402d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4750042250217753874, guid: 174393b806e0f304e890ef3ad625402d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2526119131836264741, guid: 174393b806e0f304e890ef3ad625402d,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2526119131836264741, guid: 174393b806e0f304e890ef3ad625402d,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2526119131836264741, guid: 174393b806e0f304e890ef3ad625402d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2526119131836264741, guid: 174393b806e0f304e890ef3ad625402d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766069788824806128, guid: 174393b806e0f304e890ef3ad625402d,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766069788824806128, guid: 174393b806e0f304e890ef3ad625402d,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766069788824806128, guid: 174393b806e0f304e890ef3ad625402d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766069788824806128, guid: 174393b806e0f304e890ef3ad625402d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4880679677700088360, guid: 174393b806e0f304e890ef3ad625402d,
         type: 3}
       propertyPath: fadeEffect
@@ -982,6 +1043,26 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1364978413}
+    - target: {fileID: 2716667962480904826, guid: 174393b806e0f304e890ef3ad625402d,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2716667962480904826, guid: 174393b806e0f304e890ef3ad625402d,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2716667962480904826, guid: 174393b806e0f304e890ef3ad625402d,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2716667962480904826, guid: 174393b806e0f304e890ef3ad625402d,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 174393b806e0f304e890ef3ad625402d, type: 3}
 --- !u!224 &1732839115941037849 stripped
