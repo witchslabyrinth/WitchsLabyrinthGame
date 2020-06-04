@@ -8,11 +8,21 @@ public class FadeEffect : MonoBehaviour
 {
     [SerializeField] private Canvas canvas;
 
+    /// <summary>
+    /// Graphic to fade in/out from (ideally a black screen)
+    /// </summary>
     [SerializeField] private Graphic fadePrefab;
 
+    /// <summary>
+    /// Instance of fadePrefab
+    /// </summary>
     private Graphic fadeInstance;
 
-    public static float duration = 1f;
+    /// <summary>
+    /// Duration of fade effect
+    /// </summary>
+    [SerializeField]
+    private float duration = 1f;
 
     /// <summary>
     /// Fades from black screen to transparent

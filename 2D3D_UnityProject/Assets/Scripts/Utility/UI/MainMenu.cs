@@ -12,11 +12,6 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private Button playButton;
 
     /// <summary>
-    /// Player presses this to open options menu
-    /// </summary>
-    [SerializeField] private Button settingsButton;
-
-    /// <summary>
     /// Player presses this to quit game
     /// </summary>
     [SerializeField] private Button quitButton;
@@ -29,8 +24,8 @@ public class MainMenu : MonoBehaviour
         // Set up button events
         playButton.onClick.AddListener(() => SceneLoader.LoadScene(SCENE_ID.INTRO));
         quitButton.onClick.AddListener(() => Application.Quit());
-        // TODO: implement Settings button functionality
 
+        // Fade in to main menu
         fadeEffect.FadeIn();
     }
 }
