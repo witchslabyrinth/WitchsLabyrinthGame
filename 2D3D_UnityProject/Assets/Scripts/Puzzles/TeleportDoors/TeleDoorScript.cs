@@ -41,7 +41,20 @@ public class TeleDoorScript : MonoBehaviour
             if(cameraControl != null)
             {
                 //cameraControl.targetCharacterDirection = FaceAwayFromDoor();
-                cameraControl.SetCharacterDirection(FaceAwayFromDoor());
+                int angleCorrection = 0;
+                if (Input.GetKey(KeyCode.S))
+                {
+                    angleCorrection = 180;
+                }
+                else if (Input.GetKey(KeyCode.A))
+                {
+                    angleCorrection = 90;
+                }
+                else if(Input.GetKey(KeyCode.D))
+                {
+                    angleCorrection = -90;
+                }
+                cameraControl.SetCharacterDirection(Quaternion.AngleAxis(angleCorrection,Vector3.up) * FaceAwayFromDoor());
             }
             else
             {
